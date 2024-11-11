@@ -7,11 +7,11 @@
 
 #include "struct_defs/struct_02049A68.h"
 #include "struct_defs/struct_0204AFC4.h"
-#include "struct_defs/struct_0205AA50.h"
 
 #include "field/field_system.h"
 #include "overlay005/ov5_021DC018.h"
 
+#include "bg_window.h"
 #include "communication_system.h"
 #include "field_script_context.h"
 #include "field_system.h"
@@ -37,7 +37,7 @@ BOOL ScrCmd_1DB(ScriptContext *param0)
     v0 = ScriptContext_ReadHalfWord(param0);
     v1 = ScriptContext_ReadHalfWord(param0);
 
-    param0->fieldSystem->unk_AC = sub_0204A124(FieldSystem_SaveData(param0->fieldSystem), v0, v1);
+    param0->fieldSystem->unk_AC = sub_0204A124(FieldSystem_GetSaveData(param0->fieldSystem), v0, v1);
     return 0;
 }
 
@@ -115,11 +115,11 @@ BOOL ScrCmd_1DD(ScriptContext *param0)
         *v3 = sub_0204A100(param0->fieldSystem->saveData);
         break;
     case 16:
-        sub_0206BCE4(param0->taskManager, v1, v2, *v3);
+        sub_0206BCE4(param0->task, v1, v2, *v3);
         return 1;
     case (30 + 0):
         v5 = FieldSystem_GetScriptMemberPtr(param0->fieldSystem, 19);
-        sub_0204A358(v6, param0->taskManager, v5);
+        sub_0204A358(v6, param0->task, v5);
         return 1;
     case (30 + 1):
         v5 = FieldSystem_GetScriptMemberPtr(param0->fieldSystem, 19);
@@ -135,7 +135,7 @@ BOOL ScrCmd_1DD(ScriptContext *param0)
         sub_0204A660(v6, param0->fieldSystem->saveData);
         break;
     case (30 + 8):
-        sub_0204A7A4(v6, param0->fieldSystem->saveData, param0->fieldSystem->unk_9C);
+        sub_0204A7A4(v6, param0->fieldSystem->saveData, param0->fieldSystem->journal);
         break;
     case (30 + 9):
         sub_0204A8C8(v6);
@@ -299,7 +299,7 @@ BOOL ScrCmd_1E2(ScriptContext *param0)
     v0 = ScriptContext_ReadHalfWord(param0);
 
     if (sub_0205E6D8(param0->fieldSystem->saveData) == 1) {
-        sub_0206BD88(param0->fieldSystem->unk_10, v1, v0);
+        sub_0206BD88(param0->fieldSystem->task, v1, v0);
     } else {
         v2->unk_8DA = v0;
         v2->unk_8D5 = v1;

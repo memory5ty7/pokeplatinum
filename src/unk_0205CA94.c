@@ -8,7 +8,9 @@
 
 #include "field/field_system.h"
 
+#include "bg_window.h"
 #include "cell_actor.h"
+#include "graphics.h"
 #include "gx_layers.h"
 #include "heap.h"
 #include "map_object.h"
@@ -19,11 +21,9 @@
 #include "trainer_info.h"
 #include "unk_02005474.h"
 #include "unk_0200679C.h"
-#include "unk_02006E3C.h"
 #include "unk_020093B4.h"
 #include "unk_0200A328.h"
 #include "unk_0200F174.h"
-#include "unk_02018340.h"
 
 typedef struct {
     CellActorCollection *unk_00;
@@ -147,7 +147,7 @@ void sub_0205CA94(SysTask *param0, void *param1)
         }
 
         if (v1[0] == 2) {
-            sub_0200F174(0, 0, 0, 0x0, 6, 1, 4);
+            StartScreenTransition(0, 0, 0, 0x0, 6, 1, 4);
         }
 
         for (v2 = 0; v2 < v0->unk_1E0; v2++) {
@@ -161,7 +161,7 @@ void sub_0205CA94(SysTask *param0, void *param1)
         }
         break;
     case 3:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             v0->unk_1E4++;
         }
         break;
@@ -198,11 +198,11 @@ void sub_0205CBFC(SysTask *param0, void *param1)
         v0->unk_1E4++;
         break;
     case 1:
-        sub_0201972C(4, &v3, 2, 0);
+        Bg_LoadPalette(4, &v3, 2, 0);
         GXLayers_EngineBToggleLayers(GX_PLANEMASK_BG0, 0);
         GXLayers_EngineBToggleLayers(GX_PLANEMASK_BG1, 0);
         sub_0205D274(v0, &v0->unk_1C0[0], 2);
-        sub_0200F174(0, 1, 1, 0x0, 6, 1, 4);
+        StartScreenTransition(0, 1, 1, 0x0, 6, 1, 4);
         Sound_PlayEffect(1583);
         v0->unk_1E0 = 1;
         v0->unk_1E4++;
@@ -210,7 +210,7 @@ void sub_0205CBFC(SysTask *param0, void *param1)
     case 2:
         v1 = v0->unk_1C0[0].unk_0C(&v0->unk_1C0[0]);
 
-        if ((v1 == 0) && (ScreenWipe_Done())) {
+        if ((v1 == 0) && (IsScreenTransitionDone())) {
             Sound_PlayEffect(1585);
             v0->unk_1E4++;
             v0->unk_1E8 = -255;
@@ -272,7 +272,7 @@ void sub_0205CD3C(SysTask *param0, void *param1)
 
         if (v1 == 2) {
             v0->unk_1E8 = 0;
-            sub_0200F174(0, 0, 0, 0x7fff, 6, 1, 4);
+            StartScreenTransition(0, 0, 0, 0x7fff, 6, 1, 4);
         }
 
         if (v1 == 0) {
@@ -280,7 +280,7 @@ void sub_0205CD3C(SysTask *param0, void *param1)
         }
         break;
     case 4:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             v0->unk_1E8 = 0;
             v0->unk_1E4++;
         }
@@ -319,11 +319,11 @@ void sub_0205CE7C(SysTask *param0, void *param1)
         v0->unk_1E4++;
         break;
     case 1:
-        sub_0200F174(0, 1, 1, 0x7fff, 6, 1, 4);
+        StartScreenTransition(0, 1, 1, 0x7fff, 6, 1, 4);
         v0->unk_1E4++;
         break;
     case 2:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             Sound_PlayEffect(1586);
             v0->unk_1E4++;
         }
@@ -456,7 +456,7 @@ static void sub_0205D0D8(UnkStruct_0205D094 *param0, int param1, u32 param2)
     sub_0200A41C(param0->unk_18[0]);
     sub_0200A684(param0->unk_18[1]);
 
-    v1 = sub_02006FE8(177, 4, 0, 4, 0);
+    v1 = LoadMemberFromNARC(177, 4, 0, 4, 0);
     param0->unk_04 = sub_02009508(v1, 4, param0->unk_08[0], param0->unk_08[1], param0->unk_08[2], param0->unk_08[3], NULL, NULL);
 
     Heap_FreeToHeap(v1);
@@ -470,7 +470,7 @@ static int sub_0205D1C4(SpriteResourceCollection *param0, SpriteResourceList **p
     void *v3;
 
     v0 = Heap_AllocFromHeapAtEnd(4, SpriteResourceTable_Size());
-    v3 = sub_02006FE8(177, param2, 0, 4, 0);
+    v3 = LoadMemberFromNARC(177, param2, 0, 4, 0);
 
     SpriteResourceTable_LoadFromBinary(v3, v0, 4);
     Heap_FreeToHeap(v3);

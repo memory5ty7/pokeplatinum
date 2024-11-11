@@ -17,6 +17,7 @@
 #include "message.h"
 #include "party.h"
 #include "pokemon.h"
+#include "ribbon.h"
 #include "save_player.h"
 #include "savedata_misc.h"
 #include "script_manager.h"
@@ -28,7 +29,6 @@
 #include "unk_0206AFE0.h"
 #include "unk_02071CFC.h"
 #include "unk_020797C8.h"
-#include "unk_020923C0.h"
 #include "vars_flags.h"
 
 static Strbuf *sub_02047998(u16 param0, u32 param1);
@@ -50,7 +50,7 @@ BOOL ScrCmd_BufferPlayerName(ScriptContext *ctx)
     StringTemplate **strTemplate = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
     u8 templateArg = ScriptContext_ReadByte(ctx);
 
-    StringTemplate_SetPlayerName(*strTemplate, templateArg, SaveData_GetTrainerInfo(FieldSystem_SaveData(fieldSystem)));
+    StringTemplate_SetPlayerName(*strTemplate, templateArg, SaveData_GetTrainerInfo(FieldSystem_GetSaveData(fieldSystem)));
     return FALSE;
 }
 
@@ -244,7 +244,7 @@ BOOL ScrCmd_0D9(ScriptContext *param0)
 {
     int v0;
     FieldSystem *fieldSystem = param0->fieldSystem;
-    TrainerInfo *v2 = SaveData_GetTrainerInfo(FieldSystem_SaveData(param0->fieldSystem));
+    TrainerInfo *v2 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(param0->fieldSystem));
     StringTemplate **v3 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
     u8 v4 = ScriptContext_ReadByte(param0);
 
@@ -413,7 +413,7 @@ BOOL ScrCmd_272(ScriptContext *param0)
     v0 = Strbuf_Init(10 + 1, 11);
 
     Strbuf_CopyChars(v0, MiscSaveBlock_TabletName(SaveData_MiscSaveBlock(param0->fieldSystem->saveData)));
-    StringTemplate_SetStrbuf(*v2, v3, v0, 0, 0, Unk_020E4C44);
+    StringTemplate_SetStrbuf(*v2, v3, v0, 0, 0, gGameLanguage);
     Strbuf_Free(v0);
 
     return 0;
@@ -444,7 +444,7 @@ BOOL ScrCmd_232(ScriptContext *param0)
     u16 v3 = ScriptContext_GetVar(param0);
     u16 v4;
 
-    v4 = sub_020923C0(v3, 3);
+    v4 = Ribbon_GetData(v3, RIBBON_DATA_NAME_ID);
     StringTemplate_SetRibbonName(*v1, v2, v4);
 
     return 0;

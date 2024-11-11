@@ -12,14 +12,14 @@
 #include "struct_defs/struct_0202EA80.h"
 #include "struct_defs/struct_0202EE10.h"
 
+#include "charcode_util.h"
 #include "game_records.h"
 #include "heap.h"
+#include "record_mixed_rng.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "strbuf.h"
 #include "trainer_info.h"
-#include "unk_020021B0.h"
-#include "unk_0202B37C.h"
 #include "unk_0203061C.h"
 
 typedef struct {
@@ -52,13 +52,13 @@ void sub_0202E858(UnkStruct_0202E858 *param0)
     param0->unk_00 = 0;
     param0->unk_04 = 0;
 
-    sub_02002294(param0->unk_08, 7 + 1);
+    CharCode_FillWithEOS(param0->unk_08, 7 + 1);
     SaveData_SetChecksum(28);
 }
 
 BOOL sub_0202E870(UnkStruct_0202E858 *param0)
 {
-    if (GF_strlen(param0->unk_08) == 0) {
+    if (CharCode_Length(param0->unk_08) == 0) {
         return 0;
     }
 
@@ -195,7 +195,7 @@ void *sub_0202E9FC(SaveData *param0, int param1)
     v3 = Heap_AllocFromHeapAtEnd(param1, sizeof(UnkStruct_0202E91C));
     MI_CpuClear8(v3, sizeof(UnkStruct_0202E91C));
 
-    v1 = sub_0202B400(sub_0202B4A0(param0), 1);
+    v1 = RecordMixedRNG_GetEntrySeed(SaveData_GetRecordMixedRNG(param0), 1);
     v4 = TrainerInfo_NameNewStrbuf(v5, param1);
     v6 = sub_0202E924(param0, param1);
 
@@ -229,7 +229,7 @@ static BOOL sub_0202EA98(const UnkStruct_0202E858 *param0, const UnkStruct_0202E
         return 0;
     }
 
-    if (GF_strcmp(param0->unk_08, param1->unk_08)) {
+    if (CharCode_Compare(param0->unk_08, param1->unk_08)) {
         return 0;
     }
 
@@ -357,7 +357,7 @@ void sub_0202ED0C(SaveData *param0, int param1, u8 param2, const void **param3, 
     UnkStruct_0202EE10 *v5;
 
     v4 = sub_0202E8C0(param0);
-    v2 = sub_0202B400(sub_0202B4A0(param0), 1);
+    v2 = RecordMixedRNG_GetEntrySeed(SaveData_GetRecordMixedRNG(param0), 1);
     v1 = 0;
 
     for (v0 = 0; v0 < param2; v0++) {
@@ -398,7 +398,7 @@ UnkStruct_0202EE10 *sub_0202ED8C(SaveData *param0, int param1, int param2)
 
     MI_CpuClear8(v3, sizeof(UnkStruct_0202EE10));
 
-    v2 = sub_0202B400(sub_0202B4A0(param0), 1);
+    v2 = RecordMixedRNG_GetEntrySeed(SaveData_GetRecordMixedRNG(param0), 1);
     v4 = sub_0202E924(param0, param2);
     v3->unk_00 = sub_0202E840(param1);
     v1 = sub_0202E84C(param1);

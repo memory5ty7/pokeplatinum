@@ -3,11 +3,8 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02002F38_decl.h"
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_defs/sprite_template.h"
 
 #include "overlay100/ov100_021D400C.h"
@@ -19,19 +16,21 @@
 #include "overlay100/struct_ov100_021D54D0.h"
 #include "overlay115/camera_angle.h"
 
+#include "bg_window.h"
 #include "camera.h"
 #include "easy3d_object.h"
+#include "graphics.h"
 #include "heap.h"
+#include "narc.h"
+#include "palette.h"
 #include "sys_task.h"
+#include "text.h"
 #include "trainer_info.h"
-#include "unk_02002F38.h"
 #include "unk_020041CC.h"
 #include "unk_02005474.h"
-#include "unk_02006E3C.h"
 #include "unk_0200C6E4.h"
 #include "unk_0200F174.h"
 #include "unk_0201D15C.h"
-#include "unk_0201D670.h"
 #include "unk_0202419C.h"
 
 static void ov100_021D1C98(UnkStruct_ov100_021D1C98 *param0);
@@ -73,16 +72,16 @@ static void ov100_021D1C44(Camera *camera, VecFx32 *param1)
 static void ov100_021D1C98(UnkStruct_ov100_021D1C98 *param0)
 {
     NARC *v0 = param0->unk_1EBC->unk_00;
-    BGL *v1 = param0->unk_1EBC->unk_0C;
+    BgConfig *v1 = param0->unk_1EBC->unk_0C;
     SpriteRenderer *v2 = param0->unk_1EBC->unk_04;
     SpriteGfxHandler *v3 = param0->unk_1EBC->unk_08;
     PaletteData *v4 = param0->unk_1EBC->unk_10;
     int v5 = 50000;
 
-    sub_020070E8(v0, 18, v1, 5, 0, 0, 0, 111);
-    sub_0200710C(v0, 20, v1, 5, 0, 0, 0, 111);
-    PaletteSys_LoadPalette(v4, 172, 19, 111, 1, 0x20 * 2, 0);
-    PaletteSys_LoadPalette(v4, 172, 19, 111, 0, 0x20 * 2, 0);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(v0, 18, v1, 5, 0, 0, 0, 111);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(v0, 20, v1, 5, 0, 0, 0, 111);
+    PaletteData_LoadBufferFromFileStart(v4, 172, 19, 111, 1, 0x20 * 2, 0);
+    PaletteData_LoadBufferFromFileStart(v4, 172, 19, 111, 0, 0x20 * 2, 0);
 
     SpriteRenderer_LoadPalette(v4, 3, v2, v3, v0, 50, 0, 3, NNS_G2D_VRAM_TYPE_2DSUB, v5);
     SpriteRenderer_LoadCellResObjFromOpenNarc(v2, v3, v0, 48, 0, v5);
@@ -197,7 +196,7 @@ static void ov100_021D2250(UnkStruct_ov100_021D1C98 *param0)
 {
     int v0;
     NARC *v1 = param0->unk_1EBC->unk_00;
-    BGL *v2 = param0->unk_1EBC->unk_0C;
+    BgConfig *v2 = param0->unk_1EBC->unk_0C;
     SpriteRenderer *v3 = param0->unk_1EBC->unk_04;
     SpriteGfxHandler *v4 = param0->unk_1EBC->unk_08;
     PaletteData *v5 = param0->unk_1EBC->unk_10;
@@ -307,13 +306,13 @@ BOOL ov100_021D2428(void *param0)
 
     switch (v0->unk_00) {
     case 0:
-        sub_0200F174(0, 1, 1, 0x7fff, 6, 1, 111);
+        StartScreenTransition(0, 1, 1, 0x7fff, 6, 1, 111);
         v0->unk_1EBC->unk_50.unk_03 = 0;
         G2_SetBlendBrightness((GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BD), v0->unk_1EBC->unk_50.unk_03);
         G2S_SetBlendBrightness((GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_BG1 | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BD), v0->unk_1EBC->unk_50.unk_03);
         v0->unk_00++;
     case 1:
-        if (ScreenWipe_Done() == 0) {
+        if (IsScreenTransitionDone() == 0) {
             break;
         }
         v0->unk_00++;
@@ -339,7 +338,7 @@ BOOL ov100_021D2428(void *param0)
         }
         break;
     case 4:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -375,7 +374,7 @@ BOOL ov100_021D2428(void *param0)
         v0->unk_04 = 0;
         break;
     case 7:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -385,7 +384,7 @@ BOOL ov100_021D2428(void *param0)
         v0->unk_00++;
         break;
     case 8:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -426,7 +425,7 @@ BOOL ov100_021D2428(void *param0)
         }
         break;
     case 9:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -547,7 +546,7 @@ BOOL ov100_021D2428(void *param0)
         }
         break;
     case 16:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -581,7 +580,7 @@ BOOL ov100_021D2428(void *param0)
         }
         break;
     case 18:
-        if (Message_Printing(v0->unk_1EBC->unk_40)) {
+        if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
             break;
         }
 
@@ -624,8 +623,8 @@ BOOL ov100_021D2428(void *param0)
         }
 
         if (v0->unk_1A0.unk_934[4].unk_160 == 0) {
-            if (Message_Printing(v0->unk_1EBC->unk_40)) {
-                PrintString_ForceStop(v0->unk_1EBC->unk_40);
+            if (Text_IsPrinterActive(v0->unk_1EBC->unk_40)) {
+                Text_RemovePrinter(v0->unk_1EBC->unk_40);
             }
 
             v0->unk_1EBC->unk_50.unk_03 = -16;
@@ -646,10 +645,10 @@ BOOL ov100_021D2428(void *param0)
         }
         break;
     case 20:
-        sub_0200F174(0, 0, 0, 0x0, 1, 1, 111);
+        StartScreenTransition(0, 0, 0, 0x0, 1, 1, 111);
         v0->unk_00++;
     case 21:
-        if (ScreenWipe_Done() == 0) {
+        if (IsScreenTransitionDone() == 0) {
             break;
         }
 

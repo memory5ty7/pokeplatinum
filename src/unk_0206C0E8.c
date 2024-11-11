@@ -3,9 +3,7 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_020508D4_decl.h"
 #include "struct_decls/struct_02061AB4_decl.h"
-#include "struct_defs/struct_02049FA8.h"
 
 #include "field/field_system.h"
 #include "field/field_system_sub2_t.h"
@@ -16,14 +14,15 @@
 
 #include "core_sys.h"
 #include "field_map_change.h"
+#include "field_task.h"
 #include "heap.h"
+#include "location.h"
 #include "map_object.h"
 #include "player_avatar.h"
+#include "system_flags.h"
 #include "unk_02005474.h"
-#include "unk_020508D4.h"
 #include "unk_02055808.h"
 #include "unk_02056B30.h"
-#include "unk_0206A8DC.h"
 #include "unk_02070428.h"
 #include "vars_flags.h"
 
@@ -36,7 +35,7 @@ typedef struct {
     u8 unk_0E;
 } UnkStruct_0206C0E8;
 
-static BOOL sub_0206C120(TaskManager *taskMan);
+static BOOL sub_0206C120(FieldTask *taskMan);
 
 void sub_0206C0E8(FieldSystem *fieldSystem)
 {
@@ -47,13 +46,13 @@ void sub_0206C0E8(FieldSystem *fieldSystem)
     v0->unk_0C = 0;
     v0->unk_0D = 0;
 
-    FieldTask_Start(fieldSystem->unk_10, sub_0206C120, v0);
+    FieldTask_InitCall(fieldSystem->task, sub_0206C120, v0);
 }
 
-static BOOL sub_0206C120(TaskManager *taskMan)
+static BOOL sub_0206C120(FieldTask *taskMan)
 {
-    FieldSystem *fieldSystem = TaskManager_FieldSystem(taskMan);
-    UnkStruct_0206C0E8 *v1 = TaskManager_Environment(taskMan);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(taskMan);
+    UnkStruct_0206C0E8 *v1 = FieldTask_GetEnv(taskMan);
 
     switch (v1->unk_0C) {
     case 0:
@@ -64,24 +63,24 @@ static BOOL sub_0206C120(TaskManager *taskMan)
         v1->unk_0C = 1;
         break;
     case 1:
-        sub_02055820(taskMan);
+        FieldTask_FinishFieldMap(taskMan);
         v1->unk_0C = 2;
         break;
     case 2: {
         VarsFlags *v2 = SaveData_GetVarsFlags(fieldSystem->saveData);
 
         if (v1->unk_0D == 0) {
-            sub_0206AE0C(v2);
+            SystemFlag_SetPoketchHidden(v2);
         } else if (v1->unk_0D == 5) {
-            sub_0206AE1C(v2);
+            SystemFlag_ClearPoketchHidden(v2);
         }
     }
 
-        sub_020539A0(taskMan, v1->unk_08);
+        FieldTask_ChangeMapByLocation(taskMan, v1->unk_08);
         v1->unk_0C = 3;
         break;
     case 3:
-        sub_02055868(taskMan);
+        FieldTask_StartFieldMap(taskMan);
         v1->unk_0C = 4;
         break;
     case 4: {

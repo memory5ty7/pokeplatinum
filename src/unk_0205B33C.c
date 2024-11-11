@@ -15,6 +15,7 @@
 #include "communication_information.h"
 #include "communication_system.h"
 #include "field_system.h"
+#include "field_task.h"
 #include "heap.h"
 #include "journal.h"
 #include "message.h"
@@ -30,7 +31,6 @@
 #include "unk_0201D15C.h"
 #include "unk_02033200.h"
 #include "unk_020366A0.h"
-#include "unk_020508D4.h"
 #include "unk_0205C980.h"
 #include "unk_02071D40.h"
 #include "unk_02095E98.h"
@@ -104,7 +104,7 @@ static int sub_0205BCD4(int param0, int param1, StringTemplate *param2);
 static void sub_0205B408(UnkStruct_0205B43C *param0);
 static void sub_0205BFF0(UnkStruct_0205B4F8 *param0);
 
-UnkStruct_0205B43C *sub_0205B33C(FieldSystem *fieldSystem)
+UnkStruct_0205B43C *FieldSystem_InitCommUnionRoom(FieldSystem *fieldSystem)
 {
     UnkStruct_0205B43C *v0 = NULL;
 
@@ -150,7 +150,7 @@ static UnkStruct_0205B43C *sub_0205B3A0(FieldSystem *fieldSystem)
         return NULL;
     }
 
-    v1 = FieldSystem_SaveData(fieldSystem);
+    v1 = FieldSystem_GetSaveData(fieldSystem);
     sub_020369EC(v1);
 
     v2 = (UnkStruct_0205B43C *)Heap_AllocFromHeap(31, sizeof(UnkStruct_0205B43C));
@@ -355,7 +355,7 @@ static void sub_0205B634(UnkStruct_0205B43C *param0)
 
 static void sub_0205B694(UnkStruct_0205B43C *param0)
 {
-    if (!sub_020509A4(param0->fieldSystem)) {
+    if (!FieldSystem_IsRunningTask(param0->fieldSystem)) {
         sub_02036AC4();
         sub_0205C160(param0);
         sub_0205BEA8(0);
@@ -705,7 +705,7 @@ void sub_0205BA08(int param0, int param1, void *param2, void *param3)
 
     if (param0 != CommSys_CurNetId()) {
         v3 = sub_0202C0EC((u16 *)TrainerInfo_Name(v2), TrainerInfo_Gender(v2), 31);
-        sub_0202B758(fieldSystem->unk_9C, v3, 4);
+        Journal_SaveData(fieldSystem->journal, v3, 4);
     }
 }
 

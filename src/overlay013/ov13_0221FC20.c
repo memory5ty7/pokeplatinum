@@ -4,9 +4,8 @@
 #include <string.h>
 
 #include "struct_decls/battle_system.h"
-#include "struct_decls/struct_02006C24_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 
+#include "applications/pokemon_summary_screen/main.h"
 #include "battle/ov16_0223DF00.h"
 #include "overlay013/ov13_02221A88.h"
 #include "overlay013/ov13_02224500.h"
@@ -16,34 +15,31 @@
 #include "overlay013/struct_ov13_022213F0.h"
 #include "overlay013/struct_ov13_02221ED0.h"
 #include "overlay013/struct_ov13_022236B8.h"
-#include "overlay084/struct_ov84_0223BA5C.h"
-#include "overlay097/struct_ov97_0222DB78.h"
 
 #include "bag.h"
+#include "bg_window.h"
 #include "core_sys.h"
+#include "font.h"
+#include "graphics.h"
 #include "gx_layers.h"
 #include "heap.h"
 #include "item.h"
 #include "message.h"
 #include "move_table.h"
 #include "narc.h"
+#include "palette.h"
 #include "party.h"
 #include "pokemon.h"
-#include "pokemon_summary_app.h"
+#include "render_window.h"
 #include "strbuf.h"
 #include "string_template.h"
 #include "sys_task_manager.h"
+#include "text.h"
 #include "touch_screen.h"
-#include "unk_02002B7C.h"
-#include "unk_02002F38.h"
 #include "unk_02005474.h"
 #include "unk_0200679C.h"
-#include "unk_02006E3C.h"
 #include "unk_0200C440.h"
 #include "unk_0200C6E4.h"
-#include "unk_0200DA60.h"
-#include "unk_02018340.h"
-#include "unk_0201D670.h"
 #include "unk_0208C098.h"
 #include "unk_02094EDC.h"
 
@@ -77,7 +73,7 @@ static u8 ov13_02220BA4(SysTask *param0, UnkStruct_ov13_022213F0 *param1);
 static u8 ov13_0222029C(UnkStruct_ov13_022213F0 *param0);
 static u8 ov13_0221FFDC(UnkStruct_ov13_022213F0 *param0);
 static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0);
-static void ov13_02220D1C(BGL *param0);
+static void ov13_02220D1C(BgConfig *param0);
 static void ov13_02220D4C(UnkStruct_ov13_022213F0 *param0);
 static void ov13_02220F08(UnkStruct_ov13_022213F0 *param0);
 static void ov13_02220F60(UnkStruct_ov13_022213F0 *param0);
@@ -312,7 +308,7 @@ static u8 ov13_0221FE5C(UnkStruct_ov13_022213F0 *param0)
     ov13_02220D4C(param0);
     ov13_02220F08(param0);
 
-    sub_02002BB8(2, param0->unk_00->unk_0C);
+    Font_InitManager(FONT_SUBSCREEN, param0->unk_00->unk_0C);
 
     ov13_02221738(param0, param0->unk_2076);
     ov13_022260EC(param0, param0->unk_2076);
@@ -333,14 +329,14 @@ static u8 ov13_0221FE5C(UnkStruct_ov13_022213F0 *param0)
     ov13_0222563C(param0, param0->unk_2076);
     ov13_022214E0(param0, param0->unk_2076);
 
-    sub_02003178(param0->unk_1E4, (0x2 | 0x8), 0xffff, -8, 16, 0, 0);
+    PaletteData_StartFade(param0->unk_1E4, (0x2 | 0x8), 0xffff, -8, 16, 0, 0);
 
     return v0;
 }
 
 static u8 ov13_0221FF60(UnkStruct_ov13_022213F0 *param0)
 {
-    if (sub_0200384C(param0->unk_1E4) != 0) {
+    if (PaletteData_GetSelectedBuffersMask(param0->unk_1E4) != 0) {
         return 1;
     }
 
@@ -840,13 +836,13 @@ static u8 ov13_0222081C(UnkStruct_ov13_022213F0 *param0)
 
 static u8 ov13_02220834(UnkStruct_ov13_022213F0 *param0)
 {
-    sub_0200E084(&param0->unk_204C[1], 0);
+    Window_EraseMessageBox(&param0->unk_204C[1], 0);
     return 2;
 }
 
 static u8 ov13_02220848(UnkStruct_ov13_022213F0 *param0)
 {
-    if (Message_Printing(param0->unk_2077) == 0) {
+    if (Text_IsPrinterActive(param0->unk_2077) == 0) {
         return 18;
     }
 
@@ -881,10 +877,10 @@ static u8 ov13_022208A4(UnkStruct_ov13_022213F0 *param0)
         ov13_02224144(param0);
 
         if (param0->unk_2076 == 5) {
-            param0->unk_207C[0] = (u16)Pokemon_GetValue(param0->unk_04[v0->unk_11].unk_00, 58 + v0->unk_34, NULL);
+            param0->unk_207C[0] = (u16)Pokemon_GetValue(param0->unk_04[v0->unk_11].unk_00, MON_DATA_MOVE1_CUR_PP + v0->unk_34, NULL);
             param0->unk_2078 = 2;
         } else {
-            param0->unk_04[v0->unk_11].unk_17_3 = PokemonSummary_StatusIconAnimIdx(param0->unk_04[v0->unk_11].unk_00);
+            param0->unk_04[v0->unk_11].unk_17_3 = PokemonSummaryScreen_StatusIconAnimIdx(param0->unk_04[v0->unk_11].unk_00);
 
             if (param0->unk_04[v0->unk_11].unk_17_3 == 7) {
                 SpriteActor_EnableObject(param0->unk_1FB4[13 + v0->unk_11], 0);
@@ -988,13 +984,13 @@ static u8 ov13_02220A4C(UnkStruct_ov13_022213F0 *param0)
 
 static u8 ov13_02220B78(UnkStruct_ov13_022213F0 *param0)
 {
-    sub_02003178(param0->unk_1E4, (0x2 | 0x8), 0xffff, -8, 0, 16, 0);
+    PaletteData_StartFade(param0->unk_1E4, (0x2 | 0x8), 0xffff, -8, 0, 16, 0);
     return 26;
 }
 
 static u8 ov13_02220BA4(SysTask *param0, UnkStruct_ov13_022213F0 *param1)
 {
-    if (sub_0200384C(param1->unk_1E4) != 0) {
+    if (PaletteData_GetSelectedBuffersMask(param1->unk_1E4) != 0) {
         return 0;
     }
 
@@ -1006,7 +1002,7 @@ static u8 ov13_02220BA4(SysTask *param0, UnkStruct_ov13_022213F0 *param1)
     param1->unk_00->unk_32 = ov13_02228A5C(param1->unk_2084);
 
     ov13_02228A50(param1->unk_2084);
-    sub_02002C60(2);
+    Font_Free(FONT_SUBSCREEN);
 
     param1->unk_00->unk_36 = 1;
     SysTask_FinishAndFreeParam(param0);
@@ -1017,18 +1013,18 @@ static u8 ov13_02220BA4(SysTask *param0, UnkStruct_ov13_022213F0 *param1)
 static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0)
 {
     {
-        UnkStruct_ov84_0223BA5C v0 = {
+        GraphicsModes v0 = {
             GX_DISPMODE_GRAPHICS,
             GX_BGMODE_0,
             GX_BGMODE_0,
             GX_BG0_AS_3D,
         };
 
-        sub_020183A0(&v0, 1);
+        SetScreenGraphicsModes(&v0, DS_SCREEN_SUB);
     }
 
     {
-        UnkStruct_ov97_0222DB78 v1 = {
+        BgTemplate v1 = {
             0,
             0,
             0x800,
@@ -1044,11 +1040,11 @@ static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0)
             0
         };
 
-        sub_020183C4(param0->unk_1E0, 7, &v1, 0);
+        Bg_InitFromTemplate(param0->unk_1E0, 7, &v1, 0);
     }
 
     {
-        UnkStruct_ov97_0222DB78 v2 = {
+        BgTemplate v2 = {
             0,
             0,
             0x800,
@@ -1064,11 +1060,11 @@ static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0)
             0
         };
 
-        sub_020183C4(param0->unk_1E0, 6, &v2, 0);
+        Bg_InitFromTemplate(param0->unk_1E0, 6, &v2, 0);
     }
 
     {
-        UnkStruct_ov97_0222DB78 v3 = {
+        BgTemplate v3 = {
             0,
             0,
             0x800,
@@ -1084,12 +1080,12 @@ static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0)
             0
         };
 
-        sub_020183C4(param0->unk_1E0, 5, &v3, 0);
-        sub_02019EBC(param0->unk_1E0, 5);
+        Bg_InitFromTemplate(param0->unk_1E0, 5, &v3, 0);
+        Bg_ClearTilemap(param0->unk_1E0, 5);
     }
 
     {
-        UnkStruct_ov97_0222DB78 v4 = {
+        BgTemplate v4 = {
             0,
             0,
             0x800,
@@ -1105,23 +1101,23 @@ static void ov13_02220C0C(UnkStruct_ov13_022213F0 *param0)
             0
         };
 
-        sub_020183C4(param0->unk_1E0, 4, &v4, 0);
-        sub_02019EBC(param0->unk_1E0, 4);
+        Bg_InitFromTemplate(param0->unk_1E0, 4, &v4, 0);
+        Bg_ClearTilemap(param0->unk_1E0, 4);
     }
 
-    sub_02019690(5, 32, 0, param0->unk_00->unk_0C);
-    sub_02019690(4, 32, 0, param0->unk_00->unk_0C);
-    sub_0201C3C0(param0->unk_1E0, 5);
-    sub_0201C3C0(param0->unk_1E0, 4);
+    Bg_ClearTilesRange(5, 32, 0, param0->unk_00->unk_0C);
+    Bg_ClearTilesRange(4, 32, 0, param0->unk_00->unk_0C);
+    Bg_ScheduleTilemapTransfer(param0->unk_1E0, 5);
+    Bg_ScheduleTilemapTransfer(param0->unk_1E0, 4);
 }
 
-static void ov13_02220D1C(BGL *param0)
+static void ov13_02220D1C(BgConfig *param0)
 {
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_BG0 | GX_PLANEMASK_BG1 | GX_PLANEMASK_BG2 | GX_PLANEMASK_BG3 | GX_PLANEMASK_OBJ, 0);
-    sub_02019044(param0, 4);
-    sub_02019044(param0, 5);
-    sub_02019044(param0, 6);
-    sub_02019044(param0, 7);
+    Bg_FreeTilemapBuffer(param0, 4);
+    Bg_FreeTilemapBuffer(param0, 5);
+    Bg_FreeTilemapBuffer(param0, 6);
+    Bg_FreeTilemapBuffer(param0, 7);
 }
 
 static void ov13_02220D4C(UnkStruct_ov13_022213F0 *param0)
@@ -1129,7 +1125,7 @@ static void ov13_02220D4C(UnkStruct_ov13_022213F0 *param0)
     NARC *v0;
 
     v0 = NARC_ctor(NARC_INDEX_BATTLE__GRAPHIC__PL_B_PLIST_GRA, param0->unk_00->unk_0C);
-    sub_020070E8(v0, 22, param0->unk_1E0, 7, 0, 0, 0, param0->unk_00->unk_0C);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(v0, 22, param0->unk_1E0, 7, 0, 0, 0, param0->unk_00->unk_0C);
 
     {
         NNSG2dScreenData *v1;
@@ -1147,33 +1143,33 @@ static void ov13_02220D4C(UnkStruct_ov13_022213F0 *param0)
         Heap_FreeToHeap(v2);
     }
 
-    PaletteSys_LoadPalette(param0->unk_1E4, 72, 23, param0->unk_00->unk_0C, 1, 0x20 * 16, 0);
+    PaletteData_LoadBufferFromFileStart(param0->unk_1E4, 72, 23, param0->unk_00->unk_0C, 1, 0x20 * 16, 0);
     NARC_dtor(v0);
 
     {
-        u16 *v3 = sub_02003164(param0->unk_1E4, 1);
+        u16 *v3 = PaletteData_GetUnfadedBuffer(param0->unk_1E4, 1);
         memcpy(param0->unk_1F5C, &v3[12 * 16], 0x20 * 2);
     }
 
-    PaletteSys_LoadPalette(param0->unk_1E4, 14, 6, param0->unk_00->unk_0C, 1, 0x20, 13 * 16);
-    PaletteSys_LoadPalette(param0->unk_1E4, 14, 7, param0->unk_00->unk_0C, 1, 0x20, 15 * 16);
+    PaletteData_LoadBufferFromFileStart(param0->unk_1E4, 14, 6, param0->unk_00->unk_0C, 1, 0x20, 13 * 16);
+    PaletteData_LoadBufferFromFileStart(param0->unk_1E4, 14, 7, param0->unk_00->unk_0C, 1, 0x20, 15 * 16);
 
     {
         int v4 = ov16_0223EDE0(param0->unk_00->unk_08);
 
-        sub_02006E3C(38, sub_0200DD04(v4), param0->unk_1E0, 4, 1, 0, 0, param0->unk_00->unk_0C);
-        PaletteSys_LoadPalette(param0->unk_1E4, 38, sub_0200DD08(v4), param0->unk_00->unk_0C, 1, 0x20, 14 * 16);
+        Graphics_LoadTilesToBgLayer(38, GetMessageBoxTilesNARCMember(v4), param0->unk_1E0, 4, 1, 0, 0, param0->unk_00->unk_0C);
+        PaletteData_LoadBufferFromFileStart(param0->unk_1E4, 38, GetMessageBoxPaletteNARCMember(v4), param0->unk_00->unk_0C, 1, 0x20, 14 * 16);
     }
 
     {
-        u16 *v5 = sub_02003164(param0->unk_1E4, 1);
+        u16 *v5 = PaletteData_GetUnfadedBuffer(param0->unk_1E4, 1);
         u16 *v6 = Heap_AllocFromHeap(param0->unk_00->unk_0C, 0x20);
 
         memcpy(v6, &v5[13 * 16], 0x20);
         memcpy(&v6[7], &v5[9 * 16 + 10], 4);
         memcpy(&v6[3], &v5[9 * 16 + 12], 4);
 
-        sub_02002FBC(param0->unk_1E4, v6, 1, 13 * 16, 0x20);
+        PaletteData_LoadBuffer(param0->unk_1E4, v6, 1, 13 * 16, 0x20);
         Heap_FreeToHeap(v6);
     }
 }
@@ -1224,7 +1220,7 @@ static void ov13_02220F98(UnkStruct_ov13_022213F0 *param0)
         }
 
         param0->unk_04[v0].unk_17_0 = Pokemon_GetGender(param0->unk_04[v0].unk_00);
-        param0->unk_04[v0].unk_17_3 = PokemonSummary_StatusIconAnimIdx(param0->unk_04[v0].unk_00);
+        param0->unk_04[v0].unk_17_3 = PokemonSummaryScreen_StatusIconAnimIdx(param0->unk_04[v0].unk_00);
         param0->unk_04[v0].unk_17_7 = (u8)Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_IS_EGG, NULL);
         param0->unk_04[v0].unk_18 = (u16)Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_ABILITY, NULL);
         param0->unk_04[v0].unk_1A = (u16)Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_HELD_ITEM, NULL);
@@ -1245,7 +1241,7 @@ static void ov13_02220F98(UnkStruct_ov13_022213F0 *param0)
         param0->unk_04[v0].unk_2D = (u16)Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_MAIL_ID, NULL);
         param0->unk_04[v0].unk_2E = (u8)Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_FORM, NULL);
 
-        for (v1 = 0; v1 < 4; v1++) {
+        for (v1 = 0; v1 < LEARNED_MOVES_MAX; v1++) {
             UnkStruct_ov13_022236B8 *v2 = &param0->unk_04[v0].unk_30[v1];
 
             v2->unk_00 = Pokemon_GetValue(param0->unk_04[v0].unk_00, MON_DATA_MOVE1 + v1, NULL);
@@ -1488,20 +1484,20 @@ static void ov13_022214E0(UnkStruct_ov13_022213F0 *param0, u8 param1)
         }
     }
 
-    sub_0201C3C0(param0->unk_1E0, 7);
+    Bg_ScheduleTilemapTransfer(param0->unk_1E0, 7);
 }
 
 static void ov13_02221560(UnkStruct_ov13_022213F0 *param0, u16 param1, u16 param2, u16 param3)
 {
-    sub_02019CB8(param0->unk_1E0, 7, param1, param2, param3, 1, 1, 16);
+    Bg_FillTilemapRect(param0->unk_1E0, 7, param1, param2, param3, 1, 1, 16);
 }
 
 static void ov13_02221590(UnkStruct_ov13_022213F0 *param0, u16 param1, u8 param2)
 {
-    sub_02019CB8(param0->unk_1E0, 7, param1, 2 + param2 * 2, 14, 1, 1, 16);
-    sub_02019CB8(param0->unk_1E0, 7, param1 + 1, 2 + param2 * 2 + 1, 14, 1, 1, 16);
-    sub_02019CB8(param0->unk_1E0, 7, param1 + 32, 2 + param2 * 2, 14 + 1, 1, 1, 16);
-    sub_02019CB8(param0->unk_1E0, 7, param1 + 33, 2 + param2 * 2 + 1, 14 + 1, 1, 1, 16);
+    Bg_FillTilemapRect(param0->unk_1E0, 7, param1, 2 + param2 * 2, 14, 1, 1, 16);
+    Bg_FillTilemapRect(param0->unk_1E0, 7, param1 + 1, 2 + param2 * 2 + 1, 14, 1, 1, 16);
+    Bg_FillTilemapRect(param0->unk_1E0, 7, param1 + 32, 2 + param2 * 2, 14 + 1, 1, 1, 16);
+    Bg_FillTilemapRect(param0->unk_1E0, 7, param1 + 33, 2 + param2 * 2 + 1, 14 + 1, 1, 1, 16);
 }
 
 static void ov13_02221630(UnkStruct_ov13_022213F0 *param0)
@@ -1541,15 +1537,15 @@ static void ov13_02221654(UnkStruct_ov13_022213F0 *param0, u8 param1)
         ov13_02221590(param0, 0x140, v1);
     }
 
-    sub_0201C3C0(param0->unk_1E0, 7);
+    Bg_ScheduleTilemapTransfer(param0->unk_1E0, 7);
 }
 
 static void ov13_022216C0(UnkStruct_ov13_022213F0 *param0, u8 param1)
 {
     ov13_02221738(param0, param1);
 
-    sub_02019F04(param0->unk_1E0, 4, 0);
-    sub_02019F04(param0->unk_1E0, 5, 0);
+    Bg_ScheduleFillTilemap(param0->unk_1E0, 4, 0);
+    Bg_ScheduleFillTilemap(param0->unk_1E0, 5, 0);
 
     ov13_02224B7C(param0, param1);
     ov13_02221BB0(param0);
@@ -1586,8 +1582,8 @@ static void ov13_02221738(UnkStruct_ov13_022213F0 *param0, u8 param1)
     for (v2 = 0; v2 < 2; v2++) {
         v1 = NARC_AllocAndReadWholeMemberByIndexPair(NARC_INDEX_BATTLE__GRAPHIC__PL_B_PLIST_GRA, Unk_ov13_02228E50[param1][v2], param0->unk_00->unk_0C);
         NNS_G2dGetUnpackedScreenData(v1, &v0);
-        sub_020198C0(param0->unk_1E0, 6 + v2, (u16 *)v0->rawData, 0, 0, 32, 24);
-        sub_0201C3C0(param0->unk_1E0, 6 + v2);
+        Bg_LoadToTilemapRect(param0->unk_1E0, 6 + v2, (u16 *)v0->rawData, 0, 0, 32, 24);
+        Bg_ScheduleTilemapTransfer(param0->unk_1E0, 6 + v2);
         Heap_FreeToHeap(v1);
     }
 }
@@ -1720,15 +1716,15 @@ static u8 ov13_022219DC(UnkStruct_ov13_022213F0 *param0)
 static void ov13_02221A04(UnkStruct_ov13_022213F0 *param0)
 {
     SpriteActor_EnableObject(param0->unk_1FB4[26], 0);
-    sub_0201AD10(&param0->unk_206C[10]);
-    sub_0201AD10(&param0->unk_206C[6]);
-    sub_0201AD10(&param0->unk_206C[7]);
+    Window_ClearAndScheduleCopyToVRAM(&param0->unk_206C[10]);
+    Window_ClearAndScheduleCopyToVRAM(&param0->unk_206C[6]);
+    Window_ClearAndScheduleCopyToVRAM(&param0->unk_206C[7]);
 }
 
 static void ov13_02221A3C(UnkStruct_ov13_022213F0 *param0)
 {
     ov13_02221630(param0);
-    sub_0201C3C0(param0->unk_1E0, 7);
+    Bg_ScheduleTilemapTransfer(param0->unk_1E0, 7);
 }
 
 static void ov13_02221A54(BattleSystem *param0, u16 param1, u16 param2, u32 param3)
@@ -1737,5 +1733,5 @@ static void ov13_02221A54(BattleSystem *param0, u16 param1, u16 param2, u32 para
         Bag_TryRemoveItem(BattleSystem_Bag(param0), param1, 1, param3);
     }
 
-    Bag_SetLastItemUsed(BattleSystem_BagCursor(param0), param1, param2);
+    Bag_SetLastBattleItemUsed(BattleSystem_BagCursor(param0), param1, param2);
 }

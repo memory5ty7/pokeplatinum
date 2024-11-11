@@ -8,16 +8,16 @@
 #include "struct_defs/struct_0202F298_sub1.h"
 #include "struct_defs/struct_0202F41C.h"
 
-#include "overlay006/battle_params.h"
 #include "savedata/save_table.h"
 
+#include "field_battle_data_transfer.h"
+#include "font.h"
 #include "heap.h"
 #include "message.h"
 #include "party.h"
 #include "pokemon.h"
 #include "savedata.h"
 #include "strbuf.h"
-#include "unk_02002B7C.h"
 #include "unk_02017728.h"
 #include "unk_0202F1D4.h"
 
@@ -25,7 +25,7 @@ static void ov62_0224856C(Strbuf *param0, int param1);
 
 extern BattleRecording *Unk_021C07A4;
 
-void ov62_02248408(BattleRecording *param0, BattleParams *param1, int param2)
+void ov62_02248408(BattleRecording *param0, FieldBattleDTO *param1, int param2)
 {
     UnkStruct_0202F298 *v0 = &param0->unk_E8;
     UnkStruct_0202F41C *v1 = &param0->unk_84;
@@ -57,7 +57,7 @@ void ov62_02248408(BattleRecording *param0, BattleParams *param1, int param2)
         Strbuf_Clear(v6);
         Strbuf_CopyChars(v6, param1->trainerData[v4].name);
 
-        if (sub_02002DB4(0, v6, v7) == 0) {
+        if (Font_AreAllCharsValid(FONT_SYSTEM, v6, v7) == 0) {
             ov62_0224856C(v7, param2);
             Strbuf_ToChars(v7, param1->trainerData[v4].name, 8);
             continue;
@@ -80,8 +80,8 @@ void ov62_02248408(BattleRecording *param0, BattleParams *param1, int param2)
             Strbuf_Clear(v6);
             Strbuf_CopyChars(v6, v8);
 
-            if (sub_02002DB4(0, v6, v7) == 0) {
-                Pokemon_SetValue(v13, 179, NULL);
+            if (Font_AreAllCharsValid(FONT_SYSTEM, v6, v7) == 0) {
+                Pokemon_SetValue(v13, MON_DATA_SPECIES_NAME, NULL);
                 continue;
             }
         }

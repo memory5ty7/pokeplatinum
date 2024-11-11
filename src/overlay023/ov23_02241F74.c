@@ -34,22 +34,22 @@
 #include "core_sys.h"
 #include "field_system.h"
 #include "game_options.h"
+#include "graphics.h"
 #include "heap.h"
 #include "message.h"
+#include "render_window.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "strbuf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
+#include "system_flags.h"
 #include "trainer_info.h"
-#include "unk_02006E3C.h"
-#include "unk_0200DA60.h"
 #include "unk_0202854C.h"
 #include "unk_02030EE0.h"
 #include "unk_020366A0.h"
 #include "unk_02054D00.h"
-#include "unk_0206A8DC.h"
 #include "vars_flags.h"
 
 typedef BOOL (*UnkFuncPtr_ov23_02242540)(int, int);
@@ -137,15 +137,15 @@ static void CommManUnderground_Init(CommManUnderground *param0, FieldSystem *fie
     sCommManUnderground->unk_1C.unk_02 = 0;
     sCommManUnderground->unk_14B = 0;
     sCommManUnderground->unk_147 = 1;
-    sCommManUnderground->unk_118 = ov23_02253D48(634, 33, fieldSystem->unk_08, v0, 500);
-    sCommManUnderground->unk_11C = ov23_02253D48(638, 33, fieldSystem->unk_08, v0, 0);
-    sCommManUnderground->unk_120 = ov23_02253D48(636, 33, fieldSystem->unk_08, v0, 1000);
-    sCommManUnderground->unk_124 = ov23_02253D48(637, 33, fieldSystem->unk_08, v0, 0);
-    sCommManUnderground->unk_128 = ov23_02253D48(630, 33, fieldSystem->unk_08, v0, 0);
+    sCommManUnderground->unk_118 = ov23_02253D48(634, 33, fieldSystem->bgConfig, v0, 500);
+    sCommManUnderground->unk_11C = ov23_02253D48(638, 33, fieldSystem->bgConfig, v0, 0);
+    sCommManUnderground->unk_120 = ov23_02253D48(636, 33, fieldSystem->bgConfig, v0, 1000);
+    sCommManUnderground->unk_124 = ov23_02253D48(637, 33, fieldSystem->bgConfig, v0, 0);
+    sCommManUnderground->unk_128 = ov23_02253D48(630, 33, fieldSystem->bgConfig, v0, 0);
 
-    sub_0200DD0C(sCommManUnderground->fieldSystem->unk_08, 3, (1024 - (18 + 12)), 10, 0, 4);
-    sub_02006E84(50, 52, 0, 10 * 0x20, 4 * 0x20, 4);
-    sub_0200DAA4(sCommManUnderground->fieldSystem->unk_08, 3, 1024 - (18 + 12) - 9, 11, 2, 4);
+    LoadMessageBoxGraphics(sCommManUnderground->fieldSystem->bgConfig, 3, (1024 - (18 + 12)), 10, 0, 4);
+    Graphics_LoadPalette(50, 52, 0, 10 * 0x20, 4 * 0x20, 4);
+    LoadStandardWindowGraphics(sCommManUnderground->fieldSystem->bgConfig, 3, 1024 - (18 + 12) - 9, 11, 2, 4);
 
     for (v1 = 0; v1 < (7 + 1); v1++) {
         sCommManUnderground->unk_C2[v1] = 0xff;
@@ -153,7 +153,7 @@ static void CommManUnderground_Init(CommManUnderground *param0, FieldSystem *fie
         sCommManUnderground->unk_DC[v1] = NULL;
     }
 
-    sub_0206A9F4(SaveData_GetVarsFlags(sCommManUnderground->fieldSystem->saveData));
+    SystemFlag_SetEnteredUnderground(SaveData_GetVarsFlags(sCommManUnderground->fieldSystem->saveData));
     sCommManUnderground->unk_14 = SysTask_Start(ov23_02243310, NULL, 0);
     sub_02032110(ov23_022433F4);
 }
@@ -761,7 +761,7 @@ void ov23_02242B14(void)
     ov23_0223E878();
 
     if (!sCommManUnderground->unk_14B) {
-        ov23_022468A8(sCommManUnderground->fieldSystem->unk_08);
+        ov23_022468A8(sCommManUnderground->fieldSystem->bgConfig);
     }
 }
 
@@ -789,8 +789,8 @@ void ov23_02242BC0(FieldSystem *fieldSystem)
         ov23_0223E1E4(v0, fieldSystem);
 
         v0 = Heap_AllocFromHeap(15, ov23_02253608());
-        ov23_02253598(v0, SaveData_SecretBaseRecord(FieldSystem_SaveData(fieldSystem)), FieldSystem_SaveData(fieldSystem));
-        ov23_0224F588(sub_020298B0(FieldSystem_SaveData(fieldSystem)));
+        ov23_02253598(v0, SaveData_SecretBaseRecord(FieldSystem_GetSaveData(fieldSystem)), FieldSystem_GetSaveData(fieldSystem));
+        ov23_0224F588(sub_020298B0(FieldSystem_GetSaveData(fieldSystem)));
     }
 }
 
@@ -819,7 +819,7 @@ void ov23_02242CB4(void)
         ov23_022435A8();
         ov23_0223E2F4();
         sCommManUnderground->unk_14B = 0;
-        sub_0200DD0C(sCommManUnderground->fieldSystem->unk_08, 3, (1024 - (18 + 12)), 10, 0, 4);
+        LoadMessageBoxGraphics(sCommManUnderground->fieldSystem->bgConfig, 3, (1024 - (18 + 12)), 10, 0, 4);
     }
 }
 
@@ -1192,7 +1192,7 @@ BOOL ov23_02243298(int param0)
         return 0;
     }
 
-    if (sCommManUnderground->fieldSystem->unk_10) {
+    if (sCommManUnderground->fieldSystem->task) {
         sCommManUnderground->unk_130++;
 
         if (sCommManUnderground->unk_130 > 100) {

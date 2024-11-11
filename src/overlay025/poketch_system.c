@@ -5,15 +5,15 @@
 
 #include "consts/sdat.h"
 
-#include "struct_decls/struct_02018340_decl.h"
-
 #include "field/field_system_decl.h"
 #include "overlay025/ov25_02254560.h"
 #include "overlay025/poketch_button.h"
 #include "overlay025/struct_ov25_02254560_decl.h"
 
+#include "bg_window.h"
 #include "enums.h"
 #include "field_system.h"
+#include "field_task.h"
 #include "game_overlay.h"
 #include "gender.h"
 #include "heap.h"
@@ -25,7 +25,6 @@
 #include "trainer_info.h"
 #include "unk_02005474.h"
 #include "unk_0201E3D8.h"
-#include "unk_020508D4.h"
 #include "unk_02099D44.h"
 
 FS_EXTERN_OVERLAY(overlay26);
@@ -118,7 +117,7 @@ static PoketchSystem *PoketchSystem_GetFromFieldSystem(void)
     return FieldSystem_GetPoketchSystem();
 }
 
-void PoketchSystem_Create(FieldSystem *fieldSystem, PoketchSystem **poketchSys, SaveData *saveData, BGL *bgl, NNSG2dOamManagerInstance *oamManager)
+void PoketchSystem_Create(FieldSystem *fieldSystem, PoketchSystem **poketchSys, SaveData *saveData, BgConfig *bgl, NNSG2dOamManagerInstance *oamManager)
 {
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_POKETCH_MAIN, HEAP_SIZE_POKETCH_MAIN);
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_POKETCH_APP, HEAP_SIZE_POKETCH_APP);
@@ -717,7 +716,7 @@ BOOL PoketchSystem_GetDisplayTappedCoords(u32 *x, u32 *y)
 
 BOOL ov25_0225450C(const PoketchSystem *poketchSys)
 {
-    return sub_020509A4(poketchSys->fieldSystem);
+    return FieldSystem_IsRunningTask(poketchSys->fieldSystem);
 }
 
 void ov25_02254518(const PoketchSystem *poketchSys, PoketchButtonManager *buttonManager)

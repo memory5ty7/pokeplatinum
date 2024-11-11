@@ -5,7 +5,6 @@
 
 #include "consts/sdat.h"
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_defs/struct_0207C690.h"
 #include "struct_defs/struct_02099F80.h"
 
@@ -18,9 +17,9 @@
 #include "heap.h"
 #include "narc.h"
 #include "overlay_manager.h"
+#include "render_text.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
-#include "unk_02002328.h"
 #include "unk_02005474.h"
 #include "unk_0200F174.h"
 #include "unk_02017728.h"
@@ -89,15 +88,15 @@ BOOL DWWarp_Init(OverlayManager *ovy, int *state)
 
     DWWarp_InitModel(dww);
     DWWarp_InitCamera(dww);
-    sub_0200F174(0, 1, 1, 0x0, 16, 1, HEAP_ID_DISTORTION_WORLD_WARP);
+    StartScreenTransition(0, 1, 1, 0x0, 16, 1, HEAP_ID_DISTORTION_WORLD_WARP);
 
     gCoreSys.unk_65 = 0;
 
     GXLayers_SwapDisplay();
     GXLayers_TurnBothDispOn();
-    sub_02002AC8(1);
-    sub_02002AE4(0);
-    sub_02002B20(0);
+    RenderControlFlags_SetCanABSpeedUpPrint(1);
+    RenderControlFlags_SetAutoScrollFlags(0);
+    RenderControlFlags_SetSpeedUpOnTouch(0);
 
     dww->task = SysTask_Start(DWWarp_Update, dww, 60000);
     SetMainCallback(DWWarp_VBlankIntr, dww);
@@ -118,7 +117,7 @@ BOOL DWWarp_Main(OverlayManager *ovy, int *state)
 
     switch (*state) {
     case DWARP_SEQ_SCREENWIPE:
-        if (ScreenWipe_Done() == TRUE) {
+        if (IsScreenTransitionDone() == TRUE) {
             (*state)++;
         }
         break;
@@ -135,11 +134,11 @@ BOOL DWWarp_Main(OverlayManager *ovy, int *state)
         }
         break;
     case DWARP_SEQ_CLEAR_SCREEN:
-        sub_0200F174(0, 0, 0, 0x0, 20, 1, 30);
+        StartScreenTransition(0, 0, 0, 0x0, 20, 1, 30);
         (*state)++;
         break;
     case DWARP_SEQ_WAIT:
-        if (ScreenWipe_Done() == TRUE) {
+        if (IsScreenTransitionDone() == TRUE) {
             return TRUE;
         }
         break;
@@ -163,9 +162,9 @@ BOOL DWWarp_Exit(OverlayManager *ovy, int *state)
     SetMainCallback(NULL, NULL);
     DisableHBlank();
     sub_0201E530();
-    sub_02002AC8(0);
-    sub_02002AE4(0);
-    sub_02002B20(0);
+    RenderControlFlags_SetCanABSpeedUpPrint(0);
+    RenderControlFlags_SetAutoScrollFlags(0);
+    RenderControlFlags_SetSpeedUpOnTouch(0);
     OverlayManager_FreeData(ovy);
     Heap_Destroy(HEAP_ID_DISTORTION_WORLD_WARP);
 

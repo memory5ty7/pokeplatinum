@@ -3,7 +3,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02002F38_decl.h"
 #include "struct_defs/struct_0200D0F4.h"
 
 #include "overlay116/ov116_02261870.h"
@@ -21,16 +20,16 @@
 #include "overlay116/struct_ov116_022660A8.h"
 #include "overlay116/union_ov116_02266FEC.h"
 
+#include "bg_window.h"
 #include "easy3d_object.h"
 #include "heap.h"
 #include "inlines.h"
+#include "palette.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
-#include "unk_02002F38.h"
 #include "unk_02005474.h"
 #include "unk_0200C6E4.h"
 #include "unk_0200F174.h"
-#include "unk_02018340.h"
 #include "unk_0201D15C.h"
 
 typedef struct {
@@ -331,7 +330,7 @@ static void ov116_022647BC(SysTask *param0, void *param1)
         FX32_CONST(+2)
     };
 
-    if ((ScreenWipe_Done() == 0) || (v0->unk_A4->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v0->unk_A4->unk_2C.unk_00 == 1)) {
         for (v1 = 0; v1 < 3; v1++) {
             sub_0200D0F4(v0->unk_08[v1]);
         }
@@ -425,7 +424,7 @@ static void ov116_022649E4(SysTask *param0, void *param1)
     UnkStruct_ov116_02264FEC *v0 = param1;
     UnkStruct_ov116_022649E4 *v1 = v0->unk_00->unk_14;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_2C.unk_00 == 1)) {
         *v0->unk_10 = 0;
         SysTask_Done(param0);
         Heap_FreeToHeap(v0);
@@ -629,8 +628,8 @@ static void ov116_0226501C(UnkStruct_ov116_02265470 *param0)
             param0->unk_00++;
         }
 
-        sub_02003A2C(v3, 0, 0x1, *v1 + *v2, 0x0);
-        sub_02003A2C(v3, 1, 0x1, *v1 + *v2, 0x0);
+        PaletteData_BlendMulti(v3, 0, 0x1, *v1 + *v2, 0x0);
+        PaletteData_BlendMulti(v3, 1, 0x1, *v1 + *v2, 0x0);
         break;
 
     case 1:
@@ -656,8 +655,8 @@ static void ov116_0226501C(UnkStruct_ov116_02265470 *param0)
             param0->unk_00++;
         }
 
-        sub_02003A2C(v3, 0, 0x1, *v1 + *v2, 0x0);
-        sub_02003A2C(v3, 1, 0x1, *v1 + *v2, 0x0);
+        PaletteData_BlendMulti(v3, 0, 0x1, *v1 + *v2, 0x0);
+        PaletteData_BlendMulti(v3, 1, 0x1, *v1 + *v2, 0x0);
         break;
 
     default:
@@ -830,7 +829,7 @@ static void ov116_0226534C(SysTask *param0, void *param1)
     UnkStruct_ov116_0226534C *v0 = param1;
     UnkStruct_ov116_022649E4 *v1 = v0->unk_84;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
 
         return;
@@ -872,7 +871,7 @@ static void ov116_0226534C(SysTask *param0, void *param1)
             v0->unk_08[2].unk_50[0] = 1;
             v0->unk_08[3].unk_50[0] = 1;
             v0->unk_08[4].unk_50[0] = 1;
-            sub_020057A4(1393, 0);
+            Sound_StopEffect(1393, 0);
         }
         break;
     }
@@ -972,11 +971,11 @@ static void ov116_022655DC(UnkStruct_ov116_022660A8 *param0)
             v2[v3] = ov116_02264774(&param0->unk_34[v3]);
         }
 
-        sub_0201C63C(param0->unk_30->unk_10, 7, 3, param0->unk_34[0].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 5, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 6, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 1, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 2, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 7, 3, param0->unk_34[0].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 5, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 6, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 1, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 2, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
 
         if (v2[0] && v2[1] && v2[2]) {
             param0->unk_24++;
@@ -994,8 +993,8 @@ static void ov116_022655DC(UnkStruct_ov116_022660A8 *param0)
         *v1 = 6;
     }
 
-    sub_02003A2C(param0->unk_30->unk_14, 0, 0x1, *v0 + *v1, 0x0);
-    sub_02003A2C(param0->unk_30->unk_14, 1, 0x1, *v0 + *v1, 0x0);
+    PaletteData_BlendMulti(param0->unk_30->unk_14, 0, 0x1, *v0 + *v1, 0x0);
+    PaletteData_BlendMulti(param0->unk_30->unk_14, 1, 0x1, *v0 + *v1, 0x0);
 }
 
 static void ov116_02265754(UnkStruct_ov116_022660A8 *param0)
@@ -1018,11 +1017,11 @@ static void ov116_02265754(UnkStruct_ov116_022660A8 *param0)
             v2[v3] = ov116_02264774(&param0->unk_34[v3]);
         }
 
-        sub_0201C63C(param0->unk_30->unk_10, 7, 3, param0->unk_34[0].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 5, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 6, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 1, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
-        sub_0201C63C(param0->unk_30->unk_10, 2, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 7, 3, param0->unk_34[0].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 5, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 6, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 1, 0, param0->unk_34[1].unk_00 >> FX32_SHIFT);
+        Bg_ScheduleScroll(param0->unk_30->unk_10, 2, 0, param0->unk_34[2].unk_00 >> FX32_SHIFT);
 
         if (v2[0] && v2[1] && v2[2]) {
             param0->unk_24++;
@@ -1040,8 +1039,8 @@ static void ov116_02265754(UnkStruct_ov116_022660A8 *param0)
         *v1 = 0;
     }
 
-    sub_02003A2C(param0->unk_30->unk_14, 0, 0x1, *v0 + *v1, 0x0);
-    sub_02003A2C(param0->unk_30->unk_14, 1, 0x1, *v0 + *v1, 0x0);
+    PaletteData_BlendMulti(param0->unk_30->unk_14, 0, 0x1, *v0 + *v1, 0x0);
+    PaletteData_BlendMulti(param0->unk_30->unk_14, 1, 0x1, *v0 + *v1, 0x0);
 }
 
 static int ov116_022658C8(int param0)
@@ -1157,7 +1156,7 @@ static void ov116_0226591C(SysTask *param0, void *param1)
 
     v2 = *v3->unk_0C;
 
-    if ((ScreenWipe_Done() == 0) || (v3->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v3->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }
@@ -1227,7 +1226,7 @@ static void ov116_02265AA4(SysTask *param0, void *param1)
     fx32 v3, v4;
     fx32 v5, v6;
 
-    if ((ScreenWipe_Done() == 0) || (v0->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v0->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }
@@ -1492,7 +1491,7 @@ static void ov116_022660A8(SysTask *param0, void *param1)
     fx32 v4, v5;
     fx32 v6, v7;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }
@@ -1619,7 +1618,7 @@ static void ov116_0226644C(SysTask *param0, void *param1)
     fx32 v4, v5;
     fx32 v6, v7;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }
@@ -1737,7 +1736,7 @@ static void ov116_022667F4(SysTask *param0, void *param1)
     fx32 v4, v5;
     fx32 v6, v7;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }
@@ -1883,7 +1882,7 @@ static void ov116_02266BF0(SysTask *param0, void *param1)
     fx32 v4, v5;
     fx32 v6, v7;
 
-    if ((ScreenWipe_Done() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
+    if ((IsScreenTransitionDone() == 0) || (v1->unk_30->unk_2C.unk_00 == 1)) {
         SysTask_Done(param0);
         return;
     }

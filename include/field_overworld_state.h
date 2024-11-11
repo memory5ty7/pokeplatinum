@@ -3,24 +3,24 @@
 
 #include "struct_decls/struct_0203A790_decl.h"
 #include "struct_decls/struct_0203A79C_decl.h"
-#include "struct_defs/struct_02049FA8.h"
 #include "struct_defs/struct_020556C4.h"
 #include "struct_defs/struct_0205EC34.h"
 
 #include "field/field_system_decl.h"
 
+#include "location.h"
 #include "savedata.h"
 
 int FieldOverworldState_Size(void);
 int FieldOverworldSave_Size(void);
 void FieldOverworldSave_Init(FieldOverworldSave *param0);
 void FieldOverworldState_Init(FieldOverworldState *param0);
-Location *sub_0203A720(FieldOverworldState *param0);
+Location *FieldOverworldState_GetPlayerLocation(FieldOverworldState *param0);
 Location *FieldOverworldState_GetEntranceLocation(FieldOverworldState *param0);
 Location *FieldOverworldState_GetPrevLocation(FieldOverworldState *param0);
 Location *sub_0203A72C(FieldOverworldState *param0);
-Location *sub_0203A730(FieldOverworldState *param0);
-void sub_0203A734(FieldOverworldState *param0, Location *param1);
+Location *FieldOverworldState_GetSpecialLocation(FieldOverworldState *param0);
+void FieldOverworldState_SetSpecialLocation(FieldOverworldState *param0, Location *param1);
 u16 *sub_0203A748(FieldOverworldState *param0);
 u16 FieldOverworldState_GetWeather(const FieldOverworldState *param0);
 void FieldOverworldState_SetWeather(FieldOverworldState *param0, u16 param1);

@@ -7,11 +7,10 @@
 #include "constants/pokemon.h"
 #include "constants/trainer.h"
 
-#include "struct_decls/struct_02006C24_decl.h"
-
 #include "data/trainer_class_genders.h"
-#include "overlay006/battle_params.h"
 
+#include "charcode_util.h"
+#include "field_battle_data_transfer.h"
 #include "heap.h"
 #include "message.h"
 #include "narc.h"
@@ -21,12 +20,11 @@
 #include "savedata_misc.h"
 #include "strbuf.h"
 #include "trainer_data.h"
-#include "unk_020021B0.h"
 #include "unk_0201D15C.h"
 
-static void TrainerData_BuildParty(BattleParams *battleParams, int battler, int heapID);
+static void TrainerData_BuildParty(FieldBattleDTO *battleParams, int battler, int heapID);
 
-void TrainerData_Encounter(BattleParams *battleParams, const SaveData *save, int heapID)
+void TrainerData_Encounter(FieldBattleDTO *battleParams, const SaveData *save, int heapID)
 {
     TrainerData trdata;
     MessageLoader *msgLoader = MessageLoader_Init(MESSAGE_LOADER_NARC_HANDLE, NARC_INDEX_MSGDATA__PL_MSG, 618, heapID);
@@ -41,7 +39,7 @@ void TrainerData_Encounter(BattleParams *battleParams, const SaveData *save, int
         battleParams->trainerData[i] = trdata;
 
         if (trdata.class == TRAINER_CLASS_RIVAL) {
-            GF_strcpy(battleParams->trainerData[i].name, rivalName);
+            CharCode_Copy(battleParams->trainerData[i].name, rivalName);
         } else {
             Strbuf *trainerName = MessageLoader_GetNewStrbuf(msgLoader, battleParams->trainerIDs[i]);
             Strbuf_ToChars(trainerName, battleParams->trainerData[i].name, TRAINER_NAME_LEN + 1);
@@ -170,13 +168,13 @@ u8 TrainerClass_Gender(int trclass)
 }
 
 /**
- * @brief Build the party for a trainer as loaded in the BattleParams struct.
+ * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
  *
- * @param battleParams  The parent BattleParams struct containing trainer data.
+ * @param battleParams  The parent FieldBattleDTO struct containing trainer data.
  * @param battler       Which battler's party is to be loaded.
  * @param heapID        Heap on which to perform any allocations.
  */
-static void TrainerData_BuildParty(BattleParams *battleParams, int battler, int heapID)
+static void TrainerData_BuildParty(FieldBattleDTO *battleParams, int battler, int heapID)
 {
     // must make declarations C89-style to match
     void *buf;

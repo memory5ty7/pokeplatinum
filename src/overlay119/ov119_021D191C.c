@@ -11,16 +11,16 @@
 
 #include "cell_actor.h"
 #include "gx_layers.h"
+#include "menu.h"
+#include "palette.h"
 #include "pokemon.h"
-#include "unk_02001AF4.h"
-#include "unk_02002F38.h"
+#include "text.h"
 #include "unk_020041CC.h"
 #include "unk_02005474.h"
 #include "unk_0200762C.h"
 #include "unk_0200C6E4.h"
 #include "unk_0200F174.h"
 #include "unk_02015F84.h"
-#include "unk_0201D670.h"
 #include "unk_0201F834.h"
 
 static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0);
@@ -78,7 +78,7 @@ static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0)
         ov119_021D1028();
         param0->unk_60++;
     case 2:
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             sub_0200569C();
             sub_02004550(13, 1141, 1);
             param0->unk_60++;
@@ -153,14 +153,14 @@ static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0)
 
         param0->unk_60++;
     case 10:
-        if (Message_Printing(param0->unk_04.unk_08) != 0) {
+        if (Text_IsPrinterActive(param0->unk_04.unk_08) != 0) {
             break;
         }
 
         param0->unk_04.unk_08 = ov119_021D1158(&param0->unk_04.unk_14[0], 1, param0->unk_00->unk_0C.unk_00, param0->unk_04.unk_0C);
         param0->unk_60++;
     case 11:
-        if (Message_Printing(param0->unk_04.unk_08) != 0) {
+        if (Text_IsPrinterActive(param0->unk_04.unk_08) != 0) {
             break;
         }
 
@@ -176,7 +176,7 @@ static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0)
         param0->unk_60++;
         break;
     case 12: {
-        u32 v9 = sub_02001BE0(param0->unk_04.unk_48);
+        u32 v9 = Menu_ProcessInput(param0->unk_04.unk_48);
 
         switch (v9) {
         case 0xfffffffe:
@@ -207,7 +207,7 @@ static BOOL ov119_021D1930(UnkStruct_ov119_021D0FD0 *param0)
         ov119_021D1048();
         param0->unk_60++;
     case 16:
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             param0->unk_60++;
         }
         break;
@@ -261,7 +261,7 @@ static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 *param0)
         ov119_021D1028();
         param0->unk_60++;
     case 2:
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             sub_02004550(13, 1141, 1);
             param0->unk_60++;
         }
@@ -306,14 +306,14 @@ static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 *param0)
 
         param0->unk_60++;
     case 10:
-        if (Message_Printing(param0->unk_04.unk_08) != 0) {
+        if (Text_IsPrinterActive(param0->unk_04.unk_08) != 0) {
             break;
         }
 
         param0->unk_04.unk_08 = ov119_021D1158(&param0->unk_04.unk_14[0], 1, param0->unk_00->unk_0C.unk_00, param0->unk_04.unk_0C);
         param0->unk_60++;
     case 11:
-        if (Message_Printing(param0->unk_04.unk_08) != 0) {
+        if (Text_IsPrinterActive(param0->unk_04.unk_08) != 0) {
             break;
         }
 
@@ -329,7 +329,7 @@ static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 *param0)
         param0->unk_60++;
         break;
     case 12: {
-        u32 v5 = sub_02001BE0(param0->unk_04.unk_48);
+        u32 v5 = Menu_ProcessInput(param0->unk_04.unk_48);
 
         switch (v5) {
         case 0xfffffffe:
@@ -360,7 +360,7 @@ static BOOL ov119_021D1BD0(UnkStruct_ov119_021D0FD0 *param0)
         ov119_021D1048();
         param0->unk_60++;
     case 16:
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             param0->unk_60++;
         }
         break;
@@ -545,7 +545,7 @@ static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 *param0)
         if ((++param0->unk_64) >= 10) {
             param0->unk_64 = 0;
 
-            sub_02003178(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 0, 16, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 0, 16, 0xFFFF);
 
             {
                 NNSG2dImagePaletteProxy *v1;
@@ -554,7 +554,7 @@ static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 *param0)
                 v1 = CellActor_GetPaletteProxy(param0->unk_78->unk_00);
                 v2 = sub_0201FAB4(v1, NNS_G2D_VRAM_TYPE_2DMAIN);
 
-                sub_02003178(param0->unk_04.unk_04, 0x4, 0xFFFF ^ (1 << v2), 0, 0, 16, 0xFFFF);
+                PaletteData_StartFade(param0->unk_04.unk_04, 0x4, 0xFFFF ^ (1 << v2), 0, 0, 16, 0xFFFF);
             }
 
             sub_020086FC(param0->unk_70, 0, 16, 0, 0xFFFF);
@@ -581,7 +581,7 @@ static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 *param0)
             v5++;
         }
 
-        if ((sub_0200384C(param0->unk_04.unk_04) != 0) || (v5 != 2) || (sub_020087B4(param0->unk_70) != 0)) {
+        if ((PaletteData_GetSelectedBuffersMask(param0->unk_04.unk_04) != 0) || (v5 != 2) || (sub_020087B4(param0->unk_70) != 0)) {
             break;
         }
 
@@ -598,14 +598,14 @@ static BOOL ov119_021D1FAC(UnkStruct_ov119_021D0FD0 *param0)
             param0->unk_64 = 0;
 
             sub_020086FC(param0->unk_70, 16, 0, 0, 0xFFFF);
-            sub_02003178(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 16, 0, 0xFFFF);
-            sub_02003178(param0->unk_04.unk_04, 0x4, 0xFFFF, 0, 16, 0, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 16, 0, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x4, 0xFFFF, 0, 16, 0, 0xFFFF);
 
             param0->unk_68++;
         }
         break;
     case 5:
-        if ((sub_0200384C(param0->unk_04.unk_04) != 0) || (sub_020087B4(param0->unk_70) != 0)) {
+        if ((PaletteData_GetSelectedBuffersMask(param0->unk_04.unk_04) != 0) || (sub_020087B4(param0->unk_70) != 0)) {
             break;
         }
 
@@ -651,7 +651,7 @@ static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 *param0)
 
         if ((++param0->unk_64) >= 160) {
             param0->unk_64 = 0;
-            sub_02003178(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 0, 16, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 0, 16, 0xFFFF);
 
             {
                 NNSG2dImagePaletteProxy *v0;
@@ -660,7 +660,7 @@ static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 *param0)
                 v0 = CellActor_GetPaletteProxy(param0->unk_78->unk_00);
                 v1 = sub_0201FAB4(v0, NNS_G2D_VRAM_TYPE_2DMAIN);
 
-                sub_02003178(param0->unk_04.unk_04, 0x4, 0xFFFF ^ (1 << v1), 0, 0, 16, 0xFFFF);
+                PaletteData_StartFade(param0->unk_04.unk_04, 0x4, 0xFFFF ^ (1 << v1), 0, 0, 16, 0xFFFF);
             }
 
             sub_020086FC(param0->unk_70, 0, 16, 0, 0xFFFF);
@@ -687,7 +687,7 @@ static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 *param0)
             v4++;
         }
 
-        if ((sub_0200384C(param0->unk_04.unk_04) != 0) || (v4 != 2) || (sub_020087B4(param0->unk_70) != 0)) {
+        if ((PaletteData_GetSelectedBuffersMask(param0->unk_04.unk_04) != 0) || (v4 != 2) || (sub_020087B4(param0->unk_70) != 0)) {
             break;
         }
 
@@ -705,14 +705,14 @@ static BOOL ov119_021D21BC(UnkStruct_ov119_021D0FD0 *param0)
             param0->unk_64 = 0;
 
             sub_020086FC(param0->unk_70, 16, 0, 0, 0xFFFF);
-            sub_02003178(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 16, 0, 0xFFFF);
-            sub_02003178(param0->unk_04.unk_04, 0x4, 0xFFFF, 0, 16, 0, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x1, 0xFFFF, 0, 16, 0, 0xFFFF);
+            PaletteData_StartFade(param0->unk_04.unk_04, 0x4, 0xFFFF, 0, 16, 0, 0xFFFF);
 
             param0->unk_68++;
         }
         break;
     case 4:
-        if ((sub_0200384C(param0->unk_04.unk_04) != 0) || (sub_020087B4(param0->unk_70) != 0)) {
+        if ((PaletteData_GetSelectedBuffersMask(param0->unk_04.unk_04) != 0) || (sub_020087B4(param0->unk_70) != 0)) {
             break;
         }
 

@@ -7,46 +7,41 @@
 #include "constants/battle.h"
 #include "constants/heap.h"
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_02014014_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/struct_02099F80.h"
 
 #include "field/field_system.h"
 #include "field/field_system_sub2_t.h"
 #include "overlay005/encounter_effect.h"
 #include "overlay005/encounter_effect_core.h"
+#include "overlay005/fieldmap.h"
 #include "overlay005/hblank_system.h"
 #include "overlay005/linear_interpolation_task_fx32.h"
 #include "overlay005/linear_interpolation_task_s32.h"
-#include "overlay005/ov5_021D0D80.h"
 #include "overlay005/quadratic_interpolation_task_fx32.h"
 #include "overlay005/struct_ov5_021DDF24.h"
 #include "overlay005/struct_ov5_021DE47C.h"
 #include "overlay005/struct_ov5_021DE5A4.h"
 #include "overlay005/struct_ov5_021DE5D0.h"
-#include "overlay006/battle_params.h"
-#include "overlay084/struct_ov84_0223BA5C.h"
-#include "overlay097/struct_ov97_0222DB78.h"
 
+#include "bg_window.h"
 #include "camera.h"
 #include "cell_actor.h"
 #include "enc_effects.h"
+#include "field_battle_data_transfer.h"
+#include "graphics.h"
 #include "gx_layers.h"
 #include "heap.h"
 #include "narc.h"
+#include "palette.h"
 #include "pokemon.h"
 #include "sprite_resource.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
-#include "unk_02002F38.h"
 #include "unk_0200679C.h"
-#include "unk_02006E3C.h"
 #include "unk_020093B4.h"
 #include "unk_0200A328.h"
 #include "unk_02014000.h"
-#include "unk_02018340.h"
 #include "unk_02054884.h"
 
 enum ScreenFlashState {
@@ -651,7 +646,7 @@ void EncounterEffect_Unused(void)
 static void EncounterEffect_UnusedTask(SysTask *dummy1, void *dummy2)
 {
     {
-        UnkStruct_ov84_0223BA5C v0 = {
+        GraphicsModes v0 = {
             GX_DISPMODE_GRAPHICS,
             GX_BGMODE_1,
             GX_BGMODE_0,
@@ -660,7 +655,7 @@ static void EncounterEffect_UnusedTask(SysTask *dummy1, void *dummy2)
     }
 
     {
-        UnkStruct_ov97_0222DB78 v1 = {
+        BgTemplate v1 = {
             0,
             0,
             0x800,
@@ -678,7 +673,7 @@ static void EncounterEffect_UnusedTask(SysTask *dummy1, void *dummy2)
     }
 
     {
-        UnkStruct_ov97_0222DB78 v2 = {
+        BgTemplate v2 = {
             0,
             0,
             0x800,
@@ -696,7 +691,7 @@ static void EncounterEffect_UnusedTask(SysTask *dummy1, void *dummy2)
     }
 
     {
-        UnkStruct_ov97_0222DB78 v3 = {
+        BgTemplate v3 = {
             0,
             0,
             0x800,
@@ -714,20 +709,20 @@ static void EncounterEffect_UnusedTask(SysTask *dummy1, void *dummy2)
     }
 }
 
-void ov5_021DE3D0(NARC *param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, BGL *param6, u32 param7)
+void ov5_021DE3D0(NARC *param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, BgConfig *param6, u32 param7)
 {
     void *v0;
     NNSG2dScreenData *v1;
 
-    sub_02007130(param0, param3, 0, param4 * 32, param5 * 32, 4);
-    sub_020070E8(param0, param2, param6, param7, 0, 0, 0, 4);
+    Graphics_LoadPaletteFromOpenNARC(param0, param3, 0, param4 * 32, param5 * 32, 4);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(param0, param2, param6, param7, 0, 0, 0, 4);
 
-    v0 = sub_020071D0(param0, param1, 0, &v1, 4);
+    v0 = Graphics_GetScrnDataFromOpenNARC(param0, param1, 0, &v1, 4);
 
-    sub_020198C0(param6, param7, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
-    sub_02019E2C(param6, param7, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8, param4);
+    Bg_LoadToTilemapRect(param6, param7, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
+    Bg_ChangeTilemapRectPalette(param6, param7, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8, param4);
     Heap_FreeToHeap(v0);
-    sub_0201C3C0(param6, param7);
+    Bg_ScheduleTilemapTransfer(param6, param7);
 }
 
 void ov5_021DE47C(UnkStruct_ov5_021DE47C *param0, int param1, int param2)
@@ -786,8 +781,8 @@ void ov5_021DE5D0(CellActor *param0, u32 param1, u32 param2, u8 param3, u16 para
 
     sub_02076AAC(param2, 2, &v0);
     v3 = Heap_AllocFromHeap(param1, 32);
-    v2 = sub_02006F88(v0.unk_00, v0.unk_08, &v1, param1);
-    sub_0200393C(v1->pRawData, v3, 16, param3, param4);
+    v2 = Graphics_GetPlttData(v0.unk_00, v0.unk_08, &v1, param1);
+    BlendPalette(v1->pRawData, v3, 16, param3, param4);
 
     ov5_021DE67C(param0, v3, 32);
 
@@ -963,7 +958,7 @@ static void ov5_021DE89C(Window *param0, s32 param1, s32 param2, s32 param3, s32
         param2 = 256;
     }
 
-    BGL_WindowColor(param0, param5, param3, param1, param4 - param3, param2 - param1);
+    Window_FillRectWithColor(param0, param5, param3, param1, param4 - param3, param2 - param1);
 }
 
 UnkStruct_ov5_021DE928 *ov5_021DE8F8(u32 param0)
@@ -1305,7 +1300,7 @@ static void ov5_021DEE84(UnkStruct_ov5_021DED04 *param0)
     param0->unk_E0 = NULL;
 }
 
-u32 CutInEffects_ForBattle(const BattleParams *param0)
+u32 CutInEffects_ForBattle(const FieldBattleDTO *param0)
 {
     int v0;
     int v1;
@@ -1331,24 +1326,24 @@ u32 CutInEffects_ForBattle(const BattleParams *param0)
     v6 = Pokemon_GetValue(v4, MON_DATA_LEVEL, NULL);
     v0 = v6 - v5;
 
-    switch (param0->unk_12C) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 6:
-    case 8:
-    case 10:
-    case 11:
-    case 9:
-    case 24:
+    switch (param0->terrain) {
+    case TERRAIN_PLAIN:
+    case TERRAIN_SAND:
+    case TERRAIN_GRASS:
+    case TERRAIN_PUDDLE:
+    case TERRAIN_MOUNTAIN:
+    case TERRAIN_SNOW:
+    case TERRAIN_ICE:
+    case TERRAIN_BUILDING:
+    case TERRAIN_GREAT_MARSH:
+    case TERRAIN_BRIDGE:
+    case TERRAIN_MAX:
         v1 = 0 * 2;
         break;
-    case 7:
+    case TERRAIN_WATER:
         v1 = 1 * 2;
         break;
-    case 5:
+    case TERRAIN_CAVE:
         v1 = 2 * 2;
         break;
     }
@@ -1448,7 +1443,7 @@ void ov5_021DF0CC(NARC *param0, u32 param1)
     v1 = sub_02014784(Unk_ov5_02202120->unk_08);
     Camera_SetClipping(FX32_ONE, FX32_ONE * 900, v1);
 
-    v0 = sub_0200723C(param0, param1, 0, 4, 0);
+    v0 = LoadMemberFromOpenNARC(param0, param1, 0, 4, 0);
     sub_020144CC(Unk_ov5_02202120->unk_08, v0, 0 | 0, 0);
 }
 
@@ -1544,7 +1539,7 @@ static void ov5_021DF28C(SysTask *param0, void *param1)
         ov5_021D16F4(v0->fieldSystem, 0);
         ov5_021D1718(v0->fieldSystem, 0);
 
-        BGL_SetPriority(0, 0);
+        Bg_SetPriority(0, 0);
 
         v0->unk_02 = 1;
         SysTask_Done(param0);
@@ -1577,23 +1572,23 @@ static void ov5_021DF30C(FieldSystem *fieldSystem)
         GX_PLANEMASK_BG0, 0);
 
     {
-        UnkStruct_ov84_0223BA5C v1 = {
+        GraphicsModes v1 = {
             GX_DISPMODE_GRAPHICS,
             GX_BGMODE_3,
             GX_BGMODE_0,
             GX_BG0_AS_3D
         };
 
-        sub_02018368(&v1);
+        SetAllGraphicsModes(&v1);
     }
 
     {
-        ov5_021D143C(fieldSystem->unk_08);
+        ov5_021D143C(fieldSystem->bgConfig);
 
         {
             G2_SetBG3ControlDCBmp(GX_BG_SCRSIZE_DCBMP_256x256, GX_BG_AREAOVER_XLU, GX_BG_BMPSCRBASE_0x20000);
 
-            BGL_SetPriority(3, 3);
+            Bg_SetPriority(3, 3);
             GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG3, 1);
 
             {
@@ -1605,7 +1600,7 @@ static void ov5_021DF30C(FieldSystem *fieldSystem)
         }
 
         {
-            UnkStruct_ov97_0222DB78 v3 = {
+            BgTemplate v3 = {
                 0,
                 0,
                 0x800,
@@ -1621,9 +1616,9 @@ static void ov5_021DF30C(FieldSystem *fieldSystem)
                 0
             };
 
-            sub_020183C4(fieldSystem->unk_08, 2, &v3, 0);
-            sub_02019690(2, 32, 0, 4);
-            sub_02019EBC(fieldSystem->unk_08, 2);
+            Bg_InitFromTemplate(fieldSystem->bgConfig, 2, &v3, 0);
+            Bg_ClearTilesRange(2, 32, 0, 4);
+            Bg_ClearTilemap(fieldSystem->bgConfig, 2);
         }
     }
 
@@ -1632,8 +1627,8 @@ static void ov5_021DF30C(FieldSystem *fieldSystem)
 
 static void ov5_021DF3D4(FieldSystem *fieldSystem)
 {
-    sub_02019044(fieldSystem->unk_08, 2);
-    ov5_021D1434(fieldSystem->unk_08);
+    Bg_FreeTilemapBuffer(fieldSystem->bgConfig, 2);
+    ov5_021D1434(fieldSystem->bgConfig);
 }
 
 static u32 ov5_021DF3E8(u32 param0, BOOL param1)

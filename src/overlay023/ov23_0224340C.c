@@ -5,11 +5,8 @@
 
 #include "consts/game_records.h"
 
-#include "struct_decls/struct_02006C24_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_decls/struct_0202855C_decl.h"
 #include "struct_decls/struct_020298B0_decl.h"
-#include "struct_decls/struct_020508D4_decl.h"
 #include "struct_defs/struct_0200C738.h"
 
 #include "field/field_system.h"
@@ -25,6 +22,7 @@
 #include "overlay023/struct_ov23_0224271C.h"
 #include "overlay101/struct_ov101_021D5D90_decl.h"
 
+#include "bg_window.h"
 #include "camera.h"
 #include "cell_actor.h"
 #include "comm_player_manager.h"
@@ -32,7 +30,9 @@
 #include "communication_system.h"
 #include "core_sys.h"
 #include "field_system.h"
+#include "field_task.h"
 #include "game_records.h"
+#include "graphics.h"
 #include "gx_layers.h"
 #include "heap.h"
 #include "map_object_move.h"
@@ -45,11 +45,9 @@
 #include "trainer_info.h"
 #include "unk_020041CC.h"
 #include "unk_02005474.h"
-#include "unk_02006E3C.h"
 #include "unk_020093B4.h"
 #include "unk_0200A328.h"
 #include "unk_0200A9DC.h"
-#include "unk_02018340.h"
 #include "unk_0201D15C.h"
 #include "unk_0201E86C.h"
 #include "unk_0201F834.h"
@@ -61,7 +59,7 @@
 #include "unk_020711EC.h"
 #include "vars_flags.h"
 
-typedef void (*UnkFuncPtr_ov23_02257764)(BGL *);
+typedef void (*UnkFuncPtr_ov23_02257764)(BgConfig *);
 typedef void (*UnkFuncPtr_ov23_02256670)(int, BOOL);
 typedef void (*UnkFuncPtr_ov23_02256440)(int, BOOL, int);
 typedef void (*UnkFuncPtr_ov23_022564CC)(int);
@@ -124,7 +122,7 @@ typedef struct {
     CellActorResourceData unk_238;
     CellActor *unk_25C[32];
     CellActor *unk_2DC[4];
-    TaskManager *unk_2EC;
+    FieldTask *unk_2EC;
     SysTask *unk_2F0;
     SysTask *unk_2F4;
     SysTask *unk_2F8;
@@ -265,7 +263,7 @@ typedef struct {
     u16 unk_08;
     u16 unk_0A;
     int unk_0C;
-    BGL *unk_10;
+    BgConfig *unk_10;
     FieldSystem *fieldSystem;
     u8 unk_18;
     u8 unk_19;
@@ -344,22 +342,22 @@ static void ov23_02245938(int param0, BOOL param1);
 static UnkStruct_ov23_02243DA8 *ov23_02244EA0(UnkStruct_ov23_02243DA8 *param0);
 static void ov23_02244D80(FieldSystem *fieldSystem, int param1, int param2, BOOL param3);
 static void ov23_02244EA4(FieldSystem *fieldSystem, BOOL param1, int param2);
-static BOOL ov23_02245064(UnkStruct_ov23_0224271C *param0, BGL *param1, UnkStruct_ov23_022451BC *param2);
+static BOOL ov23_02245064(UnkStruct_ov23_0224271C *param0, BgConfig *param1, UnkStruct_ov23_022451BC *param2);
 static BOOL ov23_022450D4(int param0, int param1, u8 *param2);
 static void ov23_022451C8(SysTask *param0, void *param1);
 static void ov23_022451BC(UnkStruct_ov23_022451BC *param0);
 static void ov23_02245A58(BOOL param0);
 static void ov23_022462A8(FieldSystem *fieldSystem, BOOL param1, int param2);
-static BOOL ov23_02246640(BGL *param0, UnkStruct_ov23_02245ED4 *param1);
+static BOOL ov23_02246640(BgConfig *param0, UnkStruct_ov23_02245ED4 *param1);
 static void ov23_02246324(void);
 static void ov23_02246370(int param0);
 static void ov23_0224644C(int param0);
 static void ov23_022468DC(UnkStruct_ov23_022468DC *param0);
 static void ov23_02246A80(SysTask *param0, void *param1);
-static void ov23_02246CF0(BGL *param0, BOOL param1, int param2);
+static void ov23_02246CF0(BgConfig *param0, BOOL param1, int param2);
 static void ov23_02246D44(UnkStruct_ov23_022468DC *param0);
 static void ov23_02246E90(int param0, UnkStruct_ov23_022468DC *param1);
-static BOOL ov23_02246F20(BGL *param0, UnkStruct_ov23_022468DC *param1);
+static BOOL ov23_02246F20(BgConfig *param0, UnkStruct_ov23_022468DC *param1);
 static void ov23_0224710C(int param0, BOOL param1, int param2);
 static void ov23_02247138(int param0);
 static void ov23_02247144(int param0, BOOL param1);
@@ -619,7 +617,7 @@ static const UnkFuncPtr_ov23_022564CC Unk_ov23_022565E4[] = {
 static void ov23_0224340C(void)
 {
     int v0;
-    UndergroundData *v1 = sub_020298B0(FieldSystem_SaveData(Unk_ov23_02257764->fieldSystem));
+    UndergroundData *v1 = sub_020298B0(FieldSystem_GetSaveData(Unk_ov23_02257764->fieldSystem));
 
     for (v0 = 0; v0 < 16; v0++) {
         Unk_ov23_02257764->unk_308[v0].unk_04 = sub_02029030(v1, v0);
@@ -648,7 +646,7 @@ void ov23_022434BC(void *param0, FieldSystem *fieldSystem)
     MI_CpuFill8(Unk_ov23_02257764, 0, sizeof(UnkStruct_ov23_02257764));
     Unk_ov23_02257764->fieldSystem = fieldSystem;
 
-    v1 = sub_020298B0(FieldSystem_SaveData(fieldSystem));
+    v1 = sub_020298B0(FieldSystem_GetSaveData(fieldSystem));
 
     Unk_ov23_02257764->unk_2F0 = NULL;
 
@@ -1153,7 +1151,7 @@ void ov23_02243CE8(void)
 
 static void ov23_02243D50(void)
 {
-    UndergroundData *v0 = sub_020298B0(FieldSystem_SaveData(Unk_ov23_02257764->fieldSystem));
+    UndergroundData *v0 = sub_020298B0(FieldSystem_GetSaveData(Unk_ov23_02257764->fieldSystem));
     int v1;
 
     for (v1 = 0; v1 < 16; v1++) {
@@ -1327,7 +1325,7 @@ BOOL ov23_02244080(int param0, UnkStruct_ov23_0224271C *param1, u8 param2)
     u8 v2 = param0;
     UnkStruct_ov23_02243DA8 *v3;
     UnkStruct_ov23_02244140 v4;
-    UndergroundData *v5 = sub_020298B0(FieldSystem_SaveData(Unk_ov23_02257764->fieldSystem));
+    UndergroundData *v5 = sub_020298B0(FieldSystem_GetSaveData(Unk_ov23_02257764->fieldSystem));
 
     v0 = CommPlayer_AddXServer(param0);
     v1 = CommPlayer_AddZServer(param0);
@@ -1551,7 +1549,7 @@ void ov23_0224448C(int param0, int param1, void *param2, void *param3)
         return;
     }
 
-    v1 = SaveData_SecretBaseRecord(FieldSystem_SaveData(Unk_ov23_02257764->fieldSystem));
+    v1 = SaveData_SecretBaseRecord(FieldSystem_GetSaveData(Unk_ov23_02257764->fieldSystem));
 
     Sound_PlayEffect(1570);
     MI_CpuCopy8(v0, &Unk_ov23_02257764->unk_B28[v0->unk_07_0], sizeof(UnkStruct_ov23_02244140));
@@ -2073,7 +2071,7 @@ static void ov23_02244C70(SysTask *param0, void *param1)
         Unk_ov23_02257764->unk_2F0 = NULL;
         Unk_ov23_02257764->unk_300 = NULL;
 
-        sub_020057A4(1631, 0);
+        Sound_StopEffect(1631, 0);
         break;
     }
 }
@@ -2107,7 +2105,7 @@ static void ov23_02244DE0(int param0, BOOL param1)
         v0->unk_00 = 7;
         Unk_ov23_02257764->unk_300 = NULL;
 
-        sub_020057A4(1631, 0);
+        Sound_StopEffect(1631, 0);
     }
 }
 
@@ -2125,7 +2123,7 @@ static void ov23_02244E10(int param0, BOOL param1)
         Unk_ov23_02257764->unk_2F0 = NULL;
         Unk_ov23_02257764->unk_300 = NULL;
 
-        sub_020057A4(1631, 0);
+        Sound_StopEffect(1631, 0);
     }
 }
 
@@ -2161,7 +2159,7 @@ static void ov23_02244EA4(FieldSystem *fieldSystem, BOOL param1, int param2)
     Unk_ov23_02257764->unk_300 = v0;
     ov23_022451BC(v0);
 
-    v0->unk_10 = fieldSystem->unk_08;
+    v0->unk_10 = fieldSystem->bgConfig;
     v0->fieldSystem = fieldSystem;
     v0->unk_19 = param1;
     v0->unk_18 = param2;
@@ -2226,13 +2224,13 @@ static void ov23_02244FD0(int param0, BOOL param1)
 
         {
             int v1;
-            u8 *v2 = sub_02019FE4(Unk_ov23_02257764->fieldSystem->unk_08, 2);
+            u8 *v2 = Bg_GetTilemapBuffer(Unk_ov23_02257764->fieldSystem->bgConfig, 2);
 
             for (v1 = 0; v1 < 0x800; v1 += 2) {
                 v2[v1] = 0;
             }
 
-            BGL_SetPriority(2, 3);
+            Bg_SetPriority(2, 3);
             GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG2, 0);
         }
 
@@ -2245,10 +2243,10 @@ static void ov23_02244FD0(int param0, BOOL param1)
     }
 }
 
-static BOOL ov23_02245064(UnkStruct_ov23_0224271C *param0, BGL *param1, UnkStruct_ov23_022451BC *param2)
+static BOOL ov23_02245064(UnkStruct_ov23_0224271C *param0, BgConfig *param1, UnkStruct_ov23_022451BC *param2)
 {
     int v0, v1 = 0;
-    u8 *v2 = sub_02019FE4(param1, 2);
+    u8 *v2 = Bg_GetTilemapBuffer(param1, 2);
 
     if (v2 == NULL) {
         return 0;
@@ -2257,7 +2255,7 @@ static BOOL ov23_02245064(UnkStruct_ov23_0224271C *param0, BGL *param1, UnkStruc
     if ((param2->unk_08 != 0xffff) && (param2->unk_0A != 0xffff)) {
         ov23_02244EF8(param0->unk_00, param0->unk_02, param2->unk_08, param2->unk_0A, v2);
 
-        sub_02019448(param1, 2);
+        Bg_CopyTilemapBufferToVRAM(param1, 2);
     }
 
     param2->unk_08 = param0->unk_00;
@@ -2348,29 +2346,29 @@ static void ov23_022451C8(SysTask *param0, void *param1)
         break;
     case 1:
         sub_0200AAE0(1, 10, 0, GX_BLEND_PLANEMASK_BG0, 1);
-        sub_02006E3C(50, 9, v0->unk_10, 2, 0, 8 * 6 * 6, 0, 4);
+        Graphics_LoadTilesToBgLayer(50, 9, v0->unk_10, 2, 0, 8 * 6 * 6, 0, 4);
         v0->unk_00++;
         break;
     case 2:
-        sub_02006E84(50, 10, 0, 0, 32, 4);
+        Graphics_LoadPalette(50, 10, 0, 0, 32, 4);
         v0->unk_00++;
         break;
     case 3:
         sub_0200AAE0(1, 0, 10, GX_BLEND_PLANEMASK_BG0, 1);
 
         if (Unk_ov23_02257764->unk_B9F == 19) {
-            sub_02006E60(50, 8, v0->unk_10, 2, 0, 32 * 24 * 2, 0, 4);
+            Graphics_LoadTilemapToBgLayer(50, 8, v0->unk_10, 2, 0, 32 * 24 * 2, 0, 4);
         } else {
             u16 v2[] = { 11, 12, 13, 14 };
             u16 v3 = LCRNG_Next() % 4;
 
-            sub_02006E60(50, v2[v3], v0->unk_10, 2, 0, 32 * 24 * 2, 0, 4);
+            Graphics_LoadTilemapToBgLayer(50, v2[v3], v0->unk_10, 2, 0, 32 * 24 * 2, 0, 4);
         }
 
-        BGL_SetPriority(0, 3);
-        BGL_SetPriority(1, 2);
-        BGL_SetPriority(2, 1);
-        BGL_SetPriority(3, 0);
+        Bg_SetPriority(0, 3);
+        Bg_SetPriority(1, 2);
+        Bg_SetPriority(2, 1);
+        Bg_SetPriority(3, 0);
         v0->unk_00++;
         break;
     case 4:
@@ -2549,7 +2547,7 @@ void ov23_02245560(int param0, int param1)
 void ov23_022455B4(int param0, int param1, void *param2, void *param3)
 {
     UnkStruct_ov23_02245560 *v0 = param2;
-    SecretBaseRecord *v1 = SaveData_SecretBaseRecord(FieldSystem_SaveData(Unk_ov23_02257764->fieldSystem));
+    SecretBaseRecord *v1 = SaveData_SecretBaseRecord(FieldSystem_GetSaveData(Unk_ov23_02257764->fieldSystem));
 
     ov23_0224B024(v0->unk_01);
 
@@ -3161,7 +3159,7 @@ static void ov23_02245F94(SysTask *param0, void *param1)
         }
         break;
     case 7:
-        if (ov23_02246640(Unk_ov23_02257764->fieldSystem->unk_08, v0)) {
+        if (ov23_02246640(Unk_ov23_02257764->fieldSystem->bgConfig, v0)) {
             if (v0->unk_113) {
                 v0->unk_00 = 11;
             } else {
@@ -3382,7 +3380,7 @@ static void ov23_02246624(MICResult param0, void *param1)
     }
 }
 
-static BOOL ov23_02246640(BGL *param0, UnkStruct_ov23_02245ED4 *param1)
+static BOOL ov23_02246640(BgConfig *param0, UnkStruct_ov23_02245ED4 *param1)
 {
     int v0;
     int v1 = 0, v2, v3, v4, v5;
@@ -3475,7 +3473,7 @@ static BOOL ov23_02246640(BGL *param0, UnkStruct_ov23_02245ED4 *param1)
     return 0;
 }
 
-void ov23_022468A8(BGL *param0)
+void ov23_022468A8(BgConfig *param0)
 {
     if (Unk_ov23_02257764->unk_304) {
         Unk_ov23_02257764->unk_304(param0);
@@ -3589,8 +3587,8 @@ static void ov23_02246A80(SysTask *param0, void *param1)
     case 7:
         G2_SetBlendAlpha(GX_BLEND_PLANEMASK_OBJ, GX_BLEND_PLANEMASK_BG0, 14, 7);
 
-        if (ov23_02246F20(Unk_ov23_02257764->fieldSystem->unk_08, v0)) {
-            sub_020057A4(1632, 0);
+        if (ov23_02246F20(Unk_ov23_02257764->fieldSystem->bgConfig, v0)) {
+            Sound_StopEffect(1632, 0);
 
             if (v0->unk_15E) {
                 v0->unk_00 = 11;
@@ -3609,7 +3607,7 @@ static void ov23_02246A80(SysTask *param0, void *param1)
         }
         break;
     case 8:
-        sub_020057A4(1632, 0);
+        Sound_StopEffect(1632, 0);
         ov23_02254044(ov23_0224219C());
         break;
     case 9:
@@ -3636,7 +3634,7 @@ static void ov23_02246A80(SysTask *param0, void *param1)
     }
 }
 
-static void ov23_02246CF0(BGL *param0, BOOL param1, int param2)
+static void ov23_02246CF0(BgConfig *param0, BOOL param1, int param2)
 {
     int v0;
     UnkStruct_ov23_022468DC *v1;
@@ -3719,7 +3717,7 @@ static void ov23_02246E90(int param0, UnkStruct_ov23_022468DC *param1)
     }
 }
 
-static BOOL ov23_02246F20(BGL *param0, UnkStruct_ov23_022468DC *param1)
+static BOOL ov23_02246F20(BgConfig *param0, UnkStruct_ov23_022468DC *param1)
 {
     int v0;
     int v1 = 0, v2, v3, v4, v5, v6, v7;
@@ -3794,7 +3792,7 @@ static void ov23_0224710C(int param0, BOOL param1, int param2)
     ov23_0224AD7C(param0, 2);
 
     if (CommSys_CurNetId() == param0) {
-        ov23_02246CF0(Unk_ov23_02257764->fieldSystem->unk_08, param1, param2);
+        ov23_02246CF0(Unk_ov23_02257764->fieldSystem->bgConfig, param1, param2);
     }
 }
 
@@ -3808,7 +3806,7 @@ static void ov23_02247144(int param0, BOOL param1)
     if (Unk_ov23_02257764->unk_300) {
         UnkStruct_ov23_022468DC *v0 = Unk_ov23_02257764->unk_300;
 
-        sub_020057A4(1632, 0);
+        Sound_StopEffect(1632, 0);
 
         if (v0->unk_15E && param1) {
             ov23_022448FC(v0->unk_15D);
@@ -3931,7 +3929,7 @@ static void ov23_022474D4(UnkStruct_ov23_022471D8 *param0)
     }
 }
 
-static BOOL ov23_02247568(BGL *param0, UnkStruct_ov23_022471D8 *param1)
+static BOOL ov23_02247568(BgConfig *param0, UnkStruct_ov23_022471D8 *param1)
 {
     int v0;
     int v1 = 0, v2, v3, v4, v5, v6;
@@ -4206,7 +4204,7 @@ static void ov23_02247A8C(SysTask *param0, void *param1)
         }
         break;
     case 7:
-        if (ov23_02247568(Unk_ov23_02257764->fieldSystem->unk_08, v0)) {
+        if (ov23_02247568(Unk_ov23_02257764->fieldSystem->bgConfig, v0)) {
             if (v0->unk_127) {
                 v0->unk_00 = 11;
             } else {
@@ -4247,7 +4245,7 @@ static void ov23_02247A8C(SysTask *param0, void *param1)
     }
 }
 
-static void ov23_02247D28(BGL *param0, BOOL param1, int param2)
+static void ov23_02247D28(BgConfig *param0, BOOL param1, int param2)
 {
     int v0;
     UnkStruct_ov23_022471D8 *v1;
@@ -4267,7 +4265,7 @@ static void ov23_02247D78(int param0, BOOL param1, int param2)
     ov23_0224AD7C(param0, 2);
 
     if (CommSys_CurNetId() == param0) {
-        ov23_02247D28(Unk_ov23_02257764->fieldSystem->unk_08, param1, param2);
+        ov23_02247D28(Unk_ov23_02257764->fieldSystem->bgConfig, param1, param2);
     }
 }
 
@@ -4344,7 +4342,7 @@ static void ov23_02247E38(UnkStruct_ov23_02247E38 *param0)
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_OBJ, 1);
 }
 
-static BOOL ov23_02247F4C(BGL *param0, UnkStruct_ov23_02247E38 *param1)
+static BOOL ov23_02247F4C(BgConfig *param0, UnkStruct_ov23_02247E38 *param1)
 {
     int v0, v1, v2, v3 = 0;
     float v4;
@@ -4502,7 +4500,7 @@ static void ov23_022480C4(SysTask *param0, void *param1)
     case 7:
         G2_SetBlendAlpha(GX_BLEND_PLANEMASK_OBJ, GX_BLEND_PLANEMASK_BG0, 14, 7);
 
-        if (ov23_02247F4C(Unk_ov23_02257764->fieldSystem->unk_08, v0)) {
+        if (ov23_02247F4C(Unk_ov23_02257764->fieldSystem->bgConfig, v0)) {
             if (v0->unk_2A) {
                 v0->unk_00 = 11;
             } else {
@@ -4543,7 +4541,7 @@ static void ov23_022480C4(SysTask *param0, void *param1)
     }
 }
 
-static void ov23_02248318(BGL *param0, BOOL param1, int param2)
+static void ov23_02248318(BgConfig *param0, BOOL param1, int param2)
 {
     int v0;
     UnkStruct_ov23_02247E38 *v1;
@@ -4563,7 +4561,7 @@ static void ov23_02248364(int param0, BOOL param1, int param2)
     ov23_0224AD7C(param0, 2);
 
     if (CommSys_CurNetId() == param0) {
-        ov23_02248318(Unk_ov23_02257764->fieldSystem->unk_08, param1, param2);
+        ov23_02248318(Unk_ov23_02257764->fieldSystem->bgConfig, param1, param2);
     }
 }
 
@@ -4665,7 +4663,7 @@ static void ov23_02248418(SysTask *param0, void *param1)
     }
 }
 
-static void ov23_0224852C(BGL *param0, BOOL param1, int param2)
+static void ov23_0224852C(BgConfig *param0, BOOL param1, int param2)
 {
     int v0;
     UnkStruct_ov23_02248418 *v1;
@@ -4685,7 +4683,7 @@ static void ov23_02248570(int param0, BOOL param1, int param2)
     ov23_0224AD7C(param0, 2);
 
     if (CommSys_CurNetId() == param0) {
-        ov23_0224852C(Unk_ov23_02257764->fieldSystem->unk_08, param1, param2);
+        ov23_0224852C(Unk_ov23_02257764->fieldSystem->bgConfig, param1, param2);
     }
 }
 
@@ -4716,7 +4714,7 @@ static void ov23_022485A8(int param0, BOOL param1)
     }
 }
 
-static BOOL ov23_02248614(BGL *param0, UnkStruct_ov23_02248748 *param1)
+static BOOL ov23_02248614(BgConfig *param0, UnkStruct_ov23_02248748 *param1)
 {
     int v0, v1;
     VecFx32 v2;
@@ -4835,7 +4833,7 @@ static void ov23_02248884(SysTask *param0, void *param1)
         v0->unk_00 = 7;
         break;
     case 7:
-        if (ov23_02248614(Unk_ov23_02257764->fieldSystem->unk_08, v0)) {
+        if (ov23_02248614(Unk_ov23_02257764->fieldSystem->bgConfig, v0)) {
             v0->unk_00 = 9;
         }
         break;

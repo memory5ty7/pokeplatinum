@@ -2,9 +2,7 @@
 #define POKEPLATINUM_OV62_02231690_H
 
 #include "struct_decls/cell_actor_data.h"
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_0202F41C_decl.h"
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/struct_0208B878.h"
 #include "struct_defs/struct_0208C06C.h"
 
@@ -16,7 +14,9 @@
 #include "overlay062/struct_ov62_0223CAA4.h"
 #include "overlay062/struct_ov62_02248CDC.h"
 
+#include "bg_window.h"
 #include "message.h"
+#include "narc.h"
 #include "strbuf.h"
 
 StringTemplate *ov62_02231690(u32 param0);
@@ -25,7 +25,7 @@ int ov62_022316D0(UnkStruct_0208C06C *param0);
 int ov62_02231710(UnkStruct_0208C06C *param0, int param1);
 void ov62_022317CC(UnkStruct_0208C06C *param0, int param1);
 void ov62_022318E8(UnkStruct_0208C06C *param0);
-u16 *ov62_02231948(int param0, int param1, int *param2);
+u16 *ov62_Pokedex_Alphabetical(int heapID, int unused, int *pokedexLength);
 void ov62_0223196C(UnkStruct_0208C06C *param0, BOOL param1);
 BOOL ov62_02231974(UnkStruct_0208C06C *param0);
 void ov62_0223197C(UnkStruct_0208C06C *param0, int param1);

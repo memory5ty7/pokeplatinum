@@ -3,7 +3,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
 #include "struct_defs/archived_sprite.h"
@@ -15,20 +14,21 @@
 #include "overlay017/struct_ov17_02247A48.h"
 #include "overlay017/struct_ov17_0225442C.h"
 
+#include "bg_window.h"
 #include "game_options.h"
 #include "heap.h"
 #include "message.h"
+#include "narc.h"
 #include "pokemon.h"
 #include "strbuf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
+#include "text.h"
 #include "unk_02005474.h"
 #include "unk_0200762C.h"
 #include "unk_0200C6E4.h"
-#include "unk_02018340.h"
 #include "unk_0201D15C.h"
-#include "unk_0201D670.h"
 
 typedef struct {
     u8 *unk_00;
@@ -211,16 +211,16 @@ static void ov17_02247990(UnkStruct_ov17_02247A48 *param0, MessageLoader *param1
     if (param0->unk_00->unk_155 == 0) {
         v1 = Options_TextFrameDelay(param0->unk_00->unk_196C);
     } else {
-        v1 = 1;
+        v1 = TEXT_SPEED_FAST;
     }
 
     v0 = MessageLoader_GetNewStrbuf(param1, param2);
     ov17_0224792C(param0, param3, param4);
 
     StringTemplate_Format(param0->unk_0C.unk_3C, param0->unk_0C.unk_40, v0);
-    BGL_FillWindow(&param0->unk_0C.unk_28[0], 0xff);
+    Window_FillTilemap(&param0->unk_0C.unk_28[0], 0xff);
 
-    param0->unk_0C.unk_C4 = PrintStringSimple(&param0->unk_0C.unk_28[0], 1, param0->unk_0C.unk_40, 0, 0, v1, NULL);
+    param0->unk_0C.unk_C4 = Text_AddPrinterWithParams(&param0->unk_0C.unk_28[0], FONT_MESSAGE, param0->unk_0C.unk_40, 0, 0, v1, NULL);
     Strbuf_Free(v0);
 }
 
@@ -238,7 +238,7 @@ void ov17_02247A08(UnkStruct_ov17_02247A48 *param0, u32 param1, const UnkStruct_
 
 int ov17_02247A3C(UnkStruct_ov17_02247A48 *param0)
 {
-    return Message_Printing(param0->unk_0C.unk_C4);
+    return Text_IsPrinterActive(param0->unk_0C.unk_C4);
 }
 
 void include_ov17_022476F8(void)

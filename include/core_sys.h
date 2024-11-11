@@ -14,7 +14,10 @@ enum ButtonMode {
     BUTTON_MODE_L_IS_A = 3,
 };
 
-#define PAD_KEY (PAD_KEY_UP | PAD_KEY_DOWN | PAD_KEY_LEFT | PAD_KEY_RIGHT)
+#define PAD_KEY             (PAD_KEY_UP | PAD_KEY_DOWN | PAD_KEY_LEFT | PAD_KEY_RIGHT)
+#define JOY_NEW(buttons)    (gCoreSys.pressedKeys & (buttons))
+#define JOY_HELD(buttons)   (gCoreSys.heldKeys & (buttons))
+#define JOY_REPEAT(buttons) (gCoreSys.pressedKeysRepeatable & (buttons))
 
 typedef struct CoreSys {
     Callback mainCallback;
@@ -26,10 +29,10 @@ typedef struct CoreSys {
     SysTaskManager *mainTaskMgr;
     SysTaskManager *vBlankTaskMgr;
     SysTaskManager *postVBlankTaskMgr;
-    SysTaskManager *unk_24;
+    SysTaskManager *printTaskMgr;
     u32 *unk_28;
+    u32 vblankCounter;
     u32 frameCounter;
-    u32 unk_30;
     enum ButtonMode buttonMode;
     u32 heldKeysRaw;
     u32 pressedKeysRaw;

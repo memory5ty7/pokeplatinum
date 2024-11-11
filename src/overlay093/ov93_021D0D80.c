@@ -3,7 +3,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_defs/struct_0206C8D4.h"
 #include "struct_defs/struct_02099F80.h"
 
@@ -160,7 +159,7 @@ int ov93_021D0E70(OverlayManager *param0, int *param1)
                 sub_0208C120(1, 72);
             }
         } else {
-            if (ScreenWipe_Done()) {
+            if (IsScreenTransitionDone()) {
                 return 1;
             }
         }

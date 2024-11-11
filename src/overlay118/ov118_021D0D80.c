@@ -3,6 +3,8 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "consts/species.h"
+
 #include "struct_decls/struct_02014014_decl.h"
 #include "struct_defs/struct_0207F248.h"
 
@@ -17,9 +19,9 @@
 #include "spl.h"
 #include "strbuf.h"
 #include "string_template.h"
+#include "text.h"
 #include "unk_02005474.h"
 #include "unk_02014000.h"
-#include "unk_0201D670.h"
 #include "unk_0202419C.h"
 #include "unk_0202631C.h"
 #include "unk_0207E0B8.h"
@@ -75,23 +77,23 @@ int ov118_021D0DBC(GameWindowLayout *param0)
         v0->unk_0C = Pokemon_GetValue(v1, MON_DATA_SPECIES, NULL);
 
         switch (v0->unk_0C) {
-        case 487:
+        case SPECIES_GIRATINA:
             Pokemon_SetGiratinaForm(v1);
             v0->unk_08 = 65;
             v0->unk_10 = 0;
             break;
-        case 492:
+        case SPECIES_SHAYMIN:
             Pokemon_SetShayminForm(v1, 1);
             v0->unk_08 = 35;
             v0->unk_10 = 1;
             break;
-        case 479:
+        case SPECIES_ROTOM:
         default:
             GF_ASSERT(0);
             break;
         }
 
-        sub_0202736C(SaveData_Pokedex(FieldSystem_SaveData(param0->unk_5A4->unk_1C)), v1);
+        sub_0202736C(SaveData_Pokedex(FieldSystem_GetSaveData(param0->unk_5A4->unk_1C)), v1);
     }
         v0->unk_00++;
         break;
@@ -147,7 +149,7 @@ int ov118_021D0DBC(GameWindowLayout *param0)
         v0->unk_00++;
         break;
     case 10:
-        if (Message_Printing(param0->unk_B10) == 0) {
+        if (Text_IsPrinterActive(param0->unk_B10) == 0) {
             ov118_021D0F70(param0);
             param0->unk_5A4->unk_23 = 0;
             return 1;
@@ -223,8 +225,8 @@ static void ov118_021D10B0(SPLEmitter *param0)
 
     v0 = sub_02014764();
 
-    SPL_UnkInline2(param0, Unk_ov118_021D1170[v0->unk_14][0]);
-    SPL_UnkInline3(param0, Unk_ov118_021D1170[v0->unk_14][1]);
+    SPLEmitter_SetPosX(param0, Unk_ov118_021D1170[v0->unk_14][0]);
+    SPLEmitter_SetPosY(param0, Unk_ov118_021D1170[v0->unk_14][1]);
 }
 
 static int ov118_021D10E8(void)

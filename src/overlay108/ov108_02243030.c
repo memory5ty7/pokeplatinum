@@ -3,7 +3,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_party_decl.h"
 
 #include "overlay022/struct_ov22_022559F8.h"
@@ -44,7 +43,7 @@ void ov108_02243030(UnkStruct_ov108_02243030 *param0, Party *param1, Party *para
 {
     int v0;
 
-    sub_0201DBEC(32, 103);
+    VRAMTransferManager_New(32, 103);
     ov108_022431FC();
 
     NNS_G2dInitOamManagerModule();

@@ -3,23 +3,22 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02025CCC_decl.h"
 #include "struct_decls/struct_0202C878_decl.h"
 #include "struct_defs/sentence.h"
 #include "struct_defs/struct_0202F298_sub1.h"
 #include "struct_defs/struct_02030A80.h"
 
+#include "charcode_util.h"
 #include "heap.h"
 #include "pokemon.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "savedata_misc.h"
 #include "strbuf.h"
+#include "system_data.h"
 #include "trainer_info.h"
-#include "unk_020021B0.h"
 #include "unk_02014A84.h"
 #include "unk_02014D38.h"
-#include "unk_02025CB0.h"
 #include "unk_0202C858.h"
 #include "unk_0205C980.h"
 #include "unk_020996D0.h"
@@ -43,7 +42,7 @@ void sub_02030AA0(UnkStruct_02030A80 *param0, SaveData *param1)
 {
     TrainerInfo *v0 = SaveData_GetTrainerInfo(param1);
     UnkStruct_0202C878 *v1 = sub_0202C878(param1);
-    UnkStruct_02025CCC *v2 = sub_02025CCC(param1);
+    SystemData *v2 = SaveData_GetSystemData(param1);
     const MiscSaveBlock *v3 = SaveData_MiscSaveBlockConst(param1);
     int v4, v5, v6;
     int v7;
@@ -53,7 +52,7 @@ void sub_02030AA0(UnkStruct_02030A80 *param0, SaveData *param1)
 
     MiscSaveBlock_FavoriteMon(v3, &v4, &v5, &v6);
     MI_CpuClear8(param0, sizeof(UnkStruct_02030A80));
-    GF_strcpy(param0->unk_00, TrainerInfo_Name(v0));
+    CharCode_Copy(param0->unk_00, TrainerInfo_Name(v0));
 
     param0->unk_10 = TrainerInfo_ID(v0);
     param0->unk_14 = TrainerInfo_Gender(v0);

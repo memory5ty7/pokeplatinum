@@ -5,16 +5,9 @@
 
 #include "consts/game_records.h"
 
-#include "struct_decls/struct_02001AF4_decl.h"
-#include "struct_decls/struct_02013A04_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_decls/struct_0202855C_decl.h"
 #include "struct_decls/struct_02029894_decl.h"
 #include "struct_decls/struct_020298B0_decl.h"
-#include "struct_decls/struct_020508D4_decl.h"
-#include "struct_defs/struct_02013A04_t.h"
-#include "struct_defs/struct_02049FA8.h"
-#include "struct_defs/struct_02081CF4.h"
 
 #include "field/field_system.h"
 #include "overlay005/ov5_021E15F4.h"
@@ -32,42 +25,43 @@
 #include "overlay023/ov23_02253598.h"
 #include "overlay023/ov23_02253D40.h"
 #include "overlay023/struct_ov23_0224271C.h"
-#include "overlay061/struct_ov61_0222C884.h"
 
+#include "bg_window.h"
 #include "comm_player_manager.h"
 #include "communication_information.h"
 #include "communication_system.h"
 #include "core_sys.h"
 #include "field_map_change.h"
 #include "field_system.h"
+#include "field_task.h"
+#include "font.h"
 #include "game_records.h"
+#include "graphics.h"
 #include "heap.h"
 #include "journal.h"
+#include "location.h"
 #include "map_object_move.h"
+#include "menu.h"
 #include "message.h"
 #include "player_avatar.h"
+#include "render_window.h"
 #include "savedata.h"
 #include "strbuf.h"
+#include "string_list.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
+#include "system_flags.h"
 #include "trainer_info.h"
-#include "unk_02001AF4.h"
 #include "unk_02005474.h"
-#include "unk_02006E3C.h"
-#include "unk_0200DA60.h"
 #include "unk_0200F174.h"
-#include "unk_02013A04.h"
-#include "unk_02018340.h"
 #include "unk_0202854C.h"
 #include "unk_02030EE0.h"
 #include "unk_02033200.h"
 #include "unk_020366A0.h"
-#include "unk_020508D4.h"
 #include "unk_02054D00.h"
 #include "unk_020573FC.h"
 #include "unk_0205F180.h"
 #include "unk_020655F4.h"
-#include "unk_0206A8DC.h"
 #include "vars_flags.h"
 
 typedef struct {
@@ -128,7 +122,7 @@ typedef struct {
 
 typedef struct {
     FieldSystem *fieldSystem;
-    UIControlData *unk_04;
+    Menu *unk_04;
     SysTask *unk_08;
     int unk_0C;
     int unk_10;
@@ -149,7 +143,7 @@ typedef struct {
 typedef struct {
     FieldSystem *fieldSystem;
     SysTask *unk_04;
-    UIControlData *unk_08;
+    Menu *unk_08;
     int unk_0C;
     u8 unk_10;
     u8 unk_11;
@@ -199,7 +193,7 @@ static void ov23_0224DC24(void);
 
 static UnkStruct_ov23_022577AC *Unk_ov23_022577AC = NULL;
 
-static const UnkStruct_ov61_0222C884 Unk_ov23_02256864 = {
+static const WindowTemplate Unk_ov23_02256864 = {
     0x3,
     0x19,
     0xD,
@@ -209,7 +203,7 @@ static const UnkStruct_ov61_0222C884 Unk_ov23_02256864 = {
     0x21F
 };
 
-static const UnkStruct_ov61_0222C884 Unk_ov23_0225686C = {
+static const WindowTemplate Unk_ov23_0225686C = {
     0x3,
     0x10,
     0xD,
@@ -383,7 +377,7 @@ void ov23_0224B2C8(FieldSystem *fieldSystem)
     UnkStruct_02029894 *v0;
     SecretBaseRecord *v1;
 
-    v0 = sub_02029894(FieldSystem_SaveData(fieldSystem));
+    v0 = sub_02029894(FieldSystem_GetSaveData(fieldSystem));
     v1 = sub_020298AC(v0);
 
     sub_020294D4(v1, GameRecords_GetTrainerScore(SaveData_GetGameRecordsPtr(fieldSystem->saveData)));
@@ -811,7 +805,7 @@ static void ov23_0224BA48(SysTask *param0, void *param1)
     UnkStruct_ov23_0224BA48 *v0 = param1;
 
     if (v0->unk_04) {
-        sub_02002154(v0->unk_04, 4);
+        Menu_DestroyForExit(v0->unk_04, 4);
     }
 
     SysTask_Done(param0);
@@ -826,7 +820,7 @@ static void ov23_0224BA6C(SysTask *param0, void *param1)
     UnkStruct_ov23_0224B730 v1;
 
     if (v0->unk_04) {
-        sub_02002154(v0->unk_04, 4);
+        Menu_DestroyForExit(v0->unk_04, 4);
     }
 
     v1.unk_01 = 0;
@@ -863,12 +857,12 @@ static void ov23_0224BAAC(SysTask *param0, void *param1)
         break;
     case 1:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 2;
         }
         break;
     case 2:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -880,12 +874,12 @@ static void ov23_0224BAAC(SysTask *param0, void *param1)
         break;
     case 3:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 4;
         }
         break;
     case 4:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -898,12 +892,12 @@ static void ov23_0224BAAC(SysTask *param0, void *param1)
         break;
     case 5:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 6;
         }
         break;
     case 6:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -965,7 +959,7 @@ static UnkStruct_ov23_0224BA48 *ov23_0224BCC4(FieldSystem *fieldSystem, int para
 {
     UnkStruct_ov23_0224BA48 *v0 = NULL;
 
-    if (fieldSystem->unk_10 == NULL) {
+    if (fieldSystem->task == NULL) {
         v0 = Heap_AllocFromHeapAtEnd(11, sizeof(UnkStruct_ov23_0224BA48));
         MI_CpuClear8(v0, sizeof(UnkStruct_ov23_0224BA48));
 
@@ -1015,30 +1009,30 @@ static int ov23_0224BD1C(int param0, BOOL param1)
     return v1;
 }
 
-static UIControlData *ov23_0224BD90(BGL *param0, const UnkStruct_ov61_0222C884 *param1, u16 param2, u8 param3, u32 param4)
+static Menu *ov23_0224BD90(BgConfig *param0, const WindowTemplate *param1, u16 param2, u8 param3, u32 param4)
 {
-    UnkStruct_02081CF4 v0;
+    MenuTemplate v0;
     MessageLoader *v1 = ov23_02253E3C(ov23_0224219C());
-    ResourceMetadata *v2;
+    StringList *v2;
 
-    v2 = sub_02013A04(2, param4);
+    v2 = StringList_New(2, param4);
 
-    sub_02013A4C(v2, v1, 38, 0);
-    sub_02013A4C(v2, v1, 39, 1);
+    StringList_AddFromMessageBank(v2, v1, 38, 0);
+    StringList_AddFromMessageBank(v2, v1, 39, 1);
 
-    v0.unk_00 = v2;
-    v0.unk_04 = sub_0201A778(param4, 1);
-    v0.unk_08 = 0;
-    v0.unk_09 = 1;
-    v0.unk_0A = 2;
-    v0.unk_0B_0 = 0;
-    v0.unk_0B_4 = 0;
-    v0.unk_0B_0 = 0;
+    v0.choices = v2;
+    v0.window = Window_New(param4, 1);
+    v0.fontID = FONT_SYSTEM;
+    v0.xSize = 1;
+    v0.ySize = 2;
+    v0.lineSpacing = 0;
+    v0.suppressCursor = FALSE;
+    v0.lineSpacing = 0;
 
-    sub_0201A8D4(param0, v0.unk_04, param1);
-    Window_Show(v0.unk_04, 1, param2, param3);
+    Window_AddFromTemplate(param0, v0.window, param1);
+    Window_DrawStandardFrame(v0.window, 1, param2, param3);
 
-    return sub_02001B7C(&v0, 8, 0, 0, param4, PAD_BUTTON_B);
+    return Menu_NewAndCopyToVRAM(&v0, 8, 0, 0, param4, PAD_BUTTON_B);
 }
 
 static void ov23_0224BE28(SysTask *param0, void *param1)
@@ -1063,12 +1057,12 @@ static void ov23_0224BE28(SysTask *param0, void *param1)
         break;
     case 1:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 2;
         }
         break;
     case 2:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -1085,12 +1079,12 @@ static void ov23_0224BE28(SysTask *param0, void *param1)
         break;
     case 4:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 5;
         }
         break;
     case 5:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -1109,12 +1103,12 @@ static void ov23_0224BE28(SysTask *param0, void *param1)
         break;
     case 6:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_04 = ov23_0224BD90(fieldSystem->unk_08, &Unk_ov23_0225686C, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_04 = ov23_0224BD90(fieldSystem->bgConfig, &Unk_ov23_0225686C, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 7;
         }
         break;
     case 7:
-        v6 = sub_02002114(v0->unk_04, 4);
+        v6 = Menu_ProcessInputAndHandleExit(v0->unk_04, 4);
 
         if (v6 == 0) {
             v0->unk_04 = NULL;
@@ -1527,18 +1521,18 @@ static void ov23_0224C6E8(void)
     }
 }
 
-static BOOL ov23_0224C708(TaskManager *param0)
+static BOOL ov23_0224C708(FieldTask *param0)
 {
-    FieldSystem *fieldSystem = TaskManager_FieldSystem(param0);
-    UnkStruct_ov23_0224BA48 *v1 = TaskManager_Environment(param0);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
+    UnkStruct_ov23_0224BA48 *v1 = FieldTask_GetEnv(param0);
 
     switch (v1->unk_10) {
     case 0:
-        sub_0203CD44(fieldSystem);
+        FieldSystem_FlagNotRunningFieldMap(fieldSystem);
         (v1->unk_10)++;
         break;
     case 1:
-        if (!sub_0203CD4C(fieldSystem)) {
+        if (!FieldSystem_HasParentProcess(fieldSystem)) {
             v1->unk_10 = 0;
             return 1;
         }
@@ -1548,18 +1542,18 @@ static BOOL ov23_0224C708(TaskManager *param0)
     return 0;
 }
 
-static BOOL ov23_0224C74C(TaskManager *param0)
+static BOOL ov23_0224C74C(FieldTask *param0)
 {
-    FieldSystem *fieldSystem = TaskManager_FieldSystem(param0);
-    UnkStruct_ov23_0224BA48 *v1 = TaskManager_Environment(param0);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
+    UnkStruct_ov23_0224BA48 *v1 = FieldTask_GetEnv(param0);
 
     switch (v1->unk_10) {
     case 0:
-        sub_0203CD00(fieldSystem);
+        FieldSystem_StartFieldMapInner(fieldSystem);
         (v1->unk_10)++;
         break;
     case 1:
-        if (sub_020509DC(fieldSystem)) {
+        if (FieldSystem_IsRunningFieldMap(fieldSystem)) {
             v1->unk_10 = 0;
             return 1;
         }
@@ -1569,10 +1563,10 @@ static BOOL ov23_0224C74C(TaskManager *param0)
     return 0;
 }
 
-static BOOL ov23_0224C790(TaskManager *param0)
+static BOOL ov23_0224C790(FieldTask *param0)
 {
-    FieldSystem *fieldSystem = TaskManager_FieldSystem(param0);
-    UnkStruct_ov23_0224BA48 *v1 = TaskManager_Environment(param0);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
+    UnkStruct_ov23_0224BA48 *v1 = FieldTask_GetEnv(param0);
     Location v2;
     int v3 = 0, v4 = 0;
 
@@ -1592,13 +1586,13 @@ static BOOL ov23_0224C790(TaskManager *param0)
         break;
     case 1:
         sub_0200F2C0();
-        sub_0200F174(2, 16, 18, 0x0, 6, 1, 4);
+        StartScreenTransition(2, 16, 18, 0x0, 6, 1, 4);
         ov23_0224942C(fieldSystem->unk_6C);
         Sound_PlayEffect(1539);
         v1->unk_0C++;
         break;
     case 2:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             if (fieldSystem->unk_6C == NULL) {
                 (v1->unk_0C)++;
             }
@@ -1611,10 +1605,10 @@ static BOOL ov23_0224C790(TaskManager *param0)
         break;
     case 4:
         v2.mapId = v1->unk_14;
-        v2.unk_04 = v1->unk_18;
+        v2.warpId = v1->unk_18;
         v2.x = v1->unk_1C;
         v2.z = v1->unk_20;
-        v2.unk_10 = v1->unk_24;
+        v2.faceDirection = v1->unk_24;
         sub_020544F0(param0, &v2);
         (v1->unk_0C)++;
         break;
@@ -1626,11 +1620,11 @@ static BOOL ov23_0224C790(TaskManager *param0)
     case 6:
         fieldSystem->unk_6C = ov23_02249404(fieldSystem);
         sub_0200F2C0();
-        sub_0200F174(1, 17, 19, 0x0, 6, 1, 4);
+        StartScreenTransition(1, 17, 19, 0x0, 6, 1, 4);
         (v1->unk_0C)++;
         break;
     case 7:
-        if (!ScreenWipe_Done()) {
+        if (!IsScreenTransitionDone()) {
             break;
         }
 
@@ -1643,8 +1637,8 @@ static BOOL ov23_0224C790(TaskManager *param0)
         CommSys_EnableSendMovementData();
         sub_020594FC();
 
-        sub_02006E84(50, 52, 0, 10 * 0x20, 4 * 0x20, 4);
-        sub_0200DAA4(fieldSystem->unk_08, 3, 1024 - (18 + 12) - 9, 11, 2, 4);
+        Graphics_LoadPalette(50, 52, 0, 10 * 0x20, 4 * 0x20, 4);
+        LoadStandardWindowGraphics(fieldSystem->bgConfig, 3, 1024 - (18 + 12) - 9, 11, 2, 4);
 
         if (v1->unk_2D) {
             sub_020594EC();
@@ -1741,7 +1735,7 @@ static void ov23_0224CAF0(FieldSystem *fieldSystem, int param1, int param2, int 
 
     if (v0) {
         v0->unk_2D = param5;
-        FieldTask_Set(fieldSystem, ov23_0224C790, v0);
+        FieldSystem_CreateTask(fieldSystem, ov23_0224C790, v0);
     }
 }
 
@@ -1816,12 +1810,12 @@ static void ov23_0224CB1C(SysTask *param0, void *param1)
         break;
     case 5:
         if (ov23_02254238(ov23_0224219C()) == 0) {
-            v0->unk_08 = sub_02002100(fieldSystem->unk_08, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
+            v0->unk_08 = Menu_MakeYesNoChoice(fieldSystem->bgConfig, &Unk_ov23_02256864, 1024 - (18 + 12) - 9, 11, 4);
             v0->unk_0C = 6;
         }
         break;
     case 6:
-        v3 = sub_02002114(v0->unk_08, 4);
+        v3 = Menu_ProcessInputAndHandleExit(v0->unk_08, 4);
 
         if (v3 == 0) {
             v0->unk_0C = 9;
@@ -1956,7 +1950,7 @@ static void ov23_0224CE94(SysTask *param0, void *param1)
     ov23_0224C6AC(16);
 
     if (v0->unk_08) {
-        sub_02002154(v0->unk_08, 4);
+        Menu_DestroyForExit(v0->unk_08, 4);
     }
 
     SysTask_Done(param0);
@@ -1987,7 +1981,7 @@ static void ov23_0224CEC8(void)
 void ov23_0224CF18(int param0, int param1, void *param2, void *param3)
 {
     UnkStruct_ov23_0224CF18 *v0 = param2;
-    SecretBaseRecord *v1 = SaveData_SecretBaseRecord(FieldSystem_SaveData(Unk_ov23_022577AC->fieldSystem));
+    SecretBaseRecord *v1 = SaveData_SecretBaseRecord(FieldSystem_GetSaveData(Unk_ov23_022577AC->fieldSystem));
 
     if (v0->unk_00 != CommSys_CurNetId()) {
         return;
@@ -2024,7 +2018,7 @@ void ov23_0224CF18(int param0, int param1, void *param2, void *param3)
         if ((v0->unk_01 == 3) || (v0->unk_01 == 4)) {
             void *v6 = sub_0202BE20(11);
 
-            sub_0202B758(Unk_ov23_022577AC->fieldSystem->unk_9C, v6, 1);
+            Journal_SaveData(Unk_ov23_022577AC->fieldSystem->journal, v6, 1);
             GameRecords_IncrementTrainerScore(SaveData_GetGameRecordsPtr(Unk_ov23_022577AC->fieldSystem->saveData), TRAINER_SCORE_EVENT_UNK_35);
         }
     }
@@ -2157,8 +2151,8 @@ BOOL ov23_0224D1A0(int param0, int param1)
 
 static void ov23_0224D238(void)
 {
-    UnkStruct_02029894 *v0 = sub_02029894(FieldSystem_SaveData(Unk_ov23_022577AC->fieldSystem));
-    UndergroundData *v1 = sub_020298B0(FieldSystem_SaveData(Unk_ov23_022577AC->fieldSystem));
+    UnkStruct_02029894 *v0 = sub_02029894(FieldSystem_GetSaveData(Unk_ov23_022577AC->fieldSystem));
+    UndergroundData *v1 = sub_020298B0(FieldSystem_GetSaveData(Unk_ov23_022577AC->fieldSystem));
     int v2 = CommPlayer_AddXServer(0);
     int v3 = CommPlayer_AddZServer(0);
     int v4 = CommPlayer_DirServer(0);
@@ -2170,7 +2164,7 @@ static void ov23_0224D238(void)
     v16[0][0] = 16;
     v16[0][1] = 12;
 
-    sub_0206AA20(SaveData_GetVarsFlags(Unk_ov23_022577AC->fieldSystem->saveData));
+    SystemFlag_SetCreatedSecretBase(SaveData_GetVarsFlags(Unk_ov23_022577AC->fieldSystem->saveData));
     sub_020292CC(v0);
     sub_02028B34(v1);
     CommSys_Seed(&v15);
@@ -2389,7 +2383,7 @@ static void ov23_0224D5BC(SysTask *param0, void *param1)
         }
         break;
     case 3:
-        sub_0200F174(2, 0, 0, 0x0, 6, 1, 4);
+        StartScreenTransition(2, 0, 0, 0x0, 6, 1, 4);
         break;
     case 4:
         Heap_FreeToHeap(param1);

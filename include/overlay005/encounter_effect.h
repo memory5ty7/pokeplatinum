@@ -3,10 +3,6 @@
 
 #include <nitro/fx/fx.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
-#include "struct_defs/struct_0205AA50.h"
-
 #include "field/field_system_decl.h"
 #include "overlay005/encounter_effect.h"
 #include "overlay005/hblank_system.h"
@@ -16,10 +12,12 @@
 #include "overlay005/struct_ov5_021DDF24.h"
 #include "overlay005/struct_ov5_021DE47C.h"
 #include "overlay005/struct_ov5_021DE5A4.h"
-#include "overlay006/battle_params.h"
 
+#include "bg_window.h"
 #include "cell_actor.h"
 #include "enc_effects.h"
+#include "field_battle_data_transfer.h"
+#include "narc.h"
 #include "sys_task_manager.h"
 
 typedef struct EncounterEffect {
@@ -137,7 +135,7 @@ void ScreenSliceEffect_Modify(EncounterEffect *encEffect, ScreenSliceEffect *scr
 ScreenSplitEffect *ScreenSplitEffect_New(void);
 void ScreenSplitEffect_Delete(ScreenSplitEffect *screenSplitEfx);
 void EncounterEffect_ScreenSplit(EncounterEffect *encEffect, ScreenSplitEffect *screenSplitEfx, u32 numSteps, fx32 initialSpeedX, fx32 initialSpeedY);
-void ov5_021DE3D0(NARC *param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, BGL *param6, u32 param7);
+void ov5_021DE3D0(NARC *param0, u32 param1, u32 param2, u32 param3, u32 param4, u32 param5, BgConfig *param6, u32 param7);
 void ov5_021DE47C(UnkStruct_ov5_021DE47C *param0, int param1, int param2);
 void ov5_021DE4AC(UnkStruct_ov5_021DE47C *param0);
 void ov5_021DE4CC(NARC *param0, UnkStruct_ov5_021DE47C *param1, UnkStruct_ov5_021DE5A4 *param2, u32 param3, u32 param4, u32 param5, u32 param6, u32 param7, u32 param8);
@@ -168,7 +166,7 @@ BOOL ov5_021DECB8(UnkStruct_ov5_021DEC18 *param0);
 UnkStruct_ov5_021DED04 *ov5_021DECEC(void);
 void ov5_021DED04(UnkStruct_ov5_021DED04 *param0);
 void ov5_021DED20(EncounterEffect *param0, UnkStruct_ov5_021DED04 *param1, u32 param2, u32 param3, u32 param4, u32 param5, u32 param6);
-u32 CutInEffects_ForBattle(const BattleParams *param0);
+u32 CutInEffects_ForBattle(const FieldBattleDTO *param0);
 void ov5_021DEF8C(int *param0);
 void ov5_021DEFA0(FieldSystem *fieldSystem);
 void ov5_021DF038(void);

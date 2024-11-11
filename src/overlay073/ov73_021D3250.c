@@ -1,36 +1,27 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "core_sys.h"
-
-#include "message.h"
-#include "struct_decls/struct_02018340_decl.h"
-#include "strbuf.h"
-
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/struct_02099F80.h"
-#include "overlay061/struct_ov61_0222C884.h"
-#include "overlay084/struct_ov84_0223BA5C.h"
-#include "overlay097/struct_ov97_0222DB78.h"
 
-#include "unk_02002B7C.h"
-#include "unk_02002F38.h"
-#include "unk_020041CC.h"
-#include "overlay_manager.h"
-#include "unk_02006E3C.h"
+#include "bg_window.h"
+#include "core_sys.h"
+#include "font.h"
+#include "graphics.h"
+#include "gx_layers.h"
+#include "hardware_palette.h"
+#include "heap.h"
 #include "message.h"
+#include "overlay_manager.h"
+#include "palette.h"
+#include "strbuf.h"
+#include "text.h"
+#include "unk_020041CC.h"
 #include "unk_0200F174.h"
 #include "unk_02017728.h"
-#include "heap.h"
-#include "unk_02018340.h"
-#include "unk_0201D670.h"
-#include "gx_layers.h"
-#include "strbuf.h"
-#include "unk_020241F0.h"
 
 typedef struct {
     int unk_00;
-    BGL * unk_04;
+    BgConfig *unk_04;
     MessageLoader * unk_08;
     int unk_0C;
     Window unk_10;
@@ -38,7 +29,7 @@ typedef struct {
     int unk_24;
 } UnkStruct_ov73_021D342C;
 
-void sub_02000EC4(FSOverlayID param0, const OverlayManagerTemplate * param1);
+void EnqueueApplication(FSOverlayID param0, const OverlayManagerTemplate *param1);
 int ov73_021D3250(OverlayManager * param0, int * param1);
 int ov73_021D3280(OverlayManager * param0, int * param1);
 int ov73_021D3404(OverlayManager * param0, int * param1);
@@ -92,9 +83,9 @@ int ov73_021D3280 (OverlayManager * param0, int * param1)
         GXLayers_TurnBothDispOn();
 
         {
-            u16 * v2 = (u16 *)sub_020241F0();
+            u16 *v2 = (u16 *)GetHardwareMainBgPaletteAddress();
 
-            sub_020039F8(v2, v2, 0xFFFC, 7, 0x0);
+            BlendPalettes(v2, v2, 0xFFFC, 7, 0x0);
             GX_LoadBGPltt((const void *)v2, 0, 16 * 0x20);
         }
 
@@ -117,14 +108,14 @@ int ov73_021D3280 (OverlayManager * param0, int * param1)
             v0->unk_24--;
         } else {
             v0->unk_24 = 0;
-            sub_0200F174(0, 1, 1, 0x0, 6, 1, v0->unk_00);
+            StartScreenTransition(0, 1, 1, 0x0, 6, 1, v0->unk_00);
             *param1 = 3;
         }
         break;
     case 3:
         ov73_021D37AC(v0);
 
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             *param1 = 4;
         }
         break;
@@ -132,14 +123,14 @@ int ov73_021D3280 (OverlayManager * param0, int * param1)
         ov73_021D37AC(v0);
 
         if (ov73_021D3698(v0, 0, 5 * 8, 6 * 8) == 1) {
-            sub_0200F174(0, 0, 0, 0x0, 6, 1, v0->unk_00);
+            StartScreenTransition(0, 0, 0, 0x0, 6, 1, v0->unk_00);
             *param1 = 5;
         }
         break;
     case 5:
         ov73_021D37AC(v0);
 
-        if (ScreenWipe_Done() == 1) {
+        if (IsScreenTransitionDone() == 1) {
             ov73_021D368C(v0);
             ov73_021D35F4(v0);
             SetMainCallback(NULL, NULL);
@@ -166,7 +157,7 @@ int ov73_021D3404 (OverlayManager * param0, int * param1)
 static void ov73_021D3420 (void * param0)
 {
     UnkStruct_ov73_021D342C * v0 = param0;
-    sub_0201C2B8(v0->unk_04);
+    Bg_RunScheduledUpdates(v0->unk_04);
 }
 
 static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
@@ -189,22 +180,22 @@ static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
     }
 
     {
-        param0->unk_04 = sub_02018340(param0->unk_00);
+        param0->unk_04 = BgConfig_New(param0->unk_00);
     }
     {
-        UnkStruct_ov84_0223BA5C v1 = {
+        GraphicsModes v1 = {
             GX_DISPMODE_GRAPHICS,
             GX_BGMODE_0,
             GX_BGMODE_0,
             GX_BG0_AS_2D
         };
 
-        sub_02018368(&v1);
+        SetAllGraphicsModes(&v1);
     }
     {
         int v2, v3, v4;
         {
-            UnkStruct_ov97_0222DB78 v5 = {
+            BgTemplate v5 = {
                 0,
                 0,
                 0x800,
@@ -222,12 +213,12 @@ static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
 
             v2 = 2;
 
-            sub_020183C4(param0->unk_04, v2, &v5, 0);
-            sub_02019690(v2, 32, 0, param0->unk_00);
-            sub_02019EBC(param0->unk_04, v2);
+            Bg_InitFromTemplate(param0->unk_04, v2, &v5, 0);
+            Bg_ClearTilesRange(v2, 32, 0, param0->unk_00);
+            Bg_ClearTilemap(param0->unk_04, v2);
         }
         {
-            UnkStruct_ov97_0222DB78 v6 = {
+            BgTemplate v6 = {
                 0,
                 0,
                 0x800,
@@ -247,12 +238,12 @@ static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
             v3 = 1;
             v4 = 4;
 
-            sub_020183C4(param0->unk_04, v2, &v6, 0);
-            sub_02006E3C(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
-            sub_02006E60(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Bg_InitFromTemplate(param0->unk_04, v2, &v6, 0);
+            Graphics_LoadTilesToBgLayer(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Graphics_LoadTilemapToBgLayer(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
         }
         {
-            UnkStruct_ov97_0222DB78 v7 = {
+            BgTemplate v7 = {
                 0,
                 0,
                 0x800,
@@ -272,12 +263,12 @@ static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
             v3 = 2;
             v4 = 5;
 
-            sub_020183C4(param0->unk_04, v2, &v7, 0);
-            sub_02006E3C(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
-            sub_02006E60(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Bg_InitFromTemplate(param0->unk_04, v2, &v7, 0);
+            Graphics_LoadTilesToBgLayer(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Graphics_LoadTilemapToBgLayer(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
         }
         {
-            UnkStruct_ov97_0222DB78 v8 = {
+            BgTemplate v8 = {
                 0,
                 0,
                 0x800,
@@ -297,37 +288,37 @@ static void ov73_021D342C (UnkStruct_ov73_021D342C * param0)
             v3 = 8;
             v4 = 7;
 
-            sub_020183C4(param0->unk_04, v2, &v8, 0);
-            sub_02006E3C(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
-            sub_02006E60(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Bg_InitFromTemplate(param0->unk_04, v2, &v8, 0);
+            Graphics_LoadTilesToBgLayer(136, v3, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
+            Graphics_LoadTilemapToBgLayer(136, v4, param0->unk_04, v2, 0, 0, 0, param0->unk_00);
         }
     }
-    sub_02006E84(136, 6, 0, 0, 0, param0->unk_00);
-    sub_02006E9C(136, 9, 0, 0x20 * 2, 0x20 * 2, 0x20 * 14, param0->unk_00);
-    sub_02002E7C(0, 1 * (2 * 16), param0->unk_00);
-    sub_0201975C(0, 0x0);
-    sub_0201975C(4, 0x0);
+    Graphics_LoadPalette(136, 6, 0, 0, 0, param0->unk_00);
+    Graphics_LoadPaletteWithSrcOffset(136, 9, 0, 0x20 * 2, 0x20 * 2, 0x20 * 14, param0->unk_00);
+    Font_LoadTextPalette(0, 1 * (2 * 16), param0->unk_00);
+    Bg_MaskPalette(0, 0x0);
+    Bg_MaskPalette(4, 0x0);
 
     G2_SetBlendAlpha(GX_BLEND_PLANEMASK_BG1, (GX_BLEND_PLANEMASK_BG2 | GX_BLEND_PLANEMASK_BG3), 0x4, 0xc);
 }
 
 static void ov73_021D35F4 (UnkStruct_ov73_021D342C * param0)
 {
-    sub_02019120(0, 0);
-    sub_02019120(1, 0);
-    sub_02019120(2, 0);
-    sub_02019120(3, 0);
-    sub_02019120(4, 0);
-    sub_02019120(5, 0);
-    sub_02019120(6, 0);
-    sub_02019120(7, 0);
+    Bg_ToggleLayer(0, 0);
+    Bg_ToggleLayer(1, 0);
+    Bg_ToggleLayer(2, 0);
+    Bg_ToggleLayer(3, 0);
+    Bg_ToggleLayer(4, 0);
+    Bg_ToggleLayer(5, 0);
+    Bg_ToggleLayer(6, 0);
+    Bg_ToggleLayer(7, 0);
 
     G2_BlendNone();
 
-    sub_02019044(param0->unk_04, 3);
-    sub_02019044(param0->unk_04, 1);
-    sub_02019044(param0->unk_04, 0);
-    sub_02019044(param0->unk_04, 2);
+    Bg_FreeTilemapBuffer(param0->unk_04, 3);
+    Bg_FreeTilemapBuffer(param0->unk_04, 1);
+    Bg_FreeTilemapBuffer(param0->unk_04, 0);
+    Bg_FreeTilemapBuffer(param0->unk_04, 2);
     Heap_FreeToHeap(param0->unk_04);
 }
 
@@ -335,7 +326,7 @@ static void ov73_021D366C (UnkStruct_ov73_021D342C * param0)
 {
     param0->unk_08 = MessageLoader_Init(1, 26, 607, param0->unk_00);
 
-    sub_0201D710();
+    Text_ResetAllPrinters();
     param0->unk_0C = 0;
 }
 
@@ -344,7 +335,7 @@ static void ov73_021D368C (UnkStruct_ov73_021D342C * param0)
     MessageLoader_Free(param0->unk_08);
 }
 
-static const UnkStruct_ov61_0222C884 Unk_ov72_021D3A38 = {
+static const WindowTemplate Unk_ov72_021D3A38 = {
     0x2,
     0x0,
     0x0,
@@ -354,6 +345,7 @@ static const UnkStruct_ov61_0222C884 Unk_ov72_021D3A38 = {
     0x1
 };
 
+// clang-format off
 asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int param2, int param3)
 {
     push {r3, r4, r5, r6, r7, lr}
@@ -376,7 +368,7 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
  _021D36BC:
     mov r0, #2
     add r1, r6, #0
-    bl sub_02019120
+    bl Bg_ToggleLayer
     mov r0, #1
     ldr r1, [r4, #0]
     lsl r0, r0, #0xa
@@ -390,7 +382,7 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
     ldr r0, [r4, #4]
     ldr r2, = Unk_ov72_021D3A38
     add r1, #0x10
-    bl sub_0201A8D4
+    bl Window_AddFromTemplate
     add r1, r6, #0
     mov r0, #1
     lsl r0, r0, #8
@@ -401,11 +393,11 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
     add r0, #0x10
     add r2, r1, #0
     add r3, r1, #0
-    bl BGL_WindowColor
+    bl Window_FillRectWithColor
     add r0, r6, #0
     add r1, r5, #0
     add r2, r0, #0
-    bl sub_02002EB4
+    bl Font_CalcMaxLineWidth
     mov r1, #1
     lsl r1, r1, #8
     sub r0, r1, r0
@@ -426,15 +418,15 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
     add r2, r5, #0
     add r3, r7, #0
     str r1, [sp, #0xc]
-    bl sub_0201D78C
+    bl Text_AddPrinterWithParamsAndColor
     add r0, r5, #0
     bl Strbuf_Free
     add r0, r4, #0
     add r0, #0x10
-    bl sub_0201A954
+    bl Window_CopyToVRAM
     mov r0, #2
     mov r1, #1
-    bl sub_02019120
+    bl Bg_ToggleLayer
     mov r0, #0xf0
     str r0, [r4, #0x24]
     mov r0, #1
@@ -469,10 +461,10 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
  _021D3782:
     add r0, r4, #0
     add r0, #0x10
-    bl BGL_DeleteWindow
+    bl Window_Remove
     ldr r0, [r4, #4]
     mov r1, #2
-    bl sub_02019EBC
+    bl Bg_ClearTilemap
     add r0, r6, #0
     str r0, [r4, #0xc]
     mov r6, #1
@@ -482,9 +474,10 @@ asm static BOOL ov73_021D3698 (UnkStruct_ov73_021D342C * param0, int param1, int
     pop {r3, r4, r5, r6, r7, pc}
     nop
 }
+// clang-format on
 
 static void ov73_021D37AC (UnkStruct_ov73_021D342C * param0)
 {
     param0->unk_20 += 0x4;
-    sub_02019184(param0->unk_04, 1, 3, param0->unk_20 >> 4);
+    Bg_SetOffset(param0->unk_04, 1, 3, param0->unk_20 >> 4);
 }

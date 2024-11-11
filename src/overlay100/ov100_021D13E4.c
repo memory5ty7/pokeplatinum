@@ -3,11 +3,8 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02002F38_decl.h"
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_defs/sprite_template.h"
 
 #include "overlay100/ov100_021D400C.h"
@@ -18,15 +15,17 @@
 #include "overlay100/struct_ov100_021D4EBC.h"
 #include "overlay115/camera_angle.h"
 
+#include "bg_window.h"
 #include "camera.h"
 #include "easy3d_object.h"
+#include "graphics.h"
 #include "gx_layers.h"
 #include "heap.h"
+#include "narc.h"
+#include "palette.h"
 #include "sys_task.h"
-#include "unk_02002F38.h"
 #include "unk_020041CC.h"
 #include "unk_02005474.h"
-#include "unk_02006E3C.h"
 #include "unk_0200C6E4.h"
 #include "unk_0200F174.h"
 #include "unk_0201D15C.h"
@@ -108,10 +107,10 @@ BOOL ov100_021D14A8(void *param0)
 
     switch (v0->unk_00) {
     case 0:
-        sub_0200F174(0, 1, 1, 0x0, 6, 1, 111);
+        StartScreenTransition(0, 1, 1, 0x0, 6, 1, 111);
         v0->unk_00++;
     case 1:
-        if (ScreenWipe_Done() == 0) {
+        if (IsScreenTransitionDone() == 0) {
             break;
         }
 
@@ -172,7 +171,7 @@ BOOL ov100_021D14A8(void *param0)
         if ((++v0->unk_7C4->unk_50.unk_03) != (+16)) {
             G2S_SetBlendBrightness((GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_BG1 | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BD), v0->unk_7C4->unk_50.unk_03);
         } else {
-            sub_0200F174(0, 0, 0, 0x7fff, 1, 1, 111);
+            StartScreenTransition(0, 0, 0, 0x7fff, 1, 1, 111);
             v0->unk_00 = 0;
             return 0;
         }
@@ -240,20 +239,20 @@ static void ov100_021D17B4(UnkStruct_ov100_021D1808 *param0)
 static void ov100_021D1808(UnkStruct_ov100_021D1808 *param0)
 {
     NARC *v0 = param0->unk_7C4->unk_00;
-    BGL *v1 = param0->unk_7C4->unk_0C;
+    BgConfig *v1 = param0->unk_7C4->unk_0C;
     SpriteRenderer *v2 = param0->unk_7C4->unk_04;
     SpriteGfxHandler *v3 = param0->unk_7C4->unk_08;
     PaletteData *v4 = param0->unk_7C4->unk_10;
     int v5 = 50000;
 
-    sub_020070E8(v0, 70, v1, 5, 0, 0, 0, 111);
-    sub_0200710C(v0, 72, v1, 5, 0, 0, 0, 111);
-    sub_0200710C(v0, 73, v1, 4, 0, 0, 0, 111);
-    PaletteSys_LoadPalette(v4, 172, 71, 111, 1, 0x20 * 2, 0);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(v0, 70, v1, 5, 0, 0, 0, 111);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(v0, 72, v1, 5, 0, 0, 0, 111);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(v0, 73, v1, 4, 0, 0, 0, 111);
+    PaletteData_LoadBufferFromFileStart(v4, 172, 71, 111, 1, 0x20 * 2, 0);
 
     {
         const u16 v6[] = { 0x421 };
-        sub_02002FBC(v4, &v6, 0, 0, 0x2);
+        PaletteData_LoadBuffer(v4, &v6, 0, 0, 0x2);
     }
 
     SpriteRenderer_LoadPalette(v4, 3, v2, v3, v0, 50, 0, 3, NNS_G2D_VRAM_TYPE_2DSUB, v5);
@@ -296,7 +295,7 @@ static void ov100_021D1A54(UnkStruct_ov100_021D1808 *param0)
 {
     int v0;
     NARC *v1 = param0->unk_7C4->unk_00;
-    BGL *v2 = param0->unk_7C4->unk_0C;
+    BgConfig *v2 = param0->unk_7C4->unk_0C;
     SpriteRenderer *v3 = param0->unk_7C4->unk_04;
     SpriteGfxHandler *v4 = param0->unk_7C4->unk_08;
     PaletteData *v5 = param0->unk_7C4->unk_10;

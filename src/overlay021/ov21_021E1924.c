@@ -3,19 +3,17 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_02023FCC_decl.h"
-#include "struct_defs/struct_0205AA50.h"
 
 #include "overlay021/ov21_021D0D80.h"
 #include "overlay021/ov21_021D1FA4.h"
-#include "overlay021/ov21_021D3208.h"
 #include "overlay021/ov21_021D4340.h"
 #include "overlay021/ov21_021D4C0C.h"
 #include "overlay021/ov21_021D5600.h"
 #include "overlay021/ov21_021DE668.h"
 #include "overlay021/ov21_021E0C68.h"
 #include "overlay021/ov21_021E29DC.h"
+#include "overlay021/pokedex_sort.h"
 #include "overlay021/struct_ov21_021D0F60_decl.h"
 #include "overlay021/struct_ov21_021D13FC.h"
 #include "overlay021/struct_ov21_021D3320.h"
@@ -27,9 +25,11 @@
 #include "overlay021/struct_ov21_021E6A68.h"
 #include "overlay021/struct_ov21_021E6B20.h"
 
+#include "bg_window.h"
 #include "cell_actor.h"
 #include "core_sys.h"
 #include "heap.h"
+#include "narc.h"
 #include "sprite_resource.h"
 #include "touch_screen.h"
 #include "unk_02005474.h"
@@ -37,7 +37,6 @@
 #include "unk_0200A328.h"
 #include "unk_0200A9DC.h"
 #include "unk_02012744.h"
-#include "unk_02018340.h"
 #include "unk_0201DBEC.h"
 #include "unk_0201F834.h"
 #include "unk_02023FCC.h"
@@ -264,7 +263,7 @@ static int ov21_021E1AD0(UnkStruct_ov21_021E6A68 *param0, void *param1)
     UnkStruct_ov21_021E1E74 *v1 = param0->unk_08;
     int v2;
 
-    v1 = Heap_AllocFromHeap(param0->unk_04, sizeof(UnkStruct_ov21_021E1E74));
+    v1 = Heap_AllocFromHeap(param0->heapID, sizeof(UnkStruct_ov21_021E1E74));
     memset(v1, 0, sizeof(UnkStruct_ov21_021E1E74));
 
     for (v2 = 0; v2 < 8; v2++) {
@@ -273,7 +272,7 @@ static int ov21_021E1AD0(UnkStruct_ov21_021E6A68 *param0, void *param1)
 
     v1->unk_10 = 0;
 
-    ov21_021E1D40(v1, v0, param0->unk_04);
+    ov21_021E1D40(v1, v0, param0->heapID);
     ov21_021E2968(v1, v0);
 
     param0->unk_08 = v1;
@@ -323,12 +322,12 @@ static int ov21_021E1B68(void *param0, UnkStruct_ov21_021E6B20 *param1, const vo
 
     switch (param1->unk_00) {
     case 0:
-        param1->unk_08 = Heap_AllocFromHeap(param1->unk_04, sizeof(UnkStruct_ov21_021E2588));
+        param1->unk_08 = Heap_AllocFromHeap(param1->heapID, sizeof(UnkStruct_ov21_021E2588));
         memset(param1->unk_08, 0, sizeof(UnkStruct_ov21_021E2588));
         param1->unk_00++;
         break;
     case 1:
-        ov21_021E2014(v3, v2, param1->unk_04);
+        ov21_021E2014(v3, v2, param1->heapID);
         ov21_021E28D0(v3, v1);
         ov21_021E25F8(v3, v2, v0, 1);
         param1->unk_00++;
@@ -379,7 +378,7 @@ static int ov21_021E1BFC(void *param0, UnkStruct_ov21_021E6B20 *param1, const vo
                 v5 = 5;
             }
 
-            ov21_021E26A0(v2, v3->unk_00[v4], v3->unk_20[v4], v1->unk_14[v4], -6, v5, &v3->unk_80[v4], param1->unk_04, 4, 1, &v3->unk_A0[v4]);
+            ov21_021E26A0(v2, v3->unk_00[v4], v3->unk_20[v4], v1->unk_14[v4], -6, v5, &v3->unk_80[v4], param1->heapID, 4, 1, &v3->unk_A0[v4]);
             ov21_021D144C(v3->unk_50[v4], v1->unk_14[v4]);
         }
     }
@@ -410,7 +409,7 @@ static int ov21_021E1CB8(void *param0, UnkStruct_ov21_021E6B20 *param1, const vo
         }
         break;
     case 2:
-        ov21_021E2044(v3, v2, param1->unk_04);
+        ov21_021E2044(v3, v2, param1->heapID);
         param1->unk_00++;
         break;
     case 3:
@@ -648,19 +647,19 @@ static void ov21_021E20A4(UnkStruct_ov21_021E1A90 *param0, int param1)
 
     v0 = ov21_021D27B8(param0->unk_00, 62, 1, &v1, param1);
 
-    sub_020198C0(param0->unk_00->unk_00, 6, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
+    Bg_LoadToTilemapRect(param0->unk_00->unk_00, 6, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
     Heap_FreeToHeap(v0);
 
     v0 = ov21_021D27B8(param0->unk_00, 60, 1, &v1, param1);
 
-    sub_020198C0(param0->unk_00->unk_00, 6, v1->rawData, ((128 - (160 / 2)) / 8), ((132 - (40 / 2)) / 8), v1->screenWidth / 8, v1->screenHeight / 8);
+    Bg_LoadToTilemapRect(param0->unk_00->unk_00, 6, v1->rawData, ((128 - (160 / 2)) / 8), ((132 - (40 / 2)) / 8), v1->screenWidth / 8, v1->screenHeight / 8);
     Heap_FreeToHeap(v0);
 
     v0 = ov21_021D27B8(param0->unk_00, 63, 1, &v1, param1);
 
-    sub_020198C0(param0->unk_00->unk_00, 6, v1->rawData, ((128 - (160 / 2)) / 8), ((76 - (40 / 2)) / 8), v1->screenWidth / 8, v1->screenHeight / 8);
+    Bg_LoadToTilemapRect(param0->unk_00->unk_00, 6, v1->rawData, ((128 - (160 / 2)) / 8), ((76 - (40 / 2)) / 8), v1->screenWidth / 8, v1->screenHeight / 8);
     Heap_FreeToHeap(v0);
-    sub_0201C3C0(param0->unk_00->unk_00, 6);
+    Bg_ScheduleTilemapTransfer(param0->unk_00->unk_00, 6);
 }
 
 static void ov21_021E2180(UnkStruct_ov21_021E2588 *param0, UnkStruct_ov21_021E1A90 *param1, int param2)
@@ -794,7 +793,7 @@ static void ov21_021E2478(UnkStruct_ov21_021E2588 *param0, UnkStruct_ov21_021E1A
     v1.unk_18 = 2;
     v1.unk_1C = 0;
     v1.unk_20 = NNS_G2D_VRAM_TYPE_2DSUB;
-    v1.unk_24 = param2;
+    v1.heapID = param2;
 
     v4 = sub_0201FAB4(v1.unk_08, NNS_G2D_VRAM_TYPE_2DSUB);
     v0 = ov21_021D4D6C(v3->unk_14C, 8, 4);
@@ -1052,9 +1051,9 @@ static void ov21_021E2864(UnkStruct_ov21_021E1E74 *param0, UnkStruct_ov21_021E1A
 
     if (param0->unk_34 != 8) {
         if (param0->unk_34 == 1) {
-            v0 = ov21_021D371C(param1->unk_04, -1);
+            v0 = PokedexSort_TakeStep_Loop(param1->unk_04, -1);
         } else {
-            v0 = ov21_021D371C(param1->unk_04, 1);
+            v0 = PokedexSort_TakeStep_Loop(param1->unk_04, 1);
         }
 
         if (v0 == 1) {

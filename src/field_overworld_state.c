@@ -3,13 +3,13 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_defs/struct_02049FA8.h"
 #include "struct_defs/struct_020556C4.h"
 #include "struct_defs/struct_0205EC34.h"
 #include "struct_defs/struct_02061D3C.h"
 
 #include "field/field_system.h"
 
+#include "location.h"
 #include "map_object.h"
 #include "player_avatar.h"
 #include "savedata.h"
@@ -17,10 +17,10 @@
 #include "unk_020556C4.h"
 
 typedef struct UnkStruct_0203A790_t {
-    Location unk_00;
+    Location player;
     Location entrance;
     Location previous;
-    Location unk_3C;
+    Location special;
     Location unk_50;
     u16 unk_64;
     u16 weather;
@@ -64,9 +64,9 @@ void FieldOverworldState_Init(FieldOverworldState *fieldState)
     fieldState->warpId = sub_0203A7EC();
 }
 
-Location *sub_0203A720(FieldOverworldState *fieldState)
+Location *FieldOverworldState_GetPlayerLocation(FieldOverworldState *fieldState)
 {
-    return &fieldState->unk_00;
+    return &fieldState->player;
 }
 
 Location *FieldOverworldState_GetEntranceLocation(FieldOverworldState *fieldState)
@@ -84,14 +84,14 @@ Location *sub_0203A72C(FieldOverworldState *fieldState)
     return &fieldState->unk_50;
 }
 
-Location *sub_0203A730(FieldOverworldState *fieldState)
+Location *FieldOverworldState_GetSpecialLocation(FieldOverworldState *fieldState)
 {
-    return &fieldState->unk_3C;
+    return &fieldState->special;
 }
 
-void sub_0203A734(FieldOverworldState *fieldState, Location *param1)
+void FieldOverworldState_SetSpecialLocation(FieldOverworldState *fieldState, Location *location)
 {
-    fieldState->unk_3C = *param1;
+    fieldState->special = *location;
     return;
 }
 
@@ -130,9 +130,9 @@ int FieldOverworldState_GetCameraType(const FieldOverworldState *fieldState)
     return fieldState->cameraType;
 }
 
-void FieldOverworldState_SetCameraType(FieldOverworldState *fieldState, int param1)
+void FieldOverworldState_SetCameraType(FieldOverworldState *fieldState, int type)
 {
-    fieldState->cameraType = param1;
+    fieldState->cameraType = type;
 }
 
 PlayerData *FieldOverworldState_GetPlayerData(FieldOverworldState *fieldState)

@@ -14,13 +14,13 @@
 #include "battle/struct_ov16_0223E0C8.h"
 #include "overlay006/struct_ov6_02248BE8.h"
 
+#include "graphics.h"
 #include "heap.h"
 #include "message.h"
 #include "narc.h"
 #include "pokemon.h"
+#include "render_text.h"
 #include "strbuf.h"
-#include "unk_02002328.h"
-#include "unk_02006E3C.h"
 #include "unk_0200762C.h"
 #include "unk_020131EC.h"
 #include "unk_0201D15C.h"
@@ -418,7 +418,7 @@ void sub_02094F04(UnkStruct_02095C48 *param0, int param1, int param2, int param3
         break;
     }
 
-    v9 = sub_02006FE8(90, 0, 0, param1, 1);
+    v9 = LoadMemberFromNARC(90, 0, 0, param1, 1);
     v6 = NARC_GetMemberSizeByIndexPair(NARC_INDEX_CONTEST__DATA__CONTEST_DATA, 0) / sizeof(UnkStruct_ov6_02248BE8);
     v2 = Heap_AllocFromHeapAtEnd(param1, v6 + 1);
 
@@ -530,7 +530,7 @@ void sub_020951B0(UnkStruct_02095C48 *param0, int param1)
     int v4;
     int v5;
 
-    v2 = sub_02006FE8(90, 2, 0, param1, 1);
+    v2 = LoadMemberFromNARC(90, 2, 0, param1, 1);
 
     switch (param0->unk_00.unk_111) {
     case 4:
@@ -622,11 +622,11 @@ void sub_02095380(const UnkStruct_ov6_02248BE8 *param0, Pokemon *param1, int par
     u32 v2;
 
     v2 = sub_02074128(param0->unk_14, param0->unk_20_12, 0);
-    Pokemon_InitWith(param1, param0->unk_14, 10, 32, 1, v2, 2, 0xf0f0f0f);
+    Pokemon_InitWith(param1, param0->unk_14, 10, 32, TRUE, v2, OTID_NOT_SHINY, 0xf0f0f0f);
 
     for (v0 = 0; v0 < 4; v0++) {
         v1 = param0->unk_0C[v0];
-        Pokemon_SetValue(param1, 54 + v0, &v1);
+        Pokemon_SetValue(param1, MON_DATA_MOVE1 + v0, &v1);
     }
 
     {
@@ -637,8 +637,8 @@ void sub_02095380(const UnkStruct_ov6_02248BE8 *param0, Pokemon *param1, int par
         v3 = MessageLoader_GetNewStrbuf(v5, param0->unk_16);
         v4 = MessageLoader_GetNewStrbuf(v5, param0->unk_18);
 
-        Pokemon_SetValue(param1, 119, v3);
-        Pokemon_SetValue(param1, 145, v4);
+        Pokemon_SetValue(param1, MON_DATA_NICKNAME_STRBUF, v3);
+        Pokemon_SetValue(param1, MON_DATA_OTNAME_STRBUF, v4);
 
         Strbuf_Free(v3);
         Strbuf_Free(v4);
@@ -655,12 +655,12 @@ void sub_02095380(const UnkStruct_ov6_02248BE8 *param0, Pokemon *param1, int par
         v10 = param0->unk_1E;
         v11 = param0->unk_1F;
 
-        Pokemon_SetValue(param1, 19, &v6);
-        Pokemon_SetValue(param1, 20, &v7);
-        Pokemon_SetValue(param1, 21, &v8);
-        Pokemon_SetValue(param1, 22, &v9);
-        Pokemon_SetValue(param1, 23, &v10);
-        Pokemon_SetValue(param1, 24, &v11);
+        Pokemon_SetValue(param1, MON_DATA_COOL, &v6);
+        Pokemon_SetValue(param1, MON_DATA_BEAUTY, &v7);
+        Pokemon_SetValue(param1, MON_DATA_CUTE, &v8);
+        Pokemon_SetValue(param1, MON_DATA_SMART, &v9);
+        Pokemon_SetValue(param1, MON_DATA_TOUGH, &v10);
+        Pokemon_SetValue(param1, MON_DATA_SHEEN, &v11);
     }
 }
 
@@ -694,7 +694,7 @@ void sub_020954F0(UnkStruct_02095C48 *param0, int param1, int param2, int param3
     UnkStruct_020954F0 *v6;
     u8 *v7, *v8;
 
-    v6 = sub_02006FE8(90, 1, 0, param1, 1);
+    v6 = LoadMemberFromNARC(90, 1, 0, param1, 1);
     v5 = NARC_GetMemberSizeByIndexPair(NARC_INDEX_CONTEST__DATA__CONTEST_DATA, 1) / sizeof(UnkStruct_020954F0);
     v7 = Heap_AllocFromHeapAtEnd(param1, v5 + 1);
     v8 = Heap_AllocFromHeapAtEnd(param1, v5 + 1);
@@ -1003,21 +1003,21 @@ int sub_0209598C(UnkStruct_02095C48 *param0, int param1)
 void sub_020959F4(int param0)
 {
     if (param0 == 0) {
-        sub_02002AC8(1);
-        sub_02002AE4(3);
-        sub_02002B20(1);
+        RenderControlFlags_SetCanABSpeedUpPrint(1);
+        RenderControlFlags_SetAutoScrollFlags(3);
+        RenderControlFlags_SetSpeedUpOnTouch(1);
     } else {
-        sub_02002AE4(1);
-        sub_02002AC8(0);
-        sub_02002B20(0);
+        RenderControlFlags_SetAutoScrollFlags(1);
+        RenderControlFlags_SetCanABSpeedUpPrint(0);
+        RenderControlFlags_SetSpeedUpOnTouch(0);
     }
 }
 
 void sub_02095A24(void)
 {
-    sub_02002AC8(0);
-    sub_02002AE4(0);
-    sub_02002B20(0);
+    RenderControlFlags_SetCanABSpeedUpPrint(0);
+    RenderControlFlags_SetAutoScrollFlags(0);
+    RenderControlFlags_SetSpeedUpOnTouch(0);
 }
 
 u32 sub_02095A3C(int param0, int param1)
@@ -1026,23 +1026,23 @@ u32 sub_02095A3C(int param0, int param1)
 
     switch (param1) {
     case 0:
-        v0 = 123 + param0;
+        v0 = MON_DATA_SINNOH_SUPER_COOL_RIBBON + param0;
         break;
     case 1:
-        v0 = 127 + param0;
+        v0 = MON_DATA_SINNOH_SUPER_BEAUTY_RIBBON + param0;
         break;
     case 2:
-        v0 = 131 + param0;
+        v0 = MON_DATA_SINNOH_SUPER_CUTE_RIBBON + param0;
         break;
     case 3:
-        v0 = 135 + param0;
+        v0 = MON_DATA_SINNOH_SUPER_SMART_RIBBON + param0;
         break;
     case 4:
-        v0 = 139 + param0;
+        v0 = MON_DATA_SINNOH_SUPER_TOUGH_RIBBON + param0;
         break;
     default:
         GF_ASSERT(0);
-        return 123;
+        return MON_DATA_SINNOH_SUPER_COOL_RIBBON;
     }
 
     return v0;

@@ -5,47 +5,42 @@
 
 #include "consts/game_records.h"
 
-#include "struct_decls/struct_020508D4_decl.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_defs/struct_0202DF8C.h"
 #include "struct_defs/struct_0203E234.h"
 #include "struct_defs/struct_0203E274.h"
-#include "struct_defs/struct_02049FA8.h"
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/struct_02099F80.h"
 
 #include "field/field_system.h"
-#include "overlay084/struct_ov84_0223BA5C.h"
-#include "overlay097/struct_ov97_0222DB78.h"
 #include "savedata/save_table.h"
 
+#include "bg_window.h"
 #include "field_overworld_state.h"
+#include "field_task.h"
 #include "game_options.h"
 #include "game_records.h"
 #include "gx_layers.h"
 #include "heap.h"
+#include "location.h"
 #include "message.h"
 #include "message_util.h"
 #include "party.h"
+#include "render_window.h"
 #include "rtc.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "strbuf.h"
 #include "string_template.h"
+#include "system_flags.h"
 #include "trainer_info.h"
 #include "unk_02005474.h"
-#include "unk_0200DA60.h"
 #include "unk_0200F174.h"
-#include "unk_02018340.h"
 #include "unk_0202631C.h"
 #include "unk_0202DF8C.h"
-#include "unk_0203D178.h"
 #include "unk_0203D1B8.h"
-#include "unk_020508D4.h"
 #include "unk_02054884.h"
 #include "unk_020559DC.h"
 #include "unk_0205D8CC.h"
-#include "unk_0206A8DC.h"
 #include "unk_02096420.h"
 #include "vars_flags.h"
 
@@ -88,12 +83,12 @@ static void sub_02052C6C(FieldSystem *fieldSystem, BOOL param1)
     Heap_FreeToHeap(v0);
 }
 
-static BOOL sub_02052CBC(TaskManager *param0)
+static BOOL sub_02052CBC(FieldTask *param0)
 {
     Location *v0;
     VarsFlags *v1;
-    FieldSystem *fieldSystem = TaskManager_FieldSystem(param0);
-    UnkStruct_0205300C *v3 = TaskManager_Environment(param0);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
+    UnkStruct_0205300C *v3 = FieldTask_GetEnv(param0);
     int *v4 = FieldTask_GetState(param0);
     UnkStruct_0203E234 *v5 = &v3->unk_04;
 
@@ -103,15 +98,15 @@ static BOOL sub_02052CBC(TaskManager *param0)
         (*v4)++;
         break;
     case 1:
-        if (!sub_020509B4(fieldSystem)) {
+        if (!FieldSystem_IsRunningApplication(fieldSystem)) {
             Heap_Create(3, 4, 0x20000);
             sub_02052F28(fieldSystem, v3);
-            sub_0200F174(3, 1, 1, 0x0, 8, 1, 32);
+            StartScreenTransition(3, 1, 1, 0x0, 8, 1, 32);
             (*v4)++;
         }
         break;
     case 2:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             if (SaveData_OverwriteCheck(fieldSystem->saveData) == 0) {
                 sub_02052FA8(fieldSystem, v3);
                 (*v4)++;
@@ -151,18 +146,18 @@ static BOOL sub_02052CBC(TaskManager *param0)
         }
         break;
     case 7:
-        sub_0200F174(3, 0, 0, 0x0, 8, 1, 32);
+        StartScreenTransition(3, 0, 0, 0x0, 8, 1, 32);
         (*v4)++;
         break;
     case 8:
-        if (ScreenWipe_Done()) {
+        if (IsScreenTransitionDone()) {
             sub_02053098(fieldSystem, v3);
             sub_0203E274(fieldSystem, &(v3->unk_10));
             (*v4)++;
         }
         break;
     case 9:
-        if (!sub_020509B4(fieldSystem)) {
+        if (!FieldSystem_IsRunningApplication(fieldSystem)) {
             Heap_FreeToHeap(v3);
             Heap_Destroy(4);
             OS_ResetSystem(0);
@@ -174,7 +169,7 @@ static BOOL sub_02052CBC(TaskManager *param0)
     return 0;
 }
 
-void sub_02052E58(TaskManager *param0)
+void sub_02052E58(FieldTask *param0)
 {
     FieldSystem *fieldSystem;
     Location *v1, *v2;
@@ -184,38 +179,38 @@ void sub_02052E58(TaskManager *param0)
     GameRecords *v6;
     Party *v7;
 
-    fieldSystem = TaskManager_FieldSystem(param0);
-    v5 = Heap_AllocFromHeap(32, sizeof(UnkStruct_0205300C));
+    fieldSystem = FieldTask_GetFieldSystem(param0);
+    v5 = Heap_AllocFromHeap(HEAP_ID_FIELD_TASK, sizeof(UnkStruct_0205300C));
     v3 = SaveData_GetVarsFlags(fieldSystem->saveData);
     v4 = SaveData_GetTrainerInfo(fieldSystem->saveData);
-    v1 = sub_0203A730(SaveData_GetFieldOverworldState(fieldSystem->saveData));
+    v1 = FieldOverworldState_GetSpecialLocation(SaveData_GetFieldOverworldState(fieldSystem->saveData));
     v2 = sub_0203A72C(SaveData_GetFieldOverworldState(fieldSystem->saveData));
 
-    v5->unk_00 = sub_0206A954(v3);
+    v5->unk_00 = SystemFlag_CheckGameCompleted(v3);
     v5->unk_04.unk_00 = SaveData_GetTrainerInfo(fieldSystem->saveData);
     v5->unk_04.unk_04 = Party_GetFromSavedata(fieldSystem->saveData);
     v5->unk_04.playTime = SaveData_GetPlayTime(fieldSystem->saveData);
     v5->unk_10.unk_00 = TrainerInfo_Gender(SaveData_GetTrainerInfo(fieldSystem->saveData));
-    v5->unk_10.unk_04 = sub_0206A954(v3);
+    v5->unk_10.unk_04 = SystemFlag_CheckGameCompleted(v3);
     v5->unk_10.unk_08 = SaveData_Pokedex(fieldSystem->saveData);
 
-    if (sub_0206A954(v3) == 0) {
+    if (SystemFlag_CheckGameCompleted(v3) == 0) {
         sub_02055C2C(fieldSystem);
     }
 
     v7 = Party_GetFromSavedata(fieldSystem->saveData);
 
     Party_GiveChampionRibbons(v7);
-    sub_0203D178(v1);
-    sub_0203D190(v2);
-    sub_0206AD9C(v3);
-    sub_0206A944(v3);
+    SetPlayerStartLocation(v1);
+    SetPlayerFirstRespawnLocation(v2);
+    SystemFlag_SetCommunicationClubAccessible(v3);
+    SystemFlag_SetGameCompleted(v3);
     TrainerInfo_SetMainStoryCleared(v4);
 
     v6 = SaveData_GetGameRecordsPtr(fieldSystem->saveData);
 
     GameRecords_IncrementRecordValue(v6, RECORD_UNK_073);
-    FieldTask_Start(param0, sub_02052CBC, v5);
+    FieldTask_InitCall(param0, sub_02052CBC, v5);
 }
 
 static void sub_02052F28(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
@@ -232,13 +227,13 @@ static void sub_02052F28(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
         GX_VRAM_TEX_0_A,
         GX_VRAM_TEXPLTT_01_FG
     };
-    static const UnkStruct_ov84_0223BA5C v1 = {
+    static const GraphicsModes v1 = {
         GX_DISPMODE_GRAPHICS,
         GX_BGMODE_0,
         GX_BGMODE_0,
         GX_BG0_AS_2D
     };
-    static const UnkStruct_ov97_0222DB78 v2 = {
+    static const BgTemplate v2 = {
         0,
         0,
         0x800,
@@ -262,12 +257,12 @@ static void sub_02052F28(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
 
     GX_SetDispSelect(GX_DISP_SELECT_MAIN_SUB);
 
-    sub_02018368(&v1);
-    sub_0201975C(3, 0x0);
-    sub_020183C4(fieldSystem->unk_08, 3, &v2, 0);
-    sub_02019690(3, 0x20, 0, 32);
-    sub_02019CB8(fieldSystem->unk_08, 3, 0x0, 0, 0, 32, 32, 17);
-    sub_02019448(fieldSystem->unk_08, 3);
+    SetAllGraphicsModes(&v1);
+    Bg_MaskPalette(3, 0x0);
+    Bg_InitFromTemplate(fieldSystem->bgConfig, 3, &v2, 0);
+    Bg_ClearTilesRange(3, 0x20, 0, 32);
+    Bg_FillTilemapRect(fieldSystem->bgConfig, 3, 0x0, 0, 0, 32, 32, 17);
+    Bg_CopyTilemapBufferToVRAM(fieldSystem->bgConfig, 3);
 }
 
 static void sub_02052FA8(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
@@ -276,11 +271,11 @@ static void sub_02052FA8(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
 
     param1->unk_2C = MessageBank_GetNewStrbufFromNARC(26, 213, 15, 32);
 
-    FieldMessage_AddWindow(fieldSystem->unk_08, &param1->unk_1C, 3);
+    FieldMessage_AddWindow(fieldSystem->bgConfig, &param1->unk_1C, 3);
     FieldMessage_DrawWindow(&param1->unk_1C, v0);
 
     param1->unk_34 = FieldMessage_Print(&param1->unk_1C, param1->unk_2C, v0, 1);
-    param1->unk_30 = sub_0200E7FC(&param1->unk_1C, 1024 - (18 + 12));
+    param1->unk_30 = Window_AddWaitDial(&param1->unk_1C, 1024 - (18 + 12));
 }
 
 static BOOL sub_02052FFC(UnkStruct_0205300C *param0)
@@ -291,7 +286,7 @@ static BOOL sub_02052FFC(UnkStruct_0205300C *param0)
 static void sub_0205300C(UnkStruct_0205300C *param0)
 {
     Strbuf_Free(param0->unk_2C);
-    DeleteWaitDial(param0->unk_30);
+    DestroyWaitDial(param0->unk_30);
     sub_0205D988(&param0->unk_1C);
 }
 
@@ -320,9 +315,9 @@ static void sub_02053098(FieldSystem *fieldSystem, UnkStruct_0205300C *param1)
         Strbuf_Free(param1->unk_2C);
     }
 
-    if (BGL_WindowAdded(&param1->unk_1C)) {
-        BGL_DeleteWindow(&param1->unk_1C);
+    if (Window_IsInUse(&param1->unk_1C)) {
+        Window_Remove(&param1->unk_1C);
     }
 
-    sub_02019044(fieldSystem->unk_08, 3);
+    Bg_FreeTilemapBuffer(fieldSystem->bgConfig, 3);
 }

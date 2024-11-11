@@ -7,16 +7,13 @@
 #include "struct_decls/pokedexdata_decl.h"
 #include "struct_decls/pokemon_animation_sys_decl.h"
 #include "struct_decls/sprite_decl.h"
-#include "struct_decls/struct_02002F38_decl.h"
 #include "struct_decls/struct_02007768_decl.h"
 #include "struct_decls/struct_0200C440_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_decls/struct_020797DC_decl.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_defs/chatot_cry.h"
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/trainer_data.h"
 
 #include "battle/battle_context.h"
@@ -27,12 +24,14 @@
 #include "battle/struct_ov16_02268520.h"
 #include "battle/struct_ov16_02268A14_decl.h"
 #include "battle/struct_ov16_0226D160_decl.h"
-#include "overlay006/battle_params.h"
 #include "overlay012/struct_ov12_0221FCDC_decl.h"
 
 #include "bag.h"
+#include "bg_window.h"
+#include "field_battle_data_transfer.h"
 #include "game_options.h"
 #include "message.h"
+#include "palette.h"
 #include "pokemon.h"
 #include "strbuf.h"
 #include "string_template.h"
@@ -41,7 +40,7 @@
 #define ENEMY_IN_SLOT_RIGHT 0
 #define ENEMY_IN_SLOT_LEFT  2
 
-BGL *BattleSystem_BGL(BattleSystem *param0);
+BgConfig *BattleSystem_BGL(BattleSystem *param0);
 
 /**
  * @brief Get one of the allocated windows for the battle display.
@@ -130,7 +129,7 @@ TrainerData *BattleSystem_TrainerData(BattleSystem *param0, int param1);
  */
 TrainerInfo *BattleSystem_TrainerInfo(BattleSystem *battleSys, int battler);
 Bag *BattleSystem_Bag(BattleSystem *param0);
-UnkStruct_0207D99C *BattleSystem_BagCursor(BattleSystem *param0);
+BagCursor *BattleSystem_BagCursor(BattleSystem *param0);
 u32 ov16_0223E1B4(BattleSystem *param0, int param1);
 
 /**
@@ -193,7 +192,7 @@ u32 BattleSystem_BattleStatus(BattleSystem *param0);
 enum Time BattleSystem_Time(BattleSystem *battleSys);
 int ov16_0223EC04(BattleSystem *param0);
 u8 ov16_0223EC58(BattleSystem *param0, int param1, u8 param2);
-u16 ov16_0223ECC4(BattleParams *param0, int *param1, int *param2);
+u16 ov16_0223ECC4(FieldBattleDTO *param0, int *param1, int *param2);
 u8 ov16_0223ED60(BattleSystem *param0);
 u8 ov16_0223ED6C(BattleSystem *param0);
 int BattleSystem_NumSafariBalls(BattleSystem *param0);

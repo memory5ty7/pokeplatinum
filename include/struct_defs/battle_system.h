@@ -8,20 +8,16 @@
 
 #include "struct_decls/pokedexdata_decl.h"
 #include "struct_decls/pokemon_animation_sys_decl.h"
-#include "struct_decls/struct_02002F38_decl.h"
 #include "struct_decls/struct_02007768_decl.h"
 #include "struct_decls/struct_0200C440_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_decls/struct_02027F8C_decl.h"
 #include "struct_decls/struct_0206D140_decl.h"
 #include "struct_decls/struct_020797DC_decl.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_defs/chatot_cry.h"
-#include "struct_defs/struct_0205AA50.h"
 #include "struct_defs/struct_0207C690.h"
-#include "struct_defs/struct_0209C370.h"
 #include "struct_defs/trainer_data.h"
 
 #include "battle/battle_context.h"
@@ -30,13 +26,15 @@
 #include "battle/struct_ov16_02268520.h"
 #include "battle/struct_ov16_02268A14_decl.h"
 #include "battle/struct_ov16_0226D160_decl.h"
-#include "overlay006/struct_ov6_02240D5C_sub1.h"
 #include "overlay010/struct_ov10_0221F800.h"
 #include "overlay012/struct_ov12_0221FCDC_decl.h"
 
 #include "bag.h"
+#include "bg_window.h"
+#include "field_battle_data_transfer.h"
 #include "game_options.h"
 #include "message.h"
+#include "palette.h"
 #include "poketch_data.h"
 #include "strbuf.h"
 #include "string_template.h"
@@ -45,7 +43,7 @@
 
 struct BattleSystem {
     GenericPointerData *unk_00;
-    BGL *unk_04;
+    BgConfig *unk_04;
     Window *windows;
     MessageLoader *unk_0C;
     MessageLoader *unk_10;
@@ -61,7 +59,7 @@ struct BattleSystem {
     int maxBattlers;
     TrainerInfo *trainerInfo[4];
     Bag *unk_58;
-    UnkStruct_0207D99C *unk_5C;
+    BagCursor *unk_5C;
     PokedexData *pokedex;
     PCBoxes *pcBoxes;
     Party *parties[4];
@@ -84,12 +82,12 @@ struct BattleSystem {
     Options *unk_1B0;
     UnkStruct_02027F8C *unk_1B4;
     void *unk_1B8;
-    UnkStruct_0209C370 *unk_1BC;
+    u8 *unk_1BC;
     UnkStruct_ov10_0221F800 *unk_1C0;
     PokemonAnimationSys *unk_1C4;
     NNSG2dCellTransferState *cellTransferState;
     UnkStruct_ov16_0223E0C8 unk_1CC[4];
-    BattleParams_sub1 unk_20C;
+    BattleRecords unusedBattleRecords;
     GameRecords *records;
     u8 *unk_21C;
     u16 *unk_220;

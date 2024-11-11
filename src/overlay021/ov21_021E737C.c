@@ -3,15 +3,14 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_02015128_decl.h"
 #include "struct_decls/struct_020151A4_decl.h"
 #include "struct_decls/struct_02015214_decl.h"
 
 #include "overlay021/ov21_021D0D80.h"
 #include "overlay021/ov21_021D1FA4.h"
-#include "overlay021/ov21_021D3208.h"
 #include "overlay021/ov21_021E29DC.h"
+#include "overlay021/pokedex_sort.h"
 #include "overlay021/struct_ov21_021D0F60_decl.h"
 #include "overlay021/struct_ov21_021D13FC.h"
 #include "overlay021/struct_ov21_021D3320.h"
@@ -22,26 +21,26 @@
 #include "overlay022/struct_ov22_022557A0.h"
 #include "overlay022/struct_ov22_02255800.h"
 
+#include "bg_window.h"
 #include "cell_actor.h"
+#include "font.h"
 #include "heap.h"
 #include "message.h"
 #include "message_util.h"
 #include "narc.h"
+#include "palette.h"
+#include "pokedex_data_index.h"
+#include "pokedex_heightweight.h"
 #include "pokemon_icon.h"
 #include "sprite_resource.h"
 #include "strbuf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
-#include "unk_02002B7C.h"
-#include "unk_02002F38.h"
+#include "text.h"
 #include "unk_020093B4.h"
 #include "unk_0200A328.h"
 #include "unk_02015064.h"
-#include "unk_02018340.h"
-#include "unk_0201D670.h"
 #include "unk_0201DBEC.h"
-#include "unk_02098700.h"
-#include "unk_02098988.h"
 
 typedef struct {
     int unk_00;
@@ -276,18 +275,18 @@ static int ov21_021E74A0(UnkStruct_ov21_021E6A68 *param0, void *param1)
     UnkStruct_ov21_021E74A0 *v1;
     int v2;
     int v3;
-    int v4;
+    int species;
 
-    v1 = Heap_AllocFromHeap(param0->unk_04, sizeof(UnkStruct_ov21_021E74A0));
+    v1 = Heap_AllocFromHeap(param0->heapID, sizeof(UnkStruct_ov21_021E74A0));
 
     GF_ASSERT(v1);
     memset(v1, 0, sizeof(UnkStruct_ov21_021E74A0));
     param0->unk_08 = v1;
 
-    v4 = ov21_021D37BC(v0->unk_00);
-    v2 = Pokedex_HeightWeightData_Weight(v0->unk_00->unk_1748, v4);
+    species = PokedexSort_CurrentSpecies(v0->unk_00);
+    v2 = Pokedex_HeightWeightData_Weight(v0->unk_00->HWData, species);
 
-    if (ov21_021D3920(v0->unk_00) == 0) {
+    if (PokedexSort_TrainerGender(v0->unk_00) == 0) {
         v3 = 380;
     } else {
         v3 = 340;
@@ -340,14 +339,14 @@ static int ov21_021E7530(void *param0, UnkStruct_ov21_021E6B20 *param1, const vo
 
     switch (param1->unk_00) {
     case 0:
-        param1->unk_08 = Heap_AllocFromHeap(param1->unk_04, sizeof(UnkStruct_ov21_021E7714));
+        param1->unk_08 = Heap_AllocFromHeap(param1->heapID, sizeof(UnkStruct_ov21_021E7714));
         memset(param1->unk_08, 0, sizeof(UnkStruct_ov21_021E7714));
         v3 = param1->unk_08;
         v3->unk_B8 = 1;
         param1->unk_00++;
         break;
     case 1:
-        ov21_021E7800(v3, v2, v0, v1, param1->unk_04);
+        ov21_021E7800(v3, v2, v0, v1, param1->heapID);
         ov21_021E771C(v3, v2, v0, 1);
         param1->unk_00++;
         break;
@@ -523,8 +522,8 @@ static void ov21_021E785C(UnkStruct_ov21_021E7714 *param0, UnkStruct_ov21_021E74
     ov21_021E7CCC(param0);
     ov21_021E7AA0(param0, param1);
 
-    BGL_FillWindow(&param1->unk_00->unk_04, 0);
-    sub_02019EBC(param1->unk_00->unk_00, 1);
+    Window_FillTilemap(&param1->unk_00->unk_04, 0);
+    Bg_ClearTilemap(param1->unk_00->unk_00, 1);
 
     sub_02015240(param1->unk_0C, 0);
     sub_020152BC(param1->unk_0C, 0);
@@ -539,24 +538,24 @@ static void ov21_021E789C(UnkStruct_ov21_021E747C *param0, const UnkStruct_ov21_
 
     v0 = ov21_021D27B8(param0->unk_00, 73, 1, &v1, param2);
 
-    sub_020198C0(param0->unk_00->unk_00, 3, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
+    Bg_LoadToTilemapRect(param0->unk_00->unk_00, 3, v1->rawData, 0, 0, v1->screenWidth / 8, v1->screenHeight / 8);
     Heap_FreeToHeap(v0);
-    sub_0201C3C0(param0->unk_00->unk_00, 3);
+    Bg_ScheduleTilemapTransfer(param0->unk_00->unk_00, 3);
 }
 
 static void ov21_021E7904(UnkStruct_ov21_021E7714 *param0, UnkStruct_ov21_021E747C *param1, const UnkStruct_ov21_021E7468 *param2, int param3)
 {
     UnkStruct_ov21_021D13FC *v0 = param1->unk_00;
     int v1, v2, v3, v4;
-    int v5 = ov21_021D37BC(param2->unk_00);
+    int species = PokedexSort_CurrentSpecies(param2->unk_00);
     BOOL v6;
     NARC *v7 = ov21_021D26E0(param1->unk_00);
     int v8;
     NARC *v9;
 
     v9 = NARC_ctor(NARC_INDEX_POKETOOL__ICONGRA__PL_POKE_ICON, param3);
-    v8 = ov21_021D33D4(param2->unk_00, v5);
-    v1 = PokeIconSpriteIndex(v5, 0, v8);
+    v8 = ov21_021D33D4(param2->unk_00, species);
+    v1 = PokeIconSpriteIndex(species, 0, v8);
     v2 = PokeIconPalettesFileIndex();
     v3 = PokeIconCellsFileIndex();
     v4 = PokeIconAnimationFileIndex();
@@ -628,8 +627,8 @@ static void ov21_021E7B34(UnkStruct_ov21_021E7714 *param0, UnkStruct_ov21_021E74
     VecFx32 v3;
     short v4;
     short v5;
-    int v6 = ov21_021D37BC(param2->unk_00);
-    int v7 = ov21_021D33D4(param2->unk_00, v6);
+    int species = PokedexSort_CurrentSpecies(param2->unk_00);
+    int v7 = ov21_021D33D4(param2->unk_00, species);
 
     sub_020093B4(&v0, 93 + 7000, 14 + 7000, 91 + 7000, 92 + 7000, 0xffffffff, 0xffffffff, 0, 3, v2->unk_13C[0], v2->unk_13C[1], v2->unk_13C[2], v2->unk_13C[3], NULL, NULL);
 
@@ -643,7 +642,7 @@ static void ov21_021E7B34(UnkStruct_ov21_021E7714 *param0, UnkStruct_ov21_021E74
 
     param0->unk_00 = CellActorCollection_Add(&v1);
 
-    if (ov21_021D3920(param2->unk_00) == 0) {
+    if (PokedexSort_TrainerGender(param2->unk_00) == 0) {
         CellActor_SetAnim(param0->unk_00, 3);
     } else {
         CellActor_SetAnim(param0->unk_00, 4);
@@ -680,7 +679,7 @@ static void ov21_021E7B34(UnkStruct_ov21_021E7714 *param0, UnkStruct_ov21_021E74
     v1.position.y = 64 << FX32_SHIFT;
 
     param0->unk_04 = CellActorCollection_Add(&v1);
-    CellActor_SetExplicitPaletteWithOffset(param0->unk_04, PokeIconPaletteIndex(v6, v7, 0));
+    CellActor_SetExplicitPaletteWithOffset(param0->unk_04, PokeIconPaletteIndex(species, v7, 0));
 }
 
 static void ov21_021E7CCC(UnkStruct_ov21_021E7714 *param0)
@@ -710,53 +709,51 @@ static void ov21_021E7CF8(UnkStruct_ov21_021E747C *param0, int param1)
     MessageLoader_GetStrbuf(v1, 44, v0);
 
     {
-        u32 v2 = sub_02002EEC(0, v0, 0, 256);
-        sub_0201D78C(&param0->unk_00->unk_04, 0, v0, v2, 24, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+        u32 v2 = Font_CalcCenterAlignment(FONT_SYSTEM, v0, 0, 256);
+        Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v0, v2, 24, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
     }
 
     MessageLoader_GetStrbuf(v1, 10, v0);
-    sub_0201D78C(&param0->unk_00->unk_04, 0, v0, 32, 168, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+    Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v0, 32, 168, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
     MessageLoader_GetStrbuf(v1, 10, v0);
-    sub_0201D78C(&param0->unk_00->unk_04, 0, v0, 152, 168, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+    Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v0, 152, 168, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
     Strbuf_Free(v0);
     MessageLoader_Free(v1);
 }
 
-static void ov21_021E7DA8(UnkStruct_ov21_021E747C *param0, const UnkStruct_ov21_021E7468 *param1, int param2)
+static void ov21_021E7DA8(UnkStruct_ov21_021E747C *param0, const UnkStruct_ov21_021E7468 *param1, int heapID)
 {
-    Strbuf *v0 = Strbuf_Init(32, param2);
-    MessageLoader *v1;
-    int v2 = ov21_021D37BC(param1->unk_00);
-    Strbuf *v3 = MessageUtil_SpeciesName(v2, param2);
-    int v4;
+    Strbuf *v0 = Strbuf_Init(32, heapID);
+    int species = PokedexSort_CurrentSpecies(param1->unk_00);
+    Strbuf *v3 = MessageUtil_SpeciesName(species, heapID);
 
-    v4 = sub_020989C4();
-    v1 = MessageLoader_Init(0, 26, v4, param2);
+    int weightMessageBankIndex = Weight_Message_Bank_Index();
+    MessageLoader *v1 = MessageLoader_Init(0, 26, weightMessageBankIndex, heapID);
 
-    sub_0201D78C(&param0->unk_00->unk_04, 0, v3, 26, 152, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
-    MessageLoader_GetStrbuf(v1, v2, v0);
+    Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v3, 26, 152, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
+    MessageLoader_GetStrbuf(v1, species, v0);
 
     {
-        u32 v5 = 32 + 78 - sub_02002D7C(0, v0, 0);
-        sub_0201D78C(&param0->unk_00->unk_04, 0, v0, v5, 168, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+        u32 v5 = 32 + 78 - Font_CalcStrbufWidth(FONT_SYSTEM, v0, 0);
+        Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v0, v5, 168, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
     }
 
     Strbuf_Free(v3);
     MessageLoader_Free(v1);
 
-    v1 = MessageLoader_Init(0, 26, 697, param2);
+    v1 = MessageLoader_Init(0, 26, 697, heapID);
 
-    sub_0201D78C(&param0->unk_00->unk_04, 0, ov21_021D3914(param1->unk_00), 146, 152, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+    Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, PokedexSort_TrainerName(param1->unk_00), 146, 152, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
 
-    if (ov21_021D3920(param1->unk_00) == 0) {
+    if (PokedexSort_TrainerGender(param1->unk_00) == 0) {
         MessageLoader_GetStrbuf(v1, 97, v0);
     } else {
         MessageLoader_GetStrbuf(v1, 98, v0);
     }
 
     {
-        u32 v6 = 152 + 78 - sub_02002D7C(0, v0, 0);
-        sub_0201D78C(&param0->unk_00->unk_04, 0, v0, v6, 168, 0, ((u32)(((2 & 0xff) << 16) | ((1 & 0xff) << 8) | ((0 & 0xff) << 0))), NULL);
+        u32 v6 = 152 + 78 - Font_CalcStrbufWidth(FONT_SYSTEM, v0, 0);
+        Text_AddPrinterWithParamsAndColor(&param0->unk_00->unk_04, FONT_SYSTEM, v0, v6, 168, TEXT_SPEED_INSTANT, TEXT_COLOR(2, 1, 0), NULL);
     }
 
     Strbuf_Free(v0);
@@ -1084,15 +1081,15 @@ static const UnkStruct_ov21_021E9DB0 *ov21_021E83D8(const UnkStruct_ov21_021E9DB
 
 static void ov21_021E8400(UnkStruct_ov21_021E7714 *param0, u8 param1, u16 param2)
 {
-    NNSG2dPaletteData *v0 = SpriteResource_GetPaletteData(param0->unk_14[1]);
+    NNSG2dPaletteData *v0 = SpriteResource_GetPaletteFade(param0->unk_14[1]);
     const NNSG2dImagePaletteProxy *v1 = sub_0200A72C(param0->unk_14[1], NULL);
 
-    sub_0200393C(v0->pRawData, param0->unk_BC, 3 * 16, param1, param2);
+    BlendPalette(v0->pRawData, param0->unk_BC, 3 * 16, param1, param2);
     sub_0201DC68(NNS_GFD_DST_2D_OBJ_PLTT_MAIN, NNS_G2dGetImagePaletteLocation(v1, NNS_G2D_VRAM_TYPE_2DMAIN), param0->unk_BC, 3 * 32);
 
-    v0 = SpriteResource_GetPaletteData(param0->unk_24[1]);
+    v0 = SpriteResource_GetPaletteFade(param0->unk_24[1]);
     v1 = sub_0200A72C(param0->unk_24[1], NULL);
 
-    sub_0200393C(v0->pRawData, param0->unk_C0, 5 * 16, param1, param2);
+    BlendPalette(v0->pRawData, param0->unk_C0, 5 * 16, param1, param2);
     sub_0201DC68(NNS_GFD_DST_2D_OBJ_PLTT_MAIN, NNS_G2dGetImagePaletteLocation(v1, NNS_G2D_VRAM_TYPE_2DMAIN), param0->unk_C0, 5 * 32);
 }

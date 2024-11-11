@@ -3,11 +3,10 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_defs/struct_0205AA50.h"
-
 #include "field/field_system.h"
 #include "overlay005/ov5_021DC018.h"
 
+#include "bg_window.h"
 #include "coins.h"
 #include "field_script_context.h"
 #include "field_system.h"
@@ -105,7 +104,7 @@ BOOL ScrCmd_2A8(ScriptContext *param0)
 BOOL ScrCmd_274(ScriptContext *param0)
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    TrainerInfo *v1 = SaveData_GetTrainerInfo(FieldSystem_SaveData(param0->fieldSystem));
+    TrainerInfo *v1 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(param0->fieldSystem));
     SaveData *v2 = fieldSystem->saveData;
     u16 *v3 = SaveData_GetCoins(v2);
     u32 v4, v5;
@@ -126,7 +125,7 @@ BOOL ScrCmd_274(ScriptContext *param0)
 BOOL ScrCmd_2A9(ScriptContext *param0)
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    TrainerInfo *v1 = SaveData_GetTrainerInfo(FieldSystem_SaveData(param0->fieldSystem));
+    TrainerInfo *v1 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(param0->fieldSystem));
     SaveData *v2 = fieldSystem->saveData;
     u16 *v3 = SaveData_GetCoins(v2);
     u16 *v4 = ScriptContext_GetVarPointer(param0);

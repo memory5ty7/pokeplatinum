@@ -4,11 +4,9 @@
 #include <string.h>
 
 #include "struct_decls/sprite_decl.h"
-#include "struct_decls/struct_02002F38_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
 #include "struct_decls/struct_02014014_decl.h"
-#include "struct_decls/struct_02018340_decl.h"
 #include "struct_defs/struct_0200D0F4.h"
 
 #include "overlay012/ov12_0221FC20.h"
@@ -25,17 +23,17 @@
 #include "overlay012/struct_ov12_0223595C.h"
 #include "overlay012/struct_ov12_02235998.h"
 
+#include "bg_window.h"
 #include "cell_actor.h"
+#include "graphics.h"
 #include "heap.h"
 #include "inlines.h"
+#include "palette.h"
 #include "spl.h"
 #include "sys_task_manager.h"
-#include "unk_02002F38.h"
-#include "unk_02006E3C.h"
 #include "unk_0200762C.h"
 #include "unk_0200C6E4.h"
 #include "unk_02014000.h"
-#include "unk_02018340.h"
 #include "unk_0201D15C.h"
 #include "unk_0201F834.h"
 
@@ -318,7 +316,7 @@ typedef struct {
     int unk_1C;
     int unk_20;
     int unk_24;
-    BGL *unk_28;
+    BgConfig *unk_28;
     UnkStruct_ov12_0221FCDC *unk_2C;
     SpriteGfxHandler *unk_30;
     UnkStruct_ov12_02235998 unk_34[4];
@@ -478,7 +476,7 @@ static void ov12_02226BA0(SysTask *param0, void *param1)
             }
 
             if (inline_ov12_02235998(v1->unk_20.unk_08, 0x400) == 1) {
-                sub_02019184(v1->unk_04.unk_14, 3, 0, v1->unk_7C.unk_00);
+                Bg_SetOffset(v1->unk_04.unk_14, 3, 0, v1->unk_7C.unk_00);
             }
         }
         break;
@@ -518,7 +516,7 @@ static void ov12_02226D38(SysTask *param0, void *param1)
     switch (v0->unk_1C.unk_00) {
     case 0:
         G2_SetBlendAlpha(GX_BLEND_PLANEMASK_BG2, GX_BLEND_PLANEMASK_BD | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_BG3, v0->unk_16, v0->unk_18);
-        sub_02019120(2, 1);
+        Bg_ToggleLayer(2, 1);
         v0->unk_1C.unk_00++;
     case 1: {
         int v1 = 0;
@@ -572,7 +570,7 @@ static void ov12_02226D38(SysTask *param0, void *param1)
         G2_ChangeBlendAlpha(v0->unk_16, v0->unk_18);
     } break;
     default:
-        sub_02019120(2, 0);
+        Bg_ToggleLayer(2, 0);
         ov12_02220220(v0->unk_1C.unk_04, param0);
         Heap_FreeToHeap(v0);
         return;
@@ -603,8 +601,8 @@ static void ov12_02226D38(SysTask *param0, void *param1)
         v0->unk_14++;
     }
 
-    sub_02019184(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
-    sub_02019184(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
 }
 
 void ov12_02226EB0(UnkStruct_ov12_0221FCDC *param0)
@@ -641,14 +639,14 @@ void ov12_02226EB0(UnkStruct_ov12_0221FCDC *param0)
     v0->unk_18 = 31;
     v0->unk_04 = 0;
 
-    sub_02019120(2, 0);
+    Bg_ToggleLayer(2, 0);
 
     {
         int v2 = ov12_02220280(param0, 0);
 
-        sub_02006E3C(7, ov12_022234E4(v2, 0), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
-        PaletteSys_LoadPalette(v0->unk_1C.unk_18, 7, ov12_022234E4(v2, 1), ov12_0221FDE4(param0), 0, 0x20, (9 * 16));
-        sub_02019EBC(v0->unk_1C.unk_14, 2);
+        Graphics_LoadTilesToBgLayer(7, ov12_022234E4(v2, 0), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
+        PaletteData_LoadBufferFromFileStart(v0->unk_1C.unk_18, 7, ov12_022234E4(v2, 1), ov12_0221FDE4(param0), 0, 0x20, (9 * 16));
+        Bg_ClearTilemap(v0->unk_1C.unk_14, 2);
 
         {
             int v3 = 2;
@@ -659,12 +657,12 @@ void ov12_02226EB0(UnkStruct_ov12_0221FCDC *param0)
                 v3 = 3;
             }
 
-            sub_02006E60(7, ov12_022234E4(v2, v3), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
+            Graphics_LoadTilemapToBgLayer(7, ov12_022234E4(v2, v3), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
         }
     }
 
-    sub_02019184(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
-    sub_02019184(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
 
     ov12_022201E8(v0->unk_1C.unk_04, ov12_02226D38, v0);
 }
@@ -676,7 +674,7 @@ static void ov12_02227064(SysTask *param0, void *param1)
     switch (v0->unk_1C.unk_00) {
     case 0:
         G2_SetBlendAlpha(GX_BLEND_PLANEMASK_BG2, GX_BLEND_PLANEMASK_BD | GX_BLEND_PLANEMASK_OBJ | GX_BLEND_PLANEMASK_BG0 | GX_BLEND_PLANEMASK_BG3, v0->unk_16, v0->unk_18);
-        sub_02019120(2, 1);
+        Bg_ToggleLayer(2, 1);
         v0->unk_1C.unk_00++;
     case 1: {
         int v1 = 0;
@@ -730,7 +728,7 @@ static void ov12_02227064(SysTask *param0, void *param1)
         G2_ChangeBlendAlpha(v0->unk_16, v0->unk_18);
     } break;
     default:
-        sub_02019120(2, 0);
+        Bg_ToggleLayer(2, 0);
         ov12_02220220(v0->unk_1C.unk_04, param0);
         Heap_FreeToHeap(v0);
         return;
@@ -761,8 +759,8 @@ static void ov12_02227064(SysTask *param0, void *param1)
         v0->unk_14++;
     }
 
-    sub_02019184(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
-    sub_02019184(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
 }
 
 void ov12_022271D8(UnkStruct_ov12_0221FCDC *param0)
@@ -801,14 +799,14 @@ void ov12_022271D8(UnkStruct_ov12_0221FCDC *param0)
     v0->unk_18 = 16;
     v0->unk_04 = 0;
 
-    sub_02019120(2, 0);
+    Bg_ToggleLayer(2, 0);
 
     {
         int v2 = ov12_02220280(param0, 0);
 
-        sub_02006E3C(7, ov12_022234E4(v2, 0), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
-        PaletteSys_LoadPalette(v0->unk_1C.unk_18, 7, ov12_022234E4(v2, 1), ov12_0221FDE4(param0), 0, 0x20, (9 * 16));
-        sub_02019EBC(v0->unk_1C.unk_14, 2);
+        Graphics_LoadTilesToBgLayer(7, ov12_022234E4(v2, 0), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
+        PaletteData_LoadBufferFromFileStart(v0->unk_1C.unk_18, 7, ov12_022234E4(v2, 1), ov12_0221FDE4(param0), 0, 0x20, (9 * 16));
+        Bg_ClearTilemap(v0->unk_1C.unk_14, 2);
 
         {
             int v3 = 2;
@@ -819,12 +817,12 @@ void ov12_022271D8(UnkStruct_ov12_0221FCDC *param0)
                 v3 = 3;
             }
 
-            sub_02006E60(7, ov12_022234E4(v2, v3), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
+            Graphics_LoadTilemapToBgLayer(7, ov12_022234E4(v2, v3), v0->unk_1C.unk_14, 2, 0, 0, 1, ov12_0221FDE4(param0));
         }
     }
 
-    sub_02019184(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
-    sub_02019184(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 0, v0->unk_0A);
+    Bg_SetOffset(v0->unk_1C.unk_14, 2, 3, v0->unk_0C);
 
     ov12_022201E8(v0->unk_1C.unk_04, ov12_02227064, v0);
 }
@@ -1061,7 +1059,7 @@ static void ov12_02227808(SysTask *param0, void *param1)
 {
     UnkStruct_ov12_02227808 *v0 = param1;
 
-    if (sub_0200384C(v0->unk_04) == 0) {
+    if (PaletteData_GetSelectedBuffersMask(v0->unk_04) == 0) {
         Heap_FreeToHeap(v0);
         ov12_02220220(v0->unk_00, param0);
     }
@@ -1092,7 +1090,7 @@ void ov12_02227828(UnkStruct_ov12_0221FCDC *param0)
         break;
     }
 
-    sub_02003178(v0->unk_04, 0x1, v1, ov12_02220280(param0, 1), ov12_02220280(param0, 2), ov12_02220280(param0, 3), ov12_02220280(param0, 4));
+    PaletteData_StartFade(v0->unk_04, 0x1, v1, ov12_02220280(param0, 1), ov12_02220280(param0, 2), ov12_02220280(param0, 3), ov12_02220280(param0, 4));
     ov12_022201E8(v0->unk_00, ov12_02227808, v0);
 }
 
@@ -2695,23 +2693,23 @@ static void ov12_02229738(SysTask *param0, void *param1)
             }
 
             if (v1->unk_20 != 0) {
-                sub_02019184(v1->unk_28, v1->unk_1C, 0, 0);
+                Bg_SetOffset(v1->unk_28, v1->unk_1C, 0, 0);
             }
 
             if (v1->unk_24 != 0) {
-                sub_02019184(v1->unk_28, v1->unk_1C, 3, 0);
+                Bg_SetOffset(v1->unk_28, v1->unk_1C, 3, 0);
             }
 
             v1->unk_01++;
         } else {
             if (v1->unk_D4.unk_00 != 0) {
                 v1->unk_20 = 1;
-                sub_02019184(v1->unk_28, v1->unk_1C, 0, v1->unk_D4.unk_00);
+                Bg_SetOffset(v1->unk_28, v1->unk_1C, 0, v1->unk_D4.unk_00);
             }
 
             if (v1->unk_D4.unk_02 != 0) {
                 v1->unk_24 = 1;
-                sub_02019184(v1->unk_28, v1->unk_1C, 3, v1->unk_D4.unk_02);
+                Bg_SetOffset(v1->unk_28, v1->unk_1C, 3, v1->unk_D4.unk_02);
             }
         }
     } break;
@@ -2870,12 +2868,12 @@ static BOOL ov12_02229A50(SPLEmitter *param0)
         int v2;
         int v3;
 
-        v1 = param0->unk_08.unk_00;
+        v1 = param0->particles.first;
 
         while (v1 != NULL) {
-            v2 = v1->unk_26;
-            v3 = v1->unk_24;
-            v1 = v1->unk_00;
+            v2 = v1->age;
+            v3 = v1->lifeTime;
+            v1 = v1->next;
         }
 
         if (v2 != v3) {
@@ -2909,12 +2907,12 @@ static void ov12_02229A6C(SysTask *param0, void *param1)
             return;
         }
 
-        SPL_UnkInline2(v0->unk_38, v0->unk_A8[0].unk_00 * 172);
-        SPL_UnkInline3(v0->unk_38, v0->unk_A8[0].unk_02 * 172);
+        SPLEmitter_SetPosX(v0->unk_38, v0->unk_A8[0].unk_00 * 172);
+        SPLEmitter_SetPosY(v0->unk_38, v0->unk_A8[0].unk_02 * 172);
 
         if (v0->unk_30) {
             v0->unk_2C += (360 / (v0->unk_06));
-            SPL_UnkInline3(v0->unk_38, (v0->unk_A8[0].unk_02 * 172) + sub_0201D250(v0->unk_2C));
+            SPLEmitter_SetPosY(v0->unk_38, (v0->unk_A8[0].unk_02 * 172) + sub_0201D250(v0->unk_2C));
         }
     }
 }
@@ -2954,8 +2952,8 @@ void ov12_02229B28(UnkStruct_ov12_0221FCDC *param0)
             v3->unk_1C = v3->unk_24 + 1;
         }
 
-        SPL_UnkInline2(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
-        SPL_UnkInline3(v3->unk_38, v3->unk_A8[0].unk_02 * 172);
+        SPLEmitter_SetPosX(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
+        SPLEmitter_SetPosY(v3->unk_38, v3->unk_A8[0].unk_02 * 172);
     }
 
     ov12_022201E8(v3->unk_3C.unk_04, ov12_02229A6C, v3);
@@ -3035,8 +3033,8 @@ void ov12_02229C5C(UnkStruct_ov12_0221FCDC *param0)
             v3->unk_1C = v3->unk_24 + 1;
         }
 
-        SPL_UnkInline2(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
-        SPL_UnkInline3(v3->unk_38, (v3->unk_A8[0].unk_02 * 172));
+        SPLEmitter_SetPosX(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
+        SPLEmitter_SetPosY(v3->unk_38, (v3->unk_A8[0].unk_02 * 172));
     }
 
     ov12_022201E8(v3->unk_3C.unk_04, ov12_02229A6C, v3);
@@ -3056,8 +3054,8 @@ static void ov12_02229DF0(SysTask *param0, void *param1)
         (v0) = NULL;
         return;
     } else {
-        SPL_UnkInline2(v0->unk_38, v0->unk_A8[0].unk_00 * 172);
-        SPL_UnkInline3(v0->unk_38, v0->unk_A8[0].unk_02 * 172);
+        SPLEmitter_SetPosX(v0->unk_38, v0->unk_A8[0].unk_00 * 172);
+        SPLEmitter_SetPosY(v0->unk_38, v0->unk_A8[0].unk_02 * 172);
     }
 }
 
@@ -3096,8 +3094,8 @@ void ov12_02229E54(UnkStruct_ov12_0221FCDC *param0)
             v3->unk_1C = v3->unk_24 + 1;
         }
 
-        SPL_UnkInline2(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
-        SPL_UnkInline3(v3->unk_38, v3->unk_A8[0].unk_02 * 172);
+        SPLEmitter_SetPosX(v3->unk_38, v3->unk_A8[0].unk_00 * 172);
+        SPLEmitter_SetPosY(v3->unk_38, v3->unk_A8[0].unk_02 * 172);
     }
 
     ov12_022201E8(v3->unk_3C.unk_04, ov12_02229DF0, v3);
@@ -3120,8 +3118,8 @@ static void ov12_02229F9C(SysTask *param0, void *param1)
         v2.x = v0->unk_88.x + (v0->unk_58.unk_00 * 172);
         v2.y = v0->unk_88.y + (v0->unk_58.unk_02 * 172);
 
-        SPL_UnkInline2(v0->unk_38, v2.x);
-        SPL_UnkInline3(v0->unk_38, v2.y);
+        SPLEmitter_SetPosX(v0->unk_38, v2.x);
+        SPLEmitter_SetPosY(v0->unk_38, v2.y);
     }
 }
 
@@ -3164,8 +3162,8 @@ void ov12_0222A00C(UnkStruct_ov12_0221FCDC *param0)
         v1.x = v0->unk_88.x + (v0->unk_58.unk_00 * 172);
         v1.y = v0->unk_88.y + (v0->unk_58.unk_02 * 172);
 
-        SPL_UnkInline2(v0->unk_38, v1.x);
-        SPL_UnkInline3(v0->unk_38, v1.y);
+        SPLEmitter_SetPosX(v0->unk_38, v1.x);
+        SPLEmitter_SetPosY(v0->unk_38, v1.y);
     }
 
     ov12_022201E8(v0->unk_3C.unk_04, ov12_02229F9C, v0);

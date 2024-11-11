@@ -6,14 +6,11 @@
 #include "constants/battle/battle_io.h"
 
 #include "struct_decls/battle_system.h"
-#include "struct_decls/struct_02002F38_decl.h"
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_decls/struct_0200C6E4_decl.h"
 #include "struct_decls/struct_0200C704_decl.h"
 #include "struct_decls/struct_party_decl.h"
 #include "struct_defs/archived_sprite.h"
 #include "struct_defs/battle_io.h"
-#include "struct_defs/struct_0205AA50.h"
 
 #include "battle/battle_display.h"
 #include "battle/battle_io.h"
@@ -72,15 +69,16 @@
 #include "overlay012/ov12_022380BC.h"
 #include "overlay012/struct_ov12_02237728.h"
 
+#include "bg_window.h"
 #include "flags.h"
 #include "heap.h"
 #include "narc.h"
+#include "palette.h"
 #include "party.h"
 #include "pokemon.h"
 #include "unk_0200762C.h"
 #include "unk_0200C6E4.h"
 #include "unk_020131EC.h"
-#include "unk_02018340.h"
 
 typedef void (*UnkFuncPtr_ov16_0226F068)(BattleSystem *, BattlerData *);
 
@@ -630,27 +628,27 @@ static void ov16_0225C47C(BattleSystem *param0, BattlerData *param1)
     v2 = BattleSystem_PartyPokemon(param0, param1->battler, v0->unk_01_0);
 
     if ((v0->unk_18 & 0x200000) == 0) {
-        for (v1 = 0; v1 < 4; v1++) {
+        for (v1 = 0; v1 < LEARNED_MOVES_MAX; v1++) {
             if ((v0->unk_01_4 & FlagIndex(v1)) == 0) {
-                Pokemon_SetValue(v2, 54 + v1, (u8 *)&v0->unk_0E[v1]);
-                Pokemon_SetValue(v2, 58 + v1, (u8 *)&v0->unk_12[v1]);
+                Pokemon_SetValue(v2, MON_DATA_MOVE1 + v1, (u8 *)&v0->unk_0E[v1]);
+                Pokemon_SetValue(v2, MON_DATA_MOVE1_CUR_PP + v1, (u8 *)&v0->unk_12[v1]);
             }
         }
     }
 
     if ((v0->unk_08 & FlagIndex(v0->unk_01_0)) == 0) {
-        Pokemon_SetValue(v2, 6, (u8 *)&v0->unk_0C);
+        Pokemon_SetValue(v2, MON_DATA_HELD_ITEM, (u8 *)&v0->unk_0C);
     }
 
-    Pokemon_SetValue(v2, 163, (u8 *)&v0->unk_02);
-    Pokemon_SetValue(v2, 160, (u8 *)&v0->unk_04);
+    Pokemon_SetValue(v2, MON_DATA_CURRENT_HP, (u8 *)&v0->unk_02);
+    Pokemon_SetValue(v2, MON_DATA_STATUS_CONDITION, (u8 *)&v0->unk_04);
 
     if (v0->unk_26) {
-        Pokemon_SetValue(v2, 112, (u8 *)&v0->unk_1C);
+        Pokemon_SetValue(v2, MON_DATA_FORM, (u8 *)&v0->unk_1C);
     }
 
     if (v0->unk_24) {
-        Pokemon_SetValue(v2, 10, (u8 *)&v0->unk_20);
+        Pokemon_SetValue(v2, MON_DATA_ABILITY, (u8 *)&v0->unk_20);
         Pokemon_CalcLevelAndStats(v2);
     }
 
@@ -698,13 +696,13 @@ static void ov16_0225C5E0(BattleSystem *param0, BattlerData *param1)
         v1 = BattleSystem_PartyPokemon(param0, param1->battler, v2);
 
         if (v0->unk_01 == 104) {
-            v4 = 0;
+            v4 = ABILITY_NONE;
         } else {
             v4 = Pokemon_GetValue(v1, MON_DATA_ABILITY, NULL);
         }
 
-        if ((v0->unk_02 != 215) || ((v0->unk_02 == 215) && (v4 != 43))) {
-            Pokemon_SetValue(v1, 160, (u8 *)&v5);
+        if ((v0->unk_02 != 215) || ((v0->unk_02 == 215) && (v4 != ABILITY_SOUNDPROOF))) {
+            Pokemon_SetValue(v1, MON_DATA_STATUS_CONDITION, (u8 *)&v5);
         }
     }
 
@@ -1019,8 +1017,8 @@ static void ov16_0225CB80(BattleSystem *param0, BattlerData *param1)
 {
     Window *v0 = BattleSystem_Window(param0, 0);
 
-    BGL_FillWindow(v0, 0xff);
-    sub_0201ACCC(v0);
+    Window_FillTilemap(v0, 0xff);
+    Window_LoadTiles(v0);
 
     ClearCommand(param0, param1->battler, 66);
     ZeroDataBuffer(param1);

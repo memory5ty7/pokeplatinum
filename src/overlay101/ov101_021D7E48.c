@@ -3,13 +3,13 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/struct_02006C24_decl.h"
 #include "struct_defs/struct_0200C738.h"
 
 #include "overlay101/struct_ov101_021D8544.h"
 
 #include "cell_actor.h"
 #include "heap.h"
+#include "narc.h"
 #include "sprite_resource.h"
 #include "unk_020093B4.h"
 #include "unk_0200A328.h"
@@ -62,7 +62,7 @@ UnkStruct_ov101_021D7E48 *ov101_021D7E48(u32 param0, u32 param1, u32 param2, u32
     v0->unk_0C = sub_020095C4(param1, &v0->unk_10, param0);
     v0->unk_19C = sub_0201DCC8(param2, param0);
 
-    sub_0201DBEC(param2, param0);
+    VRAMTransferManager_New(param2, param0);
 
     v0->unk_1A0 = SpriteResourceCollection_New(param3, 0, param0);
     v0->unk_1A4 = SpriteResourceCollection_New(param4, 1, param0);
@@ -132,7 +132,7 @@ void ov101_021D7FB4(UnkStruct_ov101_021D7E48 *param0)
     Heap_FreeToHeap(param0->unk_1B4);
     Heap_FreeToHeap(param0->unk_1B8);
     Heap_FreeToHeap(param0->unk_1BC);
-    sub_0201DC3C();
+    VRAMTransferManager_Destroy();
     sub_0201DCF0(param0->unk_19C);
     CellActorCollection_DeleteAll(param0->unk_0C);
     CellActorCollection_Delete(param0->unk_0C);
