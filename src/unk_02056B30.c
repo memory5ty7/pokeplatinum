@@ -19,6 +19,7 @@
 #include "camera.h"
 #include "field_map_change.h"
 #include "field_task.h"
+#include "field_transition.h"
 #include "heap.h"
 #include "inlines.h"
 #include "location.h"
@@ -30,7 +31,6 @@
 #include "unk_0200F174.h"
 #include "unk_02054D00.h"
 #include "unk_020553DC.h"
-#include "unk_02055808.h"
 #include "unk_020655F4.h"
 
 typedef struct {
@@ -169,7 +169,7 @@ void sub_02056C18(FieldSystem *fieldSystem, const int param1, const int param2, 
             v1 = 6;
         } else if (MapHeader_IsOutdoors(param1)) {
             v1 = 5;
-        } else if (sub_0203A288(param1)) {
+        } else if (MapHeader_IsBuilding(param1)) {
             v1 = 6;
         } else {
             GF_ASSERT(0);
@@ -177,15 +177,15 @@ void sub_02056C18(FieldSystem *fieldSystem, const int param1, const int param2, 
     } else if (MapHeader_IsOutdoors(v0)) {
         if (MapHeader_IsCave(param1)) {
             v1 = 4;
-        } else if (sub_0203A288(param1)) {
+        } else if (MapHeader_IsBuilding(param1)) {
             v1 = 6;
         } else {
             GF_ASSERT(0);
         }
-    } else if (sub_0203A288(v0)) {
+    } else if (MapHeader_IsBuilding(v0)) {
         if (MapHeader_IsOutdoors(param1)) {
             v1 = 0;
-        } else if (sub_0203A288(param1)) {
+        } else if (MapHeader_IsBuilding(param1)) {
             v1 = 6;
         } else if (MapHeader_IsCave(param1)) {
             v1 = 0;
@@ -215,7 +215,7 @@ static BOOL sub_02056CFC(FieldTask *taskMan)
         (v1->unk_00)++;
         break;
     case 1:
-        FieldTask_FinishFieldMap(taskMan);
+        FieldTransition_FinishMap(taskMan);
         (v1->unk_00)++;
         break;
     case 2:
@@ -223,7 +223,7 @@ static BOOL sub_02056CFC(FieldTask *taskMan)
         (v1->unk_00)++;
         break;
     case 3:
-        FieldTask_StartFieldMap(taskMan);
+        FieldTransition_StartMap(taskMan);
         (v1->unk_00)++;
         break;
     case 4:
@@ -262,7 +262,7 @@ static BOOL sub_02056DE4(FieldTask *taskMan)
     case 0:
         Sound_PlayEffect(1539);
 
-        sub_020558AC(taskMan);
+        FieldTransition_FadeOut(taskMan);
         (v1->unk_04)++;
         break;
     case 1:
@@ -294,7 +294,7 @@ static BOOL sub_02056E20(FieldTask *taskMan)
         }
         break;
     case 2:
-        sub_020558AC(taskMan);
+        FieldTransition_FadeOut(taskMan);
         (v1->unk_04)++;
         break;
     case 3:
