@@ -3699,7 +3699,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     subscript = subscript_overworld_sun;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
-                case 29:
+                case 38:
                 case OVERWORLD_WEATHER_TRICK_ROOM:
                     subscript = subscript_overworld_trick_room;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
