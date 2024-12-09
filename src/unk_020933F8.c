@@ -31,9 +31,11 @@
 #include "communication_information.h"
 #include "communication_system.h"
 #include "field_task.h"
+#include "field_transition.h"
 #include "game_records.h"
 #include "heap.h"
 #include "journal.h"
+#include "math.h"
 #include "party.h"
 #include "pokemon.h"
 #include "ribbon.h"
@@ -47,13 +49,11 @@
 #include "trainer_info.h"
 #include "unk_02005474.h"
 #include "unk_0200A9DC.h"
-#include "unk_0201D15C.h"
 #include "unk_0202631C.h"
 #include "unk_020298BC.h"
 #include "unk_0202CC64.h"
 #include "unk_0202F108.h"
 #include "unk_020363E8.h"
-#include "unk_02055808.h"
 #include "unk_0206CCB0.h"
 #include "unk_02094EDC.h"
 #include "unk_02095AF0.h"
@@ -177,7 +177,7 @@ static BOOL sub_02093448(FieldTask *param0)
 
     switch (v1->unk_04) {
     case 0:
-        FieldTask_FinishFieldMap(param0);
+        FieldTransition_FinishMap(param0);
         v1->unk_04++;
         break;
     case 1:
@@ -247,7 +247,7 @@ static BOOL sub_02093448(FieldTask *param0)
         v1->unk_04++;
         break;
     case 12:
-        FieldTask_StartFieldMap(param0);
+        FieldTransition_StartMap(param0);
         v1->unk_04++;
         break;
     default:
@@ -267,7 +267,7 @@ static BOOL sub_020935EC(FieldTask *param0)
 
     switch (v1->unk_04) {
     case 0:
-        FieldTask_FinishFieldMap(param0);
+        FieldTransition_FinishMap(param0);
         v1->unk_04++;
         break;
     case 1:
@@ -364,7 +364,7 @@ static BOOL sub_020935EC(FieldTask *param0)
         v1->unk_04++;
         break;
     case 8:
-        FieldTask_StartFieldMap(param0);
+        FieldTransition_StartMap(param0);
         v1->unk_04++;
         break;
     default:
@@ -1573,7 +1573,7 @@ void sub_02094BB4(UnkStruct_02095C48 *param0, int *param1, int *param2, int *par
     }
 }
 
-void sub_02094C44(UnkStruct_02095C48 *param0, SaveData *param1, u32 param2, Journal *param3)
+void sub_02094C44(UnkStruct_02095C48 *param0, SaveData *param1, u32 param2, JournalEntry *param3)
 {
     int v0;
 
@@ -1666,12 +1666,12 @@ void sub_02094C44(UnkStruct_02095C48 *param0, SaveData *param1, u32 param2, Jour
 
         {
             void *v9;
-            Journal *v10;
+            JournalEntry *v10;
 
             v9 = sub_0202C1C0(param0->unk_00.unk_118[param0->unk_00.unk_113].unk_08 + 1, 11);
             v10 = SaveData_GetJournal(param0->unk_1970);
 
-            Journal_SaveData(param3, v9, 4);
+            JournalEntry_SaveData(param3, v9, JOURNAL_UNK_1C);
         }
     }
 

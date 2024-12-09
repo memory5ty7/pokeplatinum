@@ -771,6 +771,10 @@ void HealAllPokemonInParty(Party *party)
             continue;
         }
 
+        if(Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL) != 0) {
+            continue;
+        }
+
         // set tmp variable to max hp value
         tmp = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
         // set mon's current hp to max hp
