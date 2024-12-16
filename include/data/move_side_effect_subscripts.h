@@ -151,5 +151,12 @@ static const int sSideEffectSubscripts[] = {
     [MOVE_SUBSCRIPT_PTR_LUNAR_DANCE]                      = subscript_lunar_dance,
     [MOVE_SUBSCRIPT_PTR_GIVE_TARGET_OWN_STATUS]           = subscript_give_target_own_status,
     [MOVE_SUBSCRIPT_PTR_QUIVER_DANCE]                     = subscript_quiver_dance,
+    [MOVE_SUBSCRIPT_PTR_ACROBATICS]                       = subscript_acrobatics,
+    [MOVE_SUBSCRIPT_PTR_FIRST_IMPRESSION]                 = subscript_first_impression,
+    [MOVE_SUBSCRIPT_PTR_HEX]                              = subscript_hex,
+    [MOVE_SUBSCRIPT_PTR_VENOSHOCK]                        = subscript_venoshock,
+    [MOVE_SUBSCRIPT_PTR_SHELL_SMASH]                      = subscript_shell_smash,
+    [MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL]                      = subscript_triple_axel,
+    [MOVE_SUBSCRIPT_PTR_CLEAR_SMOG]                       = subscript_clear_smog,
 };
 // clang-format on

@@ -9328,6 +9328,7 @@ static BOOL BtlCmd_PrintForfeitMessage(BattleSystem *battleSys, BattleContext *b
 static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BOOL endure = FALSE;
+    int flag = 0;
 
     BattleScript_Iter(battleCtx, 1);
     int inBattler = BattleScript_Read(battleCtx);
@@ -9336,19 +9337,30 @@ static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *ba
     int itemEffect = Battler_HeldItemEffect(battleCtx, battler);
     int itemPower = Battler_HeldItemPower(battleCtx, battler, ITEM_POWER_CHECK_ALL);
 
-    if (itemEffect == HOLD_EFFECT_MAYBE_ENDURE
+    if ((Battler_IgnorableAbility(battleCtx,battleCtx->attacker,battleCtx->defender,ABILITY_STURDY) == TRUE)
+        && battleCtx->battleMons[battler].curHP == (s32)battleCtx->battleMons[battler].maxHP) {
+            flag = 2;
+    }
+
+    else if (itemEffect == HOLD_EFFECT_MAYBE_ENDURE
         && BattleSystem_RandNext(battleSys) % 100 < itemPower) {
-        endure = TRUE;
+        flag = 1;
     }
 
-    if (itemEffect == HOLD_EFFECT_ENDURE
+    else if (itemEffect == HOLD_EFFECT_ENDURE
         && battleCtx->battleMons[battler].curHP == battleCtx->battleMons[battler].maxHP) {
-        endure = TRUE;
+        flag = 1;
     }
 
-    if (endure && battleCtx->battleMons[battler].curHP + battleCtx->hpCalcTemp <= 0) {
-        battleCtx->hpCalcTemp = (battleCtx->battleMons[battler].curHP - 1) * -1;
-        battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+    if (flag)
+    {
+        if(battleCtx->battleMons[battler].curHP + battleCtx->hpCalcTemp <= 0){
+            battleCtx->hpCalcTemp = (battleCtx->battleMons[battler].curHP - 1) * -1;
+            if(flag != 2)
+                battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+            else
+                battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ABILITY;
+        }
     }
 
     return FALSE;

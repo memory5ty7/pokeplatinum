@@ -1040,7 +1040,7 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
                 side = battleCtx->fieldConditionCheckTemp;
 
                 if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) {
-                    if((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND)!=SIDE_CONDITION_TAILWIND){
+                    if ((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) != SIDE_CONDITION_TAILWIND) {
                         battleCtx->sideConditionsMask[side] -= SIDE_CONDITION_TAILWIND_SHIFT;
 
                         if ((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) == FALSE) {
@@ -1227,7 +1227,7 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
 
         case FIELD_COND_CHECK_STATE_GRAVITY:
             if (battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) {
-                if((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) != FIELD_CONDITION_GRAVITY){
+                if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) != FIELD_CONDITION_GRAVITY) {
                     battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_GRAVITY_SHIFT);
 
                     if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) == 0) {
@@ -1824,7 +1824,7 @@ static void BattleController_CheckSideConditions(BattleSystem *battleSys, Battle
 
     case SIDE_COND_CHECK_STATE_TRICK_ROOM:
         if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
-            if (!((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM)==FIELD_CONDITION_TRICK_ROOM)) {
+            if (!((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FIELD_CONDITION_TRICK_ROOM)) {
                 battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_TRICK_ROOM_SHIFT);
                 if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FALSE) {
                     PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
@@ -2144,15 +2144,15 @@ static int BattleController_CheckObedience(BattleSystem *battleSys, BattleContex
     }
 
     maxLevel = 100;
-    //if (TrainerInfo_BadgeCount(trInfo) >= 2) {
-    //    maxLevel = 30;
-    // }
-    // if (TrainerInfo_BadgeCount(trInfo) >= 4) {
-    //     maxLevel = 50;
-    // }
-    // if (TrainerInfo_BadgeCount(trInfo) >= 6) {
-    //     maxLevel = 70;
-    // }
+    // if (TrainerInfo_BadgeCount(trInfo) >= 2) {
+    //     maxLevel = 30;
+    //  }
+    //  if (TrainerInfo_BadgeCount(trInfo) >= 4) {
+    //      maxLevel = 50;
+    //  }
+    //  if (TrainerInfo_BadgeCount(trInfo) >= 6) {
+    //      maxLevel = 70;
+    //  }
 
     if (ATTACKING_MON.level <= maxLevel) {
         return OBEY_CHECK_SUCCESS;
@@ -3380,11 +3380,16 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
             }
 
-            if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
+            else if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
+            }
+            else
+            {
+                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
             }
         }
 
+        /*
         if ((DEFENDER_TURN_FLAGS.enduring || DEFENDER_SELF_TURN_FLAGS.focusItemActivated)
             && DEFENDING_MON.curHP + battleCtx->damage <= 0) {
             battleCtx->damage = (DEFENDING_MON.curHP - 1) * -1;
@@ -3393,6 +3398,25 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
                 battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED;
             } else {
                 battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+            }
+        }
+        */
+
+        if ((Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE) && (DEFENDING_MON.curHP == (s32)DEFENDING_MON.maxHP)) {
+            DEFENDER_TURN_FLAGS.focusAbilityActivated = TRUE;
+        }
+        else if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE && (DEFENDING_MON.curHP != (s32)DEFENDING_MON.maxHP)) {
+            DEFENDER_TURN_FLAGS.focusAbilityActivated = FALSE;
+        }
+
+        if ((DEFENDER_TURN_FLAGS.focusAbilityActivated) || (DEFENDER_SELF_TURN_FLAGS.focusItemActivated)) {
+            if ((DEFENDING_MON.curHP + battleCtx->damage) <= 0) {
+                battleCtx->damage = (DEFENDING_MON.curHP - 1) * -1;
+                if (DEFENDER_TURN_FLAGS.focusAbilityActivated) {
+                    battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ABILITY;
+                } else {
+                    battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+                }
             }
         }
 

@@ -302,4 +302,13 @@ subscript_files = files(
     'subscript_permanent_tailwind.s',
     'subscript_permanent_gravity.s',
     'subscript_quiver_dance.s',
+    'subscript_acrobatics.s',
+    'subscript_first_impression.s',
+    'subscript_hex.s',
+    'subscript_venoshock.s',
+    'subscript_shell_smash.s',
+    'subscript_triple_axel.s',
+    'subscript_clear_smog.s',
+    'subscript_air_balloon_pop.s',
+    'subscript_air_balloon_message.s',
 )

@@ -1,0 +1,17 @@
+#include "macros/btlcmd.inc"
+
+    .data
+
+_000:
+    CompareMonDataToValue OPCODE_FLAG_SET, BTLSCR_SIDE_EFFECT_MON, BATTLEMON_STATUS, MON_CONDITION_POISON, _011
+    CompareMonDataToValue OPCODE_FLAG_SET, BTLSCR_SIDE_EFFECT_MON, BATTLEMON_STATUS, MON_CONDITION_TOXIC, _011
+    UpdateVar OPCODE_SET, BTLVAR_POWER_MULTI, 10
+    GoTo _015
+
+_011:
+    UpdateVar OPCODE_SET, BTLVAR_POWER_MULTI, 20
+
+_015:
+    CalcCrit 
+    CalcDamage 
+    End 

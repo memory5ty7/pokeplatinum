@@ -55,7 +55,8 @@ typedef struct TurnFlags {
     u32 roosting : 1;
     u32 fleeing : 2;
     u32 enduring : 1;
-    u32 padding00_0A : 22;
+    u32 focusAbilityActivated : 1;
+    u32 padding00_0A : 21;
 
     int physicalDamageTakenFrom[MAX_BATTLERS];
     int physicalDamageLastAttacker;

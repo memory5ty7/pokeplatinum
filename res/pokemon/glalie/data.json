@@ -35,8 +35,8 @@
         "EGG_GROUP_MINERAL"
     ],
     "abilities": [
-        "ABILITY_INNER_FOCUS",
-        "ABILITY_ICE_BODY"
+        "ABILITY_GALVANIZE",
+        "ABILITY_NONE"
     ],
     "great_marsh_flee_rate": 0,
     "sprite": {
