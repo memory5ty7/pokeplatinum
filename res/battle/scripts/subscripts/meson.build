@@ -311,4 +311,6 @@ subscript_files = files(
     'subscript_clear_smog.s',
     'subscript_air_balloon_pop.s',
     'subscript_air_balloon_message.s',
+    'subscript_protean_message.s',
+    'subscript_unnerve_message.s'
 )

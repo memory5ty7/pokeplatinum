@@ -127,6 +127,15 @@ static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *b
 
 extern u32 gTrainerAITable[];
 
+static const u16 PowderMovesList[] = {
+    MOVE_COTTON_SPORE,
+    MOVE_POISON_POWDER,
+    MOVE_SLEEP_POWDER,
+    MOVE_STUN_SPORE,
+    MOVE_SPORE,
+    MOVE_POWER_SWAP,
+};
+
 static const BattleControlFunc sBattleControlCommands[] = {
     BattleController_InitBattleMons,
     BattleController_StartEncounter,
@@ -2874,6 +2883,27 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
         return 0;
     }
 
+    if (BattleMon_Get(battleCtx, attacker, BATTLEMON_ABILITY, NULL) == ABILITY_PRANKSTER // prankster ability
+        && (battleCtx->battleMons[defender].type1 == TYPE_DARK || battleCtx->battleMons[defender].type2 == TYPE_DARK) // used on a dark type
+        && MOVE_DATA(move).class == CLASS_STATUS // move is actually status
+        && (attacker & 1) != (defender & 1)) // used on an enemy
+    {
+        battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
+        return 0;
+    }
+
+    int i;
+
+    for (i = 0; i < (s32)sizeof(PowderMovesList); i++) {
+        if (move == PowderMovesList[i]) {
+            if (
+                (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) == TYPE_GRASS) || (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) == TYPE_GRASS)) {
+                battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
+                return 0;
+            }
+        }
+    }
+
     u8 moveType = CalcMoveType(battleCtx, attacker, move);
     u8 moveClass = MOVE_DATA(move).class;
     s8 accStages = battleCtx->battleMons[attacker].statBoosts[BATTLE_STAT_ACCURACY] - 6;
@@ -3122,12 +3152,14 @@ enum {
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
+    BEFORE_MOVE_STATE_PROTEAN_CHECK,
 
     BEFORE_MOVE_END,
 };
 
 static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    u32 runMyScriptInstead = 0;
     switch (battleCtx->beforeMoveCheckState) {
     case BEFORE_MOVE_STATE_QUICK_CLAW:
         BattleController_LoadQuickClawCheck(battleSys, battleCtx);
@@ -3195,6 +3227,23 @@ static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *
 
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
+        battleCtx->beforeMoveCheckState++;
+
+    case BEFORE_MOVE_STATE_PROTEAN_CHECK:
+        if (battleCtx->battleMons[battleCtx->attacker].ability == ABILITY_PROTEAN
+            && (battleCtx->battleMons[battleCtx->attacker].type1 != CURRENT_MOVE_DATA.type // if either type is not the move's type
+            || battleCtx->battleMons[battleCtx->attacker].type2 != CURRENT_MOVE_DATA.type)
+            && CURRENT_MOVE_DATA.power != 0) // the move has to have power in order for it to change the type
+        {
+            battleCtx->battleMons[battleCtx->attacker].type1 = CURRENT_MOVE_DATA.type;
+            battleCtx->battleMons[battleCtx->attacker].type2 = CURRENT_MOVE_DATA.type;
+            LOAD_SUBSEQ(subscript_protean_message);
+            battleCtx->msgTemp = battleCtx->battleMons[battleCtx->attacker].type1;
+            battleCtx->msgBattlerTemp = battleCtx->attacker;
+            runMyScriptInstead = 1;
+        } else {
+            battleCtx->beforeMoveCheckState++;
+        }
         battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
     }
 
@@ -3202,11 +3251,16 @@ static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *
         battleCtx->command = BATTLE_CONTROL_MOVE_FAILED;
     } else {
         battleCtx->battleStatusMask2 |= SYSCTL_MOVE_SUCCEEDED;
-
-        BattleSystem_LoadScript(battleCtx, 0, battleCtx->moveCur);
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-        battleCtx->commandNext = BATTLE_CONTROL_TRY_MOVE;
-
+        if (runMyScriptInstead == 0){
+            BattleSystem_LoadScript(battleCtx, 0, battleCtx->moveCur);
+            battleCtx->commandNext = BATTLE_CONTROL_TRY_MOVE;           
+        }
+        else
+        {
+            battleCtx->commandNext = 22; 
+        }
+         
         BattleSystem_UpdateLastResort(battleSys, battleCtx);
     }
 
@@ -3382,9 +3436,7 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
 
             else if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
-            }
-            else
-            {
+            } else {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
             }
         }
@@ -3404,8 +3456,7 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
 
         if ((Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE) && (DEFENDING_MON.curHP == (s32)DEFENDING_MON.maxHP)) {
             DEFENDER_TURN_FLAGS.focusAbilityActivated = TRUE;
-        }
-        else if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE && (DEFENDING_MON.curHP != (s32)DEFENDING_MON.maxHP)) {
+        } else if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE && (DEFENDING_MON.curHP != (s32)DEFENDING_MON.maxHP)) {
             DEFENDER_TURN_FLAGS.focusAbilityActivated = FALSE;
         }
 

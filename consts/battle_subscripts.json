@@ -312,7 +312,9 @@
                 "BATTLE_SUBSCRIPT_TRIPLE_AXEL",
                 "BATTLE_SUBSCRIPT_CLEAR_SMOG",
                 "BATTLE_SUBSCRIPT_AIR_BALLOON_POP",
-                "BATTLE_SUBSCRIPT_AIR_BALLOON_MESSAGE"
+                "BATTLE_SUBSCRIPT_AIR_BALLOON_MESSAGE",
+                "BATTLE_SUBSCRIPT_PROTEAN_MESSAGE",
+                "BATTLE_SUBSCRIPT_UNNERVE_MESSAGE"
             ]
         }
     }

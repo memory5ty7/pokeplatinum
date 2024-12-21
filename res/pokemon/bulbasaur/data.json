@@ -35,7 +35,7 @@
         "EGG_GROUP_GRASS"
     ],
     "abilities": [
-        "ABILITY_OVERGROW",
+        "ABILITY_PROTEAN",
         "ABILITY_NONE"
     ],
     "great_marsh_flee_rate": 0,
