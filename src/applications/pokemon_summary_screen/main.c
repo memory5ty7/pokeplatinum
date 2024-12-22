@@ -95,7 +95,7 @@ static void SetAlphaBlending(void);
 static void PokemonSummaryScreenVBlank(void *data);
 static void InitializeStringsAndCopyOTName(PokemonSummaryScreen *summaryScreen);
 static void FreeStrings(PokemonSummaryScreen *summaryScreen);
-static void SetMonData(PokemonSummaryScreen *summaryScreen);
+static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode);
 static void SetMonDataFromBoxMon(PokemonSummaryScreen *summaryScreen, BoxPokemon *boxMon, PokemonSummaryMonData *monData);
 static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon, PokemonSummaryMonData *monData);
 static void SetupInitialPageGfx(PokemonSummaryScreen *summaryScreen);
@@ -169,6 +169,7 @@ static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
     summaryScreen->bgConfig = BgConfig_New(HEAP_ID_POKEMON_SUMMARY_SCREEN);
     summaryScreen->monSprite.animationSys = sub_02015F84(HEAP_ID_POKEMON_SUMMARY_SCREEN, 1, 1);
     summaryScreen->narcPlPokeData = NARC_ctor(NARC_INDEX_POKETOOL__POKE_EDIT__PL_POKE_DATA, HEAP_ID_POKEMON_SUMMARY_SCREEN);
+    summaryScreen->mode = 0;
 
     Font_UseImmediateGlyphAccess(FONT_SYSTEM, HEAP_ID_POKEMON_SUMMARY_SCREEN);
     sub_0201E3D8();
@@ -180,7 +181,7 @@ static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
     SetAlphaBlending();
     sub_020916B4(summaryScreen);
     InitializeStringsAndCopyOTName(summaryScreen);
-    SetMonData(summaryScreen);
+    SetMonData(summaryScreen, 0);
     sub_0208EA44(summaryScreen);
     sub_0208EB64(summaryScreen);
     sub_02091F8C(summaryScreen);
@@ -554,6 +555,20 @@ static int HandleInput_Main(PokemonSummaryScreen *summaryScreen)
         Sound_PlayEffect(SEQ_SE_DP_DECIDE);
         summaryScreen->data->returnMode = 1;
         return PSS_STATE_TRANSITION_OUT;
+    }
+
+    if (JOY_NEW(PAD_BUTTON_L) && summaryScreen->page == PSS_PAGE_SKILLS && summaryScreen->mode != 0) {
+        summaryScreen->mode = 0;
+        Sound_PlayEffect(SEQ_SE_DP_SYU01);
+        SetMonData(summaryScreen, summaryScreen->mode);
+        return PSS_STATE_HANDLE_INPUT;
+    }
+
+    if (JOY_NEW(PAD_BUTTON_R) && summaryScreen->page == PSS_PAGE_SKILLS && summaryScreen->mode == 0) {
+        summaryScreen->mode = 1;
+        Sound_PlayEffect(SEQ_SE_DP_SYU01);
+        SetMonData(summaryScreen, summaryScreen->mode);
+        return PSS_STATE_HANDLE_INPUT;
     }
 
     if (JOY_NEW(PAD_BUTTON_A)) {
@@ -980,15 +995,25 @@ static u8 ScreenTransitionIsDone(PokemonSummaryScreen *dummy)
     return IsScreenTransitionDone() == TRUE;
 }
 
-static void SetMonData(PokemonSummaryScreen *summaryScreen)
+static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode)
 {
     void *monData = PokemonSummaryScreen_MonData(summaryScreen);
+    int paramStart = MON_DATA_CURRENT_HP;
 
     if (summaryScreen->data->dataType == PSS_DATA_BOX_MON) {
         SetMonDataFromBoxMon(summaryScreen, monData, &summaryScreen->monData);
     } else {
         SetMonDataFromMon(summaryScreen, monData, &summaryScreen->monData);
     }
+
+    if (mode != 0) paramStart = MON_DATA_HP_IV;
+
+    summaryScreen->monData.curHP = (u16)Pokemon_GetValue(monData, paramStart, NULL);
+    summaryScreen->monData.attack = (u16)Pokemon_GetValue(monData, paramStart + 1, NULL);
+    summaryScreen->monData.defense = (u16)Pokemon_GetValue(monData, paramStart + 2, NULL);
+    summaryScreen->monData.speed = (u16)Pokemon_GetValue(monData, paramStart + 3, NULL);
+    summaryScreen->monData.spAttack = (u16)Pokemon_GetValue(monData, paramStart + 4, NULL);
+    summaryScreen->monData.spDefense = (u16)Pokemon_GetValue(monData, paramStart + 5, NULL);
 }
 
 static void SetMonDataFromBoxMon(PokemonSummaryScreen *summaryScreen, BoxPokemon *boxMon, PokemonSummaryMonData *monData)
@@ -1422,7 +1447,7 @@ static void ChangeSummaryMon(PokemonSummaryScreen *summaryScreen, s8 delta)
 
     summaryScreen->data->pos = monIndex;
 
-    SetMonData(summaryScreen);
+    SetMonData(summaryScreen, 0);
     PlayMonCry(summaryScreen);
     sub_0208FEA4(summaryScreen);
     sub_0208FF3C(summaryScreen);

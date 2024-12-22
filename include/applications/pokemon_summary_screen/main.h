@@ -297,6 +297,8 @@ typedef struct PokemonSummaryScreen {
     u8 ribbonRow;
     u8 ribbonMax;
     u8 ribbonNum;
+
+    u8 mode;
 } PokemonSummaryScreen;
 
 BOOL PokemonSummaryScreen_ShowContestData(SaveData *saveData);

@@ -13,6 +13,7 @@ BOOL sub_020548B0(int param0, SaveData *param1, u16 param2, u8 param3, u16 param
 BOOL sub_02054930(int param0, SaveData *param1, u16 param2, u8 param3, int param4, int param5);
 void sub_02054988(Party *param0, int param1, int param2, u16 param3);
 int Party_HasMonWithMove(Party *party, u16 moveID);
+int Party_HasMonThatLearnsMove(Party *party, u16 moveID);
 int Party_AliveMonsCount(const Party *party);
 Pokemon *Party_FindFirstEligibleBattler(const Party *party);
 Pokemon *Party_FindFirstHatchedMon(const Party *party);

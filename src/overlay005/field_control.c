@@ -61,6 +61,7 @@
 #include "unk_02054D00.h"
 #include "unk_020562F8.h"
 #include "unk_02056B30.h"
+#include "unk_02054884.h"
 #include "unk_0205A0D8.h"
 #include "unk_0205B33C.h"
 #include "unk_0205F180.h"
@@ -211,7 +212,9 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
             playerEvent |= PLAYER_EVENT_USED_STRENGTH;
         }
 
-        if (Party_HasMonWithMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_WATERFALL) != PARTY_SLOT_NONE) {
+        if (Party_HasMonThatLearnsMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_WATERFALL) != PARTY_SLOT_NONE
+            && Bag_GetItemQuantity(SaveData_GetBag(fieldSystem->saveData), ITEM_HM07, 4) > 0
+            && TrainerInfo_HasBadge(SaveData_GetTrainerInfo(fieldSystem->saveData), 7)) {
             playerEvent |= PLAYER_EVENT_USED_WATERFALL;
         }
 
@@ -687,8 +690,10 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
         TrainerInfo *info = SaveData_GetTrainerInfo(fieldSystem->saveData);
         u32 distortionBehavior = sub_02061760(fieldSystem->playerAvatar);
 
-        if (ov5_021E0118(fieldSystem->playerAvatar, distortionBehavior, behavior) && TrainerInfo_HasBadge(info, 3)) {
-            if (Party_HasMonWithMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
+        if (ov5_021E0118(fieldSystem->playerAvatar, distortionBehavior, behavior)
+            && TrainerInfo_HasBadge(info, 3)
+            && Bag_GetItemQuantity(SaveData_GetBag(fieldSystem->saveData), ITEM_HM03, 4) > 0) {
+            if (Party_HasMonThatLearnsMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
                 return 10004;
             }
         }

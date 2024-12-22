@@ -9394,6 +9394,22 @@ static BOOL BtlCmd_TryRestoreStatusOnSwitch(BattleSystem *battleSys, BattleConte
             && Ability_ForbidsStatus(battleCtx, ability, status) == FALSE) {
             BattleScript_Iter(battleCtx, jumpNoStatusRestore);
         }
+
+        if (battleCtx->battleMons[battler].ability == ABILITY_REGENERATOR) {
+            int hp = Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL);
+            int maxhp = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+
+            int hpdelta = maxhp / 3;
+
+            if ((hp + hpdelta) > maxhp){
+                hp = maxhp;
+            } else {
+                hp += hpdelta;
+            }
+
+            Pokemon_SetValue(mon, MON_DATA_CURRENT_HP, (u8*)&hp);
+            
+        }
     } else {
         BattleScript_Iter(battleCtx, jumpNoStatusRestore);
     }
