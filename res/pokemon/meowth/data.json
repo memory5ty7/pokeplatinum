@@ -35,8 +35,8 @@
         "EGG_GROUP_FIELD"
     ],
     "abilities": [
-        "ABILITY_PICKUP",
-        "ABILITY_TECHNICIAN"
+        "ABILITY_PRANKSTER",
+        "ABILITY_NONE"
     ],
     "great_marsh_flee_rate": 0,
     "sprite": {

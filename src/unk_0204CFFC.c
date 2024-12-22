@@ -132,7 +132,7 @@ BOOL ScrCmd_099(ScriptContext *param0)
     FieldSystem *fieldSystem = param0->fieldSystem;
     Pokemon *v1;
     u16 *v2 = ScriptContext_GetVarPointer(param0);
-    u16 v3 = ScriptContext_GetVar(param0);
+    u16 moveID = ScriptContext_GetVar(param0);
     u16 v4 = ScriptContext_GetVar(param0);
     u16 v5;
 
@@ -143,8 +143,14 @@ BOOL ScrCmd_099(ScriptContext *param0)
         return 0;
     }
 
-    if ((Pokemon_GetValue(v1, MON_DATA_MOVE1, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE2, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE3, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE4, NULL) == v3)) {
-        *v2 = 1;
+    if (Item_IsHMMove(moveID) == TRUE) {
+        if (Pokemon_CanLearnTM(v1, Item_TMHMNumber(Item_HMFromMove(moveID))) == TRUE) {
+            *v2 = 1;
+        }
+    } else {
+        if ((Pokemon_GetValue(v1, MON_DATA_MOVE1, NULL) == moveID) || (Pokemon_GetValue(v1, MON_DATA_MOVE2, NULL) == moveID) || (Pokemon_GetValue(v1, MON_DATA_MOVE3, NULL) == moveID) || (Pokemon_GetValue(v1, MON_DATA_MOVE4, NULL) == moveID)) {
+            *v2 = 1;
+        }
     }
 
     return 0;
@@ -153,23 +159,28 @@ BOOL ScrCmd_099(ScriptContext *param0)
 BOOL ScrCmd_09A(ScriptContext *param0)
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    Pokemon *v1;
-    u16 *v2 = ScriptContext_GetVarPointer(param0);
-    u16 v3 = ScriptContext_GetVar(param0);
+    Pokemon *mon;
+    u16 *returnValue = ScriptContext_GetVarPointer(param0);
+    u16 moveID = ScriptContext_GetVar(param0);
     u16 v4;
-    u8 v5, v6;
+    u8 currentSlot, partyCount;
 
-    v6 = Party_GetCurrentCount(Party_GetFromSavedata(fieldSystem->saveData));
+    partyCount = Party_GetCurrentCount(Party_GetFromSavedata(fieldSystem->saveData));
 
-    for (v5 = 0, *v2 = 6; v5 < v6; v5++) {
-        v1 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), v5);
+    for (currentSlot = 0, *returnValue = 6; currentSlot < partyCount; currentSlot++) {
+        mon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), currentSlot);
 
-        if (Pokemon_GetValue(v1, MON_DATA_IS_EGG, NULL) != 0) {
+        if (Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) != 0) {
             continue;
         }
 
-        if ((Pokemon_GetValue(v1, MON_DATA_MOVE1, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE2, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE3, NULL) == v3) || (Pokemon_GetValue(v1, MON_DATA_MOVE4, NULL) == v3)) {
-            *v2 = v5;
+        if (Item_IsHMMove(moveID) == TRUE) {
+            if (Pokemon_CanLearnTM(mon, Item_TMHMNumber(Item_HMFromMove(moveID))) == TRUE) {
+                *returnValue = currentSlot;
+                break;
+            }
+        } else if ((Pokemon_GetValue(mon, MON_DATA_MOVE1, NULL) == moveID) || (Pokemon_GetValue(mon, MON_DATA_MOVE2, NULL) == moveID) || (Pokemon_GetValue(mon, MON_DATA_MOVE3, NULL) == moveID) || (Pokemon_GetValue(mon, MON_DATA_MOVE4, NULL) == moveID)) {
+            *returnValue = currentSlot;
             break;
         }
     }

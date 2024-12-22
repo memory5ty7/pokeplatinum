@@ -35,4 +35,7 @@ void PokemonSummaryScreen_PrintContestMoveAttributes(PokemonSummaryScreen *summa
 void PokemonSummaryScreen_ClearContestAttributeWindows(PokemonSummaryScreen *summaryScreen);
 void PokemonSummaryScreen_PrintPoffinFeedMsg(PokemonSummaryScreen *summaryScreen, enum SummaryPoffinFeedMsg msg);
 
+void Summary_ColorizeStatScreen(PokemonSummaryScreen *summaryScreen);
+void PrintStatInColor(PokemonSummaryScreen *summaryScreen, enum SummaryExtraWindowSkills window);
+
 #endif // POKEPLATINUM_POKEMON_SUMMARY_SCREEN_WINDOW_H

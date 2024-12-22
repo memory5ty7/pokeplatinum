@@ -1159,17 +1159,14 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
 
     u32 hpWindowWidth = Window_GetWidth(&summaryScreen->extraWindows[SUMMARY_WINDOW_HP]) * 8;
 
-    PrintCurrentAndMaxInfo(summaryScreen, 0, summary_slash, summary_template_current_hp, summary_template_max_hp, summaryScreen->monData.curHP, summaryScreen->monData.maxHP, 3, hpWindowWidth / 2, 0);
-    SetAndFormatNumberBuf(summaryScreen, summary_template_attack, summaryScreen->monData.attack, 3, PADDING_MODE_NONE);
-    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_ATTACK], SUMMARY_TEXT_BLACK, ALIGN_RIGHT);
-    SetAndFormatNumberBuf(summaryScreen, summary_template_defense, summaryScreen->monData.defense, 3, PADDING_MODE_NONE);
-    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_DEFENSE], SUMMARY_TEXT_BLACK, ALIGN_RIGHT);
-    SetAndFormatNumberBuf(summaryScreen, summary_template_sp_attack, summaryScreen->monData.spAttack, 3, PADDING_MODE_NONE);
-    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_SP_ATTACK], SUMMARY_TEXT_BLACK, ALIGN_RIGHT);
-    SetAndFormatNumberBuf(summaryScreen, summary_template_sp_defense, summaryScreen->monData.spDefense, 3, PADDING_MODE_NONE);
-    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_SP_DEFENSE], SUMMARY_TEXT_BLACK, ALIGN_RIGHT);
-    SetAndFormatNumberBuf(summaryScreen, summary_template_speed, summaryScreen->monData.speed, 3, PADDING_MODE_NONE);
-    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_SPEED], SUMMARY_TEXT_BLACK, ALIGN_RIGHT);
+   Summary_ColorizeStatScreen(summaryScreen);
+
+    if (summaryScreen->mode == 0) {
+        PrintCurrentAndMaxInfo(summaryScreen, 0, summary_slash, summary_template_current_hp, summary_template_max_hp, summaryScreen->monData.curHP, summaryScreen->monData.maxHP, 3, hpWindowWidth / 2, 0);
+    } else {
+        SetAndFormatNumberBuf(summaryScreen, summary_template_max_hp, summaryScreen->monData.maxHP, 3, PADDING_MODE_NONE);
+        PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_HP], SUMMARY_TEXT_BLACK, ALIGN_CENTER);
+    }
 
     StringTemplate_SetAbilityName(summaryScreen->strFormatter, 0, summaryScreen->monData.ability);
     Strbuf *buf = MessageLoader_GetNewStrbuf(summaryScreen->msgLoader, summary_template_ability);
@@ -1190,6 +1187,63 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
     Window_ScheduleCopyToVRAM(&summaryScreen->extraWindows[SUMMARY_WINDOW_SPEED]);
     Window_ScheduleCopyToVRAM(&summaryScreen->extraWindows[SUMMARY_WINDOW_ABILITY]);
     Window_ScheduleCopyToVRAM(&summaryScreen->extraWindows[SUMMARY_WINDOW_ABILITY_DESCRIPTION]);
+}
+
+void Summary_ColorizeStatScreen(PokemonSummaryScreen *summaryScreen)
+{
+    SetAndFormatNumberBuf(summaryScreen, summary_template_attack, summaryScreen->monData.attack, 3, PADDING_MODE_NONE);
+    PrintStatInColor(summaryScreen, SUMMARY_WINDOW_ATTACK);
+    SetAndFormatNumberBuf(summaryScreen, summary_template_defense, summaryScreen->monData.defense, 3, PADDING_MODE_NONE);
+    PrintStatInColor(summaryScreen, SUMMARY_WINDOW_DEFENSE);
+    SetAndFormatNumberBuf(summaryScreen, summary_template_sp_attack, summaryScreen->monData.spAttack, 3, PADDING_MODE_NONE);
+    PrintStatInColor(summaryScreen, SUMMARY_WINDOW_SP_ATTACK);
+    SetAndFormatNumberBuf(summaryScreen, summary_template_sp_defense, summaryScreen->monData.spDefense, 3, PADDING_MODE_NONE);
+    PrintStatInColor(summaryScreen, SUMMARY_WINDOW_SP_DEFENSE);
+    SetAndFormatNumberBuf(summaryScreen, summary_template_speed, summaryScreen->monData.speed, 3, PADDING_MODE_NONE);
+    PrintStatInColor(summaryScreen, SUMMARY_WINDOW_SPEED);
+}
+
+static s8 sNatureStatEffects[25][6] = {
+    // atk, def, spatk, spdef, speed
+    {  0,  0,  0,  0,  0,  0  },    // Hardy
+    {  0,  1, -1,  0,  0,  0  },    // Lonely
+    {  0,  1,  0,  0,  0, -1  },    // Brave
+    {  0,  1,  0, -1,  0,  0  },    // Adamant
+    {  0,  1,  0,  0, -1,  0  },    // Naughty
+    {  0, -1,  1,  0,  0,  0  },    // Bold
+    {  0,  0,  0,  0,  0,  0  },    // Docile
+    {  0,  0,  1,  0,  0, -1  },    // Relaxed
+    {  0,  0,  1, -1,  0,  0  },    // Impish
+    {  0,  0,  1,  0, -1,  0  },    // Lax
+    {  0, -1,  0,  0,  0,  1  },    // Timid
+    {  0,  0, -1,  0,  0,  1  },    // Hasty
+    {  0,  0,  0,  0,  0,  0  },    // Serious
+    {  0,  0,  0, -1,  0,  1  },    // Jolly
+    {  0,  0,  0,  0, -1,  1  },    // Naive
+    {  0, -1,  0,  1,  0,  0  },    // Modest
+    {  0,  0, -1,  1,  0,  0  },    // Mild
+    {  0,  0,  0,  1,  0, -1  },    // Quiet
+    {  0,  0,  0,  0,  0,  0  },    // Bashful
+    {  0,  0,  0,  1, -1,  0  },    // Rash
+    {  0, -1,  0,  0,  1,  0  },    // Calm
+    {  0,  0, -1,  0,  1,  0  },    // Gentle
+    {  0,  0,  0,  0,  1,  1  },    // Sassy
+    {  0,  0,  0, -1,  1,  0  },    // Careful
+    {  0,  0,  0,  0,  0,  0  },    // Quirky
+};
+
+void PrintStatInColor(PokemonSummaryScreen *summaryScreen, enum SummaryExtraWindowSkills window)
+{
+    // Color stats boosted by a nature Red
+    // Color stats reduced by a nature Blue
+    TextColor color = SUMMARY_TEXT_BLACK;
+    if (sNatureStatEffects[summaryScreen->monData.nature][window] > 0) {
+        color = SUMMARY_TEXT_RED;
+    } else if (sNatureStatEffects[summaryScreen->monData.nature][window] < 0) {
+        color = SUMMARY_TEXT_BLUE;
+    }
+
+    PrintStrbufToWindow(summaryScreen, &summaryScreen->extraWindows[window], color, ALIGN_RIGHT);
 }
 
 static void DrawConditionPageWindows(PokemonSummaryScreen *summaryScreen)

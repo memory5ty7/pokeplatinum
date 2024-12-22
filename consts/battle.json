@@ -279,7 +279,18 @@
                 "BATTLE_EFFECT_FLINCH_BURN_HIT",
                 "BATTLE_EFFECT_FLINCH_FREEZE_HIT",
                 "BATTLE_EFFECT_FLINCH_PARALYZE_HIT",
-                "BATTLE_EFFECT_RAISE_SP_ATK_HIT"
+                "BATTLE_EFFECT_RAISE_SP_ATK_HIT",
+                "BATTLE_EFFECT_HURRICANE",
+                "BATTLE_EFFECT_QUIVER_DANCE",
+                "BATTLE_EFFECT_RAISE_SPD_HIT",
+                "BATTLE_EFFECT_ACROBATICS",
+                "BATTLE_EFFECT_FIRST_IMPRESSION",
+                "BATTLE_EFFECT_HEX",
+                "BATTLE_EFFECT_VENOSHOCK",
+                "BATTLE_EFFECT_SHELL_SMASH",
+                "BATTLE_EFFECT_TRIPLE_AXEL",
+                "BATTLE_EFFECT_CLEAR_SMOG",
+                "BATTLE_EFFECT_JAW_LOCK"
             ]
         },
         "@MessageTag": {
@@ -495,7 +506,15 @@
                 "MOVE_SUBSCRIPT_PTR_PARALYZE_OR_FLINCH",
                 "MOVE_SUBSCRIPT_PTR_CHATTER",
                 "MOVE_SUBSCRIPT_PTR_LUNAR_DANCE",
-                "MOVE_SUBSCRIPT_PTR_GIVE_TARGET_OWN_STATUS"
+                "MOVE_SUBSCRIPT_PTR_GIVE_TARGET_OWN_STATUS",
+                "MOVE_SUBSCRIPT_PTR_QUIVER_DANCE",
+                "MOVE_SUBSCRIPT_PTR_ACROBATICS",
+                "MOVE_SUBSCRIPT_PTR_FIRST_IMPRESSION",
+                "MOVE_SUBSCRIPT_PTR_HEX",
+                "MOVE_SUBSCRIPT_PTR_VENOSHOCK",
+                "MOVE_SUBSCRIPT_PTR_SHELL_SMASH",
+                "MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL",
+                "MOVE_SUBSCRIPT_PTR_CLEAR_SMOG"
             ]
         },
         "@SideEffectType": {
@@ -508,7 +527,8 @@
                 "SIDE_EFFECT_TYPE_MOVE_EFFECT",
                 "SIDE_EFFECT_TYPE_HELD_ITEM",
                 "SIDE_EFFECT_TYPE_TOXIC_SPIKES",
-                "SIDE_EFFECT_TYPE_DISOBEDIENCE"
+                "SIDE_EFFECT_TYPE_DISOBEDIENCE",
+                "SIDE_EFFECT_TYPE_PRINT_ABILITY"
             ]
         },
         "@Terrain": {

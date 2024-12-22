@@ -1733,26 +1733,21 @@ static u8 sub_020800B4(GameWindowLayout *param0, u8 *param1)
 {
     Pokemon *v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
     u16 v1;
-    u8 v2 = 0, v3, v4 = 0, v5;
+    u8 v2 = 0, i, v4 = 0, v5;
 
     param1[v4] = 1;
     v4++;
 
     if (sub_0206C0D0(param0->unk_5A4->unk_1C) == 0) {
         if (param0->unk_704[param0->unk_B11].unk_10 == 0) {
-            for (v3 = 0; v3 < 4; v3++) {
-                v1 = (u16)Pokemon_GetValue(v0, MON_DATA_MOVE1 + v3, NULL);
+            if (Pokemon_CanLearnTM(v0, Item_TMHMNumber(Item_HMFromMove(MOVE_FLY))) == TRUE) {
 
-                if (v1 == 0) {
-                    break;
-                }
-
-                v5 = GetElementIndex(v1);
+                v5 = GetElementIndex(MOVE_FLY);
 
                 if (v5 != 0xff) {
                     param1[v4] = v5;
                     v4++;
-                    sub_02081CAC(param0, v1, v2);
+                    sub_02081CAC(param0, MOVE_FLY, v2);
                     v2++;
                 }
             }

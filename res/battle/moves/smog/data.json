@@ -1,22 +1,24 @@
 {
     "name": "Smog",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_POISON",
-    "power": 20,
-    "accuracy": 70,
-    "pp": 20,
+    "class": "CLASS_PHYSICAL",
+    "type": "TYPE_BUG",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_POISON_HIT",
-        "chance": 40
+        "type": "BATTLE_EFFECT_FIRST_IMPRESSION",
+        "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
+        "MOVE_FLAG_MAKES_CONTACT",
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
     ],
     "contest": {
-        "effect": 5,
-        "type": "CONTEST_TYPE_TOUGH"
+        "effect": 17,
+        "type": "CONTEST_TYPE_CUTE"
     }
 }

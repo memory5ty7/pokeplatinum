@@ -126,7 +126,30 @@
                 "ABILITY_RECKLESS",
                 "ABILITY_MULTITYPE",
                 "ABILITY_FLOWER_GIFT",
-                "ABILITY_BAD_DREAMS"
+                "ABILITY_BAD_DREAMS",
+                "ABILITY_AERILATE",
+                "ABILITY_REFRIGERATE",
+                "ABILITY_GALVANIZE",
+                "ABILITY_PROTEAN",
+                "ABILITY_SHEER_FORCE",
+                "ABILITY_MULTISCALE",
+                "ABILITY_GALE_WINGS",
+                "ABILITY_STRONG_JAW",
+                "ABILITY_SAND_FORCE",
+                "ABILITY_GOOEY",
+                "ABILITY_RATTLED",
+                "ABILITY_REGENERATOR",
+                "ABILITY_UNNVERVE",
+                "ABILITY_BEAST_BOOST",
+                "ABILITY_MEGA_LAUNCHER",
+                "ABILITY_ANALYTIC",
+                "ABILITY_PRANKSTER",
+                "ABILITY_MAGIC_BOUNCE",
+                "ABILITY_TOUGH_CLAWS",
+                "ABILITY_SHARPNESS",
+                "ABILITY_FLARE_BOOST",
+                "ABILITY_FLUFFY",
+                "ABILITY_TRIAGE"
             ]
         }
     }

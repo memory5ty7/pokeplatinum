@@ -4,18 +4,18 @@
     "type": "TYPE_NORMAL",
     "power": 0,
     "accuracy": 0,
-    "pp": 20,
+    "pp": 1,
     "effect": {
-        "type": "BATTLE_EFFECT_NATURE_POWER",
+        "type": "BATTLE_EFFECT_SHELL_SMASH",
         "chance": 0
     },
-    "range": "RANGE_SINGLE_TARGET_SPECIAL",
+    "range": "RANGE_USER",
     "priority": 0,
     "flags": [
-        "MOVE_FLAG_HIDES_HP_GAUGES"
+        "MOVE_FLAG_CAN_SNATCH"
     ],
     "contest": {
-        "effect": 14,
-        "type": "CONTEST_TYPE_CUTE"
+        "effect": 11,
+        "type": "CONTEST_TYPE_COOL"
     }
 }

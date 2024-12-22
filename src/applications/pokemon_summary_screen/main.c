@@ -153,7 +153,7 @@ static void SetAlphaBlending(void);
 static void PokemonSummaryScreenVBlank(void *data);
 static void InitializeStringsAndCopyOTName(PokemonSummaryScreen *summaryScreen);
 static void FreeStrings(PokemonSummaryScreen *summaryScreen);
-static void SetMonData(PokemonSummaryScreen *summaryScreen);
+static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode);
 static void SetMonDataFromBoxMon(PokemonSummaryScreen *summaryScreen, BoxPokemon *boxMon, PokemonSummaryMonData *monData);
 static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon, PokemonSummaryMonData *monData);
 static void SetupInitialPageGfx(PokemonSummaryScreen *summaryScreen);
@@ -227,6 +227,7 @@ static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
     summaryScreen->bgConfig = BgConfig_New(HEAP_ID_POKEMON_SUMMARY_SCREEN);
     summaryScreen->monSprite.animationSys = sub_02015F84(HEAP_ID_POKEMON_SUMMARY_SCREEN, 1, 1);
     summaryScreen->narcPlPokeData = NARC_ctor(NARC_INDEX_POKETOOL__POKE_EDIT__PL_POKE_DATA, HEAP_ID_POKEMON_SUMMARY_SCREEN);
+    summaryScreen->mode = 0;
 
     Font_UseImmediateGlyphAccess(FONT_SYSTEM, HEAP_ID_POKEMON_SUMMARY_SCREEN);
     sub_0201E3D8();
@@ -238,7 +239,7 @@ static int PokemonSummaryScreen_Init(OverlayManager *ovyManager, int *state)
     SetAlphaBlending();
     PokemonSummaryScreen_Setup3DGfx(summaryScreen);
     InitializeStringsAndCopyOTName(summaryScreen);
-    SetMonData(summaryScreen);
+    SetMonData(summaryScreen, summaryScreen->mode);
     PokemonSummaryScreen_InitSpriteResources(summaryScreen);
     PokemonSummaryScreen_SetDefaultSpriteStates(summaryScreen);
     PokemonSummaryScreen_LoadMonSprite(summaryScreen);
@@ -612,6 +613,22 @@ static int HandleInput_Main(PokemonSummaryScreen *summaryScreen)
         Sound_PlayEffect(SEQ_SE_DP_DECIDE);
         summaryScreen->data->returnMode = SUMMARY_RETURN_CANCEL;
         return SUMMARY_STATE_TRANSITION_OUT;
+    }
+
+    if (JOY_NEW(PAD_BUTTON_L) && summaryScreen->page == SUMMARY_PAGE_SKILLS && summaryScreen->mode != 0) {
+        summaryScreen->mode = 0;
+        Sound_PlayEffect(SEQ_SE_DP_SYU01);
+        SetMonData(summaryScreen, summaryScreen->mode);
+        PokemonSummaryScreen_DrawExtraWindows(summaryScreen);
+        return SUMMARY_STATE_HANDLE_INPUT;
+    }
+
+    if (JOY_NEW(PAD_BUTTON_R) && summaryScreen->page == SUMMARY_PAGE_SKILLS && summaryScreen->mode == 0) {
+        summaryScreen->mode = 1;
+        Sound_PlayEffect(SEQ_SE_DP_SYU01);
+        SetMonData(summaryScreen, summaryScreen->mode);
+        PokemonSummaryScreen_DrawExtraWindows(summaryScreen);
+        return SUMMARY_STATE_HANDLE_INPUT;
     }
 
     if (JOY_NEW(PAD_BUTTON_A)) {
@@ -1038,15 +1055,32 @@ static u8 ScreenTransitionIsDone(PokemonSummaryScreen *dummy)
     return IsScreenTransitionDone() == TRUE;
 }
 
-static void SetMonData(PokemonSummaryScreen *summaryScreen)
+static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode)
 {
     void *monData = PokemonSummaryScreen_MonData(summaryScreen);
+    int paramStart = MON_DATA_CURRENT_HP;
 
     if (summaryScreen->data->dataType == SUMMARY_DATA_BOX_MON) {
         SetMonDataFromBoxMon(summaryScreen, monData, &summaryScreen->monData);
     } else {
         SetMonDataFromMon(summaryScreen, monData, &summaryScreen->monData);
     }
+
+    if (mode != 0) {
+        summaryScreen->monData.maxHP = (u16)Pokemon_GetValue(monData, MON_DATA_HP_IV, NULL);
+        summaryScreen->monData.curHP = (u16)Pokemon_GetValue(monData, MON_DATA_HP_IV, NULL);
+        paramStart = MON_DATA_ATK_IV;
+    } else {
+        summaryScreen->monData.maxHP = (u16)Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL);
+        summaryScreen->monData.curHP = (u16)Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL);
+        paramStart = MON_DATA_ATK;
+    }
+
+    summaryScreen->monData.attack = (u16)Pokemon_GetValue(monData, paramStart, NULL);
+    summaryScreen->monData.defense = (u16)Pokemon_GetValue(monData, paramStart + 1, NULL);
+    summaryScreen->monData.speed = (u16)Pokemon_GetValue(monData, paramStart + 2, NULL);
+    summaryScreen->monData.spAttack = (u16)Pokemon_GetValue(monData, paramStart + 3, NULL);
+    summaryScreen->monData.spDefense = (u16)Pokemon_GetValue(monData, paramStart + 4, NULL);
 }
 
 static void SetMonDataFromBoxMon(PokemonSummaryScreen *summaryScreen, BoxPokemon *boxMon, PokemonSummaryMonData *monData)
@@ -1399,7 +1433,15 @@ static void DrawHealthBar(PokemonSummaryScreen *summaryScreen)
 {
     u16 baseTile;
 
-    switch (HealthBar_Color(summaryScreen->monData.curHP, summaryScreen->monData.maxHP, 48)) {
+    void *monData = PokemonSummaryScreen_MonData(summaryScreen);
+
+    if (summaryScreen->data->dataType == SUMMARY_DATA_BOX_MON) {
+        SetMonDataFromBoxMon(summaryScreen, monData, &summaryScreen->monData);
+    } else {
+        SetMonDataFromMon(summaryScreen, monData, &summaryScreen->monData);
+    }
+
+    switch (HealthBar_Color(Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL), Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL), 48)) {
     case BARCOLOR_MAX:
     case BARCOLOR_GREEN:
     case BARCOLOR_EMPTY:
@@ -1413,7 +1455,7 @@ static void DrawHealthBar(PokemonSummaryScreen *summaryScreen)
         break;
     }
 
-    u8 pixelCount = App_PixelCount(summaryScreen->monData.curHP, summaryScreen->monData.maxHP, 48);
+    u8 pixelCount = App_PixelCount(Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL), Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL), 48);
     u16 tile;
 
     for (u8 i = 0; i < HEALTHBAR_TILES_MAX; i++) {
@@ -1473,6 +1515,7 @@ static void DrawExperienceProgressBar(PokemonSummaryScreen *summaryScreen)
 static void ChangeSummaryMon(PokemonSummaryScreen *summaryScreen, s8 delta)
 {
     s8 monIndex = TryAdvanceSummaryMonIndex(summaryScreen, delta);
+    summaryScreen->mode = 0;
 
     if (monIndex == -1) {
         return;
@@ -1480,7 +1523,7 @@ static void ChangeSummaryMon(PokemonSummaryScreen *summaryScreen, s8 delta)
 
     summaryScreen->data->pos = monIndex;
 
-    SetMonData(summaryScreen);
+    SetMonData(summaryScreen, summaryScreen->mode);
     PlayMonCry(summaryScreen);
     PokemonSummaryScreen_PrintNicknameAndGender(summaryScreen);
     PokemonSummaryScreen_PrintLevel(summaryScreen);

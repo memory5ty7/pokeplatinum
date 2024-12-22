@@ -13,6 +13,7 @@
 #include "overlay005/ov5_021E622C.h"
 
 #include "heap.h"
+#include "item.h"
 #include "party.h"
 #include "pokemon.h"
 #include "save_player.h"
@@ -101,6 +102,26 @@ int Party_HasMonWithMove(Party *party, u16 moveID)
             || Pokemon_GetValue(mon, MON_DATA_MOVE2, NULL) == moveID
             || Pokemon_GetValue(mon, MON_DATA_MOVE3, NULL) == moveID
             || Pokemon_GetValue(mon, MON_DATA_MOVE4, NULL) == moveID) {
+            return i;
+        }
+    }
+
+    return PARTY_SLOT_NONE;
+}
+
+int Party_HasMonThatLearnsMove(Party *party, u16 moveID)
+{
+    int i;
+    int partyCount = Party_GetCurrentCount(party);
+
+    for (i = 0; i < partyCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+        if (Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) != FALSE) {
+            continue;
+        }
+
+        if (Pokemon_CanLearnTM(mon, Item_TMHMNumber(Item_HMFromMove(moveID))) == TRUE) {
             return i;
         }
     }

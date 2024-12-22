@@ -980,6 +980,38 @@ u8 Item_TMHMNumber(u16 item)
     return item - ITEM_TM01;
 }
 
+u16 Item_HMFromMove(u16 moveID)
+{
+    u16 item = ITEM_NONE;
+    switch (moveID) {
+    case MOVE_CUT:
+        item = ITEM_HM01;
+        break;
+    case MOVE_FLY:
+        item = ITEM_HM02;
+        break;
+    case MOVE_SURF:
+        item = ITEM_HM03;
+        break;
+    case MOVE_STRENGTH:
+        item = ITEM_HM04;
+        break;
+    case MOVE_DEFOG:
+        item = ITEM_HM05;
+        break;
+    case MOVE_ROCK_SMASH:
+        item = ITEM_HM06;
+        break;
+    case MOVE_WATERFALL:
+        item = ITEM_HM07;
+        break;
+    case MOVE_ROCK_CLIMB:
+        item = ITEM_HM08;
+        break;
+    }
+    return item;
+}
+
 u8 Item_IsMail(u16 item)
 {
     for (u32 i = 0; i < NUM_MAILS; i++) {

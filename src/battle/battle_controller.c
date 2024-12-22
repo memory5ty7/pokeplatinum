@@ -127,6 +127,15 @@ static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *b
 
 extern u32 gTrainerAITable[];
 
+static const u16 PowderMovesList[] = {
+    MOVE_COTTON_SPORE,
+    MOVE_POISON_POWDER,
+    MOVE_SLEEP_POWDER,
+    MOVE_STUN_SPORE,
+    MOVE_SPORE,
+    MOVE_POWER_SWAP,
+};
+
 static const BattleControlFunc sBattleControlCommands[] = {
     BattleController_InitBattleMons,
     BattleController_StartEncounter,
@@ -1040,12 +1049,14 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
                 side = battleCtx->fieldConditionCheckTemp;
 
                 if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) {
-                    battleCtx->sideConditionsMask[side] -= SIDE_CONDITION_TAILWIND_SHIFT;
+                    if ((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) != SIDE_CONDITION_TAILWIND) {
+                        battleCtx->sideConditionsMask[side] -= SIDE_CONDITION_TAILWIND_SHIFT;
 
-                    if ((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) == FALSE) {
-                        PrepareSubroutineSequence(battleCtx, subscript_tailwind_end);
-                        battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
-                        state = STATE_BREAK_OUT;
+                        if ((battleCtx->sideConditionsMask[side] & SIDE_CONDITION_TAILWIND) == FALSE) {
+                            PrepareSubroutineSequence(battleCtx, subscript_tailwind_end);
+                            battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
+                            state = STATE_BREAK_OUT;
+                        }
                     }
                 }
 
@@ -1225,11 +1236,13 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
 
         case FIELD_COND_CHECK_STATE_GRAVITY:
             if (battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) {
-                battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_GRAVITY_SHIFT);
+                if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) != FIELD_CONDITION_GRAVITY) {
+                    battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_GRAVITY_SHIFT);
 
-                if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) == 0) {
-                    PrepareSubroutineSequence(battleCtx, subscript_gravity_end);
-                    state = STATE_BREAK_OUT;
+                    if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) == 0) {
+                        PrepareSubroutineSequence(battleCtx, subscript_gravity_end);
+                        state = STATE_BREAK_OUT;
+                    }
                 }
             }
 
@@ -1820,10 +1833,12 @@ static void BattleController_CheckSideConditions(BattleSystem *battleSys, Battle
 
     case SIDE_COND_CHECK_STATE_TRICK_ROOM:
         if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
-            battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_TRICK_ROOM_SHIFT);
-            if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FALSE) {
-                PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
-                return;
+            if (!((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FIELD_CONDITION_TRICK_ROOM)) {
+                battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_TRICK_ROOM_SHIFT);
+                if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FALSE) {
+                    PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
+                    return;
+                }
             }
         }
 
@@ -2137,16 +2152,16 @@ static int BattleController_CheckObedience(BattleSystem *battleSys, BattleContex
         return OBEY_CHECK_SUCCESS;
     }
 
-    maxLevel = 10;
-    if (TrainerInfo_BadgeCount(trInfo) >= 2) {
-        maxLevel = 30;
-    }
-    if (TrainerInfo_BadgeCount(trInfo) >= 4) {
-        maxLevel = 50;
-    }
-    if (TrainerInfo_BadgeCount(trInfo) >= 6) {
-        maxLevel = 70;
-    }
+    maxLevel = 100;
+    // if (TrainerInfo_BadgeCount(trInfo) >= 2) {
+    //     maxLevel = 30;
+    //  }
+    //  if (TrainerInfo_BadgeCount(trInfo) >= 4) {
+    //      maxLevel = 50;
+    //  }
+    //  if (TrainerInfo_BadgeCount(trInfo) >= 6) {
+    //      maxLevel = 70;
+    //  }
 
     if (ATTACKING_MON.level <= maxLevel) {
         return OBEY_CHECK_SUCCESS;
@@ -2868,6 +2883,27 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
         return 0;
     }
 
+    if (BattleMon_Get(battleCtx, attacker, BATTLEMON_ABILITY, NULL) == ABILITY_PRANKSTER // prankster ability
+        && (battleCtx->battleMons[defender].type1 == TYPE_DARK || battleCtx->battleMons[defender].type2 == TYPE_DARK) // used on a dark type
+        && MOVE_DATA(move).class == CLASS_STATUS // move is actually status
+        && (attacker & 1) != (defender & 1)) // used on an enemy
+    {
+        battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
+        return 0;
+    }
+
+    int i;
+
+    for (i = 0; i < (s32)sizeof(PowderMovesList); i++) {
+        if (move == PowderMovesList[i]) {
+            if (
+                (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) == TYPE_GRASS) || (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) == TYPE_GRASS)) {
+                battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
+                return 0;
+            }
+        }
+    }
+
     u8 moveType = CalcMoveType(battleCtx, attacker, move);
     u8 moveClass = MOVE_DATA(move).class;
     s8 accStages = battleCtx->battleMons[attacker].statBoosts[BATTLE_STAT_ACCURACY] - 6;
@@ -2912,7 +2948,7 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
         return 0;
     }
 
-    if (NO_CLOUD_NINE && WEATHER_IS_SUN && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
+    if (NO_CLOUD_NINE && WEATHER_IS_SUN && (MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER || MOVE_DATA(move).effect == BATTLE_EFFECT_HURRICANE)) {
         hitRate = 50;
     }
 
@@ -2921,20 +2957,6 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_COMPOUND_EYES) {
         hitRate = hitRate * 130 / 100;
-    }
-
-    if (NO_CLOUD_NINE) {
-        if (WEATHER_IS_SAND && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SAND_VEIL) == TRUE) {
-            hitRate = hitRate * 80 / 100;
-        }
-
-        if (WEATHER_IS_HAIL && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SNOW_CLOAK) == TRUE) {
-            hitRate = hitRate * 80 / 100;
-        }
-
-        if (battleCtx->fieldConditionsMask & FIELD_CONDITION_DEEP_FOG) {
-            hitRate = hitRate * 6 / 10;
-        }
     }
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_HUSTLE && moveClass == CLASS_PHYSICAL) {
@@ -3022,7 +3044,7 @@ static int BattleController_CheckMoveHitOverrides(BattleSystem *battleSys, Battl
     }
 
     if (NO_CLOUD_NINE) {
-        if (WEATHER_IS_RAIN && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
+        if (WEATHER_IS_RAIN && (MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER || MOVE_DATA(move).effect == BATTLE_EFFECT_HURRICANE)) {
             battleCtx->moveStatusFlags &= ~MOVE_STATUS_MISSED;
         }
 
@@ -3130,12 +3152,14 @@ enum {
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
+    BEFORE_MOVE_STATE_PROTEAN_CHECK,
 
     BEFORE_MOVE_END,
 };
 
 static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    u32 runMyScriptInstead = 0;
     switch (battleCtx->beforeMoveCheckState) {
     case BEFORE_MOVE_STATE_QUICK_CLAW:
         BattleController_LoadQuickClawCheck(battleSys, battleCtx);
@@ -3203,6 +3227,23 @@ static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *
 
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
+        battleCtx->beforeMoveCheckState++;
+
+    case BEFORE_MOVE_STATE_PROTEAN_CHECK:
+        if (battleCtx->battleMons[battleCtx->attacker].ability == ABILITY_PROTEAN
+            && (battleCtx->battleMons[battleCtx->attacker].type1 != CURRENT_MOVE_DATA.type // if either type is not the move's type
+            || battleCtx->battleMons[battleCtx->attacker].type2 != CURRENT_MOVE_DATA.type)
+            && CURRENT_MOVE_DATA.power != 0) // the move has to have power in order for it to change the type
+        {
+            battleCtx->battleMons[battleCtx->attacker].type1 = CURRENT_MOVE_DATA.type;
+            battleCtx->battleMons[battleCtx->attacker].type2 = CURRENT_MOVE_DATA.type;
+            LOAD_SUBSEQ(subscript_protean_message);
+            battleCtx->msgTemp = battleCtx->battleMons[battleCtx->attacker].type1;
+            battleCtx->msgBattlerTemp = battleCtx->attacker;
+            runMyScriptInstead = 1;
+        } else {
+            battleCtx->beforeMoveCheckState++;
+        }
         battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
     }
 
@@ -3210,11 +3251,16 @@ static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *
         battleCtx->command = BATTLE_CONTROL_MOVE_FAILED;
     } else {
         battleCtx->battleStatusMask2 |= SYSCTL_MOVE_SUCCEEDED;
-
-        BattleSystem_LoadScript(battleCtx, 0, battleCtx->moveCur);
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-        battleCtx->commandNext = BATTLE_CONTROL_TRY_MOVE;
-
+        if (runMyScriptInstead == 0){
+            BattleSystem_LoadScript(battleCtx, 0, battleCtx->moveCur);
+            battleCtx->commandNext = BATTLE_CONTROL_TRY_MOVE;           
+        }
+        else
+        {
+            battleCtx->commandNext = 22; 
+        }
+         
         BattleSystem_UpdateLastResort(battleSys, battleCtx);
     }
 
@@ -3388,11 +3434,14 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
             }
 
-            if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
+            else if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
+            } else {
+                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
             }
         }
 
+        /*
         if ((DEFENDER_TURN_FLAGS.enduring || DEFENDER_SELF_TURN_FLAGS.focusItemActivated)
             && DEFENDING_MON.curHP + battleCtx->damage <= 0) {
             battleCtx->damage = (DEFENDING_MON.curHP - 1) * -1;
@@ -3401,6 +3450,24 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
                 battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED;
             } else {
                 battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+            }
+        }
+        */
+
+        if ((Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE) && (DEFENDING_MON.curHP == (s32)DEFENDING_MON.maxHP)) {
+            DEFENDER_TURN_FLAGS.focusAbilityActivated = TRUE;
+        } else if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_STURDY) == TRUE && (DEFENDING_MON.curHP != (s32)DEFENDING_MON.maxHP)) {
+            DEFENDER_TURN_FLAGS.focusAbilityActivated = FALSE;
+        }
+
+        if ((DEFENDER_TURN_FLAGS.focusAbilityActivated) || (DEFENDER_SELF_TURN_FLAGS.focusItemActivated)) {
+            if ((DEFENDING_MON.curHP + battleCtx->damage) <= 0) {
+                battleCtx->damage = (DEFENDING_MON.curHP - 1) * -1;
+                if (DEFENDER_TURN_FLAGS.focusAbilityActivated) {
+                    battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ABILITY;
+                } else {
+                    battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+                }
             }
         }
 

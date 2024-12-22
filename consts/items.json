@@ -150,7 +150,8 @@
                 "HOLD_EFFECT_EVOLVE_ELECTABUZZ",
                 "HOLD_EFFECT_EVOLVE_MAGMAR",
                 "HOLD_EFFECT_EVOLVE_PORYGON2",
-                "HOLD_EFFECT_EVOLVE_DUSCLOPS"
+                "HOLD_EFFECT_EVOLVE_DUSCLOPS",
+                "HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT"
             ]
         },
         "@Item": {
