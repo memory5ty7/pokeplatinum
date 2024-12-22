@@ -136,7 +136,7 @@ _01A6:
 _01CA:
     Message 0
     CloseMessage
-    ScrCmd_0E5 0x209, 0x20F
+    StartTrainerBattle trainer_galactic_grunt_spear_pillar_1, trainer_galactic_grunt_spear_pillar_2
     CheckWonBattle 0x800C
     Return
 
@@ -147,28 +147,28 @@ _01DB:
 
     .balign 4, 0
 _01E4:
-    MoveAction_023
+    MoveAction_035
     EndMovement
 
     .balign 4, 0
 _01EC:
-    MoveAction_021
+    MoveAction_033
     EndMovement
 
     .balign 4, 0
 _01F4:
-    MoveAction_022
+    MoveAction_034
     EndMovement
 
     .balign 4, 0
 _01FC:
-    MoveAction_021
+    MoveAction_033
     EndMovement
 
     .balign 4, 0
 _0204:
-    MoveAction_03E 5
-    MoveAction_00D
+    MoveAction_062 5
+    MoveAction_013
     EndMovement
 
 _0210:
@@ -215,7 +215,7 @@ _0249:
     Message 9
     CloseMessage
     Call _0424
-    ScrCmd_2A0 0x8004, 0x210, 0x197
+    StartTagBattle 0x8004, 0x210, 0x197
     CheckWonBattle 0x800C
     GoToIfEq 0x800C, 0, _02D0
     Call _0456
@@ -306,32 +306,32 @@ _03D8:
 
     .balign 4, 0
 _03F4:
-    MoveAction_023
+    MoveAction_035
     EndMovement
 
     .balign 4, 0
 _03FC:
-    MoveAction_00E
+    MoveAction_014
     EndMovement
 
     .balign 4, 0
 _0404:
-    MoveAction_023
+    MoveAction_035
     EndMovement
 
     .balign 4, 0
 _040C:
-    MoveAction_00E
+    MoveAction_014
     EndMovement
 
     .balign 4, 0
 _0414:
-    MoveAction_00F
+    MoveAction_015
     EndMovement
 
     .balign 4, 0
 _041C:
-    MoveAction_022
+    MoveAction_034
     EndMovement
 
 _0424:
@@ -433,13 +433,13 @@ _04A7:
 
     .balign 4, 0
 _04F4:
-    MoveAction_03E 2
-    MoveAction_010 8
+    MoveAction_062 2
+    MoveAction_016 8
     EndMovement
 
     .balign 4, 0
 _0500:
-    MoveAction_011 8
+    MoveAction_017 8
     EndMovement
 
 _0508:
@@ -484,7 +484,7 @@ _0567:
 
     .balign 4, 0
 _05B8:
-    MoveAction_020
+    MoveAction_032
     EndMovement
 
 _05C0:
@@ -519,34 +519,34 @@ _0637:
 
     .balign 4, 0
 _0644:
-    MoveAction_03F
-    MoveAction_00C 6
-    MoveAction_00F 2
+    MoveAction_063
+    MoveAction_012 6
+    MoveAction_015 2
     EndMovement
 
     .balign 4, 0
 _0654:
-    MoveAction_03F
-    MoveAction_00C 6
-    MoveAction_00F
+    MoveAction_063
+    MoveAction_012 6
+    MoveAction_015
     EndMovement
 
     .balign 4, 0
 _0664:
-    MoveAction_03F
-    MoveAction_00C 6
+    MoveAction_063
+    MoveAction_012 6
     EndMovement
 
     .balign 4, 0
 _0670:
-    MoveAction_03F
-    MoveAction_00C 6
-    MoveAction_00E
+    MoveAction_063
+    MoveAction_012 6
+    MoveAction_014
     EndMovement
 
     .balign 4, 0
 _0680:
-    MoveAction_03F
-    MoveAction_00C 6
-    MoveAction_00E 2
+    MoveAction_063
+    MoveAction_012 6
+    MoveAction_014 2
     EndMovement

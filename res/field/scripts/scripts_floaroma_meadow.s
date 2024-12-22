@@ -18,11 +18,11 @@ _001E:
 _0024:
     LockAll
     Call _00CC
-    ScrCmd_0E5 0x128, 0
+    StartTrainerBattle trainer_galactic_grunt_floaroma_meadow_1
     CheckWonBattle 0x800C
     GoToIfEq 0x800C, 0, _006E
     Call _00EE
-    ScrCmd_0E5 0x129, 0
+    StartTrainerBattle trainer_galactic_grunt_floaroma_meadow_2
     CheckWonBattle 0x800C
     GoToIfEq 0x800C, 0, _006E
     Call _010E
@@ -37,18 +37,18 @@ _006E:
 
     .balign 4, 0
 _0074:
-    MoveAction_021
-    MoveAction_04B
+    MoveAction_033
+    MoveAction_075
     EndMovement
 
     .balign 4, 0
 _0080:
-    MoveAction_023
+    MoveAction_035
     EndMovement
 
     .balign 4, 0
 _0088:
-    MoveAction_021
+    MoveAction_033
     EndMovement
 
     .byte 12
@@ -70,19 +70,19 @@ _0088:
 
     .balign 4, 0
 _00A0:
-    MoveAction_00D
-    MoveAction_023
-    MoveAction_03F 3
-    MoveAction_021
+    MoveAction_013
+    MoveAction_035
+    MoveAction_063 3
+    MoveAction_033
     EndMovement
 
     .balign 4, 0
 _00B4:
-    MoveAction_00D
-    MoveAction_023
-    MoveAction_03F 3
-    MoveAction_00F
-    MoveAction_021
+    MoveAction_013
+    MoveAction_035
+    MoveAction_063 3
+    MoveAction_015
+    MoveAction_033
     EndMovement
 
 _00CC:

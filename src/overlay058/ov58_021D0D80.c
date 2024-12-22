@@ -26,6 +26,7 @@
 #include "gx_layers.h"
 #include "heap.h"
 #include "journal.h"
+#include "math.h"
 #include "message.h"
 #include "narc.h"
 #include "overlay_manager.h"
@@ -44,7 +45,6 @@
 #include "unk_0200F174.h"
 #include "unk_02015920.h"
 #include "unk_02017728.h"
-#include "unk_0201D15C.h"
 #include "unk_0201DBEC.h"
 #include "unk_0201E3D8.h"
 #include "unk_0201E86C.h"
@@ -301,13 +301,13 @@ int ov58_021D1018(OverlayManager *param0, int *param1)
     UnkStruct_02095EAC *v0 = OverlayManager_Data(param0);
     UnkStruct_0203DDFC *v1 = (UnkStruct_0203DDFC *)OverlayManager_Args(param0);
     int v2;
-    void *v3;
+    void *journalEntryOnlineEvent;
 
     switch (*param1) {
     case 0:
-        v3 = sub_0202C168(39);
+        journalEntryOnlineEvent = JournalEntry_CreateEventDrewPictures(39);
 
-        Journal_SaveData(v1->unk_04, v3, 4);
+        JournalEntry_SaveData(v1->unk_04, journalEntryOnlineEvent, JOURNAL_ONLINE_EVENT);
         SetMainCallback(NULL, NULL);
         sub_0200A4E4(v0->unk_1D4[0][0]);
         sub_0200A4E4(v0->unk_1D4[1][0]);
@@ -1596,7 +1596,7 @@ static void ov58_021D2888(u16 *param0)
         *param0 = 0;
     }
 
-    v0 = sub_0201D250(*param0);
+    v0 = CalcSineDegrees_Wraparound(*param0);
     v3 = 15 + (v0 * 10) / FX32_ONE;
     v1 = GX_RGB(29, v3, 0);
 

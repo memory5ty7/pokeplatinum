@@ -66,7 +66,7 @@ _00C4:
     ScrCmd_04D
     CloseMessage
     SetFlag 142
-    ScrCmd_319 0x1E7, 47
+    StartGiratinaOriginBattle SPECIES_GIRATINA, 47
     ClearFlag 142
     CheckWonBattle 0x800C
     ScrCmd_314 0x800C
@@ -170,43 +170,43 @@ _0232:
 
     .balign 4, 0
 _0244:
-    MoveAction_021
-    MoveAction_04B
-    EndMovement
-
-    .balign 4, 0
-_0250:
-    MoveAction_075 2
-    EndMovement
-
-    .balign 4, 0
-_0258:
-    MoveAction_021
-    MoveAction_04B
-    EndMovement
-
-    .balign 4, 0
-_0264:
-    MoveAction_020
-    EndMovement
-
-    .balign 4, 0
-_026C:
+    MoveAction_033
     MoveAction_075
     EndMovement
 
     .balign 4, 0
+_0250:
+    MoveAction_117 2
+    EndMovement
+
+    .balign 4, 0
+_0258:
+    MoveAction_033
+    MoveAction_075
+    EndMovement
+
+    .balign 4, 0
+_0264:
+    MoveAction_032
+    EndMovement
+
+    .balign 4, 0
+_026C:
+    MoveAction_117
+    EndMovement
+
+    .balign 4, 0
 _0274:
-    MoveAction_076
-    MoveAction_00D 5
+    MoveAction_118
+    MoveAction_013 5
     EndMovement
 
     .balign 4, 0
 _0280:
-    MoveAction_00D 5
+    MoveAction_013 5
     EndMovement
 
     .balign 4, 0
 _0288:
-    MoveAction_00C 5
+    MoveAction_012 5
     EndMovement

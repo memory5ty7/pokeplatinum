@@ -2,11 +2,15 @@
     .include "consts/badges.inc"
     .include "consts/game_records.inc"
     .include "consts/items.inc"
+    .include "consts/journal.inc"
     .include "consts/map.inc"
     .include "consts/moves.inc"
     .include "consts/poketch.inc"
     .include "consts/scrcmd.inc"
     .include "consts/sdat.inc"
+    .include "consts/species.inc"
+
+#include "res/trainers/trdata.naix"
 
     .macro Noop
     .short 0
@@ -1262,10 +1266,10 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_0E5 arg0, arg1
+    .macro StartTrainerBattle enemyTrainer1, enemyTrainer2=0
     .short 229
-    .short \arg0
-    .short \arg1
+    .short \enemyTrainer1
+    .short \enemyTrainer2
     .endm
 
     .macro ScrCmd_0E6 arg0, arg1
@@ -1317,7 +1321,7 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_0EF
+    .macro StartDummyTrainerBattle
     .short 239
     .endm
 
@@ -1356,7 +1360,7 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_0F6
+    .macro StartLinkBattle
     .short 246
     .endm
 
@@ -1596,18 +1600,18 @@
     .short \arg1
     .endm
 
-    .macro ScrCmd_124 arg0, arg1
+    .macro StartWildBattle species, level
     .short 292
-    .short \arg0
-    .short \arg1
+    .short \species
+    .short \level
     .endm
 
-    .macro ScrCmd_125 arg0
+    .macro StartFirstBattle trainerID
     .short 293
-    .short \arg0
+    .short \trainerID
     .endm
 
-    .macro ScrCmd_126
+    .macro StartCatchingTutorial
     .short 294
     .endm
 
@@ -1620,7 +1624,7 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_129
+    .macro StartHoneyTreeBattle
     .short 297
     .endm
 
@@ -2461,13 +2465,13 @@
     .short 460
     .endm
 
-    .macro ScrCmd_1CD arg0, arg1, arg2, arg3, arg4
+    .macro CreateJournalEvent eventType, eventParam, unused1, unused2, unused3
     .short 461
-    .short \arg0
-    .short \arg1
-    .short \arg2
-    .short \arg3
-    .short \arg4
+    .short \eventType
+    .short \eventParam
+    .short \unused1
+    .short \unused2
+    .short \unused3
     .endm
 
     .macro ScrCmd_1CE
@@ -3642,11 +3646,11 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_2A0 arg0, arg1, arg2
+    .macro StartTagBattle partnerTrainer, enemyTrainer1, enemyTrainer2
     .short 672
-    .short \arg0
-    .short \arg1
-    .short \arg2
+    .short \partnerTrainer
+    .short \enemyTrainer1
+    .short \enemyTrainer2
     .endm
 
     .macro ScrCmd_2A1 arg0, arg1, arg2
@@ -3798,10 +3802,10 @@
     .short \destVarID
     .endm
 
-    .macro ScrCmd_2BD arg0, arg1
+    .macro StartLegendaryBattle species, level
     .short 701
-    .short \arg0
-    .short \arg1
+    .short \species
+    .short \level
     .endm
 
     .macro ScrCmd_2BE arg0
@@ -4305,16 +4309,16 @@
     .short \destVarIDZ
     .endm
 
-    .macro ScrCmd_318 arg0, arg1
+    .macro StartFatefulEncounter species, level
     .short 792
-    .short \arg0
-    .short \arg1
+    .short \species
+    .short \level
     .endm
 
-    .macro ScrCmd_319 arg0, arg1
+    .macro StartGiratinaOriginBattle species, level
     .short 793
-    .short \arg0
-    .short \arg1
+    .short \species
+    .short \level
     .endm
 
     .macro ScrCmd_31A arg0

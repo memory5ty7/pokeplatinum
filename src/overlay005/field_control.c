@@ -3,6 +3,7 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "constants/field_poison.h"
 #include "constants/player_avatar.h"
 #include "consts/game_records.h"
 #include "consts/sdat.h"
@@ -270,8 +271,8 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
                 sub_0205F5E4(fieldSystem->playerAvatar, PlayerAvatar_GetDir(fieldSystem->playerAvatar));
             }
 
-            if (MapObject_GetEventType(object) != 0x9) {
-                ScriptManager_Set(fieldSystem, MapObject_GetEventID(object), object);
+            if (MapObject_GetTrainerType(object) != 0x9) {
+                ScriptManager_Set(fieldSystem, MapObject_GetScript(object), object);
             } else {
                 ScriptManager_Set(fieldSystem, 0, object);
             }
@@ -345,7 +346,7 @@ static BOOL Field_CheckSign(FieldSystem *fieldSystem)
     MapObject *object;
 
     if (sub_0203CBE0(fieldSystem, &object) == TRUE) {
-        ScriptManager_Set(fieldSystem, MapObject_GetEventID(object), object);
+        ScriptManager_Set(fieldSystem, MapObject_GetScript(object), object);
         return TRUE;
     }
 
@@ -405,12 +406,12 @@ BOOL FieldInput_Process_Colosseum(FieldInput *input, FieldSystem *fieldSystem)
     if (input->interact) {
         MapObject *object;
 
-        if (sub_0203CA40(fieldSystem, &object) == TRUE && MapObject_GetMoveCode(object) != 0x1) {
+        if (sub_0203CA40(fieldSystem, &object) == TRUE && MapObject_GetMovementType(object) != 0x1) {
             if (sub_0205F588(fieldSystem->playerAvatar) == TRUE) {
                 sub_0205F5E4(fieldSystem->playerAvatar, PlayerAvatar_GetDir(fieldSystem->playerAvatar));
             }
 
-            ScriptManager_Set(fieldSystem, MapObject_GetEventID(object), object);
+            ScriptManager_Set(fieldSystem, MapObject_GetScript(object), object);
             return TRUE;
         }
     }
@@ -466,7 +467,7 @@ BOOL FieldInput_Process_UnionRoom(const FieldInput *input, FieldSystem *fieldSys
             }
 
             sub_02036B84();
-            ScriptManager_Set(fieldSystem, MapObject_GetEventID(object), object);
+            ScriptManager_Set(fieldSystem, MapObject_GetScript(object), object);
 
             return TRUE;
         }
@@ -502,8 +503,8 @@ int FieldInput_Process_BattleTower(const FieldInput *input, FieldSystem *fieldSy
                 sub_0205F5E4(fieldSystem->playerAvatar, PlayerAvatar_GetDir(fieldSystem->playerAvatar));
             }
 
-            if (MapObject_GetEventType(object) != 0x9) {
-                ScriptManager_Set(fieldSystem, MapObject_GetEventID(object), object);
+            if (MapObject_GetTrainerType(object) != 0x9) {
+                ScriptManager_Set(fieldSystem, MapObject_GetScript(object), object);
             } else {
                 ScriptManager_Set(fieldSystem, 0, object);
             }
@@ -551,7 +552,7 @@ static BOOL Field_CheckWildEncounter(FieldSystem *fieldSystem)
 
     if (SystemFlag_CheckInPalPark(SaveData_GetVarsFlags(fieldSystem->saveData)) == TRUE) {
         if (sub_02056374(fieldSystem, playerX, playerZ) == TRUE) {
-            sub_02051450(fieldSystem, sub_0205639C(fieldSystem));
+            Encounter_NewVsPalParkTransfer(fieldSystem, sub_0205639C(fieldSystem));
             return TRUE;
         } else {
             return FALSE;
@@ -901,7 +902,7 @@ static void Field_CalculateFriendship(FieldSystem *fieldSystem)
 static BOOL Field_UpdatePoison(FieldSystem *fieldSystem)
 {
     Party *party = Party_GetFromSavedata(fieldSystem->saveData);
-    u16 *poisonSteps = sub_0203A78C(SaveData_GetFieldOverworldState(fieldSystem->saveData));
+    u16 *poisonSteps = FieldOverworldState_GetPoisonStepCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
 
     (*poisonSteps)++;
     (*poisonSteps) %= 4;
@@ -910,14 +911,14 @@ static BOOL Field_UpdatePoison(FieldSystem *fieldSystem)
         return FALSE;
     }
 
-    switch (sub_02054B04(party, MapHeader_GetMapLabelTextID(fieldSystem->location->mapId))) {
-    case 0:
+    switch (Pokemon_DoPoisonDamage(party, MapHeader_GetMapLabelTextID(fieldSystem->location->mapId))) {
+    case FLDPSN_NONE:
         return FALSE;
-    case 1:
-        ov5_021EF518(fieldSystem->unk_04->unk_20);
+    case FLDPSN_POISONED:
+        Field_DoPoisonEffect(fieldSystem->unk_04->unk_20);
         return FALSE;
-    case 2:
-        ov5_021EF518(fieldSystem->unk_04->unk_20);
+    case FLDPSN_FAINTED:
+        Field_DoPoisonEffect(fieldSystem->unk_04->unk_20);
         ScriptManager_Set(fieldSystem, 2003, NULL);
         return TRUE;
     }
@@ -931,14 +932,14 @@ static BOOL Field_UpdateSafari(FieldSystem *fieldSystem)
         return FALSE;
     }
 
-    u16 *balls = sub_0203A784(SaveData_GetFieldOverworldState(fieldSystem->saveData));
+    u16 *balls = FieldOverworldState_GetSafariBallCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
 
     if (*balls == 0) {
         ScriptManager_Set(fieldSystem, 8802, NULL);
         return TRUE;
     }
 
-    u16 *steps = sub_0203A788(SaveData_GetFieldOverworldState(fieldSystem->saveData));
+    u16 *steps = FieldOverworldState_GetSafariStepCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
     (*steps)++;
 
     if (*steps >= 500) {
@@ -1029,8 +1030,8 @@ static BOOL Field_MapConnection(const FieldSystem *fieldSystem, int playerX, int
 
 static void Field_SetMapConnection(FieldSystem *fieldSystem, const int playerX, const int playerZ, const int playerDir)
 {
-    FieldOverworldState *v0 = SaveData_GetFieldOverworldState(fieldSystem->saveData);
-    Location *nextMap = sub_0203A72C(v0);
+    FieldOverworldState *fieldState = SaveData_GetFieldOverworldState(fieldSystem->saveData);
+    Location *nextMap = FieldOverworldState_GetExitLocation(fieldState);
 
     (*nextMap) = *(fieldSystem->location);
     nextMap->faceDirection = playerDir;
@@ -1076,9 +1077,9 @@ static BOOL Field_DistortionInteract(FieldSystem *fieldSystem, MapObject **objec
     sub_020617BC(fieldSystem->playerAvatar, &playerX, &playerY, &playerZ);
 
     while (sub_020625B0(fieldSystem->mapObjMan, object, &objectIndex, (1 << 0))) {
-        objectX = MapObject_GetXPos(*object);
-        objectY = MapObject_GetYPos(*object) / 2;
-        objectZ = MapObject_GetZPos(*object);
+        objectX = MapObject_GetX(*object);
+        objectY = MapObject_GetY(*object) / 2;
+        objectZ = MapObject_GetZ(*object);
 
         if (playerY == objectY && playerX == objectX && playerZ == objectZ) {
             return TRUE;

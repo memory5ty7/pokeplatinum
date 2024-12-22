@@ -1,6 +1,8 @@
 nitrofs_files = []
 naix_headers = []
 
+subdir('pokemon')
+
 ### PREBUILT FILES ###
 subdir('prebuilt')
 
@@ -60,11 +62,11 @@ lz_gen = generator(nitrogfx_exe,
     output: '@PLAINNAME@.lz',
 )
 
+subdir('trainers')
+
 subdir('battle')
 subdir('field')
 subdir('fonts')
 subdir('graphics')
 subdir('items')
-subdir('pokemon')
 subdir('sound')
-subdir('trainers')
