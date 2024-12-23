@@ -5095,3 +5095,14 @@ void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon)
     mon->box.checksum = Pokemon_GetDataChecksum(&mon->box.dataBlocks, sizeof(PokemonDataBlock) * 4);
     Pokemon_EncryptData(&mon->box.dataBlocks, sizeof(PokemonDataBlock) * 4, mon->box.checksum);
 }
+
+u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot)
+{
+    int trueSpecies = Pokemon_GetFormNarcIndex(species, form);
+    u8 ability1 = PokemonPersonalData_GetFormValue(trueSpecies, form, MON_DATA_PERSONAL_ABILITY_1);
+    u8 ability2 = PokemonPersonalData_GetFormValue(trueSpecies, form, MON_DATA_PERSONAL_ABILITY_2);
+
+    return ((ability2 != 0) && (abilitySlot & 1))
+            ? ability2
+            : ability1;
+}

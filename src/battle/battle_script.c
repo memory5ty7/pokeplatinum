@@ -11179,10 +11179,14 @@ static const struct Fraction sSafariCatchRate[] = {
  */
 static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH) {
+    u32 speciesMod = PokemonPersonalData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, MON_DATA_PERSONAL_CATCH_RATE);
+    if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH || speciesMod != 0 || battleCtx->msgItemTemp > ITEM_MASTER_BALL) {
         return 4;
     }
 
+    return 0;
+
+    /*
     u32 speciesMod;
     if (battleCtx->msgItemTemp == ITEM_SAFARI_BALL) {
         speciesMod = PokemonPersonalData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, MON_DATA_PERSONAL_CATCH_RATE);
@@ -11288,8 +11292,9 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
             shakes = 4;
         }
     }
-
+    
     return shakes;
+    */
 }
 
 /**

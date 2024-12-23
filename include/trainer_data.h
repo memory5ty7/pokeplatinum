@@ -93,4 +93,9 @@ void TrainerData_LoadParty(int trainerID, void *trparty);
  */
 u8 TrainerClass_Gender(int trclass);
 
+u32 getStatusFromDV(u16 dv);
+u8 GetIVsFromDV(u16 dv);
+void AdjustIVs(Pokemon *mon, u16 dv);
+
+
 #endif // POKEPLATINUM_TRAINER_DATA_H
