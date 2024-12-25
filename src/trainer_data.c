@@ -190,11 +190,6 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
     TrainerData_LoadParty(dto->trainerIDs[battler], buf);
 
-    // determine which magic gender-specific modifier to use for the RNG function
-    genderMod = TrainerClass_Gender(dto->trainerData[battler].class) == GENDER_FEMALE
-        ? 120
-        : 136;
-
     u8 partySize = dto->trainerData[battler].partySize;
 
     u16 offset = 0;
@@ -220,6 +215,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         buf += 2;
 
         u8 form = (species & 0xFC00) >> 10;
+        species = (species & 0x03FF);
 
         u16 item;
         if (dto->trainerData[battler].type == TRDATATYPE_WITH_ITEM || dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
@@ -243,15 +239,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
         u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-        rnd = dv + level + species + dto->trainerIDs[battler];
-        LCRNG_SetSeed(rnd);
-        for (j = 0; j < dto->trainerData[battler].class; j++) {
-            rnd = LCRNG_Next();
-        }
-
-        rnd = (rnd << 8) + genderMod;
-
-        Pokemon_InitWith(party[i], species, level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
+        Pokemon_InitWith(party[i], species, level, 31, TRUE, dv, OTID_NOT_SHINY, 0);
         AdjustIVs(party[i], dv);
         Pokemon_SetValue(party[i], MON_DATA_FORM, &form);
         Pokemon_SetValue(party[i], MON_DATA_ABILITY, &ability);
@@ -287,16 +275,10 @@ u32 getStatusFromDV(u16 dv)
     u32 status = MON_CONDITION_NONE;
 
     switch (dv) {
-    case 227:
-    case 228:
-    case 229:
-    case 230:
+    case 1:
         status = MON_CONDITION_POISON;
         break;
-    case 223:
-    case 224:
-    case 225:
-    case 226:
+    case 2:
         status = MON_CONDITION_BURN;
         break;
     }
@@ -317,12 +299,11 @@ u8 GetIVsFromDV(u16 dv)
 
 void AdjustIVs(Pokemon *mon, u16 dv)
 {
-    switch (dv) {
-    case 233:
-    case 234:
-    case 237:
-    case 252:
+    // If Nature is -Speed, set Speed IVs to 0 
+    if(Pokemon_GetStatAffinityOf(Pokemon_GetNatureOf(dv),3) == -1)
+    {
         Pokemon_SetValue(mon, MON_DATA_SPEED_IV, 0);
-        break;
     }
+
+    return;
 }

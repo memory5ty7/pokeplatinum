@@ -1852,7 +1852,7 @@ int FieldSystem_GetWeather(FieldSystem *fieldSystem, int param1)
 
     v0 = MapHeader_GetWeatherType(param1);
 
-    if (v0 < 32) {
+    if (v0 < 32 || v0 > 36) {
         return v0;
     }
 

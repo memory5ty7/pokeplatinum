@@ -1248,15 +1248,15 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     if (NO_CLOUD_NINE) {
         if ((battler1Ability == ABILITY_SWIFT_SWIM && WEATHER_IS_RAIN)
             || (battler1Ability == ABILITY_CHLOROPHYLL && WEATHER_IS_SUN)
-            || (battler1Ability == ABILITY_SAND_VEIL && WEATHER_IS_SAND)
-            || (battler1Ability == ABILITY_SNOW_CLOAK && WEATHER_IS_HAIL)) {
+            || (battler1Ability == ABILITY_SAND_RUSH && WEATHER_IS_SAND)
+            || (battler1Ability == ABILITY_SLUSH_RUSH && WEATHER_IS_HAIL)) {
             battler1Speed *= 2;
         }
 
         if ((battler2Ability == ABILITY_SWIFT_SWIM && WEATHER_IS_RAIN)
             || (battler2Ability == ABILITY_CHLOROPHYLL && WEATHER_IS_SUN)
-            || (battler2Ability == ABILITY_SAND_VEIL && WEATHER_IS_SAND)
-            || (battler2Ability == ABILITY_SNOW_CLOAK && WEATHER_IS_HAIL)) {
+            || (battler2Ability == ABILITY_SAND_RUSH && WEATHER_IS_SAND)
+            || (battler2Ability == ABILITY_SLUSH_RUSH && WEATHER_IS_HAIL)) {
             battler2Speed *= 2;
         }
     }
@@ -4332,6 +4332,59 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
     return chosen;
 }
 
+BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
+{
+    BOOL result = FALSE;
+
+    if (battleCtx->attacker == BATTLER_NONE) {
+        return result;
+    }
+
+    switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+        case ABILITY_BEAST_BOOST:
+            if ((battleCtx->defender == battleCtx->faintedMon)
+            && BATTLERS_ON_DIFFERENT_SIDE(battleCtx->attacker, battleCtx->faintedMon)
+            && (battleCtx->battleMons[battleCtx->attacker].curHP)
+            && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == 0))
+            {
+                u8 stat = BeastBoostGreatestStatHelper(battleCtx, battleCtx->attacker);
+
+                if ((battleCtx->battleMons[battleCtx->attacker].statBoosts[STAT_ATTACK + stat] < 12)
+                && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.fakeOutTurnNumber != (battleCtx->totalTurns + 1)))
+                {
+                    battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
+                }
+            }
+        break;
+    }
+
+    return result;
+}
+
+u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client)
+{
+    u16 stats[] = {
+        battleCtx->battleMons[client].attack,
+        battleCtx->battleMons[client].defense,
+        battleCtx->battleMons[client].speed,
+        battleCtx->battleMons[client].spAttack,
+        battleCtx->battleMons[client].spDefense,
+    };
+
+    u8 max = 0;
+    u8 ret = 0;
+    for (u8 i = 0; i < NELEMS(stats); i++)
+    {
+        if (stats[i] > max)
+        {
+            max = stats[i];
+            ret = i;
+        }
+    }
+
+    return ret;
+}
+
 BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
 {
     BOOL result = FALSE;
@@ -7048,8 +7101,17 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     if (attackerParams.ability == ABILITY_HUSTLE) {
         attackStat = attackStat * 150 / 100;
     }
+
     if (attackerParams.ability == ABILITY_GUTS && attackerParams.statusMask) {
         attackStat = attackStat * 150 / 100;
+    }
+
+    if (attackerParams.ability == ABILITY_TOXIC_BOOST && (attackerParams.statusMask & MON_CONDITION_POISON || attackerParams.statusMask & MON_CONDITION_TOXIC)) {
+        attackStat = attackStat * 150 / 100;
+    }
+
+    if (attackerParams.ability == ABILITY_FLARE_BOOST && attackerParams.statusMask & MON_CONDITION_BURN) {
+        spAttackStat = spAttackStat * 150 / 100;
     }
 
     if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
@@ -7228,6 +7290,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         }
     }
 
+    for (i = 0; i < NELEMS(sCuttingMoves); i++) {
+        if (sSoundMoves[i] == move && attackerParams.ability == ABILITY_PUNK_ROCK) {
+            movePower = movePower * 13 / 10;
+            break;
+        }
+    }
+
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
             spAttackStat = spAttackStat * 15 / 10;
@@ -7391,9 +7460,17 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         damage = damage * 15 / 10;
     }
 
-    if ((defenderParams.ability == ABILITY_MULTISCALE) && (defenderParams.curHP == defenderParams.maxHP))
-    {
+    if ((defenderParams.ability == ABILITY_MULTISCALE) && (defenderParams.curHP == defenderParams.maxHP)) {
         damage /= 2;
+    }
+
+    if (defenderParams.ability == ABILITY_PUNK_ROCK) {
+        for (i = 0; i < NELEMS(sSoundMoves); i++) {
+            if (sSoundMoves[i] == move) {
+                damage /= 2;
+                break;
+            }
+        }
     }
 
     return damage + 2;

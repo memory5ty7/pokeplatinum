@@ -149,7 +149,12 @@
                 "ABILITY_SHARPNESS",
                 "ABILITY_FLARE_BOOST",
                 "ABILITY_FLUFFY",
-                "ABILITY_TRIAGE"
+                "ABILITY_TRIAGE",
+                "ABILITY_SAND_RUSH",
+                "ABILITY_SLUSH_RUSH",
+                "ABILITY_PUNK_ROCK",
+                "ABILITY_TOXIC_BOOST",
+                "ABILITY_EMERGENCY_EXIT"
             ]
         }
     }

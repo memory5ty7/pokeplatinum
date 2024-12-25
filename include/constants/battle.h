@@ -113,6 +113,17 @@ enum BattlerBootState {
 #define BATTLER_TYPE_PLAYER_SIDE_SLOT_2 4
 #define BATTLER_TYPE_ENEMY_SIDE_SLOT_2  5
 
+#define BATTLER_ALLY(client) (client ^ 2)
+#define BATTLER_OPPONENT(client) (client ^ 1)
+#define BATTLER_ACROSS(client) (client ^ 3)
+
+#define BATTLER_IS_ENEMY(client) (client & 1)
+#define BATTLER_IS_PLAYERS(client) !(BATTLER_IS_ENEMY(client))
+
+// these macros test properties of the battlers passed in
+#define BATTLERS_ON_SAME_SIDE(battler1, battler2) ((battler1 & 1) == (battler2 & 1))
+#define BATTLERS_ON_DIFFERENT_SIDE(battler1, battler2) !BATTLERS_ON_SAME_SIDE(battler1, battler2)
+
 #define BATTLE_SIDE_PLAYER 0
 #define BATTLE_SIDE_ENEMY  1
 

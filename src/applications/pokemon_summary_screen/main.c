@@ -1058,7 +1058,6 @@ static u8 ScreenTransitionIsDone(PokemonSummaryScreen *dummy)
 static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode)
 {
     void *monData = PokemonSummaryScreen_MonData(summaryScreen);
-    int paramStart = MON_DATA_CURRENT_HP;
 
     if (summaryScreen->data->dataType == SUMMARY_DATA_BOX_MON) {
         SetMonDataFromBoxMon(summaryScreen, monData, &summaryScreen->monData);
@@ -1069,18 +1068,12 @@ static void SetMonData(PokemonSummaryScreen *summaryScreen, u8 mode)
     if (mode != 0) {
         summaryScreen->monData.maxHP = (u16)Pokemon_GetValue(monData, MON_DATA_HP_IV, NULL);
         summaryScreen->monData.curHP = (u16)Pokemon_GetValue(monData, MON_DATA_HP_IV, NULL);
-        paramStart = MON_DATA_ATK_IV;
-    } else {
-        summaryScreen->monData.maxHP = (u16)Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL);
-        summaryScreen->monData.curHP = (u16)Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL);
-        paramStart = MON_DATA_ATK;
+        summaryScreen->monData.attack = (u16)Pokemon_GetValue(monData, MON_DATA_ATK_IV, NULL);
+        summaryScreen->monData.defense = (u16)Pokemon_GetValue(monData, MON_DATA_DEF_IV, NULL);
+        summaryScreen->monData.speed = (u16)Pokemon_GetValue(monData, MON_DATA_SPEED_IV, NULL);
+        summaryScreen->monData.spAttack = (u16)Pokemon_GetValue(monData, MON_DATA_SPATK_IV, NULL);
+        summaryScreen->monData.spDefense = (u16)Pokemon_GetValue(monData, MON_DATA_SPDEF_IV, NULL);
     }
-
-    summaryScreen->monData.attack = (u16)Pokemon_GetValue(monData, paramStart, NULL);
-    summaryScreen->monData.defense = (u16)Pokemon_GetValue(monData, paramStart + 1, NULL);
-    summaryScreen->monData.speed = (u16)Pokemon_GetValue(monData, paramStart + 2, NULL);
-    summaryScreen->monData.spAttack = (u16)Pokemon_GetValue(monData, paramStart + 3, NULL);
-    summaryScreen->monData.spDefense = (u16)Pokemon_GetValue(monData, paramStart + 4, NULL);
 }
 
 static void SetMonDataFromBoxMon(PokemonSummaryScreen *summaryScreen, BoxPokemon *boxMon, PokemonSummaryMonData *monData)
@@ -1432,16 +1425,21 @@ static void LoadCurrentPageTilemap(PokemonSummaryScreen *summaryScreen)
 static void DrawHealthBar(PokemonSummaryScreen *summaryScreen)
 {
     u16 baseTile;
+    u32 curHP, maxHP;
 
     void *monData = PokemonSummaryScreen_MonData(summaryScreen);
 
     if (summaryScreen->data->dataType == SUMMARY_DATA_BOX_MON) {
         SetMonDataFromBoxMon(summaryScreen, monData, &summaryScreen->monData);
+        curHP = Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL);
+        maxHP = Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL);
     } else {
         SetMonDataFromMon(summaryScreen, monData, &summaryScreen->monData);
+        curHP = Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL);
+        maxHP = Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL);
     }
 
-    switch (HealthBar_Color(Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL), Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL), 48)) {
+    switch (HealthBar_Color(curHP, maxHP, 48)) {
     case BARCOLOR_MAX:
     case BARCOLOR_GREEN:
     case BARCOLOR_EMPTY:
@@ -1455,7 +1453,7 @@ static void DrawHealthBar(PokemonSummaryScreen *summaryScreen)
         break;
     }
 
-    u8 pixelCount = App_PixelCount(Pokemon_GetValue(monData, MON_DATA_CURRENT_HP, NULL), Pokemon_GetValue(monData, MON_DATA_MAX_HP, NULL), 48);
+    u8 pixelCount = App_PixelCount(curHP, maxHP, 48);
     u16 tile;
 
     for (u8 i = 0; i < HEALTHBAR_TILES_MAX; i++) {

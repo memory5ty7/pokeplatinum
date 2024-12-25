@@ -863,6 +863,10 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
  */
 int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCtx, int attacker);
 
+BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
+
+u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client);
+
 /**
  * @brief Trigger the defender's ability after a move deals damage to it.
  *

@@ -497,88 +497,116 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Bad Dreams</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="124">
+		<row id="pl_msg_00000610_00124" index="124">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Aerilate</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="125">
+		<row id="pl_msg_00000610_00125" index="125">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Refrigerate</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="126">
+		<row id="pl_msg_00000610_00126" index="126">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Galvanize</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="127">
+		<row id="pl_msg_00000610_00127" index="127">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Protean</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="128">
+		<row id="pl_msg_00000610_00128" index="128">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Sheer Force</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="129">
+		<row id="pl_msg_00000610_00129" index="129">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Multiscale</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="130">
+		<row id="pl_msg_00000610_00130" index="130">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Gale Wings</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="131">
+		<row id="pl_msg_00000610_00131" index="131">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Strong Jaw</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="132">
+		<row id="pl_msg_00000610_00132" index="132">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Sand Force</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="133">
+		<row id="pl_msg_00000610_00133" index="133">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Gooey</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="134">
+		<row id="pl_msg_00000610_00134" index="134">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Rattled</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="135">
+		<row id="pl_msg_00000610_00135" index="135">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Regenerator</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="136">
+		<row id="pl_msg_00000610_00136" index="136">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Unnerve</language>
+	</row>
+		<row id="pl_msg_00000610_00137" index="137">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Beast Boost</language>
+	</row>
+		<row id="pl_msg_00000610_00138" index="138">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Mega Launcher</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="137">
+		<row id="pl_msg_00000610_00139" index="139">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Analytic</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="138">
+		<row id="pl_msg_00000610_00140" index="140">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Prankster</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="139">
+		<row id="pl_msg_00000610_00141" index="141">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Magic Bounce</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="140">
+		<row id="pl_msg_00000610_00142" index="142">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Tough Claws</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="141">
+		<row id="pl_msg_00000610_00143" index="143">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Sharpness</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="142">
+		<row id="pl_msg_00000610_00144" index="144">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Flare Boost</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="143">
+		<row id="pl_msg_00000610_00145" index="145">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Fluffy</language>
 	</row>
-		<row id="pl_msg_00000610_00123" index="144">
+		<row id="pl_msg_00000610_00146" index="146">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Triage</language>
+	</row>
+		<row id="pl_msg_00000610_00147" index="147">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Sand Rush</language>
+	</row>
+		<row id="pl_msg_00000610_00148" index="148">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Slush Rush</language>
+	</row>
+		<row id="pl_msg_00000610_00149" index="149">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Punk Rock</language>
+	</row>
+		<row id="pl_msg_00000610_00150" index="150">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Toxic Boost</language>
+	</row>
+		<row id="pl_msg_00000610_00151" index="151">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Emergency Exit</language>
 	</row>
 </body>
