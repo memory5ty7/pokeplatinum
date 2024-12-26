@@ -257,6 +257,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         u32 status = getStatusFromDV(dv);
         Pokemon_SetValue(party[i], MON_DATA_STATUS_CONDITION, &status);
 
+        AdjustHP(party[i], dv);
+
         Pokemon_CalcLevelAndStats(party[i]);
         Pokemon_SetBallSeal(ballSeal, party[i], heapID);
     }
@@ -300,10 +302,27 @@ u8 GetIVsFromDV(u16 dv)
 void AdjustIVs(Pokemon *mon, u16 dv)
 {
     // If Nature is -Speed, set Speed IVs to 0 
+    /*
     if(Pokemon_GetStatAffinityOf(Pokemon_GetNatureOf(dv),3) == -1)
     {
         Pokemon_SetValue(mon, MON_DATA_SPEED_IV, 0);
     }
+    */
+
+    return;
+}
+
+void AdjustHP(Pokemon *mon, u16 dv)
+{
+    u32 currentHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+    switch(dv)
+    {
+        case 255:
+            currentHP = currentHP / 4;
+        break;
+    }
+
+    Pokemon_SetValue(mon, MON_DATA_CURRENT_HP, &currentHP);
 
     return;
 }

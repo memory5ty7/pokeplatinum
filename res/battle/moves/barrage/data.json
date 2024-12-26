@@ -1,12 +1,12 @@
 {
     "name": "Barrage",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_WATER",
-    "power": 60,
-    "accuracy": 100,
-    "pp": 5,
+    "type": "TYPE_NORMAL",
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_SWITCH_HIT",
+        "type": "BATTLE_EFFECT_MULTI_HIT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

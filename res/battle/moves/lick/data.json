@@ -1,22 +1,24 @@
 {
     "name": "Lick",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_FIGHTING",
-    "power": 65,
+    "type": "TYPE_GHOST",
+    "power": 20,
     "accuracy": 100,
-    "pp": 20,
+    "pp": 30,
     "effect": {
-        "type": "BATTLE_EFFECT_LOWER_SPEED_HIT",
-        "chance": 100
+        "type": "BATTLE_EFFECT_PARALYZE_HIT",
+        "chance": 30
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
+        "MOVE_FLAG_MAKES_CONTACT",
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_HIDES_HP_GAUGES"
     ],
     "contest": {
-        "effect": 2,
-        "type": "CONTEST_TYPE_SMART"
+        "effect": 16,
+        "type": "CONTEST_TYPE_TOUGH"
     }
 }

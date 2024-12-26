@@ -107,5 +107,14 @@ static u8 sTrainerClassPrizeMul[] = {
     [TRAINER_CLASS_CASTLE_VALET]            = 0,
     [TRAINER_CLASS_DP_PLAYER_MALE_2]        = 0,
     [TRAINER_CLASS_DP_PLAYER_FEMALE_2]      = 0,
+    [TRAINER_CLASS_PAUL]                    = 0,
+    [TRAINER_CLASS_CONWAY]                  = 0,
+    [TRAINER_CLASS_NANDO]                   = 0,
+    [TRAINER_CLASS_REGGIE]                  = 0,
+    [TRAINER_CLASS_ROWAN]                   = 0,
+    [TRAINER_CLASS_HUNTER_J]                = 0,
+    [TRAINER_CLASS_TOBIAS]                  = 0,
+    [TRAINER_CLASS_GALACTIC_MANAGER_MALE]   = 0,
+    [TRAINER_CLASS_GALACTIC_MANAGER_FEMALE] = 0,
 };
 // clang-format on

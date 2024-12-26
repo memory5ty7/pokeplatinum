@@ -35,8 +35,8 @@
         "EGG_GROUP_FIELD"
     ],
     "abilities": [
-        "ABILITY_POISON_POINT",
-        "ABILITY_RIVALRY"
+        "ABILITY_SHEER_FORCE",
+        "ABILITY_NONE"
     ],
     "great_marsh_flee_rate": 0,
     "sprite": {

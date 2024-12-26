@@ -1,12 +1,12 @@
 {
     "name": "Kinesis",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_ELECTRIC",
-    "power": 70,
-    "accuracy": 100,
-    "pp": 5,
+    "class": "CLASS_STATUS",
+    "type": "TYPE_PSYCHIC",
+    "power": 0,
+    "accuracy": 80,
+    "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_SWITCH_HIT",
+        "type": "BATTLE_EFFECT_ACC_DOWN",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

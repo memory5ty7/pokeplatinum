@@ -1,19 +1,22 @@
 {
     "name": "Guard Swap",
     "class": "CLASS_STATUS",
-    "type": "TYPE_NORMAL",
+    "type": "TYPE_PSYCHIC",
     "power": 0,
     "accuracy": 0,
-    "pp": 15,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_MAKE_GLOBAL_TARGET",
+        "type": "BATTLE_EFFECT_SWAP_DEF_SP_DEF_STAT_CHANGES",
         "chance": 0
     },
-    "range": "RANGE_USER",
-    "priority": 3,
-    "flags": [],
+    "range": "RANGE_SINGLE_TARGET",
+    "priority": 0,
+    "flags": [
+        "MOVE_FLAG_CAN_PROTECT",
+        "MOVE_FLAG_CAN_MIRROR_MOVE"
+    ],
     "contest": {
-        "effect": 14,
+        "effect": 16,
         "type": "CONTEST_TYPE_BEAUTY"
     }
 }

@@ -88,7 +88,11 @@
             "19": "MOVE_WATER_PULSE",
             "24": "MOVE_QUICK_ATTACK",
             "29": "MOVE_ROOST",
-            "34": "MOVE_PURSUIT",
+            "34": [
+                "MOVE_JAW_LOCK",
+                "MOVE_STICKY_WEB",
+                "MOVE_DIRE_CLAW"
+            ],
             "37": "MOVE_AGILITY",
             "42": "MOVE_AERIAL_ACE",
             "47": "MOVE_AIR_SLASH"

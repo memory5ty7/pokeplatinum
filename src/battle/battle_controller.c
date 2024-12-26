@@ -3729,6 +3729,8 @@ enum {
 
 static void BattleController_AfterMoveEffects(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    DynamicSortClientExecutionOrder(battleSys, battleCtx, FALSE);
+    
     switch (battleCtx->afterMoveEffectState) {
     case AFTER_MOVE_EFFECT_TOGGLE_VANISH_FLAG:
         BOOL anyFlipped = FALSE;
@@ -4859,6 +4861,10 @@ static BOOL BattleController_TriggerAfterMoveHitEffects(BattleSystem *battleSys,
             }
 
             battleCtx->afterMoveHitCheckState++;
+
+            if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
+                battleCtx->afterMoveHitCheckState = AFTER_MOVE_HIT_STATE_END;
+
             break;
 
         case AFTER_MOVE_HIT_STATE_SHELL_BELL:

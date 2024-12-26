@@ -1,22 +1,19 @@
 {
     "name": "Sketch",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_GHOST",
-    "power": 65,
-    "accuracy": 100,
-    "pp": 10,
+    "class": "CLASS_STATUS",
+    "type": "TYPE_NORMAL",
+    "power": 0,
+    "accuracy": 0,
+    "pp": 1,
     "effect": {
-        "type": "BATTLE_EFFECT_HEX",
+        "type": "BATTLE_EFFECT_LEARN_MOVE_PERMANENT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
-    "flags": [
-        "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
-    ],
+    "flags": [],
     "contest": {
-        "effect": 17,
+        "effect": 23,
         "type": "CONTEST_TYPE_SMART"
     }
 }

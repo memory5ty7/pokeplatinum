@@ -1,0 +1,19 @@
+{
+    "name": "Clear Smog",
+    "class": "CLASS_SPECIAL",
+    "type": "TYPE_POISON",
+    "power": 50,
+    "accuracy": 0,
+    "pp": 15,
+    "effect": {
+        "type": "BATTLE_EFFECT_RESET_STAT_CHANGES",
+        "chance": 100
+    },
+    "range": "RANGE_SINGLE_TARGET",
+    "priority": 0,
+    "flags": [],
+    "contest": {
+        "effect": 13,
+        "type": "CONTEST_TYPE_CUTE"
+    }
+}

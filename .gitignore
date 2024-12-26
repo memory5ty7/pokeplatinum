@@ -114,3 +114,7 @@ compile_commands.json
 # Cheat files
 *.dct
 *.mch
+
+
+# Other
+arm9.bin

@@ -1,15 +1,15 @@
 {
     "name": "Covet",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_GROUND",
-    "power": 60,
+    "type": "TYPE_NORMAL",
+    "power": 40,
     "accuracy": 100,
-    "pp": 20,
+    "pp": 40,
     "effect": {
-        "type": "BATTLE_EFFECT_LOWER_SPEED_HIT",
-        "chance": 100
+        "type": "BATTLE_EFFECT_STEAL_HELD_ITEM",
+        "chance": 0
     },
-    "range": "RANGE_ALL_ADJACENT",
+    "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_MAKES_CONTACT",

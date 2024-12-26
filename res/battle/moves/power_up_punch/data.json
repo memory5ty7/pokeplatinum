@@ -1,0 +1,19 @@
+{
+    "name": "Power-up Punch",
+    "class": "CLASS_PHYSICAL",
+    "type": "TYPE_FIGHTING",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 3,
+    "effect": {
+        "type": "BATTLE_EFFECT_RAISE_ATTACK_HIT",
+        "chance": 100
+    },
+    "range": "RANGE_SINGLE_TARGET",
+    "priority": 0,
+    "flags": [],
+    "contest": {
+        "effect": 16,
+        "type": "CONTEST_TYPE_CUTE"
+    }
+}

@@ -35,7 +35,7 @@
         "EGG_GROUP_UNDISCOVERED"
     ],
     "abilities": [
-        "ABILITY_CLEAR_BODY",
+        "ABILITY_REFRIGERATE",
         "ABILITY_NONE"
     ],
     "great_marsh_flee_rate": 0,

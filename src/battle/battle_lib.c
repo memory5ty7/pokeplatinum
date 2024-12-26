@@ -108,6 +108,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].moldBreakerAnnounced = FALSE;
     battleCtx->battleMons[battler].pressureAnnounced = FALSE;
     battleCtx->battleMons[battler].air_balloon_flag = 0;
+    battleCtx->battleMons[battler].sheer_force_flag = 0;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -3731,6 +3732,8 @@ enum {
 int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     // must declare C89-style to match
+    DynamicSortClientExecutionOrder(battleSys, battleCtx, FALSE);
+
     int i;
     int subscript;
     int result;
@@ -4341,20 +4344,18 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
     }
 
     switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
-        case ABILITY_BEAST_BOOST:
-            if ((battleCtx->defender == battleCtx->faintedMon)
+    case ABILITY_BEAST_BOOST:
+        if ((battleCtx->defender == battleCtx->faintedMon)
             && BATTLERS_ON_DIFFERENT_SIDE(battleCtx->attacker, battleCtx->faintedMon)
             && (battleCtx->battleMons[battleCtx->attacker].curHP)
-            && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == 0))
-            {
-                u8 stat = BeastBoostGreatestStatHelper(battleCtx, battleCtx->attacker);
+            && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == 0)) {
+            u8 stat = BeastBoostGreatestStatHelper(battleCtx, battleCtx->attacker);
 
-                if ((battleCtx->battleMons[battleCtx->attacker].statBoosts[STAT_ATTACK + stat] < 12)
-                && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.fakeOutTurnNumber != (battleCtx->totalTurns + 1)))
-                {
-                    battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
-                }
+            if ((battleCtx->battleMons[battleCtx->attacker].statBoosts[STAT_ATTACK + stat] < 12)
+                && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.fakeOutTurnNumber != (battleCtx->totalTurns + 1))) {
+                battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
             }
+        }
         break;
     }
 
@@ -4373,10 +4374,8 @@ u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client)
 
     u8 max = 0;
     u8 ret = 0;
-    for (u8 i = 0; i < NELEMS(stats); i++)
-    {
-        if (stats[i] > max)
-        {
+    for (u8 i = 0; i < NELEMS(stats); i++) {
+        if (stats[i] > max) {
             max = stats[i];
             ret = i;
         }
@@ -4418,6 +4417,11 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
         break;
 
     case ABILITY_COLOR_CHANGE:
+
+        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1) {
+            return FALSE;
+        }
+
         u8 moveType;
 
         if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
@@ -7024,6 +7028,10 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         }
     }
 
+    if (ATTACKING_MON.ability == ABILITY_SHEER_FORCE && battleCtx->battleMons[attacker].sheer_force_flag == 1) {
+        movePower = movePower * 130 / 100;
+    }
+
     for (i = 0; i < NELEMS(sTypeBoostingItems); i++) {
         if (attackerParams.heldItemEffect == sTypeBoostingItems[i].itemEffect
             && moveType == sTypeBoostingItems[i].type) {
@@ -7745,7 +7753,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt
         && battleCtx->attacker != battleCtx->defender
         && ATTACKING_MON.curHP < ATTACKING_MON.maxHP
-        && ATTACKING_MON.curHP) {
+        && ATTACKING_MON.curHP
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt * -1, attackerItemPower);
         battleCtx->msgBattlerTemp = battleCtx->attacker;
         *subscript = subscript_restore_a_little_hp;
@@ -7756,7 +7765,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
         && (battleCtx->battleStatusMask & SYSCTL_MOVE_HIT)
         && CURRENT_MOVE_DATA.class != CLASS_STATUS
-        && ATTACKING_MON.curHP) {
+        && ATTACKING_MON.curHP
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 10);
         battleCtx->msgBattlerTemp = battleCtx->attacker;
         *subscript = subscript_lose_hp_from_item;
@@ -8601,4 +8611,63 @@ int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pok
     }
 
     return type;
+}
+
+void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *battleCtx, BOOL sortTurnOrder)
+{
+    int maxBattlers;
+    int i, j;
+    int temp1, temp2;
+    int currentAttackerId = battleCtx->turnOrderCounter;
+
+    maxBattlers = BattleSystem_MaxBattlers(battleSys);
+    for (i = currentAttackerId + 1; i < maxBattlers - 1; i++) {
+        // sprintf(buf, "i: %d\n", i);
+        // debugsyscall(buf);
+        for (j = i + 1; j < maxBattlers; j++) {
+            // sprintf(buf, "j: %d\n", j);
+            // debugsyscall(buf);
+            temp1 = battleCtx->battlerActionOrder[i];
+            temp2 = battleCtx->battlerActionOrder[j];
+
+            u32 command1 = battleCtx->battlerActions[temp1][3];
+            u32 command2 = battleCtx->battlerActions[temp2][3];
+
+            // sprintf(buf, "temp1: %d\ntemp2: %d\n", temp1, temp2);
+            // debugsyscall(buf);
+
+            u8 flag;
+
+            if (command1 == command2) {
+                if (command1 == PLAYER_INPUT_FIGHT) {
+                    flag = 0;
+                } else {
+                    flag = 1;
+                }
+                // sprintf(buf, "Comparing client %d and %d\n", temp1, temp2);
+                // debugsyscall(buf);
+                if (BattleSystem_CompareBattlerSpeed(battleSys, battleCtx, temp1, temp2, flag)) {
+                    // sprintf(buf, "Swapping %d and %d\n", temp1, temp2);
+                    // debugsyscall(buf);
+                    battleCtx->battlerActionOrder[i] = temp2;
+                    battleCtx->battlerActionOrder[j] = temp1;
+                }
+            }
+        }
+    }
+
+    if (sortTurnOrder) {
+        // also sort turnOrder, i.e. weather application + turn end things
+        for (i = 0; i < maxBattlers - 1; i++) {
+            for (j = i + 1; j < maxBattlers; j++) {
+                temp1 = battleCtx->monSpeedOrder[i];
+                temp2 = battleCtx->monSpeedOrder[j];
+
+                if (BattleSystem_CompareBattlerSpeed(battleSys, battleCtx, temp1, temp2, 0x80)) {
+                    battleCtx->monSpeedOrder[i] = temp2;
+                    battleCtx->monSpeedOrder[j] = temp1;
+                }
+            }
+        }
+    }
 }

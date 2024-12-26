@@ -1,18 +1,20 @@
 {
     "name": "Supersonic",
     "class": "CLASS_STATUS",
-    "type": "TYPE_BUG",
+    "type": "TYPE_NORMAL",
     "power": 0,
-    "accuracy": 0,
+    "accuracy": 55,
     "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_QUIVER_DANCE",
+        "type": "BATTLE_EFFECT_STATUS_CONFUSE",
         "chance": 0
     },
-    "range": "RANGE_USER",
+    "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
-        "MOVE_FLAG_CAN_SNATCH"
+        "MOVE_FLAG_CAN_PROTECT",
+        "MOVE_FLAG_CAN_MAGIC_COAT",
+        "MOVE_FLAG_CAN_MIRROR_MOVE"
     ],
     "contest": {
         "effect": 19,

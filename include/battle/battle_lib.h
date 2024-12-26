@@ -865,6 +865,8 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
 
 BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
 
+void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *battleCtx, BOOL sortTurnOrder);
+
 u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client);
 
 /**

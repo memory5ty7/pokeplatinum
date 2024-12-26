@@ -1,25 +1,19 @@
 {
     "name": "Assist",
-    "class": "CLASS_PHYSICAL",
-    "type": "TYPE_DRAGON",
-    "power": 40,
-    "accuracy": 90,
-    "pp": 15,
+    "class": "CLASS_STATUS",
+    "type": "TYPE_NORMAL",
+    "power": 0,
+    "accuracy": 0,
+    "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_HIT_TWICE",
+        "type": "BATTLE_EFFECT_USE_RANDOM_ALLY_MOVE",
         "chance": 0
     },
-    "range": "RANGE_SINGLE_TARGET",
+    "range": "RANGE_SINGLE_TARGET_SPECIAL",
     "priority": 0,
-    "flags": [
-        "MOVE_FLAG_MAKES_CONTACT",
-        "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE",
-        "MOVE_FLAG_TRIGGERS_KINGS_ROCK",
-        "MOVE_FLAG_HIDES_HP_GAUGES"
-    ],
+    "flags": [],
     "contest": {
-        "effect": 7,
-        "type": "CONTEST_TYPE_COOL"
+        "effect": 14,
+        "type": "CONTEST_TYPE_BEAUTY"
     }
 }

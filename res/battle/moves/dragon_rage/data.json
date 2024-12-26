@@ -1,15 +1,15 @@
 {
     "name": "Dragon Rage",
     "class": "CLASS_SPECIAL",
-    "type": "TYPE_ELECTRIC",
-    "power": 55,
+    "type": "TYPE_DRAGON",
+    "power": 1,
     "accuracy": 100,
-    "pp": 15,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_LOWER_SPEED_HIT",
-        "chance": 100
+        "type": "BATTLE_EFFECT_40_DAMAGE_FLAT",
+        "chance": 0
     },
-    "range": "RANGE_ADJACENT_OPPONENTS",
+    "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_CAN_PROTECT",
