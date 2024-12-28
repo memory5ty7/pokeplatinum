@@ -1,0 +1,86 @@
+{
+    "name": "Aaron",
+    "class": "TRAINER_CLASS_ELITE_FOUR_AARON",
+    "items": [
+        "ITEM_FULL_RESTORE",
+        "ITEM_FULL_RESTORE"
+    ],
+    "ai_flags": [
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
+    ],
+    "double_battle": false,
+    "party": [
+        {
+            "species": "SPECIES_BRELOOM",
+            "form": 0,
+            "level": 60,
+            "item": "ITEM_ROCKY_HELMET",
+            "moves": [
+                "MOVE_SPORE",
+                "MOVE_NONE",
+                "MOVE_NONE",
+                "MOVE_NONE"
+            ],
+            "power": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SPEAROW",
+            "form": 0,
+            "level": 1,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_AERIAL_ACE",
+                "MOVE_NONE",
+                "MOVE_NONE",
+                "MOVE_NONE"
+            ],
+            "power": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MEOWTH",
+            "form": 0,
+            "level": 1,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_TAUNT",
+                "MOVE_NONE",
+                "MOVE_NONE",
+                "MOVE_NONE"
+            ],
+            "power": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BULBASAUR",
+            "form": 0,
+            "level": 1,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_NONE",
+                "MOVE_NONE",
+                "MOVE_NONE"
+            ],
+            "power": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DRAPION",
+            "form": 0,
+            "level": 69,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_X_SCISSOR",
+                "MOVE_CROSS_POISON",
+                "MOVE_ICE_FANG",
+                "MOVE_AERIAL_ACE"
+            ],
+            "power": 250,
+            "ball_seal": 0
+        }
+    ]
+}

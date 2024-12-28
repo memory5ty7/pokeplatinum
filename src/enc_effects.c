@@ -154,7 +154,7 @@ static u32 EncEffects_GetEffectPair(const FieldBattleDTO *dto)
                 return ENCEFF_DOUBLE_LEADER;
             }
 
-            return ENCEFF_DOUBLE_BATTLE;
+            //return ENCEFF_DOUBLE_BATTLE;
         }
 
         if (battleType & BATTLE_TYPE_LINK) {

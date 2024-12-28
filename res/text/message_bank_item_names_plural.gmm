@@ -1873,4 +1873,12 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Secret Keys</language>
 	</row>
+	<row id="pl_msg_00000394_00468" index="468">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Air Balloons</language>
+	</row>
+	<row id="pl_msg_00000394_00469" index="469">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Rocky Helmets</language>
+	</row>
 </body>

@@ -626,6 +626,8 @@
                 "ITEM_VS_RECORDER",
                 "ITEM_GRACIDEA",
                 "ITEM_SECRET_KEY",
+                "ITEM_AIR_BALLOON",
+                "ITEM_ROCKY_HELMET",
                 "MAX_ITEMS"
             ]
         }

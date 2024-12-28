@@ -1873,4 +1873,12 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">a {COLOR 255}Secret Key{COLOR 0}</language>
 	</row>
+		<row id="pl_msg_00000393_00468" index="468">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">a {COLOR 255}Air Balloon{COLOR 0}</language>
+	</row>
+	<row id="pl_msg_00000393_00469" index="469">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">a {COLOR 255}Rocky Helmet{COLOR 0}</language>
+	</row>
 </body>

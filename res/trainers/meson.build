@@ -929,26 +929,59 @@ trainer_data_files = [
     'trainer_commander_jupiter_stark_mountain.json',
 ]
 
-trainer_data_gen = generator(
+hard_trainer_data_files = []
+normal_trainer_data_files = []
+
+foreach f : trainer_data_files
+    hard_trainer_data_files += 'hard/' + f
+    normal_trainer_data_files += 'normal/' + f
+endforeach
+
+trainer_data_gen_hard = generator(
     trainer_data_py,
     arguments: [ '@INPUT@', '@OUTPUT@', ],
     output: '@BASENAME@',
 )
 
-trainer_party_gen = generator(
+trainer_data_gen_normal = generator(
+    trainer_data_py,
+    arguments: [ '@INPUT@', '@OUTPUT@', ],
+    output: 'normal_@BASENAME@',
+)
+
+trainer_party_gen_hard = generator(
     trainer_party_py,
     arguments: [ '@INPUT@', '@OUTPUT@', ],
     output: '@BASENAME@',
 )
 
+trainer_party_gen_normal = generator(
+    trainer_party_py,
+    arguments: [ '@INPUT@', '@OUTPUT@', ],
+    output: 'normal_@BASENAME@',
+)
+
 trainers_order = files('trainers.order')
+
+hard_trainer_data_targets = trainer_data_gen_hard.process(hard_trainer_data_files, env: json2bin_env)
+normal_trainer_data_targets = trainer_data_gen_normal.process(normal_trainer_data_files, env: json2bin_env)
+
+hard_trainer_party_targets = trainer_party_gen_hard.process(hard_trainer_data_files, env: json2bin_env)
+normal_trainer_party_targets = trainer_party_gen_normal.process(normal_trainer_data_files, env: json2bin_env)
+
+all_trainer_data_targets = []
+all_trainer_data_targets += hard_trainer_data_targets
+all_trainer_data_targets += normal_trainer_data_targets
+all_trainer_party_targets = []
+all_trainer_party_targets += hard_trainer_party_targets
+all_trainer_party_targets += normal_trainer_party_targets
 
 trdata_narc = custom_target('trdata.narc',
     output: [
         'trdata.narc',
         'trdata.naix',
     ],
-    input: trainer_data_gen.process(trainer_data_files, env: json2bin_env),
+    input: all_trainer_data_targets,
     depends: [ py_consts_generators ],
     command: [
         knarc_exe,
@@ -964,7 +997,7 @@ trpoke_narc = custom_target('trpoke.narc',
         'trpoke.narc',
         'trpoke.naix',
     ],
-    input: trainer_party_gen.process(trainer_data_files, env: json2bin_env),
+    input: all_trainer_party_targets,
     depends: [ py_consts_generators ],
     command: [
         knarc_exe,
@@ -972,7 +1005,7 @@ trpoke_narc = custom_target('trpoke.narc',
         '-p', '@OUTPUT0@',
         '--order', trainers_order,
         '--naix',
-    ]
+    ],
 )
 
 nitrofs_files += trdata_narc[0]

@@ -5024,7 +5024,7 @@ static BOOL BtlCmd_TryEncore(BattleSystem *battleSys, BattleContext *battleCtx)
         battleCtx->msgMoveTemp = DEFENDER_LAST_MOVE;
         DEFENDING_MON.moveEffectsData.encoredMove = battleCtx->msgMoveTemp;
         DEFENDING_MON.moveEffectsData.encoredMoveSlot = moveSlot;
-        DEFENDING_MON.moveEffectsData.encoredTurns = BattleSystem_RandNext(battleSys) % 5 + 3; // range: [3-7]
+        DEFENDING_MON.moveEffectsData.encoredTurns = 3;
     } else {
         battleCtx->moveStatusFlags |= MOVE_STATUS_FAILED;
         BattleScript_Iter(battleCtx, jumpOnFail);
