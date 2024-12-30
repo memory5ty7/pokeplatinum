@@ -83,19 +83,20 @@ typedef struct BattleMon {
     u8 padding0026_06 : 2;
     u8 ability;
 
-    u32 weatherAbilityAnnounced : 1;
-    u32 intimidateAnnounced : 1;
-    u32 traceAnnounced : 1;
-    u32 downloadAnnounced : 1;
-    u32 anticipationAnnounced : 1;
-    u32 forewarnAnnounced : 1;
-    u32 slowStartAnnounced : 1;
-    u32 slowStartFinished : 1;
-    u32 friskAnnounced : 1;
-    u32 moldBreakerAnnounced : 1;
-    u32 pressureAnnounced : 1;
-    u32 air_balloon_flag : 1;
-    u32 sheer_force_flag : 1;
+    u32 gemTriggered : 1;
+    //u32 weatherAbilityAnnounced : 1;    //unused
+    u32 intimidateAnnounced : 1;        //unused
+    u32 traceAnnounced : 1;             //unused
+    u32 downloadAnnounced : 1;          //unused
+    u32 anticipationAnnounced : 1;      //unused
+    u32 forewarnAnnounced : 1;          //unused
+    u32 slowStartAnnounced : 1;         
+    u32 slowStartFinished : 1;          
+    u32 friskAnnounced : 1;             //unused
+    u32 moldBreakerAnnounced : 1;       //unused
+    u32 pressureAnnounced : 1;          //unused
+    u32 air_balloon_flag : 1;           //unused
+    u32 sheer_force_flag : 1;           //unused
 
     u8 ppCur[LEARNED_MOVES_MAX];
     u8 ppUps[LEARNED_MOVES_MAX];
@@ -117,7 +118,7 @@ typedef struct BattleMon {
     u32 OTId;
 
     u16 heldItem;
-    u16 padding007A; // unused
+    u16 ability_activated_flag;
 
     u8 timesDamaged;
     u8 trainerMessageFlags;

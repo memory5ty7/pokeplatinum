@@ -1881,4 +1881,152 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Rocky Helmet</language>
 	</row>
+		<row id="pl_msg_00000392_00470" index="470">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Eject Button</language>
+	</row>
+		<row id="pl_msg_00000392_00471" index="471">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Heavy-Duty Boots</language>
+	</row>
+		<row id="pl_msg_00000392_00472" index="472">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Weakness Policy</language>
+	</row>
+		<row id="pl_msg_00000392_00473" index="473">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Eject Pack</language>
+	</row>
+		<row id="pl_msg_00000392_00474" index="474">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Red Card</language>
+	</row>
+		<row id="pl_msg_00000392_00475" index="475">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Assault Vest</language>
+	</row>
+		<row id="pl_msg_00000392_00476" index="476">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Covert Cloak</language>
+	</row>
+		<row id="pl_msg_00000392_00477" index="477">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Clear Amulet</language>
+	</row>
+		<row id="pl_msg_00000392_00478" index="478">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Safety Goggles</language>
+	</row>
+		<row id="pl_msg_00000392_00479" index="479">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Float Stone</language>
+	</row>
+		<row id="pl_msg_00000392_00480" index="480">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Throat Spray</language>
+	</row>
+		<row id="pl_msg_00000392_00481" index="481">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Loaded Dice</language>
+	</row>
+		<row id="pl_msg_00000392_00482" index="482">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Room Service</language>
+	</row>
+		<row id="pl_msg_00000392_00483" index="483">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Eviolite</language>
+	</row>
+		<row id="pl_msg_00000392_00484" index="484">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Asborb Bulb</language>
+	</row>
+		<row id="pl_msg_00000392_00485" index="485">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Adrenaline Orb</language>
+	</row>
+		<row id="pl_msg_00000392_00486" index="486">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Blunder Policy</language>
+	</row>
+		<row id="pl_msg_00000392_00487" index="487">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Cell Battery</language>
+	</row>
+		<row id="pl_msg_00000392_00488" index="488">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Punching Glove</language>
+	</row>
+		<row id="pl_msg_00000392_00489" index="489">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Normal Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00490" index="490">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Fighting Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00491" index="491">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Flying Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00492" index="492">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Poison Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00493" index="493">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ground Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00494" index="494">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Rock Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00495" index="495">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Bug Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00496" index="496">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ghost Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00497" index="497">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Steel Gym</language>
+	</row>
+		<row id="pl_msg_00000392_00498" index="498">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mystery Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00499" index="499">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Fire Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00500" index="500">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Water Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00501" index="501">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Grass Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00502" index="502">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Electric Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00503" index="503">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Psychic Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00504" index="504">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ice Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00505" index="505">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Dragon Gem</language>
+	</row>
+		<row id="pl_msg_00000392_00506" index="506">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Dark Gem</language>
+	</row>
 </body>

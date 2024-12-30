@@ -193,6 +193,16 @@ typedef struct BoxPokemon {
     PokemonDataBlock dataBlocks[4]; //!< Data blocks containing the Pokemon's boxed data, stored encrypted.
 } BoxPokemon;
 
+typedef struct PokemonEvolutionMethod {
+    u16 type;
+    u16 param;
+    u16 targetSpecies;
+} PokemonEvolutionMethod;
+
+typedef struct PokemonEvolutionData {
+    PokemonEvolutionMethod methods[7];
+} PokemonEvolutionData;
+
 #include "struct_defs/struct_0202818C.h"
 #include "struct_defs/struct_0202CA28.h"
 
@@ -1079,5 +1089,7 @@ BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, int heapID);
 void sub_02078B40(Pokemon *mon, UnkStruct_02078B40 *param1);
 void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
 u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot);
+
+void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData);
 
 #endif // POKEPLATINUM_POKEMON_H

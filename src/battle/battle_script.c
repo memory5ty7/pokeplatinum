@@ -316,6 +316,7 @@ static BOOL BtlCmd_CheckCurMoveIsType(BattleSystem *battleSys, BattleContext *ba
 static BOOL BtlCmd_LoadArchivedMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -575,7 +576,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_CheckCurMoveIsType,
     BtlCmd_LoadArchivedMonData,
     BtlCmd_RefreshMonData,
-    BtlCmd_End
+    BtlCmd_End,
+    BtlCmd_SetAbilityActivatedFlag
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -1553,14 +1555,7 @@ static BOOL BtlCmd_Wait(BattleSystem *battleSys, BattleContext *battleCtx)
  */
 static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    int moveType;
-    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
-        moveType = TYPE_NORMAL;
-    } else if (battleCtx->moveType) {
-        moveType = battleCtx->moveType;
-    } else {
-        moveType = CURRENT_MOVE_DATA.type;
-    }
+    int moveType = GetAdjustedMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur);
 
     battleCtx->damage = BattleSystem_CalcMoveDamage(battleSys,
         battleCtx,
@@ -1572,7 +1567,15 @@ static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *
         battleCtx->attacker,
         battleCtx->defender,
         battleCtx->criticalMul);
-    battleCtx->damage *= battleCtx->criticalMul;
+    //battleCtx->damage *= battleCtx->criticalMul;
+
+    if (battleCtx->criticalMul > 1) // update critical hit mechanics
+    {
+        for (moveType = battleCtx->criticalMul; moveType > 1; moveType--) // for every critical multiplier above 1, tack on 1.5x multiplier
+        {
+            battleCtx->damage= battleCtx->damage * 150 / 100;
+        }
+    }
 
     if (Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_HP_DRAIN_ON_ATK) {
         battleCtx->damage = battleCtx->damage * (100 + Battler_HeldItemPower(battleCtx, battleCtx->attacker, 0)) / 100;
@@ -2314,7 +2317,7 @@ static BOOL BtlCmd_GoToEffectScript(BattleSystem *battleSys, BattleContext *batt
 
     int effect =  CURRENT_MOVE_DATA.effect;
 
-    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+    if ((Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE) || (Battler_HeldItemEffect(battleCtx, battleCtx->defender) == HOLD_EFFECT_COVERT_CLOAK))
     {
         switch (effect){
             case BATTLE_EFFECT_FLINCH_HIT:
@@ -2346,29 +2349,51 @@ static BOOL BtlCmd_GoToEffectScript(BattleSystem *battleSys, BattleContext *batt
             case BATTLE_EFFECT_FLINCH_MINIMIZE_DOUBLE_HIT:
             case BATTLE_EFFECT_TRI_ATTACK:
                 effect = BATTLE_EFFECT_HIT;
-                ATTACKING_MON.sheer_force_flag = 1;
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 1;
+                }
                 break;
             case BATTLE_EFFECT_POISON_MULTI_HIT:
                 effect = BATTLE_EFFECT_MULTI_HIT;
-                ATTACKING_MON.sheer_force_flag = 1;
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 1;
+                }
                 break;
             case BATTLE_EFFECT_HIGH_CRITICAL_BURN_HIT:
             case BATTLE_EFFECT_HIGH_CRITICAL_POISON_HIT:
                 effect = BATTLE_EFFECT_HIGH_CRITICAL;
-                ATTACKING_MON.sheer_force_flag = 1;
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 1;
+                }
                 break;
             case BATTLE_EFFECT_RECOIL_BURN_HIT:
             case BATTLE_EFFECT_RECOIL_PARALYZE_HIT:
                 effect = BATTLE_EFFECT_RECOIL_THIRD;
-                ATTACKING_MON.sheer_force_flag = 1;
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 1;
+                }
+                break;   
+            case BATTLE_EFFECT_ALWAYS_FLINCH_FIRST_TURN_ONLY:
+                effect = BATTLE_EFFECT_FIRST_IMPRESSION;
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 1;
+                }                  
                 break;
             default:
-                ATTACKING_MON.sheer_force_flag = 0;
-                break;                                 
+                if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
+                {
+                    ATTACKING_MON.sheer_force_flag = 0;
+                }
+                break;                          
         }
     }
 
-    BattleScript_Jump(battleCtx, NARC_INDEX_BATTLE__SKILL__BE_SEQ, CURRENT_MOVE_DATA.effect);
+    BattleScript_Jump(battleCtx, NARC_INDEX_BATTLE__SKILL__BE_SEQ, effect);
 
     return FALSE;
 }
@@ -2930,7 +2955,7 @@ static BOOL BtlCmd_SetMultiHit(BattleSystem *battleSys, BattleContext *battleCtx
                 hits = 5;
             } else {
                 hits = BattleSystem_RandNext(battleSys) & 3;
-                if (hits < 2) { // 2 or 3 hits
+                if ((hits < 2) && (Battler_HeldItemEffect(battleCtx, battleCtx->attacker) != HOLD_EFFECT_LOADED_DICE)) { // 2 or 3 hits
                     hits += 2;
                 } else { // 4 or 5 hits
                     hits = (BattleSystem_RandNext(battleSys) & 3) + 2;
@@ -2940,7 +2965,13 @@ static BOOL BtlCmd_SetMultiHit(BattleSystem *battleSys, BattleContext *battleCtx
 
         battleCtx->multiHitCounter = hits;
         battleCtx->multiHitNumHits = hits;
-        battleCtx->multiHitAccuracyCheck = flags;
+        if(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_LOADED_DICE)
+        {
+            battleCtx->multiHitAccuracyCheck = SYSCTL_SKIP_ACCURACY_CHECK;
+        } else {
+            battleCtx->multiHitAccuracyCheck = flags;
+        }
+        
     }
 
     return FALSE;
@@ -5632,15 +5663,8 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
         attackerData[i] = defenderData[i];
     }
 
-    ATTACKING_MON.weatherAbilityAnnounced = FALSE;
-    ATTACKING_MON.intimidateAnnounced = FALSE;
-    ATTACKING_MON.traceAnnounced = FALSE;
-    ATTACKING_MON.downloadAnnounced = FALSE;
-    ATTACKING_MON.anticipationAnnounced = FALSE;
-    ATTACKING_MON.forewarnAnnounced = FALSE;
-    ATTACKING_MON.friskAnnounced = FALSE;
-    ATTACKING_MON.moldBreakerAnnounced = FALSE;
-    ATTACKING_MON.pressureAnnounced = FALSE;
+    ATTACKING_MON.ability_activated_flag = FALSE;
+    ATTACKING_MON.gemTriggered = FALSE;
     ATTACKING_MON.moveEffectsData.truant = battleCtx->totalTurns & 1;
     ATTACKING_MON.moveEffectsData.slowStartTurnNumber = battleCtx->totalTurns + 1;
     ATTACKING_MON.slowStartAnnounced = FALSE;
@@ -12461,4 +12485,17 @@ static void BattleAI_SetAbility(BattleContext *battleCtx, u8 battler, u8 ability
 static void BattleAI_SetHeldItem(BattleContext *battleCtx, u8 battler, u16 item)
 {
     battleCtx->aiContext.battlerHeldItems[battler] = item;
+}
+
+static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContext *battleCtx) {
+    BattleScript_Iter(battleCtx, 1);
+
+    u8 side, client_no;
+
+    side = BattleScript_Read(battleCtx);
+    client_no = BattleScript_Battler(battleSys, battleCtx, side);
+
+    battleCtx->battleMons[client_no].ability_activated_flag = 1;
+
+    return FALSE;
 }

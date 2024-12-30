@@ -5092,10 +5092,18 @@
 	</row>
 	<row id="pl_msg_00000368_01269" index="1269">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">floats in the air\nwith its !\r</language>
+		<language name="English">{STRVAR_1 1, 0, 0} floats in the air\nwith its {STRVAR_1 8, 1, 0}!\r</language>
 	</row>
 	<row id="pl_msg_00000368_01270" index="1270">
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">{STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0} popped!\r</language>
+	</row>
+	<row id="pl_msg_00000368_01271" index="1271">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">{STRVAR_1 1, 1, 0}’s {STRVAR_1 5, 0, 0} made\nit shudder!</language>
+	</row>
+	<row id="pl_msg_00000368_01272" index="1272">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Gem Boost !</language>
 	</row>
 </body>

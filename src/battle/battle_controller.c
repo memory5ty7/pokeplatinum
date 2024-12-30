@@ -956,14 +956,15 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
             while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {
                 side = battleCtx->fieldConditionCheckTemp;
 
-                if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_REFLECT
-                    && --battleCtx->sideConditions[side].reflectTurns == 0) {
-                    battleCtx->sideConditionsMask[side] &= ~SIDE_CONDITION_REFLECT;
-                    battleCtx->msgMoveTemp = MOVE_REFLECT;
+                if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_REFLECT && battleCtx->sideConditions[side].reflectTurns < 9) {
+                    if (--battleCtx->sideConditions[side].reflectTurns == 0) {
+                        battleCtx->sideConditionsMask[side] &= ~SIDE_CONDITION_REFLECT;
+                        battleCtx->msgMoveTemp = MOVE_REFLECT;
 
-                    PrepareSubroutineSequence(battleCtx, subscript_move_effect_end);
-                    battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
-                    state = STATE_BREAK_OUT;
+                        PrepareSubroutineSequence(battleCtx, subscript_move_effect_end);
+                        battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
+                        state = STATE_BREAK_OUT;
+                    }
                 }
 
                 battleCtx->fieldConditionCheckTemp++;
@@ -979,14 +980,15 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
             while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {
                 side = battleCtx->fieldConditionCheckTemp;
 
-                if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_LIGHT_SCREEN
-                    && --battleCtx->sideConditions[side].lightScreenTurns == 0) {
-                    battleCtx->sideConditionsMask[side] &= ~SIDE_CONDITION_LIGHT_SCREEN;
-                    battleCtx->msgMoveTemp = MOVE_LIGHT_SCREEN;
+                if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_LIGHT_SCREEN && battleCtx->sideConditions[side].lightScreenTurns < 9) {
+                    if (--battleCtx->sideConditions[side].lightScreenTurns == 0) {
+                        battleCtx->sideConditionsMask[side] &= ~SIDE_CONDITION_LIGHT_SCREEN;
+                        battleCtx->msgMoveTemp = MOVE_LIGHT_SCREEN;
 
-                    PrepareSubroutineSequence(battleCtx, subscript_move_effect_end);
-                    battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
-                    state = STATE_BREAK_OUT;
+                        PrepareSubroutineSequence(battleCtx, subscript_move_effect_end);
+                        battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
+                        state = STATE_BREAK_OUT;
+                    }
                 }
 
                 battleCtx->fieldConditionCheckTemp++;
@@ -2961,6 +2963,18 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
         hitRate = hitRate * 130 / 100;
     }
 
+    if (NO_CLOUD_NINE) {
+        if (WEATHER_IS_SAND && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SAND_VEIL) == TRUE) {
+            hitRate = hitRate * 80 / 100;
+        }
+        if (WEATHER_IS_HAIL && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SNOW_CLOAK) == TRUE) {
+            hitRate = hitRate * 80 / 100;
+        }
+        if (battleCtx->fieldConditionsMask & FIELD_CONDITION_DEEP_FOG) {
+            hitRate = hitRate * 6 / 10;
+        }
+    }
+
     if (Battler_Ability(battleCtx, attacker) == ABILITY_HUSTLE && moveClass == CLASS_PHYSICAL) {
         hitRate = hitRate * 80 / 100;
     }
@@ -3405,6 +3419,11 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
     }
 
     if (battleCtx->damage) {
+
+        if (!(battleCtx->moveStatusFlags & MOVE_STATUS_ONE_HIT_KO)) {
+            battleCtx->battleMons[battleCtx->attacker].gemTriggered = FALSE;
+        }
+
         int itemEffect = Battler_HeldItemEffect(battleCtx, battleCtx->defender);
         int itemPower = Battler_HeldItemPower(battleCtx, battleCtx->defender, 0);
 
@@ -3730,7 +3749,7 @@ enum {
 static void BattleController_AfterMoveEffects(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     DynamicSortClientExecutionOrder(battleSys, battleCtx, FALSE);
-    
+
     switch (battleCtx->afterMoveEffectState) {
     case AFTER_MOVE_EFFECT_TOGGLE_VANISH_FLAG:
         BOOL anyFlipped = FALSE;
@@ -3802,7 +3821,7 @@ static void BattleController_AfterMoveEffects(BattleSystem *battleSys, BattleCon
         }
 
     case AFTER_MOVE_EFFECT_THAW_DEFENDER:
-        int moveType = CalcCurrentMoveType(battleCtx);
+        int moveType = GetAdjustedMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur);
         battleCtx->afterMoveEffectState++;
 
         if (battleCtx->defender != BATTLER_NONE
@@ -4606,7 +4625,7 @@ static BOOL BattleController_AnyExpPayout(BattleContext *battleCtx, int nextCmd,
  */
 static void BattleController_UpdateFlagsWhenHit(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    int moveType = CalcCurrentMoveType(battleCtx);
+    int moveType = GetAdjustedMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur);
     if ((MOVE_DATA(battleCtx->moveTemp).flags & MOVE_FLAG_CAN_MIRROR_MOVE)
         && (battleCtx->battleStatusMask & SYSCTL_REUSE_LAST_MOVE) == FALSE
         && battleCtx->defender != BATTLER_NONE
@@ -4862,8 +4881,9 @@ static BOOL BattleController_TriggerAfterMoveHitEffects(BattleSystem *battleSys,
 
             battleCtx->afterMoveHitCheckState++;
 
-            if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
+            if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1) {
                 battleCtx->afterMoveHitCheckState = AFTER_MOVE_HIT_STATE_END;
+            }
 
             break;
 

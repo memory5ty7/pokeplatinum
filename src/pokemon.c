@@ -91,16 +91,6 @@ static const s8 sNatureFlavorAffinities[][5] = {
     { 0x0, 0x0, 0x0, 0x0, 0x0 },
 };
 
-typedef struct PokemonEvolutionMethod {
-    u16 type;
-    u16 param;
-    u16 targetSpecies;
-} PokemonEvolutionMethod;
-
-typedef struct PokemonEvolutionData {
-    PokemonEvolutionMethod methods[7];
-} PokemonEvolutionData;
-
 static enum PokemonDataBlockID {
     DATA_BLOCK_A = 0,
     DATA_BLOCK_B,
@@ -137,7 +127,7 @@ static BOOL CanBoxPokemonLearnTM(BoxPokemon *boxMon, u8 tmID);
 static void BoxPokemon_CalcAbility(BoxPokemon *boxMon);
 static void PokemonPersonalData_LoadSpecies(int monSpecies, PokemonPersonalData *monPersonalData);
 static void PokemonPersonalData_LoadForm(int monSpecies, int monForm, PokemonPersonalData *monPersonalData);
-static void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData);
+void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData);
 static void Pokemon_EncryptData(void *data, u32 bytes, u32 seed);
 static void Pokemon_DecryptData(void *data, u32 bytes, u32 seed);
 static u16 Pokemon_GetDataChecksum(void *data, u32 bytes);
@@ -4547,7 +4537,7 @@ static void PokemonPersonalData_LoadForm(int monSpecies, int monForm, PokemonPer
     NARC_ReadWholeMemberByIndexPair(monPersonalData, NARC_INDEX_POKETOOL__PERSONAL__PL_PERSONAL, monSpecies);
 }
 
-static void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData)
+void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData)
 {
     NARC_ReadWholeMemberByIndexPair(monEvolutionData, NARC_INDEX_POKETOOL__PERSONAL__EVO, monSpecies);
 }

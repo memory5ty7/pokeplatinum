@@ -151,7 +151,31 @@
                 "HOLD_EFFECT_EVOLVE_MAGMAR",
                 "HOLD_EFFECT_EVOLVE_PORYGON2",
                 "HOLD_EFFECT_EVOLVE_DUSCLOPS",
-                "HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT"
+                
+                "HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT",
+                "HOLD_EFFECT_EJECT_BUTTON",
+                "HOLD_EFFECT_HEAVY_DUTY_BOOTS",
+                "HOLD_EFFECT_WEAKNESS_POLICY",
+                "HOLD_EFFECT_EJECT_PACK",
+                "HOLD_EFFECT_RED_CARD",
+                "HOLD_EFFECT_ASSAULT_VEST",
+                "HOLD_EFFECT_COVERT_CLOAK",
+
+                "HOLD_EFFECT_CLEAR_AMULET",
+                "HOLD_EFFECT_SAFETY_GOGGLES",
+                "HOLD_EFFECT_FLOAT_STONE",
+                "HOLD_EFFECT_THROAT_SPRAY",
+                "HOLD_EFFECT_LOADED_DICE",
+                "HOLD_EFFECT_ROOM_SERVICE",
+                "HOLD_EFFECT_EVIOLITE",
+
+                "HOLD_EFFECT_ABSORB_BULB",
+                "HOLD_EFFECT_ADRENALINE_ORB",
+                "HOLD_EFFECT_BLUNDER_POLICY",
+                "HOLD_EFFECT_CELL_BATTERY",
+                "HOLD_EFFECT_PUNCHING_GLOVE",
+
+                "HOLD_EFFECT_GEM"
             ]
         },
         "@Item": {
@@ -626,8 +650,50 @@
                 "ITEM_VS_RECORDER",
                 "ITEM_GRACIDEA",
                 "ITEM_SECRET_KEY",
+
                 "ITEM_AIR_BALLOON",
                 "ITEM_ROCKY_HELMET",
+                "ITEM_EJECT_BUTTON",
+                "ITEM_HEAVY_DUTY_BOOTS",
+                "ITEM_WEAKNESS_POLICY",
+                "ITEM_EJECT_PACK",
+                "ITEM_RED_CARD",
+                "ITEM_ASSAULT_VEST",
+                "ITEM_COVERT_CLOAK",
+
+                "ITEM_CLEAR_AMULET",
+                "ITEM_SAFETY_GOGGLES",
+                "ITEM_FLOAT_STONE",
+                "ITEM_THROAT_SPRAY",
+                "ITEM_LOADED_DICE",
+                "ITEM_ROOM_SERVICE",
+                "ITEM_EVIOLITE",
+
+                "ITEM_ABSORB_BULB",
+                "ITEM_ADRENALINE_ORB",
+                "ITEM_BLUNDER_POLICY",
+                "ITEM_CELL_BATTERY",
+                "ITEM_PUNCHING_GLOVE",
+
+                "ITEM_NORMAL_GEM",
+                "ITEM_FIGHTING_GEM",
+                "ITEM_FLYING_GEM",
+                "ITEM_POISON_GEM",
+                "ITEM_GROUND_GEM",
+                "ITEM_ROCK_GEM",
+                "ITEM_BUG_GEM",
+                "ITEM_GHOST_GEM",
+                "ITEM_STEEL_GEM",
+                "ITEM_MYSTERY_GEM",
+                "ITEM_FIRE_GEM",
+                "ITEM_WATER_GEM",
+                "ITEM_GRASS_GEM",
+                "ITEM_ELECTRIC_GEM",
+                "ITEM_PSYCHIC_GEM",
+                "ITEM_ICE_GEM",
+                "ITEM_DRAGON_GEM",
+                "ITEM_DARK_GEM",
+
                 "MAX_ITEMS"
             ]
         }

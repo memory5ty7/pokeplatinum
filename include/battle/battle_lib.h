@@ -1304,7 +1304,7 @@ int BattleSystem_CalcDamageVariance(BattleSystem *battleSys, BattleContext *batt
  * @return 1 if no critical occurs, 2 if a critical occurs, 3 if a critical
  * occurs and the attacker also has the ability Sniper
  */
-s32 BattleSystem_CalcCriticalMulti(BattleSystem *battleSys, BattleContext *battleCtx, int attacker, int defender, int criticalStage, u32 sideConditions);
+int BattleSystem_CalcCriticalMulti(BattleSystem *battleSys, BattleContext *battleCtx, int attacker, int defender, int criticalStage, u32 sideConditions);
 
 /**
  * @brief Check if a move can be copied by Mimic.
@@ -1490,5 +1490,13 @@ int BattleAI_SwitchedSlot(BattleSystem *battleSys, int battler);
  * the battlefield.
  */
 int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pokemon *mon, int move);
+
+u32 GetAdjustedMoveType(BattleContext *battleCtx, u32 client, u32 move);
+
+u32 GetAdjustedMoveTypeBasics(BattleContext *battleCtx, u32 move, u32 ability, u32 type);
+
+BOOL MoveIsAffectedByNormalizeVariants(int moveID);
+
+BOOL isNFE(u16 species);
 
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

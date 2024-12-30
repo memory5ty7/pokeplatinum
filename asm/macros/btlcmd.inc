@@ -1235,4 +1235,9 @@
     .long 222
     .endm
 
+    .macro SetAbilityActivatedFlag battler
+    .long 223
+    .long \battler
+    .endm
+
     .endif // ASM_BATTLE_SCRIPT_INC

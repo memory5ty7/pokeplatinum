@@ -28,9 +28,9 @@ typedef struct FieldConditions {
 
 typedef struct SideConditions {
     u32 reflectUser : 2;
-    u32 reflectTurns : 3;
+    u32 reflectTurns : 4;
     u32 lightScreenUser : 2;
-    u32 lightScreenTurns : 3;
+    u32 lightScreenTurns : 4;
     u32 mistUser : 2;
     u32 mistTurns : 3;
     u32 safeguardUser : 2;
@@ -38,7 +38,7 @@ typedef struct SideConditions {
     u32 followMe : 1;
     u32 followMeUser : 2;
     u32 knockedOffItemsMask : 6;
-    u32 padding00_1D : 3;
+    u32 padding00_1D : 1;
 
     u32 spikesLayers : 2;
     u32 toxicSpikesLayers : 2;

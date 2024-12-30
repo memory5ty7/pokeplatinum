@@ -3,8 +3,8 @@
     .data
 
 _000:
-    // {0}’s {1} made it the {2} type!
-    PrintMessage pl_msg_00000368_00123, TAG_NICKNAME_ABILITY, BTLSCR_MSG_TEMP, BTLSCR_ATTACKER, BTLSCR_MSG_TEMP
+    // {0}’s {1} makes the opposing team too nervous to eat Berries!
+    PrintMessage pl_msg_00000368_0110, TAG_ABILITY_NICKNAME, BTLSCR_MSG_BATTLER_TEMP, BTLSCR_MSG_TEMP
     Wait 
     WaitButtonABTime 30
     End 
