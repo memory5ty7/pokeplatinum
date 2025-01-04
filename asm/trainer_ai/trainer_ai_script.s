@@ -217,6 +217,8 @@ Basic_LowerSpeed1:
     LoadBattlerAbility AI_BATTLER_DEFENDER   
     IfLoadedEqualTo ABILITY_CLEAR_BODY, Basic_CheckSpeed
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, Basic_CheckSpeed
+    LoadHeldItem AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ITEM_CLEAR_AMULET, Basic_CheckSpeed
     AddToMoveScore 5
     GoTo Basic_Other
 

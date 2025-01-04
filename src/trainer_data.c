@@ -277,10 +277,16 @@ u32 getStatusFromDV(u16 dv)
     u32 status = MON_CONDITION_NONE;
 
     switch (dv) {
-    case 1:
+    case 128:
+    case 138:
+    case 153:
+    case 163:
         status = MON_CONDITION_POISON;
         break;
-    case 2:
+    case 178:
+    case 188:
+    case 203:
+    case 213:
         status = MON_CONDITION_BURN;
         break;
     }

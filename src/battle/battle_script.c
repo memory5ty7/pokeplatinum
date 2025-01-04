@@ -3208,6 +3208,12 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
                     }
 
                     result = 1;
+                } else if (Battler_HeldItemEffect(battleCtx, battleCtx->defender) == HOLD_EFFECT_CLEAR_AMULET) {
+                        battleCtx->msgBuffer.id = 669; // "{0}'s {1} prevents stat loss!"
+                        battleCtx->msgBuffer.tags = TAG_NICKNAME_ITEM;
+                        battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->sideEffectMon);
+                        battleCtx->msgBuffer.params[1] = battleCtx->battleMons[battleCtx->sideEffectMon].heldItem;
+                        result = 1;
                 } else if (AbilityBlocksSpecificStatReduction(battleCtx, statOffset, ABILITY_KEEN_EYE, BATTLE_STAT_ACCURACY)
                     || AbilityBlocksSpecificStatReduction(battleCtx, statOffset, ABILITY_HYPER_CUTTER, BATTLE_STAT_ATTACK)) {
                     if (battleCtx->sideEffectType == SIDE_EFFECT_TYPE_ABILITY) {
@@ -7121,6 +7127,10 @@ static BOOL BtlCmd_CalcWeightBasedPower(BattleSystem *battleSys, BattleContext *
 
     int i = 0;
     int monWeight = DEFENDING_MON.weight;
+
+    if (Item_Get(DEFENDING_MON.heldItem, ITEM_PARAM_HOLD_EFFECT) == HOLD_EFFECT_FLOAT_STONE) {
+        monWeight /= 2;
+    }
 
     for (; sWeightToPower[i][0] != 0xFFFF; i++) {
         if (sWeightToPower[i][0] >= monWeight) {

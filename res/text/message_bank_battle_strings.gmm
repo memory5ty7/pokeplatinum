@@ -5106,4 +5106,8 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Gem Boost !</language>
 	</row>
+		<row id="pl_msg_00000368_01273" index="1273">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">{STRVAR_1 1, 1, 0}\nraised its {STRVAR_1 13, 0, 0}!</language>
+	</row>
 </body>

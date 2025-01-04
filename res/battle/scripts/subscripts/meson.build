@@ -312,5 +312,10 @@ subscript_files = files(
     'subscript_air_balloon_pop.s',
     'subscript_air_balloon_message.s',
     'subscript_protean_message.s',
-    'subscript_unnerve_message.s'
+    'subscript_unnerve_message.s',
+    'subscript_gem_boost.s',
+    'subscript_raise_sp_atk_on_hit.s',
+    'subscript_raise_atk_on_hit.s',
+    'subscript_switching_items.s',
+    'subscript_raise_atk_sp_atk_on_hit.s',
 )

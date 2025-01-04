@@ -310,3 +310,8 @@ subscript_air_balloon_pop
 subscript_air_balloon_message
 subscript_protean_message
 subscript_unnerve_message
+subscript_gem_boost
+subscript_raise_sp_atk_on_hit
+subscript_raise_atk_on_hit
+subscript_switching_items
+subscript_raise_atk_sp_atk_on_hit
