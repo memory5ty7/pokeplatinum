@@ -9,12 +9,37 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_BUDEW",
             "form": 0,
-            "level": 7,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 8,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SUNNY_DAY",
+                "MOVE_SOLAR_BEAM"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHERUBI",
+            "form": 0,
+            "level": 9,
+            "item": "ITEM_CHARCOAL",
+            "moves": [
+                "MOVE_WEATHER_BALL"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHERUBI",
+            "form": 0,
+            "level": 9,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_SOLAR_BEAM"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]

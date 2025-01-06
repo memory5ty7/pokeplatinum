@@ -9,12 +9,39 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_WURMPLE",
             "form": 0,
-            "level": 7,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 8,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_STRING_SHOT"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CASCOON",
+            "form": 0,
+            "level": 8,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_POISON_STING"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DUSTOX",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_GUST",
+                "MOVE_CONFUSION"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]

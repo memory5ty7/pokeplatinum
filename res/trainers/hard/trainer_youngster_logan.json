@@ -8,14 +8,36 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BURMY",
+            "species": "SPECIES_POOCHYENA",
             "form": 0,
-            "level": 5,
-            "item": null,
+            "level": 8,
+            "item": "ITEM_FLAME_ORB",
             "moves": [
-                "MOVE_TACKLE"
+                "MOVE_FACADE"
             ],
-            "power": 0,
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAREEP",
+            "form": 0,
+            "level": 8,
+            "item": "ITEM_HARD_STONE",
+            "moves": [
+                "MOVE_POWER_GEM"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MUNCHLAX",
+            "form": 0,
+            "level": 8,
+            "item": "ITEM_WATER_GEM",
+            "moves": [
+                "MOVE_SURF"
+            ],
+            "power": 230,
             "ball_seal": 0
         }
     ]

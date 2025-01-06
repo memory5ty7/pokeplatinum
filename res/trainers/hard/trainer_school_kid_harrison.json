@@ -1,9 +1,7 @@
 {
     "name": "Harrison",
     "class": "TRAINER_CLASS_SCHOOL_KID_MALE",
-    "items": [
-        "ITEM_X_ATTACK"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
@@ -11,14 +9,36 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 6,
-            "item": null,
+            "level": 9,
+            "item": "ITEM_METRONOME",
             "moves": [
-                "MOVE_QUICK_ATTACK"
+                "MOVE_HIDDEN_POWER"
             ],
-            "power": 10,
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MISDREAVUS",
+            "form": 0,
+            "level": 9,
+            "item": "ITEM_METRONOME",
+            "moves": [
+                "MOVE_HIDDEN_POWER"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MACHOP",
+            "form": 0,
+            "level": 9,
+            "item": "ITEM_METRONOME",
+            "moves": [
+                "MOVE_HIDDEN_POWER"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]

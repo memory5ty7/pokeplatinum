@@ -9,12 +9,36 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_SENTRET",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 7,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_FLAMETHROWER"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SPEAROW",
+            "form": 0,
+            "level": 7,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_U_TURN"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NIDORAN_F",
+            "form": 0,
+            "level": 12,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_SHADOW_CLAW"
+            ],
+            "power": 238,
             "ball_seal": 0
         }
     ]

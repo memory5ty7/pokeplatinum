@@ -8,12 +8,28 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_BEEDRILL",
             "form": 0,
-            "level": 8,
-            "item": null,
-            "moves": null,
-            "power": 10,
+            "level": 10,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_BRICK_BREAK",
+                "MOVE_AERIAL_ACE"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KRICKETUNE",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_FURY_CUTTER",
+                "MOVE_SING"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

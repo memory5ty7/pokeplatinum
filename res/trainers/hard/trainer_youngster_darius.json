@@ -25,7 +25,7 @@
             "level": 9,
             "item": null,
             "moves": [
-                "MOVE_ROCK_THROW",
+                "MOVE_ROCK_SMASH",
                 "MOVE_TACKLE",
                 "MOVE_HARDEN"
             ],

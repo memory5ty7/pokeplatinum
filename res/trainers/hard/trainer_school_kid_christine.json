@@ -11,12 +11,25 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
-            "form": 0,
-            "level": 6,
-            "item": null,
-            "moves": null,
-            "power": 10,
+            "species": "SPECIES_UNOWN",
+            "form": 19,
+            "level": 9,
+            "item": "ITEM_METRONOME",
+            "moves": [
+                "MOVE_HIDDEN_POWER"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_UNOWN",
+            "form": 6,
+            "level": 9,
+            "item": "ITEM_METRONOME",
+            "moves": [
+                "MOVE_HIDDEN_POWER"
+            ],
+            "power": 235,
             "ball_seal": 0
         }
     ]

@@ -976,7 +976,7 @@ all_trainer_party_targets = []
 all_trainer_party_targets += hard_trainer_party_targets
 all_trainer_party_targets += normal_trainer_party_targets
 
-trdata_narc = custom_target('trdata.narc',
+trdata_target = custom_target('trdata.narc',
     output: [
         'trdata.narc',
         'trdata.naix',
@@ -984,31 +984,30 @@ trdata_narc = custom_target('trdata.narc',
     input: all_trainer_data_targets,
     depends: [ py_consts_generators ],
     command: [
-        knarc_exe,
-        '-d', '@PRIVATE_DIR@',
-        '-p', '@OUTPUT0@',
+        narc_exe,
+        'create',
         '--order', trainers_order,
+        '--output', '@OUTPUT0@',
         '--naix',
+        '@PRIVATE_DIR@',
     ],
 )
+trdata_narc = trdata_target[0]
+trdata_naix = trdata_target[1]
 
+# Do not generate an NAIX for `trpoke.narc`; it would go wholly unused
 trpoke_narc = custom_target('trpoke.narc',
-    output: [
-        'trpoke.narc',
-        'trpoke.naix',
-    ],
+    output: 'trpoke.narc',
     input: all_trainer_party_targets,
     depends: [ py_consts_generators ],
     command: [
-        knarc_exe,
-        '-d', '@PRIVATE_DIR@',
-        '-p', '@OUTPUT0@',
+        narc_exe, 'create',
         '--order', trainers_order,
-        '--naix',
-    ],
+        '--output', '@OUTPUT@',
+        '@PRIVATE_DIR@',
+    ]
 )
 
-nitrofs_files += trdata_narc[0]
-nitrofs_files += trpoke_narc[0]
-naix_headers += trdata_narc[1]
-naix_headers += trpoke_narc[1]
+nitrofs_files += trdata_narc
+nitrofs_files += trpoke_narc
+naix_headers += trdata_naix

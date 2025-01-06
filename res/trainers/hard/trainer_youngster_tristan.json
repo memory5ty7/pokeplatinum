@@ -8,12 +8,37 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_BIDOOF",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 7,
+            "item": "ITEM_BERRY_JUICE",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_CHARGE_BEAM"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ZIGZAGOON",
+            "form": 0,
+            "level": 7,
+            "item": "ITEM_STARF_BERRY",
+            "moves": [
+                "MOVE_ICE_BEAM"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AIPOM",
+            "form": 0,
+            "level": 7,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_PAYBACK"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]
