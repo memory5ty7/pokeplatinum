@@ -81,6 +81,7 @@ Basic_SlowKill:
     GoTo Basic_HighestDamage
 
 Basic_HighestDamage:
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PRIORITY_1, Basic_Priority
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WHIRLPOOL, Basic_Trapping
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_BIND_HIT, Basic_Trapping
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_Explosion
@@ -90,6 +91,16 @@ Basic_HighestDamage:
 
     GoTo Basic_AdditionalDamage
 
+Basic_Priority:
+    IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_End
+    IfSpeedCompareEqualTo COMPARE_SPEED_TIE, Basic_End
+    IfEnemyKills AI_BATTLER_DEFENDER, USE_MAX_DAMAGE, Basic_Priority1
+    GoTo Basic_End
+
+Basic_Priority1:
+    AddToMoveScore 11
+    GoTo Basic_End
+     
 Basic_Trapping:
     IfRandomLessThan 205, Basic_Trapping1
     AddToMoveScore 8

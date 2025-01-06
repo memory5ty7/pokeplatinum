@@ -627,6 +627,13 @@
     .long \battler
     .endm
 
+    .macro IfEnemyKills battler, roll_damage, jump
+    .long 109
+    .long \battler
+    .long \roll_damage
+    .long (\jump-.) / 4 - 1
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry

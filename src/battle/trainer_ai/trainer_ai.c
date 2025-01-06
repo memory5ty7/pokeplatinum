@@ -2736,6 +2736,7 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
 
     u8 defenderTmp = AI_CONTEXT.defender;
     AI_CONTEXT.defender = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = defenderTmp;
 
     aiDamage = TrainerAI_CalcAllDamage(battleSys,
         battleCtx,
@@ -2747,13 +2748,15 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
         Battler_Ability(battleCtx, AI_CONTEXT.attacker),
         battleCtx->battleMons[AI_CONTEXT.attacker].moveEffectsData.embargoTurns,
         varyDamage);
-    battler = AIScript_Battler(battleCtx, inBattler);
 
-    if (battleCtx->battleMons[AI_CONTEXT.defender].curHP <= aiDamage) {
+    if (battleCtx->battleMons[defenderTmp].curHP <= aiDamage) {
+        AI_CONTEXT.attacker = AI_CONTEXT.defender;
         AI_CONTEXT.defender = defenderTmp;
+
         AIScript_Iter(battleCtx, jump);
     }
 
+    AI_CONTEXT.attacker = AI_CONTEXT.defender;
     AI_CONTEXT.defender = defenderTmp;
 }
 
