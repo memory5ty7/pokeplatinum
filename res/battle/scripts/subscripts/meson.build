@@ -318,4 +318,5 @@ subscript_files = files(
     'subscript_raise_atk_on_hit.s',
     'subscript_switching_items.s',
     'subscript_raise_atk_sp_atk_on_hit.s',
+    'subscript_emergency_exit.s',
 )

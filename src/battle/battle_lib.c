@@ -4950,6 +4950,37 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             result = TRUE;
         }
         break;
+
+    case ABILITY_EMERGENCY_EXIT:
+        if (DEFENDING_MON.curHP < (s32)DEFENDING_MON.maxHP / 2
+        && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+        && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+        && DEFENDING_MON.curHP > 0
+        && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
+        && (battleCtx->multiHitCounter <= 1)
+        && (
+            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2) ||
+            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2)
+        )) {
+            /*
+            battleCtx->moveCur = MOVE_U_TURN;
+            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+            battleCtx->sideEffectMon = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+
+            *subscript = subscript_force_target_to_switch_or_flee;
+            */
+            u32 temp = battleCtx->attacker;
+            battleCtx->attacker = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+            battleCtx->defender = temp;
+            battleCtx->moveCur = MOVE_U_TURN;
+            *subscript = subscript_emergency_exit;
+
+            result = TRUE;
+        }
     }
 
     return result;
@@ -9445,7 +9476,12 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
 
         if (monSpecies != SPECIES_NONE
             && monSpecies != SPECIES_EGG
-            && Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)) {
+            && Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)
+            && (battlersDisregarded & FlagIndex(i)) == FALSE
+            && battleCtx->selectedPartySlot[slot1] != i
+            && battleCtx->selectedPartySlot[slot2] != i
+            && i != battleCtx->aiSwitchedPartySlot[slot1]
+            && i != battleCtx->aiSwitchedPartySlot[slot2]) {
 
             if (BattleSystem_PostKOCompareSpeed(battleSys, battleCtx, mon, defender, TRUE) != COMPARE_SPEED_SLOWER) {
                 faster = TRUE;
@@ -9501,7 +9537,9 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                 maxScore = score;
                 picked = i;
             }
-        }
+        } else [
+            battlersDisregarded |= FlagIndex(i);
+        ]
     }
     /*
     for (i = 0; i < partySize; i++) {
