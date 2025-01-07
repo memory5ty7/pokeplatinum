@@ -3742,6 +3742,7 @@ enum {
     AFTER_MOVE_EFFECT_TRIGGER_ITEMS_ON_HIT,
     AFTER_MOVE_EFFECT_THAW_DEFENDER,
     AFTER_MOVE_EFFECT_HELD_ITEM_STATUS,
+    AFTER_MOVE_EFFECT_EMERGENCY_EXIT,
 
     AFTER_MOVE_EFFECT_END
 };
@@ -3862,15 +3863,42 @@ static void BattleController_AfterMoveEffects(BattleSystem *battleSys, BattleCon
                 battleCtx->commandNext = battleCtx->command;
                 battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
 
-                result = TRUE;
-                break;
+                return;
             }
         }
 
-        if (result == FALSE) {
-            battleCtx->afterMoveEffectState++;
-            battleCtx->afterMoveEffectTemp = 0;
+    
+    case AFTER_MOVE_EFFECT_EMERGENCY_EXIT:
+        battleCtx->afterMoveEffectState++;
+        if (DEFENDING_MON.ability == ABILITY_EMERGENCY_EXIT
+        && DEFENDING_MON.curHP < (s32)DEFENDING_MON.maxHP / 2
+        && DEFENDING_MON.curHP > 0
+        && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
+        && (
+            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2) ||
+            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2)
+        )) {
+            /*
+            battleCtx->moveCur = MOVE_U_TURN;
+            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+            battleCtx->sideEffectMon = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+
+            *subscript = subscript_force_target_to_switch_or_flee;
+            */
+            u32 temp = battleCtx->attacker;
+            battleCtx->attacker = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+            battleCtx->defender = temp;
+            battleCtx->moveCur = MOVE_U_TURN;
+            LOAD_SUBSEQ(subscript_emergency_exit);
+            battleCtx->commandNext = battleCtx->command;
+            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+            return;
         }
+
         break;
 
     default:

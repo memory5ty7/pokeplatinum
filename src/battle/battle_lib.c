@@ -4950,37 +4950,6 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             result = TRUE;
         }
         break;
-
-    case ABILITY_EMERGENCY_EXIT:
-        if (DEFENDING_MON.curHP < (s32)DEFENDING_MON.maxHP / 2
-        && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-        && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-        && DEFENDING_MON.curHP > 0
-        && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
-        && (battleCtx->multiHitCounter <= 1)
-        && (
-            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2) ||
-            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2)
-        )) {
-            /*
-            battleCtx->moveCur = MOVE_U_TURN;
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->defender;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            *subscript = subscript_force_target_to_switch_or_flee;
-            */
-            u32 temp = battleCtx->attacker;
-            battleCtx->attacker = battleCtx->defender;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-            battleCtx->defender = temp;
-            battleCtx->moveCur = MOVE_U_TURN;
-            *subscript = subscript_emergency_exit;
-
-            result = TRUE;
-        }
     }
 
     return result;
@@ -6092,16 +6061,16 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
         break;
 
     case HOLD_EFFECT_ABSORB_BULB: // Absorb Bulb
-            if ((battleCtx->battleMons[battleCtx->defender].curHP)
-                && (battleCtx->aiContext.moveTable[battleCtx->moveCur].type == TYPE_WATER)
-                && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
-                    || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
-                && ((battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_SPECIAL_ATTACK] < 12))) {
-                battleCtx->sideEffectMon = battleCtx->defender;
-                *subscript = subscript_raise_sp_atk_on_hit;
-                result = TRUE;
-            }
-            break;
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && (battleCtx->aiContext.moveTable[battleCtx->moveCur].type == TYPE_WATER)
+            && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
+                || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
+            && (battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_SPECIAL_ATTACK] < 12)) {
+            battleCtx->sideEffectMon = battleCtx->defender;
+            *subscript = subscript_raise_sp_atk_on_hit;
+            result = TRUE;
+        }
+        break;
 
     case HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT: // Air Balloon
         if ((DEFENDING_MON.curHP)
@@ -6112,61 +6081,61 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
         }
         break;
     case HOLD_EFFECT_CELL_BATTERY: // Cell Battery
-            if ((battleCtx->battleMons[battleCtx->defender].curHP)
-                && (battleCtx->aiContext.moveTable[battleCtx->moveCur].type == TYPE_ELECTRIC)
-                && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
-                    || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
-                && ((battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_ATTACK] < 12))) {
-                battleCtx->sideEffectMon = battleCtx->defender;
-                *subscript = subscript_raise_atk_on_hit;
-                result = TRUE;
-            }
-            break;
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && (battleCtx->aiContext.moveTable[battleCtx->moveCur].type == TYPE_ELECTRIC)
+            && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
+                || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
+            && (battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_ATTACK] < 12)) {
+            battleCtx->sideEffectMon = battleCtx->defender;
+            *subscript = subscript_raise_atk_on_hit;
+            result = TRUE;
+        }
+        break;
 
     case HOLD_EFFECT_EJECT_BUTTON: // Eject Button
-            if ((battleCtx->battleMons[battleCtx->defender].curHP)
-                && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
-                    || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
-                && (battleCtx->multiHitCounter <= 1)) {
-                u32 temp = battleCtx->attacker;
-                battleCtx->attacker = battleCtx->defender;
-                battleCtx->msgBattlerTemp = battleCtx->defender;
-                battleCtx->defender = temp;
-                battleCtx->moveCur = MOVE_U_TURN;
-                *subscript = subscript_switching_items;
-                result = TRUE;
-            }
-            break;
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
+                || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
+            && (battleCtx->multiHitCounter <= 1)) {
+            u32 temp = battleCtx->attacker;
+            battleCtx->attacker = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+            battleCtx->defender = temp;
+            battleCtx->moveCur = MOVE_U_TURN;
+            *subscript = subscript_switching_items;
+            result = TRUE;
+        }
+        break;
 
     case HOLD_EFFECT_RED_CARD: // Red Card
-            if ((battleCtx->battleMons[battleCtx->defender].curHP)
-                && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
-                    || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
-                && (battleCtx->multiHitCounter <= 1)) {
-                u32 temp = battleCtx->attacker;
-                battleCtx->attacker = battleCtx->defender;
-                battleCtx->msgBattlerTemp = battleCtx->defender;
-                battleCtx->defender = temp;
-                *subscript = subscript_switching_items;
-                result = TRUE;
-            }
-            break;
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
+                || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
+            && (battleCtx->multiHitCounter <= 1)) {
+            u32 temp = battleCtx->attacker;
+            battleCtx->attacker = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+            battleCtx->defender = temp;
+            *subscript = subscript_switching_items;
+            result = TRUE;
+        }
+        break;
 
     case HOLD_EFFECT_PUNCHING_GLOVE: // Punching Glove
         break;
 
     case HOLD_EFFECT_WEAKNESS_POLICY: // Weakness Policy
-            if ((battleCtx->battleMons[battleCtx->defender].curHP)
-                && (battleCtx->moveStatusFlags & MOVE_STATUS_SUPER_EFFECTIVE)
-                && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
-                    || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
-                && ((battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_SPECIAL_ATTACK] < 12)
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && (battleCtx->moveStatusFlags & MOVE_STATUS_SUPER_EFFECTIVE)
+            && ((battleCtx->selfTurnFlags[battleCtx->defender].physicalDamageTaken)
+                || (battleCtx->selfTurnFlags[battleCtx->defender].specialDamageTaken))
+            && ((battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_SPECIAL_ATTACK] < 12)
                 || (battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_ATTACK] < 12))) {
-                battleCtx->sideEffectMon = battleCtx->defender;
-                *subscript = subscript_raise_atk_sp_atk_on_hit;
-                result = TRUE;
-            }
-            break;
+            battleCtx->sideEffectMon = battleCtx->defender;
+            *subscript = subscript_raise_atk_sp_atk_on_hit;
+            result = TRUE;
+        }
+        break;
 
     default:
         break;
@@ -9487,12 +9456,10 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                 faster = TRUE;
             }
 
-            
             for (j = 0; j < LEARNED_MOVES_MAX; j++) {
                 move = Pokemon_GetValue(mon, MON_DATA_MOVE1 + j, NULL);
 
-                if (move && MOVE_DATA(move).power != 1)
-                {
+                if (move && MOVE_DATA(move).power != 1) {
                     damage = PostKOCalcDamage(battleSys, battleCtx, move, mon);
 
                     if (damage >= (s32)BattleMon_Get(battleCtx, defender, BATTLEMON_CUR_HP, NULL)) {
@@ -9500,7 +9467,6 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                     }
                 }
             }
-            
 
             if (faster) {
                 if (kills) {
@@ -9537,9 +9503,9 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                 maxScore = score;
                 picked = i;
             }
-        } else [
+        } else {
             battlersDisregarded |= FlagIndex(i);
-        ]
+        }
     }
     /*
     for (i = 0; i < partySize; i++) {
