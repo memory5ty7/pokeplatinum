@@ -694,6 +694,8 @@
                 "ITEM_DRAGON_GEM",
                 "ITEM_DARK_GEM",
 
+                "ITEM_INFINITE_CANDY",
+
                 "MAX_ITEMS"
             ]
         }

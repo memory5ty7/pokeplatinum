@@ -2029,4 +2029,8 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Dark Gem</language>
 	</row>
+		<row id="pl_msg_00000392_00507" index="507">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Infinite Candy</language>
+	</row>
 </body>

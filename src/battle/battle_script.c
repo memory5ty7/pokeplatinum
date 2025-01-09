@@ -6933,6 +6933,7 @@ static BOOL BtlCmd_TryKnockOff(BattleSystem *battleSys, BattleContext *battleCtx
         battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->defender);
         battleCtx->msgBuffer.params[1] = DEFENDING_MON.ability;
         battleCtx->msgBuffer.params[2] = battleCtx->moveCur;
+        battleCtx->movePower = CURRENT_MOVE_DATA.power * 150 / 100;
     } else if (DEFENDING_MON.heldItem) {
         battleCtx->msgBuffer.id = 552; // "{0} knocked off {1}'s {2}!"
         battleCtx->msgBuffer.tags = TAG_NICKNAME_NICKNAME_ITEM;
@@ -6942,6 +6943,7 @@ static BOOL BtlCmd_TryKnockOff(BattleSystem *battleSys, BattleContext *battleCtx
 
         DEFENDING_MON.heldItem = ITEM_NONE;
         battleCtx->sideConditions[defending].knockedOffItemsMask |= FlagIndex(battleCtx->selectedPartySlot[battleCtx->defender]);
+        battleCtx->movePower = CURRENT_MOVE_DATA.power * 150 / 100;
     } else {
         BattleScript_Iter(battleCtx, jumpOnFail);
     }

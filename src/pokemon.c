@@ -58,6 +58,7 @@
 #include "unk_02028124.h"
 #include "unk_0202C9F4.h"
 #include "unk_02092494.h"
+#include "vars_flags.h"
 
 #define FATEFUL_ENCOUNTER_LOCATION 3002
 
@@ -3209,6 +3210,20 @@ BoxPokemon *Pokemon_GetBoxPokemon(Pokemon *mon)
     return &mon->box;
 }
 
+u8 getLevelCap()
+{
+    BOOL capActivated = getVar(16429) & 1;
+
+    u8 levelCap = getVar(16422);
+
+
+    if (capActivated) {
+        return levelCap;
+    }
+    
+    return 100;
+}
+
 BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
 {
     u16 monSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
@@ -3224,7 +3239,7 @@ BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
     }
 
     // TODO const value?
-    if (monNextLevel > 100) {
+    if (monNextLevel > getLevelCap()) {
         return FALSE;
     }
 

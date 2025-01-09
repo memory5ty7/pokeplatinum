@@ -2133,17 +2133,17 @@ static int sub_0206132C(u16 pad)
     return -1;
 }
 
-static int sub_02061348(PlayerAvatar *playerAvatar, u16 param1, u16 param2)
+static int sub_02061348(PlayerAvatar *playerAvatar, u16 pressedKeys, u16 heldKeys)
 {
-    int v0 = sub_02061310(param2);
-    int v1 = sub_0206132C(param2);
+    int horizontalDir = sub_02061310(heldKeys);
+    int verticalDir = sub_0206132C(heldKeys);
 
-    if (v0 == -1) {
-        return v1;
+    if (horizontalDir == -1) {
+        return verticalDir;
     }
 
-    if (v1 == -1) {
-        return v0;
+    if (verticalDir == -1) {
+        return horizontalDir;
     }
 
     {
@@ -2152,18 +2152,18 @@ static int sub_02061348(PlayerAvatar *playerAvatar, u16 param1, u16 param2)
         int v4 = sub_0205EBE8(playerAvatar);
 
         if (dir != -1) {
-            if ((v0 == v3) && (v1 == v4)) {
+            if ((horizontalDir == v3) && (verticalDir == v4)) {
                 return dir;
             }
 
-            if (v1 != v4) {
-                return v1;
+            if (verticalDir != v4) {
+                return verticalDir;
             }
 
-            return v0;
+            return horizontalDir;
         }
 
-        return v1;
+        return verticalDir;
     }
 
     return -1;

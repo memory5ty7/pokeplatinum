@@ -7,6 +7,7 @@
 #include "constants/items.h"
 #include "constants/savedata/save_table.h"
 #include "consts/items.h"
+#include "constants/moves.h"
 
 #include "struct_decls/struct_0207CB08_decl.h"
 
@@ -145,7 +146,7 @@ BOOL Bag_TryAddItem(Bag *bag, u16 item, u16 count, enum HeapId heapID)
     if (slot == NULL) {
         return FALSE;
     }
-
+    
     slot->item = item;
     slot->quantity += count;
 
@@ -181,7 +182,7 @@ static BagItem *Bag_FindSlotWithItemQuantity(Bag *bag, u16 item, u16 count, enum
 BOOL Bag_TryRemoveItem(Bag *bag, u16 item, u16 count, enum HeapId heapID)
 {
     BagItem *slot = Bag_FindSlotWithItemQuantity(bag, item, count, heapID);
-    if (slot == NULL) {
+    if (slot == NULL || item == ITEM_INFINITE_CANDY || Item_MoveForTMHM(item) != MOVE_NONE) {
         return FALSE;
     }
 

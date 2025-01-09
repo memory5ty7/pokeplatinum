@@ -379,7 +379,7 @@ BOOL ov6_0224106C(FieldSystem *fieldSystem, const int fishingRodType, FieldBattl
 {
     UnkStruct_ov6_0224222C v3[MAX_GRASS_ENCOUNTERS];
 
-    u8 encounterRate = GetFishingEncounterRate(fieldSystem, fishingRodType);
+    u8 encounterRate = 100;
 
     if (encounterRate == 0) {
         return FALSE;
@@ -389,7 +389,7 @@ BOOL ov6_0224106C(FieldSystem *fieldSystem, const int fishingRodType, FieldBattl
     Pokemon *firstPartyMon = Party_GetPokemonBySlotIndex(party, 0);
     WildEncounters_FieldParams encounterFieldParams;
     ov6_02242634(fieldSystem, firstPartyMon, NULL, &encounterFieldParams);
-    encounterRate = ov6_0224226C(TRUE, encounterRate, &encounterFieldParams, FieldOverworldState_GetWeather(SaveData_GetFieldOverworldState(fieldSystem->saveData)), firstPartyMon);
+    encounterRate = 100;
 
     if (inline_020564D0(100) >= encounterRate) {
         return FALSE;
@@ -1337,7 +1337,7 @@ static u8 ov6_0224226C(const BOOL isFishingEncounter, const u8 param1, const Wil
     if (!encounterFieldParams->isFirstMonEgg) {
         if (isFishingEncounter) {
             if (encounterFieldParams->firstMonAbility == ABILITY_STICKY_HOLD || encounterFieldParams->firstMonAbility == ABILITY_SUCTION_CUPS) {
-                v0 * 2; // BUG: Abilities do not Increase Fishing Encounter Rate (see docs/bugs_and_glitches.md)
+                v0 *= 2;
             }
         } else {
             if (encounterFieldParams->firstMonAbility == ABILITY_ARENA_TRAP || encounterFieldParams->firstMonAbility == ABILITY_NO_GUARD || encounterFieldParams->firstMonAbility == ABILITY_ILLUMINATE) {

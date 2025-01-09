@@ -111,6 +111,7 @@ static void FieldInput_Clear(FieldInput *input)
     input->dummy3 = FALSE;
     input->dummy4 = FALSE;
     input->dummy5 = FALSE;
+    input->LR = FALSE;
     input->playerDir = DIR_NONE;
     input->transitionDir = DIR_NONE;
 }
@@ -129,6 +130,14 @@ void FieldInput_Update(FieldInput *input, FieldSystem *fieldSystem, u16 pressedK
     if (moveState == PLAYER_MOVE_STATE_END || moveState == PLAYER_MOVE_STATE_NONE) {
         if (pressedKeys & PAD_BUTTON_X) {
             input->menu = TRUE;
+        }
+
+        if (pressedKeys & PAD_BUTTON_L) {
+            input->LR = TRUE;
+        }
+
+        if (pressedKeys & PAD_BUTTON_R) {
+            input->LR = TRUE;
         }
 
         if (pressedKeys & PAD_BUTTON_Y) {
@@ -330,6 +339,10 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
 
     if (input->registeredItem && sub_02069238(fieldSystem) == TRUE) {
         return TRUE;
+    }
+
+    if (input->LR) {
+        ScriptManager_Set(fieldSystem, 2028, NULL);
     }
 
     if (input->menu && sub_0203A9C8(fieldSystem) == TRUE) {

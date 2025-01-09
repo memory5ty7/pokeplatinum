@@ -3934,6 +3934,18 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         subscript = subscript_ability_restores_hp;
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_LIGHTNING_ROD) == TRUE) {
+        if((moveType == TYPE_ELECTRIC) && (attacker != defender)) {
+            subscript = subscript_handle_lightning_rod_raise_spatk;
+        }
+    }
+
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_STORM_DRAIN) == TRUE) {
+        if((moveType == TYPE_WATER) && (attacker != defender)) {
+            subscript = subscript_handle_lightning_rod_raise_spatk;
+        }
+    }
+
     return subscript;
 }
 
@@ -9069,7 +9081,7 @@ static BOOL MoveIsOnDamagingTurn(BattleContext *battleCtx, int move)
     case BATTLE_EFFECT_DIVE:
     case BATTLE_EFFECT_DIG:
     case BATTLE_EFFECT_BOUNCE:
-    case BATTLE_EFFECT_FLINCH_BURN_HIT: // BUG: Fire Fang Always Bypasses Wonder Guard (see docs/bugs_and_glitches.md)
+    case BATTLE_EFFECT_SHADOW_FORCE:
         return battleCtx->battleStatusMask & SYSCTL_LAST_OF_MULTI_TURN;
         break;
     }
@@ -9402,7 +9414,7 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
     u16 move;
     int moveType;
     u8 battlersDisregarded;
-    s32 score, maxScore; // BUG: Post-KO Switch-In AI Scoring Overflow (see docs/bugs_and_glitches.md)
+    u32 score, maxScore;
     u8 picked = 6;
     u8 slot1, slot2;
     u32 moveStatusFlags;
