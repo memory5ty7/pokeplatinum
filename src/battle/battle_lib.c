@@ -4156,8 +4156,8 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     subscript = subscript_overworld_hail;
                     battleCtx->sideConditionsMask[1] += SIDE_CONDITION_REFLECT;
                     battleCtx->sideConditionsMask[1] += SIDE_CONDITION_LIGHT_SCREEN;
-                    battleCtx->sideConditions[1].reflectTurns = 5;
-                    battleCtx->sideConditions[1].lightScreenTurns = 5;
+                    battleCtx->sideConditions[1].reflectTurns = 9;
+                    battleCtx->sideConditions[1].lightScreenTurns = 9;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 case 49: // Shadow Tag

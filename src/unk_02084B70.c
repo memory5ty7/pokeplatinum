@@ -31,22 +31,23 @@
 #include "unk_02082C2C.h"
 #include "unk_02096420.h"
 
-static int sub_02085384(void *param0);
-static int sub_02085424(void *param0);
-static int sub_020855C4(void *param0);
-static int sub_02085704(void *param0);
-static int sub_02085A70(void *param0);
-static int sub_02085C50(void *param0);
-static void sub_02086590(GameWindowLayout *param0, Pokemon *param1, u32 param2);
-static int sub_02086438(void *param0);
-static int sub_0208648C(void *param0);
-static int sub_020864E4(void *param0);
-static int sub_02086538(void *param0);
-static u16 sub_02086930(GameWindowLayout *param0);
-static int sub_02085FB4(void *param0);
-static int sub_02086008(void *param0);
-static int sub_02086060(void *param0);
-static int sub_020860AC(void *param0);
+static int PartyMenu_ItemUseFunc_StatusHealEtc(void *param0);
+static int PartyMenu_ItemUseFunc_EVDown(void *param0);
+static int PartyMenu_ItemUseFunc_HPRestore(void *param0);
+static int PartyMenu_ItemUseFunc_HPRestoreAnimLoop(void *param0);
+static int PartyMenu_ItemUseFunc_LevelUp(void *param0);
+static int PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop(void *param0);
+static void PartyMenu_LearnMoveToSlot(GameWindowLayout *param0, Pokemon *param1, u32 param2);
+static int PartyMenu_ItemUseFunc_TMHMPromptForgetMove(void *param0);
+static int PartyMenu_ItemUseFunc_TMHMAskStopTryingToLearn(void *param0);
+static int PartyMenu_ItemUseFunc_TMHMDidNotLearnMove(void *param0);
+static int PartyMenu_ItemUseFunc_TMHMAskAgainToForget(void *param0);
+static u16 PartyMenu_GetCurrentMapSec(GameWindowLayout *param0);
+static int PartyMenu_ItemUseFunc_LevelUpPromptForgetMove(void *param0);
+static int PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn(void *param0);
+static int PartyMenu_ItemUseFunc_LevelUpDidNotLearnMove(void *param0);
+static int PartyMenu_ItemUseFunc_LevelUpAskAgainToForget(void *param0);
+static u8 nextStateCheck(GameWindowLayout *v0, BOOL mode);
 
 static u8 sub_02084B70(u16 param0)
 {
@@ -353,7 +354,7 @@ static void sub_02084E58(GameWindowLayout *param0, u16 param1, u32 param2)
     }
 }
 
-void sub_020852B8(GameWindowLayout *param0)
+void PartyMenu_SetItemUseFuncFromBagSelection(GameWindowLayout *param0)
 {
     switch (sub_02084B70(param0->unk_5A4->unk_24)) {
     case 0:
@@ -362,7 +363,7 @@ void sub_020852B8(GameWindowLayout *param0)
     case 1:
         break;
     case 2:
-        param0->unk_B00 = sub_02085A70;
+        param0->unk_B00 = PartyMenu_ItemUseFunc_LevelUp;
         break;
     case 3:
     case 4:
@@ -381,7 +382,7 @@ void sub_020852B8(GameWindowLayout *param0)
     case 25:
     case 26:
     case 27:
-        param0->unk_B00 = sub_02085384;
+        param0->unk_B00 = PartyMenu_ItemUseFunc_StatusHealEtc;
         break;
     case 18:
     case 19:
@@ -389,35 +390,35 @@ void sub_020852B8(GameWindowLayout *param0)
     case 21:
     case 22:
     case 23:
-        param0->unk_B00 = sub_02085424;
+        param0->unk_B00 = PartyMenu_ItemUseFunc_EVDown;
         break;
     case 11:
-        param0->unk_B00 = sub_020855C4;
+        param0->unk_B00 = PartyMenu_ItemUseFunc_HPRestore;
         break;
     }
 }
 
-int sub_02085348(void *param0)
+int PartyMenu_ItemUseFunc_WaitTextPrinterThenExit(void *param0)
 {
     GameWindowLayout *v0 = (GameWindowLayout *)param0;
 
     if (Text_IsPrinterActive(v0->unk_B10) != 0) {
-        return 5;
+        return PARTY_MENU_STATE_ITEM_USE_CB;
     }
 
     if (gCoreSys.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
         v0->unk_5A4->unk_23 = 0;
-        return 32;
+        return PARTY_MENU_STATE_BEGIN_EXIT;
     }
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-static int sub_02085384(void *param0)
+static int PartyMenu_ItemUseFunc_StatusHealEtc(void *param0)
 {
     GameWindowLayout *v0 = (GameWindowLayout *)param0;
 
-    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, sub_02086930(v0), 12);
+    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, PartyMenu_GetCurrentMapSec(v0), 12);
     sub_0207EF14(v0, v0->unk_B11);
     sub_020821F8(v0, v0->unk_B11);
     sub_020822BC(v0, v0->unk_B11);
@@ -426,12 +427,12 @@ static int sub_02085384(void *param0)
     sub_02082708(v0, 0xffffffff, 1);
     Sound_PlayEffect(1516);
 
-    v0->unk_B00 = sub_02085348;
+    v0->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-static int sub_02085424(void *param0)
+static int PartyMenu_ItemUseFunc_EVDown(void *param0)
 {
     GameWindowLayout *v0;
     Pokemon *v1;
@@ -448,7 +449,7 @@ static int sub_02085424(void *param0)
     v2[5] = Pokemon_GetValue(v1, MON_DATA_SPDEF_EV, NULL);
     v2[6] = Pokemon_GetValue(v1, MON_DATA_FRIENDSHIP, NULL);
 
-    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, sub_02086930(v0), 12);
+    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, PartyMenu_GetCurrentMapSec(v0), 12);
     sub_0207EF14(v0, v0->unk_B11);
     sub_020821F8(v0, v0->unk_B11);
     sub_020822BC(v0, v0->unk_B11);
@@ -465,12 +466,12 @@ static int sub_02085424(void *param0)
     }
 
     sub_02082708(v0, 0xffffffff, 1);
-    v0->unk_B00 = sub_02085348;
+    v0->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-static int sub_020855C4(void *param0)
+static int PartyMenu_ItemUseFunc_HPRestore(void *param0)
 {
     GameWindowLayout *v0;
     Pokemon *v1;
@@ -480,7 +481,7 @@ static int sub_020855C4(void *param0)
 
     v0 = (GameWindowLayout *)param0;
 
-    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, sub_02086930(v0), 12);
+    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, PartyMenu_GetCurrentMapSec(v0), 12);
 
     v1 = Party_GetPokemonBySlotIndex(v0->unk_5A4->unk_00, v0->unk_B11);
     v3 = Pokemon_GetValue(v1, MON_DATA_CURRENT_HP, NULL);
@@ -507,13 +508,13 @@ static int sub_020855C4(void *param0)
     }
 
     sub_0207F8F8(v0, v0->unk_B11);
-    v0->unk_B00 = sub_02085704;
+    v0->unk_B00 = PartyMenu_ItemUseFunc_HPRestoreAnimLoop;
     Sound_PlayEffect(1516);
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-static int sub_02085704(void *param0)
+static int PartyMenu_ItemUseFunc_HPRestoreAnimLoop(void *param0)
 {
     GameWindowLayout *v0 = (GameWindowLayout *)param0;
     Pokemon *v1;
@@ -533,13 +534,13 @@ static int sub_02085704(void *param0)
 
     if (v0->unk_704[v0->unk_B11].unk_06 == v2) {
         sub_02082708(v0, 0xffffffff, 1);
-        v0->unk_B00 = sub_02085348;
+        v0->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
     }
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-BOOL sub_020857A8(u16 param0)
+BOOL ItemId_IsReviveAll(u16 param0)
 {
     if (Item_LoadParam(param0, 24, 12) != 0) {
         return 1;
@@ -548,7 +549,7 @@ BOOL sub_020857A8(u16 param0)
     return 0;
 }
 
-static u8 sub_020857C0(GameWindowLayout *param0, u8 param1)
+static u8 PartyMenu_SacredAshGetNextMonId(GameWindowLayout *param0, u8 param1)
 {
     u8 v0;
 
@@ -565,7 +566,7 @@ static u8 sub_020857C0(GameWindowLayout *param0, u8 param1)
     return 0xff;
 }
 
-int sub_02085804(GameWindowLayout *param0)
+int PartyMenu_Subtask_SacredAsh(GameWindowLayout *param0)
 {
     Pokemon *v0;
     Strbuf *v1;
@@ -574,16 +575,16 @@ int sub_02085804(GameWindowLayout *param0)
 
     switch (param0->unk_B0E) {
     case 0:
-        param0->unk_B11 = sub_020857C0(param0, 0);
+        param0->unk_B11 = PartyMenu_SacredAshGetNextMonId(param0, 0);
 
         if (param0->unk_B11 == 0xff) {
             MessageLoader_GetStrbuf(param0->unk_69C, 105, param0->unk_6A4);
             sub_02082708(param0, 0xffffffff, 1);
-            param0->unk_B00 = sub_02085348;
+            param0->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
             sub_0208327C(param0, 0, 1);
             param0->unk_B11 = 7;
 
-            return 5;
+            return PARTY_MENU_STATE_ITEM_USE_CB;
         }
 
         if (param0->unk_B11 != 0) {
@@ -592,7 +593,7 @@ int sub_02085804(GameWindowLayout *param0)
     case 1:
 
         v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
-        ApplyItemEffectsToPokemon(v0, param0->unk_5A4->unk_24, 0, sub_02086930(param0), 12);
+        ApplyItemEffectsToPokemon(v0, param0->unk_5A4->unk_24, 0, PartyMenu_GetCurrentMapSec(param0), 12);
 
         v2 = Pokemon_GetValue(v0, MON_DATA_CURRENT_HP, NULL);
         v1 = MessageLoader_GetNewStrbuf(param0->unk_69C, 70);
@@ -635,7 +636,7 @@ int sub_02085804(GameWindowLayout *param0)
         if (gCoreSys.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
             Sound_PlayEffect(1500);
             v3 = param0->unk_B11;
-            param0->unk_B11 = sub_020857C0(param0, param0->unk_B11 + 1);
+            param0->unk_B11 = PartyMenu_SacredAshGetNextMonId(param0, param0->unk_B11 + 1);
 
             if (param0->unk_B11 != 0xff) {
                 Window_EraseMessageBox(&param0->unk_04[34], 0);
@@ -645,16 +646,16 @@ int sub_02085804(GameWindowLayout *param0)
                 Bag_TryRemoveItem(param0->unk_5A4->unk_04, param0->unk_5A4->unk_24, 1, 12);
                 param0->unk_5A4->unk_23 = 0;
                 param0->unk_B11 = 7;
-                return 32;
+                return PARTY_MENU_STATE_BEGIN_EXIT;
             }
         }
         break;
     }
 
-    return 7;
+    return PARTY_MENU_STATE_SACRED_ASH;
 }
 
-static int sub_02085A70(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUp(void *param0)
 {
     GameWindowLayout *v0;
     Pokemon *v1;
@@ -672,7 +673,7 @@ static int sub_02085A70(void *param0)
     v0->unk_B14[4] = (u16)Pokemon_GetValue(v1, MON_DATA_SP_DEF, NULL);
     v0->unk_B14[5] = (u16)Pokemon_GetValue(v1, MON_DATA_SPEED, NULL);
 
-    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, sub_02086930(v0), 12);
+    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, PartyMenu_GetCurrentMapSec(v0), 12);
 
     v0->unk_704[v0->unk_B11].unk_0A = Pokemon_GetValue(v1, MON_DATA_LEVEL, NULL);
     v0->unk_704[v0->unk_B11].unk_06 = Pokemon_GetValue(v1, MON_DATA_CURRENT_HP, NULL);
@@ -695,19 +696,19 @@ static int sub_02085A70(void *param0)
 
     sub_0207F8F8(v0, v0->unk_B11);
 
-    v0->unk_B00 = sub_02085704;
+    v0->unk_B00 = PartyMenu_ItemUseFunc_HPRestoreAnimLoop;
 
     sub_020821F8(v0, v0->unk_B11);
     sub_020822BC(v0, v0->unk_B11);
     sub_02082708(v0, 0xffffffff, 1);
 
-    v0->unk_B00 = sub_02085C50;
+    v0->unk_B00 = PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop;
     v0->unk_B13 = 0;
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-static int sub_02085C50(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop(void *param0)
 {
     GameWindowLayout *v0;
     Pokemon *v1;
@@ -757,11 +758,11 @@ static int sub_02085C50(void *param0)
             Strbuf_Free(v2);
             sub_02082708(v0, 0xffffffff, 0);
 
-            v0->unk_B04.unk_00 = sub_02085FB4;
-            v0->unk_B04.unk_04 = sub_02086008;
-            v0->unk_B0E = 26;
+            v0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_LevelUpPromptForgetMove;
+            v0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn;
+            v0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
 
-            return 24;
+            return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
         case 0xfffe:
             break;
         default:
@@ -788,7 +789,7 @@ static int sub_02085C50(void *param0)
     case 5:
         if (gCoreSys.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
             v1 = Party_GetPokemonBySlotIndex(v0->unk_5A4->unk_00, v0->unk_B11);
-            sub_02086590(v0, v1, v0->unk_5A4->unk_28);
+            PartyMenu_LearnMoveToSlot(v0, v1, v0->unk_5A4->unk_28);
             v2 = MessageLoader_GetNewStrbuf(v0->unk_69C, 61);
 
             StringTemplate_SetMoveName(v0->unk_6A0, 1, v0->unk_5A4->unk_26);
@@ -811,22 +812,64 @@ static int sub_02085C50(void *param0)
 
         if (v0->unk_5A4->unk_38 != 0) {
             v0->unk_5A4->unk_23 = 9;
+            return PARTY_MENU_STATE_BEGIN_EXIT;
         } else {
             v0->unk_5A4->unk_23 = 0;
+            return nextStateCheck(v0, TRUE);
         }
     }
-        return 32;
+        return nextStateCheck(v0, TRUE);
     }
 
-    return 5;
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
-int sub_02085EF4(GameWindowLayout *param0)
+static u8 nextStateCheck(GameWindowLayout *v0, BOOL mode) {
+        if (Bag_GetItemQuantity(v0->unk_5A4->unk_04, v0->unk_5A4->unk_24, 12) == 0) {
+            if (mode == TRUE) {
+                return PARTY_MENU_STATE_BEGIN_EXIT;
+            } else {
+                return PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
+            }
+        } else {
+            Window_EraseMessageBox(&v0->unk_04[34], 0);
+            if ((v0->unk_5A4->unk_20 == 5) || (v0->unk_5A4->unk_20 == 16)) {
+                if (ItemId_IsReviveAll(v0->unk_5A4->unk_24) == 0) {
+                    sub_020826E0(v0, 32, 1);
+                }
+            } else if (v0->unk_5A4->unk_20 == 6) {
+                sub_020826E0(v0, 33, 1);
+            } else if ((v0->unk_5A4->unk_20 == 9) || (v0->unk_5A4->unk_20 == 14)) {
+                sub_020826E0(v0, 31, 1);
+            } else if ((v0->unk_5A4->unk_20 == 7) || (v0->unk_5A4->unk_20 == 8) || (v0->unk_5A4->unk_20 == 11) || (v0->unk_5A4->unk_20 == 12)) {
+                sub_0200D414(v0->unk_5B0[6], 1);
+            } else if ((v0->unk_5A4->unk_20 == 2) || (v0->unk_5A4->unk_20 == 17)) {
+                sub_020826E0(v0, 34, 1);
+            } else if (v0->unk_5A4->unk_20 == 15) {
+                sub_020826E0(v0, 34, 1);
+            } else if (v0->unk_5A4->unk_20 == 22) {
+                sub_020826E0(v0, 34, 1);
+            } else if (v0->unk_5A4->unk_20 == 23) {
+                sub_020826E0(v0, 34, 1);
+            } else if (v0->unk_5A4->unk_20 == 21) {
+                sub_020826E0(v0, 197, 1);
+            } else if (v0->unk_5A4->unk_20 != 10) {
+                sub_020826E0(v0, 29, 1);
+            } else {
+                sub_0200D414(v0->unk_5B0[6], 1);
+            }
+            sub_0207F8F8(v0, v0->unk_B11);
+            v0->unk_B0E = 1;
+            return PARTY_MENU_STATE_USE_ITEM_SELECT_MON;
+        }
+}
+
+int PartyMenu_ItemUseFunc_LevelUpDoLearnMove(GameWindowLayout *param0)
 {
     Pokemon *v0;
     Strbuf *v1;
 
-    param0->unk_B00 = sub_02085C50;
+    param0->unk_B00 = PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop;
     param0->unk_B13 = 3;
 
     v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
@@ -834,7 +877,7 @@ int sub_02085EF4(GameWindowLayout *param0)
 
     if (param0->unk_5A4->unk_28 == 4) {
         StringTemplate_SetMoveName(param0->unk_6A0, 1, param0->unk_5A4->unk_26);
-        return sub_02086008(param0);
+        return PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn(param0);
     }
 
     StringTemplate_SetMoveName(param0->unk_6A0, 1, Pokemon_GetValue(v0, 54 + param0->unk_5A4->unk_28, NULL));
@@ -843,13 +886,13 @@ int sub_02085EF4(GameWindowLayout *param0)
     Strbuf_Free(v1);
     sub_02082708(param0, 0xffffffff, 1);
 
-    param0->unk_B0E = 5;
+    param0->unk_B0E = PARTY_MENU_STATE_ITEM_USE_CB;
     param0->unk_B13 = 5;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_02085FB4(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUpPromptForgetMove(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -861,13 +904,13 @@ static int sub_02085FB4(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 0);
 
-    v0->unk_5A4->unk_23 = 5;
-    v0->unk_B0E = 25;
+    v0->unk_5A4->unk_23 = PARTY_MENU_ACTION_RETURN_5;
+    v0->unk_B0E = PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_02086008(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -879,14 +922,14 @@ static int sub_02086008(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 1);
 
-    v0->unk_B04.unk_00 = sub_02086060;
-    v0->unk_B04.unk_04 = sub_020860AC;
-    v0->unk_B0E = 26;
+    v0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_LevelUpDidNotLearnMove;
+    v0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_LevelUpAskAgainToForget;
+    v0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_02086060(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUpDidNotLearnMove(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -898,13 +941,13 @@ static int sub_02086060(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 0);
 
-    v0->unk_B0E = 5;
+    v0->unk_B0E = PARTY_MENU_STATE_ITEM_USE_CB;
     v0->unk_B13 = 4;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_020860AC(void *param0)
+static int PartyMenu_ItemUseFunc_LevelUpAskAgainToForget(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -916,14 +959,14 @@ static int sub_020860AC(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 0);
 
-    v0->unk_B04.unk_00 = sub_02085FB4;
-    v0->unk_B04.unk_04 = sub_02086008;
-    v0->unk_B0E = 26;
+    v0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_LevelUpPromptForgetMove;
+    v0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn;
+    v0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-u8 sub_02086104(GameWindowLayout *param0, Pokemon *param1)
+u8 PartyMenu_CheckCanLearnTMHMMove(GameWindowLayout *param0, Pokemon *param1)
 {
     u16 v0;
     u8 v1;
@@ -951,14 +994,14 @@ u8 sub_02086104(GameWindowLayout *param0, Pokemon *param1)
     return v1;
 }
 
-int sub_0208615C(GameWindowLayout *param0)
+int PartyMenu_HandleUseTMHMonMon(GameWindowLayout *param0)
 {
     Pokemon *v0;
     Strbuf *v1;
     u32 v2;
 
     v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
-    v2 = sub_02086104(param0, v0);
+    v2 = PartyMenu_CheckCanLearnTMHMMove(param0, v0);
 
     StringTemplate_SetNickname(param0->unk_6A0, 0, Pokemon_GetBoxPokemon(v0));
     StringTemplate_SetMoveName(param0->unk_6A0, 1, param0->unk_5A4->unk_26);
@@ -968,7 +1011,7 @@ int sub_0208615C(GameWindowLayout *param0)
     case 1:
     case 2:
     case 3:
-        sub_02086590(param0, v0, v2);
+        PartyMenu_LearnMoveToSlot(param0, v0, v2);
         v1 = MessageLoader_GetNewStrbuf(param0->unk_69C, 61);
         StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, v1);
         Strbuf_Free(v1);
@@ -990,9 +1033,9 @@ int sub_0208615C(GameWindowLayout *param0)
         Strbuf_Free(v1);
         sub_02082708(param0, 0xffffffff, 1);
 
-        param0->unk_B04.unk_00 = sub_02086438;
-        param0->unk_B04.unk_04 = sub_0208648C;
-        param0->unk_B0E = 26;
+        param0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_TMHMPromptForgetMove;
+        param0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_TMHMAskStopTryingToLearn;
+        param0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
         break;
     case 0xff:
         v1 = MessageLoader_GetNewStrbuf(param0->unk_69C, 62);
@@ -1001,14 +1044,14 @@ int sub_0208615C(GameWindowLayout *param0)
         sub_02082708(param0, 0xffffffff, 1);
 
         param0->unk_5A4->unk_23 = 0;
-        param0->unk_B0E = 25;
+        param0->unk_B0E = nextStateCheck(param0, FALSE);
         break;
     }
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-int sub_020862F8(GameWindowLayout *param0)
+int PartyMenu_ItemUseFunc_TMHMDoLearnMove(GameWindowLayout *param0)
 {
     Pokemon *v0;
     Strbuf *v1;
@@ -1018,7 +1061,7 @@ int sub_020862F8(GameWindowLayout *param0)
 
     if (param0->unk_5A4->unk_28 == 4) {
         StringTemplate_SetMoveName(param0->unk_6A0, 1, param0->unk_5A4->unk_26);
-        return sub_0208648C(param0);
+        return PartyMenu_ItemUseFunc_TMHMAskStopTryingToLearn(param0);
     }
 
     StringTemplate_SetMoveName(param0->unk_6A0, 1, Pokemon_GetValue(v0, 54 + param0->unk_5A4->unk_28, NULL));
@@ -1028,10 +1071,10 @@ int sub_020862F8(GameWindowLayout *param0)
     sub_02082708(param0, 0xffffffff, 1);
 
     param0->unk_B0E = 22;
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-int sub_020863A0(GameWindowLayout *param0)
+int PartyMenu_Subtask_TMHMLearnMove(GameWindowLayout *param0)
 {
     Pokemon *v0;
     Strbuf *v1;
@@ -1039,7 +1082,7 @@ int sub_020863A0(GameWindowLayout *param0)
     if (gCoreSys.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
         v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
 
-        sub_02086590(param0, v0, param0->unk_5A4->unk_28);
+        PartyMenu_LearnMoveToSlot(param0, v0, param0->unk_5A4->unk_28);
         v1 = MessageLoader_GetNewStrbuf(param0->unk_69C, 61);
         StringTemplate_SetMoveName(param0->unk_6A0, 1, param0->unk_5A4->unk_26);
         StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, v1);
@@ -1049,13 +1092,13 @@ int sub_020863A0(GameWindowLayout *param0)
         param0->unk_5A4->unk_23 = 0;
         param0->unk_B0E = 25;
 
-        return 24;
+        return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
     }
 
     return 22;
 }
 
-static int sub_02086438(void *param0)
+static int PartyMenu_ItemUseFunc_TMHMPromptForgetMove(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -1070,10 +1113,10 @@ static int sub_02086438(void *param0)
     v0->unk_5A4->unk_23 = 4;
     v0->unk_B0E = 25;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_0208648C(void *param0)
+static int PartyMenu_ItemUseFunc_TMHMAskStopTryingToLearn(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -1085,14 +1128,14 @@ static int sub_0208648C(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 1);
 
-    v0->unk_B04.unk_00 = sub_020864E4;
-    v0->unk_B04.unk_04 = sub_02086538;
+    v0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_TMHMDidNotLearnMove;
+    v0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_TMHMAskAgainToForget;
     v0->unk_B0E = 26;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_020864E4(void *param0)
+static int PartyMenu_ItemUseFunc_TMHMDidNotLearnMove(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -1104,13 +1147,13 @@ static int sub_020864E4(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 0);
 
-    v0->unk_5A4->unk_23 = 0;
-    v0->unk_B0E = 25;
+    v0->unk_5A4->unk_23 = PARTY_MENU_ACTION_RETURN_0;
+    v0->unk_B0E = nextStateCheck(v0, FALSE);
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static int sub_02086538(void *param0)
+static int PartyMenu_ItemUseFunc_TMHMAskAgainToForget(void *param0)
 {
     GameWindowLayout *v0;
     Strbuf *v1;
@@ -1122,14 +1165,14 @@ static int sub_02086538(void *param0)
     Strbuf_Free(v1);
     sub_02082708(v0, 0xffffffff, 0);
 
-    v0->unk_B04.unk_00 = sub_02086438;
-    v0->unk_B04.unk_04 = sub_0208648C;
-    v0->unk_B0E = 26;
+    v0->unk_B04.unk_00 = PartyMenu_ItemUseFunc_TMHMPromptForgetMove;
+    v0->unk_B04.unk_04 = PartyMenu_ItemUseFunc_TMHMAskStopTryingToLearn;
+    v0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
 
-    return 24;
+    return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }
 
-static void sub_02086590(GameWindowLayout *param0, Pokemon *param1, u32 param2)
+static void PartyMenu_LearnMoveToSlot(GameWindowLayout *param0, Pokemon *param1, u32 param2)
 {
     u32 v0;
 
@@ -1147,11 +1190,11 @@ static void sub_02086590(GameWindowLayout *param0, Pokemon *param1, u32 param2)
             Bag_TryRemoveItem(param0->unk_5A4->unk_04, param0->unk_5A4->unk_24, 1, 12);
         }
 
-        Pokemon_UpdateFriendship(param1, 4, (u16)sub_02086930(param0));
+        Pokemon_UpdateFriendship(param1, 4, (u16)PartyMenu_GetCurrentMapSec(param0));
     }
 }
 
-static u8 sub_02086614(GameWindowLayout *param0, u8 param1)
+static u8 PartyMenu_AddMoveNameToList(GameWindowLayout *param0, u8 param1)
 {
     Pokemon *v0;
     Strbuf *v1;
@@ -1167,14 +1210,14 @@ static u8 sub_02086614(GameWindowLayout *param0, u8 param1)
 
     if (v2 == 0) {
         StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6A8, 0xfffffffd);
-        return 0;
+        return FALSE;
     }
 
     StringList_AddFromStrbuf(param0->unk_6FC, param0->unk_6A8, param1);
-    return 1;
+    return TRUE;
 }
 
-void sub_020866A0(GameWindowLayout *param0, u8 param1)
+void PartyMenu_SelectMoveForPpRestoreOrPpUp(GameWindowLayout *param0, u8 param1)
 {
     MenuTemplate v0;
     u8 v1;
@@ -1187,10 +1230,10 @@ void sub_020866A0(GameWindowLayout *param0, u8 param1)
 
     param0->unk_6FC = StringList_New(4, 12);
 
-    v1 = sub_02086614(param0, 0);
-    v1 += sub_02086614(param0, 1);
-    v1 += sub_02086614(param0, 2);
-    v1 += sub_02086614(param0, 3);
+    v1 = PartyMenu_AddMoveNameToList(param0, 0);
+    v1 += PartyMenu_AddMoveNameToList(param0, 1);
+    v1 += PartyMenu_AddMoveNameToList(param0, 2);
+    v1 += PartyMenu_AddMoveNameToList(param0, 3);
 
     v0.choices = param0->unk_6FC;
     v0.window = &param0->unk_04[36];
@@ -1210,7 +1253,7 @@ void sub_020866A0(GameWindowLayout *param0, u8 param1)
     param0->unk_700 = Menu_NewAndCopyToVRAM(&v0, 8, 0, 0, 12, PAD_BUTTON_B);
 }
 
-int sub_02086774(GameWindowLayout *param0)
+int PartyMenu_Subtask_SelectMove(GameWindowLayout *param0)
 {
     u32 v0 = Menu_ProcessInput(param0->unk_700);
 
@@ -1223,14 +1266,14 @@ int sub_02086774(GameWindowLayout *param0)
         Menu_Free(param0->unk_700, NULL);
         StringList_Free(param0->unk_6FC);
         sub_020826E0(param0, 32, 1);
-        return 4;
+        return PARTY_MENU_STATE_USE_ITEM_SELECT_MON;
     default:
         Window_EraseMessageBox(&param0->unk_04[33], 1);
         Window_EraseStandardFrame(&param0->unk_04[36], 1);
         Menu_Free(param0->unk_700, NULL);
         StringList_Free(param0->unk_6FC);
 
-        if (sub_02096F14(param0->unk_5A4->unk_00, param0->unk_5A4->unk_24, param0->unk_B11, (u8)v0, sub_02086930(param0), 12) == 1) {
+        if (sub_02096F14(param0->unk_5A4->unk_00, param0->unk_5A4->unk_24, param0->unk_B11, (u8)v0, PartyMenu_GetCurrentMapSec(param0), 12) == 1) {
             Pokemon *v1 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
             sub_02084E58(param0, param0->unk_5A4->unk_24, Pokemon_GetValue(v1, MON_DATA_MOVE1 + v0, NULL));
             Bag_TryRemoveItem(param0->unk_5A4->unk_04, param0->unk_5A4->unk_24, 1, 12);
@@ -1244,13 +1287,13 @@ int sub_02086774(GameWindowLayout *param0)
         param0->unk_5A4->unk_23 = 0;
         param0->unk_B0E = 25;
 
-        return 24;
+        return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
     }
 
-    return 6;
+    return PARTY_MENU_STATE_SELECT_MOVE;
 }
 
-void sub_020868B0(GameWindowLayout *param0)
+void PartyMenu_HandleAttachMailFromMailbox(GameWindowLayout *param0)
 {
     Window_EraseMessageBox(&param0->unk_04[32], 1);
 
@@ -1265,10 +1308,10 @@ void sub_020868B0(GameWindowLayout *param0)
     sub_02082708(param0, 0xffffffff, 1);
 
     param0->unk_5A4->unk_23 = 0;
-    param0->unk_B0E = 25;
+    param0->unk_B0E = PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
 }
 
-static u16 sub_02086930(GameWindowLayout *param0)
+static u16 PartyMenu_GetCurrentMapSec(GameWindowLayout *param0)
 {
     FieldSystem *fieldSystem = param0->unk_5A4->unk_1C;
     return (u16)MapHeader_GetMapLabelTextID(fieldSystem->location->mapId);

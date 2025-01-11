@@ -464,7 +464,7 @@ void sub_020823C4(GameWindowLayout *param0, u8 param1)
     sub_02081FFC(param0, param1);
 
     v0 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param1);
-    v1 = sub_02086104(param0, v0);
+    v1 = PartyMenu_CheckCanLearnTMHMMove(param0, v0);
 
     if (v1 == 0xff) {
         sub_02082880(param0, param1, 1);

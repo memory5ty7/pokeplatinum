@@ -202,7 +202,7 @@ BOOL Bag_TryRemoveItem(Bag *bag, u16 item, u16 count, enum HeapId heapID)
 BOOL Pocket_TryRemoveItem(BagItem *pocket, u32 pocketSize, u16 item, u16 count, enum HeapId heapID)
 {
     BagItem *slot = Pocket_FindSlotWithItemQuantity(pocket, pocketSize, item, count);
-    if (slot == NULL) {
+    if (slot == NULL || item == ITEM_INFINITE_CANDY || Item_MoveForTMHM(item) != MOVE_NONE) {
         return FALSE;
     }
 

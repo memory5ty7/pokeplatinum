@@ -1092,4 +1092,6 @@ u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot);
 
 void PokemonEvolutionData_LoadSpecies(int monSpecies, PokemonEvolutionData *monEvolutionData);
 
+u8 getLevelCap();
+
 #endif // POKEPLATINUM_POKEMON_H

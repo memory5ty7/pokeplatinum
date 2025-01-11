@@ -279,7 +279,7 @@ static int sub_0207E0B8(OverlayManager *param0, int *param1)
     sub_02080500(v0, v0->unk_B11, 1);
 
     if ((v0->unk_5A4->unk_20 == 5) || (v0->unk_5A4->unk_20 == 16)) {
-        if (sub_020857A8(v0->unk_5A4->unk_24) == 0) {
+        if (ItemId_IsReviveAll(v0->unk_5A4->unk_24) == 0) {
             sub_020826E0(v0, 32, 1);
         }
     } else if (v0->unk_5A4->unk_20 == 6) {
@@ -318,147 +318,147 @@ static int sub_0207E0B8(OverlayManager *param0, int *param1)
     return 1;
 }
 
-static int sub_0207E2A8(OverlayManager *param0, int *param1)
+static BOOL sub_0207E2A8(OverlayManager *manager, int *pState)
 {
-    GameWindowLayout *v0 = OverlayManager_Data(param0);
+    GameWindowLayout *partyMenu = OverlayManager_Data(manager);
 
-    switch (*param1) {
-    case 0:
-        *param1 = sub_0207E490(v0);
+    switch (*pState) {
+    case PARTY_MENU_STATE_INIT:
+        *pState = sub_0207E490(partyMenu);
         break;
-    case 1:
-        *param1 = sub_0207E518(v0);
+    case PARTY_MENU_STATE_1:
+        *pState = sub_0207E518(partyMenu);
         break;
-    case 2:
-        if (HandleWindowInputEvent(v0, param1) == 1) {
-            *param1 = 1;
+    case PARTY_MENU_STATE_HANDLE_CONTEXT_MENU_INPUT:
+        if (HandleWindowInputEvent(partyMenu, pState) == 1) {
+            *pState = 1;
         }
         break;
-    case 3:
-        *param1 = sub_02084B34(v0);
+    case PARTY_MENU_STATE_3:
+        *pState = sub_02084B34(partyMenu);
         break;
-    case 4:
-        *param1 = sub_0207E5B4(v0);
+    case PARTY_MENU_STATE_USE_ITEM_SELECT_MON:
+        *pState = sub_0207E5B4(partyMenu);
         break;
-    case 5:
-        *param1 = v0->unk_B00(v0);
+    case PARTY_MENU_STATE_ITEM_USE_CB:
+        *pState = partyMenu->unk_B00(partyMenu);
         break;
-    case 6:
-        *param1 = sub_02086774(v0);
+    case PARTY_MENU_STATE_SELECT_MOVE:
+        *pState = PartyMenu_Subtask_SelectMove(partyMenu);
         break;
-    case 7:
-        *param1 = sub_02085804(v0);
+    case PARTY_MENU_STATE_SACRED_ASH:
+        *pState = PartyMenu_Subtask_SacredAsh(partyMenu);
         break;
-    case 8:
-        *param1 = sub_0207E5F4(v0);
+    case PARTY_MENU_STATE_GIVE_ITEM_SELECT_MON:
+        *pState = sub_0207E5F4(partyMenu);
         break;
-    case 9:
-        *param1 = FinalizeMessageProcessing(v0);
+    case PARTY_MENU_STATE_PRINT_ASK_SWITCH_ITEMS:
+        *pState = FinalizeMessageProcessing(partyMenu);
         break;
-    case 10:
-        *param1 = ProcessPokemonItemSwap(v0);
+    case PARTY_MENU_STATE_YESNO_ASK_SWITCH_ITEMS:
+        *pState = ProcessPokemonItemSwap(partyMenu);
         break;
-    case 11:
-        *param1 = HandleMessageCompletion(v0);
+    case PARTY_MENU_STATE_PRINT_ITEM_SWAP_MESSAGE:
+        *pState = HandleMessageCompletion(partyMenu);
         break;
-    case 12:
-        *param1 = ProcessMessageResult(v0);
+    case PARTY_MENU_STATE_PRINT_GIVE_GRISEOUS_ORB_MESSAGE:
+        *pState = ProcessMessageResult(partyMenu);
         break;
-    case 13:
-        *param1 = HandleOverlayCompletion(v0);
+    case PARTY_MENU_STATE_WAIT_GIVE_GRISEOUS_ORB_ANIM:
+        *pState = HandleOverlayCompletion(partyMenu);
         break;
-    case 14:
-        *param1 = UpdatePokemonFormWithItem(v0);
+    case PARTY_MENU_STATE_14:
+        *pState = UpdatePokemonFormWithItem(partyMenu);
         break;
-    case 15:
-        *param1 = sub_0207E634(v0);
+    case PARTY_MENU_STATE_HANDLE_SUBCONTEXT_MENU_INPUT:
+        *pState = sub_0207E634(partyMenu);
         break;
-    case 16:
-        *param1 = ProcessItemApplication(v0);
+    case PARTY_MENU_STATE_GIVE_ITEM_TO_MON:
+        *pState = ProcessItemApplication(partyMenu);
         break;
-    case 17:
-        *param1 = sub_02083658(v0);
+    case PARTY_MENU_STATE_PRINT_TAKE_ITEM_MESSAGE:
+        *pState = sub_02083658(partyMenu);
         break;
-    case 18:
-        *param1 = sub_020836A8(v0);
+    case PARTY_MENU_STATE_PRINT_TAKE_GRISEOUS_ORB_MESSAGE:
+        *pState = sub_020836A8(partyMenu);
         break;
-    case 19:
-        *param1 = sub_020836E4(v0);
+    case PARTY_MENU_STATE_WAIT_TAKE_GRISEOUS_ORB_ANIM:
+        *pState = sub_020836E4(partyMenu);
         break;
-    case 20:
-        *param1 = sub_020839BC(v0);
+    case PARTY_MENU_STATE_AFTER_TAKE_MAIL:
+        *pState = sub_020839BC(partyMenu);
         break;
-    case 21:
-        *param1 = sub_0207E750(v0);
+    case PARTY_MENU_STATE_USE_TMHM:
+        *pState = sub_0207E750(partyMenu);
         break;
-    case 22:
-        *param1 = sub_020863A0(v0);
+    case PARTY_MENU_STATE_TMHM_LEARN_MOVE:
+        *pState = PartyMenu_Subtask_TMHMLearnMove(partyMenu);
         break;
-    case 23:
-        *param1 = sub_020845A8(v0);
+    case PARTY_MENU_STATE_SELECT_MONS_ERROR_MSG_CLOSE:
+        *pState = sub_020845A8(partyMenu);
         break;
-    case 24:
-        *param1 = sub_0207E6C0(v0);
+    case PARTY_MENU_STATE_WAIT_TEXT_PRINTER:
+        *pState = sub_0207E6C0(partyMenu);
         break;
-    case 25:
-        *param1 = sub_0207E6E4(v0);
+    case PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT:
+        *pState = sub_0207E6E4(partyMenu);
         break;
-    case 26:
-        *param1 = sub_0207E708(v0);
+    case PARTY_MENU_STATE_YES_NO_INIT:
+        *pState = sub_0207E708(partyMenu);
         break;
-    case 27:
-        *param1 = sub_0207E714(v0);
+    case PARTY_MENU_STATE_YES_NO_HANDLE_INPUT:
+        *pState = sub_0207E714(partyMenu);
         break;
-    case 28: {
-        u8 v1 = sub_020805E4(v0);
+    case PARTY_MENU_STATE_SELECT_SWITCH_MON: {
+        u8 v1 = sub_020805E4(partyMenu);
 
         if (v1 == 0) {
-            *param1 = 29;
+            *pState = PARTY_MENU_STATE_29;
         } else if (v1 == 3) {
-            *param1 = 1;
+            *pState = PARTY_MENU_STATE_1;
         }
     } break;
-    case 29:
-        if (sub_02083D1C(v0) == 1) {
-            *param1 = 1;
+    case PARTY_MENU_STATE_29:
+        if (sub_02083D1C(partyMenu) == 1) {
+            *pState = 1;
         }
         break;
-    case 30:
-        *param1 = ProcessWindowInput(v0);
+    case PARTY_MENU_STATE_SOFTBOILED:
+        *pState = ProcessWindowInput(partyMenu);
         break;
-    case 31:
-        if (ov118_021D0DBC(v0) == 1) {
-            UnloadOverlay118(v0);
-            *param1 = 25;
+    case PARTY_MENU_STATE_FORM_CHANGE_ANIM:
+        if (ov118_021D0DBC(partyMenu) == 1) {
+            UnloadOverlay118(partyMenu);
+            *pState = PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
         } else {
-            *param1 = 31;
+            *pState = PARTY_MENU_STATE_FORM_CHANGE_ANIM;
         }
         break;
-    case 32:
+    case PARTY_MENU_STATE_BEGIN_EXIT:
         sub_0208C120(1, 12);
-        *param1 = 33;
+        *pState = PARTY_MENU_STATE_WAIT_EXIT_FADE_OUT;
         break;
-    case 33:
+    case PARTY_MENU_STATE_WAIT_EXIT_FADE_OUT:
         if (IsScreenTransitionDone() == 1) {
-            v0->unk_5A4->unk_22 = v0->unk_B11;
-            return 1;
+            partyMenu->unk_5A4->unk_22 = partyMenu->unk_B11;
+            return TRUE;
         }
         break;
     }
 
-    sub_020831B4(v0);
-    sub_02083334(v0);
-    sub_0207FE1C(v0);
-    sub_0200C7EC(v0->unk_5AC);
+    sub_020831B4(partyMenu);
+    sub_02083334(partyMenu);
+    sub_0207FE1C(partyMenu);
+    sub_0200C7EC(partyMenu->unk_5AC);
 
-    return 0;
+    return FALSE;
 }
 
 static int sub_0207E490(GameWindowLayout *param0)
 {
     if (IsScreenTransitionDone() == 1) {
         if ((param0->unk_5A4->unk_20 == 5) || (param0->unk_5A4->unk_20 == 16)) {
-            if (sub_020857A8(param0->unk_5A4->unk_24) == 1) {
+            if (ItemId_IsReviveAll(param0->unk_5A4->unk_24) == 1) {
                 param0->unk_B0E = 0;
                 return 7;
             }
@@ -467,9 +467,9 @@ static int sub_0207E490(GameWindowLayout *param0)
         } else if (param0->unk_5A4->unk_20 == 6) {
             return 21;
         } else if (param0->unk_5A4->unk_20 == 7) {
-            return sub_020862F8(param0);
+            return PartyMenu_ItemUseFunc_TMHMDoLearnMove(param0);
         } else if (param0->unk_5A4->unk_20 == 8) {
-            return sub_02085EF4(param0);
+            return PartyMenu_ItemUseFunc_LevelUpDoLearnMove(param0);
         } else if ((param0->unk_5A4->unk_20 == 11) || (param0->unk_5A4->unk_20 == 12)) {
             return 14;
         } else if (param0->unk_5A4->unk_20 == 9) {
@@ -493,7 +493,7 @@ static int sub_0207E518(GameWindowLayout *param0)
             param0->unk_5A4->unk_23 = 0;
             return 32;
         } else if (param0->unk_5A4->unk_20 == 14) {
-            sub_020868B0(param0);
+            PartyMenu_HandleAttachMailFromMailbox(param0);
             return 24;
         } else if (param0->unk_5A4->unk_20 == 19) {
             return CheckForItemApplication(param0);
@@ -518,19 +518,19 @@ static int sub_0207E518(GameWindowLayout *param0)
     return 1;
 }
 
-static int sub_0207E5B4(GameWindowLayout *param0)
+static int sub_0207E5B4(GameWindowLayout *partyMenu)
 {
-    u8 v0 = HandleSpecialInput(param0);
+    u8 x = HandleSpecialInput(partyMenu);
 
-    if ((v0 == 0) || (v0 == 2)) {
-        sub_0200D414(param0->unk_5B0[6], 1);
-        return ApplyItemEffectOnPokemon(param0);
-    } else if (v0 == 3) {
-        param0->unk_5A4->unk_23 = 0;
-        return 32;
+    if ((x == 0) || (x == 2)) {
+        sub_0200D414(partyMenu->unk_5B0[6], 1);
+        return ApplyItemEffectOnPokemon(partyMenu);
+    } else if (x == 3) {
+        partyMenu->unk_5A4->unk_23 = 0;
+        return PARTY_MENU_STATE_BEGIN_EXIT;
     }
 
-    return 4;
+    return PARTY_MENU_STATE_USE_ITEM_SELECT_MON;
 }
 
 static int sub_0207E5F4(GameWindowLayout *param0)
@@ -623,7 +623,7 @@ static int sub_0207E750(GameWindowLayout *param0)
         sub_0200D414(param0->unk_5B0[6], 1);
 
         if (param0->unk_704[param0->unk_B11].unk_10 != 1) {
-            return sub_0208615C(param0);
+            return PartyMenu_HandleUseTMHMonMon(param0);
         } else {
             sub_02082708(param0, 0xffffffff, 1);
             param0->unk_5A4->unk_23 = 0;
@@ -2560,57 +2560,57 @@ static u8 HandleSpecialInput(GameWindowLayout *param0)
     return v0;
 }
 
-static int ApplyItemEffectOnPokemon(GameWindowLayout *param0)
+static int ApplyItemEffectOnPokemon(GameWindowLayout *partyMenu)
 {
-    ItemData *v0;
+    ItemData *itemData;
 
-    v0 = Item_Load(param0->unk_5A4->unk_24, 0, 12);
+    itemData = Item_Load(partyMenu->unk_5A4->unk_24, 0, 12);
 
-    if ((param0->unk_5A4->unk_24 == 466) && (Pokemon_CanShayminSkyForm(Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11)) == 1)) {
-        param0->unk_5A4->unk_38 = 1;
-        Heap_FreeToHeap(v0);
-        LoadOverlay118(param0);
-        return 31;
+    if ((partyMenu->unk_5A4->unk_24 == ITEM_GRACIDEA) && (Pokemon_CanShayminSkyForm(Party_GetPokemonBySlotIndex(partyMenu->unk_5A4->unk_00, partyMenu->unk_B11)) == TRUE)) {
+        partyMenu->unk_5A4->unk_38 = 1;
+        Heap_FreeToHeap(itemData);
+        LoadOverlay118(partyMenu);
+        return PARTY_MENU_STATE_FORM_CHANGE_ANIM;
     }
 
-    if ((Item_Get(v0, 34) != 0) || (Item_Get(v0, 35) != 0)) {
-        Heap_FreeToHeap(v0);
-        sub_020866A0(param0, 0);
-        return 6;
+    if ((Item_Get(itemData, ITEM_PARAM_PP_UP) != 0) || (Item_Get(itemData, 35) != 0)) {
+        Heap_FreeToHeap(itemData);
+        PartyMenu_SelectMoveForPpRestoreOrPpUp(partyMenu, 0);
+        return PARTY_MENU_STATE_SELECT_MOVE;
     }
 
-    if ((Item_Get(v0, 36) != 0) && (Item_Get(v0, 37) == 0)) {
-        Heap_FreeToHeap(v0);
-        sub_020866A0(param0, 1);
-        return 6;
+    if ((Item_Get(itemData, 36) != 0) && (Item_Get(itemData, 37) == 0)) {
+        Heap_FreeToHeap(itemData);
+        PartyMenu_SelectMoveForPpRestoreOrPpUp(partyMenu, 1);
+        return PARTY_MENU_STATE_SELECT_MOVE;
     }
 
-    if (CheckItemEffectsOnPartyMember(param0->unk_5A4->unk_00, param0->unk_5A4->unk_24, param0->unk_B11, 0, 12) == 1) {
-        Bag_TryRemoveItem(param0->unk_5A4->unk_04, param0->unk_5A4->unk_24, 1, 12);
+    if (CheckItemEffectsOnPartyMember(partyMenu->unk_5A4->unk_00, partyMenu->unk_5A4->unk_24, partyMenu->unk_B11, 0, 12) == 1) {
+        Bag_TryRemoveItem(partyMenu->unk_5A4->unk_04, partyMenu->unk_5A4->unk_24, 1, 12);
 
-        if (Item_Get(v0, 26) != 0) {
-            Pokemon *v1 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
+        if (Item_Get(itemData, ITEM_PARAM_EVOLVE) != 0) {
+            Pokemon *mon = Party_GetPokemonBySlotIndex(partyMenu->unk_5A4->unk_00, partyMenu->unk_B11);
 
-            param0->unk_5A4->unk_38 = sub_02076B94(NULL, v1, 3, param0->unk_5A4->unk_24, &param0->unk_5A4->unk_3C);
-            param0->unk_5A4->unk_23 = 8;
-            Heap_FreeToHeap(v0);
-            return 32;
+            partyMenu->unk_5A4->unk_38 = sub_02076B94(NULL, mon, 3, partyMenu->unk_5A4->unk_24, &partyMenu->unk_5A4->unk_3C);
+            partyMenu->unk_5A4->unk_23 = 8;
+            Heap_FreeToHeap(itemData);
+            return PARTY_MENU_STATE_BEGIN_EXIT;
         }
 
-        if ((Item_IsHerbalMedicine(param0->unk_5A4->unk_24) == 1) && (param0->unk_5A4->unk_10 != NULL)) {
-            Pokemon *v2 = Party_GetPokemonBySlotIndex(param0->unk_5A4->unk_00, param0->unk_B11);
-            sub_0206D90C(param0->unk_5A4->unk_10, v2, param0->unk_5A4->unk_24);
+        if ((Item_IsHerbalMedicine(partyMenu->unk_5A4->unk_24) == 1) && (partyMenu->unk_5A4->unk_10 != NULL)) {
+            Pokemon *v2 = Party_GetPokemonBySlotIndex(partyMenu->unk_5A4->unk_00, partyMenu->unk_B11);
+            sub_0206D90C(partyMenu->unk_5A4->unk_10, v2, partyMenu->unk_5A4->unk_24);
         }
 
-        sub_020852B8(param0);
+        PartyMenu_SetItemUseFuncFromBagSelection(partyMenu);
     } else {
-        sub_02082708(param0, 105, 1);
-        param0->unk_B11 = 7;
-        param0->unk_B00 = sub_02085348;
+        sub_02082708(partyMenu, 105, 1);
+        partyMenu->unk_B11 = PARTY_MON_SELECTION_CONFIRM;
+        partyMenu->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
     }
 
-    Heap_FreeToHeap(v0);
-    return 5;
+    Heap_FreeToHeap(itemData);
+    return PARTY_MENU_STATE_ITEM_USE_CB;
 }
 
 static u8 CheckItemUsageValidity(GameWindowLayout *param0)

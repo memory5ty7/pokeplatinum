@@ -67,3 +67,8 @@ u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID)
     GF_ASSERT(varID - VARS_START < NUM_VARS);
     return &varsFlags->vars[varID - VARS_START];
 }
+
+u8 getVar(u16 varID) {
+
+    return *VarsFlags_GetVarAddress(SaveData_GetVarsFlags(SaveData_Init()), varID);
+}
