@@ -190,7 +190,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
     Trainer_LoadParty(dto->trainerIDs[battler], buf);
 
-    u8 partySize = dto->trainerData[battler].partySize;
+    u8 partySize = dto->trainer[battler].partySize;
 
     u16 offset = 0;
     Pokemon *party[partySize];
@@ -218,14 +218,14 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         species = (species & 0x03FF);
 
         u16 item;
-        if (dto->trainerData[battler].type == TRDATATYPE_WITH_ITEM || dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].type == TRDATATYPE_WITH_ITEM || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             item = buf[offset]
                 | (buf[offset + 1] << 8);
             buf += 2;
         }
 
         u16 moves[4];
-        if (dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES || dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].type == TRDATATYPE_WITH_MOVES || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             for (j = 0; j < 4; j++) {
                 moves[j] = buf[offset]
                     | (buf[offset + 1] << 8);
@@ -244,11 +244,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         Pokemon_SetValue(party[i], MON_DATA_FORM, &form);
         Pokemon_SetValue(party[i], MON_DATA_ABILITY, &ability);
 
-        if (dto->trainerData[battler].type == TRDATATYPE_WITH_ITEM || dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].type == TRDATATYPE_WITH_ITEM || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             Pokemon_SetValue(party[i], MON_DATA_HELD_ITEM, &item);
         }
 
-        if (dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES || dto->trainerData[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].type == TRDATATYPE_WITH_MOVES || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             for (j = 0; j < 4; j++) {
                 Pokemon_SetMoveSlot(party[i], moves[j], j);
             }
