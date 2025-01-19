@@ -4474,6 +4474,8 @@ static BOOL BattleController_CheckBattleOver(BattleSystem *battleSys, BattleCont
         case TRAINER_CLASS_COMMANDER_SATURN:
         case TRAINER_CLASS_GALACTIC_GRUNT_MALE:
         case TRAINER_CLASS_GALACTIC_GRUNT_FEMALE:
+        case TRAINER_CLASS_GALACTIC_MANAGER_MALE:
+        case TRAINER_CLASS_GALACTIC_MANAGER_FEMALE:
             Sound_PlayBGM(SEQ_VICTORY_GALACTIC_GRUNT);
             break;
 

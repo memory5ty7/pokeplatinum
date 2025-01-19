@@ -408,7 +408,7 @@ int PartyMenu_ItemUseFunc_WaitTextPrinterThenExit(void *param0)
 
     if (gCoreSys.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
         v0->unk_5A4->unk_23 = 0;
-        return PARTY_MENU_STATE_BEGIN_EXIT;
+        return nextStateCheck(v0, TRUE);
     }
 
     return PARTY_MENU_STATE_ITEM_USE_CB;
@@ -1044,7 +1044,7 @@ int PartyMenu_HandleUseTMHMonMon(GameWindowLayout *param0)
         sub_02082708(param0, 0xffffffff, 1);
 
         param0->unk_5A4->unk_23 = 0;
-        param0->unk_B0E = nextStateCheck(param0, FALSE);
+        param0->unk_B0E = PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
         break;
     }
 
@@ -1148,7 +1148,7 @@ static int PartyMenu_ItemUseFunc_TMHMDidNotLearnMove(void *param0)
     sub_02082708(v0, 0xffffffff, 0);
 
     v0->unk_5A4->unk_23 = PARTY_MENU_ACTION_RETURN_0;
-    v0->unk_B0E = nextStateCheck(v0, FALSE);
+    v0->unk_B0E = PARTY_MENU_STATE_AFTER_MESSAGE_BEGIN_EXIT;
 
     return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
 }

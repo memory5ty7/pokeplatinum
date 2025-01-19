@@ -2605,7 +2605,7 @@ static int ApplyItemEffectOnPokemon(GameWindowLayout *partyMenu)
         PartyMenu_SetItemUseFuncFromBagSelection(partyMenu);
     } else {
         sub_02082708(partyMenu, 105, 1);
-        partyMenu->unk_B11 = PARTY_MON_SELECTION_CONFIRM;
+        //partyMenu->unk_B11 = PARTY_MON_SELECTION_CONFIRM;
         partyMenu->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
     }
 

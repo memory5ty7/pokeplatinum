@@ -264,6 +264,8 @@ static u32 EncEffects_TrainerClassEffect(u32 trainerClass)
         break;
     case TRAINER_CLASS_GALACTIC_GRUNT_MALE:
     case TRAINER_CLASS_GALACTIC_GRUNT_FEMALE:
+    case TRAINER_CLASS_GALACTIC_MANAGER_MALE:
+    case TRAINER_CLASS_GALACTIC_MANAGER_FEMALE:
         result = ENCEFF_GALACTIC_GRUNT;
         break;
     case TRAINER_CLASS_TOWER_TYCOON:

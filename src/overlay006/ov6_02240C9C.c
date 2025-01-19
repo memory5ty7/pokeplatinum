@@ -178,6 +178,7 @@ static const UnkStruct_ov6_02248FF0 WildEncounters_UnownTables[] = {
 
 void WildEncounters_ReplaceTimedEncounters(const WildEncounters *encounterData, int *timedSlot1, int *timedSlot2)
 {
+    /*
     int timeOfDay = GetTimeOfDay();
 
     if (timeOfDay == TOD_DAY || timeOfDay == TOD_TWILIGHT) {
@@ -187,10 +188,12 @@ void WildEncounters_ReplaceTimedEncounters(const WildEncounters *encounterData, 
         *timedSlot1 = encounterData->nightEncounters[0];
         *timedSlot2 = encounterData->nightEncounters[1];
     }
+    */
 }
 
 static void WildEncounters_ReplaceRadarEncounters(FieldSystem *fieldSystem, const WildEncounters *encounterData, int *radarSlot1, int *radarSlot2)
 {
+    /*
     UnkStruct_0202D7B0 *v1 = sub_0202D834(fieldSystem->saveData);
 
     if (sub_0202D898(v1)) {
@@ -201,10 +204,12 @@ static void WildEncounters_ReplaceRadarEncounters(FieldSystem *fieldSystem, cons
             *radarSlot2 = encounterData->swarmEncounters[1];
         }
     }
+    */
 }
 
 static void WildEncounters_ReplaceTrophyGardenEncounters(FieldSystem *fieldSystem, const BOOL nationalDexObtained, int *trophySlot1, int *trophySlot2)
 {
+    /*
     if (MapHeader_IsTrophyGarden(fieldSystem->location->mapId)) {
         u16 v1, v2;
         sub_0202DA10(fieldSystem->saveData, &v1, &v2);
@@ -223,6 +228,7 @@ static void WildEncounters_ReplaceTrophyGardenEncounters(FieldSystem *fieldSyste
             Heap_FreeToHeap(v0);
         }
     }
+    */
 }
 
 BOOL ov6_02240D5C(FieldSystem *fieldSystem)
