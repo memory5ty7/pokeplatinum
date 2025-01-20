@@ -16,7 +16,7 @@
             "item": null,
             "moves": [
                 "MOVE_TACKLE",
-                "MOVE_WHITHDRAW"
+                "MOVE_WITHDRAW"
             ],
             "power": 0,
             "ball_seal": 0

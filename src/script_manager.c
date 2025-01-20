@@ -8,7 +8,7 @@
 
 #include "data/field/hidden_items.h"
 #include "field/field_system.h"
-#include "field/scripts/scr_seq.naix"
+#include "data/script_order.h"
 
 #include "field_menu.h"
 #include "field_task.h"

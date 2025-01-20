@@ -185,7 +185,7 @@ abbe7036e7117af7f4fd397cd3619b83f5e1d321 *res/battle/scripts/waza_seq.narc
 e3bb819c8dbab8a8db5e4ddccc788b234424e605 *res/prebuilt/wazaeffect/effectclact/wepltt.narc
 42e2b71655a74d6e5bffb9ec75a25df930b20c59 *res/battle/moves/pl_waza_tbl.narc
 20a2a364629e4eb897f3cf443e15e65b7f1ac957 *res/prebuilt/poketool/waza/waza_tbl.narc
-9f4d3587b7032f4f673ccc1b8971685b2199396b *res/field/scripts/scr_seq.narc
+9f4d3587b7032f4f673ccc1b8971685b2199396b *res/prebuilt/fielddata/script/scr_seq.narc
 86e4a1030a0f3939eff107e94023140dd91acf6a *res/prebuilt/graphic/bag_gra.narc
 1c6bab5b5b8295bb3e6b8b6a271a7ca20c1ae177 *res/prebuilt/graphic/box.narc
 cf140701a40be4f23bb24fb17145b1a176ceabcd *res/prebuilt/graphic/btower.narc
@@ -255,7 +255,7 @@ a2eca9df316b9cad191ace16d08a90603966e892 *res/prebuilt/graphic/worldtrade.narc
 70d483c69d9f83dc52de91f2451c6cdfba6a046c *res/prebuilt/data/mmodel/fldeff.narc
 5de52d02105237dc02fb4c87c9b8378a5da93217 *res/prebuilt/wazaeffect/effectdata/ball_particle.narc
 bd80949f0ab84fe4b4963a41063088b2e2d6df92 *res/prebuilt/wazaeffect/effectdata/waza_particle.narc
-e484a4ea105e16977b9f39b965aaad014a4ec923 *res/field/events/zone_event.narc
+e484a4ea105e16977b9f39b965aaad014a4ec923 *res/prebuilt/fielddata/eventdata/zone_event.narc
 bda5c8e66cfa121c2d518d4388bd6f742746cda0 *res/prebuilt/fielddata/encountdata/d_enc_data.narc
 4bcbf53d522ed962160b85af588816f7257fb1c3 *res/prebuilt/fielddata/encountdata/p_enc_data.narc
 d9bf534c175c3c991e77fff985c099723499e1eb *res/field/encounters/pl_enc_data.narc

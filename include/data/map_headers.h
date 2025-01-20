@@ -1,8 +1,8 @@
 #include "consts/map.h"
 
-#include "field/events/zone_event.naix"
-#include "field/scripts/scr_seq.naix"
 #include "text/pl_msg.naix"
+#include "script_order.h"
+#include "event_order.h"
 
 static const MapHeader sMapHeaders[] = {
     [MAP_HEADER_EVERYWHERE] = {
