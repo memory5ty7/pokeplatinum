@@ -3,9 +3,7 @@
 
 #include <nitro/rtc.h>
 
-#include "constants/moves.h"
 #include "constants/sound.h"
-#include "constants/string.h"
 
 #include "struct_decls/cell_actor_data.h"
 #include "struct_decls/pokemon_animation_sys_decl.h"
@@ -16,6 +14,7 @@
 #include "struct_decls/struct_party_decl.h"
 #include "struct_defs/archived_sprite.h"
 #include "struct_defs/chatot_cry.h"
+#include "struct_defs/pokemon.h"
 #include "struct_defs/sprite_animation_frame.h"
 
 #include "overlay005/struct_ov5_021DE5D0.h"
