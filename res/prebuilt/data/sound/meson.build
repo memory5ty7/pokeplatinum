@@ -1,5 +1,6 @@
 prebuilt_files = [
-    'sound_data.sdat'
+    'sound_data.sdat',
+    'pl_sound_data.sdat'
 ]
 
 foreach f : prebuilt_files

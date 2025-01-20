@@ -4454,6 +4454,8 @@ static BOOL BattleController_CheckBattleOver(BattleSystem *battleSys, BattleCont
         case TRAINER_CLASS_LEADER_CANDICE:
         case TRAINER_CLASS_LEADER_BYRON:
         case TRAINER_CLASS_LEADER_VOLKNER:
+        case TRAINER_CLASS_ROWAN:
+        case TRAINER_CLASS_TOBIAS:
             Sound_PlayBGM(SEQ_VICTORY_GYM_LEADER);
             break;
 
@@ -4489,7 +4491,6 @@ static BOOL BattleController_CheckBattleOver(BattleSystem *battleSys, BattleCont
         case TRAINER_CLASS_ELITE_FOUR_LUCIAN:
             Sound_PlayBGM(SEQ_VICTORY_ELITE_FOUR);
             break;
-
         default:
             Sound_PlayBGM(SEQ_VICTORY_TRAINER);
             break;
