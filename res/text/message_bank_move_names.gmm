@@ -2057,4 +2057,84 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Dire Claw</language>
 	</row>
+		<row id="pl_msg_00000647_00514" index="514">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Dragon Darts</language>
+	</row>
+		<row id="pl_msg_00000647_00515" index="515">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Belch</language>
+	</row>
+		<row id="pl_msg_00000647_00516" index="516">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Headlong Rush</language>
+	</row>
+		<row id="pl_msg_00000647_00517" index="517">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Tail Slap</language>
+	</row>
+		<row id="pl_msg_00000647_00518" index="518">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Life Dew</language>
+	</row>
+		<row id="pl_msg_00000647_00519" index="519">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Struggle Bug</language>
+	</row>
+		<row id="pl_msg_00000647_00520" index="520">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Freeze-Dry</language>
+	</row>
+		<row id="pl_msg_00000647_00521" index="521">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Throat Chop</language>
+	</row>
+		<row id="pl_msg_00000647_00522" index="522">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Scale Shot</language>
+	</row>
+		<row id="pl_msg_00000647_00523" index="523">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Chilling Water</language>
+	</row>
+		<row id="pl_msg_00000647_00524" index="524">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Dragon Tail</language>
+	</row>
+		<row id="pl_msg_00000647_00525" index="525">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Body Press</language>
+	</row>
+		<row id="pl_msg_00000647_00526" index="526">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Meteor Beam</language>
+	</row>
+		<row id="pl_msg_00000647_00527" index="527">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Steel Beam</language>
+	</row>
+		<row id="pl_msg_00000647_00528" index="528">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Nuzzle</language>
+	</row>
+		<row id="pl_msg_00000647_00529" index="529">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Psychic Noise</language>
+	</row>
+		<row id="pl_msg_00000647_00530" index="530">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Horn Leech</language>
+	</row>
+		<row id="pl_msg_00000647_00531" index="531">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Parting Shot</language>
+	</row>
+		<row id="pl_msg_00000647_00532" index="532">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Aqua Cutter</language>
+	</row>
+		<row id="pl_msg_00000647_00533" index="533">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Chilly Reception</language>
+	</row>
 </body>

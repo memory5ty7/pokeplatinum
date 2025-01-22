@@ -342,7 +342,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
     }
 
     if (input->LR) {
-        ScriptManager_Set(fieldSystem, 2028, NULL);
+        ScriptManager_Set(fieldSystem, 2058, NULL);
     }
 
     if (input->menu && sub_0203A9C8(fieldSystem) == TRUE) {
