@@ -1,3 +1,4 @@
+
 #ifndef POKEPLATINUM_POKEMON_H
 #define POKEPLATINUM_POKEMON_H
 
@@ -32,6 +33,12 @@
 #define FACE_BACK  0
 #define FACE_FRONT 2
 
+enum EvolutionClass {
+    EVO_CLASS_BY_LEVEL = 0,
+    EVO_CLASS_BY_TRADE,
+    EVO_CLASS_UNUSED_02,
+    EVO_CLASS_BY_ITEM,
+};
 enum EvolutionClass {
     EVO_CLASS_BY_LEVEL = 0,
     EVO_CLASS_BY_TRADE,
@@ -893,9 +900,10 @@ void PokeSprite_LoadShadowSize(NARC *narc, u8 *shadowSize, u16 species);
 BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, int heapID);
 void sub_02078B40(Pokemon *mon, UnkStruct_02078B40 *param1);
 void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
+
 u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot);
 
 u8 getLevelCap();
-BOOL isNFE(u16 species);
+BOOL isNFE(u16 monSpecies);
 
 #endif // POKEPLATINUM_POKEMON_H

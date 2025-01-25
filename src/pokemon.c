@@ -16,6 +16,11 @@
 #include "generated/evolution_methods.h"
 #include "generated/exp_rates.h"
 #include "generated/gender_ratios.h"
+#include "consts/pokemon.h"
+#include "generated/abilities.h"
+#include "generated/evolution_methods.h"
+#include "generated/exp_rates.h"
+#include "generated/gender_ratios.h"
 
 #include "struct_decls/pokemon_animation_sys_decl.h"
 #include "struct_decls/sprite_decl.h"
