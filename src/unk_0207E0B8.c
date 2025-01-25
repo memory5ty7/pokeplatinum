@@ -2591,9 +2591,9 @@ static int ApplyItemEffectOnPokemon(GameWindowLayout *partyMenu)
         if (Item_Get(itemData, ITEM_PARAM_EVOLVE) != 0) {
             Pokemon *mon = Party_GetPokemonBySlotIndex(partyMenu->unk_5A4->unk_00, partyMenu->unk_B11);
 
-            param0->unk_5A4->unk_38 = Pokemon_GetEvolutionTargetSpecies(NULL, v1, EVO_CLASS_BY_ITEM, param0->unk_5A4->unk_24, &param0->unk_5A4->unk_3C);
-            param0->unk_5A4->unk_23 = 8;
-            Heap_FreeToHeap(itemDatac);
+            partyMenu->unk_5A4->unk_38 = Pokemon_GetEvolutionTargetSpecies(NULL, mon, EVO_CLASS_BY_ITEM, partyMenu->unk_5A4->unk_24, &partyMenu->unk_5A4->unk_3C);
+            partyMenu->unk_5A4->unk_23 = 8;
+            Heap_FreeToHeap(itemData);
             return 32;
         }
 

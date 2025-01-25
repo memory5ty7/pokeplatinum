@@ -7,6 +7,7 @@
 #include "constants/items.h"
 #include "constants/savedata/save_table.h"
 #include "generated/items.h"
+#include "constants/moves.h"
 
 #include "struct_decls/struct_0207CB08_decl.h"
 
