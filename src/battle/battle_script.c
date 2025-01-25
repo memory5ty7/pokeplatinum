@@ -11271,7 +11271,7 @@ static const struct Fraction sSafariCatchRate[] = {
  */
 static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    u32 speciesMod = PokemonPersonalData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, MON_DATA_PERSONAL_CATCH_RATE);
+    u32 speciesMod = SpeciesData_GetValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
     if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH || speciesMod != 0 || battleCtx->msgItemTemp > ITEM_MASTER_BALL) {
         return 4;
     }

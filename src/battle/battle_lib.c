@@ -9821,23 +9821,3 @@ void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *bat
         }
     }
 }
-
-BOOL isNFE(u16 species)
-{
-    int i;
-    PokemonEvolutionData *monEvolutionData = Heap_AllocFromHeap(0, sizeof(PokemonEvolutionData));
-    PokemonEvolutionData_LoadSpecies(species, monEvolutionData);
-
-    // Check for any possible evolutions
-    for (i = 0; i < 7; i++) {
-        PokemonEvolutionMethod *data = &monEvolutionData->methods[i];
-        if (data->type != 0
-            && data->param != 0
-            && data->targetSpecies != 0) {
-            return TRUE;
-        }
-    }
-
-    // No evolutions found, so this mon is fully-evolved.
-    return FALSE;
-}

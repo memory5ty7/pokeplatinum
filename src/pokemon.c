@@ -5110,10 +5110,27 @@ void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon)
 u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot)
 {
     int trueSpecies = Pokemon_GetFormNarcIndex(species, form);
-    u8 ability1 = PokemonPersonalData_GetFormValue(trueSpecies, form, MON_DATA_PERSONAL_ABILITY_1);
-    u8 ability2 = PokemonPersonalData_GetFormValue(trueSpecies, form, MON_DATA_PERSONAL_ABILITY_2);
+    u8 ability1 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_1);
+    u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
 
     return ((ability2 != 0) && (abilitySlot & 1))
             ? ability2
             : ability1;
+}
+
+BOOL isNFE(u16 monSpecies)
+{
+    int i;
+    SpeciesEvolution *speciesEvolutions = Heap_AllocFromHeap(HEAP_ID_SYSTEM, sizeof(SpeciesEvolution) * MAX_EVOLUTIONS);
+    LoadSpeciesEvolutions(monSpecies, speciesEvolutions);
+    // Check for any possible evolutions
+    for (i = 0; i < MAX_EVOLUTIONS; i++) {
+        if (speciesEvolutions[i].method != 0
+            && speciesEvolutions[i].param != 0
+            && speciesEvolutions[i].targetSpecies != 0) {
+            return TRUE;
+        }
+    }
+    // No evolutions found, so this mon is fully-evolved.
+    return FALSE;
 }
