@@ -375,3 +375,33 @@ make update
 ```
 
 And then try rebuilding.
+
+### Meson Replies With `ERROR: Unknown compiler(s)`
+
+Example error message:
+
+```
+meson.build:1:0: ERROR: Unknown compiler(s): [['/mnt/c/pokeplatinum/tools/cw/mwrap', 'mwccarm']]
+```
+
+Meson provides some basic logging for its configuration process in
+`build/meson-logs/meson-log.txt`. In that file, you should see some entries that
+begin with `Detecting compiler via: ...`, which will give some insight into the
+root of the error. For example:
+
+```
+Detecting compiler via: `/mnt/c/pokeplatinum/tools/cw/mwrap mwccarm --version` -> 1
+stderr:
+wine: '/home/<USER>/.wine' is a 64-bit installation, it cannot be used with a 32-bit wineserver.
+-----------
+
+meson.build:1:0: ERROR: Unknown compiler(s): [['/mnt/c/pokeplatinum/tools/cw/mwrap', 'mwccarm']]
+```
+
+In this instance, the user has installed 64-bit `wine`. Ensure that you have
+installed 32-bit `wine`, then rebuild _after_ removing the prefix directory
+using the following command:
+
+```
+rm -rf ~/.wine
+```

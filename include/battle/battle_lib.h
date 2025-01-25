@@ -1497,8 +1497,6 @@ u32 GetAdjustedMoveTypeBasics(BattleContext *battleCtx, u32 move, u32 ability, u
 
 BOOL MoveIsAffectedByNormalizeVariants(int moveID);
 
-BOOL isNFE(u16 species);
-
 int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int move, Pokemon *mon, int defender, int damage, u32 *moveStatusMask);
 int PostKO_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx, int move, u32 sideConditions, u32 fieldConditions, u16 inPower, u8 inType, Pokemon *mon, u8 defender, u8 criticalMul);
 

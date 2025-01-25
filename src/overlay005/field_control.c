@@ -11,7 +11,6 @@
 #include "struct_decls/struct_02026310_decl.h"
 #include "struct_decls/struct_0203A790_decl.h"
 #include "struct_decls/struct_02061AB4_decl.h"
-#include "struct_decls/struct_party_decl.h"
 
 #include "field/field_system.h"
 #include "field/field_system_sub2_t.h"
@@ -342,7 +341,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
     }
 
     if (input->LR) {
-        ScriptManager_Set(fieldSystem, 2028, NULL);
+        ScriptManager_Set(fieldSystem, 2058, NULL);
     }
 
     if (input->menu && sub_0203A9C8(fieldSystem) == TRUE) {

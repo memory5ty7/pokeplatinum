@@ -11,13 +11,12 @@
 #include "constants/species.h"
 #include "constants/string.h"
 #include "constants/trainer.h"
-#include "consts/abilities.h"
 #include "consts/game_records.h"
 #include "consts/gender.h"
+#include "generated/abilities.h"
 
 #include "struct_decls/battle_system.h"
 #include "struct_decls/struct_02098700_decl.h"
-#include "struct_decls/struct_party_decl.h"
 #include "struct_defs/fraction.h"
 
 #include "battle/battle_context.h"
@@ -9821,24 +9820,4 @@ void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *bat
             }
         }
     }
-}
-
-BOOL isNFE(u16 species)
-{
-    int i;
-    PokemonEvolutionData *monEvolutionData = Heap_AllocFromHeap(0, sizeof(PokemonEvolutionData));
-    PokemonEvolutionData_LoadSpecies(species, monEvolutionData);
-
-    // Check for any possible evolutions
-    for (i = 0; i < 7; i++) {
-        PokemonEvolutionMethod *data = &monEvolutionData->methods[i];
-        if (data->type != 0
-            && data->param != 0
-            && data->targetSpecies != 0) {
-            return TRUE;
-        }
-    }
-
-    // No evolutions found, so this mon is fully-evolved.
-    return FALSE;
 }

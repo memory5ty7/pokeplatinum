@@ -2591,10 +2591,10 @@ static int ApplyItemEffectOnPokemon(GameWindowLayout *partyMenu)
         if (Item_Get(itemData, ITEM_PARAM_EVOLVE) != 0) {
             Pokemon *mon = Party_GetPokemonBySlotIndex(partyMenu->unk_5A4->unk_00, partyMenu->unk_B11);
 
-            partyMenu->unk_5A4->unk_38 = sub_02076B94(NULL, mon, 3, partyMenu->unk_5A4->unk_24, &partyMenu->unk_5A4->unk_3C);
+            partyMenu->unk_5A4->unk_38 = Pokemon_GetEvolutionTargetSpecies(NULL, mon, EVO_CLASS_BY_ITEM, partyMenu->unk_5A4->unk_24, &partyMenu->unk_5A4->unk_3C);
             partyMenu->unk_5A4->unk_23 = 8;
             Heap_FreeToHeap(itemData);
-            return PARTY_MENU_STATE_BEGIN_EXIT;
+            return 32;
         }
 
         if ((Item_IsHerbalMedicine(partyMenu->unk_5A4->unk_24) == 1) && (partyMenu->unk_5A4->unk_10 != NULL)) {
