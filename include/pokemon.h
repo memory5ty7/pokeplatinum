@@ -4,6 +4,7 @@
 
 #include <nitro/rtc.h>
 
+#include "constants/pokemon.h"
 #include "constants/sound.h"
 
 #include "struct_decls/cell_actor_data.h"
