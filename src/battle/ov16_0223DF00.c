@@ -1550,7 +1550,7 @@ int ov16_0223F6F0(BattleSystem *battleSystem, u16 param1)
 
 u16 BattleSystem_TrainerItems(BattleSystem *battleSystem, int param1, int param2)
 {
-    return battleSystem->trainers[param1].items[param2];
+    return battleSystem->trainers[param1].header.items[param2];
 }
 
 u32 BattleSystem_RecordingStopped(BattleSystem *battleSystem)

@@ -3,8 +3,8 @@
 
 #include "map_header.h" // Only for Intellisense/LSPs
 
-#include "res/field/events/zone_event.naix"
-#include "res/field/scripts/scr_seq.naix"
+#include "script_order.h"
+#include "event_order.h"
 
 static const MapHeader sMapHeaders[] = {
     [MAP_HEADER_EVERYWHERE] = {

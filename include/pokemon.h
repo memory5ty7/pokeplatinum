@@ -40,12 +40,6 @@ enum EvolutionClass {
     EVO_CLASS_UNUSED_02,
     EVO_CLASS_BY_ITEM,
 };
-enum EvolutionClass {
-    EVO_CLASS_BY_LEVEL = 0,
-    EVO_CLASS_BY_TRADE,
-    EVO_CLASS_UNUSED_02,
-    EVO_CLASS_BY_ITEM,
-};
 
 /**
  * @brief Zeros out a Pokemon data structure, then encrypts the result
