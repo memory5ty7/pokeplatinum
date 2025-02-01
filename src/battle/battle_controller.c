@@ -17,7 +17,7 @@
 #include "generated/sdat.h"
 
 #include "struct_decls/battle_system.h"
-#include "struct_defs/trainer_data.h"
+#include "struct_defs/trainer.h"
 
 #include "battle/ai_context.h"
 #include "battle/battle_context.h"
