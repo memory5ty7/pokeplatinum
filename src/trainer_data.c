@@ -38,7 +38,7 @@ void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *save, int heapID)
         Trainer_Load(dto->trainerIDs[i], &trdata);
         dto->trainer[i] = trdata;
 
-        if (trdata.class == TRAINER_CLASS_RIVAL) {
+        if (trdata.header.trainerType == TRAINER_CLASS_RIVAL) {
             CharCode_Copy(dto->trainer[i].name, rivalName);
         } else {
             Strbuf *trainerName = MessageLoader_GetNewStrbuf(msgLoader, dto->trainerIDs[i]);
@@ -49,12 +49,13 @@ void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *save, int heapID)
         TrainerData_BuildParty(dto, i, heapID);
     }
 
-    dto->battleType |= trdata.battleType;
+    dto->battleType |= trdata.header.battleType;
     MessageLoader_Free(msgLoader);
 }
 
 u32 Trainer_LoadParam(int trainerID, enum TrainerDataParam paramID)
 {
+    // TODO: can this be trainerheader?
     u32 result;
     Trainer trdata;
 
@@ -62,34 +63,34 @@ u32 Trainer_LoadParam(int trainerID, enum TrainerDataParam paramID)
 
     switch (paramID) {
     case TRDATA_TYPE:
-        result = trdata.type;
+        result = trdata.header.monDataType;
         break;
 
     case TRDATA_CLASS:
-        result = trdata.class;
+        result = trdata.header.trainerType;
         break;
 
     case TRDATA_SPRITE:
-        result = trdata.sprite;
+        result = trdata.header.sprite;
         break;
 
     case TRDATA_PARTY_SIZE:
-        result = trdata.partySize;
+        result = trdata.header.partySize;
         break;
 
     case TRDATA_ITEM_1:
     case TRDATA_ITEM_2:
     case TRDATA_ITEM_3:
     case TRDATA_ITEM_4:
-        result = trdata.items[paramID - TRDATA_ITEM_1];
+        result = trdata.header.items[paramID - TRDATA_ITEM_1];
         break;
 
     case TRDATA_AI_MASK:
-        result = trdata.aiMask;
+        result = trdata.header.aiMask;
         break;
 
     case TRDATA_BATTLE_TYPE:
-        result = trdata.battleType;
+        result = trdata.header.battleType;
         break;
     }
 
@@ -190,7 +191,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
     Trainer_LoadParty(dto->trainerIDs[battler], buf);
 
-    u8 partySize = dto->trainer[battler].partySize;
+    u8 partySize = dto->trainer[battler].header.partySize;
 
     u16 offset = 0;
     Pokemon *party[partySize];
@@ -218,14 +219,14 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         species = (species & 0x03FF);
 
         u16 item;
-        if (dto->trainer[battler].type == TRDATATYPE_WITH_ITEM || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_ITEM || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             item = buf[offset]
                 | (buf[offset + 1] << 8);
             buf += 2;
         }
 
         u16 moves[4];
-        if (dto->trainer[battler].type == TRDATATYPE_WITH_MOVES || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             for (j = 0; j < 4; j++) {
                 moves[j] = buf[offset]
                     | (buf[offset + 1] << 8);
@@ -244,11 +245,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         Pokemon_SetValue(party[i], MON_DATA_FORM, &form);
         Pokemon_SetValue(party[i], MON_DATA_ABILITY, &ability);
 
-        if (dto->trainer[battler].type == TRDATATYPE_WITH_ITEM || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_ITEM || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             Pokemon_SetValue(party[i], MON_DATA_HELD_ITEM, &item);
         }
 
-        if (dto->trainer[battler].type == TRDATATYPE_WITH_MOVES || dto->trainer[battler].type == TRDATATYPE_WITH_MOVES_AND_ITEM) {
+        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
             for (j = 0; j < 4; j++) {
                 Pokemon_SetMoveSlot(party[i], moves[j], j);
             }

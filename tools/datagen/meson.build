@@ -37,3 +37,22 @@ datagen_species_exe = executable(
     ],
     native: true,
 )
+
+datagen_trainer_exe = executable(
+    'datagen-trainer',
+    sources: [
+        files('datagen_trainer.cpp'),
+        c_consts_generators,
+    ],
+    cpp_args: datagen_cpp_args,
+    implicit_include_directories: true,
+    include_directories: [
+        public_includes,
+        toplevel_includes,
+    ],
+    dependencies: [
+        libnarc_dep,
+        rapidjson_dep,
+    ],
+    native: true,
+)

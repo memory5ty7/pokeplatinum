@@ -4,6 +4,7 @@
 
 #include <nitro/rtc.h>
 
+#include "constants/pokemon.h"
 #include "constants/sound.h"
 
 #include "struct_decls/cell_actor_data.h"
@@ -33,12 +34,6 @@
 #define FACE_BACK  0
 #define FACE_FRONT 2
 
-enum EvolutionClass {
-    EVO_CLASS_BY_LEVEL = 0,
-    EVO_CLASS_BY_TRADE,
-    EVO_CLASS_UNUSED_02,
-    EVO_CLASS_BY_ITEM,
-};
 enum EvolutionClass {
     EVO_CLASS_BY_LEVEL = 0,
     EVO_CLASS_BY_TRADE,

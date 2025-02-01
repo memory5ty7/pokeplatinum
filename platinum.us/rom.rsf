@@ -272,7 +272,7 @@ RomSpec
 	File poketool/waza/waza_tbl.narc
 
 	Root /fielddata/script
-	HostRoot res/field/scripts
+	HostRoot res/prebuilt/fielddata
 	File scr_seq.narc
 
 	Root /
@@ -387,7 +387,7 @@ RomSpec
 	File wazaeffect/effectdata/waza_particle.narc
 
 	Root /fielddata/eventdata
-	HostRoot res/field/events
+	HostRoot res/prebuilt/fielddata/eventdata
 	File zone_event.narc
 
 	Root /

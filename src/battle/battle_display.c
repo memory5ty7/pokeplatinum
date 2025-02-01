@@ -554,7 +554,7 @@ void ov16_0225D360(BattleSystem *param0, BattlerData *param1, UnkStruct_ov16_022
         {
             Trainer *trainer = BattleSystem_GetTrainer(param0, param1->battler);
             v0->unk_0B = 0;
-            v0->unk_0C = sub_020788D0(ov16_02264768(param0, param1->battler, trainer->class));
+            v0->unk_0C = sub_020788D0(ov16_02264768(param0, param1->battler, trainer->header.trainerType));
         }
     }
 
