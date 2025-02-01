@@ -18,7 +18,7 @@
 #include "struct_defs/chatot_cry.h"
 #include "struct_defs/struct_0202610C.h"
 #include "struct_defs/struct_0205EC34.h"
-#include "struct_defs/trainer_data.h"
+#include "struct_defs/trainer.h"
 
 #include "applications/pokemon_summary_screen/main.h"
 #include "field/field_system.h"

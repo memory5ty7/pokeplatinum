@@ -16,6 +16,7 @@ libnarc_dep = dependency('libnarc')
 datagen_cpp_args = [
     '-std=c++17',
     '-Wno-deprecated-declarations', # rapidjson 1.1.0 makes use of std::iterator
+    '-Wno-shift-count-overflow', # datagen-trainer references AI flags, which warn of a shift-count overflow on an unused field
     '-O3',
 ]
 

@@ -26,7 +26,7 @@
 #include "struct_defs/struct_0200D0F4.h"
 #include "struct_defs/struct_020127E8.h"
 #include "struct_defs/struct_0208737C.h"
-#include "struct_defs/trainer_data.h"
+#include "struct_defs/trainer.h"
 
 #include "battle/battle_context.h"
 #include "battle/battle_controller.h"
