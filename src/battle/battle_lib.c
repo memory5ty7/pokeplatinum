@@ -2843,7 +2843,7 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
     totalMul = 1;
 
     if (move == MOVE_STRUGGLE) {
-        return;
+        return damage;
     } else {
         moveType = GetAdjustedMoveType(battleCtx, attacker, move);
     }
@@ -7452,7 +7452,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     moveClass = MOVE_DATA(move).class;
 
     if (battleCtx->battleMons[attacker].heldItem == (u16)(moveType + ITEM_NORMAL_GEM) && (moveClass != CLASS_STATUS)) {
-        movePower *= 15 / 10;
+        movePower = movePower * 15 / 10;
     }
 
     if ((battleCtx->battleMons[attacker].moveEffectsMask & MOVE_EFFECT_CHARGE) && moveType == TYPE_ELECTRIC) {
@@ -8063,7 +8063,7 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
     moveClass = MOVE_DATA(move).class;
 
     if (Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL) == (u32)(moveType + ITEM_NORMAL_GEM) && (moveClass != CLASS_STATUS)) {
-        movePower *= 15 / 10;
+        movePower = movePower * 15 / 10;
     }
 
     if (attackerParams.ability == ABILITY_TECHNICIAN

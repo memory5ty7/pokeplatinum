@@ -23,60 +23,56 @@ void sub_020997D0(UnkStruct_020997B8 *param0)
 
 u16 *sub_020997D8(Pokemon *param0, u32 param1)
 {
-    u16 *v0;
+    u32 *monLevelUpMoves;
     u16 *v1;
     u16 v2[4];
-    u16 v3;
-    u8 v4;
-    u8 v5;
-    u8 v6, v7, v8;
+    u16 monSpecies = Pokemon_GetValue(param0, MON_DATA_SPECIES, NULL);
+    u16 monLevel = Pokemon_GetValue(param0, MON_DATA_LEVEL, NULL);
+    u8 monForm = Pokemon_GetValue(param0, MON_DATA_FORM, NULL);
+    u8 v6, v8;
 
-    v3 = (u16)Pokemon_GetValue(param0, MON_DATA_SPECIES, NULL);
-    v5 = (u8)Pokemon_GetValue(param0, MON_DATA_FORM, NULL);
-    v4 = (u8)Pokemon_GetValue(param0, MON_DATA_LEVEL, NULL);
-
-    for (v7 = 0; v7 < LEARNED_MOVES_MAX; v7++) {
-        v2[v7] = (u16)Pokemon_GetValue(param0, MON_DATA_MOVE1 + v7, NULL);
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+        v2[i] = (u16)Pokemon_GetValue(param0, MON_DATA_MOVE1 + i, NULL);
     }
 
-    v0 = Heap_AllocFromHeap(param1, (44 / 2) * 2);
+    monLevelUpMoves = Heap_AllocFromHeap(param1, (44 / 2) * 2);
     v1 = Heap_AllocFromHeap(param1, (44 / 2) * 2);
 
-    Pokemon_LoadLevelUpMovesOf(v3, v5, v0);
+    Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
 
     v8 = 0;
 
-    for (v7 = 0; v7 < (44 / 2); v7++) {
-        if (v0[v7] == 0xffff) {
+    for (int i = 0; i < (44 / 2); i++) {
+        if (monLevelUpMoves[i] == 0xffffffff) {
             v1[v8] = 0xffff;
             break;
-        } else if (((v0[v7] & 0xfe00) >> 9) > v4) {
+        } else if (((monLevelUpMoves[i] & 0xffff0000) >> 16) > monLevel) {
             continue;
         } else {
-            v0[v7] &= 0x1ff;
+            monLevelUpMoves[i] &= 0xffff;
 
             for (v6 = 0; v6 < 4; v6++) {
-                if (v0[v7] == v2[v6]) {
+                if (monLevelUpMoves[i] == v2[v6]) {
                     break;
                 }
             }
 
             if (v6 == 4) {
                 for (v6 = 0; v6 < v8; v6++) {
-                    if (v1[v6] == v0[v7]) {
+                    if (v1[v6] == monLevelUpMoves[i]) {
                         break;
                     }
                 }
 
                 if (v6 == v8) {
-                    v1[v8] = v0[v7];
+                    v1[v8] = monLevelUpMoves[i];
                     v8++;
                 }
             }
         }
     }
 
-    Heap_FreeToHeap(v0);
+    Heap_FreeToHeap(monLevelUpMoves);
 
     return v1;
 }
