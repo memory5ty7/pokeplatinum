@@ -23,11 +23,11 @@
 #include "heap.h"
 #include "narc.h"
 #include "sprite_resource.h"
+#include "sprite_transfer.h"
+#include "sprite_util.h"
 #include "unk_020041CC.h"
 #include "unk_02005474.h"
 #include "unk_0200762C.h"
-#include "unk_020093B4.h"
-#include "unk_0200A328.h"
 
 typedef struct {
     int *unk_00;
@@ -541,12 +541,12 @@ static void ov21_021E46A8(UnkStruct_ov21_021E4360 *param0, UnkStruct_ov21_021E41
 
     param0->unk_314[0] = SpriteResourceCollection_AddTilesFrom(v0->unk_13C[0], v1, 116, 1, 116 + 11000, NNS_G2D_VRAM_TYPE_2DMAIN, param2);
 
-    sub_0200A3DC(param0->unk_314[0]);
+    SpriteTransfer_RequestCharAtEnd(param0->unk_314[0]);
     SpriteResource_ReleaseData(param0->unk_314[0]);
 
     param0->unk_314[1] = SpriteResourceCollection_AddPaletteFrom(v0->unk_13C[1], v1, 19, 0, 19 + 11000, NNS_G2D_VRAM_TYPE_2DMAIN, 1, param2);
 
-    sub_0200A640(param0->unk_314[1]);
+    SpriteTransfer_RequestPlttFreeSpace(param0->unk_314[1]);
     SpriteResource_ReleaseData(param0->unk_314[1]);
 
     param0->unk_314[2] = SpriteResourceCollection_AddFrom(v0->unk_13C[2], v1, 117, 1, 117 + 11000, 2, param2);
@@ -557,8 +557,8 @@ static void ov21_021E4770(UnkStruct_ov21_021E4360 *param0, UnkStruct_ov21_021E41
 {
     UnkStruct_ov21_021D13FC *v0 = param1->unk_00;
 
-    sub_0200A4E4(param0->unk_314[0]);
-    sub_0200A6DC(param0->unk_314[1]);
+    SpriteTransfer_ResetCharTransfer(param0->unk_314[0]);
+    SpriteTransfer_ResetPlttTransfer(param0->unk_314[1]);
 
     SpriteResourceCollection_Remove(v0->unk_13C[0], param0->unk_314[0]);
     SpriteResourceCollection_Remove(v0->unk_13C[1], param0->unk_314[1]);
@@ -573,7 +573,7 @@ static void ov21_021E47CC(UnkStruct_ov21_021E4360 *param0, UnkStruct_ov21_021E41
     UnkStruct_ov21_021D13FC *v2 = param1->unk_00;
     int v3, v4;
 
-    sub_020093B4(&v0, 116 + 11000, 19 + 11000, 117 + 11000, 115 + 11000, 0xffffffff, 0xffffffff, 0, 0, v2->unk_13C[0], v2->unk_13C[1], v2->unk_13C[2], v2->unk_13C[3], NULL, NULL);
+    SpriteResourcesHeader_Init(&v0, 116 + 11000, 19 + 11000, 117 + 11000, 115 + 11000, 0xffffffff, 0xffffffff, 0, 0, v2->unk_13C[0], v2->unk_13C[1], v2->unk_13C[2], v2->unk_13C[3], NULL, NULL);
 
     v1.collection = v2->unk_138;
     v1.resourceData = &v0;
