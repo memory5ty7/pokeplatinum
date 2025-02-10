@@ -57,20 +57,30 @@ BOOL ScrCmd_0B6(ScriptContext *param0)
     u16 v9 = ScriptContext_GetVar(param0);
 
     if (v9 == 0) {
+        v6 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_MAP_OBJECT);
+
+        if (*v6 == 0) {
+            return 0;
+        }
+
         v0 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_SIGHT_RANGE);
         v4 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_DIRECTION);
-        v1 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_SCRIPT_ID);
-        v2 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_ID);
+        //v1 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_SCRIPT_ID);
+        //v2 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_ID);
         v3 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_TYPE);
-        v6 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_MAP_OBJECT);
         v5 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_0_TASK);
     } else {
+        v6 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_MAP_OBJECT);
+
+        if (*v6 == 0) {
+            return 0;
+        }
+
         v0 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_SIGHT_RANGE);
         v4 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_DIRECTION);
-        v1 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_SCRIPT_ID);
-        v2 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_ID);
+        //v1 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_SCRIPT_ID);
+        //v2 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_ID);
         v3 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_TYPE);
-        v6 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_MAP_OBJECT);
         v5 = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_TRAINER_1_TASK);
     }
 
@@ -147,16 +157,20 @@ BOOL ScrCmd_StartTrainerBattle(ScriptContext *ctx)
     u16 enemyTrainer2 = ScriptContext_GetVar(ctx);
     u16 partnerTrainer = 0;
 
+    /*
     if (FieldSystem_CheckFlag(ctx->fieldSystem, FLAG_DIFFICULTY) == TRUE) {
         enemyTrainer1 += 928;
         enemyTrainer2 += 928;
     }
+    */
 
     if (SystemFlag_CheckHasPartner(SaveData_GetVarsFlags(ctx->fieldSystem->saveData)) == TRUE) {
         partnerTrainer = sub_0206B034(SaveData_GetVarsFlags(fieldSystem->saveData));
+        /*
         if (FieldSystem_CheckFlag(ctx->fieldSystem, FLAG_DIFFICULTY) == TRUE) {
             partnerTrainer += 928;
         }
+        */
     }
 
     Encounter_NewVsTrainer(ctx->task,
@@ -195,7 +209,7 @@ BOOL ScrCmd_0E7(ScriptContext *param0)
 
     v0 = Script_IsTrainerDoubleBattle(Script_GetTrainerID(*v5));
 
-    if (v0 == 0) {
+    if (v0 == FALSE) {
         v2 = 0;
         v3 = 2;
         v4 = 0;

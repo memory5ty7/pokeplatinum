@@ -101,9 +101,15 @@ int sub_02067A84(FieldSystem *fieldSystem, BOOL param1)
 
         v5 = sub_02067F2C(fieldSystem, mapObjMan, v0.unk_14, v0.unk_0C);
 
-        sub_02067C28(&v6, v5, v0.unk_00, v0.unk_04);
         ScriptManager_Set(fieldSystem, 3928, v0.unk_14);
+
         ScriptManager_SetApproachingTrainer(fieldSystem, v0.unk_14, v0.unk_00, v0.unk_04, v0.unk_08, v0.unk_0C, 1, 0);
+
+        if (v5 == 0) {
+            return 0;
+        }
+
+        sub_02067C28(&v6, v5, v0.unk_00, v0.unk_04);   
         ScriptManager_SetApproachingTrainer(fieldSystem, v6.unk_14, v6.unk_00, v6.unk_04, v6.unk_08, v6.unk_0C, 1, 1);
 
         return 1;

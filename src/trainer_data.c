@@ -1,11 +1,10 @@
-#include "struct_defs/trainer_data.h"
-
-#include <nitro.h>
-#include <string.h>
+#include "trainer_data.h"
 
 #include "constants/battle.h"
 #include "constants/pokemon.h"
 #include "constants/trainer.h"
+
+#include "struct_defs/trainer.h"
 
 #include "data/trainer_class_genders.h"
 
@@ -20,7 +19,6 @@
 #include "savedata.h"
 #include "savedata_misc.h"
 #include "strbuf.h"
-#include "trainer_data.h"
 
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
 
@@ -178,9 +176,10 @@ u8 TrainerClass_Gender(int trclass)
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 {
     // must make declarations C89-style to match
-    u8 *buf;
+    void *buf;
     int i, j;
     u32 genderMod, rnd, oldSeed;
+    u8 ivs;
     Pokemon *mon;
 
     oldSeed = LCRNG_GetSeed();
@@ -188,88 +187,136 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
     // alloc enough space to support the maximum possible data size
     Party_InitWithCapacity(dto->parties[battler], MAX_PARTY_SIZE);
     buf = Heap_AllocFromHeap(heapID, sizeof(TrainerMonWithMovesAndItem) * MAX_PARTY_SIZE);
+    mon = Pokemon_New(heapID);
 
     Trainer_LoadParty(dto->trainerIDs[battler], buf);
 
-    u8 partySize = dto->trainer[battler].header.partySize;
+    switch (dto->trainer[battler].header.monDataType) {
+    case TRDATATYPE_BASE: {
+        TrainerMonBase *trmon = (TrainerMonBase *)buf;
+        for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
+            u16 species = trmon[i].species & 0x3FF;
+            u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-    u16 offset = 0;
-    Pokemon *party[partySize];
+            ivs = GetIVsFromDV(trmon[i].dv);
 
-    for (i = 0; i < partySize; i++) {
-        party[i] = Pokemon_New(heapID);
+            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-        u16 dv = buf[offset]
-            | (buf[offset + 1] << 8);
-        buf += 2;
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
 
-        u8 ivs = GetIVsFromDV(dv);
+            u32 status = getStatusFromDV(trmon[i].dv);
+            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
+    
+            AdjustHP(mon, trmon[i].dv);
 
-        u8 abilitySlot = (dv & 0x100) >> 8;
-
-        u16 level = buf[offset]
-            | (buf[offset + 1] << 8);
-        buf += 2;
-
-        u16 species = buf[offset]
-            | (buf[offset + 1] << 8);
-        buf += 2;
-
-        u8 form = (species & 0xFC00) >> 10;
-        species = (species & 0x03FF);
-
-        u16 item;
-        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_ITEM || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
-            item = buf[offset]
-                | (buf[offset + 1] << 8);
-            buf += 2;
+            Pokemon_CalcLevelAndStats(mon);
+            Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
+            Party_AddPokemon(dto->parties[battler], mon);
         }
 
-        u16 moves[4];
-        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
-            for (j = 0; j < 4; j++) {
-                moves[j] = buf[offset]
-                    | (buf[offset + 1] << 8);
-                buf += 2;
-            }
-        }
-
-        u16 ballSeal = buf[offset]
-            | (buf[offset + 1] << 8);
-        buf += 2;
-
-        u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
-
-        Pokemon_InitWith(party[i], species, level, 31, TRUE, dv, OTID_NOT_SHINY, 0);
-        AdjustIVs(party[i], dv);
-        Pokemon_SetValue(party[i], MON_DATA_FORM, &form);
-        Pokemon_SetValue(party[i], MON_DATA_ABILITY, &ability);
-
-        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_ITEM || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
-            Pokemon_SetValue(party[i], MON_DATA_HELD_ITEM, &item);
-        }
-
-        if (dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES || dto->trainer[battler].header.monDataType == TRDATATYPE_WITH_MOVES_AND_ITEM) {
-            for (j = 0; j < 4; j++) {
-                Pokemon_SetMoveSlot(party[i], moves[j], j);
-            }
-        }
-
-        u32 status = getStatusFromDV(dv);
-        Pokemon_SetValue(party[i], MON_DATA_STATUS_CONDITION, &status);
-
-        AdjustHP(party[i], dv);
-
-        Pokemon_CalcLevelAndStats(party[i]);
-        Pokemon_SetBallSeal(ballSeal, party[i], heapID);
+        break;
     }
 
-    for (int i = 0; i < partySize; i++) {
-        Party_AddPokemon(dto->parties[battler], party[i]);
-        Heap_FreeToHeap(party[i]);
+    case TRDATATYPE_WITH_MOVES: {
+        TrainerMonWithMoves *trmon = (TrainerMonWithMoves *)buf;
+        for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
+            u16 species = trmon[i].species & 0x3FF;
+            u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
+
+            ivs = GetIVsFromDV(trmon[i].dv);
+
+            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
+
+            for (j = 0; j < 4; j++) {
+                Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+            }
+
+            u32 status = getStatusFromDV(trmon[i].dv);
+            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
+    
+            AdjustHP(mon, trmon[i].dv);
+
+            Pokemon_CalcLevelAndStats(mon);
+            Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
+            Party_AddPokemon(dto->parties[battler], mon);
+        }
+
+        break;
+    }
+
+    case TRDATATYPE_WITH_ITEM: {
+        TrainerMonWithItem *trmon = (TrainerMonWithItem *)buf;
+        for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
+            u16 species = trmon[i].species & 0x3FF;
+            u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
+
+            ivs = GetIVsFromDV(trmon[i].dv);
+
+            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
+            Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
+
+            u32 status = getStatusFromDV(trmon[i].dv);
+            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
+    
+            AdjustHP(mon, trmon[i].dv);
+
+            Pokemon_CalcLevelAndStats(mon);
+            Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
+            Party_AddPokemon(dto->parties[battler], mon);
+        }
+
+        break;
+    }
+
+    case TRDATATYPE_WITH_MOVES_AND_ITEM: {
+        TrainerMonWithMovesAndItem *trmon = (TrainerMonWithMovesAndItem *)buf;
+        for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
+            u16 species = trmon[i].species & 0x3FF;
+            u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
+
+            ivs = GetIVsFromDV(trmon[i].dv);
+
+            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
+            Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
+
+            for (j = 0; j < 4; j++) {
+                Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+            }
+
+            u32 status = getStatusFromDV(trmon[i].dv);
+            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
+    
+            AdjustHP(mon, trmon[i].dv);
+
+            Pokemon_CalcLevelAndStats(mon);
+            Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
+            Party_AddPokemon(dto->parties[battler], mon);
+        }
+
+        break;
+    }
     }
 
     Heap_FreeToHeap(buf);
+    Heap_FreeToHeap(mon);
     LCRNG_SetSeed(oldSeed);
 }
 
@@ -278,16 +325,16 @@ u32 getStatusFromDV(u16 dv)
     u32 status = MON_CONDITION_NONE;
 
     switch (dv) {
-    case 128:
-    case 138:
-    case 153:
-    case 163:
-        status = MON_CONDITION_POISON;
-        break;
     case 178:
     case 188:
+    case 328:
+    case 338:
+        status = MON_CONDITION_POISON;
+        break;
     case 203:
     case 213:
+    case 303:
+    case 313:
         status = MON_CONDITION_BURN;
         break;
     }
@@ -308,7 +355,7 @@ u8 GetIVsFromDV(u16 dv)
 
 void AdjustIVs(Pokemon *mon, u16 dv)
 {
-    // If Nature is -Speed, set Speed IVs to 0 
+    // If Nature is -Speed, set Speed IVs to 0
     /*
     if(Pokemon_GetStatAffinityOf(Pokemon_GetNatureOf(dv),3) == -1)
     {
@@ -322,10 +369,10 @@ void AdjustIVs(Pokemon *mon, u16 dv)
 void AdjustHP(Pokemon *mon, u16 dv)
 {
     u32 currentHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
-    switch(dv)
-    {
-        case 255:
-            currentHP = currentHP / 4;
+    switch (dv) {
+    case 153:
+    case 353:
+        currentHP = currentHP / 4;
         break;
     }
 
