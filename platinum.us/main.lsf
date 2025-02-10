@@ -66,7 +66,7 @@ Static main
 	Object main.nef.p/src_easy3d_object.c.o
 	Object main.nef.p/src_unk_02017428.c.o
 	Object main.nef.p/src_unk_02017498.c.o
-	Object main.nef.p/src_unk_02017728.c.o
+	Object main.nef.p/src_system.c.o
 	Object main.nef.p/src_heap.c.o
 	Object main.nef.p/src_bg_window.c.o
 	Object main.nef.p/src_easy3d.c.o
@@ -101,7 +101,7 @@ Static main
 	Object main.nef.p/src_unk_0202419C.c.o
 	Object main.nef.p/src_hardware_palette.c.o
 	Object main.nef.p/src_unk_02024220.c.o
-	Object main.nef.p/src_unk_02024358.c.o
+	Object main.nef.p/src_boot.c.o
 	Object main.nef.p/src_savedata_save_table.c.o
 	Object main.nef.p/src_savedata.c.o
 	Object main.nef.p/src_system_data.c.o
@@ -508,8 +508,7 @@ Overlay overlay5
 	Object main.nef.p/src_overlay005_ov5_021EE75C.c.o
 	Object main.nef.p/src_overlay005_ov5_021EE7D4.c.o
 	Object main.nef.p/src_overlay005_ov5_021EEAC8.c.o
-	Object main.nef.p/src_overlay005_ov5_021EEC68.c.o
-	Object main.nef.p/src_overlay005_bdhc_loader.c.o
+	Object main.nef.p/src_overlay005_bdhc.c.o
 	Object main.nef.p/src_overlay005_ov5_021EF250.c.o
 	Object main.nef.p/src_overlay005_hblank_system.c.o
 	Object main.nef.p/src_overlay005_ov5_021EF4BC.c.o
