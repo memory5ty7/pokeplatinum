@@ -87,68 +87,103 @@ BOOL ScrCmd_088(ScriptContext *param0)
     return 0;
 }
 
-BOOL ScrCmd_089(ScriptContext *param0)
-{
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+static const u32 sStatus[] = {
+    MON_CONDITION_NONE,
+    MON_CONDITION_BURN,
+    MON_CONDITION_FREEZE,
+    MON_CONDITION_PARALYSIS,
+    MON_CONDITION_POISON
+};
 
-    return 0;
+BOOL ScrCmd_089(ScriptContext *ctx)  // Set status of selected mon
+{
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Pokemon *pokemon;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 statusID = ScriptContext_GetVar(ctx);
+
+    pokemon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), partySlot);
+
+    u32 status = sStatus[statusID];
+
+    if(Pokemon_CanApplyStatus(pokemon, status)) {
+        Pokemon_SetValue(pokemon, MON_DATA_STATUS_CONDITION, &status);
+    }
+
+    return FALSE;
 }
 
-BOOL ScrCmd_08A(ScriptContext *param0)
+BOOL ScrCmd_08A(ScriptContext *ctx)  // Set HP of selected mon
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Pokemon *pokemon;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 HP = ScriptContext_GetVar(ctx);
 
-    return 0;
+    pokemon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), partySlot);
+    u16 maxHP = Pokemon_GetValue(pokemon, MON_DATA_MAX_HP, NULL);
+
+    if (HP <= maxHP) {
+        Pokemon_SetValue(pokemon, MON_DATA_CURRENT_HP, &HP);
+    } else {
+        Pokemon_SetValue(pokemon, MON_DATA_CURRENT_HP, &maxHP);
+    }
+
+    return FALSE;
 }
 
-BOOL ScrCmd_08B(ScriptContext *param0)
+BOOL ScrCmd_08B(ScriptContext *ctx)  // Max IVs of selected mon in selected stat
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    SaveData *v1 = fieldSystem->saveData;
-    UndergroundData *v2;
-    u16 v3 = ScriptContext_GetVar(param0);
-    u16 v4 = ScriptContext_GetVar(param0);
-    u16 *v5 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Pokemon *pokemon;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 stat = ScriptContext_GetVar(ctx);
 
-    v2 = sub_020298B0(v1);
+    pokemon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), partySlot);
+    int ivs = 31;
 
-    return 0;
+    Pokemon_SetValue(pokemon, MON_DATA_HP_IV + stat, &ivs);
+    Pokemon_CalcStats(pokemon);
+
+    return FALSE;
 }
 
-BOOL ScrCmd_08C(ScriptContext *param0)
+BOOL ScrCmd_08C(ScriptContext *ctx)  // Change nature of selected mon to specific nature
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Pokemon *pokemon;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 nature = ScriptContext_GetVar(ctx);
 
-    return 0;
+    pokemon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), partySlot);
+
+    return FALSE;
 }
 
-BOOL ScrCmd_08D(ScriptContext *param0)
+BOOL ScrCmd_08D(ScriptContext *ctx)  // Min IVs of selected mon in selected stat
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Pokemon *pokemon;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 stat = ScriptContext_GetVar(ctx);
 
-    return 0;
+    pokemon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), partySlot);
+    int ivs = 0;
+
+    Pokemon_SetValue(pokemon, MON_DATA_HP_IV + stat, &ivs);
+    Pokemon_CalcStats(pokemon);
+
+    return FALSE;
 }
 
-BOOL ScrCmd_08E(ScriptContext *param0)
+BOOL ScrCmd_08E(ScriptContext *ctx) // Change field weather
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 weather = ScriptContext_GetVar(ctx);
 
-    return 0;
+    FieldOverworldState_SetWeather(SaveData_GetFieldOverworldState(fieldSystem->saveData), weather);
+    
+    return FALSE;
 }
 
 BOOL ScrCmd_08F(ScriptContext *param0)

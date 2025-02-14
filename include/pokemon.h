@@ -902,5 +902,6 @@ u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot);
 
 u8 getLevelCap();
 BOOL isNFE(u16 monSpecies);
+BOOL Pokemon_CanApplyStatus(Pokemon *mon , u32 status);
 
 #endif // POKEPLATINUM_POKEMON_H

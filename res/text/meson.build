@@ -107,4 +107,4 @@ text_banks = custom_target('pl_msg.narc',
     ]
 )
 
-nitrofs_files += text_banks
+# nitrofs_files += text_banks

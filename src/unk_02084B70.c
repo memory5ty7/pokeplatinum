@@ -679,31 +679,31 @@ static int PartyMenu_ItemUseFunc_LevelUp(void *param0)
     v0->unk_704[v0->unk_B11].unk_06 = Pokemon_GetValue(v1, MON_DATA_CURRENT_HP, NULL);
     v0->unk_704[v0->unk_B11].unk_08 = Pokemon_GetValue(v1, MON_DATA_MAX_HP, NULL);
 
-    v2 = MessageLoader_GetNewStrbuf(v0->unk_69C, 193);
+    //v2 = MessageLoader_GetNewStrbuf(v0->unk_69C, 193);
 
-    StringTemplate_SetNickname(v0->unk_6A0, 0, Pokemon_GetBoxPokemon(v1));
-    StringTemplate_SetNumber(v0->unk_6A0, 1, v0->unk_704[v0->unk_B11].unk_0A, 3, 0, 1);
-    StringTemplate_Format(v0->unk_6A0, v0->unk_6A4, v2);
-    Strbuf_Free(v2);
+    //StringTemplate_SetNickname(v0->unk_6A0, 0, Pokemon_GetBoxPokemon(v1));
+    //StringTemplate_SetNumber(v0->unk_6A0, 1, v0->unk_704[v0->unk_B11].unk_0A, 3, 0, 1);
+    //StringTemplate_Format(v0->unk_6A0, v0->unk_6A4, v2);
+    //Strbuf_Free(v2);
 
-    v4 = PokemonSummaryScreen_StatusIconAnimIdx(v1);
-    sub_02083014(v0, v0->unk_B11, v4);
+    //v4 = PokemonSummaryScreen_StatusIconAnimIdx(v1);
+    //sub_02083014(v0, v0->unk_B11, v4);
 
-    if (v4 == 7) {
-        v0->unk_704[v0->unk_B11].unk_0E_0 = 7;
+    //if (v4 == 7) {
+        //v0->unk_704[v0->unk_B11].unk_0E_0 = 7;
         sub_02081FFC(v0, v0->unk_B11);
-    }
+    //}
 
     sub_0207F8F8(v0, v0->unk_B11);
 
     v0->unk_B00 = PartyMenu_ItemUseFunc_HPRestoreAnimLoop;
 
     sub_020821F8(v0, v0->unk_B11);
-    sub_020822BC(v0, v0->unk_B11);
-    sub_02082708(v0, 0xffffffff, 1);
+
 
     v0->unk_B00 = PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop;
-    v0->unk_B13 = 0;
+    v0->unk_B13 = 3;
+    v0->unk_5A4->unk_34 = 0;
 
     return PARTY_MENU_STATE_ITEM_USE_CB;
 }
@@ -749,6 +749,9 @@ static int PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop(void *param0)
             v0->unk_B13 = 6;
             break;
         case 0xffff:
+            sub_020822BC(v0, v0->unk_B11);
+            sub_02082708(v0, 0xffffffff, 1);
+
             StringTemplate_SetNickname(v0->unk_6A0, 0, Pokemon_GetBoxPokemon(v1));
             StringTemplate_SetMoveName(v0->unk_6A0, 1, v0->unk_5A4->unk_26);
 

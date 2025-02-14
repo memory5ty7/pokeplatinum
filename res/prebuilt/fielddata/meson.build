@@ -7,6 +7,7 @@ subdir('mapmatrix')
 subdir('maptable')
 subdir('mm_list')
 subdir('pokemon_trade')
+subdir('script')
 subdir('tornworld')
 
 prebuilt_files = [

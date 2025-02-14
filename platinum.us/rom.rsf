@@ -173,13 +173,9 @@ RomSpec
 	File data/sound/sound_data.sdat
 	File data/sound/pl_sound_data.sdat
 
-
-	Root /msgdata
-	HostRoot res/text
-	File pl_msg.narc
-
 	Root /
 	HostRoot res/prebuilt
+	File msgdata/pl_msg.narc
 	File msgdata/msg.narc
 	File msgdata/scenario/scr_msg.narc
 	File poketool/pokegra/dp_height.narc
@@ -271,9 +267,13 @@ RomSpec
 	HostRoot res/prebuilt
 	File poketool/waza/waza_tbl.narc
 
-	Root /fielddata/script
-	HostRoot res/prebuilt/fielddata
-	File scr_seq.narc
+	Root /
+	HostRoot res/prebuilt/
+	File fielddata/scr_seq.narc
+
+	Root /
+	HostRoot res/prebuilt
+	File fielddata/script/scr_seq.narc
 
 	Root /
 	HostRoot res/prebuilt

@@ -1,7 +1,8 @@
 subdir('scenario')
 
 prebuilt_files = [
-    'msg.narc'
+    'msg.narc',
+    'pl_msg.narc'
 ]
 
 foreach f : prebuilt_files
