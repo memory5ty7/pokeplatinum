@@ -4,6 +4,8 @@
 #include <string.h>
 
 #include "generated/species.h"
+#include "generated/items.h"
+#include "generated/abilities.h"
 
 #include "heap.h"
 #include "item.h"
@@ -29,6 +31,20 @@ u8 CheckItemEffectsOnPokemon(Pokemon *param0, u16 param1, u16 param2, u32 param3
     if (Item_Get(v0, 14) != 1) {
         Heap_FreeToHeap(v0);
         return 0;
+    }
+
+    if (param1 == ITEM_ABILITY_CAPSULE) {
+        u16 species = Pokemon_GetValue(param0, MON_DATA_SPECIES, NULL);
+        u8 form = Pokemon_GetValue(param0, MON_DATA_FORM, NULL);
+        int trueSpecies = Pokemon_GetFormNarcIndex(species, form);
+
+        u8 ability1 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_1);
+        u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
+
+        if (ability2 != ABILITY_NONE && ability1 != ability2) {
+            Heap_FreeToHeap(v0);
+            return 1;
+        }
     }
 
     v1[0] = Pokemon_GetValue(param0, MON_DATA_STATUS_CONDITION, NULL);
@@ -281,6 +297,25 @@ u8 ApplyItemEffectsToPokemon(Pokemon *param0, u16 param1, u16 param2, u16 param3
 
     v2 = 0;
     v3 = 0;
+
+    if (param1 == ITEM_ABILITY_CAPSULE) {
+        u16 species = Pokemon_GetValue(param0, MON_DATA_SPECIES, NULL);
+        u8 form = Pokemon_GetValue(param0, MON_DATA_FORM, NULL);
+        int trueSpecies = Pokemon_GetFormNarcIndex(species, form);
+
+        u8 curAbility = Pokemon_GetValue(param0, MON_DATA_ABILITY, NULL);
+
+        u8 ability1 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_1);
+        u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
+
+        if (curAbility == ability1) {
+            Pokemon_SetValue(param0, MON_DATA_ABILITY, &ability2);
+            v2 = 1;
+        } else {
+            Pokemon_SetValue(param0, MON_DATA_ABILITY, &ability1);
+            v2 = 1;
+        }
+    }
 
     v1[0] = Pokemon_GetValue(param0, MON_DATA_STATUS_CONDITION, NULL);
     v1[1] = v1[0];

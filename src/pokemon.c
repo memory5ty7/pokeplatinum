@@ -136,7 +136,6 @@ static void Pokemon_EncryptData(void *data, u32 bytes, u32 seed);
 static void Pokemon_DecryptData(void *data, u32 bytes, u32 seed);
 static u16 Pokemon_GetDataChecksum(void *data, u32 bytes);
 static void *BoxPokemon_GetDataBlock(BoxPokemon *boxMon, u32 personality, enum PokemonDataBlockID dataBlockID);
-static int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
 static inline int Pokemon_Face(int num);
 
 void Pokemon_Init(Pokemon *mon)
@@ -4678,7 +4677,7 @@ static void *BoxPokemon_GetDataBlock(BoxPokemon *boxMon, u32 personality, enum P
     return result;
 }
 
-static int Pokemon_GetFormNarcIndex(int monSpecies, int monForm)
+int Pokemon_GetFormNarcIndex(int monSpecies, int monForm)
 {
     // TODO enum values?
     switch (monSpecies) {
@@ -5136,4 +5135,43 @@ BOOL isNFE(u16 monSpecies)
     }
     // No evolutions found, so this mon is fully-evolved.
     return FALSE;
+}
+
+BOOL Pokemon_CanApplyStatus(Pokemon *mon, u32 status)
+{
+    BOOL returnValue = TRUE;
+
+    u32 type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
+    u32 type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
+    u8 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+
+    switch(status){
+        case MON_CONDITION_BURN:
+            if (type1 == TYPE_FIRE || type2 == TYPE_FIRE
+            || ability == ABILITY_WATER_VEIL) {
+                returnValue = FALSE;
+            }
+            break;
+        case MON_CONDITION_FREEZE:
+            if (type1 == TYPE_ICE| type2 == TYPE_ICE
+            || ability == ABILITY_MAGMA_ARMOR) {
+                returnValue = FALSE;
+            }
+            break;
+        case MON_CONDITION_PARALYSIS:
+        if (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC
+            || ability == ABILITY_LIMBER) {
+                returnValue = FALSE;
+            }
+            break;
+        case MON_CONDITION_POISON:
+            if (type1 == TYPE_POISON || type2 == TYPE_POISON
+            ||  type1 == TYPE_STEEL  || type2 == TYPE_STEEL
+            || ability == ABILITY_IMMUNITY) {
+                returnValue = FALSE;
+            }
+            break;
+    }
+
+    return returnValue;
 }

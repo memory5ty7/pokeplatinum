@@ -7,6 +7,7 @@
 
 #include "field/field_system.h"
 
+#include "pokemon.h"
 #include "field_script_context.h"
 #include "inlines.h"
 #include "savedata.h"

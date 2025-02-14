@@ -47,6 +47,7 @@ static int PartyMenu_ItemUseFunc_LevelUpPromptForgetMove(void *param0);
 static int PartyMenu_ItemUseFunc_LevelUpAskStopTryingToLearn(void *param0);
 static int PartyMenu_ItemUseFunc_LevelUpDidNotLearnMove(void *param0);
 static int PartyMenu_ItemUseFunc_LevelUpAskAgainToForget(void *param0);
+static int PartyMenu_ItemUseFunc_ChangeAbility(void *param0);
 static u8 nextStateCheck(GameWindowLayout *v0, BOOL mode);
 
 static u8 sub_02084B70(u16 param0)
@@ -55,6 +56,11 @@ static u8 sub_02084B70(u16 param0)
     s32 v1;
 
     v0 = Item_Load(param0, 0, 12);
+
+    if (param0 == ITEM_ABILITY_CAPSULE) {
+        Heap_FreeToHeap(v0);
+        return 30;
+    }
 
     if (Item_Get(v0, 14) != 1) {
         Heap_FreeToHeap(v0);
@@ -349,6 +355,12 @@ static void sub_02084E58(GameWindowLayout *param0, u16 param1, u32 param2)
     case 27:
         MessageLoader_GetStrbuf(param0->unk_69C, 69, param0->unk_6A4);
         break;
+    case 30:
+        v1 = MessageLoader_GetNewStrbuf(param0->unk_69C, 106);
+        StringTemplate_SetAbilityName(param0->unk_6A0, 1, Pokemon_GetValue(v0, MON_DATA_ABILITY, NULL));
+        StringTemplate_Format(param0->unk_6A0, param0->unk_6A4, v1);
+        Strbuf_Free(v1);
+        break;
     default:
         MessageLoader_GetStrbuf(param0->unk_69C, 105, param0->unk_6A4);
     }
@@ -395,6 +407,9 @@ void PartyMenu_SetItemUseFuncFromBagSelection(GameWindowLayout *param0)
     case 11:
         param0->unk_B00 = PartyMenu_ItemUseFunc_HPRestore;
         break;
+    case 30:
+        param0->unk_B00 = PartyMenu_ItemUseFunc_ChangeAbility;
+        break;    
     }
 }
 
@@ -1173,6 +1188,23 @@ static int PartyMenu_ItemUseFunc_TMHMAskAgainToForget(void *param0)
     v0->unk_B0E = PARTY_MENU_STATE_YES_NO_INIT;
 
     return PARTY_MENU_STATE_WAIT_TEXT_PRINTER;
+}
+
+static int PartyMenu_ItemUseFunc_ChangeAbility(void *param0)
+{
+    GameWindowLayout *v0 = (GameWindowLayout *)param0;
+
+    sub_02096F14(v0->unk_5A4->unk_00, v0->unk_5A4->unk_24, v0->unk_B11, 0, PartyMenu_GetCurrentMapSec(v0), 12);
+    sub_0207EF14(v0, v0->unk_B11);
+    sub_020821F8(v0, v0->unk_B11);
+    sub_020822BC(v0, v0->unk_B11);
+    sub_02083014(v0, v0->unk_B11, v0->unk_704[v0->unk_B11].unk_0E_0);
+    sub_02084E58(v0, v0->unk_5A4->unk_24, 0);
+    sub_02082708(v0, 0xffffffff, 1);
+
+    v0->unk_B00 = PartyMenu_ItemUseFunc_WaitTextPrinterThenExit;
+
+    return PARTY_MENU_STATE_ITEM_USE_CB; 
 }
 
 static void PartyMenu_LearnMoveToSlot(GameWindowLayout *param0, Pokemon *param1, u32 param2)

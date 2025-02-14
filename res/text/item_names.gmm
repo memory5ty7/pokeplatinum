@@ -2033,4 +2033,8 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Infinite Candy</language>
 	</row>
+		<row id="pl_msg_00000392_00508" index="508">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ability Capsule</language>
+	</row>
 </body>

@@ -899,9 +899,10 @@ void sub_02078B40(Pokemon *mon, UnkStruct_02078B40 *param1);
 void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
 
 u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot);
+int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
 
 u8 getLevelCap();
 BOOL isNFE(u16 monSpecies);
-BOOL Pokemon_CanApplyStatus(Pokemon *mon , u32 status);
+BOOL Pokemon_CanApplyStatus(Pokemon *mon, u32 status);
 
 #endif // POKEPLATINUM_POKEMON_H
