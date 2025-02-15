@@ -201,22 +201,26 @@ BOOL ScrCmd_08F(ScriptContext *param0)
     return 0;
 }
 
-BOOL ScrCmd_090(ScriptContext *param0)
+BOOL ScrCmd_090(ScriptContext *param0)  // Set Repellent ON
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    SaveData *saveData = fieldSystem->saveData;
+
+    u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData));
+
+    *repelSteps = 1;
 
     return 0;
 }
 
-BOOL ScrCmd_091(ScriptContext *param0)
+BOOL ScrCmd_091(ScriptContext *param0)  // Set Repellent OFF
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    SaveData *saveData = fieldSystem->saveData;
+
+    u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData));
+
+    *repelSteps = 0;
 
     return 0;
 }

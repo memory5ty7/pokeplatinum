@@ -3215,16 +3215,9 @@ BoxPokemon *Pokemon_GetBoxPokemon(Pokemon *mon)
 
 u8 getLevelCap()
 {
-    BOOL capActivated = getVar(16429) & 1;
-
     u8 levelCap = getVar(16422);
 
-
-    if (capActivated) {
-        return levelCap;
-    }
-    
-    return 100;
+    return levelCap;
 }
 
 BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
@@ -3234,7 +3227,7 @@ BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
     u32 monExp = Pokemon_GetValue(mon, MON_DATA_EXP, NULL);
     int monExpRate = SpeciesData_GetSpeciesValue(monSpecies, SPECIES_DATA_EXP_RATE);
     // TODO const value?
-    u32 maxExp = Pokemon_GetExpRateBaseExpAt(monExpRate, 100);
+    u32 maxExp = Pokemon_GetExpRateBaseExpAt(monExpRate, getLevelCap());
 
     if (monExp > maxExp) {
         monExp = maxExp;

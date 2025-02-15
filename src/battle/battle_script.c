@@ -315,6 +315,7 @@ static BOOL BtlCmd_LoadArchivedMonData(BattleSystem *battleSys, BattleContext *b
 static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TryAuroraVeil(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -575,7 +576,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_LoadArchivedMonData,
     BtlCmd_RefreshMonData,
     BtlCmd_End,
-    BtlCmd_SetAbilityActivatedFlag
+    BtlCmd_SetAbilityActivatedFlag,
+    BtlCmd_TryAuroraVeil
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -5668,6 +5670,7 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
     }
 
     ATTACKING_MON.ability_activated_flag = FALSE;
+    ATTACKING_MON.field_weather_flag = FALSE;
     ATTACKING_MON.gemTriggered = FALSE;
     ATTACKING_MON.moveEffectsData.truant = battleCtx->totalTurns & 1;
     ATTACKING_MON.moveEffectsData.slowStartTurnNumber = battleCtx->totalTurns + 1;
@@ -10090,7 +10093,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         u32 totalExp = 0;
         msg.id = 1; // "{0} gained {1} Exp. Points!"
 
-        if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL) && Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) != 100) {
+        if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL) && Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) < getLevelCap()) {
             if (data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) {
                 totalExp = data->battleCtx->gainedExp;
             }
@@ -12506,6 +12509,29 @@ static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContex
     client_no = BattleScript_Battler(battleSys, battleCtx, side);
 
     battleCtx->battleMons[client_no].ability_activated_flag = 1;
+
+    return FALSE;
+}
+
+static BOOL BtlCmd_TryAuroraVeil(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int jump = BattleScript_Read(battleCtx);
+
+    int side = BATTLE_SIDE_ENEMY;
+
+    if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_REFLECT && battleCtx->sideConditionsMask[side] & SIDE_CONDITION_LIGHT_SCREEN) {
+        BattleScript_Iter(battleCtx, jump);
+        battleCtx->moveStatusFlags |= MOVE_STATUS_FAILED;
+    } else {
+        battleCtx->sideConditionsMask[side] |= SIDE_CONDITION_REFLECT;
+        battleCtx->sideConditionsMask[side] |= SIDE_CONDITION_LIGHT_SCREEN;
+
+        battleCtx->sideConditions[side].reflectTurns = 9;
+        battleCtx->sideConditions[side].lightScreenTurns = 9;
+
+        battleCtx->msgBuffer.id = 1269; // "{0} raised [your/its] team's Defense!"
+    }
 
     return FALSE;
 }

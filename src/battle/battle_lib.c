@@ -99,6 +99,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].air_balloon_flag = 0;
     battleCtx->battleMons[battler].sheer_force_flag = 0;
     battleCtx->battleMons[battler].ability_activated_flag = 0;
+    battleCtx->battleMons[battler].field_weather_flag = 0;
     battleCtx->battleMons[battler].gemTriggered = 0;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
@@ -3934,13 +3935,13 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_LIGHTNING_ROD) == TRUE) {
-        if((moveType == TYPE_ELECTRIC) && (attacker != defender)) {
+        if ((moveType == TYPE_ELECTRIC) && (attacker != defender)) {
             subscript = subscript_handle_lightning_rod_raise_spatk;
         }
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_STORM_DRAIN) == TRUE) {
-        if((moveType == TYPE_WATER) && (attacker != defender)) {
+        if ((moveType == TYPE_WATER) && (attacker != defender)) {
             subscript = subscript_handle_lightning_rod_raise_spatk;
         }
     }
@@ -4024,6 +4025,7 @@ enum {
     SWITCH_IN_CHECK_STATE_START = 0,
 
     SWITCH_IN_CHECK_STATE_FIELD_WEATHER = SWITCH_IN_CHECK_STATE_START,
+    SWITCH_IN_CHECK_WEATHER,
     SWITCH_IN_CHECK_STATE_UNNERVE,
     SWITCH_IN_CHECK_STATE_TRACE,
     SWITCH_IN_CHECK_STATE_WEATHER_ABILITIES,
@@ -4152,16 +4154,14 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 case 48:
-                    subscript = subscript_overworld_hail;
-                    battleCtx->sideConditionsMask[1] += SIDE_CONDITION_REFLECT;
-                    battleCtx->sideConditionsMask[1] += SIDE_CONDITION_LIGHT_SCREEN;
-                    battleCtx->sideConditions[1].reflectTurns = 9;
-                    battleCtx->sideConditions[1].lightScreenTurns = 9;
+                    subscript = subscript_aurora_veil;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 case 49: // Shadow Tag
                     break;
                 case 50: // Magnet Pull
+                    break;
+                case 51: // Magnet Rise
                     break;
                 default:
                     break;
@@ -4173,6 +4173,28 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
             }
 
             battleCtx->switchInCheckState++;
+            break;
+
+        case SWITCH_IN_CHECK_WEATHER:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].field_weather_flag == 0
+                    && battleCtx->battleMons[battler].curHP
+                    && BattlerIsGrounded(battleCtx, battler)
+                    && Battler_Side(battleSys, battler) == BATTLE_SIDE_ENEMY
+                ) {
+                    battleCtx->battleMons[battler].field_weather_flag = 1;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_magnet_rise;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
             break;
 
         case SWITCH_IN_CHECK_STATE_UNNERVE:

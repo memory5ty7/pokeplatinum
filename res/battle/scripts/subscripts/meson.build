@@ -320,4 +320,6 @@ subscript_files = files(
     'subscript_raise_atk_sp_atk_on_hit.s',
     'subscript_emergency_exit.s',
     'subscript_handle_lightning_rod_raise_spatk.s',
+    'subscript_aurora_veil.s',
+    'subscript_magnet_rise.s',
 )

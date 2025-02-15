@@ -4,8 +4,8 @@
 #include "generated/evolution_methods.h"
 
 typedef struct {
-    u8 unk_00;
-    u8 unk_01;
+    u8 areaData;
+    u8 areaIcon;
     u16 mapMatrixID;
     u16 scriptsArchiveID;
     u16 initScriptsArchiveID;

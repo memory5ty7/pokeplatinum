@@ -47,6 +47,23 @@ BOOL Pokemon_GiveMonFromScript(enum HeapId heapID, SaveData *saveData, u16 speci
 
     item = heldItem;
     Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &item);
+
+    int ivsSet = 0;
+    u16 rand = 0;
+    int value = 31;
+
+    BOOL ivs[6] = {FALSE, FALSE, FALSE, FALSE, FALSE, FALSE};
+
+    while (ivsSet < 3) {
+        rand = LCRNG_Next() % 6;
+
+        if (ivs[rand] == FALSE) {
+            Pokemon_SetValue(mon, MON_DATA_HP_IV + rand, &value);
+            ivs[rand] = TRUE;
+            ivsSet++;
+        }
+    }
+
     result = Party_AddPokemon(party, mon);
 
     if (result) {

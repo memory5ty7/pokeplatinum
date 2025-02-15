@@ -1238,3 +1238,8 @@
     .endm
 
     .endif // ASM_BATTLE_SCRIPT_INC
+
+    .macro TryAuroraVeil jump_if_fail
+    .long 224
+    .long (\jump_if_fail-.) / 4 - 1
+    .endm

@@ -99,7 +99,7 @@ u8 CheckItemEffectsOnPokemon(Pokemon *param0, u16 param1, u16 param2, u32 param3
     }
 
     if (Item_Get(v0, 25) != 0) {
-        if (Pokemon_GetValue(param0, MON_DATA_LEVEL, NULL) < 100) {
+        if (Pokemon_GetValue(param0, MON_DATA_LEVEL, NULL) < getLevelCap()) {
             Heap_FreeToHeap(v0);
             return 1;
         }
@@ -372,7 +372,7 @@ u8 ApplyItemEffectsToPokemon(Pokemon *param0, u16 param1, u16 param2, u16 param3
     v1[2] = Pokemon_GetValue(param0, MON_DATA_LEVEL, NULL);
 
     if (Item_Get(v0, 25) != 0) {
-        if (v1[2] < 100) {
+        if (v1[2] < getLevelCap()) {
             Pokemon_IncreaseValue(param0, MON_DATA_EXP, Pokemon_GetExpToNextLevel(param0));
             Pokemon_CalcLevelAndStats(param0);
 
