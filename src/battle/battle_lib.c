@@ -4183,6 +4183,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     && battleCtx->battleMons[battler].curHP
                     && BattlerIsGrounded(battleCtx, battler)
                     && Battler_Side(battleSys, battler) == BATTLE_SIDE_ENEMY
+                    && BattleSystem_FieldWeather(battleSys) == 51
                 ) {
                     battleCtx->battleMons[battler].field_weather_flag = 1;
                     battleCtx->msgBattlerTemp = battler;

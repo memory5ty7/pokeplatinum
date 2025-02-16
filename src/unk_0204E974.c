@@ -11,6 +11,7 @@
 #include "field_script_context.h"
 #include "inlines.h"
 #include "savedata.h"
+#include "special_encounter.h"
 #include "unk_0202854C.h"
 
 BOOL ScrCmd_083(ScriptContext *param0)
@@ -201,28 +202,27 @@ BOOL ScrCmd_08F(ScriptContext *param0)
     return 0;
 }
 
-BOOL ScrCmd_090(ScriptContext *param0)  // Set Repellent ON
+BOOL ScrCmd_090(ScriptContext *ctx)  // Update Repellent
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
     SaveData *saveData = fieldSystem->saveData;
 
     u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData));
 
-    *repelSteps = 1;
+    *repelSteps = 1 - *repelSteps;
 
-    return 0;
+    return FALSE;
 }
 
-BOOL ScrCmd_091(ScriptContext *param0)  // Set Repellent OFF
+BOOL ScrCmd_091(ScriptContext *ctx)  // Get Repellent State
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
     SaveData *saveData = fieldSystem->saveData;
+    u16 *returnVar = ScriptContext_GetVarPointer(ctx);
 
-    u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData));
+    *returnVar = (u16)(*SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData)));
 
-    *repelSteps = 0;
-
-    return 0;
+    return FALSE;
 }
 
 BOOL ScrCmd_092(ScriptContext *param0)
