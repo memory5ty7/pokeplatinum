@@ -863,6 +863,8 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
  */
 int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCtx, int attacker);
 
+int BattleSystem_DiagonalOpponent(BattleSystem *battleSys, BattleContext *battleCtx, int attacker);
+
 BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
 
 void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *battleCtx, BOOL sortTurnOrder);
@@ -1491,6 +1493,8 @@ int BattleAI_SwitchedSlot(BattleSystem *battleSys, int battler);
  */
 int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pokemon *mon, int move);
 
+int Move_CalcVariableType2(BattleSystem *battleSys, BattleContext *battleCtx, int battler, int move);
+
 u32 GetAdjustedMoveType(BattleContext *battleCtx, u32 client, u32 move);
 
 u32 GetAdjustedMoveTypeBasics(BattleContext *battleCtx, u32 move, u32 ability, u32 type);
@@ -1499,5 +1503,8 @@ BOOL MoveIsAffectedByNormalizeVariants(int moveID);
 
 int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int move, Pokemon *mon, int defender, int damage, u32 *moveStatusMask);
 int PostKO_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx, int move, u32 sideConditions, u32 fieldConditions, u16 inPower, u8 inType, Pokemon *mon, u8 defender, u8 criticalMul);
+
+int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, int move, int attacker, Pokemon *defender, int damage, u32 *moveStatusMask);
+int PostKO_CalcMoveDamage2(BattleSystem *battleSys, BattleContext *battleCtx, int move, u32 sideConditions, u32 fieldConditions, u16 inPower, u8 inType, u8 attacker, Pokemon *defender, u8 criticalMul);
 
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

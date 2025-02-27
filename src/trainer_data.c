@@ -200,7 +200,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             ivs = GetIVsFromDV(trmon[i].dv);
 
-            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
@@ -228,7 +228,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             ivs = GetIVsFromDV(trmon[i].dv);
 
-            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
@@ -260,7 +260,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             ivs = GetIVsFromDV(trmon[i].dv);
 
-            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
@@ -289,7 +289,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             ivs = GetIVsFromDV(trmon[i].dv);
 
-            u8 abilitySlot = (trmon[i].species & 0x100) >> 8;
+            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);

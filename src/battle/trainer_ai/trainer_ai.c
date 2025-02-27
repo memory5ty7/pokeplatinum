@@ -3436,6 +3436,8 @@ s32 PostKOCalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move
             mon,
             AI_CONTEXT.defender,
             1);
+    } else {
+        battleCtx->battleStatusMask |= SYSCTL_IGNORE_TYPE_CHECKS;
     }
 
     damage = PostKO_ApplyTypeChart(battleSys,
@@ -3445,15 +3447,15 @@ s32 PostKOCalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move
         AI_CONTEXT.defender,
         damage,
         &effectivenessFlags);
-    //battleCtx->battleStatusMask &= ~SYSCTL_IGNORE_TYPE_CHECKS;
+    battleCtx->battleStatusMask &= ~SYSCTL_IGNORE_TYPE_CHECKS;
 
     if (damage && Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_LIFE_ORB) {
         damage *= 120 / 100;
     }
 
-    if (damage && (battleCtx->aiContext.moveTable[move].class != CLASS_STATUS) && (GetAdjustedMoveTypeBasics(battleCtx, move, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL), battleCtx->moveType) == getResistBerryType(Battler_HeldItem(battleCtx, AI_CONTEXT.defender)))) {
-        damage *= 50 / 100;
-    }
+    //if (damage && (battleCtx->aiContext.moveTable[move].class != CLASS_STATUS) && (GetAdjustedMoveType(battleCtx, AI_CONTEXT.attacker, move) == getResistBerryType(Battler_HeldItem(battleCtx, AI_CONTEXT.defender)))) {
+    //    damage *= 50 / 100;
+    //}
 
     if (effectivenessFlags & MOVE_STATUS_IMMUNE) {
         damage = 0;
