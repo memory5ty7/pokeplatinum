@@ -157,5 +157,6 @@ static const int sSideEffectSubscripts[] = {
     [MOVE_SUBSCRIPT_PTR_SHELL_SMASH]                      = subscript_shell_smash,
     [MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL]                      = subscript_triple_axel,
     [MOVE_SUBSCRIPT_PTR_CLEAR_SMOG]                       = subscript_clear_smog,
+    [MOVE_SUBSCRIPT_PTR_CHILLY_RECEPTION]                 = subscript_chilly_reception,
 };
 // clang-format on

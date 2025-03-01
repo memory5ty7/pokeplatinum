@@ -1507,4 +1507,9 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx, int
 int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, int move, int attacker, Pokemon *defender, int damage, u32 *moveStatusMask);
 int PostKO_CalcMoveDamage2(BattleSystem *battleSys, BattleContext *battleCtx, int move, u32 sideConditions, u32 fieldConditions, u16 inPower, u8 inType, u8 attacker, Pokemon *defender, u8 criticalMul);
 
+int Desmume_Log(const char *fmt, ...);
+
+int Move_CalcVariablePower(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon, u16 defender, s32 *damage);
+int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 mon, Pokemon *defender, s32 *damage);
+
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

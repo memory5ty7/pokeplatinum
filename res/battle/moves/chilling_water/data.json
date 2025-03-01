@@ -1,13 +1,13 @@
 {
-    "name": "Absorb",
+    "name": "Chilling Water",
     "class": "CLASS_SPECIAL",
-    "type": "TYPE_GRASS",
-    "power": 20,
+    "type": "TYPE_WATER",
+    "power": 50,
     "accuracy": 100,
     "pp": 25,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
-        "chance": 0
+        "type": "BATTLE_EFFECT_LOWER_ATTACK_HIT",
+        "chance": 100
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
@@ -16,7 +16,7 @@
         "MOVE_FLAG_CAN_MIRROR_MOVE"
     ],
     "contest": {
-        "effect": 20,
-        "type": "CONTEST_TYPE_SMART"
+        "effect": 18,
+        "type": "CONTEST_TYPE_TOUGH"
     }
 }

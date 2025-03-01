@@ -1,10 +1,10 @@
 {
-    "name": "Absorb",
-    "class": "CLASS_SPECIAL",
+    "name": "Horn Leech",
+    "class": "CLASS_PHYSICAL",
     "type": "TYPE_GRASS",
-    "power": 20,
+    "power": 75,
     "accuracy": 100,
-    "pp": 25,
+    "pp": 10,
     "effect": {
         "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
         "chance": 0
@@ -12,6 +12,7 @@
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
+        "MOVE_FLAG_MAKES_CONTACT",
         "MOVE_FLAG_CAN_PROTECT",
         "MOVE_FLAG_CAN_MIRROR_MOVE"
     ],

@@ -1,22 +1,19 @@
 {
-    "name": "Absorb",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_GRASS",
-    "power": 20,
-    "accuracy": 100,
-    "pp": 25,
+    "name": "Chilly Reception",
+    "class": "CLASS_STATUS",
+    "type": "TYPE_ICE",
+    "power": 0,
+    "accuracy": 0,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
+        "type": "BATTLE_EFFECT_CHILLY_RECEPTION",
         "chance": 0
     },
-    "range": "RANGE_SINGLE_TARGET",
+    "range": "RANGE_USER",
     "priority": 0,
-    "flags": [
-        "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
-    ],
+    "flags": [],
     "contest": {
-        "effect": 20,
-        "type": "CONTEST_TYPE_SMART"
+        "effect": 16,
+        "type": "CONTEST_TYPE_BEAUTY"
     }
 }

@@ -290,7 +290,8 @@
                 "BATTLE_EFFECT_SHELL_SMASH",
                 "BATTLE_EFFECT_TRIPLE_AXEL",
                 "BATTLE_EFFECT_CLEAR_SMOG",
-                "BATTLE_EFFECT_JAW_LOCK"
+                "BATTLE_EFFECT_JAW_LOCK",
+                "BATTLE_EFFECT_CHILLY_RECEPTION"
             ]
         },
         "@MessageTag": {
@@ -514,7 +515,8 @@
                 "MOVE_SUBSCRIPT_PTR_VENOSHOCK",
                 "MOVE_SUBSCRIPT_PTR_SHELL_SMASH",
                 "MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL",
-                "MOVE_SUBSCRIPT_PTR_CLEAR_SMOG"
+                "MOVE_SUBSCRIPT_PTR_CLEAR_SMOG",
+                "MOVE_SUBSCRIPT_PTR_CHILLY_RECEPTION"
             ]
         },
         "@SideEffectType": {

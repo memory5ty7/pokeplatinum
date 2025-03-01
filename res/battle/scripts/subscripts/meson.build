@@ -322,4 +322,5 @@ subscript_files = files(
     'subscript_handle_lightning_rod_raise_spatk.s',
     'subscript_aurora_veil.s',
     'subscript_magnet_rise.s',
+    'subscript_chilly_reception.s',
 )
