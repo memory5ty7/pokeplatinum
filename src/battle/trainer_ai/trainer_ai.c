@@ -3440,13 +3440,14 @@ s32 PostKOCalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move
         battleCtx->battleStatusMask |= SYSCTL_IGNORE_TYPE_CHECKS;
     }
 
-    damage = PostKO_ApplyTypeChart(battleSys,
+    /*damage = PostKO_ApplyTypeChart(battleSys,
         battleCtx,
         move,
         mon,
         AI_CONTEXT.defender,
         damage,
         &effectivenessFlags);
+        */
     battleCtx->battleStatusMask &= ~SYSCTL_IGNORE_TYPE_CHECKS;
 
     if (damage && Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_LIFE_ORB) {

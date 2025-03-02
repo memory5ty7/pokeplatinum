@@ -50,6 +50,8 @@
 #include "data/battle/weight_to_power.h"
 
 static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defender, int chartEntry);
+static BOOL PostKO_BasicTypeMulApplies(BattleContext *battleCtx, Pokemon* attacker, int defender, int chartEntry);
+static BOOL PostKO_BasicTypeMulApplies2(BattleContext *battleCtx, int attacker, Pokemon* defender, int chartEntry);
 static int MapSideEffectToSubscript(BattleContext *battleCtx, enum BattleSideEffectType type, u32 effect);
 static int ApplyTypeMultiplier(BattleContext *battleCtx, int attacker, int mul, int damage, BOOL update, u32 *moveStatus);
 static BOOL NoImmunityOverrides(BattleContext *battleCtx, int itemEffect, int chartEntry);
@@ -3020,7 +3022,38 @@ static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defe
     return result;
 }
 
-static BOOL PostKO_BasicTypeMulApplies(BattleContext *battleCtx, int attacker, Pokemon* defender, int chartEntry)
+static BOOL PostKO_BasicTypeMulApplies(BattleContext *battleCtx, Pokemon* attacker, int defender, int chartEntry)
+{
+    int itemEffect = Battler_HeldItemEffect(battleCtx, defender);
+    BOOL result = TRUE;
+
+    if ((itemEffect == HOLD_EFFECT_SPEED_DOWN_GROUNDED || (battleCtx->battleMons[defender].moveEffectsMask & MOVE_EFFECT_INGRAIN))
+        && sTypeMatchupMultipliers[chartEntry][1] == TYPE_FLYING
+        && sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_IMMUNE) {
+        result = FALSE;
+    }
+
+    if (battleCtx->turnFlags[defender].roosting
+        && sTypeMatchupMultipliers[chartEntry][1] == TYPE_FLYING) {
+        result = FALSE;
+    }
+
+    if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY)
+        && sTypeMatchupMultipliers[chartEntry][1] == TYPE_FLYING
+        && sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_IMMUNE) {
+        result = FALSE;
+    }
+
+    if ((battleCtx->battleMons[defender].moveEffectsMask & MOVE_EFFECT_MIRACLE_EYE)
+        && sTypeMatchupMultipliers[chartEntry][1] == TYPE_DARK
+        && sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_IMMUNE) {
+        result = FALSE;
+    }
+
+    return result;
+}
+
+static BOOL PostKO_BasicTypeMulApplies2(BattleContext *battleCtx, int attacker, Pokemon* defender, int chartEntry)
 {
     int itemEffect = Item_Get(Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM);
     BOOL result = TRUE;
@@ -3160,7 +3193,7 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
     return damage;
 }
 
-int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int move, Pokemon *mon, int defender, int damage, u32 *moveStatusMask)
+int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int move, Pokemon *mon, int defender, int damage, u32 *moveStatusMask, u8 inType, u8 inPower)
 {
     int chartEntry;
     int totalMul;
@@ -3174,17 +3207,17 @@ int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int
     totalMul = 1;
 
     if (move == MOVE_STRUGGLE) {
-        return;
+        return damage;
     } else {
-        moveType = GetAdjustedMoveTypeBasics(battleCtx, move, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL), MOVE_DATA(move).type);
+        moveType = GetAdjustedMoveTypeBasics(battleCtx, move, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL), inType);
     }
 
-    attackerItemEffect = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT);
-    attackerItemPower = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM);
+    attackerItemEffect = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT);         // Incorrect
+    attackerItemPower = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM);    // Incorrect
     defenderItemEffect = Battler_HeldItemEffect(battleCtx, defender);
     defenderItemPower = Battler_HeldItemPower(battleCtx, defender, ITEM_POWER_CHECK_ALL);
 
-    movePower = MOVE_DATA(move).power;
+    movePower = inPower;
 
     if ((battleCtx->battleStatusMask & SYSCTL_IGNORE_TYPE_CHECKS) == FALSE && (Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL) == moveType || Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL) == moveType)) {
         if (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_ADAPTABILITY) {
@@ -3221,8 +3254,8 @@ int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int
 
             if (sTypeMatchupMultipliers[chartEntry][0] == moveType) {
                 if (sTypeMatchupMultipliers[chartEntry][1] == BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL)
-                    && BasicTypeMulApplies(battleCtx, 0, defender, chartEntry) == TRUE) {
-                    damage = ApplyTypeMultiplier(battleCtx, 0, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
+                    && PostKO_BasicTypeMulApplies(battleCtx, mon, defender, chartEntry) == TRUE) {
+                    damage = PostKO_ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
 
                     if (sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_SUPER_EFF) {
                         totalMul *= 2;
@@ -3231,8 +3264,8 @@ int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int
 
                 if (sTypeMatchupMultipliers[chartEntry][1] == BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL)
                     && BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL) != BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL)
-                    && BasicTypeMulApplies(battleCtx, 0, defender, chartEntry) == TRUE) {
-                    damage = ApplyTypeMultiplier(battleCtx, 0, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
+                    && PostKO_BasicTypeMulApplies(battleCtx, mon, defender, chartEntry) == TRUE) {
+                    damage = PostKO_ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
 
                     if (sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_SUPER_EFF) {
                         totalMul *= 2;
@@ -3271,7 +3304,7 @@ int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int
     return damage;
 }
 
-int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, int move, int mon, Pokemon* defender, int damage, u32 *moveStatusMask)
+int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, int move, int mon, Pokemon* defender, int damage, u32 *moveStatusMask, u8 inType, u8 inPower)
 {
     int chartEntry;
     int totalMul;
@@ -3285,19 +3318,19 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
     totalMul = 1;
 
     if (move == MOVE_STRUGGLE) {
-        return;
+        return damage;
     } else {
-        moveType = GetAdjustedMoveTypeBasics(battleCtx, move, Battler_Ability(battleCtx, mon), MOVE_DATA(move).type);
+        moveType = GetAdjustedMoveTypeBasics(battleCtx, move, Battler_Ability(battleCtx, mon), inType);
     }
 
     attackerItemEffect = Battler_HeldItemEffect(battleCtx, mon);
     attackerItemPower = Battler_HeldItemPower(battleCtx, mon, ITEM_POWER_CHECK_ALL);
-    defenderItemEffect = Item_Get(Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT);
-    defenderItemPower = Item_Get(Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM);
+    defenderItemEffect = Item_Get(Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT);        // incorrect
+    defenderItemPower = Item_Get(Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM);   // incorrect
 
-    movePower = MOVE_DATA(move).power;
+    movePower = inPower;
 
-    if ((battleCtx->battleStatusMask & SYSCTL_IGNORE_TYPE_CHECKS) == FALSE && (BattleMon_Get(battleCtx, mon, MON_DATA_TYPE_1, NULL) == moveType || BattleMon_Get(battleCtx, mon, MON_DATA_TYPE_2, NULL) == moveType)) {
+    if ((battleCtx->battleStatusMask & SYSCTL_IGNORE_TYPE_CHECKS) == FALSE && MON_HAS_TYPE(mon, moveType)) {
         if (Battler_Ability(battleCtx, mon) == ABILITY_ADAPTABILITY) {
             damage *= 2;
         } else {
@@ -3305,9 +3338,17 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
         }
     }
 
-    if (!(PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_LEVITATE) == TRUE
-            && moveType == TYPE_GROUND
-            && defenderItemEffect != HOLD_EFFECT_SPEED_DOWN_GROUNDED)) {
+    if (PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_LEVITATE) == TRUE
+        && moveType == TYPE_GROUND
+        && defenderItemEffect != HOLD_EFFECT_SPEED_DOWN_GROUNDED) {
+        *moveStatusMask |= MOVE_STATUS_LEVITATED;
+    } else if (moveType == TYPE_GROUND
+        && defenderItemEffect != HOLD_EFFECT_SPEED_DOWN_GROUNDED) {
+        *moveStatusMask |= MOVE_STATUS_MAGNET_RISE;
+    } else if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) == FALSE
+        && moveType == TYPE_GROUND) {
+        *moveStatusMask |= MOVE_STATUS_MISSED;
+    } else {
         chartEntry = 0;
 
         while (sTypeMatchupMultipliers[chartEntry][0] != 0xFF) {
@@ -3322,9 +3363,9 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
             }
 
             if (sTypeMatchupMultipliers[chartEntry][0] == moveType) {
-                if (sTypeMatchupMultipliers[chartEntry][1] == BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL)
-                    && BasicTypeMulApplies(battleCtx, mon, defender, chartEntry) == TRUE) {
-                    damage = PostKO_ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
+                if (sTypeMatchupMultipliers[chartEntry][1] == Pokemon_GetValue(defender, MON_DATA_TYPE_1, NULL)
+                    && PostKO_BasicTypeMulApplies2(battleCtx, mon, defender, chartEntry) == TRUE) {
+                    damage = ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
 
                     if (sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_SUPER_EFF) {
                         totalMul *= 2;
@@ -3332,9 +3373,9 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
                 }
 
                 if (sTypeMatchupMultipliers[chartEntry][1] == Pokemon_GetValue(defender, MON_DATA_TYPE_2, NULL)
-                    && Pokemon_GetValue(defender, MON_DATA_TYPE_1, NULL) != Pokemon_GetValue(defender, MON_DATA_TYPE_1, NULL)
-                    && BasicTypeMulApplies(battleCtx, 0, defender, chartEntry) == TRUE) {
-                    damage = PostKO_ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
+                    && Pokemon_GetValue(defender, MON_DATA_TYPE_1, NULL) != Pokemon_GetValue(defender, MON_DATA_TYPE_2, NULL)
+                    && PostKO_BasicTypeMulApplies2(battleCtx, mon, defender, chartEntry) == TRUE) {
+                    damage = ApplyTypeMultiplier(battleCtx, mon, sTypeMatchupMultipliers[chartEntry][2], damage, movePower, moveStatusMask);
 
                     if (sTypeMatchupMultipliers[chartEntry][2] == TYPE_MULTI_SUPER_EFF) {
                         totalMul *= 2;
@@ -3346,12 +3387,13 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
         }
     }
 
-    if (!(PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_WONDER_GUARD) == TRUE
-            && ((*moveStatusMask & MOVE_STATUS_SUPER_EFFECTIVE) == FALSE
-                || (*moveStatusMask & MOVE_STATUS_BASIC_EFFECTIVENESS) == MOVE_STATUS_BASIC_EFFECTIVENESS)
-            && movePower)
-        && ((battleCtx->battleStatusMask & SYSCTL_IGNORE_TYPE_CHECKS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_IGNORE_IMMUNITIES) == FALSE)) {
+    if (PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_WONDER_GUARD) == TRUE
+        && ((*moveStatusMask & MOVE_STATUS_SUPER_EFFECTIVE) == FALSE
+            || (*moveStatusMask & MOVE_STATUS_BASIC_EFFECTIVENESS) == MOVE_STATUS_BASIC_EFFECTIVENESS)
+        && movePower) {
+        *moveStatusMask |= MOVE_STATUS_WONDER_GUARD;
+    } else if ((battleCtx->battleStatusMask & SYSCTL_IGNORE_TYPE_CHECKS) == FALSE
+        && (battleCtx->battleStatusMask & SYSCTL_IGNORE_IMMUNITIES) == FALSE) {
         if ((*moveStatusMask & MOVE_STATUS_SUPER_EFFECTIVE) && movePower) {
             if (PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_FILTER) == TRUE
                 || PostKO_IgnorableAbility2(battleCtx, mon, defender, ABILITY_SOLID_ROCK) == TRUE) {
@@ -3368,6 +3410,9 @@ int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, in
                 damage *= 2;
             }
         }
+    } else {
+        *moveStatusMask &= ~MOVE_STATUS_SUPER_EFFECTIVE;
+        *moveStatusMask &= ~MOVE_STATUS_NOT_VERY_EFFECTIVE;
     }
 
     return damage;
@@ -5348,7 +5393,7 @@ u32 GetAdjustedMoveTypeBasics(BattleContext *battleCtx, u32 move, u32 ability, u
 
     if (ability == ABILITY_NORMALIZE) {
         typeLocal = TYPE_NORMAL;
-    } else if ((CURRENT_MOVE_DATA.type == TYPE_NORMAL) && (MoveIsAffectedByNormalizeVariants(battleCtx->moveCur) == TRUE)) {
+    } else if ((CURRENT_MOVE_DATA.type == TYPE_NORMAL) && (MoveIsAffectedByNormalizeVariants(move) == TRUE)) {
         if (ability == ABILITY_REFRIGERATE) {
             typeLocal = TYPE_ICE;
         } else if (ability == ABILITY_AERILATE) {
@@ -10515,7 +10560,9 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                         mon,
                         defender,
                         damage,
-                        &moveStatusFlags);
+                        &moveStatusFlags,
+                        moveType,
+                        power);
 
                     if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
                         damage = 0;
@@ -10565,7 +10612,9 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                         defender,
                         mon,
                         enemyDamage,
-                        &moveStatusFlags);
+                        &moveStatusFlags,
+                        moveType,
+                        power);     
 
                     if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
                         enemyDamage = 0;
