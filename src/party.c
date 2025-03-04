@@ -6,6 +6,15 @@
 #include "heap.h"
 #include "pokemon.h"
 #include "savedata.h"
+#include "field_system.h"
+#include "field/field_system.h"
+#include "field/field_system_decl.h"
+#include "field_task.h"
+#include "save_player.h"
+
+#include "struct_decls/struct_02098700_decl.h"
+#include "struct_defs/struct_0202610C.h"
+#include "struct_defs/struct_0204AFC4.h"
 
 #define PARTY_ASSERT_SLOT(party, slot)           \
     {                                            \
@@ -142,4 +151,42 @@ BOOL Party_HasSpecies(const Party *party, int species)
 Party *Party_GetFromSavedata(SaveData *saveData)
 {
     return SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PARTY);
+}
+
+Party *Party_GetLimited(FieldSystem *fieldSystem)
+{
+    int v0;
+    u8 v1;
+    u32 v2;
+    //FieldBattleDTO *v3;
+    SaveData *v4 = fieldSystem->saveData;
+    Party *v5 = Party_GetFromSavedata(v4);
+    Pokemon *v6;
+
+    Party *v7 = Party_New(11);
+
+
+    UnkStruct_0204AFC4 *param0 = fieldSystem->unk_AC;
+
+    //v3 = FieldBattleDTO_New(param0->unk_04, ov104_0223A700(param0->unk_0F));
+    //v4 = param1->unk_08;
+
+    //FieldBattleDTO_InitFromGameState(v3, NULL, param1->unk_08, param1->unk_1C, param1->unk_0C, param1->unk_10, param1->unk_20);
+
+    //v3->background = 18;
+    //v3->terrain = TERRAIN_BATTLE_TOWER;
+
+    v6 = Pokemon_New(param0->unk_04);
+
+    //Party_InitWithCapacity(v3->parties[0], param0->unk_0E);
+
+    for (v0 = 0; v0 < param0->unk_0E; v0++) {
+        Pokemon_Copy(Party_GetPokemonBySlotIndex(v5, param0->unk_2A[v0]), v6);
+        //FieldBattleDTO_AddPokemonToBattler(v3, v6, 0);
+        Party_AddPokemon(v7, v6);
+    }
+
+    Heap_FreeToHeap(v6);
+
+    return v7;
 }

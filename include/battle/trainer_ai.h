@@ -34,7 +34,4 @@ u8 TrainerAI_Main(BattleSystem *battleSys, u8 battler);
  */
 int TrainerAI_PickCommand(BattleSystem *battleSys, int battler);
 
-s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 heldItem, u8 *ivs, int attacker, int ability, BOOL embargo, u8 variance);
-s32 PostKOCalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon);
-
 #endif // POKEPLATINUM_BATTLE_TRAINER_AI_H

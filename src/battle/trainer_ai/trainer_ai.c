@@ -189,6 +189,7 @@ static int AIScript_ReadOffset(BattleContext *battleCtx, int ofs);
 static void AIScript_Iter(BattleContext *battleCtx, int i);
 static u8 AIScript_Battler(BattleContext *battleCtx, u8 inBattler);
 static s32 TrainerAI_CalcAllDamage(BattleSystem *battleSys, BattleContext *battleCtx, int attacker, u16 *moves, s32 *damageVals, u16 heldItem, u8 *ivs, int ability, BOOL embargo, BOOL varyDamage);
+static s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 heldItem, u8 *ivs, int attacker, int ability, int embargoTurns, u8 variance);
 static int TrainerAI_MoveType(BattleSystem *battleSys, BattleContext *battleCtx, int battler, int move);
 static void TrainerAI_GetStats(BattleContext *battleCtx, int battler, int *buf1, int *buf2, int stat);
 
@@ -346,7 +347,7 @@ void TrainerAI_Init(BattleSystem *battleSys, BattleContext *battleCtx, u8 battle
             AI_CONTEXT.moveScore[i] = 0;
         }
 
-        AI_CONTEXT.moveDamageRolls[i] = 80;
+        AI_CONTEXT.moveDamageRolls[i] = 100 - (BattleSystem_RandNext(battleSys) % 16);
     }
 
     AI_CONTEXT.scriptStackSize = 0;
@@ -394,6 +395,7 @@ u8 TrainerAI_Main(BattleSystem *battleSys, u8 battler)
  */
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    Desmume_Log("---------------\n\nMove Selection AI:\n");
     int i;
     u8 maxScoreMoves[4];
     u8 maxScoreMoveSlots[4];
@@ -427,6 +429,10 @@ static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCt
         maxScoreMoves[0] = AI_CONTEXT.moveScore[0];
         maxScoreMoveSlots[0] = AI_ENEMY_ATTACK_1;
 
+        for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+            Desmume_Log("Move %d : %d\n", i+1, AI_CONTEXT.moveScore[i]-100);
+        }
+
         for (i = 1; i < LEARNED_MOVES_MAX; i++) {
             if (battleCtx->battleMons[AI_CONTEXT.attacker].moves[i]) { // Attacker has a move in this slot
                 // Append to the list of max-score moves if equal score to the current max
@@ -448,6 +454,9 @@ static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCt
     }
 
     AI_CONTEXT.selectedTarget[AI_CONTEXT.attacker] = AI_CONTEXT.defender;
+
+    Desmume_Log("\n---------------\n");
+
     return action;
 }
 
@@ -2965,7 +2974,7 @@ static s32 TrainerAI_CalcAllDamage(BattleSystem *battleSys, BattleContext *battl
  *                      to be a value in the range [85..100].
  * @return Calculated damage value.
  */
-s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 heldItem, u8 *ivs, int attacker, int ability, int embargoTurns, u8 variance)
+static s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 heldItem, u8 *ivs, int attacker, int ability, int embargoTurns, u8 variance)
 {
     // must declare C89-style to match
     int defendingSide;
@@ -3210,253 +3219,6 @@ s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 
     if (damage && (battleCtx->aiContext.moveTable[move].class != CLASS_STATUS) && (GetAdjustedMoveType(battleCtx, AI_CONTEXT.attacker, move) == getResistBerryType(Battler_HeldItem(battleCtx, AI_CONTEXT.defender)))) {
         damage *= 50 / 100;
     }
-
-    if (effectivenessFlags & MOVE_STATUS_IMMUNE) {
-        damage = 0;
-    } else {
-        damage = BattleSystem_Divide(damage * variance, 100);
-    }
-
-    return damage;
-}
-
-s32 PostKOCalcDamage(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon)
-{
-    // must declare C89-style to match
-    int defendingSide;
-    int power;
-    int type;
-    int typeTmp;
-    u32 effectivenessFlags;
-    s32 damage;
-
-    defendingSide = Battler_Side(battleSys, AI_CONTEXT.defender);
-    damage = 0;
-    power = 0;
-    type = 0;
-    effectivenessFlags = 0;
-
-    u16 heldItem = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
-    int ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
-    int embargoTurns = 0;
-    int variance = 1;
-
-    u8 ivs[6];
-    for (int i = 0; i < 6; i++) {
-        ivs[i] = Pokemon_GetValue(mon, MON_DATA_HP_IV + i, NULL);
-    }
-
-    switch (move) {
-    case MOVE_NATURAL_GIFT:
-        if (ability != ABILITY_KLUTZ && embargoTurns == 0) {
-            power = BattleSystem_GetItemData(battleCtx, heldItem, ITEM_PARAM_NATURAL_GIFT_POWER);
-
-            if (power) {
-                type = BattleSystem_GetItemData(battleCtx, heldItem, ITEM_PARAM_NATURAL_GIFT_TYPE);
-            } else {
-                type = TYPE_NORMAL;
-            }
-        }
-        break;
-
-    case MOVE_JUDGMENT:
-        if (ability != ABILITY_KLUTZ && embargoTurns == 0) {
-            power = 0;
-
-            switch (BattleSystem_GetItemData(battleCtx, heldItem, ITEM_PARAM_HOLD_EFFECT)) {
-            case HOLD_EFFECT_ARCEUS_FIGHTING:
-                type = TYPE_FIGHTING;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_FLYING:
-                type = TYPE_FLYING;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_POISON:
-                type = TYPE_POISON;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_GROUND:
-                type = TYPE_GROUND;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_ROCK:
-                type = TYPE_ROCK;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_BUG:
-                type = TYPE_BUG;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_GHOST:
-                type = TYPE_GHOST;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_STEEL:
-                type = TYPE_STEEL;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_FIRE:
-                type = TYPE_FIRE;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_WATER:
-                type = TYPE_WATER;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_GRASS:
-                type = TYPE_GRASS;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_ELECTRIC:
-                type = TYPE_ELECTRIC;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_PSYCHIC:
-                type = TYPE_PSYCHIC;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_ICE:
-                type = TYPE_ICE;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_DRAGON:
-                type = TYPE_DRAGON;
-                break;
-
-            case HOLD_EFFECT_ARCEUS_DARK:
-                type = TYPE_DARK;
-                break;
-
-            default:
-                type = TYPE_NORMAL;
-                break;
-            }
-        }
-        break;
-
-    case MOVE_HIDDEN_POWER:
-        power = ((ivs[STAT_HP] & 2) >> 1)
-            | ((ivs[STAT_ATTACK] & 2) >> 0)
-            | ((ivs[STAT_DEFENSE] & 2) << 1)
-            | ((ivs[STAT_SPEED] & 2) << 2)
-            | ((ivs[STAT_SPECIAL_ATTACK] & 2) << 3)
-            | ((ivs[STAT_SPECIAL_DEFENSE] & 2) << 4);
-        type = ((ivs[STAT_HP] & 1) >> 0)
-            | ((ivs[STAT_ATTACK] & 1) << 1)
-            | ((ivs[STAT_DEFENSE] & 1) << 2)
-            | ((ivs[STAT_SPEED] & 1) << 3)
-            | ((ivs[STAT_SPECIAL_ATTACK] & 1) << 4)
-            | ((ivs[STAT_SPECIAL_DEFENSE] & 1) << 5);
-
-        power = power * 40 / 63 + 30;
-        type = (type * 15 / 63) + 1;
-
-        if (type >= TYPE_MYSTERY) {
-            type++;
-        }
-        break;
-
-    case MOVE_GYRO_BALL:
-        power = 1 + 25 * battleCtx->monSpeedValues[AI_CONTEXT.defender] / 6;
-
-        if (power > 150) {
-            power = 150;
-        }
-
-        type = TYPE_NORMAL; // default to the base move type
-        break;
-
-    case MOVE_DRAGON_RAGE:
-        damage = 40;
-        break;
-
-    case MOVE_SEISMIC_TOSS:
-    case MOVE_NIGHT_SHADE:
-        damage = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
-        break;
-
-    case MOVE_PSYWAVE:
-        damage = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) * 5 / 10;
-        break;
-
-    case MOVE_RETURN:
-        power = Pokemon_GetValue(mon, MON_DATA_FRIENDSHIP, NULL) * 10 / 25;
-        type = TYPE_NORMAL;
-        break;
-
-    case MOVE_FRUSTRATION:
-        power = (255 - Pokemon_GetValue(mon, MON_DATA_FRIENDSHIP, NULL)) * 10 / 25;
-        type = TYPE_NORMAL;
-        break;
-
-    case MOVE_MAGNITUDE:
-        power = 70;
-        type = TYPE_NORMAL;
-        break;
-
-    case MOVE_SONIC_BOOM:
-        damage = 20;
-        break;
-
-    case MOVE_LOW_KICK:
-    case MOVE_GRASS_KNOT: {
-        int i;
-
-        for (i = 0; sWeightToPower[i][0] != 0xFFFF; i++) {
-            if (sWeightToPower[i][0] >= battleCtx->battleMons[AI_CONTEXT.defender].weight) {
-                break;
-            }
-        }
-
-        if (sWeightToPower[i][0] != 0xFFFF) {
-            power = sWeightToPower[i][1];
-        } else {
-            power = 120;
-        }
-
-        break;
-    }
-
-    default:
-        // Move has no special calculation logic; default to the basic calc
-        power = 0;
-        type = TYPE_NORMAL;
-        break;
-    }
-
-    if (damage == 0) {
-        damage = PostKO_CalcMoveDamage(battleSys,
-            battleCtx,
-            move,
-            battleCtx->sideConditionsMask[defendingSide],
-            battleCtx->fieldConditionsMask,
-            power,
-            type,
-            mon,
-            AI_CONTEXT.defender,
-            1);
-    } else {
-        battleCtx->battleStatusMask |= SYSCTL_IGNORE_TYPE_CHECKS;
-    }
-
-    /*damage = PostKO_ApplyTypeChart(battleSys,
-        battleCtx,
-        move,
-        mon,
-        AI_CONTEXT.defender,
-        damage,
-        &effectivenessFlags);
-        */
-    battleCtx->battleStatusMask &= ~SYSCTL_IGNORE_TYPE_CHECKS;
-
-    if (damage && Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_LIFE_ORB) {
-        damage *= 120 / 100;
-    }
-
-    //if (damage && (battleCtx->aiContext.moveTable[move].class != CLASS_STATUS) && (GetAdjustedMoveType(battleCtx, AI_CONTEXT.attacker, move) == getResistBerryType(Battler_HeldItem(battleCtx, AI_CONTEXT.defender)))) {
-    //    damage *= 50 / 100;
-    //}
 
     if (effectivenessFlags & MOVE_STATUS_IMMUNE) {
         damage = 0;

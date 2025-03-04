@@ -18,6 +18,10 @@
 
 #include "struct_decls/battle_system.h"
 #include "struct_defs/trainer.h"
+#include "struct_defs/battle_system.h"
+#include "struct_defs/struct_0204AFC4.h"
+
+#include "constants/savedata/vars_flags.h"
 
 #include "battle/ai_context.h"
 #include "battle/battle_context.h"
@@ -44,6 +48,8 @@
 #include "trainer_info.h"
 #include "unk_02005474.h"
 #include "unk_0200F174.h"
+#include "unk_02049D08.h"
+#include "vars_flags.h"
 
 enum {
     STATE_PROCESSING = 0,
@@ -124,6 +130,8 @@ static BOOL BattleController_CheckExtraFlinch(BattleSystem *battleSys, BattleCon
 static BOOL BattleController_ToggleSemiInvulnMons(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleController_InitAI(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *battleCtx);
+
+static Party* BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
 
 extern u32 gTrainerAITable[];
 
@@ -4219,7 +4227,7 @@ static void BattleController_EndFight(BattleSystem *battleSys, BattleContext *ba
 {
     u32 battleType = BattleSystem_BattleType(battleSys);
 
-    if ((battleType & BATTLE_TYPE_LINK) == FALSE) {
+    if ((battleType & BATTLE_TYPE_LINK) == FALSE && !getFlag(FLAG_LIMITED_BATTLE)) {
         Party *playerParty = BattleSystem_Party(battleSys, BATTLER_US);
         Pokemon_ApplyPokerus(playerParty);
         Pokemon_ValidatePokerus(playerParty);
@@ -4235,6 +4243,36 @@ static void BattleController_EndFight(BattleSystem *battleSys, BattleContext *ba
 static void BattleController_EndWait(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     return;
+}
+
+static Party* BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1)
+{
+    int v0;
+    SaveData *v4 = SaveData_Ptr();
+    Party* playerParty = Party_GetFromSavedata(v4);
+    Pokemon *v6;
+    Party* v7 = Party_New(11);
+
+    //UnkStruct_0204AFC4 *param0 = fieldSystem->unk_AC;
+
+    //v6 = Pokemon_New(param0->unk_04);
+
+    Party_Copy(playerParty, v7);
+
+    //Desmume_Log("0E : %d\n", param0->unk_0E);
+
+    /*
+    for (v0 = 0; v0 < param0->unk_0E; v0++) {
+        Desmume_Log("2A[%d] : %d\n", v0, param0->unk_2A[v0]);
+        Pokemon *v8 = Party_GetPokemonBySlotIndex(battleSys->parties[param1], v0);
+        Pokemon *v9 = Party_GetPokemonBySlotIndex(v7, param0->unk_2A[v0]);
+        Pokemon_Copy(v8, v9);
+    }
+    */
+
+    //Heap_FreeToHeap(v6);
+  
+    return v7;
 }
 
 /**
@@ -4501,6 +4539,10 @@ static BOOL BattleController_CheckBattleOver(BattleSystem *battleSys, BattleCont
 
     if (battleResult) {
         BattleSystem_SetResultFlag(battleSys, battleResult);
+
+        if (getFlag(FLAG_LIMITED_BATTLE)) {
+            battleSys->parties[BATTLER_US] = BattleController_RestoreParty(battleSys, battleCtx, BATTLER_US);
+        }
     }
 
     return battleResult != 0;

@@ -26,5 +26,6 @@ void VarsFlags_ClearFlag(VarsFlags *varsFlags, u16 flagID);
 u8 *VarsFlags_GetFlagChunk(VarsFlags *varsFlags, u16 flagID);
 u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID);
 u8 getVar(u16 varID);
+BOOL getFlag(u16 flagID);
 
 #endif // POKEPLATINUM_VARS_FLAGS_H

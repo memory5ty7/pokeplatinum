@@ -13,6 +13,8 @@
 #include "generated/species.h"
 #include "generated/text_banks.h"
 
+#include "constants/savedata/vars_flags.h"
+
 #include "struct_decls/pokedexdata_decl.h"
 #include "struct_decls/struct_0203A790_decl.h"
 #include "struct_defs/chatot_cry.h"
@@ -239,7 +241,14 @@ void FieldBattleDTO_CopyChatotCryToBattler(FieldBattleDTO *dto, const ChatotCry 
 void FieldBattleDTO_InitFromGameState(FieldBattleDTO *dto, const FieldSystem *fieldSystem, SaveData *save, enum MapHeader mapHeaderID, JournalEntry *journalEntry, BagCursor *bagCursor, u8 *subscreenCursorOn)
 {
     TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(save);
-    Party *party = Party_GetFromSavedata(save);
+    Party *party;
+
+    if (getFlag(FLAG_LIMITED_BATTLE)) {
+        party = Party_GetLimited(fieldSystem);
+    } else {
+        party = Party_GetFromSavedata(save);
+    }
+    
     Bag *bag = SaveData_GetBag(save);
     Pokedex *pokedex = SaveData_GetPokedex(save);
     ChatotCry *chatotCry = GetChatotCryDataFromSave(save);

@@ -4,6 +4,8 @@
 #include "struct_defs/pokemon.h"
 
 #include "savedata.h"
+#include "field/field_system_decl.h"
+#include "field_task.h"
 
 typedef struct Party {
     int capacity;
@@ -25,5 +27,7 @@ BOOL Party_SwapSlots(Party *party, int slotA, int slotB);
 void Party_Copy(const Party *src, Party *dest);
 BOOL Party_HasSpecies(const Party *party, int species);
 Party *Party_GetFromSavedata(SaveData *saveData);
+
+Party *Party_GetLimited(FieldSystem *fieldSystem);
 
 #endif // POKEPLATINUM_PARTY_H
