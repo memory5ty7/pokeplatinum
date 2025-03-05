@@ -5656,6 +5656,7 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
     ATTACKING_MON.statusVolatile |= VOLATILE_CONDITION_TRANSFORM;
     ATTACKING_MON.moveEffectsData.disabledMove = MOVE_NONE;
     ATTACKING_MON.moveEffectsData.disabledTurns = 0;
+    ATTACKING_MON.moveEffectsData.throatChopTurns = 0;
     ATTACKING_MON.moveEffectsData.transformedPID = DEFENDING_MON.personality;
     ATTACKING_MON.moveEffectsData.transformedGender = DEFENDING_MON.gender;
     ATTACKING_MON.moveEffectsData.mimickedMoveSlot = 0;

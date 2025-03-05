@@ -64,6 +64,7 @@ static void BattleAI_ClearKnownItem(BattleContext *battleCtx, u8 battler);
 static int ChooseTraceTarget(BattleSystem *battleSys, BattleContext *battleCtx, int defender1, int defender2);
 static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
+static BOOL isSoundMove(u16 move);
 
 static const Fraction sStatStageBoosts[];
 
@@ -570,6 +571,9 @@ int BattleMon_Get(BattleContext *battleCtx, int battler, enum BattleMonParam par
     case BATTLEMON_TEMP:
         return BattleMon_Get(battleCtx, battler, battleCtx->scriptTemp, buf);
 
+    case BATTLEMON_THROAT_CHOP_TURNS:
+        return battleMon->moveEffectsData.throatChopTurns;
+
     default:
         GF_ASSERT(FALSE);
         break;
@@ -925,6 +929,10 @@ void BattleMon_Set(BattleContext *battleCtx, int battler, enum BattleMonParam pa
         BattleMon_Set(battleCtx, battler, battleCtx->scriptTemp, buf);
         break;
 
+    case BATTLEMON_THROAT_CHOP_TURNS:
+        mon->moveEffectsData.throatChopTurns = *(u8 *)buf;
+        break;
+
     default:
         GF_ASSERT(FALSE);
         break;
@@ -1143,6 +1151,10 @@ void BattleMon_AddVal(BattleMon *mon, enum BattleMonParam paramID, int val)
 
     case BATTLEMON_FORM_NUM:
         mon->formNum += val;
+        break;
+
+    case BATTLEMON_THROAT_CHOP_TURNS:
+        mon->moveEffectsData.throatChopTurns += val;
         break;
 
     default:
@@ -2564,6 +2576,7 @@ void BattleSystem_UpdateAfterSwitch(BattleSystem *battleSys, BattleContext *batt
         battleCtx->battleMons[battler].moveEffectsData.magnetRiseTurns = moveEffects.magnetRiseTurns;
         battleCtx->battleMons[battler].moveEffectsData.embargoTurns = moveEffects.embargoTurns;
         battleCtx->battleMons[battler].moveEffectsData.healBlockTurns = moveEffects.healBlockTurns;
+        battleCtx->battleMons[battler].moveEffectsData.throatChopTurns = moveEffects.throatChopTurns;
     }
 
     battleCtx->battleMons[battler].moveEffectsData.fakeOutTurnNumber = battleCtx->totalTurns + 1;
@@ -2730,6 +2743,12 @@ int BattleSystem_CheckInvalidMoves(BattleSystem *battleSys, BattleContext *battl
             invalidMoves |= FlagIndex(i);
         }
 
+        if (isSoundMove(battleCtx->battleMons[battler].moves[i])
+            && (opMask & CHECK_INVALID_THROAT_CHOP)
+            && (battleCtx->battleMons[battler].moveEffectsData.throatChopTurns)) {
+            invalidMoves |= FlagIndex(i);
+        }
+
         if (battleCtx->battleMons[battler].moveEffectsData.tauntedTurns
             && (opMask & CHECK_INVALID_TAUNTED)
             && MOVE_DATA(battleCtx->battleMons[battler].moves[i]).power == 0) {
@@ -2752,7 +2771,7 @@ int BattleSystem_CheckInvalidMoves(BattleSystem *battleSys, BattleContext *battl
         }
 
         if ((itemEffect == HOLD_EFFECT_ASSAULT_VEST
-                && MOVE_DATA(battleCtx->battleMons[battler].moves[i]).class == CLASS_STATUS)
+            && MOVE_DATA(battleCtx->battleMons[battler].moves[i]).class == CLASS_STATUS)
             && (opMask & CHECK_INVALID_ASSAULT_VEST)) {
             invalidMoves |= FlagIndex(i);
         }
@@ -2797,6 +2816,12 @@ BOOL BattleSystem_CanUseMove(BattleSystem *battleSys, BattleContext *battleCtx, 
         msgOut->params[0] = BattleSystem_NicknameTag(battleCtx, battler);
         msgOut->params[1] = battleCtx->battleMons[battler].moves[moveSlot];
         result = FALSE;
+    } else if (BattleSystem_CheckInvalidMoves(battleSys, battleCtx, battler, 0, CHECK_INVALID_THROAT_CHOP) & FlagIndex(moveSlot)) {
+        msgOut->tags = TAG_NICKNAME_MOVE;
+        msgOut->id = 616; // "{0} can't use the sealed {1}!"    // Message Throat Chop
+        msgOut->params[0] = BattleSystem_NicknameTag(battleCtx, battler);
+        msgOut->params[1] = battleCtx->battleMons[battler].moves[moveSlot];
+        result = FALSE;       
     } else if (BattleSystem_CheckInvalidMoves(battleSys, battleCtx, battler, 0, CHECK_INVALID_IMPRISONED) & FlagIndex(moveSlot)) {
         msgOut->tags = TAG_NICKNAME_MOVE;
         msgOut->id = 616; // "{0} can't use the sealed {1}!"
@@ -7844,6 +7869,12 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     battleType = BattleSystem_BattleType(battleSys);
 
+    if (move == MOVE_BODY_PRESS)
+    {
+        attackStat = BattleMon_Get(battleCtx, attacker, BATTLEMON_DEFENSE, NULL);
+        attackStage = BattleMon_Get(battleCtx, attacker, BATTLEMON_DEFENSE_STAGE, NULL) - 6;
+    }
+
     // Assign power; prefer the input power (used by variable-power moves, e.g. Gyro Ball)
     if (inPower == 0) {
         movePower = MOVE_DATA(move).power;
@@ -8455,6 +8486,12 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
 
     battleType = BattleSystem_BattleType(battleSys);
 
+    if (move == MOVE_BODY_PRESS)
+    {
+        attackStat = Pokemon_GetValue(mon, MON_DATA_DEF, NULL);
+        attackStage = 0;
+    }
+
     // Assign power; prefer the input power (used by variable-power moves, e.g. Gyro Ball)
     if (inPower == 0) {
         movePower = MOVE_DATA(move).power;
@@ -9036,6 +9073,12 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
     attackerParams.type2 = BattleMon_Get(battleCtx, attacker, BATTLEMON_TYPE_2, NULL);
     defenderParams.type2 = (u8)Pokemon_GetValue(defender, MON_DATA_TYPE_2, NULL);
 
+    if (move == MOVE_BODY_PRESS)
+    {
+        attackStat = BattleMon_Get(battleCtx, attacker, BATTLEMON_DEFENSE, NULL);
+        attackStage = BattleMon_Get(battleCtx, attacker, BATTLEMON_DEFENSE_STAGE, NULL) - 6;
+    }
+
     itemTmp = Battler_HeldItem(battleCtx, attacker);
     attackerParams.heldItemEffect = BattleSystem_GetItemData(battleCtx, itemTmp, ITEM_PARAM_HOLD_EFFECT);
     attackerParams.heldItemPower = BattleSystem_GetItemData(battleCtx, itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM);
@@ -9066,11 +9109,9 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
 
     moveClass = MOVE_DATA(move).class;
 
-    /*
     if (BattleMon_Get(battleCtx, attacker, BATTLEMON_HELD_ITEM, NULL) == (u32)(moveType + ITEM_NORMAL_GEM) && (moveClass != CLASS_STATUS)) {
         movePower = movePower * 15 / 10;
     }
-    */
 
     if (attackerParams.ability == ABILITY_TECHNICIAN
         && move != MOVE_STRUGGLE
@@ -9174,7 +9215,6 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
         movePower = movePower * (100 + attackerParams.heldItemPower) / 100;
     }
 
-    /*
     if (PostKO_IgnorableAbility2(battleCtx, attacker, defender, ABILITY_THICK_FAT) == TRUE
         && (moveType == TYPE_FIRE || moveType == TYPE_ICE)) {
         movePower /= 2;
@@ -9401,8 +9441,9 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
             spDefenseStat = spDefenseStat * 15 / 10;
         }
 
+        /*
         if ((fieldConditions & FIELD_CONDITION_SUNNY)
-            /*&& BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_FLOWER_GIFT)*/) {
+            && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_FLOWER_GIFT)) {
             attackStat = attackStat * 15 / 10;
         }
 
@@ -11390,4 +11431,15 @@ int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u
     }
 
     return power;
+}
+
+static BOOL isSoundMove(u16 move)
+{
+    BOOL result = FALSE;
+    for (int i = 0; i < NELEMS(sSoundMoves); i++) {
+        if (sSoundMoves[i] == move) {
+            result = TRUE;
+        }
+    }
+    return result;
 }

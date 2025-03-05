@@ -323,4 +323,6 @@ subscript_files = files(
     'subscript_aurora_veil.s',
     'subscript_magnet_rise.s',
     'subscript_chilly_reception.s',
+    'subscript_throat_chop.s',
+    'subscript_throat_chop_end.s',
 )

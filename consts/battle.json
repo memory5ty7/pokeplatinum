@@ -291,7 +291,8 @@
                 "BATTLE_EFFECT_TRIPLE_AXEL",
                 "BATTLE_EFFECT_CLEAR_SMOG",
                 "BATTLE_EFFECT_JAW_LOCK",
-                "BATTLE_EFFECT_CHILLY_RECEPTION"
+                "BATTLE_EFFECT_CHILLY_RECEPTION",
+                "BATTLE_EFFECT_THROAT_CHOP"
             ]
         },
         "@MessageTag": {
@@ -516,7 +517,8 @@
                 "MOVE_SUBSCRIPT_PTR_SHELL_SMASH",
                 "MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL",
                 "MOVE_SUBSCRIPT_PTR_CLEAR_SMOG",
-                "MOVE_SUBSCRIPT_PTR_CHILLY_RECEPTION"
+                "MOVE_SUBSCRIPT_PTR_CHILLY_RECEPTION",
+                "MOVE_SUBSCRIPT_PTR_THROAT_CHOP"
             ]
         },
         "@SideEffectType": {
@@ -761,7 +763,8 @@
                 "BATTLEMON_SLOW_START_FINISHED",
                 "BATTLEMON_FORM_NUM",
                 "BATTLEMON_UNUSED_99",
-                "BATTLEMON_TEMP"
+                "BATTLEMON_TEMP",
+                "BATTLEMON_THROAT_CHOP_TURNS"
             ]
         },
         "@AfterMoveMessageType": {

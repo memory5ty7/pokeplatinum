@@ -1,19 +1,21 @@
 {
-    "name": "Absorb",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_GRASS",
-    "power": 20,
+    "name": "Throat Chop",
+    "class": "CLASS_PHYSICAL",
+    "type": "TYPE_DARK",
+    "power": 80,
     "accuracy": 100,
-    "pp": 25,
+    "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
-        "chance": 0
+        "type": "BATTLE_EFFECT_THROAT_CHOP",
+        "chance": 100
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
+        "MOVE_FLAG_MAKES_CONTACT",
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
     ],
     "contest": {
         "effect": 20,

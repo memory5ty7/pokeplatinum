@@ -52,6 +52,7 @@ typedef struct MoveEffectsData {
     u16 transformedGender;
 
     int itemHPRecovery;
+    u32 throatChopTurns : 2;
 } MoveEffectsData;
 
 typedef struct BattleMon {

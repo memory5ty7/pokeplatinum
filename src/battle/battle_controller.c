@@ -10,6 +10,7 @@
 #include "constants/moves.h"
 #include "constants/narc.h"
 #include "constants/pokemon.h"
+#include "constants/savedata/vars_flags.h"
 #include "constants/species.h"
 #include "constants/trainer.h"
 #include "generated/abilities.h"
@@ -17,11 +18,9 @@
 #include "generated/sdat.h"
 
 #include "struct_decls/battle_system.h"
-#include "struct_defs/trainer.h"
 #include "struct_defs/battle_system.h"
 #include "struct_defs/struct_0204AFC4.h"
-
-#include "constants/savedata/vars_flags.h"
+#include "struct_defs/trainer.h"
 
 #include "battle/ai_context.h"
 #include "battle/battle_context.h"
@@ -131,7 +130,7 @@ static BOOL BattleController_ToggleSemiInvulnMons(BattleSystem *battleSys, Battl
 static void BattleController_InitAI(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *battleCtx);
 
-static Party* BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
+static Party *BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
 
 extern u32 gTrainerAITable[];
 
@@ -1299,6 +1298,7 @@ enum {
     MON_COND_CHECK_STATE_CHARGE,
     MON_COND_CHECK_STATE_TAUNT,
     MON_COND_CHECK_STATE_MAGNET_RISE,
+    MON_COND_CHECK_STATE_THROAT_CHOP,
     MON_COND_CHECK_STATE_HEAL_BLOCK,
     MON_COND_CHECK_STATE_EMBARGO,
     MON_COND_CHECK_STATE_YAWN,
@@ -1673,6 +1673,19 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
                     battleCtx->msgBattlerTemp = battler;
 
                     PrepareSubroutineSequence(battleCtx, subscript_magnet_rise_end);
+                    state = STATE_BREAK_OUT;
+                }
+            }
+
+            battleCtx->monConditionCheckState++;
+            break;
+
+        case MON_COND_CHECK_STATE_THROAT_CHOP:
+            if (battleCtx->battleMons[battler].moveEffectsData.throatChopTurns) {
+                if (--battleCtx->battleMons[battler].moveEffectsData.throatChopTurns == 0) {
+                    battleCtx->msgBattlerTemp = battler;
+
+                    PrepareSubroutineSequence(battleCtx, subscript_throat_chop_end);
                     state = STATE_BREAK_OUT;
                 }
             }
@@ -3875,18 +3888,14 @@ static void BattleController_AfterMoveEffects(BattleSystem *battleSys, BattleCon
             }
         }
 
-    
     case AFTER_MOVE_EFFECT_EMERGENCY_EXIT:
         battleCtx->afterMoveEffectState++;
         if (DEFENDING_MON.ability == ABILITY_EMERGENCY_EXIT
-        && DEFENDING_MON.curHP < (s32)DEFENDING_MON.maxHP / 2
-        && DEFENDING_MON.curHP > 0
-        && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
-        && (
-            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2) ||
-            ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2)
-        )) {
+            && DEFENDING_MON.curHP < (s32)DEFENDING_MON.maxHP / 2
+            && DEFENDING_MON.curHP > 0
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && ATTACKING_MON.sheer_force_flag == 1)
+            && (((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2) || ((DEFENDING_MON.curHP - (DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) > (s32)DEFENDING_MON.maxHP / 2))) {
             /*
             battleCtx->moveCur = MOVE_U_TURN;
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
@@ -4245,21 +4254,21 @@ static void BattleController_EndWait(BattleSystem *battleSys, BattleContext *bat
     return;
 }
 
-static Party* BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1)
+static Party *BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1)
 {
     int v0;
     SaveData *v4 = SaveData_Ptr();
-    Party* playerParty = Party_GetFromSavedata(v4);
+    Party *playerParty = Party_GetFromSavedata(v4);
     Pokemon *v6;
-    Party* v7 = Party_New(11);
+    Party *v7 = Party_New(11);
 
-    //UnkStruct_0204AFC4 *param0 = fieldSystem->unk_AC;
+    // UnkStruct_0204AFC4 *param0 = fieldSystem->unk_AC;
 
-    //v6 = Pokemon_New(param0->unk_04);
+    // v6 = Pokemon_New(param0->unk_04);
 
     Party_Copy(playerParty, v7);
 
-    //Desmume_Log("0E : %d\n", param0->unk_0E);
+    // Desmume_Log("0E : %d\n", param0->unk_0E);
 
     /*
     for (v0 = 0; v0 < param0->unk_0E; v0++) {
@@ -4270,8 +4279,8 @@ static Party* BattleController_RestoreParty(BattleSystem *battleSys, BattleConte
     }
     */
 
-    //Heap_FreeToHeap(v6);
-  
+    // Heap_FreeToHeap(v6);
+
     return v7;
 }
 
