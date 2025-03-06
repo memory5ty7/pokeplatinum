@@ -764,7 +764,8 @@
                 "BATTLEMON_FORM_NUM",
                 "BATTLEMON_UNUSED_99",
                 "BATTLEMON_TEMP",
-                "BATTLEMON_THROAT_CHOP_TURNS"
+                "BATTLEMON_THROAT_CHOP_TURNS",
+                "BATTLEMON_STATS_DROPPED"
             ]
         },
         "@AfterMoveMessageType": {

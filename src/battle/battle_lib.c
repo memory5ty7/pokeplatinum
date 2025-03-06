@@ -5963,6 +5963,19 @@ BOOL BattleSystem_TriggerHeldItem(BattleSystem *battleSys, BattleContext *battle
             }
             break;
         }
+ 
+        case HOLD_EFFECT_EJECT_PACK: // Eject Pack
+            if ((battleCtx->battleMons[battler].curHP)
+                && (battleCtx->selfTurnFlags[battler].statsDropped)) {
+                u32 temp = battleCtx->attacker;
+                battleCtx->attacker = battleCtx->defender;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+                battleCtx->defender = temp;
+                battleCtx->moveCur = MOVE_U_TURN;
+                subscript = subscript_switching_items;
+                result = TRUE;
+            }
+            break;
 
         case HOLD_EFFECT_HEAL_INFATUATION:
             if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT) {
@@ -6176,6 +6189,20 @@ BOOL BattleSystem_TriggerHeldItemOnStatus(BattleSystem *battleSys, BattleContext
             }
             break;
         }
+
+        case HOLD_EFFECT_EJECT_PACK: // Eject Pack
+            if ((battleCtx->battleMons[battler].curHP)
+                && (battleCtx->selfTurnFlags[battler].statsDropped)) {
+                    //u32 temp = battleCtx->attacker;
+                    //battleCtx->attacker = battleCtx->defender;
+                    //battleCtx->msgBattlerTemp = battler;
+                    //battleCtx->defender = temp;
+                    //battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
+                    battleCtx->moveCur = MOVE_U_TURN;
+                    *subscript = subscript_switching_items;
+                result = TRUE;
+            }          
+            break;
 
         case HOLD_EFFECT_HEAL_INFATUATION:
             if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT) {
@@ -6585,6 +6612,19 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
                 || (battleCtx->battleMons[battleCtx->defender].statBoosts[STAT_ATTACK] < 12))) {
             battleCtx->sideEffectMon = battleCtx->defender;
             *subscript = subscript_raise_atk_sp_atk_on_hit;
+            result = TRUE;
+        }
+        break;
+
+    case HOLD_EFFECT_EJECT_PACK: // Eject Pack
+        if ((battleCtx->battleMons[battleCtx->defender].curHP)
+            && (battleCtx->selfTurnFlags[battleCtx->defender].statsDropped)) {
+                u32 temp = battleCtx->attacker;
+                battleCtx->attacker = battleCtx->defender;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+                battleCtx->defender = temp;
+                battleCtx->moveCur = MOVE_U_TURN;
+                *subscript = subscript_switching_items;
             result = TRUE;
         }
         break;

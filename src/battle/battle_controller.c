@@ -1304,6 +1304,7 @@ enum {
     MON_COND_CHECK_STATE_YAWN,
     MON_COND_CHECK_STATE_ITEM_CONDITION,
     MON_COND_CHECK_STATE_ITEM_DETRIMENTAL_EFFECT,
+    MON_COND_CHECK_RESET_STAT_DROPPED,
 
     MON_COND_CHECK_END
 };
@@ -1753,6 +1754,14 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
             battleCtx->monConditionCheckState++;
             break;
 
+        case MON_COND_CHECK_RESET_STAT_DROPPED:
+            for (i = 0; i < MAX_BATTLERS; i++) {
+                battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
+            }
+
+            battleCtx->monConditionCheckState++;
+            break;
+            
         case MON_COND_CHECK_END:
             battleCtx->monConditionCheckState = MON_COND_CHECK_START;
             battleCtx->monConditionCheckTemp++;

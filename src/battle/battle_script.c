@@ -3281,9 +3281,18 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
             battleCtx->msgBuffer.params[1] = battleCtx->battleMons[battleCtx->attacker].ability;
             battleCtx->msgBuffer.params[2] = BattleSystem_NicknameTag(battleCtx, battleCtx->sideEffectMon);
             battleCtx->msgBuffer.params[3] = BATTLE_STAT_ATTACK + statOffset;
+
+            if (!battleCtx->selfTurnFlags[battleCtx->sideEffectMon].statsDropped) {
+                battleCtx->selfTurnFlags[battleCtx->sideEffectMon].statsDropped = TRUE;
+            }
+            
         } else {
             // "{0}'s {1} fell!" or "{0}'s {1} harshly fell!"
             SetupNicknameStatMsg(battleCtx, stageChange == -1 ? 762 : 765, statOffset);
+
+            if (!battleCtx->selfTurnFlags[battleCtx->sideEffectMon].statsDropped) {
+                battleCtx->selfTurnFlags[battleCtx->sideEffectMon].statsDropped = TRUE;
+            }
         }
 
         mon->statBoosts[BATTLE_STAT_ATTACK + statOffset] += stageChange;
