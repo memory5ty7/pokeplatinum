@@ -325,4 +325,5 @@ subscript_files = files(
     'subscript_chilly_reception.s',
     'subscript_throat_chop.s',
     'subscript_throat_chop_end.s',
+    'subscript_parting_shot.s',
 )

@@ -1,18 +1,19 @@
 {
-    "name": "Absorb",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_GRASS",
-    "power": 20,
+    "name": "Parting Shot",
+    "class": "CLASS_STATUS",
+    "type": "TYPE_DARK",
+    "power": 0,
     "accuracy": 100,
-    "pp": 25,
+    "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
+        "type": "BATTLE_EFFECT_PARTING_SHOT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_CAN_PROTECT",
+        "MOVE_FLAG_CAN_MAGIC_COAT",
         "MOVE_FLAG_CAN_MIRROR_MOVE"
     ],
     "contest": {

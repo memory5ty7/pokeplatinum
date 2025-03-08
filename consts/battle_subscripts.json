@@ -323,7 +323,8 @@
                 "BATTLE_SUBSCRIPT_AURORA_VEIL",
                 "BATTLE_SUBSCRIPT_MAGNET_RISE",
                 "BATTLE_SUBSCRIPT_THROAT_CHOP",
-                "BATTLE_SUBSCRIPT_THROAT_CHOP_END"
+                "BATTLE_SUBSCRIPT_THROAT_CHOP_END",
+                "BATTLE_SUBSCRIPT_PARTING_SHOT"
             ]
         }
     }

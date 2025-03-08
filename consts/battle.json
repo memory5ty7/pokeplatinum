@@ -292,7 +292,8 @@
                 "BATTLE_EFFECT_CLEAR_SMOG",
                 "BATTLE_EFFECT_JAW_LOCK",
                 "BATTLE_EFFECT_CHILLY_RECEPTION",
-                "BATTLE_EFFECT_THROAT_CHOP"
+                "BATTLE_EFFECT_THROAT_CHOP",
+                "BATTLE_EFFECT_PARTING_SHOT"
             ]
         },
         "@MessageTag": {
@@ -518,7 +519,8 @@
                 "MOVE_SUBSCRIPT_PTR_TRIPLE_AXEL",
                 "MOVE_SUBSCRIPT_PTR_CLEAR_SMOG",
                 "MOVE_SUBSCRIPT_PTR_CHILLY_RECEPTION",
-                "MOVE_SUBSCRIPT_PTR_THROAT_CHOP"
+                "MOVE_SUBSCRIPT_PTR_THROAT_CHOP",
+                "MOVE_SUBSCRIPT_PTR_PARTING_SHOT"
             ]
         },
         "@SideEffectType": {

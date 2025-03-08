@@ -4298,6 +4298,7 @@ static u16 sSoundMoves[] = {
     MOVE_HYPER_VOICE,
     MOVE_BUG_BUZZ,
     MOVE_CHATTER,
+    MOVE_PARTING_SHOT,
 };
 
 int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, int defender)
@@ -5996,10 +5997,12 @@ BOOL BattleSystem_TriggerHeldItem(BattleSystem *battleSys, BattleContext *battle
         case HOLD_EFFECT_EJECT_PACK: // Eject Pack
             if ((battleCtx->battleMons[battler].curHP)
                 && (battleCtx->selfTurnFlags[battler].statsDropped)) {
-                u32 temp = battleCtx->attacker;
-                battleCtx->attacker = battleCtx->defender;
+                Desmume_Log("1\n");
+                //u32 temp = battleCtx->attacker;
+                //battleCtx->attacker = battleCtx->defender;
                 battleCtx->msgBattlerTemp = battleCtx->defender;
-                battleCtx->defender = temp;
+                //battleCtx->defender = temp;
+                battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
                 battleCtx->moveCur = MOVE_U_TURN;
                 subscript = subscript_switching_items;
                 result = TRUE;
@@ -6222,11 +6225,17 @@ BOOL BattleSystem_TriggerHeldItemOnStatus(BattleSystem *battleSys, BattleContext
         case HOLD_EFFECT_EJECT_PACK: // Eject Pack
             if ((battleCtx->battleMons[battler].curHP)
                 && (battleCtx->selfTurnFlags[battler].statsDropped)) {
-                // u32 temp = battleCtx->attacker;
-                // battleCtx->attacker = battleCtx->defender;
-                // battleCtx->msgBattlerTemp = battler;
-                // battleCtx->defender = temp;
-                // battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
+                Desmume_Log("2\n");
+                u32 temp = battleCtx->attacker;
+                battleCtx->attacker = battler;
+                battleCtx->msgBattlerTemp = battler;
+                battleCtx->defender = temp;
+
+                //battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
+                //battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battler;
+
+                battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
                 battleCtx->moveCur = MOVE_U_TURN;
                 *subscript = subscript_switching_items;
                 result = TRUE;
@@ -6648,11 +6657,13 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
     case HOLD_EFFECT_EJECT_PACK: // Eject Pack
         if ((battleCtx->battleMons[battleCtx->defender].curHP)
             && (battleCtx->selfTurnFlags[battleCtx->defender].statsDropped)) {
-            u32 temp = battleCtx->attacker;
-            battleCtx->attacker = battleCtx->defender;
+            Desmume_Log("3\n");
+            //u32 temp = battleCtx->attacker;
+            //battleCtx->attacker = battleCtx->defender;
             battleCtx->msgBattlerTemp = battleCtx->defender;
-            battleCtx->defender = temp;
+            //battleCtx->defender = temp;
             battleCtx->moveCur = MOVE_U_TURN;
+            battleCtx->selfTurnFlags[battleCtx->defender].statsDropped = FALSE;
             *subscript = subscript_switching_items;
             result = TRUE;
         }
