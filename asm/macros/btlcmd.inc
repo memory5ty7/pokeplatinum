@@ -1237,9 +1237,14 @@
     .long \battler
     .endm
 
-    .endif // ASM_BATTLE_SCRIPT_INC
-
     .macro TryAuroraVeil jump_if_fail
     .long 224
     .long (\jump_if_fail-.) / 4 - 1
     .endm
+
+    .macro TryMatBlock jump_if_fail
+    .long 225
+    .long (\jump_if_fail-.) / 4 - 1
+    .endm
+
+    .endif // ASM_BATTLE_SCRIPT_INC

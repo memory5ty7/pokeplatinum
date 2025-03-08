@@ -918,6 +918,7 @@ enum {
     FIELD_COND_CHECK_STATE_SAFEGUARD,
     FIELD_COND_CHECK_STATE_TAILWIND,
     FIELD_COND_CHECK_STATE_LUCKY_CHANT,
+    FIELD_COND_CHECK_STATE_MAT_BLOCK,
     FIELD_COND_CHECK_STATE_WISH,
     FIELD_COND_CHECK_STATE_RAINING,
     FIELD_COND_CHECK_STATE_SANDSTORM,
@@ -1096,6 +1097,20 @@ static void BattleController_CheckFieldConditions(BattleSystem *battleSys, Battl
                 if (state) {
                     break;
                 }
+            }
+
+            StepFieldConditionCheck(battleCtx, state);
+            break;
+
+        case FIELD_COND_CHECK_STATE_MAT_BLOCK:
+            while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {
+                side = battleCtx->fieldConditionCheckTemp;
+
+                if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_MAT_BLOCK) {
+                    battleCtx->sideConditionsMask[side] -= SIDE_CONDITION_MAT_BLOCK;
+                }
+
+                battleCtx->fieldConditionCheckTemp++;
             }
 
             StepFieldConditionCheck(battleCtx, state);
@@ -3094,6 +3109,16 @@ static int BattleController_CheckMoveHitOverrides(BattleSystem *battleSys, Battl
         battleCtx->moveStatusFlags |= MOVE_STATUS_PROTECTED;
         return 0;
     }
+
+    if ((battleCtx->sideConditionsMask[Battler_Side(battleSys, battleCtx->defender)] & SIDE_CONDITION_MAT_BLOCK)
+        && (MOVE_DATA(move).class != CLASS_STATUS)
+        && (MOVE_DATA(move).flags & MOVE_FLAG_CAN_PROTECT)
+        && (move != MOVE_CURSE || Move_IsGhostCurse(battleCtx, move, attacker) == TRUE) // Ghost-Curse can be Protected
+        && (Move_IsMultiTurn(battleCtx, move) == FALSE || (battleCtx->battleStatusMask & SYSCTL_LAST_OF_MULTI_TURN))) {
+        Battler_UnlockMoveChoice(battleSys, battleCtx, attacker);
+        battleCtx->moveStatusFlags |= MOVE_STATUS_PROTECTED;
+        return 0;
+    }   
 
     if ((battleCtx->battleStatusMask & SYSCTL_NONSTANDARD_ACC_CHECK) == FALSE
         && (MON_IS_LOCKED_ONTO(attacker, defender)

@@ -316,6 +316,7 @@ static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battle
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TryAuroraVeil(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TryMatBlock(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -577,7 +578,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_RefreshMonData,
     BtlCmd_End,
     BtlCmd_SetAbilityActivatedFlag,
-    BtlCmd_TryAuroraVeil
+    BtlCmd_TryAuroraVeil,
+    BtlCmd_TryMatBlock
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -2348,6 +2350,7 @@ static BOOL BtlCmd_GoToEffectScript(BattleSystem *battleSys, BattleContext *batt
             case BATTLE_EFFECT_CHATTER:
             case BATTLE_EFFECT_FLINCH_MINIMIZE_DOUBLE_HIT:
             case BATTLE_EFFECT_TRI_ATTACK:
+            case BATTLE_EFFECT_THROAT_CHOP:
                 effect = BATTLE_EFFECT_HIT;
                 if(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)
                 {
@@ -7852,8 +7855,9 @@ static BOOL BtlCmd_TryFeint(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
     int jumpOnFail = BattleScript_Read(battleCtx);
+    int side = Battler_Side(battleSys, battleCtx->defender);
 
-    if (DEFENDER_TURN_FLAGS.protecting == FALSE) {
+    if (DEFENDER_TURN_FLAGS.protecting == FALSE && !(battleCtx->sideConditionsMask[side] & SIDE_CONDITION_MAT_BLOCK)) {
         BattleScript_Iter(battleCtx, jumpOnFail);
     }
 
@@ -12541,6 +12545,34 @@ static BOOL BtlCmd_TryAuroraVeil(BattleSystem *battleSys, BattleContext *battleC
         battleCtx->sideConditions[side].lightScreenTurns = 9;
 
         battleCtx->msgBuffer.id = 1269; // "{0} raised [your/its] team's Defense!"
+    }
+
+    return FALSE;
+}
+
+static BOOL BtlCmd_TryMatBlock(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+
+    BattleScript_Iter(battleCtx, 1);
+    int jump = BattleScript_Read(battleCtx);
+
+    int side = Battler_Side(battleSys, battleCtx->attacker);
+
+    if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_MAT_BLOCK) {
+        BattleScript_Iter(battleCtx, jump);
+        battleCtx->moveStatusFlags |= MOVE_STATUS_FAILED;
+    } else {
+        battleCtx->sideConditionsMask[side] |= SIDE_CONDITION_MAT_BLOCK;
+
+        battleCtx->msgBuffer.tags = TAG_MOVE_SIDE;
+        battleCtx->msgBuffer.params[0] = battleCtx->moveCur;
+        battleCtx->msgBuffer.params[1] = battleCtx->attacker;
+
+        if (BattleSystem_CountAliveBattlers(battleSys, battleCtx, TRUE, battleCtx->attacker) == 2) {
+            battleCtx->msgBuffer.id = 196; // "{0} raised [your/its] team's Defense slightly!"
+        } else {
+            battleCtx->msgBuffer.id = 194; // "{0} raised [your/its] team's Defense!"
+        }
     }
 
     return FALSE;
