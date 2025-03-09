@@ -131,6 +131,7 @@ static void BattleController_InitAI(BattleSystem *battleSys, BattleContext *batt
 static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static Party *BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
+static Party *BattleController_RestoreItems(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
 
 extern u32 gTrainerAITable[];
 
@@ -4318,6 +4319,29 @@ static Party *BattleController_RestoreParty(BattleSystem *battleSys, BattleConte
     return v7;
 }
 
+static Party *BattleController_RestoreItems(BattleSystem *battleSys, BattleContext *battleCtx, int battler)
+{
+    int i;
+    SaveData *saveData = SaveData_Ptr();
+
+    Party *playerParty = Party_GetFromSavedata(saveData);
+    Party *battlerParty = BattleSystem_Party(battleSys, battler);
+
+    for (i = 0; i < Party_GetCapacity(playerParty); i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(battlerParty, i);
+
+        int startItem = Pokemon_GetValue(Party_GetPokemonBySlotIndex(playerParty, i), MON_DATA_HELD_ITEM, NULL);
+        int endItem = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
+
+        if ((startItem != endItem)) {
+            endItem = ITEM_NONE;
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &endItem);
+        }
+    }
+
+    return battlerParty;
+}
+
 /**
  * @brief Try to replace any and all fainted battlers.
  *
@@ -4585,6 +4609,8 @@ static BOOL BattleController_CheckBattleOver(BattleSystem *battleSys, BattleCont
 
         if (getFlag(FLAG_LIMITED_BATTLE)) {
             battleSys->parties[BATTLER_US] = BattleController_RestoreParty(battleSys, battleCtx, BATTLER_US);
+        } else {
+            battleSys->parties[BATTLER_US] = BattleController_RestoreItems(battleSys, battleCtx, BATTLER_US);
         }
     }
 
