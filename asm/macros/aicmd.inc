@@ -634,6 +634,12 @@
     .long (\jump-.) / 4 - 1
     .endm
 
+    .macro IfMonCanDefrost battler, jump
+    .long 110
+    .long \battler
+    .long (\jump-.) / 4 - 1
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry

@@ -5998,10 +5998,10 @@ BOOL BattleSystem_TriggerHeldItem(BattleSystem *battleSys, BattleContext *battle
             if ((battleCtx->battleMons[battler].curHP)
                 && (battleCtx->selfTurnFlags[battler].statsDropped)) {
                 Desmume_Log("1\n");
-                //u32 temp = battleCtx->attacker;
-                //battleCtx->attacker = battleCtx->defender;
+                // u32 temp = battleCtx->attacker;
+                // battleCtx->attacker = battleCtx->defender;
                 battleCtx->msgBattlerTemp = battleCtx->defender;
-                //battleCtx->defender = temp;
+                // battleCtx->defender = temp;
                 battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
                 battleCtx->moveCur = MOVE_U_TURN;
                 subscript = subscript_switching_items;
@@ -6231,8 +6231,8 @@ BOOL BattleSystem_TriggerHeldItemOnStatus(BattleSystem *battleSys, BattleContext
                 battleCtx->msgBattlerTemp = battler;
                 battleCtx->defender = temp;
 
-                //battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
-                //battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                // battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
+                // battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
                 battleCtx->sideEffectMon = battler;
 
                 battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
@@ -6658,10 +6658,10 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
         if ((battleCtx->battleMons[battleCtx->defender].curHP)
             && (battleCtx->selfTurnFlags[battleCtx->defender].statsDropped)) {
             Desmume_Log("3\n");
-            //u32 temp = battleCtx->attacker;
-            //battleCtx->attacker = battleCtx->defender;
+            // u32 temp = battleCtx->attacker;
+            // battleCtx->attacker = battleCtx->defender;
             battleCtx->msgBattlerTemp = battleCtx->defender;
-            //battleCtx->defender = temp;
+            // battleCtx->defender = temp;
             battleCtx->moveCur = MOVE_U_TURN;
             battleCtx->selfTurnFlags[battleCtx->defender].statsDropped = FALSE;
             *subscript = subscript_switching_items;
@@ -10653,51 +10653,53 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
             for (j = 0; j < LEARNED_MOVES_MAX; j++) {
                 move = Pokemon_GetValue(mon, MON_DATA_MOVE1 + j, NULL);
 
-                damage = 0;
-                moveType = Move_CalcVariableType(battleSys, battleCtx, mon, move);
-                power = Move_CalcVariablePower(battleSys, battleCtx, move, mon, defender, &damage);
+                if (move != MOVE_EXPLOSION) {
+                    damage = 0;
+                    moveType = Move_CalcVariableType(battleSys, battleCtx, mon, move);
+                    power = Move_CalcVariablePower(battleSys, battleCtx, move, mon, defender, &damage);
 
-                if (move && power > 1) {
-                    damage = PostKO_CalcMoveDamage(battleSys,
-                        battleCtx,
-                        move,
-                        battleCtx->sideConditionsMask[Battler_Side(battleSys, defender)],
-                        battleCtx->fieldConditionsMask,
-                        power,
-                        moveType,
-                        mon,
-                        defender,
-                        1);
+                    if (move && power > 1) {
+                        damage = PostKO_CalcMoveDamage(battleSys,
+                            battleCtx,
+                            move,
+                            battleCtx->sideConditionsMask[Battler_Side(battleSys, defender)],
+                            battleCtx->fieldConditionsMask,
+                            power,
+                            moveType,
+                            mon,
+                            defender,
+                            1);
 
-                    moveStatusFlags = 0;
-                    damage = PostKO_ApplyTypeChart(battleSys,
-                        battleCtx,
-                        move,
-                        mon,
-                        defender,
-                        damage,
-                        &moveStatusFlags,
-                        moveType,
-                        power);
+                        moveStatusFlags = 0;
+                        damage = PostKO_ApplyTypeChart(battleSys,
+                            battleCtx,
+                            move,
+                            mon,
+                            defender,
+                            damage,
+                            &moveStatusFlags,
+                            moveType,
+                            power);
 
-                    if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
-                        damage = 0;
+                        if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                            damage = 0;
+                        }
                     }
+
+                    percentage = (damage * 100) / defenderMaxHP;
+                    Desmume_Log("-Move %d: %d/%d ~%d%%", j + 1, damage, defenderMaxHP, percentage);
+
+                    if (maxDamage < damage) {
+                        maxDamage = damage;
+                    }
+
+                    if (defenderCurHP <= damage) {
+                        kills = TRUE;
+                        Desmume_Log(" (KILLS)");
+                    }
+
+                    Desmume_Log("\n");
                 }
-
-                percentage = (damage * 100) / defenderMaxHP;
-                Desmume_Log("-Move %d: %d/%d ~%d%%", j + 1, damage, defenderMaxHP, percentage);
-
-                if (maxDamage < damage) {
-                    maxDamage = damage;
-                }
-
-                if (defenderCurHP <= damage) {
-                    kills = TRUE;
-                    Desmume_Log(" (KILLS)");
-                }
-
-                Desmume_Log("\n");
             }
 
             Desmume_Log("Defensive rolls:\n");
@@ -10705,51 +10707,53 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
             for (j = 0; j < LEARNED_MOVES_MAX; j++) {
                 move = BattleMon_Get(battleCtx, defender, BATTLEMON_MOVE_1 + j, NULL);
 
-                enemyDamage = 0;
-                moveType = Move_CalcVariableType2(battleSys, battleCtx, defender, move);
-                power = Move_CalcVariablePower2(battleSys, battleCtx, move, defender, mon, &enemyDamage);
+                if (move != MOVE_EXPLOSION) {
+                    enemyDamage = 0;
+                    moveType = Move_CalcVariableType2(battleSys, battleCtx, defender, move);
+                    power = Move_CalcVariablePower2(battleSys, battleCtx, move, defender, mon, &enemyDamage);
 
-                if (move && power > 1) {
-                    enemyDamage = PostKO_CalcMoveDamage2(battleSys,
-                        battleCtx,
-                        move,
-                        battleCtx->sideConditionsMask[1 - Battler_Side(battleSys, defender)],
-                        battleCtx->fieldConditionsMask,
-                        power,
-                        moveType,
-                        defender,
-                        mon,
-                        1);
+                    if (move && power > 1) {
+                        enemyDamage = PostKO_CalcMoveDamage2(battleSys,
+                            battleCtx,
+                            move,
+                            battleCtx->sideConditionsMask[1 - Battler_Side(battleSys, defender)],
+                            battleCtx->fieldConditionsMask,
+                            power,
+                            moveType,
+                            defender,
+                            mon,
+                            1);
 
-                    moveStatusFlags = 0;
-                    enemyDamage = PostKO_ApplyTypeChart2(battleSys,
-                        battleCtx,
-                        move,
-                        defender,
-                        mon,
-                        enemyDamage,
-                        &moveStatusFlags,
-                        moveType,
-                        power);
+                        moveStatusFlags = 0;
+                        enemyDamage = PostKO_ApplyTypeChart2(battleSys,
+                            battleCtx,
+                            move,
+                            defender,
+                            mon,
+                            enemyDamage,
+                            &moveStatusFlags,
+                            moveType,
+                            power);
 
-                    if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
-                        enemyDamage = 0;
+                        if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                            enemyDamage = 0;
+                        }
                     }
+
+                    percentage = (enemyDamage * 100) / attackerMaxHP;
+                    Desmume_Log("-Move %d: %d/%d ~%d%%", j + 1, enemyDamage, attackerMaxHP, percentage);
+
+                    if (enemyMaxDamage < enemyDamage) {
+                        enemyMaxDamage = enemyDamage;
+                    }
+
+                    if (attackerCurHP <= enemyDamage) {
+                        killed = TRUE;
+                        Desmume_Log(" (KILLED)");
+                    }
+
+                    Desmume_Log("\n");
                 }
-
-                percentage = (enemyDamage * 100) / attackerMaxHP;
-                Desmume_Log("-Move %d: %d/%d ~%d%%", j + 1, enemyDamage, attackerMaxHP, percentage);
-
-                if (enemyMaxDamage < enemyDamage) {
-                    enemyMaxDamage = enemyDamage;
-                }
-
-                if (attackerCurHP <= enemyDamage) {
-                    killed = TRUE;
-                    Desmume_Log(" (KILLED)");
-                }
-
-                Desmume_Log("\n");
             }
 
             if (maxDamage > enemyMaxDamage) {

@@ -51,19 +51,23 @@ FlagTable:
 
 Basic_Main:
     ; Ignore this flag on partner battlers.
-    IfTargetIsPartner Terminate
+    IfTargetIsPartner Basic_Partner
 
     FlagMoveDamageScore FALSE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, Basic_Other
 
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_HighestDamage
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_HighestDamage
+
     GoTo CheckKill
 
 CheckKill:
-    IfCurrentMoveKills USE_MAX_DAMAGE, Basic_CheckSpeedKill
+    IfCurrentMoveKills ROLL_FOR_DAMAGE, Basic_CheckSpeedKill
     GoTo Basic_HighestDamage
 
 Basic_CheckSpeedKill:
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_FastKill
+    IfSpeedCompareEqualTo COMPARE_SPEED_TIE, Basic_FastKill
     GoTo Basic_SlowKill
 
 Basic_FastKill:
@@ -80,6 +84,7 @@ Basic_HighestDamage:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WHIRLPOOL, Basic_Trapping
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_BIND_HIT, Basic_Trapping
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_Explosion
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_Rollout
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_IN_3_TURNS, Basic_Other
 
     IfLoadedEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, Basic_HighestDamageRandom
@@ -156,7 +161,6 @@ Basic_HighestDamageRandom1:
 
 Basic_AdditionalDamage:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIGH_CRITICAL, Basic_Crit
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_Rollout
     LoadBattlerPreviousMove AI_BATTLER_ATTACKER
     LoadEffectOfLoadedMove 
     IfLoadedEqualTo BATTLE_EFFECT_HIT_FIRST_IF_TARGET_ATTACKING, Basic_SuckerPunch
@@ -182,10 +186,14 @@ Basic_SuckerPunch:
     GoTo Basic_Other
 
 Basic_Pursuit:
-    IfCurrentMoveKills USE_MAX_DAMAGE, ScorePlus10
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_Pursuit2
+    AddToMoveScore 3
+    GoTo Basic_Pursuit2
+
+Basic_Pursuit2:
+    IfCurrentMoveKills ROLL_FOR_DAMAGE, ScorePlus10
     IfHPPercentLessThan AI_BATTLER_DEFENDER, 20, ScorePlus10
     IfHPPercentLessThan AI_BATTLER_DEFENDER, 40, Basic_PursuitRandom
-    IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, ScorePlus3
     GoTo Basic_Other
 
 Basic_FakeOut:
@@ -221,20 +229,19 @@ Basic_CheckDoubles1:
 
 Basic_LowerSpeed1:    
     LoadBattlerAbility AI_BATTLER_DEFENDER   
-    IfLoadedEqualTo ABILITY_CLEAR_BODY, Basic_CheckSpeed
-    IfLoadedEqualTo ABILITY_WHITE_SMOKE, Basic_CheckSpeed
+    IfLoadedEqualTo ABILITY_CLEAR_BODY, Basic_CheckSpeed2
+    IfLoadedEqualTo ABILITY_WHITE_SMOKE, Basic_CheckSpeed2
     LoadHeldItem AI_BATTLER_DEFENDER
-    IfLoadedEqualTo ITEM_CLEAR_AMULET, Basic_CheckSpeed
-    AddToMoveScore 5
-    GoTo Basic_Other
+    IfLoadedEqualTo ITEM_CLEAR_AMULET, Basic_CheckSpeed2
+    GoTo Basic_CheckSpeed
 
 Basic_CheckSpeed:
-    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_Other
-    AddToMoveScore 5
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_CheckSpeed2
+    AddToMoveScore 6
     GoTo Basic_Other
 
 Basic_CheckSpeed2:
-    AddToMoveScore 6
+    AddToMoveScore 5
     GoTo Basic_Other
 
 ; NON DAMAGING MOVES
@@ -285,9 +292,13 @@ Basic_OffensiveSetup:
 Basic_OffensiveSetup1:
     AddToMoveScore 6
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_OffensiveSetup2
-    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_OffensiveSetup2 
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_OffensiveSetup21
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_RECHARGING, Basic_OffensiveSetup2
     GoTo Basic_OffensiveSetup3
+
+Basic_OffensiveSetup21:
+    IfMonCanDefrost AI_BATTLER_DEFENDER, Basic_OffensiveSetup3
+    GoTo Basic_OffensiveSetup2
 
 Basic_OffensiveSetup2:
     AddToMoveScore 3
@@ -648,6 +659,9 @@ Basic_Toxic1:
 
 Basic_End:
     PopOrEnd
+
+Basic_Partner:
+    GoTo ScoreMinus20
 
 ; FIN DE L'IA CUSTOM AZURE PLATINUM
 

@@ -177,6 +177,7 @@ static void AICmd_IfBattlerFainted(BattleSystem *battleSys, BattleContext *battl
 static void AICmd_IfBattlerNotFainted(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_LoadAbility(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -316,6 +317,7 @@ static const AICommandFunc sAICommandTable[] = {
     AICmd_IfBattlerNotFainted,
     AICmd_LoadAbility,
     AICmd_IfEnemyKills,
+    AICmd_IfMonCanDefrost,
 };
 
 void TrainerAI_Init(BattleSystem *battleSys, BattleContext *battleCtx, u8 battler, u8 initScore)
@@ -1587,10 +1589,10 @@ static void AICmd_IfCurrentMoveKills(BattleSystem *battleSys, BattleContext *bat
     BOOL useDamageRoll = AIScript_Read(battleCtx);
     int jump = AIScript_Read(battleCtx);
 
-    int roll = 80;
+    int roll;
 
     if (useDamageRoll == TRUE) {
-        roll = 80;
+        roll = AI_CONTEXT.moveDamageRolls[AI_CONTEXT.moveSlot];
     } else {
         roll = 100;
     }
@@ -2768,6 +2770,26 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
 
     AI_CONTEXT.attacker = AI_CONTEXT.defender;
     AI_CONTEXT.defender = defenderTmp;
+}
+
+static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+    int i, move, moveEffect;
+
+    for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+        move = AI_CONTEXT.battlerMoves[battler][i];
+        moveEffect = MOVE_DATA(move).effect;
+        
+        if ((moveEffect == BATTLE_EFFECT_THAW_AND_BURN_HIT || moveEffect == BATTLE_EFFECT_RECOIL_BURN_HIT)) {
+            AIScript_Iter(battleCtx, jump);
+        }
+    }
+
 }
 
 /**
