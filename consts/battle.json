@@ -293,7 +293,8 @@
                 "BATTLE_EFFECT_JAW_LOCK",
                 "BATTLE_EFFECT_CHILLY_RECEPTION",
                 "BATTLE_EFFECT_THROAT_CHOP",
-                "BATTLE_EFFECT_PARTING_SHOT"
+                "BATTLE_EFFECT_PARTING_SHOT",
+                "BATTLE_EFFECT_DIRE_CLAW"
             ]
         },
         "@MessageTag": {

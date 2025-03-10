@@ -1,13 +1,13 @@
 {
     "name": "Dire Claw",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_GHOST",
-    "power": 70,
+    "type": "TYPE_POISON",
+    "power": 80,
     "accuracy": 100,
     "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_HIGH_CRITICAL",
-        "chance": 0
+        "type": "BATTLE_EFFECT_DIRE_CLAW",
+        "chance": 50
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

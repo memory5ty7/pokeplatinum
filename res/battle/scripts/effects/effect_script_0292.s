@@ -1,0 +1,26 @@
+#include "macros/btlcmd.inc"
+
+    .data
+
+_000:
+    Random 2, 0
+    CompareVarToValue OPCODE_EQU, BTLVAR_CALC_TEMP, 0x00000001, _yawn
+    CompareVarToValue OPCODE_EQU, BTLVAR_CALC_TEMP, 0x00000002, _poison
+    GoTo _para
+
+_yawn:
+    UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_FLAGS_INDIRECT, MOVE_SIDE_EFFECT_TO_DEFENDER|MOVE_SUBSCRIPT_PTR_YAWN
+    GoTo _end
+
+_poison:
+    UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_FLAGS_INDIRECT, MOVE_SIDE_EFFECT_TO_DEFENDER|MOVE_SUBSCRIPT_PTR_POISON
+    GoTo _end
+
+_para:
+    UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_FLAGS_INDIRECT, MOVE_SIDE_EFFECT_TO_DEFENDER|MOVE_SUBSCRIPT_PTR_PARALYZE
+    GoTo _end
+
+_end:
+    CalcCrit 
+    CalcDamage 
+    End 
