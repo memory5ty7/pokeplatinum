@@ -178,6 +178,8 @@ static void AICmd_IfBattlerNotFainted(BattleSystem *battleSys, BattleContext *ba
 static void AICmd_LoadAbility(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IfDefenderHasDamagingMoves(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -4394,4 +4396,78 @@ static BOOL TrainerAI_ShouldUseItem(BattleSystem *battleSys, int battler)
     */
 
     return result;
+}
+
+static void AICmd_IfDefenderasDamagingMoves(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+    int jump = AIScript_Read(battleCtx);
+
+    int i;
+    for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+        if (battleCtx->battleMons[AI_CONTEXT.defender].moves[i] != MOVE_NONE
+            && MOVE_DATA(battleCtx->battleMons[AI_CONTEXT.defender].moves[i]).power) {
+            break;
+        }
+    }
+
+    if (i < LEARNED_MOVES_MAX) {
+        AIScript_Iter(battleCtx, jump);
+    }
+}
+
+static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    int class = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+    int i;
+
+    switch (inBattler) {
+    case AI_BATTLER_ATTACKER:
+        for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+            if (MOVE_DATA(battleCtx->battleMons[battler].moves[i]).class == class) {
+                break;
+            }
+        }
+
+        if (i < LEARNED_MOVES_MAX) {
+            AIScript_Iter(battleCtx, jump);
+        }
+        break;
+
+    case AI_BATTLER_ATTACKER_PARTNER:
+        if (battleCtx->battleMons[battler].curHP == 0) {
+            break;
+        }
+
+        for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+            if (MOVE_DATA(battleCtx->battleMons[battler].moves[i]).class == class) {
+                break;
+            }
+        }
+
+        if (i < LEARNED_MOVES_MAX) {
+            AIScript_Iter(battleCtx, jump);
+        }
+        break;
+
+    case AI_BATTLER_DEFENDER:
+        for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+            if (MOVE_DATA(battleCtx->battleMons[battler].moves[i]).class == class) {
+                break;
+            }
+        }
+
+        if (i < LEARNED_MOVES_MAX) {
+            AIScript_Iter(battleCtx, jump);
+        }
+        break;
+
+    default:
+        break;
+    }
 }

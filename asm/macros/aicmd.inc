@@ -640,6 +640,18 @@
     .long (\jump-.) / 4 - 1
     .endm
 
+    .macro IfDefenderHasDamagingMoves jump
+    .long 111
+    .long (\jump-.) / 4 - 1
+    .endm
+
+    .macro IfMoveClassKnown battler, move_class, jump
+    .long 112
+    .long \battler
+    .long \move_class
+    .long (\jump-.) / 4 - 1
+    .endm
+    
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry

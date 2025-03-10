@@ -203,8 +203,9 @@ Basic_FakeOut:
 
 Basic_FakeOut2:
     LoadBattlerAbility AI_BATTLER_DEFENDER   
-    IfLoadedNotEqualTo ABILITY_INNER_FOCUS, ScorePlus9  
-    GoTo Basic_Other
+    IfLoadedEqualTo ABILITY_INNER_FOCUS, Basic_Other
+    IfLoadedEqualTo ABILITY_SHIELD_DUST, Basic_Other  
+    GoTo ScorePlus9
 
 Basic_PursuitRandom:
     IfRandomLessThan 128, ScorePlus8
@@ -273,10 +274,13 @@ Basic_Other:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_UP_2, Basic_DefensiveSetup1
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_SPD_UP, Basic_DefensiveSetup2
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STOCKPILE, Basic_DefensiveSetup2
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_DEF_UP, Basic_MixedSetup
     IfMoveEqualTo MOVE_CALM_MIND, Basic_SpecialSetup1
     IfMoveEqualTo MOVE_BULK_UP, Basic_SpecialSetup2
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_UP_2, Basic_SpeedSetup
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP_2, Basic_SpOffensiveSetup
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_SP_DEF_UP, Basic_MixedSpSetup
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_QUIVER_DANCE, Basic_MixedSpSetup
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_MAX_ATK_LOSE_HALF_MAX_HP, Basic_BellyDrum
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_CRIT_UP_2, Basic_CritSetup
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_KO_MON_THAT_DEFEATED_USER, Basic_DestinyBond
@@ -366,6 +370,14 @@ Basic_SpOffensiveSetup3:
     AddToMoveScore -1
     GoTo Basic_End
 
+Basic_MixedSetup:
+    IfMoveClassKnown AI_BATTLER_ATTACKER, CLASS_PHYSICAL, Basic_OffensiveSetup
+    GoTo Basic_DefensiveSetup
+
+Basic_MixedSpSetup:
+    IfMoveClassKnown AI_BATTLER_ATTACKER, CLASS_SPECIAL, Basic_OffensiveSetup
+    GoTo Basic_DefensiveSetup1
+
 Basic_BellyDrum:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, ScorePlus9
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, ScorePlus9
@@ -386,11 +398,21 @@ Basic_CritSetup:
     GoTo Basic_End
 
 Basic_DestinyBond:
-    IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_End
+    IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_DestinyBond2
     IfRandomLessThan 128, ScorePlus6
     GoTo ScorePlus5
 
+Basic_DestinyBond2:
+    IfEnemyKills AI_BATTLER_DEFENDER, USE_MAX_DAMAGE, Basic_DestinyBond3
+    GoTo Basic_End
+
+Basic_DestinyBond3:
+    IfRandomLessThan 208, ScorePlus7
+    GoTo ScorePlus6
+
 Basic_Taunt:
+    GoTo Basic_End
+    ; RNB LEFTOVER
     IfMoveKnown AI_BATTLER_DEFENDER, MOVE_TRICK_ROOM, Basic_TauntTR
     GoTo Basic_Taunt1
 
@@ -452,7 +474,7 @@ Basic_CheckHazards1:
     GoTo Basic_NotFirstTurnHazards
 
 Basic_FirstTurnHazards:
-    IfRandomLessThan 64, Basic_FirstTurnHazards
+    IfRandomLessThan 64, Basic_FirstTurnHazards1
     AddToMoveScore 9
     GoTo Basic_HazardsEnd
 
@@ -505,6 +527,7 @@ Basic_BatonPass:
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, ScorePlus14
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, ScorePlus14
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, ScorePlus14
+    IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SPEED, 8, ScorePlus14
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_EVASION, 8, ScorePlus14 
 
 Basic_Tailwind:
@@ -599,8 +622,23 @@ Basic_Burn:
     LoadTypeFrom LOAD_DEFENDER_TYPE_2
     IfLoadedEqualTo TYPE_FIRE, ScoreMinus20
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus20
+
     AddToMoveScore 6
-    PopOrEnd
+
+    IfRandomLessThan 95, Basic_Burn1
+    GoTo Basic_End
+
+Basic_Burn1:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_Burn2
+    GoTo Basic_Burn3
+
+Basic_Burn2:
+    AddToMoveScore 1
+    GoTo Basic_Burn3
+
+Basic_Burn3:
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus1
+    GoTo Basic_End
 
 Basic_Trick:
     IfHeldItemEqualTo AI_BATTLER_ATTACKER, ITEM_TOXIC_ORB, Basic_Trick1
@@ -626,14 +664,19 @@ Basic_Sleep:
     GoTo Basic_End
 
 Basic_Sleep1:
+    AddToMoveScore 1
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_DREAM_EATER, Basic_Sleep2
-    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_DREAM_EATER, Basic_Sleep2
-    GoTo Basic_End
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_NIGHTMARE, Basic_Sleep2
+    GoTo Basic_Sleep3
 
 Basic_Sleep2:
-    IfMoveKnown AI_BATTLER_DEFENDER, MOVE_SLEEP_TALK, Basic_End
-    IfMoveKnown AI_BATTLER_DEFENDER, MOVE_SNORE, Basic_End
+    IfMoveKnown AI_BATTLER_DEFENDER, MOVE_SLEEP_TALK, Basic_Sleep3
+    IfMoveKnown AI_BATTLER_DEFENDER, MOVE_SNORE, Basic_Sleep3
     AddToMoveScore 1
+    GoTo Basic_Sleep3
+
+Basic_Sleep3:
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus1
     GoTo Basic_End
 
 Basic_Toxic:
@@ -647,14 +690,17 @@ Basic_Toxic:
     IfLoadedEqualTo ABILITY_IMMUNITY, ScoreMinus20
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus20
     IfLoadedEqualTo ABILITY_POISON_HEAL, ScoreMinus20
+
     AddToMoveScore 6
+
     IfRandomLessThan 159, Basic_End
-    IfAttackerHasNoDamagingMoves Basic_Toxic1
+    IfDefenderHasDamagingMoves Basic_Toxic1
     AddToMoveScore 1
-    GoTo Basic_End
+    GoTo Basic_Toxic1
 
 Basic_Toxic1:
-    AddToMoveScore 2
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus2
+    AddToMoveScore 1
     GoTo Basic_End
 
 Basic_End:
