@@ -180,6 +180,8 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
 static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfDefenderHasDamagingMoves(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -320,6 +322,10 @@ static const AICommandFunc sAICommandTable[] = {
     AICmd_LoadAbility,
     AICmd_IfEnemyKills,
     AICmd_IfMonCanDefrost,
+    AICmd_IfDefenderHasDamagingMoves,
+    AICmd_IfMoveClassKnown,
+    AICmd_EnemyTurnsToKill,
+    AICmd_TurnsToKill,
 };
 
 void TrainerAI_Init(BattleSystem *battleSys, BattleContext *battleCtx, u8 battler, u8 initScore)
@@ -434,7 +440,7 @@ static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCt
         maxScoreMoveSlots[0] = AI_ENEMY_ATTACK_1;
 
         for (i = 0; i < LEARNED_MOVES_MAX; i++) {
-            Desmume_Log("Move %d : %d\n", i+1, AI_CONTEXT.moveScore[i]-100);
+            Desmume_Log("Move %d : %d\n", i + 1, AI_CONTEXT.moveScore[i] - 100);
         }
 
         for (i = 1; i < LEARNED_MOVES_MAX; i++) {
@@ -2786,12 +2792,11 @@ static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battle
     for (i = 0; i < LEARNED_MOVES_MAX; i++) {
         move = AI_CONTEXT.battlerMoves[battler][i];
         moveEffect = MOVE_DATA(move).effect;
-        
-        if ((moveEffect == BATTLE_EFFECT_THAW_AND_BURN_HIT || moveEffect == BATTLE_EFFECT_RECOIL_BURN_HIT)) {
+
+        if (moveEffect == BATTLE_EFFECT_THAW_AND_BURN_HIT || moveEffect == BATTLE_EFFECT_RECOIL_BURN_HIT) {
             AIScript_Iter(battleCtx, jump);
         }
     }
-
 }
 
 /**
@@ -4398,7 +4403,7 @@ static BOOL TrainerAI_ShouldUseItem(BattleSystem *battleSys, int battler)
     return result;
 }
 
-static void AICmd_IfDefenderasDamagingMoves(BattleSystem *battleSys, BattleContext *battleCtx)
+static void AICmd_IfDefenderHasDamagingMoves(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     AIScript_Iter(battleCtx, 1);
     int jump = AIScript_Read(battleCtx);
@@ -4470,4 +4475,132 @@ static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battl
     default:
         break;
     }
+}
+
+static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    BOOL useDamageRoll = AIScript_Read(battleCtx);
+
+    int turns = 0;
+    int minTurns = 100;
+
+    int roll;
+
+    int tmp = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = tmp;
+
+    if (useDamageRoll == TRUE) {
+        roll = AI_CONTEXT.moveDamageRolls[AI_CONTEXT.moveSlot];
+    } else {
+        roll = 100;
+    }
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+
+        int riskyIdx;
+        for (riskyIdx = 0; sRiskyMoves[riskyIdx] != 0xFFFF; riskyIdx++) {
+            if (MOVE_DATA(AI_CONTEXT.move).effect == sRiskyMoves[riskyIdx]) {
+                break;
+            }
+        }
+
+        int altPowerIdx;
+        for (altPowerIdx = 0; sAltPowerCalcMoves[altPowerIdx] != 0xFFFF; altPowerIdx++) {
+            if (MOVE_DATA(AI_CONTEXT.move).effect == sAltPowerCalcMoves[altPowerIdx]) {
+                break;
+            }
+        }
+
+        if (sAltPowerCalcMoves[altPowerIdx] != 0xFFFF
+            || (MOVE_DATA(AI_CONTEXT.move).power > 1 && sRiskyMoves[riskyIdx] == 0xFFFF)) {
+            u8 ivs[STAT_MAX];
+            for (int stat = STAT_HP; stat < STAT_MAX; stat++) {
+                ivs[stat] = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_HP_IV + stat, NULL);
+            }
+
+            u32 damage = TrainerAI_CalcDamage(battleSys,
+                battleCtx,
+                AI_CONTEXT.move,
+                battleCtx->battleMons[AI_CONTEXT.attacker].heldItem,
+                ivs,
+                AI_CONTEXT.attacker,
+                Battler_Ability(battleCtx, AI_CONTEXT.attacker),
+                battleCtx->battleMons[AI_CONTEXT.attacker].moveEffectsData.embargoTurns,
+                roll);
+
+            turns = (battleCtx->battleMons[AI_CONTEXT.defender].curHP + damage - 1) / damage;
+            if (turns < minTurns) {
+                minTurns = turns;
+            }
+        }
+    }
+
+    tmp = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = tmp;
+
+    AI_CONTEXT.calcTemp = turns;
+}
+
+static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    BOOL useDamageRoll = AIScript_Read(battleCtx);
+
+    int turns = 0;
+    int minTurns = 100;
+
+    int roll;
+
+    if (useDamageRoll == TRUE) {
+        roll = AI_CONTEXT.moveDamageRolls[AI_CONTEXT.moveSlot];
+    } else {
+        roll = 100;
+    }
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+
+        int riskyIdx;
+        for (riskyIdx = 0; sRiskyMoves[riskyIdx] != 0xFFFF; riskyIdx++) {
+            if (MOVE_DATA(AI_CONTEXT.move).effect == sRiskyMoves[riskyIdx]) {
+                break;
+            }
+        }
+
+        int altPowerIdx;
+        for (altPowerIdx = 0; sAltPowerCalcMoves[altPowerIdx] != 0xFFFF; altPowerIdx++) {
+            if (MOVE_DATA(AI_CONTEXT.move).effect == sAltPowerCalcMoves[altPowerIdx]) {
+                break;
+            }
+        }
+
+        if (sAltPowerCalcMoves[altPowerIdx] != 0xFFFF
+            || (MOVE_DATA(AI_CONTEXT.move).power > 1 && sRiskyMoves[riskyIdx] == 0xFFFF)) {
+            u8 ivs[STAT_MAX];
+            for (int stat = STAT_HP; stat < STAT_MAX; stat++) {
+                ivs[stat] = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_HP_IV + stat, NULL);
+            }
+
+            u32 damage = TrainerAI_CalcDamage(battleSys,
+                battleCtx,
+                AI_CONTEXT.move,
+                battleCtx->battleMons[AI_CONTEXT.attacker].heldItem,
+                ivs,
+                AI_CONTEXT.attacker,
+                Battler_Ability(battleCtx, AI_CONTEXT.attacker),
+                battleCtx->battleMons[AI_CONTEXT.attacker].moveEffectsData.embargoTurns,
+                roll);
+
+            turns = (battleCtx->battleMons[AI_CONTEXT.defender].curHP + damage - 1) / damage;
+            if (turns < minTurns) {
+                minTurns = turns;
+            }
+        }
+    }
+
+    AI_CONTEXT.calcTemp = turns;
 }

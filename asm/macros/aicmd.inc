@@ -651,7 +651,17 @@
     .long \move_class
     .long (\jump-.) / 4 - 1
     .endm
-    
+
+    .macro EnemyTurnsToKill roll_damage
+    .long 113
+    .long \roll_damage
+    .endm
+
+    .macro TurnsToKill roll_damage
+    .long 114
+    .long \roll_damage
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry
@@ -661,3 +671,4 @@
     .macro LabelDistance dst, src
     .long (\dst-\src) / 4
     .endm
+

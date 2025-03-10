@@ -66,6 +66,12 @@ CheckKill:
     GoTo Basic_HighestDamage
 
 Basic_CheckSpeedKill:
+    LoadAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_BEAST_BOOST, Basic_CheckSpeedKill2
+    AddToMoveScore 1
+    GoTo Basic_CheckSpeedKill2
+
+Basic_CheckSpeedKill2:
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_FastKill
     IfSpeedCompareEqualTo COMPARE_SPEED_TIE, Basic_FastKill
     GoTo Basic_SlowKill
@@ -306,9 +312,27 @@ Basic_OffensiveSetup21:
 
 Basic_OffensiveSetup2:
     AddToMoveScore 3
-    GoTo Basic_OffensiveSetup3
+    GoTo Basic_OffensiveSetup31
 
 Basic_OffensiveSetup3:
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedGreaterThan 3, Basic_OffensiveSetup30
+    GoTo Basic_OffensiveSetup35
+
+Basic_OffensiveSetup30:
+    AddToMoveScore 1
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_OffensiveSetup35
+    AddToMoveScore 1
+    GoTo Basic_OffensiveSetup35
+
+Basic_OffensiveSetup35:
+    IfSpeedCompareNotEqualTo COMPARE_SPEED_SLOWER, Basic_OffensiveSetup31
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedGreaterThan 2, Basic_OffensiveSetup31
+    AddToMoveScore -5
+    GoTo Basic_OffensiveSetup31
+
+Basic_OffensiveSetup31:
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, Basic_End
     AddToMoveScore -1
     GoTo Basic_End
@@ -321,26 +345,80 @@ Basic_CheckSetupException:
 
 Basic_DefensiveSetup:
     AddToMoveScore 6
-    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, Basic_End
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, Basic_DefensiveSetup001
     AddToMoveScore -1
-    GoTo Basic_End
+    GoTo Basic_DefensiveSetup001
+
+Basic_DefensiveSetup001:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_DefensiveSetup01
+    AddToMoveScore -1
+    GoTo Basic_DefensiveGlobal
+
+Basic_DefensiveSetup01:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_SPECIAL, Basic_DefensiveGlobal
+    AddToMoveScore 1
+    GoTo Basic_DefensiveGlobal
 
 Basic_DefensiveSetup1:
     AddToMoveScore 6
-    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, Basic_End
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, Basic_DefensiveSetup101
     AddToMoveScore -1
-    GoTo Basic_End
+    GoTo Basic_DefensiveSetup101
+
+Basic_DefensiveSetup101:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_SPECIAL, Basic_DefensiveSetup11
+    AddToMoveScore -1
+    GoTo Basic_DefensiveGlobal
+    
+Basic_DefensiveSetup11:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_DefensiveGlobal
+    AddToMoveScore 1
+    GoTo Basic_DefensiveGlobal
 
 Basic_DefensiveSetup2:
     AddToMoveScore 6
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, Basic_DefensiveSetup3
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, Basic_DefensiveSetup3
-    GoTo Basic_End
+    GoTo Basic_DefensiveGlobal
 
 Basic_DefensiveSetup3:
     AddToMoveScore 2
+    GoTo Basic_DefensiveGlobal
+
+Basic_DefensiveGlobal:
+    IfRandomLessThan 242, Basic_DefensiveGlobal1
     GoTo Basic_End
 
+Basic_DefensiveGlobal1:
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_BODY_PRESS, Basic_DefensiveGlobal11
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_COSMIC_POWER, Basic_DefensiveGlobal11
+    GoTo Basic_DefensiveGlobal2
+
+Basic_DefensiveGlobal11:
+    AddToMoveScore 2
+    GoTo Basic_DefensiveGlobal2
+
+Basic_DefensiveGlobal2:
+    IfSpeedCompareNotEqualTo COMPARE_SPEED_SLOWER, Basic_DefensiveGlobal3
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedGreaterThan 2, Basic_DefensiveGlobal3
+    AddToMoveScore -5
+    GoTo Basic_DefensiveGlobal3
+
+Basic_DefensiveGlobal3:
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_DefensiveGlobal31
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_DefensiveGlobal4
+    IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_RECHARGING, Basic_DefensiveGlobal4
+    GoTo Basic_End
+
+Basic_DefensiveGlobal31:
+    IfMonCanDefrost AI_BATTLER_DEFENDER, Basic_End
+    GoTo Basic_DefensiveGlobal4
+
+Basic_DefensiveGlobal4:
+    AddToMoveScore 2
+    GoTo Basic_End
+ 
 Basic_SpecialSetup1:
     GoTo Basic_End
 
@@ -380,10 +458,18 @@ Basic_MixedSpSetup:
 
 Basic_BellyDrum:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, ScorePlus9
-    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, ScorePlus9
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_BellyDrum2
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_RECHARGING, ScorePlus9
-    AddToMoveScore 4
-    GoTo Basic_End
+    GoTo Basic_BellyDrum3
+
+Basic_BellyDrum2:
+    IfMonCanDefrost AI_BATTLER_DEFENDER, Basic_BellyDrum3   
+    GoTo ScorePlus9
+
+Basic_BellyDrum3:
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedGreaterThan 2, ScorePlus8
+    GoTo ScorePlus4
 
 Basic_CritSetup:
     LoadBattlerAbility AI_BATTLER_DEFENDER
@@ -495,10 +581,19 @@ Basic_HazardsEnd:
     PopOrEnd
 
 Basic_Protect:
+    AddToMoveScore 6
+    IfMoveEffect AI_BATTLER_ATTACKER, MOVE_EFFECT_LEECH_SEED, ScoreMinus2
+    IfMoveEffect AI_BATTLER_ATTACKER, MOVE_EFFECT_YAWN, ScoreMinus2
+    IfMoveEffect AI_BATTLER_ATTACKER, MOVE_EFFECT_PERISH_SONG, ScoreMinus2
+
     IfStatus AI_BATTLER_ATTACKER, MON_CONDITION_ANY_POISON, ScoreMinus2 
     IfStatus AI_BATTLER_ATTACKER, MON_CONDITION_BURN, ScoreMinus2
     IfVolatileStatus AI_BATTLER_ATTACKER, VOLATILE_CONDITION_ATTRACT, ScoreMinus2
     IfVolatileStatus AI_BATTLER_ATTACKER, VOLATILE_CONDITION_CURSE, ScoreMinus2
+
+    IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_LEECH_SEED, ScorePlus1
+    IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_YAWN, ScorePlus1
+    IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_PERISH_SONG, ScorePlus1
 
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY_POISON, ScorePlus1
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_BURN, ScorePlus1
@@ -547,9 +642,31 @@ Basic_Screens:
     
 Basic_Substitute:
     AddToMoveScore 6
-    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, ScorePlus2
-    IfRandomLessThan 128, ScorePlus1
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_Substitute1
+    GoTo Basic_Substitute2
+
+Basic_Substitute1:
+    AddToMoveScore 1
+    GoTo Basic_Substitute2
+
+Basic_Substitute2:
+    IfRandomLessThan 128, Basic_Substitute3
+    AddToMoveScore 1
+    GoTo Basic_Substitute3
+
+Basic_Substitute3:
+    IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_LEECH_SEED, Basic_Substitute4
+    GoTo Basic_Substitute5
+
+Basic_Substitute4:
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_Substitute5
+    AddToMoveScore 2
+    GoTo Basic_Substitute5
+
+Basic_Substitute5:
     IfHPPercentLessThan AI_BATTLER_ATTACKER, 51, ScoreMinus20
+    GoTo Basic_End
+
 
 Basic_Memento:
     CountAlivePartyBattlers AI_BATTLER_ATTACKER
