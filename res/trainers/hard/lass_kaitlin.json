@@ -6,42 +6,32 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_ILLUMISE",
             "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_ENCORE"
+            ],
+            "power": 239,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_VOLBEAT",
             "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_STARLY",
-            "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_ABRA",
-            "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_BERRY_JUICE",
+            "moves": [
+                "MOVE_CONFUSE_RAY",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_TAIL_GLOW"
+            ],
+            "power": 235,
             "ball_seal": 0
         }
     ]

@@ -10,21 +10,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 22,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_RAZOR_LEAF",
+                "MOVE_SLUDGE",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_LEECH_SEED"
+            ],
+            "power": 235,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_MANECTRIC",
             "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 22,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_FIRE_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PIDGEOTTO",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_WACAN_BERRY",
+            "moves": [
+                "MOVE_AERIAL_ACE",
+                "MOVE_STEEL_WING",
+                "MOVE_PURSUIT",
+                "MOVE_ROOST"
+            ],
+            "power": 278,
             "ball_seal": 0
         }
     ]

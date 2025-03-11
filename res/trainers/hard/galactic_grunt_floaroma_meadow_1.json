@@ -8,12 +8,45 @@
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_GRIMER",
+            "form": 0,
+            "level": 18,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_SLUDGE",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_TOXIC",
+                "MOVE_SUBSTITUTE"
+            ],
+            "power": 230,
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_STUNKY",
             "form": 0,
-            "level": 13,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 18,
+            "item": "ITEM_BERRY_JUICE",
+            "moves": [
+                "MOVE_NIGHT_SLASH",
+                "MOVE_POISON_FANG",
+                "MOVE_PURSUIT",
+                "MOVE_ROCK_SMASH"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRONZOR",
+            "form": 0,
+            "level": 18,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_PAYBACK",
+                "MOVE_HYPNOSIS"
+            ],
+            "power": 232,
             "ball_seal": 0
         }
     ]

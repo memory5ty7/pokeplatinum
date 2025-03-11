@@ -8,12 +8,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_STARLY",
             "form": 0,
-            "level": 5,
+            "level": 6,
             "item": null,
-            "moves": null,
-            "power": 0,
+            "moves": [
+                "MOVE_WING_ATTACK",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELEKID",
+            "form": 0,
+            "level": 6,
+            "item": null,
+            "moves": [
+                "MOVE_THUNDER_SHOCK",
+                "MOVE_TACKLE"
+            ],
+            "power": 236,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHELLOS",
+            "form": 0,
+            "level": 6,
+            "item": null,
+            "moves": [
+                "MOVE_WHIRLPOOL",
+                "MOVE_AQUA_RING",
+                "MOVE_WATER_GUN"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]

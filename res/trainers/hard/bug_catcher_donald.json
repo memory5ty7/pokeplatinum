@@ -8,21 +8,29 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BURMY",
-            "form": 1,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 10,
+            "species": "SPECIES_CLEFAIRY",
+            "form": 0,
+            "level": 25,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_FOLLOW_ME",
+                "MOVE_HELPING_HAND"
+            ],
+            "power": 232,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BURMY",
-            "form": 2,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 10,
+            "species": "SPECIES_FURRET",
+            "form": 0,
+            "level": 25,
+            "item": "ITEM_SILK_SCARF",
+            "moves": [
+                "MOVE_FOLLOW_ME",
+                "MOVE_STRENGTH",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_BRICK_BREAK"
+            ],
+            "power": 229,
             "ball_seal": 0
         }
     ]

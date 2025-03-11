@@ -9,12 +9,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 21,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_THUNDER_WAVE",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_SANDSTORM",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 247,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGCARGO",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_LAVA_PLUME",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_PROTECT"
+            ],
+            "power": 247,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_QUAGSIRE",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_BULLDOZE",
+                "MOVE_YAWN",
+                "MOVE_SLUDGE_BOMB"
+            ],
+            "power": 232,
             "ball_seal": 0
         }
     ]

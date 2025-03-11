@@ -12,25 +12,39 @@
         {
             "species": "SPECIES_STARLY",
             "form": 0,
-            "level": 7,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_WING_ATTACK",
+                "MOVE_FACADE"
             ],
-            "power": 30,
+            "power": 238,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TURTWIG",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_KINGS_ROCK",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_WITHDRAW"
+                "MOVE_LEECH_SEED",
+                "MOVE_BITE",
+                "MOVE_MEGA_DRAIN"
             ],
-            "power": 30,
+            "power": 242,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TOTODILE",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_MYSTIC_WATER",
+            "moves": [
+                "MOVE_AQUA_JET",
+                "MOVE_BITE"
+            ],
+            "power": 279,
             "ball_seal": 0
         }
     ]

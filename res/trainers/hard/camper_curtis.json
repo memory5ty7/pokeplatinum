@@ -10,21 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_CACNEA",
             "form": 0,
-            "level": 7,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_ROCKY_HELMET",
+            "moves": [
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_TRAILBLAZE",
+                "MOVE_SPIKES"
+            ],
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_PINECO",
             "form": 0,
-            "level": 7,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_JABOCA_BERRY",
+            "moves": [
+                "MOVE_PAYBACK",
+                "MOVE_BUG_BITE",
+                "MOVE_ROLLOUT"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_STUNKY",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_LOADED_DICE",
+            "moves": [
+                "MOVE_FURY_SWIPES",
+                "MOVE_TOXIC"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

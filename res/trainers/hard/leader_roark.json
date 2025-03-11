@@ -10,41 +10,86 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
-            "level": 12,
-            "item": null,
+            "level": 16,
+            "item": "ITEM_AIR_BALLOON",
             "moves": [
                 "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW"
+                "MOVE_ROCK_TOMB",
+                "MOVE_SPARK",
+                "MOVE_PROTECT"
             ],
-            "power": 50,
+            "power": 207,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_LARVITAR",
             "form": 0,
-            "level": 12,
-            "item": null,
+            "level": 16,
+            "item": "ITEM_FLAME_ORB",
             "moves": [
-                "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW",
-                "MOVE_SCREECH"
+                "MOVE_ROCK_SLIDE",
+                "MOVE_FACADE",
+                "MOVE_PAYBACK",
+                "MOVE_PROTECT"
             ],
-            "power": 50,
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TRAPINCH",
+            "form": 0,
+            "level": 16,
+            "item": "ITEM_CHOICE_BAND",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_BUG_BITE",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BELDUM",
+            "form": 0,
+            "level": 16,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_METAL_CLAW",
+                "MOVE_ICY_WIND",
+                "MOVE_MAGNET_RISE"
+            ],
+            "power": 233,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CORSOLA",
+            "form": 0,
+            "level": 16,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_EXPLOSION",
+                "MOVE_ICY_WIND",
+                "MOVE_ANCIENT_POWER"
+            ],
+            "power": 225,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CRANIDOS",
             "form": 0,
-            "level": 14,
-            "item": null,
+            "level": 16,
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_HEADBUTT",
-                "MOVE_PURSUIT",
-                "MOVE_LEER"
+                "MOVE_ROCK_TOMB",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 50,
+            "power": 278,
             "ball_seal": 0
         }
     ]

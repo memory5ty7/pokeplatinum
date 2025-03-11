@@ -9,21 +9,59 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_PLUSLE",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 17,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_VOLT_SWITCH",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_HELPING_HAND",
+                "MOVE_GRASS_KNOT"
+            ],
+            "power": 245,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_WINGULL",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 17,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_ICY_WIND",
+                "MOVE_SHOCK_WAVE",
+                "MOVE_AIR_CUTTER"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MINUN",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_MAGNET",
+            "moves": [
+                "MOVE_SHOCK_WAVE",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_CHARM"
+            ],
+            "power": 245,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MANTYKE",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_WHIRLPOOL",
+                "MOVE_ICY_WIND",
+                "MOVE_AQUA_RING",
+                "MOVE_BOUNCE"
+            ],
+            "power": 247,
             "ball_seal": 0
         }
     ]

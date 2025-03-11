@@ -9,30 +9,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_DUNSPARCE",
             "form": 0,
-            "level": 10,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 22,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_HEADBUTT",
+                "MOVE_ROLLOUT",
+                "MOVE_GLARE",
+                "MOVE_CURSE"
+            ],
+            "power": 227,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_SANDSLASH",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 22,
+            "item": "ITEM_SOFT_SAND",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_FURY_CUTTER",
+                "MOVE_ROCK_TOMB",
+                "MOVE_ROCK_SMASH"
+            ],
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_BELDUM",
             "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 22,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_IRON_HEAD",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_AGILITY"
+            ],
+            "power": 226,
             "ball_seal": 0
         }
     ]

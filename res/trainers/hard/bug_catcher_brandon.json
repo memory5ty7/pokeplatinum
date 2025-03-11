@@ -9,27 +9,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_MASQUERAIN",
             "form": 0,
-            "level": 10,
-            "item": null,
+            "level": 17,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING"
+                "MOVE_QUICK_ATTACK",
+                "MOVE_GUST",
+                "MOVE_STUN_SPORE",
+                "MOVE_SILVER_WIND"
             ],
-            "power": 0,
+            "power": 240,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_KRICKETOT",
+            "species": "SPECIES_BEAUTIFLY",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 17,
+            "item": "ITEM_CHARTI_BERRY",
             "moves": [
-                "MOVE_BIDE"
+                "MOVE_LEECH_LIFE",
+                "MOVE_GUST",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_STUN_SPORE"
             ],
-            "power": 0,
+            "power": 244,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VENONAT",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_SWIFT",
+                "MOVE_SLUDGE_BOMB"
+            ],
+            "power": 242,
             "ball_seal": 0
         }
     ]

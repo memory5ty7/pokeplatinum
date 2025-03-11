@@ -9,16 +9,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_MAGCARGO",
             "form": 0,
-            "level": 19,
-            "item": null,
+            "level": 29,
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_LAVA_PLUME",
+                "MOVE_ROCK_TOMB",
+                "MOVE_BULLDOZE",
+                "MOVE_STEALTH_ROCK"
             ],
-            "power": 20,
+            "power": 232,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LEAFEON",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_METRONOME",
+            "moves": [
+                "MOVE_LEAF_BLADE"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRELOOM",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_LOADED_DICE",
+            "moves": [
+                "MOVE_BULLET_SEED",
+                "MOVE_MACH_PUNCH"
+            ],
+            "power": 328,
             "ball_seal": 0
         }
     ]

@@ -8,12 +8,87 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_DELIBIRD",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 24,
+            "item": "ITEM_CHARTI_BERRY",
+            "moves": [
+                "MOVE_SPIKES",
+                "MOVE_PLUCK",
+                "MOVE_ICY_WIND",
+                "MOVE_ROOST"
+            ],
+            "power": 226,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WOBBUFFET",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_COUNTER",
+                "MOVE_MIRROR_COAT",
+                "MOVE_ENCORE",
+                "MOVE_DESTINY_BOND"
+            ],
+            "power": 230,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TOGETIC",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_AIR_SLASH",
+                "MOVE_WISH",
+                "MOVE_BATON_PASS",
+                "MOVE_ANCIENT_POWER"
+            ],
+            "power": 247,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MOTHIM",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_LAGGING_TAIL",
+            "moves": [
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_AIR_SLASH",
+                "MOVE_PSYBEAM",
+                "MOVE_GIGA_DRAIN"
+            ],
+            "power": 225,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GROVYLE",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_BRICK_BREAK",
+                "MOVE_LEAF_BLADE",
+                "MOVE_DETECT"
+            ],
+            "power": 203,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHANSEY",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_SOFTBOILED",
+                "MOVE_MIRROR_COAT",
+                "MOVE_COUNTER",
+                "MOVE_TOXIC"
+            ],
+            "power": 230,
             "ball_seal": 0
         }
     ]

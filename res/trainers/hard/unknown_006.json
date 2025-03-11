@@ -8,12 +8,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_ARON",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 10,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_METAL_CLAW",
+                "MOVE_MUD_SLAP",
+                "MOVE_STEALTH_ROCK"
+            ],
+            "power": 232,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SLOWPOKE",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_MYSTIC_WATER",
+            "moves": [
+                "MOVE_YAWN",
+                "MOVE_WATER_PULSE",
+                "MOVE_CONFUSION"
+            ],
+            "power": 239,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DUSKULL",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_ASTONISH",
+                "MOVE_FAINT_ATTACK",
+                "MOVE_DISABLE",
+                "MOVE_WILL_O_WISP"
+            ],
+            "power": 233,
             "ball_seal": 0
         }
     ]

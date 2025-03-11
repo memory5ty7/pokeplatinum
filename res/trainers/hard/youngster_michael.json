@@ -8,21 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KRICKETOT",
+            "species": "SPECIES_LOMBRE",
             "form": 0,
-            "level": 7,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 14,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            "power": 241,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_EKANS",
             "form": 0,
-            "level": 6,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 14,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_BITE",
+                "MOVE_BULLDOZE",
+                "MOVE_GLARE",
+                "MOVE_POISON_TAIL"
+            ],
+            "power": 238,
             "ball_seal": 0
         }
     ]

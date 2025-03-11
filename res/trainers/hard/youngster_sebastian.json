@@ -5,18 +5,41 @@
     "ai_flags": [
         "AI_FLAG_BASIC"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_CLEFAIRY",
             "form": 0,
-            "level": 8,
-            "item": null,
+            "level": 14,
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
-                "MOVE_LOW_KICK",
-                "MOVE_LEER"
+                "MOVE_FOLLOW_ME",
+                "MOVE_RAIN_DANCE",
+                "MOVE_SUNNY_DAY"
             ],
-            "power": 0,
+            "power": 248,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CARVANHA",
+            "form": 0,
+            "level": 12,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_FLIP_TURN"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SKIPLOOM",
+            "form": 0,
+            "level": 12,
+            "item": "ITEM_CHOICE_BAND",
+            "moves": [
+                "MOVE_U_TURN"
+            ],
+            "power": 238,
             "ball_seal": 0
         }
     ]

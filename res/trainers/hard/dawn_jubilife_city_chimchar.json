@@ -12,15 +12,26 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_GROTLE",
             "form": 0,
-            "level": 13,
-            "item": null,
+            "level": 17,
+            "item": "ITEM_MIRACLE_SEED",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_TACKLE"
+                "MOVE_RAZOR_LEAF",
+                "MOVE_STEALTH_ROCK"
             ],
-            "power": 30,
+            "power": 248,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KADABRA",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_TWISTEDSPOON",
+            "moves": [
+                "MOVE_CONFUSION"
+            ],
+            "power": 236,
             "ball_seal": 0
         }
     ]

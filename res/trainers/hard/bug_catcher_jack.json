@@ -8,44 +8,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_KRICKETUNE",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING"
+                "MOVE_NIGHT_SLASH",
+                "MOVE_AERIAL_ACE",
+                "MOVE_ROCK_SMASH",
+                "MOVE_SWORDS_DANCE"
             ],
-            "power": 0,
+            "power": 229,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SILCOON",
+            "species": "SPECIES_PARASECT",
             "form": 0,
-            "level": 13,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_TOXIC_ORB",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING",
-                "MOVE_HARDEN"
+                "MOVE_PROTECT",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_DIG",
+                "MOVE_SWORDS_DANCE"
             ],
-            "power": 0,
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BEAUTIFLY",
+            "species": "SPECIES_BEEDRILL",
             "form": 0,
-            "level": 15,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_POISON_STING",
-                "MOVE_ABSORB",
-                "MOVE_GUST"
+                "MOVE_AERIAL_ACE",
+                "MOVE_KNOCK_OFF",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SWORDS_DANCE"
             ],
-            "power": 20,
+            "power": 226,
             "ball_seal": 0
         }
     ]

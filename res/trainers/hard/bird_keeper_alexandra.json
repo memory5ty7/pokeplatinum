@@ -8,21 +8,43 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_STARAVIA",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 20,
+            "level": 29,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_WING_ATTACK",
+                "MOVE_ROOST"
+            ],
+            "power": 226,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HOOTHOOT",
+            "species": "SPECIES_SWELLOW",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 20,
+            "level": 29,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_FACADE",
+                "MOVE_WING_ATTACK"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PIDGEOT",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_HURRICANE",
+                "MOVE_HEAT_WAVE",
+                "MOVE_UPROAR"
+            ],
+            "power": 244,
             "ball_seal": 0
         }
     ]

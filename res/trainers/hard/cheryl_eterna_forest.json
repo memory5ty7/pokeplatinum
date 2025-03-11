@@ -10,16 +10,45 @@
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_MOTHIM",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_AIR_SLASH",
+                "MOVE_PSYBEAM",
+                "MOVE_GIGA_DRAIN"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_CHANSEY",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_EGG_BOMB",
                 "MOVE_SOFTBOILED",
-                "MOVE_REFRESH"
+                "MOVE_TOXIC",
+                "MOVE_COUNTER",
+                "MOVE_MIRROR_COAT"
             ],
-            "power": 30,
+            "power": 245,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GROVYLE",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_DETECT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_LEAF_BLADE",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 236,
             "ball_seal": 0
         }
     ]

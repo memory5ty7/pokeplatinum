@@ -8,28 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_LILEEP",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 15,
+            "item": "ITEM_BIG_ROOT",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_PROTECT",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_LEECH_SEED"
             ],
-            "power": 10,
+            "power": 232,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_OMANYTE",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 15,
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_ROCK_SMASH",
-                "MOVE_TACKLE",
-                "MOVE_HARDEN"
+                "MOVE_WATER_GUN",
+                "MOVE_ICY_WIND",
+                "MOVE_BITE",
+                "MOVE_ROCK_SMASH"
             ],
-            "power": 10,
+            "power": 244,
             "ball_seal": 0
         }
     ]

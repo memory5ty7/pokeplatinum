@@ -8,12 +8,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_BULBASAUR",
             "form": 0,
-            "level": 8,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_COBA_BERRY",
+            "moves": [
+                "MOVE_LEECH_SEED",
+                "MOVE_TOXIC",
+                "MOVE_PROTECT",
+                "MOVE_MEGA_DRAIN"
+            ],
+            "power": 230,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ODDISH",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_ACID",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_PROTECT"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SUNKERN",
+            "form": 0,
+            "level": 14,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_GROWTH",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_SYNTHESIS"
+            ],
+            "power": 235,
             "ball_seal": 0
         }
     ]

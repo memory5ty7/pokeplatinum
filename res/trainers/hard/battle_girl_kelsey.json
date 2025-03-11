@@ -9,12 +9,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MONFERNO",
             "form": 0,
-            "level": 15,
-            "item": null,
-            "moves": null,
-            "power": 20,
+            "level": 23,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_MACH_PUNCH"
+            ],
+            "power": 229,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MEDITITE",
+            "form": 0,
+            "level": 23,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_DETECT"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MACHOKE",
+            "form": 0,
+            "level": 23,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_BULK_UP",
+                "MOVE_BRICK_BREAK",
+                "MOVE_ICE_PUNCH"
+            ],
+            "power": 278,
             "ball_seal": 0
         }
     ]

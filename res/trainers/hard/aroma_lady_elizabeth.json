@@ -9,15 +9,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_IVYSAUR",
             "form": 0,
-            "level": 14,
-            "item": null,
+            "level": 22,
+            "item": "ITEM_BLACK_SLUDGE",
             "moves": [
-                "MOVE_GROWTH",
-                "MOVE_MEGA_DRAIN"
+                "MOVE_LEECH_SEED",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_SLUDGE",
+                "MOVE_SLEEP_POWDER"
             ],
-            "power": 0,
+            "power": 245,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BAYLEEF",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_REFLECT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_ANCIENT_POWER"
+            ],
+            "power": 245,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GROVYLE",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_RAWST_BERRY",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GROTLE",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_LEECH_SEED",
+                "MOVE_PROTECT",
+                "MOVE_RAZOR_LEAF",
+                "MOVE_BULLDOZE"
+            ],
+            "power": 230,
             "ball_seal": 0
         }
     ]

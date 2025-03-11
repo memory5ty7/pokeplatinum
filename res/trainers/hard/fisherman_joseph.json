@@ -8,12 +8,43 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GOLDEEN",
+            "species": "SPECIES_SEALEO",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 26,
+            "item": "ITEM_EVIOLITE",
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_AURORA_BEAM",
+                "MOVE_YAWN",
+                "MOVE_WHIRLPOOL"
+            ],
+            "power": 242,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LOUDRED",
+            "form": 0,
+            "level": 26,
+            "item": "ITEM_RED_CARD",
+            "moves": [
+                "MOVE_HYPER_VOICE",
+                "MOVE_HAMMER_ARM"
+            ],
+            "power": 317,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SNOVER",
+            "form": 0,
+            "level": 26,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ICE_PUNCH",
+                "MOVE_WATER_PULSE",
+                "MOVE_LEECH_SEED"
+            ],
+            "power": 232,
             "ball_seal": 0
         }
     ]

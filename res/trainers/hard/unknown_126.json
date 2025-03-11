@@ -8,12 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_DRIFLOON",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 14,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_OMINOUS_WIND",
+                "MOVE_HYPNOSIS",
+                "MOVE_AIR_CUTTER",
+                "MOVE_KNOCK_OFF"
+            ],
+            "power": 244,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SKORUPI",
+            "form": 0,
+            "level": 14,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_AQUA_TAIL",
+                "MOVE_BITE",
+                "MOVE_PURSUIT"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HOUNDOUR",
+            "form": 0,
+            "level": 14,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_FIRE_FANG",
+                "MOVE_WILL_O_WISP",
+                "MOVE_THUNDER_FANG",
+                "MOVE_PURSUIT"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BAGON",
+            "form": 0,
+            "level": 14,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_ROCK_SMASH",
+                "MOVE_BITE",
+                "MOVE_DRAGON_DANCE",
+                "MOVE_FIRE_FANG"
+            ],
+            "power": 229,
             "ball_seal": 0
         }
     ]

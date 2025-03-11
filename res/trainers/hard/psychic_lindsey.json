@@ -9,14 +9,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ABRA",
+            "species": "SPECIES_GOLDUCK",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_HIDDEN_POWER"
+                "MOVE_PSYBEAM",
+                "MOVE_BRICK_BREAK",
+                "MOVE_AERIAL_ACE",
+                "MOVE_WATER_PULSE"
             ],
-            "power": 20,
+            "power": 236,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GASTRODON",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_MUD_SHOT",
+                "MOVE_WATER_PULSE",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 232,
             "ball_seal": 0
         }
     ]

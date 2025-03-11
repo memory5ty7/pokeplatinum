@@ -8,57 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_LANTURN",
             "form": 0,
-            "level": 8,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 26,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_VOLT_SWITCH",
+                "MOVE_WATER_PULSE",
+                "MOVE_ICY_WIND",
+                "MOVE_SIGNAL_BEAM"
+            ],
+            "power": 230,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_GYARADOS",
             "form": 0,
-            "level": 10,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 26,
+            "item": "ITEM_WACAN_BERRY",
+            "moves": [
+                "MOVE_BITE",
+                "MOVE_ICE_FANG",
+                "MOVE_IRON_HEAD",
+                "MOVE_BULLDOZE"
+            ],
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_GYARADOS",
             "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 26,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_FLAMETHROWER",
+                "MOVE_DARK_PULSE",
+                "MOVE_DRAGON_DANCE"
+            ],
+            "power": 235,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_WAILMER",
             "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MAGIKARP",
-            "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MAGIKARP",
-            "form": 0,
-            "level": 16,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 26,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_TOXIC",
+                "MOVE_BULLDOZE",
+                "MOVE_PROTECT",
+                "MOVE_DIVE"
+            ],
+            "power": 247,
             "ball_seal": 0
         }
     ]

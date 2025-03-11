@@ -8,21 +8,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_YANMA",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 19,
+            "item": "ITEM_WIDE_LENS",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_AIR_CUTTER",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_HYPNOSIS"
+            ],
+            "power": 236,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STUNKY",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 19,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_VOLT_SWITCH",
+                "MOVE_MIRROR_SHOT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NOSEPASS",
+            "form": 0,
+            "level": 19,
+            "item": "ITEM_ASSAULT_VEST",
+            "moves": [
+                "MOVE_VOLT_SWITCH",
+                "MOVE_EARTH_POWER",
+                "MOVE_SELFDESTRUCT",
+                "MOVE_POWER_GEM"
+                ],
+            "power": 282,
             "ball_seal": 0
         }
     ]

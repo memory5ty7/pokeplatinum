@@ -8,44 +8,29 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_NINJASK",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING"
+                "MOVE_SWORDS_DANCE",
+                "MOVE_BUG_BITE",
+                "MOVE_AERIAL_ACE"
             ],
-            "power": 0,
+            "power": 239,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CASCOON",
+            "species": "SPECIES_BIBAREL",
             "form": 0,
-            "level": 13,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING",
-                "MOVE_HARDEN"
+                "MOVE_SWORDS_DANCE",
+                "MOVE_AQUA_JET",
+                "MOVE_BITE"
             ],
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_DUSTOX",
-            "form": 0,
-            "level": 15,
-            "item": null,
-            "moves": [
-                "MOVE_TACKLE",
-                "MOVE_POISON_STING",
-                "MOVE_CONFUSION",
-                "MOVE_GUST"
-            ],
-            "power": 20,
+            "power": 227,
             "ball_seal": 0
         }
     ]

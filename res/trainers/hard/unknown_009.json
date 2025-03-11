@@ -8,12 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 18,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_SLUDGE",
+                "MOVE_TOXIC",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VULPIX",
+            "form": 0,
+            "level": 18,
+            "item": "ITEM_CHARTI_BERRY",
+            "moves": [
+                "MOVE_FIRE_SPIN",
+                "MOVE_MUD_SLAP",
+                "MOVE_WILL_O_WISP",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "power": 230,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SUNFLORA",
+            "form": 0,
+            "level": 18,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_RAZOR_LEAF",
+                "MOVE_SLUDGE",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_GROWTH"
+            ],
+            "power": 241,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ANORITH",
+            "form": 0,
+            "level": 18,
+            "item": "ITEM_ROCKY_HELMET",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_ACCELEROCK",
+                "MOVE_BUG_BITE",
+                "MOVE_BULLDOZE"
+            ],
+            "power": 278,
             "ball_seal": 0
         }
     ]

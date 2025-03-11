@@ -10,27 +10,43 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_PIDGEY",
             "form": 0,
-            "level": 7,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
+                "MOVE_FEATHER_DANCE",
+                "MOVE_U_TURN",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_WING_ATTACK"
             ],
-            "power": 30,
+            "power": 238,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PIPLUP",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_POUND",
-                "MOVE_GROWL"
+                "MOVE_PLUCK",
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_WHIRLPOOL"
             ],
-            "power": 30,
+            "power": 244,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TORCHIC",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_ROCK_TOMB",
+                "MOVE_PECK"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

@@ -12,15 +12,27 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIPLUP",
+            "species": "SPECIES_PRINPLUP",
             "form": 0,
-            "level": 13,
-            "item": null,
+            "level": 17,
+            "item": "ITEM_MYSTIC_WATER",
             "moves": [
                 "MOVE_BUBBLE",
-                "MOVE_POUND"
+                "MOVE_PECK",
+                "MOVE_METAL_CLAW"
             ],
-            "power": 30,
+            "power": 236,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KADABRA",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_TWISTEDSPOON",
+            "moves": [
+                "MOVE_CONFUSION"
+            ],
+            "power": 236,
             "ball_seal": 0
         }
     ]

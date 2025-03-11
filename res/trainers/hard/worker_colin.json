@@ -8,21 +8,43 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_MACHOP",
             "form": 0,
-            "level": 6,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_BULLDOZE",
+                "MOVE_LOW_SWEEP"
+            ],
+            "power": 238,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MANKEY",
             "form": 0,
-            "level": 8,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_ROCK_SMASH",
+                "MOVE_ROCK_TOMB",
+                "MOVE_REVERSAL",
+                "MOVE_U_TURN"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TYROGUE",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_ICE_PUNCH"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

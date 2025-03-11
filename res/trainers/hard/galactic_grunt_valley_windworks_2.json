@@ -8,12 +8,44 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_BEEDRILL",
             "form": 0,
-            "level": 13,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 19,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_ROCK_SMASH",
+                "MOVE_ENDEAVOR"
+                ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VOLTORB",
+            "form": 0,
+            "level": 19,
+            "item": "ITEM_MAGNET",
+            "moves": [
+                "MOVE_VOLT_SWITCH",
+                "MOVE_SELFDESTRUCT",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_SONIC_BOOM"
+                ],
+            "power": 239,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HOUNDOUR",
+            "form": 0,
+            "level": 19,
+            "item": "ITEM_BLACKGLASSES",
+            "moves": [
+                "MOVE_FIRE_FANG",
+                "MOVE_BITE",
+                "MOVE_PURSUIT",
+                "MOVE_WILL_O_WISP"
+                ],
+            "power": 229,
             "ball_seal": 0
         }
     ]

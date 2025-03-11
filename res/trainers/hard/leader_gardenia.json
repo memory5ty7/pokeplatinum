@@ -1,10 +1,7 @@
 {
     "name": "Gardenia",
     "class": "TRAINER_CLASS_LEADER_GARDENIA",
-    "items": [
-        "ITEM_SUPER_POTION",
-        "ITEM_SUPER_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
@@ -13,45 +10,84 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_SUNFLORA",
             "form": 0,
-            "level": 20,
-            "item": "ITEM_NONE",
+            "level": 30,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_RAZOR_LEAF",
-                "MOVE_SUNNY_DAY",
-                "MOVE_REFLECT"
+                "MOVE_SOLAR_BEAM",
+                "MOVE_WEATHER_BALL",
+                "MOVE_EARTH_POWER",
+                "MOVE_SLUDGE_BOMB"
             ],
-            "power": 50,
+            "power": 240,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERRIM",
+            "species": "SPECIES_SUDOWOODO",
             "form": 0,
-            "level": 20,
-            "item": "ITEM_NONE",
+            "level": 30,
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SAFEGUARD"
+                "MOVE_WOOD_HAMMER",
+                "MOVE_ROCK_TOMB",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BULLDOZE"
             ],
-            "power": 50,
+            "power": 227,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JUMPLUFF",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_WIDE_LENS",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_PROTECT",
+                "MOVE_LEECH_SEED"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_FLAREON",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_CHOICE_BAND",
+            "moves": [
+                "MOVE_FLAME_CHARGE"
+            ],
+            "power": 229,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ROSERADE",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 30,
+            "item": "ITEM_BLACK_SLUDGE",
             "moves": [
-                "MOVE_GRASS_KNOT",
                 "MOVE_MAGICAL_LEAF",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_EXTRASENSORY",
+                "MOVE_PROTECT"
             ],
-            "power": 50,
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EXEGGUTOR",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_GRASS_GEM",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_PSYCHIC",
+                "MOVE_BULLDOZE",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "power": 235,
             "ball_seal": 0
         }
     ]

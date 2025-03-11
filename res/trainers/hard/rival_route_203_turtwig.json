@@ -10,27 +10,42 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_TAILLOW",
             "form": 0,
-            "level": 7,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_SILK_SCARF",
             "moves": [
                 "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_WING_ATTACK"
             ],
-            "power": 30,
+            "power": 228,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CHIMCHAR",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_CHARCOAL",
             "moves": [
-                "MOVE_SCRATCH",
-                "MOVE_LEER"
+                "MOVE_MACH_PUNCH",
+                "MOVE_FLAME_WHEEL",
+                "MOVE_FAKE_OUT",
+                "MOVE_TAUNT"
             ],
-            "power": 30,
+            "power": 229,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BULBASAUR",
+            "form": 0,
+            "level": 10,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_ABSORB",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_ACID"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]

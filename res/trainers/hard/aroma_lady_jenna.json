@@ -6,45 +6,57 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_NUMEL",
             "form": 0,
-            "level": 15,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_CHARCOAL",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_ERUPTION"
             ],
-            "power": 20,
+            "power": 28,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_CLEFABLE",
             "form": 0,
-            "level": 16,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_FOLLOW_ME",
+                "MOVE_WEATHER_BALL"
             ],
-            "power": 20,
+            "power": 245,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_DUGTRIO",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_SOFT_SAND",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_HELPING_HAND"
             ],
-            "power": 20,
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CARNIVINE",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_LEAF_BLADE",
+                "MOVE_KNOCK_OFF",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_BIND"
+            ],
+            "power": 239,
             "ball_seal": 0
         }
     ]

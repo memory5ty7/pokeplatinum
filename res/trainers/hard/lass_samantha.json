@@ -23,7 +23,7 @@
         {
             "species": "SPECIES_CASCOON",
             "form": 0,
-            "level": 8,
+            "level": 9,
             "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_BUG_BITE",

@@ -9,16 +9,31 @@
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_ESPEON",
+            "form": 0,
+            "level": 25,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_REFLECT",
+                "MOVE_FUTURE_SIGHT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_CHARM"
+            ],
+            "power": 245,
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_CONFUSION",
-                "MOVE_BIDE",
-                "MOVE_MEDITATE"
+                "MOVE_FAKE_OUT",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_DETECT"
             ],
-            "power": 20,
+            "power": 228,
             "ball_seal": 0
         }
     ]

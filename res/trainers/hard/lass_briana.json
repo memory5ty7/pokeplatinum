@@ -8,12 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_HARIYAMA",
             "form": 0,
-            "level": 16,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 24,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_FORCE_PALM",
+                "MOVE_PAYBACK",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 227,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PONYTA",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_BOUNCE",
+                "MOVE_POISON_JAB",
+                "MOVE_DOUBLE_KICK"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

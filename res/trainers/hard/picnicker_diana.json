@@ -7,15 +7,32 @@
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_LEDYBA",
             "form": 0,
-            "level": 9,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_COVERT_CLOAK",
+            "moves": [
+                "MOVE_AIR_SLASH",
+                "MOVE_SWAGGER",
+                "MOVE_TAILWIND"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAKUHITA",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_PERSIM_BERRY",
+            "moves": [
+                "MOVE_FORCE_PALM",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_PAYBACK"
+            ],
+            "power": 203,
             "ball_seal": 0
         }
     ]

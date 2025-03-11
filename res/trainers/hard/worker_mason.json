@@ -8,12 +8,57 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_HIPPOPOTAS",
             "form": 0,
-            "level": 9,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 13,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_SANDSTORM",
+                "MOVE_BULLDOZE",
+                "MOVE_YAWN",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 248,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CUBONE",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_KINGS_ROCK",
+            "moves": [
+                "MOVE_KNOCK_OFF",
+                "MOVE_BONEMERANG",
+                "MOVE_FLING",
+                "MOVE_HEADBUTT"
+            ],
+            "power": 238,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DIGLETT",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_BLACKGLASSES",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_PROTECT",
+                "MOVE_SUCKER_PUNCH"
+            ],
+            "power": 228,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SWINUB",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_NEVERMELTICE",
+            "moves": [
+                "MOVE_ICE_SHARD",
+                "MOVE_BULLDOZE",
+                "MOVE_MAGNITUDE"
+            ],
+            "power": 228,
             "ball_seal": 0
         }
     ]

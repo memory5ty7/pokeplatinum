@@ -8,30 +8,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_CROAGUNK",
             "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 28,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_VACUUM_WAVE",
+                "MOVE_BULLDOZE"
+            ],
+            "power": 239,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_BRELOOM",
             "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 28,
+            "item": "ITEM_COBA_BERRY",
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_SPORE",
+                "MOVE_BULLET_SEED",
+                "MOVE_ROCK_TOMB"
+            ],
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_SHEDINJA",
             "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 28,
+            "item": "ITEM_BRIGHTPOWDER",
+            "moves": [
+                "MOVE_SWORDS_DANCE",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_DIG",
+                "MOVE_X_SCISSOR"
+            ],
+            "power": 229,
             "ball_seal": 0
         }
     ]

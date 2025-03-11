@@ -9,14 +9,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ABRA",
+            "species": "SPECIES_PELIPPER",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_WACAN_BERRY",
             "moves": [
-                "MOVE_HIDDEN_POWER"
+                "MOVE_WATER_PULSE",
+                "MOVE_PLUCK",
+                "MOVE_U_TURN",
+                "MOVE_ICY_WIND"
             ],
-            "power": 20,
+            "power": 242,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LOMBRE",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_WATER_PULSE",
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            "power": 242,
             "ball_seal": 0
         }
     ]

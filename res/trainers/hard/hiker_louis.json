@@ -9,21 +9,56 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_GRAVELER",
             "form": 0,
-            "level": 14,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 28,
+            "item": "ITEM_CUSTAP_BERRY",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_SELFDESTRUCT"
+            ],
+            "power": 227,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_LAIRON",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 28,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_IRON_TAIL",
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_BULLDOZE"
+            ],
+            "power": 248,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CRANIDOS",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_CHOICE_BAND",
+            "moves": [
+                "MOVE_HEAD_SMASH"
+            ],
+            "power": 229,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TRAPINCH",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_QUICK_CLAW",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_BUG_BITE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SUBSTITUTE"
+            ],
+            "power": 227,
             "ball_seal": 0
         }
     ]

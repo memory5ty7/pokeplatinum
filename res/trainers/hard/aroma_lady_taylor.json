@@ -9,21 +9,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_MAGBY",
             "form": 0,
-            "level": 9,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 17,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_LOW_KICK",
+                "MOVE_FIRE_SPIN",
+                "MOVE_FLAME_WHEEL",
+                "MOVE_DOUBLE_TEAM"
+            ],
+            "power": 236,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_SKIPLOOM",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 17,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_AERIAL_ACE",
+                "MOVE_SEED_BOMB",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "power": 289,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLOOM",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_TOXIC",
+                "MOVE_LEECH_SEED",
+                "MOVE_DRAIN_PUNCH"
+            ],
+            "power": 282,
             "ball_seal": 0
         }
     ]

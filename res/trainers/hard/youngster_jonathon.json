@@ -8,15 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_ANORITH",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 15,
+            "item": "ITEM_PASSHO_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_ROCK_TOMB",
+                "MOVE_KNOCK_OFF",
+                "MOVE_AERIAL_ACE",
+                "MOVE_ANCIENT_POWER"
             ],
-            "power": 10,
+            "power": 278,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KABUTO",
+            "form": 0,
+            "level": 15,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_KNOCK_OFF",
+                "MOVE_AERIAL_ACE",
+                "MOVE_BUBBLE_BEAM"
+            ],
+            "power": 289,
             "ball_seal": 0
         }
     ]

@@ -8,28 +8,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_TROPIUS",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_LEECH_SEED"
+                "MOVE_GIGA_DRAIN",
+                "MOVE_AIR_SLASH",
+                "MOVE_BULLDOZE",
+                "MOVE_TAILWIND"
             ],
-            "power": 20,
+            "power": 236,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_OCTILLERY",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_SCOPE_LENS",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_FLAMETHROWER",
+                "MOVE_AURORA_BEAM",
+                "MOVE_ENERGY_BALL",
+                "MOVE_FIRE_SPIN"
             ],
-            "power": 20,
+            "power": 240,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MACHOKE",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_BRICK_BREAK",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_BULLDOZE",
+                "MOVE_ICE_PUNCH"
+            ],
+            "power": 227,
             "ball_seal": 0
         }
     ]

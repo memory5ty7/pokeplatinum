@@ -8,12 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_KOFFING",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 17,
+            "item": "ITEM_PAYAPA_BERRY",
+            "moves": [
+                "MOVE_SLUDGE",
+                "MOVE_WILL_O_WISP",
+                "MOVE_THUNDERBOLT",
+                "MOVE_PROTECT"
+            ],
+            "power": 235,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GASTLY",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_OMINOUS_WIND",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ICY_WIND"
+            ],
+            "power": 240,
             "ball_seal": 0
         }
     ]
