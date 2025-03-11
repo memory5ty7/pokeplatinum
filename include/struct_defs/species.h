@@ -1,7 +1,7 @@
 #ifndef POKEPLATINUM_SPECIES_H
 #define POKEPLATINUM_SPECIES_H
 
-#define MAX_ABILITIES  2
+#define MAX_ABILITIES  3
 #define MAX_EGG_GROUPS 2
 #define MAX_TYPES      2
 

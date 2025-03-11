@@ -116,6 +116,11 @@ static SpeciesData ParseSpeciesData(rapidjson::Document &root)
     rapidjson::Value &abilities = root["abilities"];
     species.abilities[0] = LookupConst(abilities[0].GetString(), Ability);
     species.abilities[1] = LookupConst(abilities[1].GetString(), Ability);
+    if (abilities.Size() == 3) {
+        species.abilities[2] = LookupConst(abilities[2].GetString(), Ability);
+    } else {
+        species.abilities[2] = ABILITY_NONE;
+    }
 
     rapidjson::Value &types = root["types"];
     species.types[0] = LookupConst(types[0].GetString(), PokemonType);

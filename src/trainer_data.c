@@ -201,6 +201,13 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             ivs = GetIVsFromDV(trmon[i].dv);
 
             u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
+            u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
+
+            if (hiddenAbility != 0)
+            {
+                abilitySlot = 100;
+            }
+
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);

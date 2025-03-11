@@ -2091,6 +2091,9 @@ u32 SpeciesData_GetValue(SpeciesData *speciesData, enum SpeciesDataParam param)
     case SPECIES_DATA_ABILITY_2:
         result = speciesData->abilities[1];
         break;
+    case SPECIES_DATA_HIDDEN_ABILITY:
+        result = speciesData->abilities[2];
+        break; 
     case SPECIES_DATA_SAFARI_FLEE_RATE:
         result = speciesData->safariFleeRate;
         break;
@@ -5107,6 +5110,12 @@ u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot)
     int trueSpecies = Pokemon_GetFormNarcIndex(species, form);
     u8 ability1 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_1);
     u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
+    u8 hiddenAbility = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_HIDDEN_ABILITY);
+
+    if (abilitySlot = 1000 && (hiddenAbility != ABILITY_NONE))
+    {
+        return hiddenAbility;
+    }
 
     return ((ability2 != 0) && (abilitySlot & 1))
             ? ability2
