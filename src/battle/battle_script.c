@@ -3243,7 +3243,7 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
                 } else if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->sideEffectMon, ABILITY_SHIELD_DUST) == TRUE
                     && battleCtx->sideEffectType == SIDE_EFFECT_TYPE_INDIRECT) {
                     result = 1;
-                } else if (battleCtx->battleMons[battleCtx->sideEffectMon].statusVolatile & VOLATILE_CONDITION_SUBSTITUTE) {
+                } else if (battleCtx->battleMons[battleCtx->sideEffectMon].statusVolatile & VOLATILE_CONDITION_SUBSTITUTE && !isSoundMove(battleCtx->moveCur)) {
                     result = 2;
                 }
             } else if (mon->statBoosts[BATTLE_STAT_ATTACK + statOffset] == 0) {
@@ -7881,9 +7881,9 @@ static BOOL BtlCmd_CheckCanShareStatus(BattleSystem *battleSys, BattleContext *b
     BattleScript_Iter(battleCtx, 1);
     int jumpOnFail = BattleScript_Read(battleCtx);
 
-    if (DEFENDING_MON.status
-        || (DEFENDING_MON.statusVolatile & VOLATILE_CONDITION_SUBSTITUTE)
-        || ATTACKING_MON.status == MON_CONDITION_NONE) {
+    if ((DEFENDING_MON.status
+        || (DEFENDING_MON.statusVolatile & VOLATILE_CONDITION_SUBSTITUTE && !isSoundMove(battleCtx->moveCur))
+        || ATTACKING_MON.status == MON_CONDITION_NONE)) {
         BattleScript_Iter(battleCtx, jumpOnFail);
     }
 
@@ -9543,7 +9543,7 @@ static BOOL BtlCmd_CheckSubstitute(BattleSystem *battleSys, BattleContext *battl
     int jumpSubActive = BattleScript_Read(battleCtx);
 
     int battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
-    if ((battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_SUBSTITUTE)
+    if ((battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_SUBSTITUTE && !isSoundMove(battleCtx->moveCur))
         || (battleCtx->selfTurnFlags[battler].statusFlags & SELF_TURN_FLAG_SUBSTITUTE_HIT)) {
         BattleScript_Iter(battleCtx, jumpSubActive);
     }

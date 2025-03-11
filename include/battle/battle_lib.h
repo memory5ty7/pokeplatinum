@@ -1512,4 +1512,6 @@ int Desmume_Log(const char *fmt, ...);
 int Move_CalcVariablePower(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon, u16 defender, s32 *damage);
 int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 mon, Pokemon *defender, s32 *damage);
 
+BOOL isSoundMove(u16 move);
+
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H
