@@ -326,4 +326,8 @@ subscript_files = files(
     'subscript_throat_chop.s',
     'subscript_throat_chop_end.s',
     'subscript_parting_shot.s',
+    'subscript_soak.s',
+    'subscript_trick_or_treat.s',
+    'subscript_magic_powder.s',
+    'subscript_forests_curse.s',
 )
