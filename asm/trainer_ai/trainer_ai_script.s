@@ -392,7 +392,7 @@ Basic_DefensiveGlobal:
 
 Basic_DefensiveGlobal1:
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_BODY_PRESS, Basic_DefensiveGlobal11
-    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_COSMIC_POWER, Basic_DefensiveGlobal11
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_STORED_POWER, Basic_DefensiveGlobal11
     GoTo Basic_DefensiveGlobal2
 
 Basic_DefensiveGlobal11:

@@ -5216,7 +5216,7 @@ u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client)
         battleCtx->battleMons[client].spDefense,
     };
 
-    u8 max = 0;
+    u16 max = 0;
     u8 ret = 0;
     for (u8 i = 0; i < NELEMS(stats); i++) {
         if (stats[i] > max) {
@@ -11414,12 +11414,12 @@ int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u
         break;
 
     case MOVE_HIDDEN_POWER:
-        power = ((Pokemon_GetValue(mon, MON_DATA_HP_IV, NULL) & 2) >> 1)
-            | ((Pokemon_GetValue(mon, MON_DATA_ATK_IV, NULL) & 2) >> 0)
-            | ((Pokemon_GetValue(mon, MON_DATA_DEF_IV, NULL) & 2) << 1)
-            | ((Pokemon_GetValue(mon, MON_DATA_SPEED_IV, NULL) & 2) << 2)
-            | ((Pokemon_GetValue(mon, MON_DATA_SPATK_IV, NULL) & 2) << 3)
-            | ((Pokemon_GetValue(mon, MON_DATA_SPDEF_EV, NULL) & 2) << 4);
+        power = ((BattleMon_Get(battleCtx, mon, BATTLEMON_HP_IV, NULL) & 2) >> 1)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_IV, NULL) & 2) >> 0)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_DEFENSE_IV, NULL) & 2) << 1)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SPEED_IV, NULL) & 2) << 2)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_ATTACK_IV, NULL) & 2) << 3)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_DEFENSE_IV, NULL) & 2) << 4);
 
         power = power * 40 / 63 + 30;
         break;
@@ -11509,6 +11509,176 @@ int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u
 
         break;
     }
+
+    case MOVE_STORED_POWER:
+        int i;
+        int statChange;
+        int power = 20;
+        for (i = 0 ; i < 7; i++)
+        {
+            statChange = BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_STAGE + i, NULL) - 6;
+            if (statChange > 0)
+            {
+                power += (20 * statChange);
+            }
+        }
+        break;
+
+    default:
+        // Move has no special calculation logic; default to the basic calc
+        power = MOVE_DATA(move).power;
+        break;
+    }
+
+    if (damageTmp != 0) {
+        *damage = damageTmp;
+        power = 1;
+    }
+
+    return power;
+}
+
+int Move_CalcVariablePower3(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 mon, u16 defender, s32 *damage)
+{
+    // must declare C89-style to match
+    int defendingSide;
+    int power;
+    int type;
+    int typeTmp;
+    u32 effectivenessFlags;
+    s32 damageTmp = 0;
+
+    u16 heldItem = BattleMon_Get(battleCtx, mon, BATTLEMON_HELD_ITEM, NULL);
+    u16 ability = BattleMon_Get(battleCtx, mon, BATTLEMON_ABILITY, NULL);
+
+    defendingSide = 1 - Battler_Side(battleSys, defender);
+    power = MOVE_DATA(move).power;
+    type = 0;
+    effectivenessFlags = 0;
+
+    switch (move) {
+    case MOVE_NATURAL_GIFT:
+        if (ability != ABILITY_KLUTZ) {
+            power = BattleSystem_GetItemData(battleCtx, heldItem, ITEM_PARAM_NATURAL_GIFT_POWER);
+        }
+        break;
+
+    case MOVE_JUDGMENT:
+        if (ability != ABILITY_KLUTZ) {
+            power = 0;
+        }
+        break;
+
+    case MOVE_HIDDEN_POWER:
+    power = ((BattleMon_Get(battleCtx, mon, BATTLEMON_HP_IV, NULL) & 2) >> 1)
+    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_IV, NULL) & 2) >> 0)
+    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_DEFENSE_IV, NULL) & 2) << 1)
+    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SPEED_IV, NULL) & 2) << 2)
+    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_ATTACK_IV, NULL) & 2) << 3)
+    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_DEFENSE_IV, NULL) & 2) << 4);
+
+        power = power * 40 / 63 + 30;
+        break;
+
+    case MOVE_GYRO_BALL:
+        power = 1 + 25 * BattleMon_Get(battleCtx, defender, BATTLEMON_SPEED, NULL) / BattleMon_Get(battleCtx, mon, BATTLEMON_SPEED, NULL);
+
+        if (power > 150) {
+            power = 150;
+        }
+        break;
+
+    case MOVE_DRAGON_RAGE:
+        damageTmp = 40;
+        break;
+
+    case MOVE_SEISMIC_TOSS:
+    case MOVE_NIGHT_SHADE:
+        damageTmp = BattleMon_Get(battleCtx, mon, BATTLEMON_LEVEL, NULL);
+        break;
+
+    case MOVE_PSYWAVE:
+        damageTmp = BattleMon_Get(battleCtx, mon, BATTLEMON_LEVEL, NULL) * (BattleSystem_RandNext(battleSys) % 11 + 5) / 10;
+        break;
+
+    case MOVE_RETURN:
+        power = BattleMon_Get(battleCtx, mon, BATTLEMON_FRIENDSHIP, NULL) * 10 / 25;
+        break;
+
+    case MOVE_FRUSTRATION:
+        power = (255 - BattleMon_Get(battleCtx, mon, BATTLEMON_FRIENDSHIP, NULL)) * 10 / 25;
+        break;
+
+    case MOVE_MAGNITUDE:
+        // Simulate a Magnitude roll
+        power = BattleSystem_RandNext(battleSys) % 100;
+
+        if (power < 5) {
+            power = 10;
+        } else if (power < 15) {
+            power = 30;
+        } else if (power < 35) {
+            power = 50;
+        } else if (power < 65) {
+            power = 70;
+        } else if (power < 85) {
+            power = 90;
+        } else if (power < 95) {
+            power = 110;
+        } else {
+            power = 150;
+        }
+        break;
+
+    case MOVE_SONIC_BOOM:
+        damage = 20;
+        break;
+
+    case MOVE_LOW_KICK:
+    case MOVE_GRASS_KNOT: {
+        int i;
+
+        for (i = 0; sWeightToPower[i][0] != 0xFFFF; i++) {
+
+            HeightWeightData *heightWeightData = Pokedex_HeightWeightData(HEAP_ID_BATTLE);
+            Pokedex_HeightWeightData_Load(heightWeightData, 0, HEAP_ID_BATTLE);
+
+            u32 weight = Pokedex_HeightWeightData_Weight(heightWeightData, BattleMon_Get(battleCtx, defender, BATTLEMON_SPECIES, NULL));
+
+            if (Item_Get(BattleMon_Get(battleCtx, defender, BATTLEMON_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT) == HOLD_EFFECT_FLOAT_STONE) {
+                weight /= 2;
+            }
+
+            Pokedex_HeightWeightData_Release(heightWeightData);
+            Pokedex_HeightWeightData_Free(heightWeightData);
+
+            if (sWeightToPower[i][0] >= weight) {
+                break;
+            }
+        }
+
+        if (sWeightToPower[i][0] != 0xFFFF) {
+            power = sWeightToPower[i][1];
+        } else {
+            power = 120;
+        }
+
+        break;
+    }
+
+    case MOVE_STORED_POWER:
+        int i;
+        int statChange;
+        int power = 20;
+        for (i = 0 ; i < 7; i++)
+        {
+            statChange = BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_STAGE + i, NULL) - 6;
+            if (statChange > 0)
+            {
+                power += (20 * statChange);
+            }
+        }
+        break;
 
     default:
         // Move has no special calculation logic; default to the basic calc

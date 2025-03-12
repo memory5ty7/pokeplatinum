@@ -1605,6 +1605,7 @@ static void AICmd_IfCurrentMoveKills(BattleSystem *battleSys, BattleContext *bat
         roll = 100;
     }
 
+    /*
     int riskyIdx;
     for (riskyIdx = 0; sRiskyMoves[riskyIdx] != 0xFFFF; riskyIdx++) {
         if (MOVE_DATA(AI_CONTEXT.move).effect == sRiskyMoves[riskyIdx]) {
@@ -1640,6 +1641,49 @@ static void AICmd_IfCurrentMoveKills(BattleSystem *battleSys, BattleContext *bat
             AIScript_Iter(battleCtx, jump);
         }
     }
+    */
+
+    //Desmume_Log("IfCurrentMoveKills :");
+
+    int move = AI_CONTEXT.move;
+    u32 moveStatusFlags;
+
+    s32 damage = 0;
+    int moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.attacker, move);
+    int power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.attacker, AI_CONTEXT.defender, &damage);
+
+    if (move && power > 1) {
+        damage = BattleSystem_CalcMoveDamage(battleSys,
+            battleCtx,
+            move,
+            battleCtx->sideConditionsMask[Battler_Side(battleSys, AI_CONTEXT.attacker)],
+            battleCtx->fieldConditionsMask,
+            power,
+            moveType,
+            AI_CONTEXT.attacker,
+            AI_CONTEXT.defender,
+            1);
+
+        moveStatusFlags = 0;
+        damage = BattleSystem_ApplyTypeChart(battleSys,
+            battleCtx,
+            move,
+            moveType,
+            AI_CONTEXT.attacker,
+            AI_CONTEXT.defender,
+            damage,
+            &moveStatusFlags);
+
+        if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+            damage = 0;
+        }
+    }
+
+    if (battleCtx->battleMons[AI_CONTEXT.defender].curHP <= damage) {
+        AIScript_Iter(battleCtx, jump);
+    }
+
+    //Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -1649,14 +1693,15 @@ static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContex
     BOOL useDamageRoll = AIScript_Read(battleCtx);
     int jump = AIScript_Read(battleCtx);
 
-    int roll = 80;
-    /*
+    int roll;
+
     if (useDamageRoll == TRUE) {
         roll = AI_CONTEXT.moveDamageRolls[AI_CONTEXT.moveSlot];
     } else {
         roll = 100;
     }
-    */
+
+    /*
     int riskyIdx;
     for (riskyIdx = 0; sRiskyMoves[riskyIdx] != 0xFFFF; riskyIdx++) {
         if (MOVE_DATA(AI_CONTEXT.move).effect == sRiskyMoves[riskyIdx]) {
@@ -1688,10 +1733,53 @@ static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContex
             battleCtx->battleMons[AI_CONTEXT.attacker].moveEffectsData.embargoTurns,
             roll);
 
-        if (battleCtx->battleMons[AI_CONTEXT.defender].curHP > damage) {
+        if (battleCtx->battleMons[AI_CONTEXT.defender].curHP <= damage) {
             AIScript_Iter(battleCtx, jump);
         }
     }
+    */
+
+    //Desmume_Log("IfCurrentMoveDoesNotKill :");
+
+    int move = AI_CONTEXT.move;
+    u32 moveStatusFlags;
+
+    s32 damage = 0;
+    int moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.attacker, move);
+    int power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.attacker, AI_CONTEXT.defender, &damage);
+
+    if (move && power > 1) {
+        damage = BattleSystem_CalcMoveDamage(battleSys,
+            battleCtx,
+            move,
+            battleCtx->sideConditionsMask[Battler_Side(battleSys, AI_CONTEXT.attacker)],
+            battleCtx->fieldConditionsMask,
+            power,
+            moveType,
+            AI_CONTEXT.attacker,
+            AI_CONTEXT.defender,
+            1);
+
+        moveStatusFlags = 0;
+        damage = BattleSystem_ApplyTypeChart(battleSys,
+            battleCtx,
+            move,
+            moveType,
+            AI_CONTEXT.attacker,
+            AI_CONTEXT.defender,
+            damage,
+            &moveStatusFlags);
+
+        if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+            damage = 0;
+        }
+    }
+
+    if (battleCtx->battleMons[AI_CONTEXT.defender].curHP > damage) {
+        AIScript_Iter(battleCtx, jump);
+    }
+
+    //Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfMoveKnown(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -2733,6 +2821,7 @@ static void AICmd_LoadAbility(BattleSystem *battleSys, BattleContext *battleCtx)
 
 static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    /*
     int i;
     int inBattler;
     BOOL varyDamage;
@@ -2778,6 +2867,120 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
 
     AI_CONTEXT.attacker = AI_CONTEXT.defender;
     AI_CONTEXT.defender = defenderTmp;
+    
+    AIScript_Iter(battleCtx, 1);
+
+    BOOL useDamageRoll = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+
+    int roll;
+
+    if (useDamageRoll == TRUE) {
+        roll = AI_CONTEXT.moveDamageRolls[AI_CONTEXT.moveSlot];
+    } else {
+        roll = 100;
+    }
+    */
+
+    /*
+    int riskyIdx;
+    for (riskyIdx = 0; sRiskyMoves[riskyIdx] != 0xFFFF; riskyIdx++) {
+        if (MOVE_DATA(AI_CONTEXT.move).effect == sRiskyMoves[riskyIdx]) {
+            break;
+        }
+    }
+
+    int altPowerIdx;
+    for (altPowerIdx = 0; sAltPowerCalcMoves[altPowerIdx] != 0xFFFF; altPowerIdx++) {
+        if (MOVE_DATA(AI_CONTEXT.move).effect == sAltPowerCalcMoves[altPowerIdx]) {
+            break;
+        }
+    }
+
+    if (sAltPowerCalcMoves[altPowerIdx] != 0xFFFF
+        || (MOVE_DATA(AI_CONTEXT.move).power > 1 && sRiskyMoves[riskyIdx] == 0xFFFF)) {
+        u8 ivs[STAT_MAX];
+        for (int stat = STAT_HP; stat < STAT_MAX; stat++) {
+            ivs[stat] = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_HP_IV + stat, NULL);
+        }
+
+        u32 damage = TrainerAI_CalcDamage(battleSys,
+            battleCtx,
+            AI_CONTEXT.move,
+            battleCtx->battleMons[AI_CONTEXT.attacker].heldItem,
+            ivs,
+            AI_CONTEXT.attacker,
+            Battler_Ability(battleCtx, AI_CONTEXT.attacker),
+            battleCtx->battleMons[AI_CONTEXT.attacker].moveEffectsData.embargoTurns,
+            roll);
+
+        if (battleCtx->battleMons[AI_CONTEXT.defender].curHP <= damage) {
+            AIScript_Iter(battleCtx, jump);
+        }
+    }
+    */
+
+    //Desmume_Log("IfEnemyKills :");
+
+    int move;
+
+    BOOL varyDamage;
+    int jump;
+    int inBattler;
+
+    u8 defenderTmp = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = defenderTmp;
+
+    inBattler = AIScript_Read(battleCtx);
+    varyDamage = AIScript_Read(battleCtx);
+    jump = AIScript_Read(battleCtx);
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+        move = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_MOVE_1 + i, NULL);
+        u32 moveStatusFlags;
+
+        s32 damage = 0;
+        int moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.attacker, move);
+        int power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.attacker, AI_CONTEXT.defender, &damage);
+
+        if (move && power > 1) {
+            damage = BattleSystem_CalcMoveDamage(battleSys,
+                battleCtx,
+                move,
+                battleCtx->sideConditionsMask[Battler_Side(battleSys, AI_CONTEXT.attacker)],
+                battleCtx->fieldConditionsMask,
+                power,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                1);
+
+            moveStatusFlags = 0;
+            damage = BattleSystem_ApplyTypeChart(battleSys,
+                battleCtx,
+                move,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                damage,
+                &moveStatusFlags);
+
+            if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                damage = 0;
+            }
+        }
+
+        if (battleCtx->battleMons[AI_CONTEXT.defender].curHP <= damage) {
+            AIScript_Iter(battleCtx, jump);
+        }
+    }
+
+    defenderTmp = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = defenderTmp;
+
+    //Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -4479,6 +4682,7 @@ static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battl
 
 static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    /*
     AIScript_Iter(battleCtx, 1);
 
     BOOL useDamageRoll = AIScript_Read(battleCtx);
@@ -4543,10 +4747,80 @@ static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battl
     AI_CONTEXT.defender = tmp;
 
     AI_CONTEXT.calcTemp = turns;
+    */
+
+    //Desmume_Log("EnemyTurnsToKill :");
+
+    AIScript_Iter(battleCtx, 1);
+
+    BOOL useDamageRoll = AIScript_Read(battleCtx);
+
+    int turns = 0;
+    int minTurns = 100;
+    int move;
+
+    u8 tmp = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = tmp;
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+        move = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_MOVE_1 + i, NULL);
+        u32 moveStatusFlags;
+
+        s32 damage = 0;
+        int moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.attacker, move);
+        int power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.attacker, AI_CONTEXT.defender, &damage);
+
+        if (move && power > 1) {
+            damage = BattleSystem_CalcMoveDamage(battleSys,
+                battleCtx,
+                move,
+                battleCtx->sideConditionsMask[Battler_Side(battleSys, AI_CONTEXT.attacker)],
+                battleCtx->fieldConditionsMask,
+                power,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                1);
+
+            moveStatusFlags = 0;
+            damage = BattleSystem_ApplyTypeChart(battleSys,
+                battleCtx,
+                move,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                damage,
+                &moveStatusFlags);
+
+            //Desmume_Log("Enemy damage : %d/%d\n",damage,BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL));
+
+            if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                damage = 0;
+            }
+        }
+
+        turns = (int)((BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL)) / damage) + 1;
+
+        if (turns < minTurns) {
+            minTurns = turns;
+        }
+    }
+
+    tmp = AI_CONTEXT.attacker;
+    AI_CONTEXT.attacker = AI_CONTEXT.defender;
+    AI_CONTEXT.defender = tmp;
+
+    AI_CONTEXT.calcTemp = minTurns;
+
+    //Desmume_Log("Enemy turns to kills : %d\n", minTurns);
+
+    //Desmume_Log(" OK\n");
 }
 
 static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    /*
     AIScript_Iter(battleCtx, 1);
 
     BOOL useDamageRoll = AIScript_Read(battleCtx);
@@ -4603,4 +4877,64 @@ static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
     }
 
     AI_CONTEXT.calcTemp = turns;
+    */
+
+    //Desmume_Log("TurnsToKills :");
+
+    AIScript_Iter(battleCtx, 1);
+
+    BOOL useDamageRoll = AIScript_Read(battleCtx);
+
+    int turns = 0;
+    int minTurns = 100;
+    int move;
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+        move = BattleMon_Get(battleCtx, AI_CONTEXT.attacker, BATTLEMON_MOVE_1 + i, NULL);
+        u32 moveStatusFlags;
+
+        s32 damage = 0;
+        int moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.attacker, move);
+        int power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.attacker, AI_CONTEXT.defender, &damage);
+
+        if (move && power > 1) {
+            damage = BattleSystem_CalcMoveDamage(battleSys,
+                battleCtx,
+                move,
+                battleCtx->sideConditionsMask[Battler_Side(battleSys, AI_CONTEXT.attacker)],
+                battleCtx->fieldConditionsMask,
+                power,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                1);
+
+            moveStatusFlags = 0;
+            damage = BattleSystem_ApplyTypeChart(battleSys,
+                battleCtx,
+                move,
+                moveType,
+                AI_CONTEXT.attacker,
+                AI_CONTEXT.defender,
+                damage,
+                &moveStatusFlags);
+
+            if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                damage = 0;
+            }
+
+
+        }
+
+        turns = (BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL)) / damage + 1;
+        if (turns < minTurns) {
+            minTurns = turns;
+        }
+    }
+
+    AI_CONTEXT.calcTemp = minTurns;
+
+    //Desmume_Log("Turns to kills : %d\n", minTurns);
+
+    //Desmume_Log(" OK\n");
 }

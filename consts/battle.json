@@ -294,7 +294,12 @@
                 "BATTLE_EFFECT_CHILLY_RECEPTION",
                 "BATTLE_EFFECT_THROAT_CHOP",
                 "BATTLE_EFFECT_PARTING_SHOT",
-                "BATTLE_EFFECT_DIRE_CLAW"
+                "BATTLE_EFFECT_DIRE_CLAW",
+                "BATTLE_EFFECT_SOAK",
+                "BATTLE_EFFECT_TRICK_OR_TREAT",
+                "BATTLE_EFFECT_MAGIC_POWDER",
+                "BATTLE_EFFECT_FORESTS_CURSE",
+                "BATTLE_EFFECT_STORED_POWER"
             ]
         },
         "@MessageTag": {
