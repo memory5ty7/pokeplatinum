@@ -5112,7 +5112,7 @@ u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot)
     u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
     u8 hiddenAbility = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_HIDDEN_ABILITY);
 
-    if (abilitySlot = 1000 && (hiddenAbility != ABILITY_NONE))
+    if ((abilitySlot == 100) && (hiddenAbility != ABILITY_NONE))
     {
         return hiddenAbility;
     }
