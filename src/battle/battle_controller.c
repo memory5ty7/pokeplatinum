@@ -4198,6 +4198,36 @@ static void BattleController_MoveEnd(BattleSystem *battleSys, BattleContext *bat
                 }
             }
             break;
+        case ABILITY_MOXIE:
+            if (battleCtx->turnFlags[battleCtx->attacker].numberOfKOs) {
+
+                if ((battleCtx->battleMons[battleCtx->attacker].statBoosts[STAT_ATTACK] < 12) && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.fakeOutTurnNumber != (battleCtx->totalTurns + 1))) {
+                    switch (battleCtx->turnFlags[battleCtx->attacker].numberOfKOs) {
+                    case 1:
+                        battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+                        break;
+                    case 2:
+                        battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_2_STAGES;
+                        break;
+                    case 3:
+                        battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_2_STAGES;
+                        break;
+                    default:
+                        break;
+                    }
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectMon = battleCtx->attacker;
+                    LOAD_SUBSEQ(subscript_update_stat_stage);
+                    battleCtx->commandNext = battleCtx->command;
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                    battleCtx->turnFlags[battleCtx->attacker].numberOfKOs = 0;
+                    return;
+                }
+            }
+            break;
+        default:
+            battleCtx->turnFlags[battleCtx->attacker].numberOfKOs = 0;
+            break;
         }
 
         int nextSeq = BattleSystem_TriggerEffectOnSwitch(battleSys, battleCtx);

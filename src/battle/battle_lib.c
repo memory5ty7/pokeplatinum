@@ -5187,9 +5187,23 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
             }
         }
         break;
-    }
+    case ABILITY_MOXIE:
+        if ((battleCtx->defender == battleCtx->faintedMon)
+            && BATTLERS_ON_DIFFERENT_SIDE(battleCtx->attacker, battleCtx->faintedMon)
+            && (battleCtx->battleMons[battleCtx->attacker].curHP)
+            && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == 0)) {
 
-    return result;
+            if ((battleCtx->battleMons[battleCtx->attacker].statBoosts[STAT_ATTACK] < 12)
+                && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.fakeOutTurnNumber != (battleCtx->totalTurns + 1))) {
+                battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
+            }
+        }
+        break;
+    default:
+        break;
+    }
+    
+   return result;
 }
 
 u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client)

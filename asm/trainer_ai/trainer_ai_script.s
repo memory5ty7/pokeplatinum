@@ -68,6 +68,7 @@ CheckKill:
 Basic_CheckSpeedKill:
     LoadAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_BEAST_BOOST, Basic_CheckSpeedKill2
+    IfLoadedEqualTo ABILITY_MOXIE, Basic_CheckSpeedKill2
     AddToMoveScore 1
     GoTo Basic_CheckSpeedKill2
 
