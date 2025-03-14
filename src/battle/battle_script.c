@@ -317,6 +317,7 @@ static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetAbilityActivatedFlag(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TryAuroraVeil(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TryMatBlock(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_IsAttackerLevelLowerThanDefender(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -579,7 +580,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_End,
     BtlCmd_SetAbilityActivatedFlag,
     BtlCmd_TryAuroraVeil,
-    BtlCmd_TryMatBlock
+    BtlCmd_TryMatBlock,
+    BtlCmd_IsAttackerLevelLowerThanDefender
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -6205,6 +6207,7 @@ static BOOL BtlCmd_TryReplaceFaintedMon(BattleSystem *battleSys, BattleContext *
 
     if (BattleSystem_AnyReplacementMons(battleSys, battleCtx, battler) == FALSE) {
         BattleScript_Iter(battleCtx, jumpOnFail);
+        Desmume_Log("TryReplaceFaintedMon\n");
     } else if (openPartyList == TRUE) {
         battleCtx->battlerStatusFlags[battler] |= BATTLER_STATUS_SWITCHING;
     }
@@ -12573,6 +12576,20 @@ static BOOL BtlCmd_TryMatBlock(BattleSystem *battleSys, BattleContext *battleCtx
         } else {
             battleCtx->msgBuffer.id = 194; // "{0} raised [your/its] team's Defense!"
         }
+    }
+
+    return FALSE;
+}
+
+static BOOL BtlCmd_IsAttackerLevelLowerThanDefender(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int jump = BattleScript_Read(battleCtx);
+    
+    if (BattleMon_Get(battleCtx, battleCtx->attacker, BATTLEMON_LEVEL, NULL) < BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_LEVEL, NULL))
+    {
+        BattleScript_Iter(battleCtx, jump);
+        Desmume_Log("IsAttackerLevelLowerThanDefender\n");
     }
 
     return FALSE;

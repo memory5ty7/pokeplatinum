@@ -1247,4 +1247,9 @@
     .long (\jump_if_fail-.) / 4 - 1
     .endm
 
+    .macro IsAttackerLevelLowerThanDefender jump_if_fail
+    .long 226
+    .long (\jump_if_fail-.) / 4 - 1
+    .endm
+
     .endif // ASM_BATTLE_SCRIPT_INC

@@ -765,6 +765,7 @@ Basic_Trick:
     IfHeldItemEqualTo AI_BATTLER_ATTACKER, ITEM_IRON_BALL, ScorePlus7
     IfHeldItemEqualTo AI_BATTLER_ATTACKER, ITEM_LAGGING_TAIL, ScorePlus7
     IfHeldItemEqualTo AI_BATTLER_ATTACKER, ITEM_STICKY_BARB, ScorePlus7
+    IfHeldItemEqualTo AI_BATTLER_ATTACKER, ITEM_FLOAT_STONE, ScorePlus7
     GoTo ScorePlus5
 
 Basic_Trick1:

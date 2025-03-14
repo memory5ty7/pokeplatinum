@@ -82,7 +82,7 @@ typedef struct BattleMon {
     u8 formNum : 5;
     u8 isShiny : 1;
     u8 field_weather_flag;
-    u8 padding0026_06 : 1;
+    u8 one_time_ability_flag : 1;
     u8 ability;
 
     u32 gemTriggered : 1;

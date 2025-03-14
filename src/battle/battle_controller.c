@@ -243,6 +243,7 @@ static void BattleController_InitBattleMons(BattleSystem *battleSys, BattleConte
     int maxBattlers = BattleSystem_MaxBattlers(battleSys);
     for (int i = 0; i < maxBattlers; i++) {
         BattleSystem_InitBattleMon(battleSys, battleCtx, i, battleCtx->selectedPartySlot[i]);
+        battleCtx->battleMons[i].one_time_ability_flag = FALSE;
     }
 
     battleCtx->hpTemp = battleCtx->battleMons[BATTLER_THEM].curHP;
