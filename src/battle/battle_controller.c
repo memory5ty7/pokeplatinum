@@ -2949,7 +2949,9 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
     for (i = 0; i < (s32)sizeof(PowderMovesList); i++) {
         if (move == PowderMovesList[i]) {
             if (
-                (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) == TYPE_GRASS) || (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) == TYPE_GRASS)) {
+                (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) == TYPE_GRASS)
+                || (BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) == TYPE_GRASS)
+                || Battler_HeldItemEffect(battleCtx, battleCtx->defender) == HOLD_EFFECT_SAFETY_GOGGLES) {
                 battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
                 return 0;
             }

@@ -5692,6 +5692,7 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
     ATTACKING_MON.slowStartAnnounced = FALSE;
     ATTACKING_MON.slowStartFinished = FALSE;
     ATTACKING_MON.sheer_force_flag = 0;
+    ATTACKING_MON.one_time_ability_flag = FALSE;
 
     for (i = 0; i < LEARNED_MOVES_MAX; i++) {
         if (MOVE_DATA(ATTACKING_MON.moves[i]).pp < 5) {
@@ -5909,6 +5910,7 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
             && type1 != TYPE_GROUND && type2 != TYPE_GROUND
             && battleCtx->battleMons[battler].curHP
             && Battler_Ability(battleCtx, battler) != ABILITY_SAND_VEIL
+            && Battler_HeldItemEffect(battleCtx, battler) != HOLD_EFFECT_SAFETY_GOGGLES
             && (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_NO_WEATHER_DAMAGE) == FALSE) {
             battleCtx->msgMoveTemp = MOVE_SANDSTORM;
             battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
@@ -5936,7 +5938,8 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
                 }
             } else if (type1 != TYPE_ICE
                 && type2 != TYPE_ICE
-                && Battler_Ability(battleCtx, battler) != ABILITY_SNOW_CLOAK) {
+                && Battler_Ability(battleCtx, battler) != ABILITY_SNOW_CLOAK
+                && Battler_HeldItemEffect(battleCtx, battler) != HOLD_EFFECT_SAFETY_GOGGLES) {
                 battleCtx->msgMoveTemp = MOVE_HAIL;
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
             }
