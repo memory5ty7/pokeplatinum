@@ -3195,7 +3195,8 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
     } else {
         if ((battleCtx->sideEffectFlags & MOVE_SIDE_EFFECT_CANNOT_PREVENT) == FALSE) {
             if (battleCtx->attacker != battleCtx->sideEffectMon) {
-                if (battleCtx->sideConditions[Battler_Side(battleSys, battleCtx->sideEffectMon)].mistTurns) {
+                if (battleCtx->sideConditions[Battler_Side(battleSys, battleCtx->sideEffectMon)].mistTurns
+                    && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_INFILTRATOR) {
                     battleCtx->msgBuffer.id = 273; // "{0} is protected by Mist!"
                     battleCtx->msgBuffer.tags = TAG_NICKNAME;
                     battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->sideEffectMon);
@@ -6092,7 +6093,8 @@ static BOOL BtlCmd_TrySafeguard(BattleSystem *battleSys, BattleContext *battleCt
     int jumpOnFail = BattleScript_Read(battleCtx);
     int side = Battler_Side(battleSys, battleCtx->attacker);
 
-    if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_SAFEGUARD) {
+    if (battleCtx->sideConditionsMask[side] & SIDE_CONDITION_SAFEGUARD
+        && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_INFILTRATOR) {
         BattleScript_Iter(battleCtx, jumpOnFail);
         battleCtx->moveStatusFlags |= MOVE_STATUS_FAILED;
     } else {
@@ -9547,6 +9549,11 @@ static BOOL BtlCmd_CheckSubstitute(BattleSystem *battleSys, BattleContext *battl
     BattleScript_Iter(battleCtx, 1);
     int inBattler = BattleScript_Read(battleCtx);
     int jumpSubActive = BattleScript_Read(battleCtx);
+
+    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_INFILTRATOR)
+    {
+        return FALSE;
+    }
 
     int battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
     if ((battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_SUBSTITUTE && !isSoundMove(battleCtx->moveCur))

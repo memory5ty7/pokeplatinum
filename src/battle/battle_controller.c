@@ -1505,7 +1505,16 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
                 battleCtx->battleMons[battler].statusVolatile -= (1 << VOLATILE_CONDITION_BIND_SHIFT);
 
                 if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_BIND) {
-                    battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
+                    int divisor = 8;
+                    for (int i = 0; i < MAX_BATTLERS; i++)
+                    {
+                        if (battleCtx->battleMons[i].moveEffectsData.bindTarget == battler
+                        && Battler_HeldItem(battleCtx, i) == ITEM_BINDING_BAND)
+                        {
+                            divisor = 6;
+                        }
+                    }
+                    battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, divisor);
                     LOAD_SUBSEQ(subscript_bind_effect);
                 } else {
                     LOAD_SUBSEQ(subscript_bind_end);
