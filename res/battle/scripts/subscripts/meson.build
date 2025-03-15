@@ -331,4 +331,5 @@ subscript_files = files(
     'subscript_magic_powder.s',
     'subscript_forests_curse.s',
     'subscript_supersweet_syrup.s',
+    'subscript_power_trick.s',
 )

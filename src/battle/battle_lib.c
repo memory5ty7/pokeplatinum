@@ -4510,6 +4510,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     break;
 
                 case OVERWORLD_WEATHER_SANDSTORM:
+                case 51: // SS + Magnet Rise
                     subscript = subscript_overworld_sand;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
@@ -4584,7 +4585,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     break;
                 case 50: // Magnet Pull
                     break;
-                case 51: // Magnet Rise
+                case 52: // Power Trick
                     break;
                 default:
                     break;
@@ -4613,6 +4614,17 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
+
+                if (battleCtx->battleMons[battler].field_weather_flag == 0
+                    && battleCtx->battleMons[battler].curHP
+                    && BattleSystem_FieldWeather(battleSys) == 52) {
+                    battleCtx->battleMons[battler].field_weather_flag = 1;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_power_trick;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+
             }
 
             if (i == maxBattlers) {
@@ -8408,6 +8420,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
         if ((sideConditions & SIDE_CONDITION_REFLECT) != FALSE
             && criticalMul == 1
+            && attackerParams.ability != ABILITY_INFILTRATOR
             && MOVE_DATA(move).effect != BATTLE_EFFECT_REMOVE_SCREENS) {
             if ((battleType & BATTLE_TYPE_DOUBLES)
                 && BattleSystem_CountAliveBattlers(battleSys, battleCtx, TRUE, defender) == 2) {
@@ -8449,6 +8462,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
         if ((sideConditions & SIDE_CONDITION_LIGHT_SCREEN) != FALSE
             && criticalMul == 1
+            && attackerParams.ability != ABILITY_INFILTRATOR
             && MOVE_DATA(move).effect != BATTLE_EFFECT_REMOVE_SCREENS) {
             if ((battleType & BATTLE_TYPE_DOUBLES)
                 && BattleSystem_CountAliveBattlers(battleSys, battleCtx, TRUE, defender) == 2) {
