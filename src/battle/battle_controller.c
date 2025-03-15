@@ -1506,11 +1506,9 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
 
                 if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_BIND) {
                     int divisor = 8;
-                    for (int i = 0; i < MAX_BATTLERS; i++)
-                    {
+                    for (int i = 0; i < MAX_BATTLERS; i++) {
                         if (battleCtx->battleMons[i].moveEffectsData.bindTarget == battler
-                        && Battler_HeldItem(battleCtx, i) == ITEM_BINDING_BAND)
-                        {
+                            && Battler_HeldItem(battleCtx, i) == ITEM_BINDING_BAND) {
                             divisor = 6;
                         }
                     }
@@ -1788,7 +1786,7 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
 
             battleCtx->monConditionCheckState++;
             break;
-            
+
         case MON_COND_CHECK_END:
             battleCtx->monConditionCheckState = MON_COND_CHECK_START;
             battleCtx->monConditionCheckTemp++;
@@ -2944,6 +2942,14 @@ static int BattleController_CheckMoveHitAccuracy(BattleSystem *battleSys, Battle
         return 0;
     }
 
+    if (Battler_Ability(battleCtx, defender) == ABILITY_TELEPATHY // defender has telepathy ability
+        && (attacker & 1) == (defender & 1) // attacker and defender are on the same side
+        && MOVE_DATA(move).power != 0) // move actually damages
+    {
+        battleCtx->moveStatusFlags |= MOVE_STATUS_MISSED;
+        return FALSE;
+    }
+
     if (BattleMon_Get(battleCtx, attacker, BATTLEMON_ABILITY, NULL) == ABILITY_PRANKSTER // prankster ability
         && (battleCtx->battleMons[defender].type1 == TYPE_DARK || battleCtx->battleMons[defender].type2 == TYPE_DARK) // used on a dark type
         && MOVE_DATA(move).class == CLASS_STATUS // move is actually status
@@ -3132,7 +3138,7 @@ static int BattleController_CheckMoveHitOverrides(BattleSystem *battleSys, Battl
         Battler_UnlockMoveChoice(battleSys, battleCtx, attacker);
         battleCtx->moveStatusFlags |= MOVE_STATUS_PROTECTED;
         return 0;
-    }   
+    }
 
     if ((battleCtx->battleStatusMask & SYSCTL_NONSTANDARD_ACC_CHECK) == FALSE
         && (MON_IS_LOCKED_ONTO(attacker, defender)
@@ -4376,7 +4382,7 @@ static Party *BattleController_RestoreItems(BattleSystem *battleSys, BattleConte
         int startItem = Pokemon_GetValue(Party_GetPokemonBySlotIndex(playerParty, i), MON_DATA_HELD_ITEM, NULL);
         int endItem = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
 
-        if ((startItem != endItem)) {
+        if (startItem != endItem) {
             endItem = ITEM_NONE;
             Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &endItem);
         }
