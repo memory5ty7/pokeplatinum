@@ -5282,7 +5282,8 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE))
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
             battleCtx->sideEffectMon = battleCtx->attacker;
@@ -5322,7 +5323,8 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)) {
             battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 8);
             battleCtx->msgBattlerTemp = battleCtx->attacker;
 
@@ -5339,6 +5341,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             switch (BattleSystem_RandNext(battleSys) % 3) {
             case 0:
@@ -5369,6 +5372,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
             battleCtx->sideEffectMon = battleCtx->attacker;
@@ -5387,6 +5391,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
             battleCtx->sideEffectMon = battleCtx->attacker;
@@ -5405,6 +5410,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)
             && DEFENDING_MON.curHP
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
@@ -5423,7 +5429,8 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && ATTACKING_MON.curHP
             && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)) {
             battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 4);
             battleCtx->msgBattlerTemp = battleCtx->attacker;
 
@@ -5465,6 +5472,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)) {
 
             battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_DOWN_1_STAGE;
@@ -6584,7 +6592,8 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
             && battleCtx->moveCur != MOVE_KNOCK_OFF
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE)) {
             *subscript = subscript_transfer_sticky_barb;
             result = TRUE;
         }
@@ -6680,9 +6689,6 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
             *subscript = subscript_switching_items;
             result = TRUE;
         }
-        break;
-
-    case HOLD_EFFECT_PUNCHING_GLOVE: // Punching Glove
         break;
 
     case HOLD_EFFECT_WEAKNESS_POLICY: // Weakness Policy
@@ -8164,12 +8170,14 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         spAttackStat = spAttackStat * 150 / 100;
     }
 
-    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
     if (defenderParams.ability == ABILITY_FLUFFY) {
-        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT) {
+        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT
+            && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
             movePower = movePower * 50 / 100;
         }
         if (moveType == TYPE_FIRE) {
@@ -8765,12 +8773,14 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
         spAttackStat = spAttackStat * 150 / 100;
     }
 
-    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
     if (defenderParams.ability == ABILITY_FLUFFY) {
-        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT) {
+        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT
+            && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
             movePower = movePower * 50 / 100;
         }
         if (moveType == TYPE_FIRE) {
@@ -9358,12 +9368,14 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
         spAttackStat = spAttackStat * 150 / 100;
     }
 
-    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+    if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
     if (defenderParams.ability == ABILITY_FLUFFY) {
-        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT) {
+        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT
+            && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
             movePower = movePower * 50 / 100;
         }
         if (moveType == TYPE_FIRE) {
@@ -10034,7 +10046,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && ATTACKING_MON.heldItem == ITEM_NONE
         && (battleCtx->sideConditions[attackingSide].knockedOffItemsMask & FlagIndex(battleCtx->selectedPartySlot[battleCtx->attacker])) == FALSE
         && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-        && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+        && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+        && !(attackerItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         *subscript = subscript_transfer_sticky_barb;
         result = TRUE;
     }
