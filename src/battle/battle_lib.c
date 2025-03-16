@@ -4562,6 +4562,8 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 case 45: // Permanent Trick Room
+                case 53: // DPTR
+                case 54: // DPTRR
                     subscript = subscript_permanent_trick_room;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
@@ -4585,7 +4587,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     break;
                 case 50: // Magnet Pull
                     break;
-                case 52: // Power Trick
+                case 52: // DPT
                     break;
                 default:
                     break;
@@ -4617,7 +4619,10 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
 
                 if (battleCtx->battleMons[battler].field_weather_flag == 0
                     && battleCtx->battleMons[battler].curHP
-                    && BattleSystem_FieldWeather(battleSys) == 52) {
+                    && (BattleSystem_FieldWeather(battleSys) == 52
+                    || BattleSystem_FieldWeather(battleSys) == 53
+                    || (BattleSystem_FieldWeather(battleSys) == 54
+                    && battleCtx->totalTurns % 2 == 0))) {
                     battleCtx->battleMons[battler].field_weather_flag = 1;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_power_trick;

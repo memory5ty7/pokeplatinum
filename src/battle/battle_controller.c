@@ -1810,6 +1810,7 @@ enum {
     SIDE_COND_CHECK_STATE_FUTURE_SIGHT = SIDE_COND_CHECK_START,
     SIDE_COND_CHECK_STATE_PERISH_SONG,
     SIDE_COND_CHECK_STATE_TRICK_ROOM,
+    SIDE_COND_CHECK_STATE_POWER_TRICK,
 
     SIDE_COND_CHECK_END
 };
@@ -1891,13 +1892,46 @@ static void BattleController_CheckSideConditions(BattleSystem *battleSys, Battle
         // fall-through
 
     case SIDE_COND_CHECK_STATE_TRICK_ROOM:
-        if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
-            if (!((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FIELD_CONDITION_TRICK_ROOM)) {
-                battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_TRICK_ROOM_SHIFT);
-                if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FALSE) {
-                    PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
-                    return;
+        if (BattleSystem_FieldWeather(battleSys) == 54) // TRR
+        {
+            if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
+                battleCtx->sideConditionCheckState++;
+                battleCtx->fieldConditionsMask -= FIELD_CONDITION_TRICK_ROOM;
+                PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
+                return;
+            } else {
+                battleCtx->sideConditionCheckState++;
+                battleCtx->fieldConditionsMask += FIELD_CONDITION_TRICK_ROOM;
+                PrepareSubroutineSequence(battleCtx, subscript_permanent_trick_room);
+                return;
+            }
+        } else {
+            if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
+                if (!((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FIELD_CONDITION_TRICK_ROOM)) {
+                    battleCtx->fieldConditionsMask -= (1 << FIELD_CONDITION_TRICK_ROOM_SHIFT);
+                    if ((battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) == FALSE) {
+                        battleCtx->sideConditionCheckState++;
+                        PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
+                        return;
+                    }
                 }
+            }
+        }
+
+        battleCtx->sideConditionCheckState++;
+        battleCtx->sideConditionCheckTemp = 0;
+        break;
+
+    case SIDE_COND_CHECK_STATE_POWER_TRICK:
+        while (battleCtx->sideConditionCheckTemp < maxBattlers) {
+            battler = battleCtx->monSpeedOrder[battleCtx->sideConditionCheckTemp];
+
+            if (battleCtx->battleMons[battler].curHP
+                && BattleSystem_FieldWeather(battleSys) == 54) {
+                battleCtx->sideConditionCheckTemp++;
+                battleCtx->msgBattlerTemp = battler;
+                PrepareSubroutineSequence(battleCtx, subscript_power_trick);
+                return;
             }
         }
 

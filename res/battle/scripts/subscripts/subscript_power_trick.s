@@ -18,7 +18,4 @@ _000:
     PrintMessage pl_msg_00000368_01009, TAG_NICKNAME, BTLSCR_MSG_BATTLER_TEMP
     Wait 
     WaitButtonABTime 30
-    PrintMessage pl_msg_00000368_01009, TAG_NICKNAME, BTLSCR_MSG_BATTLER_TEMP
-    Wait 
-    WaitButtonABTime 30
     End 
