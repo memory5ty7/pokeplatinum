@@ -1323,6 +1323,7 @@ enum {
     MON_COND_CHECK_STATE_ITEM_CONDITION,
     MON_COND_CHECK_STATE_ITEM_DETRIMENTAL_EFFECT,
     MON_COND_CHECK_RESET_STAT_DROPPED,
+    MON_COND_CHECK_STATE_POWER_TRICK,
 
     MON_COND_CHECK_END
 };
@@ -1784,6 +1785,24 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
                 battleCtx->selfTurnFlags[battler].statsDropped = FALSE;
             }
 
+            for (i = 0; i < MAX_BATTLERS; i++) {
+                battleCtx->selfTurnFlags[battler].powerTrickFlag = FALSE;
+            }          
+
+            battleCtx->monConditionCheckState++;
+            break;
+
+        case MON_COND_CHECK_STATE_POWER_TRICK:
+            if (battleCtx->battleMons[battler].curHP
+                && !battleCtx->selfTurnFlags[battler].powerTrickFlag
+                && BattleSystem_FieldWeather(battleSys) == 54) {
+                battleCtx->msgBattlerTemp = battler;
+                battleCtx->selfTurnFlags[battler].powerTrickFlag = TRUE;
+
+                PrepareSubroutineSequence(battleCtx, subscript_power_trick);
+                state = STATE_BREAK_OUT;
+            }
+    
             battleCtx->monConditionCheckState++;
             break;
 
@@ -1810,7 +1829,6 @@ enum {
     SIDE_COND_CHECK_STATE_FUTURE_SIGHT = SIDE_COND_CHECK_START,
     SIDE_COND_CHECK_STATE_PERISH_SONG,
     SIDE_COND_CHECK_STATE_TRICK_ROOM,
-    SIDE_COND_CHECK_STATE_POWER_TRICK,
 
     SIDE_COND_CHECK_END
 };
@@ -1915,23 +1933,6 @@ static void BattleController_CheckSideConditions(BattleSystem *battleSys, Battle
                         return;
                     }
                 }
-            }
-        }
-
-        battleCtx->sideConditionCheckState++;
-        battleCtx->sideConditionCheckTemp = 0;
-        break;
-
-    case SIDE_COND_CHECK_STATE_POWER_TRICK:
-        while (battleCtx->sideConditionCheckTemp < maxBattlers) {
-            battler = battleCtx->monSpeedOrder[battleCtx->sideConditionCheckTemp];
-
-            if (battleCtx->battleMons[battler].curHP
-                && BattleSystem_FieldWeather(battleSys) == 54) {
-                battleCtx->sideConditionCheckTemp++;
-                battleCtx->msgBattlerTemp = battler;
-                PrepareSubroutineSequence(battleCtx, subscript_power_trick);
-                return;
             }
         }
 

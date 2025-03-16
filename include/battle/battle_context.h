@@ -82,7 +82,8 @@ typedef struct SelfTurnFlags {
     u32 focusItemActivated : 1;
     u32 repeatedMoveCount : 3;
     u32 statsDropped : 1;
-    u32 padding00_09 : 22;
+    u32 powerTrickFlag : 1;
+    u32 padding00_09 : 21;
 
     int physicalDamageTaken;
     int physicalDamageLastAttacker;
