@@ -3530,7 +3530,7 @@ static void BattleController_UseGem(BattleSystem *battleSys, BattleContext *batt
 {
     if ((GetAdjustedMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur) + ITEM_NORMAL_GEM) == (Battler_HeldItem(battleCtx, battleCtx->attacker))) {
         LOAD_SUBSEQ(subscript_gem_boost);
-        battleCtx->damage *= 1.3;
+        battleCtx->damage *= 1.5;
 
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
         battleCtx->commandNext = BATTLE_CONTROL_USE_MOVE;
