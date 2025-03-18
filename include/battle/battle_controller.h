@@ -38,7 +38,7 @@ enum BattleControlSequence {
     BATTLE_CONTROL_USE_MOVE,
     BATTLE_CONTROL_UPDATE_HP,
     BATTLE_CONTROL_AFTER_MOVE_MESSAGE,
-    // 29 is an unused state
+    BATTLE_CONTROL_USE_GEM,
     BATTLE_CONTROL_AFTER_MOVE_EFFECT = 30,
     BATTLE_CONTROL_LOOP_MULTI_HIT,
     // 32 is an unused state

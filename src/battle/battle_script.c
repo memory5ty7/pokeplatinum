@@ -5687,7 +5687,7 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
 
     ATTACKING_MON.ability_activated_flag = FALSE;
     ATTACKING_MON.field_weather_flag = FALSE;
-    ATTACKING_MON.gemTriggered = FALSE;
+    //ATTACKING_MON.gemTriggered = FALSE;
     ATTACKING_MON.moveEffectsData.truant = battleCtx->totalTurns & 1;
     ATTACKING_MON.moveEffectsData.slowStartTurnNumber = battleCtx->totalTurns + 1;
     ATTACKING_MON.slowStartAnnounced = FALSE;

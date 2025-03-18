@@ -35,6 +35,7 @@
 #include "battle/scripts/sub_seq.naix"
 #include "battle/struct_ov16_0224DDA8.h"
 #include "battle/struct_ov16_0225BFFC_decl.h"
+#include "include/pch/global_pch.h"
 
 #include "bag.h"
 #include "communication_system.h"
@@ -133,6 +134,9 @@ static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *b
 static Party *BattleController_RestoreParty(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
 static Party *BattleController_RestoreItems(BattleSystem *battleSys, BattleContext *battleCtx, int param1);
 
+static BOOL BattleController_CheckAbilityFailures1(BattleSystem *battleSys, BattleContext *battleCtx);
+static void BattleController_UseGem(BattleSystem *battleSys, BattleContext *battleCtx);
+
 extern u32 gTrainerAITable[];
 
 static const u16 PowderMovesList[] = {
@@ -175,7 +179,7 @@ static const BattleControlFunc sBattleControlCommands[] = {
     BattleController_UseMove,
     BattleController_UpdateHP,
     BattleController_AfterMoveMessage,
-    BattleController_LeftoverState29,
+    BattleController_UseGem,
     BattleController_AfterMoveEffects,
     BattleController_LoopMultiHit,
     BattleController_LeftoverState32,
@@ -1787,7 +1791,7 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
 
             for (i = 0; i < MAX_BATTLERS; i++) {
                 battleCtx->selfTurnFlags[battler].powerTrickFlag = FALSE;
-            }          
+            }
 
             battleCtx->monConditionCheckState++;
             break;
@@ -1802,7 +1806,7 @@ static void BattleController_CheckMonConditions(BattleSystem *battleSys, BattleC
                 PrepareSubroutineSequence(battleCtx, subscript_power_trick);
                 state = STATE_BREAK_OUT;
             }
-    
+
             battleCtx->monConditionCheckState++;
             break;
 
@@ -3292,6 +3296,7 @@ enum {
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
+    BEFORE_MOVE_STATE_ABILITY_FAILURES_1,
     BEFORE_MOVE_STATE_PROTEAN_CHECK,
 
     BEFORE_MOVE_END,
@@ -3368,6 +3373,12 @@ static void BattleController_BeforeMove(BattleSystem *battleSys, BattleContext *
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
         battleCtx->beforeMoveCheckState++;
+
+    case BEFORE_MOVE_STATE_ABILITY_FAILURES_1:
+        battleCtx->beforeMoveCheckState++;
+        if (BattleController_CheckAbilityFailures1(battleSys, battleCtx)) {
+            return;
+        }
 
     case BEFORE_MOVE_STATE_PROTEAN_CHECK:
         if (battleCtx->battleMons[battleCtx->attacker].ability == ABILITY_PROTEAN
@@ -3511,8 +3522,23 @@ static void BattleController_CheckMoveFailure(BattleSystem *battleSys, BattleCon
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
         battleCtx->commandNext = BATTLE_CONTROL_LOOP_FAINTED; // crash damage can kill
     } else {
-        battleCtx->command = BATTLE_CONTROL_USE_MOVE;
+        battleCtx->command = BATTLE_CONTROL_USE_GEM;
     }
+}
+
+static void BattleController_UseGem(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    if ((GetAdjustedMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur) + ITEM_NORMAL_GEM) == (Battler_HeldItem(battleCtx, battleCtx->attacker))) {
+        LOAD_SUBSEQ(subscript_gem_boost);
+        battleCtx->damage *= 1.3;
+
+        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+        battleCtx->commandNext = BATTLE_CONTROL_USE_MOVE;
+
+        return;
+    }
+
+    battleCtx->command = BATTLE_CONTROL_USE_MOVE;
 }
 
 static void BattleController_UseMove(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -3529,10 +3555,6 @@ static void BattleController_UpdateHP(BattleSystem *battleSys, BattleContext *ba
     }
 
     if (battleCtx->damage) {
-
-        if (!(battleCtx->moveStatusFlags & MOVE_STATUS_ONE_HIT_KO)) {
-            battleCtx->battleMons[battleCtx->attacker].gemTriggered = FALSE;
-        }
 
         int itemEffect = Battler_HeldItemEffect(battleCtx, battleCtx->defender);
         int itemPower = Battler_HeldItemPower(battleCtx, battleCtx->defender, 0);
@@ -5241,4 +5263,84 @@ static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *b
             }
         }
     }
+}
+
+static const u16 sTriageMoves[] = {
+    // Disgusting stuff, double definition + declaration
+    MOVE_ABSORB,
+    MOVE_DRAIN_PUNCH,
+    MOVE_DREAM_EATER,
+    MOVE_GIGA_DRAIN,
+    MOVE_HEAL_ORDER,
+    MOVE_HEALING_WISH,
+    MOVE_LEECH_LIFE,
+    MOVE_LUNAR_DANCE,
+    MOVE_MEGA_DRAIN,
+    MOVE_MILK_DRINK,
+    MOVE_MOONLIGHT,
+    MOVE_MORNING_SUN,
+    MOVE_SWALLOW,
+    MOVE_RECOVER,
+    MOVE_REST,
+    MOVE_ROOST,
+    MOVE_SLACK_OFF,
+    MOVE_SOFTBOILED,
+    MOVE_SYNTHESIS,
+    MOVE_WISH,
+};
+
+static BOOL BattleController_CheckAbilityFailures1(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    int attacker = battleCtx->attacker;
+    int defender = battleCtx->defender;
+
+    int move;
+
+    int attackerAction = battleCtx->battlerActions[attacker][BATTLE_ACTION_SELECTED_COMMAND];
+
+    int attackerMoveSlot = battleCtx->moveSlot[attacker];
+
+    if (attackerAction == PLAYER_INPUT_FIGHT) {
+        if (battleCtx->turnFlags[attacker].struggling) {
+            move = MOVE_STRUGGLE;
+        } else {
+            move = BattleMon_Get(battleCtx, attacker, BATTLEMON_MOVE_1 + attackerMoveSlot, NULL);
+        }
+    }
+
+    int attackerPriority = MOVE_DATA(move).priority;
+
+    if (Battler_Ability(battleCtx, attacker) == ABILITY_PRANKSTER && MOVE_DATA(attacker).class == CLASS_STATUS) {
+        attackerPriority++;
+    }
+
+    if (Battler_Ability(battleCtx, attacker) == ABILITY_GALE_WINGS && MOVE_DATA(attacker).type == TYPE_FLYING) {
+        attackerPriority++;
+    }
+
+    int i;
+
+    if (Battler_Ability(battleCtx, attacker) == ABILITY_TRIAGE) {
+        for (i = 0; i < NELEMS(sTriageMoves); i++) {
+            if (sTriageMoves[i] == move) {
+                attackerPriority = attackerPriority + 3;
+            }
+        }
+    }
+
+    if ((BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, defender, ABILITY_QUEENLY_MAJESTY)
+            || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, defender, ABILITY_DAZZLING))
+        //|| CheckSideAbility(bsys, ctx, CHECK_ABILITY_SAME_SIDE_HP, defender, ABILITY_ARMOR_TAIL))
+        && Battler_Ability(battleCtx, attacker) != ABILITY_MOLD_BREAKER) {
+        if (attackerPriority > 0) {
+            LOAD_SUBSEQ(subscript_cannot_use_move);
+            battleCtx->commandNext = BATTLE_CONTROL_MOVE_FAILED;
+            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+            battleCtx->moveStatusFlags |= MOVE_STATUS_NO_MORE_WORK;
+            battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
 }

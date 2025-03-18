@@ -103,7 +103,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].sheer_force_flag = 0;
     battleCtx->battleMons[battler].ability_activated_flag = 0;
     battleCtx->battleMons[battler].field_weather_flag = 0;
-    battleCtx->battleMons[battler].gemTriggered = 0;
+    //battleCtx->battleMons[battler].gemTriggered = 0;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -8027,6 +8027,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }*/
 
     moveType = GetAdjustedMoveType(battleCtx, battleCtx->attacker, move);
+
     movePower = movePower * battleCtx->powerMul / 10;
 
     // GF_ASSERT(battleCtx->powerMul >= 10);
