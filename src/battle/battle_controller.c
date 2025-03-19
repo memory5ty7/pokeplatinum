@@ -1918,12 +1918,12 @@ static void BattleController_CheckSideConditions(BattleSystem *battleSys, Battle
         {
             if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
                 battleCtx->sideConditionCheckState++;
-                battleCtx->fieldConditionsMask -= FIELD_CONDITION_TRICK_ROOM;
+                battleCtx->fieldConditionsMask &= ~FIELD_CONDITION_TRICK_ROOM;
                 PrepareSubroutineSequence(battleCtx, subscript_trick_room_end);
                 return;
             } else {
                 battleCtx->sideConditionCheckState++;
-                battleCtx->fieldConditionsMask += FIELD_CONDITION_TRICK_ROOM;
+                battleCtx->fieldConditionsMask |= FIELD_CONDITION_TRICK_ROOM;
                 PrepareSubroutineSequence(battleCtx, subscript_permanent_trick_room);
                 return;
             }

@@ -13,6 +13,7 @@
 #include "savedata.h"
 #include "special_encounter.h"
 #include "unk_0202854C.h"
+#include "vars_flags.h"
 
 BOOL ScrCmd_083(ScriptContext *param0)
 {
@@ -225,12 +226,14 @@ BOOL ScrCmd_091(ScriptContext *ctx)  // Get Repellent State
     return FALSE;
 }
 
-BOOL ScrCmd_092(ScriptContext *param0)
+BOOL ScrCmd_092(ScriptContext *ctx) // Change battle background
 {
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 background = ScriptContext_GetVar(ctx);
 
-    return 0;
+    u32 headerID = fieldSystem->location->mapId;
+
+    setVar(16430, background);
+
+    return FALSE;
 }

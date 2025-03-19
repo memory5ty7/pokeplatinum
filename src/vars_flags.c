@@ -73,7 +73,17 @@ u8 getVar(u16 varID)
     return *VarsFlags_GetVarAddress(SaveData_GetVarsFlags(SaveData_Ptr()), varID);
 }
 
+void setVar(u16 varID, u16 value)
+{
+    *VarsFlags_GetVarAddress(SaveData_GetVarsFlags(SaveData_Ptr()), varID) = value;
+}
+
 BOOL getFlag(u16 flagID)
 {
     return VarsFlags_CheckFlag(SaveData_GetVarsFlags(SaveData_Ptr()), flagID);
+}
+
+void setFlag(u16 flagID)
+{
+    VarsFlags_SetFlag(SaveData_GetVarsFlags(SaveData_Ptr()), flagID);
 }

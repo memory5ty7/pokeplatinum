@@ -4,6 +4,8 @@
 
 #include "data/map_headers.h"
 
+#include "vars_flags.h"
+
 u32 MapHeader_IDBoundsCheck(u32 headerID)
 {
     if (headerID >= NELEMS(sMapHeaders)) {
@@ -113,7 +115,16 @@ u32 MapHeader_GetCameraType(u32 headerID)
 u32 MapHeader_GetBattleBG(u32 headerID)
 {
     headerID = MapHeader_IDBoundsCheck(headerID);
-    return sMapHeaders[headerID].battleBG;
+    u32 battleBG = sMapHeaders[headerID].battleBG;
+
+    u8 var = getVar(16430);
+
+    if (var != 0)
+    {
+        battleBG = var;
+    }
+    
+    return battleBG;
 }
 
 BOOL MapHeader_IsEscapeRopeAllowed(u32 headerID)

@@ -3218,8 +3218,12 @@ BoxPokemon *Pokemon_GetBoxPokemon(Pokemon *mon)
 
 u8 getLevelCap()
 {
-    u8 levelCap = getVar(16422);
-
+    u8 levelCap = 100;
+    if (getVar(16429) & 1)
+    {
+        levelCap = getVar(16422);
+    }
+    
     return levelCap;
 }
 
