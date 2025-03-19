@@ -341,7 +341,8 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
         return TRUE;
     }
 
-    if (input->LR) {
+    if (input->LR && getFlag(2376)) {
+        MapNamePopUp_Hide(fieldSystem->unk_04->unk_08);
         ScriptManager_Set(fieldSystem, 2058, NULL);
     }
 

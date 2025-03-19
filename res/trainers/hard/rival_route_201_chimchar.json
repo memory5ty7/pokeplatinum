@@ -3,9 +3,7 @@
     "class": "TRAINER_CLASS_RIVAL",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_DAMAGE_PRIORITY"
+        "AI_FLAG_GOLMON"
     ],
     "double_battle": false,
     "party": [

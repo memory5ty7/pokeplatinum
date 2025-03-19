@@ -17,17 +17,17 @@ gTrainerAITable:
 
 FlagTable:
     LabelDistance Basic_Main,          FlagTable ; AI_FLAG_BASIC
-    LabelDistance EvalAttack_Main,     FlagTable ; AI_FLAG_EVAL_ATTACK
-    LabelDistance Expert_Main,         FlagTable ; AI_FLAG_EXPERT
-    LabelDistance SetupFirstTurn_Main, FlagTable ; AI_FLAG_SETUP_FIRST_TURN
-    LabelDistance Risky_Main,          FlagTable ; AI_FLAG_RISKY
-    LabelDistance DamagePriority_Main, FlagTable ; AI_FLAG_DAMAGE_PRIORITY
-    LabelDistance BatonPass_Main,      FlagTable ; AI_FLAG_BATON_PASS
-    LabelDistance TagStrategy_Main,    FlagTable ; AI_FLAG_TAG_STRATEGY
-    LabelDistance CheckHP_Main,        FlagTable ; AI_FLAG_CHECK_HP
-    LabelDistance Weather_Main,        FlagTable ; AI_FLAG_WEATHER
-    LabelDistance Harrassment_Main,    FlagTable ; AI_FLAG_HARRASSMENT
-    LabelDistance Terminate,           FlagTable ; AI_FLAG_UNUSED_11
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_EVAL_ATTACK
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_EXPERT
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_SETUP_FIRST_TURN
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_RISKY
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_DAMAGE_PRIORITY
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_BATON_PASS
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_TAG_STRATEGY
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_CHECK_HP
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_WEATHER
+    LabelDistance Terminate,           FlagTable ; AI_FLAG_HARRASSMENT
+    LabelDistance Golmon_Main,         FlagTable ; AI_FLAG_GOLMON
     LabelDistance Terminate,           FlagTable ; AI_FLAG_UNUSED_12
     LabelDistance Terminate,           FlagTable ; AI_FLAG_UNUSED_13
     LabelDistance Terminate,           FlagTable ; AI_FLAG_UNUSED_14
@@ -827,6 +827,19 @@ Basic_End:
 
 Basic_Partner:
     GoTo ScoreMinus20
+
+Golmon_Main:
+
+    FlagMoveDamageScore FALSE
+    IfLoadedEqualTo AI_NO_COMPARISON_MADE, Golmon_End
+
+    TurnsToKill USE_MAX_DAMAGE
+    IfLoadedLessThan 2, ScoreMinus1
+
+    PopOrEnd   
+
+Golmon_End:
+    PopOrEnd
 
 ; FIN DE L'IA CUSTOM AZURE PLATINUM
 

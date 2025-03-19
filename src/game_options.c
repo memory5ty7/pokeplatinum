@@ -8,6 +8,7 @@
 #include "savedata.h"
 #include "system.h"
 #include "text.h"
+#include "vars_flags.h"
 
 Options *Options_New(u32 heapID)
 {
@@ -99,7 +100,13 @@ void Options_SetBattleScene(Options *options, enum OptionsBattleScene scene)
 
 int Options_BattleStyle(const Options *options)
 {
-    return OPTIONS_BATTLE_STYLE_SET;
+    int battleStyle = options->battleStyle;
+    if (!getFlag(2366))
+    {
+        battleStyle = OPTIONS_BATTLE_STYLE_SET;
+    }
+
+    return battleStyle;
 }
 
 void Options_SetBattleStyle(Options *options, enum OptionsBattleStyle style)
