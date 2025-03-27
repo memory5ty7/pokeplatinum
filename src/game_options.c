@@ -8,7 +8,9 @@
 #include "savedata.h"
 #include "system.h"
 #include "text.h"
+
 #include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
 
 Options *Options_New(u32 heapID)
 {
@@ -29,7 +31,7 @@ void Options_Init(Options *options)
 
     options->textSpeed = OPTIONS_TEXT_SPEED_FAST;
     options->soundMode = OPTIONS_SOUND_MODE_STEREO;
-    options->battleStyle = OPTIONS_BATTLE_STYLE_SET;
+    options->battleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     options->battleScene = OPTIONS_BATTLE_SCENE_ON;
     options->buttonMode = OPTIONS_BUTTON_MODE_NORMAL;
     options->frame = OPTIONS_FRAME_1;
@@ -101,7 +103,8 @@ void Options_SetBattleScene(Options *options, enum OptionsBattleScene scene)
 int Options_BattleStyle(const Options *options)
 {
     int battleStyle = options->battleStyle;
-    if (!getFlag(2366))
+
+    if (!(getVar(VAR_DIFFICULTY) & EASY_MODE_ENABLED))
     {
         battleStyle = OPTIONS_BATTLE_STYLE_SET;
     }
@@ -111,7 +114,7 @@ int Options_BattleStyle(const Options *options)
 
 void Options_SetBattleStyle(Options *options, enum OptionsBattleStyle style)
 {
-    options->battleStyle = OPTIONS_BATTLE_STYLE_SET;
+    options->battleStyle = style;
 }
 
 int Options_ButtonMode(const Options *options)

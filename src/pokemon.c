@@ -61,7 +61,9 @@
 #include "unk_02028124.h"
 #include "unk_0202C9F4.h"
 #include "unk_02092494.h"
+
 #include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
 
 #define FATEFUL_ENCOUNTER_LOCATION 3002
 
@@ -3219,9 +3221,9 @@ BoxPokemon *Pokemon_GetBoxPokemon(Pokemon *mon)
 u8 getLevelCap()
 {
     u8 levelCap = 100;
-    if (getVar(16429) & 1)
+    if (getVar(VAR_DIFFICULTY) & LEVEL_CAP_ENABLED)
     {
-        levelCap = getVar(16422);
+        levelCap = getVar(LEVEL_CAP_VARIABLE);
     }
     
     return levelCap;

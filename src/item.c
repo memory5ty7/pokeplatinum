@@ -13,6 +13,9 @@
 #include "narc.h"
 #include "strbuf.h"
 
+#include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
+
 typedef struct {
     u16 dataID;
     u16 iconID;
@@ -882,6 +885,10 @@ s32 Item_Get(ItemData *itemData, enum ItemDataParam param)
     case ITEM_PARAM_NATURAL_GIFT_TYPE:
         return (s32)itemData->naturalGiftType;
     case ITEM_PARAM_BATTLE_POCKET:
+        if (!(getVar(VAR_DIFFICULTY) & ITEMS_ENABLED) && ((s32)itemData->battlePocket != 1))
+        {
+            return 0;
+        }
         return (s32)itemData->battlePocket;
     case ITEM_PARAM_PARTY_USE:
         return (s32)itemData->partyUse;

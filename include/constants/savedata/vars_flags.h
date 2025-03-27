@@ -60,8 +60,6 @@
 
 #define SYSTEM_FLAGS_VILLA_FURNITURE_START (SYSTEM_FLAGS_START + 55)
 
-#define FLAG_DIFFICULTY (16429)
-
 enum VillaFurniture {
     VILLA_FURNITURE_UNK_00 = 0,
     VILLA_FURNITURE_UNK_01,
@@ -177,6 +175,16 @@ enum FirstArrivalToZone {
     FIRST_ARRIVAL_MAX,
 };
 
-#define FLAG_LIMITED_BATTLE 2380
+#define FLAG_LIMITED_BATTLE     (2380)
+
+#define LEVEL_CAP_VARIABLE      (16422)
+#define VAR_DIFFICULTY          (16429)
+
+#define LEVEL_CAP_ENABLED       (1 << 0)
+#define NUZLOCKE_ENABLED        (1 << 1)
+#define EASY_MODE_ENABLED       (1 << 2)
+#define GUARANTEED_CATCH        (1 << 4)
+#define ITEMS_ENABLED           (1 << 5)
+
 
 #endif // POKEPLATINUM_CONSTANTS_VARS_AND_FLAGS_H

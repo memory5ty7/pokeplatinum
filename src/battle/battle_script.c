@@ -81,6 +81,9 @@
 #include "unk_0208694C.h"
 #include "unk_0208C098.h"
 
+#include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
+
 #include "constdata/const_020F2DAC.h"
 
 typedef BOOL (*BtlCmd)(BattleSystem *, BattleContext *);
@@ -11300,14 +11303,19 @@ static const struct Fraction sSafariCatchRate[] = {
  */
 static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    u32 speciesMod = SpeciesData_GetValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
-    if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH || speciesMod != 0 || battleCtx->msgItemTemp > ITEM_MASTER_BALL) {
+    if (getVar(VAR_DIFFICULTY) & GUARANTEED_CATCH)
+    {
+        u32 speciesMod = SpeciesData_GetValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
+        if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH || speciesMod != 0 || battleCtx->msgItemTemp == ITEM_MASTER_BALL) {
+            return 4;
+        }
+        return 0;
+    }
+
+    if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH) {
         return 4;
     }
 
-    return 0;
-
-    /*
     u32 speciesMod;
     if (battleCtx->msgItemTemp == ITEM_SAFARI_BALL) {
         speciesMod = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
@@ -11415,7 +11423,6 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
     }
     
     return shakes;
-    */
 }
 
 /**

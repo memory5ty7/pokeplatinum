@@ -13,7 +13,9 @@
 #include "savedata.h"
 #include "special_encounter.h"
 #include "unk_0202854C.h"
+
 #include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
 
 BOOL ScrCmd_083(ScriptContext *param0)
 {
@@ -30,12 +32,24 @@ BOOL ScrCmd_083(ScriptContext *param0)
     return 0;
 }
 
-BOOL ScrCmd_084(ScriptContext *param0)
+BOOL ScrCmd_084(ScriptContext *param0)  // Update Difficulty variable
 {
     FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v1 = ScriptContext_GetVar(param0);
-    u16 v2 = ScriptContext_GetVar(param0);
-    u16 *v3 = ScriptContext_GetVarPointer(param0);
+    u16 shift = ScriptContext_GetVar(param0);
+    u16 value = ScriptContext_GetVar(param0);
+
+    u16 difficulty = getVar(VAR_DIFFICULTY);
+
+    if (value)
+    {
+        difficulty |= (1 << shift);
+    }
+    else
+    {
+        difficulty &= ~(1 << shift);
+    }
+
+    setVar(VAR_DIFFICULTY, difficulty);
 
     return 0;
 }

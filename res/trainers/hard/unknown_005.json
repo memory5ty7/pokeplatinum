@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_CAMPER",
+    "class": "TRAINER_CLASS_PAUL",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"

@@ -157,20 +157,9 @@ BOOL ScrCmd_StartTrainerBattle(ScriptContext *ctx)
     u16 enemyTrainer2 = ScriptContext_GetVar(ctx);
     u16 partnerTrainer = 0;
 
-    /*
-    if (FieldSystem_CheckFlag(ctx->fieldSystem, FLAG_DIFFICULTY) == TRUE) {
-        enemyTrainer1 += 928;
-        enemyTrainer2 += 928;
-    }
-    */
 
     if (SystemFlag_CheckHasPartner(SaveData_GetVarsFlags(ctx->fieldSystem->saveData)) == TRUE) {
         partnerTrainer = sub_0206B034(SaveData_GetVarsFlags(fieldSystem->saveData));
-        /*
-        if (FieldSystem_CheckFlag(ctx->fieldSystem, FLAG_DIFFICULTY) == TRUE) {
-            partnerTrainer += 928;
-        }
-        */
     }
 
     Encounter_NewVsTrainer(ctx->task,

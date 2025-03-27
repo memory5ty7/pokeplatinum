@@ -183,14 +183,8 @@ const u16 SunyshoreMartSpecialties[] = {
 };
 
 const u16 PokemonLeagueMartSpecialties[] = {
-    ITEM_HEAL_BALL,
-    ITEM_NET_BALL,
-    ITEM_NEST_BALL,
-    ITEM_DUSK_BALL,
-    ITEM_QUICK_BALL,
-    ITEM_TIMER_BALL,
-    ITEM_REPEAT_BALL,
-    ITEM_LUXURY_BALL,
+    ITEM_NORMAL_GEM,
+    ITEM_WATER_GEM,
     0xffff
 };
 

@@ -188,6 +188,15 @@ pl_enc_data_srcs = files(
     'encounters_route_223.json',
     'encounters_route_226.json',
     'encounters_route_230.json',
+    'encounters_sandgem_town.json',
+    'encounters_jubilife_city.json',
+    'encounters_oreburgh_city.json',
+    'encounters_floaroma_town.json',
+    'encounters_solaceon_town.json',
+    'encounters_snowpoint_city.json',
+    'encounters_lily_of_the_valley.json',
+    'encounters_mt_victory_outside.json',
+    'encounters_mt_victory_inside.json',
 )
 
 pl_enc_data_order = files('encounters.order')
