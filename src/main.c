@@ -37,6 +37,9 @@
 #include "unk_02039A64.h"
 #include "unk_0209A74C.h"
 
+#include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
+
 #define RESET_COMBO (PAD_BUTTON_START | PAD_BUTTON_SELECT | PAD_BUTTON_L | PAD_BUTTON_R)
 
 FS_EXTERN_OVERLAY(game_start);
@@ -148,7 +151,9 @@ void NitroMain(void)
         sub_020241CC();
         SysTaskManager_ExecuteTasks(gSystem.printTaskMgr);
 
-        OS_WaitIrq(TRUE, OS_IE_V_BLANK);
+        if (!getFlag(FLAG_UNLIMITED_FPS)) {
+            OS_WaitIrq(TRUE, OS_IE_V_BLANK);
+        }    
 
         gSystem.vblankCounter++;
         gSystem.frameCounter = 0;

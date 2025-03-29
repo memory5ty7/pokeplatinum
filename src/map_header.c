@@ -5,6 +5,7 @@
 #include "data/map_headers.h"
 
 #include "vars_flags.h"
+#include "constants/savedata/vars_flags.h"
 
 u32 MapHeader_IDBoundsCheck(u32 headerID)
 {
@@ -117,11 +118,12 @@ u32 MapHeader_GetBattleBG(u32 headerID)
     headerID = MapHeader_IDBoundsCheck(headerID);
     u32 battleBG = sMapHeaders[headerID].battleBG;
 
-    u8 var = getVar(16430);
+    u16 var = getVar(CUSTOM_BATTLE_BG);
 
     if (var != 0)
     {
         battleBG = var;
+        setVar(CUSTOM_BATTLE_BG, 0);
     }
     
     return battleBG;

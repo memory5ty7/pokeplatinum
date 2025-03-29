@@ -3243,8 +3243,8 @@ int PostKO_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int
         moveType = GetAdjustedMoveTypeBasics(battleCtx, move, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL), inType);
     }
 
-    attackerItemEffect = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT); // Incorrect
-    attackerItemPower = Item_Get(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM); // Incorrect
+    attackerItemEffect = Item_LoadParam(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT, HEAP_ID_BATTLE);
+    attackerItemPower = Item_LoadParam(Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL), ITEM_PARAM_HOLD_EFFECT_PARAM, HEAP_ID_BATTLE);
     defenderItemEffect = Battler_HeldItemEffect(battleCtx, defender);
     defenderItemPower = Battler_HeldItemPower(battleCtx, defender, ITEM_POWER_CHECK_ALL);
 
@@ -8616,8 +8616,8 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
     defenderParams.type2 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL);
 
     itemTmp = (u16)Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
-    attackerParams.heldItemEffect = Item_Get(itemTmp, ITEM_PARAM_HOLD_EFFECT);
-    attackerParams.heldItemPower = Item_Get(itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM);
+    attackerParams.heldItemEffect = Item_LoadParam(itemTmp, ITEM_PARAM_HOLD_EFFECT, HEAP_ID_BATTLE);
+    attackerParams.heldItemPower = Item_LoadParam(itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM, HEAP_ID_BATTLE);
 
     itemTmp = Battler_HeldItem(battleCtx, defender);
     defenderParams.heldItemEffect = BattleSystem_GetItemData(battleCtx, itemTmp, ITEM_PARAM_HOLD_EFFECT);
@@ -9222,8 +9222,8 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
     attackerParams.heldItemPower = BattleSystem_GetItemData(battleCtx, itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM);
 
     itemTmp = (u16)Pokemon_GetValue(defender, MON_DATA_HELD_ITEM, NULL);
-    defenderParams.heldItemEffect = Item_Get(itemTmp, ITEM_PARAM_HOLD_EFFECT);
-    defenderParams.heldItemPower = Item_Get(itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM);
+    defenderParams.heldItemEffect = Item_LoadParam(itemTmp, ITEM_PARAM_HOLD_EFFECT, HEAP_ID_BATTLE);
+    defenderParams.heldItemPower = Item_LoadParam(itemTmp, ITEM_PARAM_HOLD_EFFECT_PARAM, HEAP_ID_BATTLE);
 
     battleType = BattleSystem_BattleType(battleSys);
 

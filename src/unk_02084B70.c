@@ -784,6 +784,10 @@ static int PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop(void *param0)
         case 0xfffe:
             break;
         default:
+
+        sub_020822BC(v0, v0->unk_B11);
+        sub_02082708(v0, 0xffffffff, 1);
+        
             StringTemplate_SetNickname(v0->unk_6A0, 0, Pokemon_GetBoxPokemon(v1));
             StringTemplate_SetMoveName(v0->unk_6A0, 1, v0->unk_5A4->unk_26);
 

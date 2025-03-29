@@ -25,7 +25,7 @@ void VarsFlags_SetFlag(VarsFlags *varsFlags, u16 flagID);
 void VarsFlags_ClearFlag(VarsFlags *varsFlags, u16 flagID);
 u8 *VarsFlags_GetFlagChunk(VarsFlags *varsFlags, u16 flagID);
 u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID);
-u8 getVar(u16 varID);
+u16 getVar(u16 varID);
 void setVar(u16 varID, u16 value);
 BOOL getFlag(u16 flagID);
 void setFlag(u16 flagID);

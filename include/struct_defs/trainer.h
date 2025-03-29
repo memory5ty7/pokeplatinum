@@ -11,7 +11,7 @@
 typedef struct Trainer {
     TrainerHeader header;
 
-    charcode_t name[TRAINER_NAME_LEN + 1];
+    charcode_t name[TRAINER_NAME_LEN + 7];
     Sentence winMsg;
     Sentence loseMsg;
 } Trainer;

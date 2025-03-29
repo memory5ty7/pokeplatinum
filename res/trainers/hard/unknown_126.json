@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_BLACK_BELT",
+    "class": "TRAINER_CLASS_HUNTER_J",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"

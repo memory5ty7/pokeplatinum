@@ -175,10 +175,12 @@ enum FirstArrivalToZone {
     FIRST_ARRIVAL_MAX,
 };
 
+#define FLAG_UNLIMITED_FPS      (2377)
 #define FLAG_LIMITED_BATTLE     (2380)
 
 #define LEVEL_CAP_VARIABLE      (16422)
 #define VAR_DIFFICULTY          (16429)
+#define CUSTOM_BATTLE_BG        (16430)
 
 #define LEVEL_CAP_ENABLED       (1 << 0)
 #define NUZLOCKE_ENABLED        (1 << 1)

@@ -210,10 +210,25 @@ int main(int argc, char **argv)
     vfs_pack_ctx *trdataVFS = narc_pack_start();
     vfs_pack_ctx *trpokeVFS = narc_pack_start();
 
+    int id = 0;
+
+    fs::path dataPath = dataRoot;
+
     rapidjson::Document doc;
     for (auto &trainerStem : trainerRegistry) {
         try {
-            fs::path trainerDataPath = dataRoot / (trainerStem + ".json");
+            dataPath = dataRoot;
+            if (id++ > 927)
+            {
+                dataPath += "/normal"; 
+            } else {
+                dataPath += "/hard";
+            }
+
+            fs::path trainerDataPath = dataPath / (trainerStem + ".json");
+
+            std::cout << "Parsing trainer data file: " << trainerDataPath << std::endl;
+
             std::string json = ReadWholeFile(trainerDataPath);
             doc.Parse(json.c_str(), json.length());
 

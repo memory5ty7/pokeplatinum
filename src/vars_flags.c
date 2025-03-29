@@ -68,7 +68,7 @@ u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID)
     return &varsFlags->vars[varID - VARS_START];
 }
 
-u8 getVar(u16 varID)
+u16 getVar(u16 varID)
 {
     return *VarsFlags_GetVarAddress(SaveData_GetVarsFlags(SaveData_Ptr()), varID);
 }
