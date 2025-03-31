@@ -103,7 +103,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].sheer_force_flag = 0;
     battleCtx->battleMons[battler].ability_activated_flag = 0;
     battleCtx->battleMons[battler].field_weather_flag = 0;
-    //battleCtx->battleMons[battler].gemTriggered = 0;
+    // battleCtx->battleMons[battler].gemTriggered = 0;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -4620,16 +4620,15 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 if (battleCtx->battleMons[battler].field_weather_flag == 0
                     && battleCtx->battleMons[battler].curHP
                     && (BattleSystem_FieldWeather(battleSys) == 52
-                    || BattleSystem_FieldWeather(battleSys) == 53
-                    || (BattleSystem_FieldWeather(battleSys) == 54
-                    && battleCtx->totalTurns % 2 == 0))) {
+                        || BattleSystem_FieldWeather(battleSys) == 53
+                        || (BattleSystem_FieldWeather(battleSys) == 54
+                            && battleCtx->totalTurns % 2 == 0))) {
                     battleCtx->battleMons[battler].field_weather_flag = 1;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_power_trick;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
-
             }
 
             if (i == maxBattlers) {
@@ -5080,8 +5079,10 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
         case SWITCH_IN_CHECK_STATE_AIR_BALLOON:
             for (i = 0; i < maxBattlers; i++) {
                 battler = battleCtx->monSpeedOrder[i];
-                if ((battleCtx->battleMons[battler].air_balloon_flag == 0) && (battleCtx->battleMons[battler].curHP) && (BattleSystem_GetItemData(battleCtx, battleCtx->battleMons[battler].heldItem, 1) == HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT)) {
-                    battleCtx->battleMons[battler].air_balloon_flag = 1;
+                if ((battleCtx->battleMons[battler].air_balloon_flag == FALSE)
+                    && (battleCtx->battleMons[battler].curHP)
+                    && (Battler_HeldItemEffect(battleCtx, battler) == HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT)) {
+                    battleCtx->battleMons[battler].air_balloon_flag = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_air_balloon_message;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
@@ -5240,8 +5241,8 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
     default:
         break;
     }
-    
-   return result;
+
+    return result;
 }
 
 u8 BeastBoostGreatestStatHelper(BattleContext *battleCtx, u32 client)
@@ -5288,7 +5289,7 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT
-            && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE))
+                && !(Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_PUNCHING_GLOVE))
             && BattleSystem_RandNext(battleSys) % 10 < 3) {
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
             battleCtx->sideEffectMon = battleCtx->attacker;
@@ -6795,7 +6796,8 @@ s32 Battler_ItemFlingPower(BattleContext *battleCtx, int battler)
 
 static inline BOOL BattlerIsGrounded(BattleContext *battleCtx, int battler)
 {
-    return (Battler_Ability(battleCtx, battler) != ABILITY_LEVITATE && Battler_HeldItemEffect(battleCtx, battler) != HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT
+    return (Battler_Ability(battleCtx, battler) != ABILITY_LEVITATE
+               && Battler_HeldItemEffect(battleCtx, battler) != HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT
                && battleCtx->battleMons[battler].moveEffectsData.magnetRiseTurns == 0
                && MON_IS_NOT_TYPE(battler, TYPE_FLYING))
         || Battler_HeldItemEffect(battleCtx, battler) == HOLD_EFFECT_SPEED_DOWN_GROUNDED
@@ -8177,7 +8179,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
 
     if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
+        && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
@@ -8780,7 +8782,7 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
     }
 
     if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
+        && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
@@ -9375,7 +9377,7 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
     }
 
     if (attackerParams.ability == ABILITY_TOUGH_CLAWS && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-    && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
+        && !(attackerParams.heldItemEffect == HOLD_EFFECT_PUNCHING_GLOVE)) {
         movePower = movePower * 130 / 100;
     }
 
@@ -11568,11 +11570,9 @@ int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u
         int i;
         int statChange;
         int power = 20;
-        for (i = 0 ; i < 7; i++)
-        {
+        for (i = 0; i < 7; i++) {
             statChange = BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_STAGE + i, NULL) - 6;
-            if (statChange > 0)
-            {
+            if (statChange > 0) {
                 power += (20 * statChange);
             }
         }
@@ -11624,12 +11624,12 @@ int Move_CalcVariablePower3(BattleSystem *battleSys, BattleContext *battleCtx, u
         break;
 
     case MOVE_HIDDEN_POWER:
-    power = ((BattleMon_Get(battleCtx, mon, BATTLEMON_HP_IV, NULL) & 2) >> 1)
-    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_IV, NULL) & 2) >> 0)
-    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_DEFENSE_IV, NULL) & 2) << 1)
-    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SPEED_IV, NULL) & 2) << 2)
-    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_ATTACK_IV, NULL) & 2) << 3)
-    | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_DEFENSE_IV, NULL) & 2) << 4);
+        power = ((BattleMon_Get(battleCtx, mon, BATTLEMON_HP_IV, NULL) & 2) >> 1)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_IV, NULL) & 2) >> 0)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_DEFENSE_IV, NULL) & 2) << 1)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SPEED_IV, NULL) & 2) << 2)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_ATTACK_IV, NULL) & 2) << 3)
+            | ((BattleMon_Get(battleCtx, mon, BATTLEMON_SP_DEFENSE_IV, NULL) & 2) << 4);
 
         power = power * 40 / 63 + 30;
         break;
@@ -11724,11 +11724,9 @@ int Move_CalcVariablePower3(BattleSystem *battleSys, BattleContext *battleCtx, u
         int i;
         int statChange;
         int power = 20;
-        for (i = 0 ; i < 7; i++)
-        {
+        for (i = 0; i < 7; i++) {
             statChange = BattleMon_Get(battleCtx, mon, BATTLEMON_ATTACK_STAGE + i, NULL) - 6;
-            if (statChange > 0)
-            {
+            if (statChange > 0) {
                 power += (20 * statChange);
             }
         }

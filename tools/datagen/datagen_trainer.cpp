@@ -227,7 +227,7 @@ int main(int argc, char **argv)
 
             fs::path trainerDataPath = dataPath / (trainerStem + ".json");
 
-            std::cout << "Parsing trainer data file: " << trainerDataPath << std::endl;
+            // std::cout << "Parsing trainer data file: " << trainerDataPath << std::endl;
 
             std::string json = ReadWholeFile(trainerDataPath);
             doc.Parse(json.c_str(), json.length());
