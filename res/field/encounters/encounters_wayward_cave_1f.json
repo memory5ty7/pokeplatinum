@@ -19,11 +19,11 @@
         },
         {
                 "level": 20,
-                "species": "SPECIES_NIDORANM"
+                "species": "SPECIES_NIDORAN_M"
         },
         {
                 "level": 20,
-                "species": "SPECIES_NIDORANF"
+                "species": "SPECIES_NIDORAN_F"
         },
         {
                 "level": 20,
@@ -63,8 +63,8 @@
         "SPECIES_DIGLETT"
 ],
 "radar": [
-        "SPECIES_NIDORANM",
-        "SPECIES_NIDORANF",
+        "SPECIES_NIDORAN_M",
+        "SPECIES_NIDORAN_F",
         "SPECIES_RATTATA",
         "SPECIES_RATTATA"
 ],

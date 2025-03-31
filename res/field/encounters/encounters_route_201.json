@@ -1,4 +1,5 @@
 {
+    "land_rate": 30,
     "land_encounters": [
                 {
                         "level": 3,
