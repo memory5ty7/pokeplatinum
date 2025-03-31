@@ -2,6 +2,7 @@
 
 #include "constants/battle.h"
 #include "constants/pokemon.h"
+#include "constants/savedata/vars_flags.h"
 #include "constants/trainer.h"
 
 #include "struct_defs/trainer.h"
@@ -19,6 +20,7 @@
 #include "savedata.h"
 #include "savedata_misc.h"
 #include "strbuf.h"
+#include "vars_flags.h"
 
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
 
@@ -203,8 +205,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
 
-            if (hiddenAbility != 0)
-            {
+            if (hiddenAbility != 0) {
                 abilitySlot = 100;
             }
 
@@ -216,8 +217,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             u32 status = getStatusFromDV(trmon[i].dv);
             Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-    
+
             AdjustHP(mon, trmon[i].dv);
+            AdjustIVs(mon, trmon[i].dv);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -238,8 +240,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
 
-            if (hiddenAbility != 0)
-            {
+            if (hiddenAbility != 0) {
                 abilitySlot = 100;
             }
 
@@ -255,8 +256,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             u32 status = getStatusFromDV(trmon[i].dv);
             Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-    
+
             AdjustHP(mon, trmon[i].dv);
+            AdjustIVs(mon, trmon[i].dv);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -277,8 +279,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
 
-            if (hiddenAbility != 0)
-            {
+            if (hiddenAbility != 0) {
                 abilitySlot = 100;
             }
 
@@ -291,8 +292,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             u32 status = getStatusFromDV(trmon[i].dv);
             Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-    
+
             AdjustHP(mon, trmon[i].dv);
+            AdjustIVs(mon, trmon[i].dv);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -313,8 +315,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
             u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
 
-            if (hiddenAbility != 0)
-            {
+            if (hiddenAbility != 0) {
                 abilitySlot = 100;
             }
 
@@ -331,8 +332,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
             u32 status = getStatusFromDV(trmon[i].dv);
             Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-    
+
             AdjustHP(mon, trmon[i].dv);
+            AdjustIVs(mon, trmon[i].dv);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -350,7 +352,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
 
 u32 getStatusFromDV(u16 dv)
 {
-    u32 status = MON_CONDITION_NONE;
+    u32 status;
 
     switch (dv) {
     case 178:
@@ -364,6 +366,9 @@ u32 getStatusFromDV(u16 dv)
     case 303:
     case 313:
         status = MON_CONDITION_BURN;
+        break;
+    default:
+        status = MON_CONDITION_NONE;
         break;
     }
     return status;
@@ -391,12 +396,38 @@ void AdjustIVs(Pokemon *mon, u16 dv)
     }
     */
 
+    int ivs;
+
+    if (getVar(VAR_DIFFICULTY) & EASY_MODE_ENABLED) {
+        ivs = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) * 31 / 100;
+
+        for (int i = 0; i < 6; i++) {
+            Pokemon_SetValue(mon, MON_DATA_HP_IV + i, &ivs);
+        }
+    } else {
+        switch(dv) {
+        case 202:
+        case 207:
+        case 217:
+        case 222:
+        case 302:
+        case 307:
+        case 317:
+        case 322:
+            ivs = 0;
+            Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &dv);
+        default:
+            break;
+        }
+    }
+
     return;
 }
 
 void AdjustHP(Pokemon *mon, u16 dv)
 {
     u32 currentHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+
     switch (dv) {
     case 153:
     case 353:
