@@ -7274,6 +7274,7 @@ static BOOL BtlCmd_TryPursuit(BattleSystem *battleSys, BattleContext *battleCtx)
                     battleCtx->defender = battleCtx->switchedMon;
                     battleCtx->powerMul = 20;
                     battleCtx->moveCur = move;
+                    battleCtx->movePrevByBattler2[i] = battleCtx->movePrevByBattler[i];
                     battleCtx->movePrevByBattler[i] = move;
                     battleCtx->battlerActions[i][BATTLE_ACTION_PICK_COMMAND] = BATTLE_CONTROL_MOVE_END;
 

@@ -662,6 +662,30 @@
     .long \roll_damage
     .endm
 
+    .macro LoadBattlerPreviousMove2 battler
+    .long 115
+    .long \battler
+    .endm
+
+    .macro IfSpeedCompareAfterParaEqualTo cmp, jump
+    .long 116
+    .long \cmp
+    .long (\jump-.) / 4 - 1
+    .endm
+
+    .macro ImprisonCheck battler, battler2, jump
+    .long 117
+    .long \battler
+    .long \battler2
+    .long (\jump-.) / 4 - 1
+    .endm
+
+    .macro IfShouldRecover battler, jump
+    .long 118
+    .long \battler
+    .long (\jump-.) / 4 - 1
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry

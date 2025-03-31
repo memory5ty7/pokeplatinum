@@ -197,6 +197,8 @@ void BattleMon_AddVal(BattleMon *mon, enum BattleMonParam paramID, int val);
  */
 u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *battleCtx, int battler1, int battler2, BOOL ignoreQuickClaw);
 
+u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleContext *battleCtx, int battler1, int battler2, BOOL ignoreQuickClaw);
+
 /**
  * @brief Clear the flag denoting that a battler (or its partner) are due to
  * gain experience.

@@ -1513,6 +1513,309 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     return result;
 }
 
+u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleContext *battleCtx, int battler1, int battler2, BOOL ignoreQuickClaw)
+{
+    u8 result = COMPARE_SPEED_FASTER;
+    u32 battler1Speed, battler2Speed;
+    u16 battler1Move = 0, battler2Move = 0;
+    u8 battler1ItemEffect, battler1ItemParam;
+    u8 battler2ItemEffect, battler2ItemParam;
+    s8 battler1Priority = 0, battler2Priority = 0;
+    u8 battler1QuickClaw = 0, battler2QuickClaw = 0;
+    u8 battler1LaggingTail = 0, battler2LaggingTail = 0;
+    int battler1Action, battler2Action;
+    int battler1MoveSlot, battler2MoveSlot;
+    int battler1Ability, battler2Ability;
+    int battler1SpeedStage, battler2SpeedStage;
+    int i;
+
+    // If either battler is dead, short-circuit to preferring the other
+    if (battleCtx->battleMons[battler1].curHP == 0 && battleCtx->battleMons[battler2].curHP) {
+        return 1;
+    }
+
+    if (battleCtx->battleMons[battler1].curHP && battleCtx->battleMons[battler2].curHP == 0) {
+        return 0;
+    }
+
+    battler1Ability = Battler_Ability(battleCtx, battler1);
+    battler2Ability = Battler_Ability(battleCtx, battler2);
+    battler1ItemEffect = Battler_HeldItemEffect(battleCtx, battler1);
+    battler1ItemParam = Battler_HeldItemPower(battleCtx, battler1, ITEM_POWER_CHECK_ALL);
+    battler2ItemEffect = Battler_HeldItemEffect(battleCtx, battler2);
+    battler2ItemParam = Battler_HeldItemPower(battleCtx, battler2, ITEM_POWER_CHECK_ALL);
+    battler1SpeedStage = battleCtx->battleMons[battler1].statBoosts[BATTLE_STAT_SPEED];
+    battler2SpeedStage = battleCtx->battleMons[battler2].statBoosts[BATTLE_STAT_SPEED];
+
+    battler1SpeedStage = CompareSpeed_ApplySimple(battleCtx, battler1, battler1SpeedStage);
+    battler2SpeedStage = CompareSpeed_ApplySimple(battleCtx, battler2, battler2SpeedStage);
+
+    battler1Speed = battleCtx->battleMons[battler1].speed * sStatStageBoosts[battler1SpeedStage].numerator / sStatStageBoosts[battler1SpeedStage].denominator;
+    battler2Speed = battleCtx->battleMons[battler2].speed * sStatStageBoosts[battler2SpeedStage].numerator / sStatStageBoosts[battler2SpeedStage].denominator;
+
+    battler2Speed /= 4;
+
+    if (NO_CLOUD_NINE) {
+        if ((battler1Ability == ABILITY_SWIFT_SWIM && WEATHER_IS_RAIN)
+            || (battler1Ability == ABILITY_CHLOROPHYLL && WEATHER_IS_SUN)
+            || (battler1Ability == ABILITY_SAND_RUSH && WEATHER_IS_SAND)
+            || (battler1Ability == ABILITY_SLUSH_RUSH && WEATHER_IS_HAIL)) {
+            battler1Speed *= 2;
+        }
+
+        if ((battler2Ability == ABILITY_SWIFT_SWIM && WEATHER_IS_RAIN)
+            || (battler2Ability == ABILITY_CHLOROPHYLL && WEATHER_IS_SUN)
+            || (battler2Ability == ABILITY_SAND_RUSH && WEATHER_IS_SAND)
+            || (battler2Ability == ABILITY_SLUSH_RUSH && WEATHER_IS_HAIL)) {
+            battler2Speed *= 2;
+        }
+    }
+
+    for (i = 0; i < NELEMS(sSpeedHalvingItemEffects); i++) {
+        // The speed-halving effect of these items are not ignored by any negation effect
+        if (BattleSystem_GetItemData(battleCtx, battleCtx->battleMons[battler1].heldItem, ITEM_PARAM_HOLD_EFFECT) == sSpeedHalvingItemEffects[i]) {
+            battler1Speed /= 2;
+            break;
+        }
+    }
+
+    if (battler1ItemEffect == HOLD_EFFECT_CHOICE_SPEED) {
+        battler1Speed = battler1Speed * 15 / 10;
+    }
+
+    if (battler1ItemEffect == HOLD_EFFECT_DITTO_SPEED_UP
+        && battleCtx->battleMons[battler1].species == SPECIES_DITTO) {
+        battler1Speed *= 2;
+    }
+
+    if (battler1Ability == ABILITY_QUICK_FEET && (battleCtx->battleMons[battler1].status & MON_CONDITION_ANY)) {
+        battler1Speed = battler1Speed * 15 / 10;
+    } else if (battleCtx->battleMons[battler1].status & MON_CONDITION_PARALYSIS) {
+        battler1Speed /= 4;
+    }
+
+    if (battler1Ability == ABILITY_SLOW_START
+        && battleCtx->totalTurns - battleCtx->battleMons[battler1].moveEffectsData.slowStartTurnNumber < 5) {
+        battler1Speed /= 2;
+    }
+
+    if (battler1Ability == ABILITY_UNBURDEN
+        && battleCtx->battleMons[battler1].moveEffectsData.canUnburden
+        && battleCtx->battleMons[battler1].heldItem == ITEM_NONE) {
+        battler1Speed *= 2;
+    }
+
+    if (battleCtx->sideConditionsMask[Battler_Side(battleSys, battler1)] & SIDE_CONDITION_TAILWIND) {
+        battler1Speed *= 2;
+    }
+
+    if (battler1ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
+        if (battleCtx->speedRand[battler1] % (100 / battler1ItemParam) == 0) {
+            battler1QuickClaw = 1;
+
+            if (ignoreQuickClaw == FALSE) {
+                battleCtx->battleMons[battler1].moveEffectsData.quickClaw = 1;
+            }
+        }
+    }
+
+    if (battler1ItemEffect == HOLD_EFFECT_PINCH_PRIORITY) {
+        if (Battler_Ability(battleCtx, battler1) == ABILITY_GLUTTONY) {
+            battler1ItemParam /= 2;
+        }
+
+        if (battleCtx->battleMons[battler1].curHP <= (battleCtx->battleMons[battler1].maxHP / battler1ItemParam)) {
+            battler1QuickClaw = 1;
+
+            if (ignoreQuickClaw == FALSE) {
+                battleCtx->battleMons[battler1].moveEffectsData.custapBerry = 1;
+            }
+        }
+    }
+
+    if (battler1ItemEffect == HOLD_EFFECT_PRIORITY_DOWN) {
+        battler1LaggingTail = 1;
+    }
+
+    for (i = 0; i < NELEMS(sSpeedHalvingItemEffects); i++) {
+        // The speed-halving effect of these items are not ignored by any negation effect
+        if (BattleSystem_GetItemData(battleCtx, battleCtx->battleMons[battler2].heldItem, ITEM_PARAM_HOLD_EFFECT) == sSpeedHalvingItemEffects[i]) {
+            battler2Speed /= 2;
+            break;
+        }
+    }
+
+    if (battler2ItemEffect == HOLD_EFFECT_CHOICE_SPEED) {
+        battler2Speed = battler2Speed * 15 / 10;
+    }
+
+    if (battler2ItemEffect == HOLD_EFFECT_DITTO_SPEED_UP
+        && battleCtx->battleMons[battler2].species == SPECIES_DITTO) {
+        battler2Speed *= 2;
+    }
+
+    if (battler2Ability == ABILITY_QUICK_FEET && (battleCtx->battleMons[battler2].status & MON_CONDITION_ANY)) {
+        battler2Speed = battler2Speed * 15 / 10;
+    } else if (battleCtx->battleMons[battler2].status & MON_CONDITION_PARALYSIS) {
+        battler2Speed /= 4;
+    }
+
+    if (battler2Ability == ABILITY_SLOW_START
+        && battleCtx->totalTurns - battleCtx->battleMons[battler2].moveEffectsData.slowStartTurnNumber < 5) {
+        battler2Speed /= 2;
+    }
+
+    if (battler2Ability == ABILITY_UNBURDEN
+        && battleCtx->battleMons[battler2].moveEffectsData.canUnburden
+        && battleCtx->battleMons[battler2].heldItem == ITEM_NONE) {
+        battler2Speed *= 2;
+    }
+
+    if (battleCtx->sideConditionsMask[Battler_Side(battleSys, battler2)] & SIDE_CONDITION_TAILWIND) {
+        battler2Speed *= 2;
+    }
+
+    if (battler2ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
+        if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
+            battler2QuickClaw = 1;
+
+            if (ignoreQuickClaw == FALSE) {
+                battleCtx->battleMons[battler2].moveEffectsData.quickClaw = 1;
+            }
+        }
+    }
+
+    if (battler2ItemEffect == HOLD_EFFECT_PINCH_PRIORITY) {
+        if (Battler_Ability(battleCtx, battler2) == ABILITY_GLUTTONY) {
+            battler2ItemParam /= 2;
+        }
+
+        if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
+            battler2QuickClaw = 1;
+
+            if (ignoreQuickClaw == FALSE) {
+                battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
+            }
+        }
+    }
+
+    if (battler2ItemEffect == HOLD_EFFECT_PRIORITY_DOWN) {
+        battler2LaggingTail = 1;
+    }
+
+    battleCtx->monSpeedValues[battler1] = battler1Speed;
+    battleCtx->monSpeedValues[battler2] = battler2Speed;
+
+    if (ignoreQuickClaw == FALSE) {
+        battler1Action = battleCtx->battlerActions[battler1][BATTLE_ACTION_SELECTED_COMMAND];
+        battler2Action = battleCtx->battlerActions[battler2][BATTLE_ACTION_SELECTED_COMMAND];
+        battler1MoveSlot = battleCtx->moveSlot[battler1];
+        battler2MoveSlot = battleCtx->moveSlot[battler2];
+
+        if (battler1Action == PLAYER_INPUT_FIGHT) {
+            if (battleCtx->turnFlags[battler1].struggling) {
+                battler1Move = MOVE_STRUGGLE;
+            } else {
+                battler1Move = BattleMon_Get(battleCtx, battler1, BATTLEMON_MOVE_1 + battler1MoveSlot, NULL);
+            }
+        }
+
+        if (battler2Action == PLAYER_INPUT_FIGHT) {
+            if (battleCtx->turnFlags[battler2].struggling) {
+                battler2Move = MOVE_STRUGGLE;
+            } else {
+                battler2Move = BattleMon_Get(battleCtx, battler2, BATTLEMON_MOVE_1 + battler2MoveSlot, NULL);
+            }
+        }
+
+        battler1Priority = MOVE_DATA(battler1Move).priority;
+        battler2Priority = MOVE_DATA(battler2Move).priority;
+    }
+
+    if (Battler_Ability(battleCtx, battler1) == ABILITY_PRANKSTER && MOVE_DATA(battler1Move).class == CLASS_STATUS) {
+        battler1Priority++;
+    }
+    if (Battler_Ability(battleCtx, battler2) == ABILITY_PRANKSTER && MOVE_DATA(battler2Move).class == CLASS_STATUS) {
+        battler2Priority++;
+    }
+
+    if (Battler_Ability(battleCtx, battler1) == ABILITY_GALE_WINGS && MOVE_DATA(battler1Move).type == TYPE_FLYING) {
+        battler1Priority++;
+    }
+    if (Battler_Ability(battleCtx, battler2) == ABILITY_GALE_WINGS && MOVE_DATA(battler2Move).type == TYPE_FLYING) {
+        battler2Priority++;
+    }
+
+    if (Battler_Ability(battleCtx, battler1) == ABILITY_TRIAGE) {
+        for (i = 0; i < NELEMS(sTriageMoves); i++) {
+            if (sTriageMoves[i] == battler1Move) {
+                battler1Priority = battler1Priority + 3;
+            }
+        }
+    }
+    if (Battler_Ability(battleCtx, battler2) == ABILITY_TRIAGE) {
+        for (i = 0; i < NELEMS(sTriageMoves); i++) {
+            if (sTriageMoves[i] == battler2Move) {
+                battler2Priority = battler2Priority + 3;
+            }
+        }
+    }
+
+    if (battler1Priority == battler2Priority) {
+        if (battler1QuickClaw && battler2QuickClaw) {
+            if (battler1Speed < battler2Speed) {
+                result = COMPARE_SPEED_SLOWER;
+            } else if (battler1Speed == battler2Speed && (BattleSystem_RandNext(battleSys) & 1)) {
+                result = COMPARE_SPEED_TIE;
+            }
+        } else if (battler1QuickClaw == FALSE && battler2QuickClaw) {
+            result = COMPARE_SPEED_SLOWER;
+        } else if (battler1QuickClaw && battler2QuickClaw == FALSE) {
+            result = COMPARE_SPEED_FASTER;
+        } else if (battler1LaggingTail && battler2LaggingTail) {
+            if (battler1Speed > battler2Speed) {
+                result = COMPARE_SPEED_SLOWER;
+            } else if (battler1Speed == battler2Speed && (BattleSystem_RandNext(battleSys) & 1)) {
+                result = COMPARE_SPEED_TIE;
+            }
+        } else if (battler1LaggingTail && battler2LaggingTail == FALSE) {
+            result = COMPARE_SPEED_SLOWER;
+        } else if (battler1LaggingTail == FALSE && battler2LaggingTail) {
+            result = COMPARE_SPEED_FASTER;
+        } else if (battler1Ability == ABILITY_STALL && battler2Ability == ABILITY_STALL) {
+            if (battler1Speed > battler2Speed) {
+                result = COMPARE_SPEED_SLOWER;
+            } else if (battler1Speed == battler2Speed && (BattleSystem_RandNext(battleSys) & 1)) {
+                result = COMPARE_SPEED_TIE;
+            }
+        } else if (battler1Ability == ABILITY_STALL && battler2Ability != ABILITY_STALL) {
+            result = COMPARE_SPEED_SLOWER;
+        } else if (battler1Ability != ABILITY_STALL && battler2Ability == ABILITY_STALL) {
+            result = COMPARE_SPEED_FASTER;
+        } else if (battleCtx->fieldConditionsMask & FIELD_CONDITION_TRICK_ROOM) {
+            if (battler1Speed > battler2Speed) {
+                result = COMPARE_SPEED_SLOWER;
+            }
+
+            if (battler1Speed == battler2Speed && (BattleSystem_RandNext(battleSys) & 1)) {
+                result = COMPARE_SPEED_TIE;
+            }
+        } else {
+            if (battler1Speed < battler2Speed) {
+                result = COMPARE_SPEED_SLOWER;
+            }
+
+            if (battler1Speed == battler2Speed && (BattleSystem_RandNext(battleSys) & 1)) {
+                result = COMPARE_SPEED_TIE;
+            }
+        }
+    } else if (battler1Priority < battler2Priority) {
+        result = COMPARE_SPEED_SLOWER;
+    }
+
+    return result;
+}
+
 static u8 BattleSystem_PostKOCompareSpeed(BattleSystem *battleSys, BattleContext *battleCtx, Pokemon *mon, int battler2, BOOL ignoreQuickClaw)
 {
     u8 result = COMPARE_SPEED_FASTER;
@@ -2584,6 +2887,7 @@ void BattleSystem_UpdateAfterSwitch(BattleSystem *battleSys, BattleContext *batt
     battleCtx->moveHit[battler] = MOVE_NONE;
     battleCtx->moveHitBattler[battler] = BATTLER_NONE;
     battleCtx->moveHitType[battler] = MOVE_NONE;
+    battleCtx->movePrevByBattler2[battler] = MOVE_NONE;
     battleCtx->movePrevByBattler[battler] = MOVE_NONE;
     battleCtx->moveCopied[battler] = MOVE_NONE;
     battleCtx->moveCopiedHit[battler][0] = MOVE_NONE;
@@ -2662,6 +2966,7 @@ void BattleSystem_CleanupFaintedMon(BattleSystem *battleSys, BattleContext *batt
     battleCtx->moveHit[battler] = MOVE_NONE;
     battleCtx->moveHitBattler[battler] = BATTLER_NONE;
     battleCtx->moveHitType[battler] = MOVE_NONE;
+    battleCtx->movePrevByBattler2[battler] = MOVE_NONE;
     battleCtx->movePrevByBattler[battler] = MOVE_NONE;
     battleCtx->moveCopied[battler] = MOVE_NONE;
     battleCtx->moveCopiedHit[battler][0] = MOVE_NONE;
@@ -10823,7 +11128,7 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                 }
             }
 
-            if (maxDamage > enemyMaxDamage) {
+            if ((maxDamage * 100 / defenderMaxHP) > (enemyMaxDamage * 100 / attackerMaxHP)) {
                 moreDamage = TRUE;
             }
 

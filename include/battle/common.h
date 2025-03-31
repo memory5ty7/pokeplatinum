@@ -18,6 +18,9 @@
 #define ATTACKER_LAST_MOVE (battleCtx->movePrevByBattler[battleCtx->attacker])
 #define DEFENDER_LAST_MOVE (battleCtx->movePrevByBattler[battleCtx->defender])
 
+#define ATTACKER_LAST_MOVE2 (battleCtx->movePrevByBattler2[battleCtx->attacker])
+#define DEFENDER_LAST_MOVE2 (battleCtx->movePrevByBattler2[battleCtx->defender])
+
 #define FOLLOW_ME_USER(side) (battleCtx->sideConditions[side].followMeUser)
 #define FOLLOW_ME_MON(side)  (battleCtx->battleMons[FOLLOW_ME_USER(side)])
 

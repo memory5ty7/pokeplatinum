@@ -269,6 +269,7 @@ struct BattleContext {
     u16 moveHitBattler[MAX_BATTLERS];
     u16 moveHitType[MAX_BATTLERS];
     u16 movePrevByBattler[MAX_BATTLERS];
+    u16 movePrevByBattler2[MAX_BATTLERS];
     u16 moveCopied[MAX_BATTLERS];
     u16 moveCopiedHit[MAX_BATTLERS][MAX_BATTLERS];
     u16 moveSketched[MAX_BATTLERS];

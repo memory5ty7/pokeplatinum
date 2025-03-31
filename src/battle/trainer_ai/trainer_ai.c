@@ -101,6 +101,7 @@ static void AICmd_LoadTypeFrom(BattleSystem *battleSys, BattleContext *battleCtx
 static void AICmd_LoadMovePower(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_FlagMoveDamageScore(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_LoadBattlerPreviousMove(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_LoadBattlerPreviousMove2(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfTempEqualTo(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfTempNotEqualTo(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfSpeedCompareEqualTo(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -182,6 +183,9 @@ static void AICmd_IfDefenderHasDamagingMoves(BattleSystem *battleSys, BattleCont
 static void AICmd_IfMoveClassKnown(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IfSpeedCompareAfterParaEqualTo(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_ImprisonCheck(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IfShouldRecover(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -326,6 +330,10 @@ static const AICommandFunc sAICommandTable[] = {
     AICmd_IfMoveClassKnown,
     AICmd_EnemyTurnsToKill,
     AICmd_TurnsToKill,
+    AICmd_LoadBattlerPreviousMove2,
+    AICmd_IfSpeedCompareAfterParaEqualTo,
+    AICmd_ImprisonCheck,
+    AICmd_IfShouldRecover,
 };
 
 void TrainerAI_Init(BattleSystem *battleSys, BattleContext *battleCtx, u8 battler, u8 initScore)
@@ -1203,6 +1211,16 @@ static void AICmd_LoadBattlerPreviousMove(BattleSystem *battleSys, BattleContext
     AI_CONTEXT.calcTemp = battleCtx->movePrevByBattler[battler];
 }
 
+static void AICmd_LoadBattlerPreviousMove2(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+
+    AI_CONTEXT.calcTemp = battleCtx->movePrevByBattler2[battler];
+}
+
 static void AICmd_IfTempEqualTo(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     AIScript_Iter(battleCtx, 1);
@@ -1235,6 +1253,18 @@ static void AICmd_IfSpeedCompareEqualTo(BattleSystem *battleSys, BattleContext *
     int jump = AIScript_Read(battleCtx);
 
     if (BattleSystem_CompareBattlerSpeed(battleSys, battleCtx, AI_CONTEXT.attacker, AI_CONTEXT.defender, TRUE) == val) {
+        AIScript_Iter(battleCtx, jump);
+    }
+}
+
+static void AICmd_IfSpeedCompareAfterParaEqualTo(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int val = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+
+    if (BattleSystem_CompareBattlerSpeedAfterPara(battleSys, battleCtx, AI_CONTEXT.attacker, AI_CONTEXT.defender, TRUE) == val) {
         AIScript_Iter(battleCtx, jump);
     }
 }
@@ -1643,7 +1673,7 @@ static void AICmd_IfCurrentMoveKills(BattleSystem *battleSys, BattleContext *bat
     }
     */
 
-    //Desmume_Log("IfCurrentMoveKills :");
+    // Desmume_Log("IfCurrentMoveKills :");
 
     int move = AI_CONTEXT.move;
     u32 moveStatusFlags;
@@ -1683,7 +1713,7 @@ static void AICmd_IfCurrentMoveKills(BattleSystem *battleSys, BattleContext *bat
         AIScript_Iter(battleCtx, jump);
     }
 
-    //Desmume_Log(" OK\n");
+    // Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -1739,7 +1769,7 @@ static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContex
     }
     */
 
-    //Desmume_Log("IfCurrentMoveDoesNotKill :");
+    // Desmume_Log("IfCurrentMoveDoesNotKill :");
 
     int move = AI_CONTEXT.move;
     u32 moveStatusFlags;
@@ -1779,7 +1809,7 @@ static void AICmd_IfCurrentMoveDoesNotKill(BattleSystem *battleSys, BattleContex
         AIScript_Iter(battleCtx, jump);
     }
 
-    //Desmume_Log(" OK\n");
+    // Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfMoveKnown(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -2867,7 +2897,7 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
 
     AI_CONTEXT.attacker = AI_CONTEXT.defender;
     AI_CONTEXT.defender = defenderTmp;
-    
+
     AIScript_Iter(battleCtx, 1);
 
     BOOL useDamageRoll = AIScript_Read(battleCtx);
@@ -2920,7 +2950,7 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
     }
     */
 
-    //Desmume_Log("IfEnemyKills :");
+    // Desmume_Log("IfEnemyKills :");
 
     int move;
 
@@ -2980,7 +3010,7 @@ static void AICmd_IfEnemyKills(BattleSystem *battleSys, BattleContext *battleCtx
     AI_CONTEXT.defender = AI_CONTEXT.attacker;
     AI_CONTEXT.attacker = defenderTmp;
 
-    //Desmume_Log(" OK\n");
+    // Desmume_Log(" OK\n");
 }
 
 static void AICmd_IfMonCanDefrost(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -4749,7 +4779,7 @@ static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battl
     AI_CONTEXT.calcTemp = turns;
     */
 
-    //Desmume_Log("EnemyTurnsToKill :");
+    // Desmume_Log("EnemyTurnsToKill :");
 
     AIScript_Iter(battleCtx, 1);
 
@@ -4793,7 +4823,7 @@ static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battl
                 damage,
                 &moveStatusFlags);
 
-            //Desmume_Log("Enemy damage : %d/%d\n",damage,BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL));
+            // Desmume_Log("Enemy damage : %d/%d\n",damage,BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL));
 
             if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
                 damage = 0;
@@ -4813,9 +4843,9 @@ static void AICmd_EnemyTurnsToKill(BattleSystem *battleSys, BattleContext *battl
 
     AI_CONTEXT.calcTemp = minTurns;
 
-    //Desmume_Log("Enemy turns to kills : %d\n", minTurns);
+    // Desmume_Log("Enemy turns to kills : %d\n", minTurns);
 
-    //Desmume_Log(" OK\n");
+    // Desmume_Log(" OK\n");
 }
 
 static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -4879,7 +4909,7 @@ static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
     AI_CONTEXT.calcTemp = turns;
     */
 
-    //Desmume_Log("TurnsToKills :");
+    // Desmume_Log("TurnsToKills :");
 
     AIScript_Iter(battleCtx, 1);
 
@@ -4922,8 +4952,6 @@ static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
             if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
                 damage = 0;
             }
-
-
         }
 
         turns = (BattleMon_Get(battleCtx, AI_CONTEXT.defender, BATTLEMON_CUR_HP, NULL)) / damage + 1;
@@ -4934,7 +4962,187 @@ static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
 
     AI_CONTEXT.calcTemp = minTurns;
 
-    //Desmume_Log("Turns to kills : %d\n", minTurns);
+    // Desmume_Log("Turns to kills : %d\n", minTurns);
 
-    //Desmume_Log(" OK\n");
+    // Desmume_Log(" OK\n");
+}
+
+static void AICmd_ImprisonCheck(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    int inBattler2 = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+    u8 battler2 = AIScript_Battler(battleCtx, inBattler2);
+    int i, move;
+
+    for (int j = 0; j < LEARNED_MOVES_MAX; j++) {
+        move = battleCtx->battleMons[battler2].moves[j];
+
+        switch (inBattler) {
+        case AI_BATTLER_ATTACKER:
+            for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+                if (battleCtx->battleMons[battler].moves[i] == move) {
+                    break;
+                }
+            }
+
+            if (i < LEARNED_MOVES_MAX) {
+                AIScript_Iter(battleCtx, jump);
+            }
+            break;
+
+        case AI_BATTLER_ATTACKER_PARTNER:
+            if (battleCtx->battleMons[battler].curHP == 0) {
+                break;
+            }
+
+            for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+                if (battleCtx->battleMons[battler].moves[i] == move) {
+                    break;
+                }
+            }
+
+            if (i < LEARNED_MOVES_MAX) {
+                AIScript_Iter(battleCtx, jump);
+            }
+            break;
+
+        case AI_BATTLER_DEFENDER:
+            for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+                if (battleCtx->battleMons[battler].moves[i] == move) {
+                    break;
+                }
+            }
+
+            if (i < LEARNED_MOVES_MAX) {
+                AIScript_Iter(battleCtx, jump);
+            }
+            break;
+
+        default:
+            break;
+        }
+    }
+}
+
+static void AICmd_IfShouldRecover(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+    int inBattler = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+
+    int move = AI_CONTEXT.move;
+    int moveEffect = MOVE_DATA(move).effect;
+    int percentage;
+
+    BOOL returnValue = TRUE;
+
+    switch (moveEffect) {
+    case BATTLE_EFFECT_RESTORE_HALF_HP:
+    case BATTLE_EFFECT_HEAL_HALF_REMOVE_FLYING_TYPE:
+        percentage = 50;
+        break;
+    case BATTLE_EFFECT_HEAL_HALF_MORE_IN_SUN:
+        percentage = 67;
+        break;
+    case BATTLE_EFFECT_REST:
+        percentage = 100;
+        break;
+    default:
+        percentage = 0;
+        break;
+    }
+
+    int damage = 0;
+    int maxDamage = 0;
+    int maxDamagePercentage = 0;
+    int moveType = 0;
+    int power = 0;
+    u32 moveStatusFlags = 0;
+
+    for (int i = 0; i < LEARNED_MOVES_MAX; i++) {
+
+        int move = battleCtx->battleMons[AI_CONTEXT.defender].moves[i];
+
+        damage = 0;
+        moveType = Move_CalcVariableType2(battleSys, battleCtx, AI_CONTEXT.defender, move);
+        power = Move_CalcVariablePower3(battleSys, battleCtx, move, AI_CONTEXT.defender, inBattler, &damage);
+
+        if (move && power > 1) {
+            damage = BattleSystem_CalcMoveDamage(battleSys,
+                battleCtx,
+                battleCtx->moveCur,
+                battleCtx->sideConditionsMask[Battler_Side(battleSys, battleCtx->defender)],
+                battleCtx->fieldConditionsMask,
+                battleCtx->movePower,
+                moveType,
+                AI_CONTEXT.defender,
+                inBattler,
+                battleCtx->criticalMul);
+
+            moveStatusFlags = 0;
+            damage = BattleSystem_ApplyTypeChart(battleSys,
+                battleCtx,
+                move,
+                moveType,
+                AI_CONTEXT.defender,
+                inBattler,
+                damage,
+                &moveStatusFlags
+                );
+
+            if (moveStatusFlags & MOVE_STATUS_IMMUNE) {
+                damage = 0;
+            }
+        }
+
+        if (damage > maxDamage) {
+            maxDamage = damage;
+        }
+    }
+
+    maxDamagePercentage = (maxDamage * 100) / BattleMon_Get(battleCtx, inBattler, BATTLEMON_MAX_HP, NULL);
+
+    if (battleCtx->battleMons[inBattler].status & MON_CONDITION_TOXIC) {
+        returnValue = FALSE;
+    }
+
+    if (maxDamagePercentage > percentage) {
+        returnValue = FALSE;
+    }
+
+    int percentageHP = (BattleMon_Get(battleCtx, inBattler, BATTLEMON_CUR_HP, NULL) * 100) / BattleMon_Get(battleCtx, inBattler, BATTLEMON_MAX_HP, NULL);
+
+    if (BattleSystem_CompareBattlerSpeed(battleSys, battleCtx, inBattler, AI_CONTEXT.defender, TRUE) == 1) {
+        if ((maxDamagePercentage >= 100) && (maxDamagePercentage < 100 + percentage)) {
+            returnValue = TRUE;
+        } else {
+            if (maxDamagePercentage < 100) {
+                if (percentageHP < 40) {
+                    returnValue = TRUE;
+                } else if ((percentageHP < 66) && (BattleSystem_RandNext(battleSys) % 2 < 1)) {
+                    returnValue = TRUE;
+                }
+            }
+        }
+
+    } else {
+
+        if (percentageHP < 70) {
+            if (BattleSystem_RandNext(battleSys) % 4 < 1) {
+                returnValue = FALSE;
+            } else {
+                returnValue = TRUE;
+            }
+        } else if (percentageHP < 50) {
+            returnValue = TRUE;
+        }
+    }
+
+    if (returnValue) {
+        AIScript_Iter(battleCtx, jump);
+    }
 }

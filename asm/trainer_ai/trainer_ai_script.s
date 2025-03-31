@@ -92,7 +92,7 @@ Basic_HighestDamage:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_BIND_HIT, Basic_Trapping
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_Explosion
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_Rollout
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_IN_3_TURNS, Basic_Other
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_IN_3_TURNS, Basic_FutureSight
 
     IfLoadedEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, Basic_HighestDamageRandom
 
@@ -119,6 +119,19 @@ Basic_Trapping1:
 
 Basic_Rollout:
     AddToMoveScore 7
+    GoTo Basic_End
+
+Basic_FutureSight:
+    IfEnemyKills AI_BATTLER_DEFENDER, USE_MAX_DAMAGE, Basic_FutureSight2
+    GoTo Basic_FutureSight3
+
+Basic_FutureSight2:
+    IfSpeedCompareNotEqualTo COMPARE_SPEED_FASTER, Basic_FutureSight3
+    AddToMoveScore 8
+    GoTo Basic_End
+
+Basic_FutureSight3:
+    AddToMoveScore 6
     GoTo Basic_End
 
 Basic_Explosion:
@@ -220,6 +233,29 @@ Basic_PursuitRandom:
 
 Basic_NotHighestAdditional:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_LOWER_SPEED_HIT, Basic_LowerSpeed
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_LOWER_ATTACK_HIT, Basic_LowerAtk
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_LOWER_SP_ATK_HIT, Basic_LowerSpAtk
+    GoTo Basic_Other
+
+Basic_LowerAtk:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_CheckCancelStatDrop
+    GoTo Basic_CheckCancelStatDrop2
+
+Basic_LowerSpAtk:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_SPECIAL, Basic_CheckCancelStatDrop
+    GoTo Basic_CheckCancelStatDrop2
+
+Basic_CheckCancelStatDrop:
+    LoadBattlerAbility AI_BATTLER_DEFENDER   
+    IfLoadedEqualTo ABILITY_CLEAR_BODY, Basic_CheckCancelStatDrop2
+    IfLoadedEqualTo ABILITY_WHITE_SMOKE, Basic_CheckCancelStatDrop2
+    LoadHeldItem AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ITEM_CLEAR_AMULET, Basic_CheckCancelStatDrop2
+    AddToMoveScore 6
+    GoTo Basic_Other
+
+Basic_CheckCancelStatDrop2:
+    AddToMoveScore 5
     GoTo Basic_Other
 
 Basic_LowerSpeed:
@@ -293,6 +329,14 @@ Basic_Other:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_KO_MON_THAT_DEFEATED_USER, Basic_DestinyBond
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_TAUNT, Basic_Taunt
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ENCORE, Basic_Encore
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_BOOST_ALLY_POWER_BY_50_PERCENT, Basic_HelpingHand
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_MAKE_GLOBAL_TARGET, Basic_HelpingHand
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_MAKE_SHARED_MOVES_UNUSEABLE, Basic_Imprison
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_COUNTER, Basic_Counter
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_MIRROR_COAT, Basic_MirrorCoat
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RESTORE_HALF_HP, Basic_Recovery
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HEAL_HALF_REMOVE_FLYING_TYPE, Basic_Recovery
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SHELL_SMASH, Basic_ShellSmash
     PopOrEnd
 
 Basic_OffensiveSetup:
@@ -436,17 +480,36 @@ Basic_SpOffensiveSetup:
 Basic_SpOffensiveSetup1:
     AddToMoveScore 6
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_SpOffensiveSetup2
-    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_SpOffensiveSetup2 
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_SpOffensiveSetup25
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_RECHARGING, Basic_SpOffensiveSetup2
     GoTo Basic_SpOffensiveSetup3
 
 Basic_SpOffensiveSetup2:
     AddToMoveScore 3
+    GoTo Basic_SpOffensiveSetup22
+
+Basic_SpOffensiveSetup22:
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedLessThan 4, Basic_SpOffensiveSetup3
+    AddToMoveScore 1
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_SpOffensiveSetup3
+    AddToMoveScore 1   
     GoTo Basic_SpOffensiveSetup3
 
+Basic_SpOffensiveSetup25:
+    IfMonCanDefrost AI_BATTLER_DEFENDER, Basic_SpOffensiveSetup3
+    GoTo Basic_SpOffensiveSetup2
+
 Basic_SpOffensiveSetup3:
-    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, Basic_End
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, Basic_SpOffensiveSetup4
     AddToMoveScore -1
+    GoTo Basic_SpOffensiveSetup4
+
+Basic_SpOffensiveSetup4:
+    IfSpeedCompareNotEqualTo COMPARE_SPEED_SLOWER, Basic_End
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedGreaterThan 2, Basic_End
+    AddToMoveScore -5
     GoTo Basic_End
 
 Basic_MixedSetup:
@@ -518,6 +581,10 @@ Basic_TauntDefog:
     GoTo ScorePlus5
 
 Basic_Encore:
+    IfBattlerUnderEffect AI_BATTLER_DEFENDER, CHECK_ENCORE, ScoreMinus20
+    LoadBattlerPreviousMove AI_BATTLER_DEFENDER
+    IfLoadedEqualTo MOVE_NONE, ScoreMinus20
+
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_Encore1
     IfRandomLessThan 128, ScorePlus6
     GoTo ScorePlus5
@@ -525,6 +592,88 @@ Basic_Encore:
 Basic_Encore1:
     LoadDefenderLastUsedMoveClass
     IfLoadedEqualTo CLASS_STATUS, ScorePlus7
+    GoTo Basic_End
+
+Basic_HelpingHand:
+    AddToMoveScore 6
+    GoTo Basic_End 
+
+Basic_Imprison:
+    ImprisonCheck AI_BATTLER_ATTACKER, AI_BATTLER_DEFENDER, Basic_Imprison2
+    AddToMoveScore -20
+    GoTo Basic_End
+
+Basic_Imprison2:
+    AddToMoveScore 9
+    GoTo Basic_End
+
+Basic_Counter:
+    IfEnemyKills AI_BATTLER_DEFENDER, ROLL_FOR_DAMAGE, Basic_Counter1
+    GoTo Basic_Counter3
+
+Basic_Counter1:
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_STURDY, Basic_Counter2
+    LoadHeldItem AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ITEM_FOCUS_SASH, Basic_Counter2
+    GoTo Basic_UnoReverse
+
+Basic_Counter2:
+    IfHPPercentLessThan AI_BATTLER_ATTACKER, 100, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_SPECIAL, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_STATUS, Basic_UnoReverse
+    AddToMoveScore 2
+    GoTo Basic_UnoReverse
+
+Basic_Counter3:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_SPECIAL, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_STATUS, Basic_UnoReverse
+    IfRandomLessThan 51, Basic_UnoReverse
+    AddToMoveScore 2
+    GoTo Basic_UnoReverse
+
+Basic_MirrorCoat:
+    IfEnemyKills AI_BATTLER_DEFENDER, ROLL_FOR_DAMAGE, Basic_MirrorCoat1
+    GoTo Basic_MirrorCoat3
+
+Basic_MirrorCoat1:
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_STURDY, Basic_MirrorCoat2
+    LoadHeldItem AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ITEM_FOCUS_SASH, Basic_MirrorCoat2
+    GoTo Basic_UnoReverse
+
+Basic_MirrorCoat2:
+    IfHPPercentLessThan AI_BATTLER_ATTACKER, 100, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_STATUS, Basic_UnoReverse
+    AddToMoveScore 2
+    GoTo Basic_UnoReverse
+
+Basic_MirrorCoat3:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_PHYSICAL, Basic_UnoReverse
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_STATUS, Basic_UnoReverse
+    IfRandomLessThan 51, Basic_UnoReverse
+    AddToMoveScore 2
+    GoTo Basic_UnoReverse
+
+Basic_UnoReverse:
+    AddToMoveScore 6
+    IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_UnoReverse2
+    GoTo Basic_UnoReverse3
+
+Basic_UnoReverse2:
+    IfRandomGreaterThan 64, Basic_UnoReverse3
+    AddToMoveScore -1
+    GoTo Basic_UnoReverse3
+
+Basic_UnoReverse3:
+    IfMoveClassKnown AI_BATTLER_DEFENDER, CLASS_STATUS, Basic_UnoReverse4
+    GoTo Basic_End
+
+Basic_UnoReverse4:
+    IfRandomGreaterThan 64, Basic_End
+    AddToMoveScore -1
     GoTo Basic_End
 
 Basic_CheckStealthRock:
@@ -613,7 +762,14 @@ Basic_CheckProtectDouble:
     IfLoadedMask BATTLE_TYPE_DOUBLES, ScoreMinus1
 
 Basic_RandomProtect:
+    LoadBattlerPreviousMove2 AI_BATTLER_ATTACKER
+    LoadEffectOfLoadedMove 
+    IfLoadedEqualTo BATTLE_EFFECT_PROTECT, Basic_Protect2
+
     IfRandomLessThan 128, ScoreMinus20
+
+Basic_Protect2:
+    GoTo ScoreMinus20
 
 Basic_BatonPass:
     CountAlivePartyBattlers AI_BATTLER_ATTACKER
@@ -709,11 +865,22 @@ Basic_Paralyze:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus20
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus20
 
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, Basic_Paralyze3
+    IfMoveKnown AI_BATTLER_ATTACKER_PARTNER, MOVE_HEX, Basic_Paralyze3
+    IfMoveEffectKnown AI_BATTLER_ATTACKER, BATTLE_EFFECT_FLINCH_HIT, Basic_Paralyze3
+    IfMoveEffectKnown AI_BATTLER_ATTACKER, BATTLE_EFFECT_FLINCH_BURN_HIT, Basic_Paralyze3
+    IfMoveEffectKnown AI_BATTLER_ATTACKER, BATTLE_EFFECT_FLINCH_FREEZE_HIT, Basic_Paralyze3
+    IfMoveEffectKnown AI_BATTLER_ATTACKER, BATTLE_EFFECT_FLINCH_PARALYZE_HIT, Basic_Paralyze3
+    IfMoveEffectKnown AI_BATTLER_ATTACKER, BATTLE_EFFECT_FLINCH_MINIMIZE_DOUBLE_HIT, Basic_Paralyze3
+
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_CONFUSION, Basic_Paralyze3
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_ATTRACT, Basic_Paralyze3
-    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_Paralyze1 
-    AddToMoveScore 7
-    GoTo Basic_Paralyze1
+    IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, Basic_ParalyzeCheckSpeed
+    GoTo Basic_Paralyze4
+
+Basic_ParalyzeCheckSpeed:
+   IfSpeedCompareAfterParaEqualTo COMPARE_SPEED_SLOWER, Basic_Paralyze4
+   GoTo Basic_Paralyze3
 
 Basic_Paralyze1:
     IfRandomLessThan 128, Basic_Paralyze2
@@ -725,6 +892,10 @@ Basic_Paralyze2:
 
 Basic_Paralyze3:
     AddToMoveScore 8
+    GoTo Basic_Paralyze1
+
+Basic_Paralyze4:
+    AddToMoveScore 7
     GoTo Basic_Paralyze1
 
 Basic_Paralyze_End:
@@ -756,6 +927,7 @@ Basic_Burn2:
 
 Basic_Burn3:
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus1
+    IfMoveKnown AI_BATTLER_ATTACKER_PARTNER, MOVE_HEX, ScorePlus1
     GoTo Basic_End
 
 Basic_Trick:
@@ -796,6 +968,7 @@ Basic_Sleep2:
 
 Basic_Sleep3:
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus1
+    IfMoveKnown AI_BATTLER_ATTACKER_PARTNER, MOVE_HEX, ScorePlus1
     GoTo Basic_End
 
 Basic_Toxic:
@@ -819,7 +992,96 @@ Basic_Toxic:
 
 Basic_Toxic1:
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_HEX, ScorePlus2
+    IfMoveKnown AI_BATTLER_ATTACKER_PARTNER, MOVE_HEX, ScorePlus2
     AddToMoveScore 1
+    GoTo Basic_End
+
+Basic_Recovery:
+    IfHPPercentEqualTo AI_BATTLER_ATTACKER, 100, ScoreMinus20
+    IfHPPercentGreaterThan AI_BATTLER_ATTACKER, 85, ScoreMinus6
+    IfShouldRecover AI_BATTLER_ATTACKER, ScorePlus7
+    AddToMoveScore 5
+    GoTo Basic_End
+
+Basic_SunRecovery:
+    IfHPPercentEqualTo AI_BATTLER_ATTACKER, 100, ScoreMinus20
+    IfHPPercentGreaterThan AI_BATTLER_ATTACKER, 85, ScoreMinus6
+
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_SUNNY, Basic_SunRecovery1
+    IfShouldRecover AI_BATTLER_ATTACKER, ScorePlus7
+    AddToMoveScore 5
+    GoTo Basic_SunRecovery2
+
+Basic_SunRecovery1:
+    IfShouldRecover AI_BATTLER_ATTACKER, ScorePlus7
+    GoTo Basic_SunRecovery2
+
+Basic_SunRecovery2:
+    IfShouldRecover AI_BATTLER_ATTACKER, ScorePlus7
+    AddToMoveScore 5
+    GoTo Basic_End
+
+Basic_Rest:
+    IfShouldRecover AI_BATTLER_ATTACKER, Basic_Rest2
+    AddToMoveScore 5
+    GoTo Basic_End
+
+Basic_Rest2:
+    LoadHeldItem AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ITEM_LUM_BERRY, ScorePlus8
+    IfLoadedEqualTo ITEM_CHESTO_BERRY, ScorePlus8  
+
+    LoadAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_SHED_SKIN, ScorePlus8
+    IfLoadedEqualTo ABILITY_EARLY_BIRD, ScorePlus8
+
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_SLEEP_TALK, ScorePlus8
+    IfMoveKnown AI_BATTLER_ATTACKER, MOVE_SNORE, ScorePlus8
+
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_RAINING, Basic_Hydration    
+
+    GoTo ScorePlus7
+
+Basic_Hydration:
+    LoadAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_HYDRATION, ScorePlus8    
+    GoTo ScorePlus7
+
+Basic_ShellSmash:
+    IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 7, ScoreMinus20
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 12, ScoreMinus20
+    AddToMoveScore 6
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_ShellSmash2
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_ShellSmash21
+    IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_RECHARGING, Basic_ShellSmash2
+    GoTo Basic_ShellSmash3
+
+Basic_ShellSmash21:
+    IfMonCanDefrost AI_BATTLER_DEFENDER, Basic_ShellSmash3
+    GoTo Basic_ShellSmash2
+
+Basic_ShellSmash2:
+    AddToMoveScore 3
+    GoTo Basic_ShellSmash3
+
+Basic_ShellSmash3:
+    LoadHeldItem AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ITEM_WHITE_HERB, Basic_ShellSmash4
+
+    EnemyTurnsToKill ROLL_FOR_DAMAGE
+    IfLoadedLessThan 2, Basic_ShellSmash5
+    AddToMoveScore 2
+    GoTo Basic_End
+
+Basic_ShellSmash4:
+    IfEnemyKills AI_BATTLER_DEFENDER, USE_MAX_DAMAGE, Basic_ShellSmash5
+    AddToMoveScore 2
+    GoTo Basic_End
+
+Basic_ShellSmash5:
+    AddToMoveScore -2
     GoTo Basic_End
 
 Basic_End:

@@ -3237,6 +3237,7 @@ static BOOL BattleController_MoveStolen(BattleSystem *battleSys, BattleContext *
         DEFENDER_TURN_FLAGS.magicCoat = FALSE;
 
         battleCtx->moveProtect[battleCtx->attacker] = FALSE;
+        battleCtx->movePrevByBattler2[battleCtx->attacker] = battleCtx->movePrevByBattler[battleCtx->attacker];
         battleCtx->movePrevByBattler[battleCtx->attacker] = battleCtx->moveTemp;
         battleCtx->movePrev = battleCtx->moveTemp;
 
@@ -3260,6 +3261,7 @@ static BOOL BattleController_MoveStolen(BattleSystem *battleSys, BattleContext *
 
             if ((battleCtx->battleStatusMask & SYSCTL_REUSE_LAST_MOVE) == FALSE) {
                 battleCtx->moveProtect[battleCtx->attacker] = 0;
+                battleCtx->movePrevByBattler2[battleCtx->attacker] = battleCtx->movePrevByBattler[battleCtx->attacker];
                 battleCtx->movePrevByBattler[battleCtx->attacker] = battleCtx->moveTemp;
                 battleCtx->movePrev = battleCtx->moveTemp;
 
@@ -4212,8 +4214,10 @@ static void BattleController_UpdateMoveBuffers(BattleSystem *battleSys, BattleCo
         }
 
         if (battleCtx->battleStatusMask2 & SYSCTL_MOVE_SUCCEEDED) {
+            battleCtx->movePrevByBattler2[battleCtx->attacker] = battleCtx->movePrevByBattler[battleCtx->attacker];
             battleCtx->movePrevByBattler[battleCtx->attacker] = battleCtx->moveTemp;
         } else {
+            battleCtx->movePrevByBattler2[battleCtx->attacker] = battleCtx->movePrevByBattler[battleCtx->attacker];
             battleCtx->movePrevByBattler[battleCtx->attacker] = MOVE_NONE;
         }
     }
