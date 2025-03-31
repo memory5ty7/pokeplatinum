@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 20,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_BALTOY"
         },
         {
-            "level": 21,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_SPOINK"
         },
         {
-            "level": 23,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_ABRA"
         },
         {
-            "level": 24,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_GIRAFARIG"
         },
         {
-            "level": 25,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_SMOOCHUM"
         },
         {
-            "level": 26,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_SLOWPOKE"
         },
         {
-            "level": 27,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_SLOWPOKE"
         },
         {
-            "level": 28,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_BELDUM"
         },
         {
-            "level": 29,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_BELDUM"
         },
         {
-            "level": 30,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_BELDUM"
         },
         {
-            "level": 30,
-            "species": "SPECIES_UNOWN"
+                "level": 20,
+                "species": "SPECIES_BELDUM"
         }
-    ],
-    "swarms": [
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN"
-    ],
-    "morning": [
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN"
-    ],
-    "night": [
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN"
-    ],
-    "radar": [
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN",
-        "SPECIES_UNOWN"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_SPOINK",
+        "SPECIES_ABRA"
+],
+"night": [
+        "SPECIES_SPOINK",
+        "SPECIES_ABRA"
+],
+"radar": [
+        "SPECIES_GIRAFARIG",
+        "SPECIES_SMOOCHUM",
+        "SPECIES_BELDUM",
+        "SPECIES_BELDUM"
+],
     "rate_form0": 100,
     "rate_form1": 100,
     "rate_form2": 0,

@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 16,
-            "species": "SPECIES_PONYTA"
+                "level": 20,
+                "species": "SPECIES_HOUNDOOR"
         },
         {
-            "level": 16,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_POOCHYENA"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GLIGAR"
+                "level": 20,
+                "species": "SPECIES_STUNKY"
         },
         {
-            "level": 17,
-            "species": "SPECIES_KRICKETUNE"
+                "level": 20,
+                "species": "SPECIES_STUNKY"
         },
         {
-            "level": 16,
-            "species": "SPECIES_GLIGAR"
+                "level": 20,
+                "species": "SPECIES_SKORUPI"
         },
         {
-            "level": 17,
-            "species": "SPECIES_MACHOP"
+                "level": 20,
+                "species": "SPECIES_MURKROW"
         },
         {
-            "level": 18,
-            "species": "SPECIES_MACHOP"
+                "level": 20,
+                "species": "SPECIES_NUZLEAF"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_NUZLEAF"
         },
         {
-            "level": 19,
-            "species": "SPECIES_MACHOP"
+                "level": 20,
+                "species": "SPECIES_CACNEA"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_CACNEA"
         },
         {
-            "level": 19,
-            "species": "SPECIES_MACHOP"
+                "level": 20,
+                "species": "SPECIES_CACNEA"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_CACNEA"
         }
-    ],
-    "swarms": [
-        "SPECIES_LARVITAR",
-        "SPECIES_LARVITAR"
-    ],
-    "morning": [
-        "SPECIES_GLIGAR",
-        "SPECIES_PONYTA"
-    ],
-    "night": [
-        "SPECIES_KRICKETUNE",
-        "SPECIES_ZUBAT"
-    ],
-    "radar": [
-        "SPECIES_BALTOY",
-        "SPECIES_BALTOY",
-        "SPECIES_BALTOY",
-        "SPECIES_BALTOY"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_STUNKY",
+        "SPECIES_STUNKY"
+],
+"night": [
+        "SPECIES_STUNKY",
+        "SPECIES_STUNKY"
+],
+"radar": [
+        "SPECIES_SKORUPI",
+        "SPECIES_MURKROW",
+        "SPECIES_CACNEA",
+        "SPECIES_CACNEA"
+],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

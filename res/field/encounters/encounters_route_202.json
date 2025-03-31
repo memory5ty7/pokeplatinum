@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 3,
-            "species": "SPECIES_SHINX"
+                "level": 4,
+                "species": "SPECIES_HOUNDOUR"
         },
         {
-            "level": 3,
-            "species": "SPECIES_BIDOOF"
+                "level": 4,
+                "species": "SPECIES_GROWLITHE"
         },
         {
-            "level": 4,
-            "species": "SPECIES_STARLY"
+                "level": 4,
+                "species": "SPECIES_NUMEL"
         },
         {
-            "level": 3,
-            "species": "SPECIES_KRICKETOT"
+                "level": 4,
+                "species": "SPECIES_NUMEL"
         },
         {
-            "level": 4,
-            "species": "SPECIES_SHINX"
+                "level": 4,
+                "species": "SPECIES_SLUGMA"
         },
         {
-            "level": 3,
-            "species": "SPECIES_BIDOOF"
+                "level": 4,
+                "species": "SPECIES_SLUGMA"
         },
         {
-            "level": 4,
-            "species": "SPECIES_STARLY"
+                "level": 4,
+                "species": "SPECIES_PONYTA"
         },
         {
-            "level": 4,
-            "species": "SPECIES_BIDOOF"
+                "level": 4,
+                "species": "SPECIES_PONYTA"
         },
         {
-            "level": 2,
-            "species": "SPECIES_STARLY"
+                "level": 4,
+                "species": "SPECIES_MAGBY"
         },
         {
-            "level": 2,
-            "species": "SPECIES_BIDOOF"
+                "level": 4,
+                "species": "SPECIES_MAGBY"
         },
         {
-            "level": 2,
-            "species": "SPECIES_STARLY"
+                "level": 4,
+                "species": "SPECIES_MAGBY"
         },
         {
-            "level": 2,
-            "species": "SPECIES_BIDOOF"
+                "level": 4,
+                "species": "SPECIES_MAGBY"
         }
-    ],
-    "swarms": [
-        "SPECIES_ZIGZAGOON",
-        "SPECIES_ZIGZAGOON"
-    ],
-    "morning": [
-        "SPECIES_STARLY",
-        "SPECIES_BIDOOF"
-    ],
-    "night": [
-        "SPECIES_KRICKETOT",
-        "SPECIES_BIDOOF"
-    ],
-    "radar": [
-        "SPECIES_SENTRET",
-        "SPECIES_SENTRET",
-        "SPECIES_SENTRET",
-        "SPECIES_SENTRET"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_NUMEL",
+        "SPECIES_NUMEL"
+],
+"night": [
+        "SPECIES_NUMEL",
+        "SPECIES_NUMEL"
+],
+"radar": [
+        "SPECIES_SLUGMA",
+        "SPECIES_SLUGMA",
+        "SPECIES_MAGBY",
+        "SPECIES_MAGBY"
+],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

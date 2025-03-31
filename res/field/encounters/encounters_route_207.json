@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 7,
-            "species": "SPECIES_MACHOP"
+                "level": 8,
+                "species": "SPECIES_MAREEP"
         },
         {
-            "level": 5,
-            "species": "SPECIES_GEODUDE"
+                "level": 8,
+                "species": "SPECIES_NUMEL"
         },
         {
-            "level": 6,
-            "species": "SPECIES_PONYTA"
+                "level": 8,
+                "species": "SPECIES_AIPOM"
         },
         {
-            "level": 5,
-            "species": "SPECIES_KRICKETOT"
+                "level": 8,
+                "species": "SPECIES_MAGBY"
         },
         {
-            "level": 5,
-            "species": "SPECIES_PONYTA"
+                "level": 8,
+                "species": "SPECIES_ELEKID"
         },
         {
-            "level": 6,
-            "species": "SPECIES_MACHOP"
+                "level": 8,
+                "species": "SPECIES_MUNCHLAX"
         },
         {
-            "level": 8,
-            "species": "SPECIES_MACHOP"
+                "level": 8,
+                "species": "SPECIES_MUNCHLAX"
         },
         {
-            "level": 6,
-            "species": "SPECIES_GEODUDE"
+                "level": 8,
+                "species": "SPECIES_AIPOM"
         },
         {
-            "level": 7,
-            "species": "SPECIES_PONYTA"
+                "level": 8,
+                "species": "SPECIES_SMOOCHUM"
         },
         {
-            "level": 7,
-            "species": "SPECIES_GEODUDE"
+                "level": 8,
+                "species": "SPECIES_SMOOCHUM"
         },
         {
-            "level": 7,
-            "species": "SPECIES_PONYTA"
+                "level": 8,
+                "species": "SPECIES_SMOOCHUM"
         },
         {
-            "level": 7,
-            "species": "SPECIES_GEODUDE"
+                "level": 8,
+                "species": "SPECIES_SMOOCHUM"
         }
-    ],
-    "swarms": [
-        "SPECIES_PHANPY",
-        "SPECIES_PHANPY"
-    ],
-    "morning": [
-        "SPECIES_PONYTA",
-        "SPECIES_MACHOP"
-    ],
-    "night": [
-        "SPECIES_KRICKETOT",
-        "SPECIES_ZUBAT"
-    ],
-    "radar": [
-        "SPECIES_STANTLER",
-        "SPECIES_STANTLER",
-        "SPECIES_STANTLER",
-        "SPECIES_STANTLER"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_AIPOM",
+        "SPECIES_MAGBY"
+],
+"night": [
+        "SPECIES_AIPOM",
+        "SPECIES_MAGBY"
+],
+"radar": [
+        "SPECIES_ELEKID",
+        "SPECIES_MUNCHLAX",
+        "SPECIES_SMOOCHUM",
+        "SPECIES_SMOOCHUM"
+],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 14,
-            "species": "SPECIES_BRONZOR"
+                "level": 20,
+                "species": "SPECIES_LUNATONE"
         },
         {
-            "level": 15,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_SOLROCK"
         },
         {
-            "level": 14,
-            "species": "SPECIES_MEDITITE"
+                "level": 20,
+                "species": "SPECIES_CHINGLING"
         },
         {
-            "level": 13,
-            "species": "SPECIES_CLEFFA"
+                "level": 20,
+                "species": "SPECIES_CHINGLING"
         },
         {
-            "level": 16,
-            "species": "SPECIES_MACHOP"
+                "level": 20,
+                "species": "SPECIES_VOLTORB"
         },
         {
-            "level": 16,
-            "species": "SPECIES_MEDITITE"
+                "level": 20,
+                "species": "SPECIES_BRONZOR"
         },
         {
-            "level": 13,
-            "species": "SPECIES_CHINGLING"
+                "level": 20,
+                "species": "SPECIES_CLEFFA"
         },
         {
-            "level": 14,
-            "species": "SPECIES_NOSEPASS"
+                "level": 20,
+                "species": "SPECIES_CLEFFA"
         },
         {
-            "level": 15,
-            "species": "SPECIES_ZUBAT"
+                "level": 20,
+                "species": "SPECIES_ELECTRIKE"
         },
         {
-            "level": 15,
-            "species": "SPECIES_CHINGLING"
+                "level": 20,
+                "species": "SPECIES_MAGNEMITE"
         },
         {
-            "level": 15,
-            "species": "SPECIES_ZUBAT"
+                "level": 20,
+                "species": "SPECIES_ELECTRIKE"
         },
         {
-            "level": 15,
-            "species": "SPECIES_CHINGLING"
+                "level": 20,
+                "species": "SPECIES_MAGNEMITE"
         }
-    ],
-    "swarms": [
-        "SPECIES_BRONZOR",
-        "SPECIES_GEODUDE"
-    ],
-    "morning": [
-        "SPECIES_MEDITITE",
-        "SPECIES_GEODUDE"
-    ],
-    "night": [
-        "SPECIES_ZUBAT",
-        "SPECIES_CLEFFA"
-    ],
-    "radar": [
-        "SPECIES_MACHOP",
-        "SPECIES_MEDITITE",
-        "SPECIES_ZUBAT",
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_CHINGLING",
         "SPECIES_CHINGLING"
-    ],
+],
+"night": [
+        "SPECIES_CHINGLING",
+        "SPECIES_CHINGLING"
+],
+"radar": [
+        "SPECIES_VOLTORB",
+        "SPECIES_BRONZOR",
+        "SPECIES_ELECTRIKE",
+        "SPECIES_MAGNEMITE"
+],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

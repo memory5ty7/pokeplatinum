@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 20,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_GASTLY"
         },
         {
-            "level": 19,
-            "species": "SPECIES_ZUBAT"
+                "level": 20,
+                "species": "SPECIES_DUSKULL"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_DRIFLOON"
         },
         {
-            "level": 19,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_DRIFLOON"
         },
         {
-            "level": 20,
-            "species": "SPECIES_ZUBAT"
+                "level": 20,
+                "species": "SPECIES_SHUPPET"
         },
         {
-            "level": 19,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_SABLEYE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_ZUBAT"
+                "level": 20,
+                "species": "SPECIES_SHUPPET"
         },
         {
-            "level": 22,
-            "species": "SPECIES_GOLBAT"
+                "level": 20,
+                "species": "SPECIES_SABLEYE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_MISDREAVUS"
         },
         {
-            "level": 22,
-            "species": "SPECIES_GOLBAT"
+                "level": 20,
+                "species": "SPECIES_MISDREAVUS"
         },
         {
-            "level": 22,
-            "species": "SPECIES_GASTLY"
+                "level": 20,
+                "species": "SPECIES_MISDREAVUS"
         },
         {
-            "level": 22,
-            "species": "SPECIES_GOLBAT"
+                "level": 20,
+                "species": "SPECIES_MISDREAVUS"
         }
-    ],
-    "swarms": [
-        "SPECIES_GASTLY",
-        "SPECIES_ZUBAT"
-    ],
-    "morning": [
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY"
-    ],
-    "night": [
-        "SPECIES_DUSKULL",
-        "SPECIES_DUSKULL"
-    ],
-    "radar": [
-        "SPECIES_ZUBAT",
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_DRIFLOON",
+        "SPECIES_DRIFLOON"
+],
+"night": [
+        "SPECIES_DRIFLOON",
+        "SPECIES_DRIFLOON"
+],
+"radar": [
+        "SPECIES_SHUPPET",
+        "SPECIES_SABLEYE",
+        "SPECIES_MISDREAVUS",
+        "SPECIES_MISDREAVUS"
+],
     "rate_form0": 100,
     "rate_form1": 100,
     "rate_form2": 0,

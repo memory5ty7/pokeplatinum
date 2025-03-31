@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 19,
-            "species": "SPECIES_STARAVIA"
+                "level": 22,
+                "species": "SPECIES_PSYDUCK"
         },
         {
-            "level": 20,
-            "species": "SPECIES_MARILL"
+                "level": 22,
+                "species": "SPECIES_LOMBRE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_SCYTHER"
+                "level": 22,
+                "species": "SPECIES_HERACROSS"
         },
         {
-            "level": 21,
-            "species": "SPECIES_STARAVIA"
+                "level": 22,
+                "species": "SPECIES_MANKEY"
         },
         {
-            "level": 20,
-            "species": "SPECIES_LICKITUNG"
+                "level": 22,
+                "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 19,
-            "species": "SPECIES_ABRA"
+                "level": 22,
+                "species": "SPECIES_POLIWHIRL"
         },
         {
-            "level": 20,
-            "species": "SPECIES_SCYTHER"
+                "level": 22,
+                "species": "SPECIES_QUAGSIRE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_KADABRA"
+                "level": 22,
+                "species": "SPECIES_QUAGSIRE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_MARILL"
+                "level": 22,
+                "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 22,
-            "species": "SPECIES_KADABRA"
+                "level": 22,
+                "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 22,
-            "species": "SPECIES_MARILL"
+                "level": 22,
+                "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 22,
-            "species": "SPECIES_KADABRA"
+                "level": 22,
+                "species": "SPECIES_KIRLIA"
         }
-    ],
-    "swarms": [
-        "SPECIES_DROWZEE",
-        "SPECIES_DROWZEE"
-    ],
-    "morning": [
-        "SPECIES_STARAVIA",
-        "SPECIES_STARAVIA"
-    ],
-    "night": [
-        "SPECIES_MARILL",
-        "SPECIES_MARILL"
-    ],
-    "radar": [
-        "SPECIES_LICKITUNG",
-        "SPECIES_ABRA",
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_HERACROSS",
+        "SPECIES_MANKEY"
+],
+"night": [
+        "SPECIES_HERACROSS",
+        "SPECIES_MANKEY"
+],
+"radar": [
+        "SPECIES_SHELLOS",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_KIRLIA",
+        "SPECIES_KIRLIA"
+],
     "rate_form0": 100,
     "rate_form1": 100,
     "rate_form2": 0,

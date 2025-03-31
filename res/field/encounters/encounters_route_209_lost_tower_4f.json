@@ -2,71 +2,71 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 19,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_ZUBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 20,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 19,
-            "species": "SPECIES_ZUBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 20,
-            "species": "SPECIES_ZUBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [
-        "SPECIES_GASTLY",
-        "SPECIES_ZUBAT"
+        "SPECIES_NONE",
+        "SPECIES_NONE"
     ],
     "morning": [
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY"
+        "SPECIES_NONE",
+        "SPECIES_NONE"
     ],
     "night": [
-        "SPECIES_DUSKULL",
-        "SPECIES_DUSKULL"
+        "SPECIES_NONE",
+        "SPECIES_NONE"
     ],
     "radar": [
-        "SPECIES_ZUBAT",
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY",
-        "SPECIES_GASTLY"
+        "SPECIES_NONE",
+        "SPECIES_NONE",
+        "SPECIES_NONE",
+        "SPECIES_NONE"
     ],
     "rate_form0": 100,
     "rate_form1": 100,

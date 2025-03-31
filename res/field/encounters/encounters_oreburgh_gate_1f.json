@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 5,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_GEODUDE"
         },
         {
-            "level": 5,
-            "species": "SPECIES_PSYDUCK"
+                "level": 6,
+                "species": "SPECIES_GEODUDE"
         },
         {
-            "level": 6,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_ONIX"
         },
         {
-            "level": 6,
-            "species": "SPECIES_PSYDUCK"
+                "level": 6,
+                "species": "SPECIES_ONIX"
         },
         {
-            "level": 5,
-            "species": "SPECIES_GEODUDE"
+                "level": 6,
+                "species": "SPECIES_ONIX"
         },
         {
-            "level": 5,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 7,
-            "species": "SPECIES_PSYDUCK"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 7,
-            "species": "SPECIES_GEODUDE"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 7,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 8,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 7,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 8,
-            "species": "SPECIES_ZUBAT"
+                "level": 6,
+                "species": "SPECIES_RHYHORN"
         }
-    ],
-    "swarms": [
-        "SPECIES_ZUBAT",
-        "SPECIES_PSYDUCK"
-    ],
-    "morning": [
-        "SPECIES_ZUBAT",
-        "SPECIES_PSYDUCK"
-    ],
-    "night": [
-        "SPECIES_ZUBAT",
-        "SPECIES_PSYDUCK"
-    ],
-    "radar": [
-        "SPECIES_GEODUDE",
-        "SPECIES_ZUBAT",
-        "SPECIES_ZUBAT",
-        "SPECIES_ZUBAT"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_ONIX",
+        "SPECIES_ONIX"
+],
+"night": [
+        "SPECIES_ONIX",
+        "SPECIES_ONIX"
+],
+"radar": [
+        "SPECIES_ONIX",
+        "SPECIES_RHYHORN",
+        "SPECIES_RHYHORN",
+        "SPECIES_RHYHORN"
+],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

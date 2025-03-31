@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 19,
-            "species": "SPECIES_STARAVIA"
+                "level": 20,
+                "species": "SPECIES_ZUBAT"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GEODUDE"
+                "level": 20,
+                "species": "SPECIES_YANMA"
         },
         {
-            "level": 21,
-            "species": "SPECIES_SCYTHER"
+                "level": 20,
+                "species": "SPECIES_LOMBRE"
         },
         {
-            "level": 20,
-            "species": "SPECIES_PONYTA"
+                "level": 20,
+                "species": "SPECIES_LOMBRE"
         },
         {
-            "level": 20,
-            "species": "SPECIES_ROSELIA"
+                "level": 20,
+                "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 19,
-            "species": "SPECIES_PONYTA"
+                "level": 20,
+                "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 19,
-            "species": "SPECIES_SCYTHER"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         },
         {
-            "level": 21,
-            "species": "SPECIES_ROSELIA"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         },
         {
-            "level": 21,
-            "species": "SPECIES_PONYTA"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         },
         {
-            "level": 19,
-            "species": "SPECIES_CHANSEY"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         },
         {
-            "level": 21,
-            "species": "SPECIES_PONYTA"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         },
         {
-            "level": 21,
-            "species": "SPECIES_CHANSEY"
+                "level": 20,
+                "species": "SPECIES_IVYSAUR"
         }
-    ],
-    "swarms": [
-        "SPECIES_STARAVIA",
-        "SPECIES_GEODUDE"
-    ],
-    "morning": [
-        "SPECIES_PONYTA",
-        "SPECIES_PONYTA"
-    ],
-    "night": [
-        "SPECIES_NOCTOWL",
-        "SPECIES_HOOTHOOT"
-    ],
-    "radar": [
-        "SPECIES_MILTANK",
-        "SPECIES_TAUROS",
-        "SPECIES_MILTANK",
-        "SPECIES_TAUROS"
-    ],
+],
+"swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+],
+"morning": [
+        "SPECIES_LOMBRE",
+        "SPECIES_LOMBRE"
+],
+"night": [
+        "SPECIES_LOMBRE",
+        "SPECIES_LOMBRE"
+],
+"radar": [
+        "SPECIES_ROSELIA",
+        "SPECIES_ROSELIA",
+        "SPECIES_IVYSAUR",
+        "SPECIES_IVYSAUR"
+],
     "rate_form0": 100,
     "rate_form1": 100,
     "rate_form2": 0,
