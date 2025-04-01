@@ -27,27 +27,27 @@
         },
         {
                 "level": 4,
+                "species": "SPECIES_VULPIX"
+        },
+        {
+                "level": 4,
+                "species": "SPECIES_VULPIX"
+        },
+        {
+                "level": 4,
+                "species": "SPECIES_MAGBY"
+        },
+        {
+                "level": 4,
                 "species": "SPECIES_PONYTA"
         },
         {
                 "level": 4,
+                "species": "SPECIES_MAGBY"
+        },
+        {
+                "level": 4,
                 "species": "SPECIES_PONYTA"
-        },
-        {
-                "level": 4,
-                "species": "SPECIES_MAGBY"
-        },
-        {
-                "level": 4,
-                "species": "SPECIES_MAGBY"
-        },
-        {
-                "level": 4,
-                "species": "SPECIES_MAGBY"
-        },
-        {
-                "level": 4,
-                "species": "SPECIES_MAGBY"
         }
 ],
 "swarms": [

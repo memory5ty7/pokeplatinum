@@ -99,27 +99,27 @@
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_SEEL"
+                    "species": "SPECIES_WINGULL"
             },
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_HORSEA"
+                    "species": "SPECIES_LAPRAS"
             },
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_SPHEAL"
+                    "species": "SPECIES_DRIFLOON"
             },
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_KRABBY"
+                    "species": "SPECIES_SKIPLOOM"
             },
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_WAILMER"
+                    "species": "SPECIES_PHIONE"
             }
     ],
     "old_rod_rate": 100,
@@ -137,7 +137,7 @@
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_STARYU"
+                    "species": "SPECIES_QWILFISH"
             },
             {
                     "level_max": 5,
@@ -147,7 +147,7 @@
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_QWILFISH"
+                    "species": "SPECIES_STARYU"
             }
     ],
     "good_rod_rate": 100,
@@ -165,7 +165,7 @@
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_SPHEAL"
+                    "species": "SPECIES_WAILMER"
             },
             {
                     "level_max": 5,
@@ -175,7 +175,7 @@
             {
                     "level_max": 5,
                     "level_min": 5,
-                    "species": "SPECIES_WAILMER"
+                    "species": "SPECIES_SPHEAL"
             }
     ],
     "super_rod_rate": 100,

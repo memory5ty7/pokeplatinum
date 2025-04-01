@@ -96,32 +96,32 @@
     ],
     "surf_rate": 30,
     "surf_encounters": [
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_LUVDISC"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_MARILL"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_LOTAD"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_WOOPER"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_PSYDUCK"
-            }
-    ],
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_WINGULL"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_LAPRAS"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_DRIFLOON"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_SKIPLOOM"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_PHIONE"
+        }
+],
     "old_rod_rate": 100,
     "old_rod_encounters": [
             {
