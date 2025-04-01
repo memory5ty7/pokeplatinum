@@ -60,6 +60,9 @@ BOOL MapHeader_IsTrophyGarden(const u32 headerID);
 BOOL MapHeader_IsAmitySquare(const u32 headerID);
 BOOL MapHeader_IsAzureFluteAllowed(const u32 headerID);
 BOOL MapHeader_IsPokemonCenter2F(const u32 headerID);
+
 enum EvolutionMethod MapHeader_GetMapEvolutionMethod(u32 headerID);
+
+u32 MapHeader_SpecialWeathers(u32 weatherID);
 
 #endif // POKEPLATINUM_MAP_HEADER_H

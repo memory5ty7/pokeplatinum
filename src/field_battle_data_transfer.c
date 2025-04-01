@@ -288,6 +288,11 @@ void FieldBattleDTO_InitFromGameState(FieldBattleDTO *dto, const FieldSystem *fi
     dto->unk_124 = sub_02027F8C(save);
     dto->mapHeaderID = mapHeaderID;
     dto->saveData = save;
+
+    int specialWeather = MapHeader_SpecialWeathers(mapHeaderID);
+    if (specialWeather != 100) {
+        dto->fieldWeather = specialWeather;
+    }
 }
 
 void FieldBattleDTO_Init(FieldBattleDTO *dto, const FieldSystem *fieldSystem)
