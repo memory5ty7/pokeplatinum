@@ -11304,10 +11304,16 @@ static const struct Fraction sSafariCatchRate[] = {
  */
 static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    u32 speciesMod;
+
     if (getVar(VAR_DIFFICULTY) & GUARANTEED_CATCH)
     {
-        u32 speciesMod = SpeciesData_GetValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
-        if (BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH || speciesMod != 0 || battleCtx->msgItemTemp == ITEM_MASTER_BALL) {
+        speciesMod = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
+        Desmume_Log("%d\n",speciesMod);
+        Desmume_Log("%d\n",getVar(VAR_DIFFICULTY));
+
+
+        if ((BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH) || (speciesMod != 0) || (battleCtx->msgItemTemp == ITEM_MASTER_BALL)) {
             return 4;
         }
         return 0;
@@ -11317,7 +11323,7 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
         return 4;
     }
 
-    u32 speciesMod;
+    
     if (battleCtx->msgItemTemp == ITEM_SAFARI_BALL) {
         speciesMod = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
         speciesMod = speciesMod * sSafariCatchRate[battleCtx->safariCatchStage].numerator / sSafariCatchRate[battleCtx->safariCatchStage].denominator;

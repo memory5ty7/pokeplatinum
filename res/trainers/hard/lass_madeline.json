@@ -9,49 +9,38 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SKITTY",
+            "species": "SPECIES_CHANSEY",
             "form": 0,
             "level": 13,
-            "item": "ITEM_POWER_HERB",
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
-                "MOVE_FAKE_OUT",
-                "MOVE_DIG"
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_TOXIC",
+                "MOVE_SOFTBOILED"
             ],
-            "power": 238,
+            "power": 230,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SKITTY",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 13,
-            "item": "ITEM_MAGNET",
+            "item": "ITEM_BERRY_JUICE",
             "moves": [
-                "MOVE_FAKE_OUT",
-                "MOVE_THUNDERBOLT"
+                "MOVE_QUICK_ATTACK",
+                "MOVE_CURSE"
             ],
-            "power": 236,
+            "power": 228,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SKITTY",
+            "species": "SPECIES_DELCATTY",
             "form": 0,
             "level": 13,
-            "item": "ITEM_NEVERMELTICE",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_FAKE_OUT",
-                "MOVE_ICE_BEAM"
-            ],
-            "power": 236,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SKITTY",
-            "form": 0,
-            "level": 13,
-            "item": "ITEM_SPELL_TAG",
-            "moves": [
-                "MOVE_FAKE_OUT",
-                "MOVE_SHADOW_BALL"
+                "MOVE_ASSIST"
             ],
             "power": 236,
             "ball_seal": 0

@@ -24,15 +24,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LARVITAR",
+            "species": "SPECIES_SANDSHREW",
             "form": 0,
             "level": 16,
-            "item": "ITEM_FLAME_ORB",
+            "item": "ITEM_EVIOLITE",
             "moves": [
+                "MOVE_BULLDOZE",
                 "MOVE_ROCK_SLIDE",
-                "MOVE_FACADE",
-                "MOVE_PAYBACK",
-                "MOVE_PROTECT"
+                "MOVE_LEECH_LIFE",
+                "MOVE_BODY_SLAM"
             ],
             "power": 238,
             "ball_seal": 0

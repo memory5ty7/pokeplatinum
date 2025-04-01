@@ -33,7 +33,7 @@
         {
             "species": "SPECIES_NIDORAN_F",
             "form": 0,
-            "level": 12,
+            "level": 7,
             "item": "ITEM_MUSCLE_BAND",
             "moves": [
                 "MOVE_SHADOW_CLAW"

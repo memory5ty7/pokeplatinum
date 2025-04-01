@@ -28,9 +28,9 @@
             "item": "ITEM_RINDO_BERRY",
             "moves": [
                 "MOVE_ROCK_TOMB",
-                "MOVE_KNOCK_OFF",
+                "MOVE_BUBBLE_BEAM",
                 "MOVE_AERIAL_ACE",
-                "MOVE_BUBBLE_BEAM"
+                "MOVE_KNOCK_OFF"
             ],
             "power": 289,
             "ball_seal": 0

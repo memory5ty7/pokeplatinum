@@ -151,9 +151,9 @@ void NitroMain(void)
         sub_020241CC();
         SysTaskManager_ExecuteTasks(gSystem.printTaskMgr);
 
-        if (!getFlag(FLAG_UNLIMITED_FPS)) {
+        //if (!getFlag(FLAG_UNLIMITED_FPS)) {
             OS_WaitIrq(TRUE, OS_IE_V_BLANK);
-        }    
+        //}    
 
         gSystem.vblankCounter++;
         gSystem.frameCounter = 0;

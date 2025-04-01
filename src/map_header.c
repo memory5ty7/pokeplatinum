@@ -134,6 +134,18 @@ u32 MapHeader_SpecialWeathers(u32 weatherID)
             default:
                 break;
         }
+    } else {
+        switch (weatherID)
+        {
+            case MAP_HEADER_OREBURGH_CITY_GYM:
+                weather = OVERWORLD_WEATHER_SANDSTORM;
+                break;
+            case MAP_HEADER_ETERNA_CITY_GYM:
+                weather = OVERWORLD_WEATHER_HARSH_SUN;
+                break;
+            default:
+                break;
+        }        
     }
 
     return weather;
