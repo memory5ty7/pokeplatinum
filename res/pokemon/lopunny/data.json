@@ -34,8 +34,8 @@
         "EGG_GROUP_HUMAN_LIKE"
     ],
     "abilities": [
-        "ABILITY_UNBURDEN",
-        "ABILITY_FLARE_BOOST",
+        "ABILITY_IRON_FIST",
+        "ABILITY_SCRAPPY",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

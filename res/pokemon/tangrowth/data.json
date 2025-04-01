@@ -34,9 +34,9 @@
         "EGG_GROUP_GRASS"
     ],
     "abilities": [
-        "ABILITY_OBLIVIOUS",
-        "ABILITY_NONE",
-        "ABILITY_SIMPLE"
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_TANGLING_HAIR",
+        "ABILITY_REGENERATOR"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",

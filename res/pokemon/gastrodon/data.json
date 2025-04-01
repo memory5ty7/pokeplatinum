@@ -34,9 +34,9 @@
         "EGG_GROUP_AMORPHOUS"
     ],
     "abilities": [
-        "ABILITY_FLOWER_GIFT",
-        "ABILITY_NONE",
-        "ABILITY_NONE"
+        "ABILITY_RAIN_DISH",
+        "ABILITY_GOOEY",
+        "ABILITY_STORM_DRAIN"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",

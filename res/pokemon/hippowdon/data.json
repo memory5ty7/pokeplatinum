@@ -34,9 +34,9 @@
         "EGG_GROUP_FIELD"
     ],
     "abilities": [
-        "ABILITY_INNER_FOCUS",
-        "ABILITY_STEADFAST",
-        "ABILITY_NONE"
+        "ABILITY_SAND_FORCE",
+        "ABILITY_NONE",
+        "ABILITY_SAND_STREAM"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",

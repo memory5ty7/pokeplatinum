@@ -34,9 +34,9 @@
         "EGG_GROUP_MINERAL"
     ],
     "abilities": [
-        "ABILITY_MAGNET_PULL",
-        "ABILITY_SAND_FORCE",
-        "ABILITY_STURDY"
+        "ABILITY_SLUSH_RUSH",
+        "ABILITY_NONE",
+        "ABILITY_SNOW_WARNING"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",

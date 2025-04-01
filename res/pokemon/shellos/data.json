@@ -34,8 +34,8 @@
         "EGG_GROUP_AMORPHOUS"
     ],
     "abilities": [
-        "ABILITY_CHLOROPHYLL",
-        "ABILITY_NONE",
+        "ABILITY_RAIN_DISH",
+        "ABILITY_GOOEY",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

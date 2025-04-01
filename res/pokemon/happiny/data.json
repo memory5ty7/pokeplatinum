@@ -34,8 +34,8 @@
         "EGG_GROUP_UNDISCOVERED"
     ],
     "abilities": [
-        "ABILITY_ROCK_HEAD",
-        "ABILITY_NONE",
+        "ABILITY_NATURAL_CURE",
+        "ABILITY_SERENE_GRACE",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

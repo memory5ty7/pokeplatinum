@@ -34,9 +34,9 @@
         "EGG_GROUP_WATER_3"
     ],
     "abilities": [
-        "ABILITY_SAND_FORCE",
+        "ABILITY_BATTLE_ARMOR",
         "ABILITY_NONE",
-        "ABILITY_SAND_STREAM"
+        "ABILITY_SNIPER"
     ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_PURPLE",

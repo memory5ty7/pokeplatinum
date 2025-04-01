@@ -34,8 +34,8 @@
         "EGG_GROUP_BUG"
     ],
     "abilities": [
-        "ABILITY_TINTED_LENS",
-        "ABILITY_NONE",
+        "ABILITY_UNNERVE",
+        "ABILITY_SUPERSWEET_SYRUP",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

@@ -34,8 +34,8 @@
         "EGG_GROUP_MINERAL"
     ],
     "abilities": [
-        "ABILITY_AFTERMATH",
-        "ABILITY_STENCH",
+        "ABILITY_LEVITATE",
+        "ABILITY_HEATPROOF",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

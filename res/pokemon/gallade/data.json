@@ -34,9 +34,9 @@
         "EGG_GROUP_AMORPHOUS"
     ],
     "abilities": [
-        "ABILITY_THICK_FAT",
-        "ABILITY_SLUSH_RUSH",
-        "ABILITY_NONE"
+        "ABILITY_STEADFAST",
+        "ABILITY_SHARPNESS",
+        "ABILITY_INNER_FOCUS"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",

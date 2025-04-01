@@ -34,7 +34,7 @@
         "EGG_GROUP_UNDISCOVERED"
     ],
     "abilities": [
-        "ABILITY_SLOW_START",
+        "ABILITY_MULTITYPE",
         "ABILITY_NONE",
         "ABILITY_NONE"
     ],
