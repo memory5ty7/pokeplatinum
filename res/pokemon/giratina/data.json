@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 120
     },
-    "types": [ "TYPE_GHOST", "TYPE_DRAGON" ],
+    "types": [
+        "TYPE_GHOST",
+        "TYPE_DRAGON"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 220,
     "ev_yields": {
@@ -26,94 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_DRAGON_BREATH" ],
-            [ 1, "MOVE_SCARY_FACE" ],
-            [ 10, "MOVE_OMINOUS_WIND" ],
-            [ 20, "MOVE_ANCIENT_POWER" ],
-            [ 30, "MOVE_DRAGON_CLAW" ],
-            [ 40, "MOVE_SHADOW_FORCE" ],
-            [ 50, "MOVE_HEAL_BLOCK" ],
-            [ 60, "MOVE_EARTH_POWER" ],
-            [ 70, "MOVE_SLASH" ],
-            [ 80, "MOVE_SHADOW_CLAW" ],
-            [ 90, "MOVE_AURA_SPHERE" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM04",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM47",
-            "TM53",
-            "TM57",
-            "TM58",
-            "TM59",
-            "TM61",
-            "TM62",
-            "TM65",
-            "TM66",
-            "TM68",
-            "TM71",
-            "TM73",
-            "TM77",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM02",
-            "HM04",
-            "HM05",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -132,7 +65,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "GIRATINA",
-            "category": "Renegade Pokémon",
+            "category": "Renegade Pok\u00e9mon",
             "entry_text": [
                 "It was banished for its violence.\n",
                 "It silently gazed upon the old\n",
@@ -141,11 +74,11 @@
         },
         "fr": {
             "name": "GIRATINA",
-            "category": "Pokémon Renégat",
+            "category": "Pok\u00e9mon Ren\u00e9gat",
             "entry_text": [
-                "Un Pokémon censé vivre dans un\n",
-                "monde à l’opposé du nôtre. Il\n",
-                "apparaît dans un cimetière ancien."
+                "Un Pok\u00e9mon cens\u00e9 vivre dans un\n",
+                "monde \u00e0 l\u2019oppos\u00e9 du n\u00f4tre. Il\n",
+                "appara\u00eet dans un cimeti\u00e8re ancien."
             ]
         },
         "de": {
@@ -154,21 +87,21 @@
             "entry_text": [
                 "Ein PKMN, von dem man sagt, es lebt\n",
                 "in der Spiegelwelt unserer Welt.\n",
-                "Es erscheint auf alten Friedhöfen."
+                "Es erscheint auf alten Friedh\u00f6fen."
             ]
         },
         "it": {
             "name": "GIRATINA",
-            "category": "Pokémon Ribelle",
+            "category": "Pok\u00e9mon Ribelle",
             "entry_text": [
-                "Pokémon che vive in un mondo sul\n",
+                "Pok\u00e9mon che vive in un mondo sul\n",
                 "lato opposto al nostro. Appare in\n",
                 "cimiteri antichi."
             ]
         },
         "es": {
             "name": "GIRATINA",
-            "category": "Pokémon Renegado",
+            "category": "Pok\u00e9mon Renegado",
             "entry_text": [
                 "Se dice que vive en un mundo\n",
                 "en el lado inverso del nuestro.\n",
@@ -176,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "ギラティナ",
-            "category": "はんこつポケモン",
+            "name": "\u30ae\u30e9\u30c6\u30a3\u30ca",
+            "category": "\u306f\u3093\u3053\u3064\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "このよの　うらがわにある　せかいに\n",
-                "すんでいると　いわれる　ポケモン。\n",
-                "こだいの　はかばに　あらわれる。"
+                "\u3053\u306e\u3088\u306e\u3000\u3046\u3089\u304c\u308f\u306b\u3042\u308b\u3000\u305b\u304b\u3044\u306b\n",
+                "\u3059\u3093\u3067\u3044\u308b\u3068\u3000\u3044\u308f\u308c\u308b\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3053\u3060\u3044\u306e\u3000\u306f\u304b\u3070\u306b\u3000\u3042\u3089\u308f\u308c\u308b\u3002"
             ]
         }
     },

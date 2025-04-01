@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 64,
     "ev_yields": {
@@ -26,66 +29,83 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_OVERGROW", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_OVERGROW",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 7, "MOVE_LEECH_SEED" ],
-            [ 9, "MOVE_VINE_WHIP" ],
-            [ 13, "MOVE_POISON_POWDER" ],
-            [ 13, "MOVE_SLEEP_POWDER" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_RAZOR_LEAF" ],
-            [ 21, "MOVE_SWEET_SCENT" ],
-            [ 25, "MOVE_GROWTH" ],
-            [ 27, "MOVE_DOUBLE_EDGE" ],
-            [ 31, "MOVE_WORRY_SEED" ],
-            [ 33, "MOVE_SYNTHESIS" ],
-            [ 37, "MOVE_SEED_BOMB" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                4,
+                "MOVE_VINE_WHIP"
+            ],
+            [
+                7,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                10,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                13,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                13,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                16,
+                "MOVE_CHARM"
+            ],
+            [
+                19,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                22,
+                "MOVE_SLUDGE"
+            ],
+            [
+                25,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                28,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                31,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                34,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                40,
+                "MOVE_SYNTHESIS"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -112,7 +132,7 @@
         "pokemon_pos_m": 22,
         "en": {
             "name": "BULBASAUR",
-            "category": "Seed Pokémon",
+            "category": "Seed Pok\u00e9mon",
             "entry_text": [
                 "For some time after its birth, it\n",
                 "grows by gaining nourishment from\n",
@@ -121,10 +141,10 @@
         },
         "fr": {
             "name": "BULBIZARRE",
-            "category": "Pokémon Graine",
+            "category": "Pok\u00e9mon Graine",
             "entry_text": [
                 "Au matin de sa vie, la graine sur\n",
-                "son dos lui fournit les éléments\n",
+                "son dos lui fournit les \u00e9l\u00e9ments\n",
                 "dont il a besoin pour grandir."
             ]
         },
@@ -132,14 +152,14 @@
             "name": "BISASAM",
             "category": "Samen",
             "entry_text": [
-                "Nach der Geburt nimmt es für eine\n",
-                "Weile Nährstoffe über den Samen\n",
-                "auf seinem Rücken auf."
+                "Nach der Geburt nimmt es f\u00fcr eine\n",
+                "Weile N\u00e4hrstoffe \u00fcber den Samen\n",
+                "auf seinem R\u00fccken auf."
             ]
         },
         "it": {
             "name": "BULBASAUR",
-            "category": "Pokémon Seme",
+            "category": "Pok\u00e9mon Seme",
             "entry_text": [
                 "Dopo la nascita, cresce traendo\n",
                 "nutrimento dal seme piantato\n",
@@ -148,20 +168,20 @@
         },
         "es": {
             "name": "BULBASAUR",
-            "category": "Pokémon Semilla",
+            "category": "Pok\u00e9mon Semilla",
             "entry_text": [
-                "Después de nacer, crece\n",
-                "alimentándose de las semillas\n",
+                "Despu\u00e9s de nacer, crece\n",
+                "aliment\u00e1ndose de las semillas\n",
                 "de su lomo."
             ]
         },
         "jp": {
-            "name": "フシギダネ",
-            "category": "たねポケモン",
+            "name": "\u30d5\u30b7\u30ae\u30c0\u30cd",
+            "category": "\u305f\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "うまれてから　しばらくの　あいだは\n",
-                "せなかの　タネから　えいようを\n",
-                "もらって　おおきく　そだつ。"
+                "\u3046\u307e\u308c\u3066\u304b\u3089\u3000\u3057\u3070\u3089\u304f\u306e\u3000\u3042\u3044\u3060\u306f\n",
+                "\u305b\u306a\u304b\u306e\u3000\u30bf\u30cd\u304b\u3089\u3000\u3048\u3044\u3088\u3046\u3092\n",
+                "\u3082\u3089\u3063\u3066\u3000\u304a\u304a\u304d\u304f\u3000\u305d\u3060\u3064\u3002"
             ]
         }
     },

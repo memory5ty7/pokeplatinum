@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 80
     },
-    "types": [ "TYPE_BUG", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 128,
     "ev_yields": {
@@ -26,74 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_EFFECT_SPORE", "ABILITY_DRY_SKIN" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_POISON_HEAL",
+        "ABILITY_EFFECT_SPORE",
+        "ABILITY_DRY_SKIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CROSS_POISON" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_STUN_SPORE" ],
-            [ 1, "MOVE_POISON_POWDER" ],
-            [ 1, "MOVE_LEECH_LIFE" ],
-            [ 6, "MOVE_STUN_SPORE" ],
-            [ 6, "MOVE_POISON_POWDER" ],
-            [ 11, "MOVE_LEECH_LIFE" ],
-            [ 17, "MOVE_SPORE" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 30, "MOVE_GROWTH" ],
-            [ 39, "MOVE_GIGA_DRAIN" ],
-            [ 47, "MOVE_AROMATHERAPY" ],
-            [ 55, "MOVE_X_SCISSOR" ]
+            [
+                1,
+                "MOVE_THIEF"
+            ],
+            [
+                6,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                6,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                11,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                16,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_SPORE"
+            ],
+            [
+                24,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                28,
+                "MOVE_RAGE_POWDER"
+            ],
+            [
+                30,
+                "MOVE_TOXIC"
+            ],
+            [
+                32,
+                "MOVE_LEECH_LIFE"
+            ],
+            [
+                36,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                36,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                40,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                45,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                50,
+                "MOVE_WOOD_HAMMER"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM36",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM54",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -112,20 +126,20 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "PARASECT",
-            "category": "Mushroom Pokémon",
+            "category": "Mushroom Pok\u00e9mon",
             "entry_text": [
                 "A mushroom grown larger than the\n",
-                "host’s body controls PARASECT.\n",
+                "host\u2019s body controls PARASECT.\n",
                 "It scatters poisonous spores."
             ]
         },
         "fr": {
             "name": "PARASECT",
-            "category": "Pokémon Champignon",
+            "category": "Pok\u00e9mon Champignon",
             "entry_text": [
                 "Un champignon parasite plus gros\n",
-                "que PARASECT contrôle son corps.\n",
-                "Il répand des spores empoisonnées."
+                "que PARASECT contr\u00f4le son corps.\n",
+                "Il r\u00e9pand des spores empoisonn\u00e9es."
             ]
         },
         "de": {
@@ -133,35 +147,35 @@
             "category": "Pilz",
             "entry_text": [
                 "PARASEK wird von einem Pilz, der\n",
-                "größer als das Pokémon ist,\n",
+                "gr\u00f6\u00dfer als das Pok\u00e9mon ist,\n",
                 "kontrolliert. Er gibt Giftsporen ab."
             ]
         },
         "it": {
             "name": "PARASECT",
-            "category": "Pokémon Fungo",
+            "category": "Pok\u00e9mon Fungo",
             "entry_text": [
-                "PARASECT è controllato da un fungo\n",
-                "ancora più grosso del suo corpo.\n",
+                "PARASECT \u00e8 controllato da un fungo\n",
+                "ancora pi\u00f9 grosso del suo corpo.\n",
                 "Diffonde spore velenose."
             ]
         },
         "es": {
             "name": "PARASECT",
-            "category": "Pokémon Hongo",
+            "category": "Pok\u00e9mon Hongo",
             "entry_text": [
-                "PARASECT está dominado por un\n",
-                "hongo parásito mayor que él.\n",
+                "PARASECT est\u00e1 dominado por un\n",
+                "hongo par\u00e1sito mayor que \u00e9l.\n",
                 "Dispersa esporas venenosas."
             ]
         },
         "jp": {
-            "name": "パラセクト",
-            "category": "きのこポケモン",
+            "name": "\u30d1\u30e9\u30bb\u30af\u30c8",
+            "category": "\u304d\u306e\u3053\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "からだよりも　おおきな　キノコが\n",
-                "パラセクトを　あやつっている。\n",
-                "どくの　ほうしを　ばらまく。"
+                "\u304b\u3089\u3060\u3088\u308a\u3082\u3000\u304a\u304a\u304d\u306a\u3000\u30ad\u30ce\u30b3\u304c\n",
+                "\u30d1\u30e9\u30bb\u30af\u30c8\u3092\u3000\u3042\u3084\u3064\u3063\u3066\u3044\u308b\u3002\n",
+                "\u3069\u304f\u306e\u3000\u307b\u3046\u3057\u3092\u3000\u3070\u3089\u307e\u304f\u3002"
             ]
         }
     },

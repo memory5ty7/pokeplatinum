@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 80
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 170,
     "ev_yields": {
@@ -26,70 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_WATER_VEIL" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_LIGHTNING_ROD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_JAB" ],
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 7, "MOVE_SUPERSONIC" ],
-            [ 11, "MOVE_HORN_ATTACK" ],
-            [ 17, "MOVE_WATER_PULSE" ],
-            [ 21, "MOVE_FLAIL" ],
-            [ 27, "MOVE_AQUA_RING" ],
-            [ 31, "MOVE_FURY_ATTACK" ],
-            [ 40, "MOVE_WATERFALL" ],
-            [ 47, "MOVE_HORN_DRILL" ],
-            [ 56, "MOVE_AGILITY" ],
-            [ 63, "MOVE_MEGAHORN" ]
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                7,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                11,
+                "MOVE_HORN_ATTACK"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                21,
+                "MOVE_FLAIL"
+            ],
+            [
+                27,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                30,
+                "MOVE_SCALD"
+            ],
+            [
+                36,
+                "MOVE_WATERFALL"
+            ],
+            [
+                40,
+                "MOVE_WAVE_CRASH"
+            ],
+            [
+                45,
+                "MOVE_MEGAHORN"
+            ],
+            [
+                50,
+                "MOVE_POISON_JAB"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_BOUNCE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -108,7 +114,7 @@
         "pokemon_pos_m": 65533,
         "en": {
             "name": "SEAKING",
-            "category": "Goldfish Pokémon",
+            "category": "Goldfish Pok\u00e9mon",
             "entry_text": [
                 "In autumn, its body becomes more\n",
                 "fatty in preparing to propose to a\n",
@@ -117,11 +123,11 @@
         },
         "fr": {
             "name": "POISSOROY",
-            "category": "Pokémon Poisson",
+            "category": "Pok\u00e9mon Poisson",
             "entry_text": [
                 "Il niche dans des rochers du \n",
-                "ruisseau qu’il évide avec sa corne.\n",
-                "Il donnerait sa vie pour ses œufs."
+                "ruisseau qu\u2019il \u00e9vide avec sa corne.\n",
+                "Il donnerait sa vie pour ses \u0153ufs."
             ]
         },
         "de": {
@@ -129,13 +135,13 @@
             "category": "Goldfisch",
             "entry_text": [
                 "Es baut Nester, indem es Steine im\n",
-                "Fluss mit seinem Horn aushöhlt. Es\n",
+                "Fluss mit seinem Horn aush\u00f6hlt. Es\n",
                 "verteidigt seine Eier mit dem Leben."
             ]
         },
         "it": {
             "name": "SEAKING",
-            "category": "Pokémon Pescerosso",
+            "category": "Pok\u00e9mon Pescerosso",
             "entry_text": [
                 "Con il suo corno, perfora le rocce\n",
                 "sul letto dei fiumi per farsi il nido.\n",
@@ -144,7 +150,7 @@
         },
         "es": {
             "name": "SEAKING",
-            "category": "Pokémon Pez Color",
+            "category": "Pok\u00e9mon Pez Color",
             "entry_text": [
                 "Hace su nido en los agujeros\n",
                 "que cava con el cuerno. Defiende\n",
@@ -152,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "アズマオウ",
-            "category": "きんぎょポケモン",
+            "name": "\u30a2\u30ba\u30de\u30aa\u30a6",
+            "category": "\u304d\u3093\u304e\u3087\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あたまの　ツノで　かわぞこにある\n",
-                "いわを　くりぬいて　すを　つくる。\n",
-                "タマゴを　いのちがけで　まもる。"
+                "\u3042\u305f\u307e\u306e\u3000\u30c4\u30ce\u3067\u3000\u304b\u308f\u305e\u3053\u306b\u3042\u308b\n",
+                "\u3044\u308f\u3092\u3000\u304f\u308a\u306c\u3044\u3066\u3000\u3059\u3092\u3000\u3064\u304f\u308b\u3002\n",
+                "\u30bf\u30de\u30b4\u3092\u3000\u3044\u306e\u3061\u304c\u3051\u3067\u3000\u307e\u3082\u308b\u3002"
             ]
         }
     },

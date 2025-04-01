@@ -7,7 +7,10 @@
         "special_attack": 81,
         "special_defense": 100
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 178,
     "ev_yields": {
@@ -26,64 +29,89 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_FLASH_FIRE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_FLAME_BODY",
+        "ABILITY_NONE",
+        "ABILITY_DROUGHT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_NASTY_PLOT" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_CONFUSE_RAY" ],
-            [ 1, "MOVE_SAFEGUARD" ]
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_DISABLE"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                5,
+                "MOVE_SPITE"
+            ],
+            [
+                10,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                14,
+                "MOVE_IMPRISON"
+            ],
+            [
+                20,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                30,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                36,
+                "MOVE_ENCORE"
+            ],
+            [
+                40,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                40,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                45,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                55,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                60,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                65,
+                "MOVE_OVERHEAT"
+            ],
+            [
+                95,
+                "MOVE_PSYCH_UP"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM66",
-            "TM68",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -102,7 +130,7 @@
         "pokemon_pos_m": 9,
         "en": {
             "name": "NINETALES",
-            "category": "Fox Pokémon",
+            "category": "Fox Pok\u00e9mon",
             "entry_text": [
                 "Its nine tails are said to be\n",
                 "imbued with a mystic power.\n",
@@ -111,10 +139,10 @@
         },
         "fr": {
             "name": "FEUNARD",
-            "category": "Pokémon Renard",
+            "category": "Pok\u00e9mon Renard",
             "entry_text": [
                 "On raconte que ses neuf queues\n",
-                "détiennent un pouvoir mystique.\n",
+                "d\u00e9tiennent un pouvoir mystique.\n",
                 "Il peut vivre pendant mille ans."
             ]
         },
@@ -123,13 +151,13 @@
             "category": "Fuchs",
             "entry_text": [
                 "Seine neun Schweife sollen\n",
-                "mystische Kräfte besitzen. Es kann\n",
+                "mystische Kr\u00e4fte besitzen. Es kann\n",
                 "tausend Jahre leben."
             ]
         },
         "it": {
             "name": "NINETALES",
-            "category": "Pokémon Volpe",
+            "category": "Pok\u00e9mon Volpe",
             "entry_text": [
                 "Si dice che le sue nove code\n",
                 "posseggano un potere magico.\n",
@@ -138,20 +166,20 @@
         },
         "es": {
             "name": "NINETALES",
-            "category": "Pokémon Zorro",
+            "category": "Pok\u00e9mon Zorro",
             "entry_text": [
-                "Se dice que sus nueve colas están\n",
-                "revestidas de poder místico.\n",
-                "Puede vivir mil años."
+                "Se dice que sus nueve colas est\u00e1n\n",
+                "revestidas de poder m\u00edstico.\n",
+                "Puede vivir mil a\u00f1os."
             ]
         },
         "jp": {
-            "name": "キュウコン",
-            "category": "きつねポケモン",
+            "name": "\u30ad\u30e5\u30a6\u30b3\u30f3",
+            "category": "\u304d\u3064\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "９ほんの　しっぽには　しんぴてきな\n",
-                "ちからが　やどっていると　つたわる。\n",
-                "１０００ねん　いきつづけるらしい。"
+                "\uff19\u307b\u3093\u306e\u3000\u3057\u3063\u307d\u306b\u306f\u3000\u3057\u3093\u3074\u3066\u304d\u306a\n",
+                "\u3061\u304b\u3089\u304c\u3000\u3084\u3069\u3063\u3066\u3044\u308b\u3068\u3000\u3064\u305f\u308f\u308b\u3002\n",
+                "\uff11\uff10\uff10\uff10\u306d\u3093\u3000\u3044\u304d\u3064\u3065\u3051\u308b\u3089\u3057\u3044\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 44,
         "special_defense": 56
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 84,
     "ev_yields": {
@@ -26,77 +29,53 @@
     "hatch_cycles": 20,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_KLUTZ" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_UNBURDEN",
+        "ABILITY_FLARE_BOOST",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 6, "MOVE_ENDURE" ],
-            [ 13, "MOVE_FRUSTRATION" ],
-            [ 16, "MOVE_QUICK_ATTACK" ],
-            [ 23, "MOVE_JUMP_KICK" ],
-            [ 26, "MOVE_BATON_PASS" ],
-            [ 33, "MOVE_AGILITY" ],
-            [ 36, "MOVE_DIZZY_PUNCH" ],
-            [ 43, "MOVE_CHARM" ],
-            [ 46, "MOVE_BOUNCE" ],
-            [ 53, "MOVE_HEALING_WISH" ]
+            [
+                1,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                1,
+                "MOVE_U_TURN"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                12,
+                "MOVE_CHARM"
+            ],
+            [
+                16,
+                "MOVE_LOW_SWEEP"
+            ],
+            [
+                20,
+                "MOVE_JUMP_KICK"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_LAST_RESORT",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS", "SPECIES_LOPUNNY" ]
+        [
+            "EVO_LEVEL_HAPPINESS",
+            "SPECIES_LOPUNNY"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -116,7 +95,7 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "BUNEARY",
-            "category": "Rabbit Pokémon",
+            "category": "Rabbit Pok\u00e9mon",
             "entry_text": [
                 "Its ears are always rolled up. They\n",
                 "can be forcefully extended to\n",
@@ -125,9 +104,9 @@
         },
         "fr": {
             "name": "LAPOREILLE",
-            "category": "Pokémon Lapin",
+            "category": "Pok\u00e9mon Lapin",
             "entry_text": [
-                "Il frappe l’ennemi en déroulant\n",
+                "Il frappe l\u2019ennemi en d\u00e9roulant\n",
                 "violemment ses oreilles. Cela\n",
                 "peut faire pleurer un adulte."
             ]
@@ -143,7 +122,7 @@
         },
         "it": {
             "name": "BUNEARY",
-            "category": "Pokémon Coniglio",
+            "category": "Pok\u00e9mon Coniglio",
             "entry_text": [
                 "Sbaraglia i nemici dispiegando con\n",
                 "forza le orecchie arrotolate. Fa\n",
@@ -152,20 +131,20 @@
         },
         "es": {
             "name": "BUNEARY",
-            "category": "Pokémon Conejo",
+            "category": "Pok\u00e9mon Conejo",
             "entry_text": [
                 "Ataca a sus enemigos con un\n",
-                "golpe rápido de sus orejas. Sus\n",
+                "golpe r\u00e1pido de sus orejas. Sus\n",
                 "picotazos son muy dolorosos."
             ]
         },
         "jp": {
-            "name": "ミミロル",
-            "category": "うさぎポケモン",
+            "name": "\u30df\u30df\u30ed\u30eb",
+            "category": "\u3046\u3055\u304e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "まるめた　みみを　いきおいよく\n",
-                "のばして　あいてに　たたきつける。\n",
-                "おとなでも　とびあがるほど　いたい。"
+                "\u307e\u308b\u3081\u305f\u3000\u307f\u307f\u3092\u3000\u3044\u304d\u304a\u3044\u3088\u304f\n",
+                "\u306e\u3070\u3057\u3066\u3000\u3042\u3044\u3066\u306b\u3000\u305f\u305f\u304d\u3064\u3051\u308b\u3002\n",
+                "\u304a\u3068\u306a\u3067\u3082\u3000\u3068\u3073\u3042\u304c\u308b\u307b\u3069\u3000\u3044\u305f\u3044\u3002"
             ]
         }
     },

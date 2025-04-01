@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_ICE", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 78,
     "ev_yields": {
@@ -26,70 +29,63 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_SNOW_CLOAK" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_NONE",
+        "ABILITY_SLUSH_RUSH"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 4, "MOVE_MUD_SPORT" ],
-            [ 8, "MOVE_POWDER_SNOW" ],
-            [ 13, "MOVE_MUD_SLAP" ],
-            [ 16, "MOVE_ENDURE" ],
-            [ 20, "MOVE_MUD_BOMB" ],
-            [ 25, "MOVE_ICY_WIND" ],
-            [ 28, "MOVE_ICE_SHARD" ],
-            [ 32, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_EARTHQUAKE" ],
-            [ 40, "MOVE_MIST" ],
-            [ 44, "MOVE_BLIZZARD" ],
-            [ 49, "MOVE_AMNESIA" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_MIST"
+            ],
+            [
+                5,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                8,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                11,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                14,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                16,
+                "MOVE_CHARM"
+            ],
+            [
+                22,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                26,
+                "MOVE_AVALANCHE"
+            ],
+            [
+                30,
+                "MOVE_DIG"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM33",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +112,7 @@
         "pokemon_pos_m": 26,
         "en": {
             "name": "SWINUB",
-            "category": "Pig Pokémon",
+            "category": "Pig Pok\u00e9mon",
             "entry_text": [
                 "It has a very sensitive nose. It\n",
                 "can locate mushrooms, berries, and\n",
@@ -125,10 +121,10 @@
         },
         "fr": {
             "name": "MARCACRIN",
-            "category": "Pokémon Cochon",
+            "category": "Pok\u00e9mon Cochon",
             "entry_text": [
                 "Il adore les champignons qui\n",
-                "poussent sous l’herbe morte. Il\n",
+                "poussent sous l\u2019herbe morte. Il\n",
                 "trouve aussi des sources chaudes."
             ]
         },
@@ -138,21 +134,21 @@
             "entry_text": [
                 "Es liebt Pilze, die unter totem Gras\n",
                 "wachsen. Auf der Suche nach\n",
-                "Nahrung findet es heiße Quellen."
+                "Nahrung findet es hei\u00dfe Quellen."
             ]
         },
         "it": {
             "name": "SWINUB",
-            "category": "Pokémon Maiale",
+            "category": "Pok\u00e9mon Maiale",
             "entry_text": [
                 "Ama mangiare i funghi che crescono\n",
-                "sotto l’erba secca. Mentre cerca,\n",
+                "sotto l\u2019erba secca. Mentre cerca,\n",
                 "talvolta trova sorgenti termali."
             ]
         },
         "es": {
             "name": "SWINUB",
-            "category": "Pokémon Cerdo",
+            "category": "Pok\u00e9mon Cerdo",
             "entry_text": [
                 "Le encanta comer las setas que\n",
                 "crecen bajo la hierba seca. A\n",
@@ -160,12 +156,12 @@
             ]
         },
         "jp": {
-            "name": "ウリム－",
-            "category": "いのぶたポケモン",
+            "name": "\u30a6\u30ea\u30e0\uff0d",
+            "category": "\u3044\u306e\u3076\u305f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かれくさの　したに　はえた　キノコが\n",
-                "だいこうぶつ。においで　キノコを\n",
-                "さがすうちに　おんせんを　みつける。"
+                "\u304b\u308c\u304f\u3055\u306e\u3000\u3057\u305f\u306b\u3000\u306f\u3048\u305f\u3000\u30ad\u30ce\u30b3\u304c\n",
+                "\u3060\u3044\u3053\u3046\u3076\u3064\u3002\u306b\u304a\u3044\u3067\u3000\u30ad\u30ce\u30b3\u3092\n",
+                "\u3055\u304c\u3059\u3046\u3061\u306b\u3000\u304a\u3093\u305b\u3093\u3092\u3000\u307f\u3064\u3051\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_GRASS", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 165,
     "ev_yields": {
@@ -26,87 +29,101 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FLUCTUATING",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_EFFECT_SPORE", "ABILITY_POISON_HEAL" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_POISON_HEAL",
+        "ABILITY_EFFECT_SPORE",
+        "ABILITY_TECHNICIAN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_STUN_SPORE" ],
-            [ 1, "MOVE_LEECH_SEED" ],
-            [ 5, "MOVE_TACKLE" ],
-            [ 9, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_LEECH_SEED" ],
-            [ 17, "MOVE_MEGA_DRAIN" ],
-            [ 21, "MOVE_HEADBUTT" ],
-            [ 23, "MOVE_MACH_PUNCH" ],
-            [ 25, "MOVE_COUNTER" ],
-            [ 29, "MOVE_FORCE_PALM" ],
-            [ 33, "MOVE_SKY_UPPERCUT" ],
-            [ 37, "MOVE_MIND_READER" ],
-            [ 41, "MOVE_SEED_BOMB" ],
-            [ 45, "MOVE_DYNAMIC_PUNCH" ]
+            [
+                1,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                1,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_SPORE"
+            ],
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                8,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                12,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                15,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                18,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                21,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                23,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                28,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                33,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                39,
+                "MOVE_FACADE"
+            ],
+            [
+                44,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                50,
+                "MOVE_SKY_UPPERCUT"
+            ],
+            [
+                55,
+                "MOVE_SUPERPOWER"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM36",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM49",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -125,7 +142,7 @@
         "pokemon_pos_m": 8,
         "en": {
             "name": "BRELOOM",
-            "category": "Mushroom Pokémon",
+            "category": "Mushroom Pok\u00e9mon",
             "entry_text": [
                 "Its short arms stretch when it\n",
                 "throws punches. Its technique is\n",
@@ -134,11 +151,11 @@
         },
         "fr": {
             "name": "CHAPIGNON",
-            "category": "Pokémon Champignon",
+            "category": "Pok\u00e9mon Champignon",
             "entry_text": [
-                "Ses petits bras s’étendent quand il\n",
+                "Ses petits bras s\u2019\u00e9tendent quand il\n",
                 "donne un coup de poing. Son talent\n",
-                "égale celui d’un boxeur pro."
+                "\u00e9gale celui d\u2019un boxeur pro."
             ]
         },
         "de": {
@@ -146,13 +163,13 @@
             "category": "Pilz",
             "entry_text": [
                 "Seine kurzen Arme dehnen sich aus,\n",
-                "wenn es zuschlägt. Seine Technik\n",
-                "ähnelt der von Profi-Boxern."
+                "wenn es zuschl\u00e4gt. Seine Technik\n",
+                "\u00e4hnelt der von Profi-Boxern."
             ]
         },
         "it": {
             "name": "BRELOOM",
-            "category": "Pokémon Fungo",
+            "category": "Pok\u00e9mon Fungo",
             "entry_text": [
                 "Tirando pugni, i suoi cortissimi arti\n",
                 "si allungano. Usa una tecnica simile\n",
@@ -161,20 +178,20 @@
         },
         "es": {
             "name": "BRELOOM",
-            "category": "Pokémon Hongo",
+            "category": "Pok\u00e9mon Hongo",
             "entry_text": [
                 "Sus cortos brazos se expanden\n",
-                "cuando da puñetazos. Tiene una\n",
-                "técnica pugilística muy depurada."
+                "cuando da pu\u00f1etazos. Tiene una\n",
+                "t\u00e9cnica pugil\u00edstica muy depurada."
             ]
         },
         "jp": {
-            "name": "キノガッサ",
-            "category": "きのこポケモン",
+            "name": "\u30ad\u30ce\u30ac\u30c3\u30b5",
+            "category": "\u304d\u306e\u3053\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "みじかい　うでは　パンチを　だすとき\n",
-                "ぐ－んと　のびる。プロボクサ－\n",
-                "かおまけの　テクニックを　もつ。"
+                "\u307f\u3058\u304b\u3044\u3000\u3046\u3067\u306f\u3000\u30d1\u30f3\u30c1\u3092\u3000\u3060\u3059\u3068\u304d\n",
+                "\u3050\uff0d\u3093\u3068\u3000\u306e\u3073\u308b\u3002\u30d7\u30ed\u30dc\u30af\u30b5\uff0d\n",
+                "\u304b\u304a\u307e\u3051\u306e\u3000\u30c6\u30af\u30cb\u30c3\u30af\u3092\u3000\u3082\u3064\u3002"
             ]
         }
     },

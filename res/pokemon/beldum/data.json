@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 60
     },
-    "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 103,
     "ev_yields": {
@@ -26,21 +29,31 @@
     "hatch_cycles": 40,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_CLEAR_BODY",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TAKE_DOWN" ]
+            [
+                1,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                20,
+                "MOVE_SMART_STRIKE"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [
-            "MOVE_IRON_HEAD",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_IRON_DEFENSE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -67,7 +80,7 @@
         "pokemon_pos_m": 65529,
         "en": {
             "name": "BELDUM",
-            "category": "Iron Ball Pokémon",
+            "category": "Iron Ball Pok\u00e9mon",
             "entry_text": [
                 "It converses with others by using\n",
                 "magnetic pulses. In a swarm, they\n",
@@ -76,11 +89,11 @@
         },
         "fr": {
             "name": "TERHAL",
-            "category": "Pokémon Boulefer",
+            "category": "Pok\u00e9mon Boulefer",
             "entry_text": [
                 "Il dialogue avec les siens par \n",
-                "impulsions magnétiques. En bande,\n",
-                "ils se déplacent à l’unisson."
+                "impulsions magn\u00e9tiques. En bande,\n",
+                "ils se d\u00e9placent \u00e0 l\u2019unisson."
             ]
         },
         "de": {
@@ -94,7 +107,7 @@
         },
         "it": {
             "name": "BELDUM",
-            "category": "Pokémon Ferrosfera",
+            "category": "Pok\u00e9mon Ferrosfera",
             "entry_text": [
                 "Comunica con i suoi simili mediante\n",
                 "onde magnetiche. I gruppi di BELDUM\n",
@@ -103,20 +116,20 @@
         },
         "es": {
             "name": "BELDUM",
-            "category": "Pokémon Bola Hierro",
+            "category": "Pok\u00e9mon Bola Hierro",
             "entry_text": [
                 "Se comunican mediante pulsos\n",
-                "magnéticos. Cuando van en\n",
-                "grupos, se mueven al unísono."
+                "magn\u00e9ticos. Cuando van en\n",
+                "grupos, se mueven al un\u00edsono."
             ]
         },
         "jp": {
-            "name": "ダンバル",
-            "category": "てっきゅうポケモン",
+            "name": "\u30c0\u30f3\u30d0\u30eb",
+            "category": "\u3066\u3063\u304d\u3085\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "じりょくの　はちょうで　なかまと\n",
-                "かいわする。むれになった　ダンバルは\n",
-                "いっしみだれぬ　うごきを　する。"
+                "\u3058\u308a\u3087\u304f\u306e\u3000\u306f\u3061\u3087\u3046\u3067\u3000\u306a\u304b\u307e\u3068\n",
+                "\u304b\u3044\u308f\u3059\u308b\u3002\u3080\u308c\u306b\u306a\u3063\u305f\u3000\u30c0\u30f3\u30d0\u30eb\u306f\n",
+                "\u3044\u3063\u3057\u307f\u3060\u308c\u306c\u3000\u3046\u3054\u304d\u3092\u3000\u3059\u308b\u3002"
             ]
         }
     },

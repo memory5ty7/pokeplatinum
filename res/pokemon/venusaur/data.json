@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 100
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 208,
     "ev_yields": {
@@ -26,78 +29,97 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_OVERGROW", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_OVERGROW",
+        "ABILITY_THICK_FAT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_LEECH_SEED" ],
-            [ 1, "MOVE_VINE_WHIP" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 7, "MOVE_LEECH_SEED" ],
-            [ 9, "MOVE_VINE_WHIP" ],
-            [ 13, "MOVE_POISON_POWDER" ],
-            [ 13, "MOVE_SLEEP_POWDER" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 20, "MOVE_RAZOR_LEAF" ],
-            [ 23, "MOVE_SWEET_SCENT" ],
-            [ 28, "MOVE_GROWTH" ],
-            [ 31, "MOVE_DOUBLE_EDGE" ],
-            [ 32, "MOVE_PETAL_DANCE" ],
-            [ 39, "MOVE_WORRY_SEED" ],
-            [ 45, "MOVE_SYNTHESIS" ],
-            [ 53, "MOVE_SOLAR_BEAM" ]
+            [
+                1,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                4,
+                "MOVE_VINE_WHIP"
+            ],
+            [
+                7,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                10,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                13,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                13,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                16,
+                "MOVE_CHARM"
+            ],
+            [
+                19,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                22,
+                "MOVE_SLUDGE"
+            ],
+            [
+                25,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                28,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                31,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                34,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                37,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                40,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                45,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BEAM"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -116,20 +138,20 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "VENUSAUR",
-            "category": "Seed Pokémon",
+            "category": "Seed Pok\u00e9mon",
             "entry_text": [
                 "After a rainy day, the flower on\n",
                 "its back smells stronger. The\n",
-                "scent attracts other Pokémon."
+                "scent attracts other Pok\u00e9mon."
             ]
         },
         "fr": {
             "name": "FLORIZARRE",
-            "category": "Pokémon Graine",
+            "category": "Pok\u00e9mon Graine",
             "entry_text": [
                 "Le parfum de sa fleur se fait plus\n",
-                "pénétrant les lendemains de pluie.\n",
-                "Cela appâte les autres Pokémon."
+                "p\u00e9n\u00e9trant les lendemains de pluie.\n",
+                "Cela app\u00e2te les autres Pok\u00e9mon."
             ]
         },
         "de": {
@@ -137,35 +159,35 @@
             "category": "Samen",
             "entry_text": [
                 "Nach einem Regentag riecht die\n",
-                "Blume auf seinem Rücken intensiver.\n",
-                "Das Aroma zieht andere Pokémon an."
+                "Blume auf seinem R\u00fccken intensiver.\n",
+                "Das Aroma zieht andere Pok\u00e9mon an."
             ]
         },
         "it": {
             "name": "VENUSAUR",
-            "category": "Pokémon Seme",
+            "category": "Pok\u00e9mon Seme",
             "entry_text": [
                 "Dopo la pioggia, il fiore sul suo\n",
-                "dorso emana un profumo più\n",
-                "intenso e attira gli altri Pokémon."
+                "dorso emana un profumo pi\u00f9\n",
+                "intenso e attira gli altri Pok\u00e9mon."
             ]
         },
         "es": {
             "name": "VENUSAUR",
-            "category": "Pokémon Semilla",
+            "category": "Pok\u00e9mon Semilla",
             "entry_text": [
-                "Después de un día de lluvia, la flor\n",
-                "de su lomo tiene un aroma más\n",
-                "potente y atrae a otros Pokémon."
+                "Despu\u00e9s de un d\u00eda de lluvia, la flor\n",
+                "de su lomo tiene un aroma m\u00e1s\n",
+                "potente y atrae a otros Pok\u00e9mon."
             ]
         },
         "jp": {
-            "name": "フシギバナ",
-            "category": "たねポケモン",
+            "name": "\u30d5\u30b7\u30ae\u30d0\u30ca",
+            "category": "\u305f\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あめの　ふった　よくじつは　せなかの\n",
-                "はなの　かおりが　つよまる。かおりに\n",
-                "さそわれ　ポケモンが　あつまる。"
+                "\u3042\u3081\u306e\u3000\u3075\u3063\u305f\u3000\u3088\u304f\u3058\u3064\u306f\u3000\u305b\u306a\u304b\u306e\n",
+                "\u306f\u306a\u306e\u3000\u304b\u304a\u308a\u304c\u3000\u3064\u3088\u307e\u308b\u3002\u304b\u304a\u308a\u306b\n",
+                "\u3055\u305d\u308f\u308c\u3000\u30dd\u30b1\u30e2\u30f3\u304c\u3000\u3042\u3064\u307e\u308b\u3002"
             ]
         }
     },

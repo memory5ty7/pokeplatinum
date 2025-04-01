@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 165,
     "ev_yields": {
@@ -26,97 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_IMMUNITY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_TOXIC_BOOST",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 9, "MOVE_SWORDS_DANCE" ],
-            [ 14, "MOVE_FURY_CUTTER" ],
-            [ 18, "MOVE_SLASH" ],
-            [ 22, "MOVE_PURSUIT" ],
-            [ 27, "MOVE_EMBARGO" ],
-            [ 31, "MOVE_CRUSH_CLAW" ],
-            [ 35, "MOVE_TAUNT" ],
-            [ 40, "MOVE_DETECT" ],
-            [ 44, "MOVE_FALSE_SWIPE" ],
-            [ 48, "MOVE_X_SCISSOR" ],
-            [ 53, "MOVE_CLOSE_COMBAT" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                8,
+                "MOVE_FURY_CUTTER"
+            ],
+            [
+                12,
+                "MOVE_PURSUIT"
+            ],
+            [
+                17,
+                "MOVE_SLASH"
+            ],
+            [
+                22,
+                "MOVE_REVENGE"
+            ],
+            [
+                26,
+                "MOVE_CRUSH_CLAW"
+            ],
+            [
+                29,
+                "MOVE_FALSE_SWIPE"
+            ],
+            [
+                32,
+                "MOVE_EMBARGO"
+            ],
+            [
+                36,
+                "MOVE_DETECT"
+            ],
+            [
+                40,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                43,
+                "MOVE_TAUNT"
+            ],
+            [
+                50,
+                "MOVE_FACADE"
+            ],
+            [
+                56,
+                "MOVE_CLOSE_COMBAT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM63",
-            "TM65",
-            "TM66",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_LAST_RESORT",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -135,7 +126,7 @@
         "pokemon_pos_m": 8,
         "en": {
             "name": "ZANGOOSE",
-            "category": "Cat Ferret Pokémon",
+            "category": "Cat Ferret Pok\u00e9mon",
             "entry_text": [
                 "It has feuded with SEVIPER for\n",
                 "many generations. Its sharp claws\n",
@@ -144,11 +135,11 @@
         },
         "fr": {
             "name": "MANGRIFF",
-            "category": "Pokémon Chat Furet",
+            "category": "Pok\u00e9mon Chat Furet",
             "entry_text": [
-                "C’est le rival de SEVIPER depuis\n",
-                "des générations. Ses griffes\n",
-                "aiguisées sont son meilleur atout."
+                "C\u2019est le rival de SEVIPER depuis\n",
+                "des g\u00e9n\u00e9rations. Ses griffes\n",
+                "aiguis\u00e9es sont son meilleur atout."
             ]
         },
         "de": {
@@ -157,34 +148,34 @@
             "entry_text": [
                 "Seit Generationen ist es mit\n",
                 "VIPITIS verfeindet. Seine scharfen\n",
-                "Klauen sind seine stärksten Waffen."
+                "Klauen sind seine st\u00e4rksten Waffen."
             ]
         },
         "it": {
             "name": "ZANGOOSE",
-            "category": "Pokémon Furogatto",
+            "category": "Pok\u00e9mon Furogatto",
             "entry_text": [
-                "Da generazioni, è acerrimo nemico\n",
+                "Da generazioni, \u00e8 acerrimo nemico\n",
                 "di SEVIPER. Gli artigli aguzzi sono\n",
-                "le sue armi più potenti."
+                "le sue armi pi\u00f9 potenti."
             ]
         },
         "es": {
             "name": "ZANGOOSE",
-            "category": "Pokémon Gato Hurón",
+            "category": "Pok\u00e9mon Gato Hur\u00f3n",
             "entry_text": [
-                "Hace muchos años que se\n",
-                "enfrenta a SEVIPER. Su arma más\n",
+                "Hace muchos a\u00f1os que se\n",
+                "enfrenta a SEVIPER. Su arma m\u00e1s\n",
                 "eficaz son sus zarpas afiladas."
             ]
         },
         "jp": {
-            "name": "ザング－ス",
-            "category": "ネコイタチポケモン",
+            "name": "\u30b6\u30f3\u30b0\uff0d\u30b9",
+            "category": "\u30cd\u30b3\u30a4\u30bf\u30c1\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なんせだいにも　わたって\n",
-                "ハブネ－クと　たたかってきた。\n",
-                "するどい　ツメが　さいだいの　ぶき。"
+                "\u306a\u3093\u305b\u3060\u3044\u306b\u3082\u3000\u308f\u305f\u3063\u3066\n",
+                "\u30cf\u30d6\u30cd\uff0d\u30af\u3068\u3000\u305f\u305f\u304b\u3063\u3066\u304d\u305f\u3002\n",
+                "\u3059\u308b\u3069\u3044\u3000\u30c4\u30e1\u304c\u3000\u3055\u3044\u3060\u3044\u306e\u3000\u3076\u304d\u3002"
             ]
         }
     },

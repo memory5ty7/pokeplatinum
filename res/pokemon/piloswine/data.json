@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_ICE", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 160,
     "ev_yields": {
@@ -26,78 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_SNOW_CLOAK" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_NONE",
+        "ABILITY_SLUSH_RUSH"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ANCIENT_POWER" ],
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 4, "MOVE_MUD_SPORT" ],
-            [ 8, "MOVE_POWDER_SNOW" ],
-            [ 13, "MOVE_MUD_SLAP" ],
-            [ 16, "MOVE_ENDURE" ],
-            [ 20, "MOVE_MUD_BOMB" ],
-            [ 25, "MOVE_ICY_WIND" ],
-            [ 28, "MOVE_ICE_FANG" ],
-            [ 32, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_FURY_ATTACK" ],
-            [ 40, "MOVE_EARTHQUAKE" ],
-            [ 48, "MOVE_MIST" ],
-            [ 56, "MOVE_BLIZZARD" ],
-            [ 65, "MOVE_AMNESIA" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_MIST"
+            ],
+            [
+                5,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                8,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                11,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                14,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                16,
+                "MOVE_CHARM"
+            ],
+            [
+                22,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                26,
+                "MOVE_AVALANCHE"
+            ],
+            [
+                30,
+                "MOVE_DIG"
+            ],
+            [
+                36,
+                "MOVE_ANCIENT_POWER"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM33",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM68",
-            "TM71",
-            "TM72",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -124,7 +116,7 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "PILOSWINE",
-            "category": "Swine Pokémon",
+            "category": "Swine Pok\u00e9mon",
             "entry_text": [
                 "Covered by a shaggy coat, it is\n",
                 "strong against the cold. Its tusks\n",
@@ -133,11 +125,11 @@
         },
         "fr": {
             "name": "COCHIGNON",
-            "category": "Pokémon Porc",
+            "category": "Pok\u00e9mon Porc",
             "entry_text": [
-                "Il ne voit rien à cause de sa\n",
-                "fourrure touffue et se repère\n",
-                "à l’aide de son nez délicat."
+                "Il ne voit rien \u00e0 cause de sa\n",
+                "fourrure touffue et se rep\u00e8re\n",
+                "\u00e0 l\u2019aide de son nez d\u00e9licat."
             ]
         },
         "de": {
@@ -151,16 +143,16 @@
         },
         "it": {
             "name": "PILOSWINE",
-            "category": "Pokémon Suino",
+            "category": "Pok\u00e9mon Suino",
             "entry_text": [
-                "Poiché il lungo pelo gli impedisce di\n",
+                "Poich\u00e9 il lungo pelo gli impedisce di\n",
                 "vedere, sonda il terreno circo-\n",
                 "stante con il sensibilissimo naso."
             ]
         },
         "es": {
             "name": "PILOSWINE",
-            "category": "Pokémon Puerco",
+            "category": "Pok\u00e9mon Puerco",
             "entry_text": [
                 "Como su pelaje le impide ver,\n",
                 "estudia lo que le rodea con su\n",
@@ -168,12 +160,12 @@
             ]
         },
         "jp": {
-            "name": "イノム－",
-            "category": "いのししポケモン",
+            "name": "\u30a4\u30ce\u30e0\uff0d",
+            "category": "\u3044\u306e\u3057\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ながい　たいもうで　おおわれていて\n",
-                "めが　みえないが　びんかんな　はなを\n",
-                "つかって　まわりの　ようすを　しる。"
+                "\u306a\u304c\u3044\u3000\u305f\u3044\u3082\u3046\u3067\u3000\u304a\u304a\u308f\u308c\u3066\u3044\u3066\n",
+                "\u3081\u304c\u3000\u307f\u3048\u306a\u3044\u304c\u3000\u3073\u3093\u304b\u3093\u306a\u3000\u306f\u306a\u3092\n",
+                "\u3064\u304b\u3063\u3066\u3000\u307e\u308f\u308a\u306e\u3000\u3088\u3046\u3059\u3092\u3000\u3057\u308b\u3002"
             ]
         }
     },

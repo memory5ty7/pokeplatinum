@@ -7,7 +7,10 @@
         "special_attack": 79,
         "special_defense": 105
     },
-    "types": [ "TYPE_BUG", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 159,
     "ev_yields": {
@@ -26,73 +29,89 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_ANTICIPATION", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_FILTER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 10, "MOVE_PROTECT" ],
-            [ 15, "MOVE_BUG_BITE" ],
-            [ 20, "MOVE_HIDDEN_POWER" ],
-            [ 23, "MOVE_CONFUSION" ],
-            [ 26, "MOVE_RAZOR_LEAF" ],
-            [ 29, "MOVE_GROWTH" ],
-            [ 32, "MOVE_PSYBEAM" ],
-            [ 35, "MOVE_CAPTIVATE" ],
-            [ 38, "MOVE_FLAIL" ],
-            [ 41, "MOVE_ATTRACT" ],
-            [ 44, "MOVE_PSYCHIC" ],
-            [ 47, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_PROTECT"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                1,
+                "MOVE_HIDDEN_POWER"
+            ],
+            [
+                20,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                23,
+                "MOVE_CONFUSION"
+            ],
+            [
+                26,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                30,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                32,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                32,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                32,
+                "MOVE_FLASH_CANNON"
+            ],
+            [
+                40,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                45,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                50,
+                "MOVE_WOOD_HAMMER"
+            ],
+            [
+                50,
+                "MOVE_FISSURE"
+            ],
+            [
+                50,
+                "MOVE_IRON_HEAD"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_SYNTHESIS",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_SEED_BOMB",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -111,7 +130,7 @@
         "pokemon_pos_m": 65524,
         "en": {
             "name": "WORMADAM",
-            "category": "Bagworm Pokémon",
+            "category": "Bagworm Pok\u00e9mon",
             "entry_text": [
                 "When evolving, its body takes in\n",
                 "surrounding materials. As a result,\n",
@@ -120,11 +139,11 @@
         },
         "fr": {
             "name": "CHENISELLE",
-            "category": "Pokémon Ver Caché",
+            "category": "Pok\u00e9mon Ver Cach\u00e9",
             "entry_text": [
-                "Quand CHENITI a évolué, sa\n",
-                "cape a fusionné avec son corps.\n",
-                "CHENISELLE ne s’en sépare jamais."
+                "Quand CHENITI a \u00e9volu\u00e9, sa\n",
+                "cape a fusionn\u00e9 avec son corps.\n",
+                "CHENISELLE ne s\u2019en s\u00e9pare jamais."
             ]
         },
         "de": {
@@ -132,35 +151,35 @@
             "category": "Beutelwurm",
             "entry_text": [
                 "Als sich BURMY entwickelte,\n",
-                "wurde sein Umhang Teil des Körpers.\n",
+                "wurde sein Umhang Teil des K\u00f6rpers.\n",
                 "Es legt den Umhang niemals ab."
             ]
         },
         "it": {
             "name": "WORMADAM",
-            "category": "Pokémon Larva",
+            "category": "Pok\u00e9mon Larva",
             "entry_text": [
-                "Con l’evoluzione, il manto di BURMY\n",
+                "Con l\u2019evoluzione, il manto di BURMY\n",
                 "diventa parte del corpo di questo\n",
-                "Pokémon. Non se ne separa mai."
+                "Pok\u00e9mon. Non se ne separa mai."
             ]
         },
         "es": {
             "name": "WORMADAM",
-            "category": "Pokémon Larva",
+            "category": "Pok\u00e9mon Larva",
             "entry_text": [
-                "Cuando BURMY evolucionó,\n",
-                "su caparazón pasó a formar parte\n",
-                "de este Pokémon."
+                "Cuando BURMY evolucion\u00f3,\n",
+                "su caparaz\u00f3n pas\u00f3 a formar parte\n",
+                "de este Pok\u00e9mon."
             ]
         },
         "jp": {
-            "name": "ミノマダム",
-            "category": "みのむしポケモン",
+            "name": "\u30df\u30ce\u30de\u30c0\u30e0",
+            "category": "\u307f\u306e\u3080\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ミノムッチから　しんかしたとき\n",
-                "ミノが　からだの　いちぶに　なった。\n",
-                "いっしょう　ミノを　ぬぐことはない。"
+                "\u30df\u30ce\u30e0\u30c3\u30c1\u304b\u3089\u3000\u3057\u3093\u304b\u3057\u305f\u3068\u304d\n",
+                "\u30df\u30ce\u304c\u3000\u304b\u3089\u3060\u306e\u3000\u3044\u3061\u3076\u306b\u3000\u306a\u3063\u305f\u3002\n",
+                "\u3044\u3063\u3057\u3087\u3046\u3000\u30df\u30ce\u3092\u3000\u306c\u3050\u3053\u3068\u306f\u306a\u3044\u3002"
             ]
         }
     },

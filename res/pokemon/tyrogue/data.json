@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 35
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 91,
     "ev_yields": {
@@ -26,53 +29,39 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_STEADFAST" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_STEADFAST",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 1, "MOVE_FAKE_OUT" ],
-            [ 1, "MOVE_FORESIGHT" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                1,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                1,
+                "MOVE_FORESIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM58",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -109,7 +98,7 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "TYROGUE",
-            "category": "Scuffle Pokémon",
+            "category": "Scuffle Pok\u00e9mon",
             "entry_text": [
                 "It is famous for its eagerness to\n",
                 "fight and always nurses injuries\n",
@@ -118,10 +107,10 @@
         },
         "fr": {
             "name": "DEBUGANT",
-            "category": "Pokémon Bagarreur",
+            "category": "Pok\u00e9mon Bagarreur",
             "entry_text": [
-                "Il est réputé pour sa combativité.\n",
-                "Il se blesse toujours en défiant\n",
+                "Il est r\u00e9put\u00e9 pour sa combativit\u00e9.\n",
+                "Il se blesse toujours en d\u00e9fiant\n",
                 "des ennemis plus grands."
             ]
         },
@@ -129,36 +118,36 @@
             "name": "RABAUZ",
             "category": "Racker",
             "entry_text": [
-                "Es ist bekannt für seine Kampfbe-\n",
-                "gierde. Es erholt sich ständig von\n",
+                "Es ist bekannt f\u00fcr seine Kampfbe-\n",
+                "gierde. Es erholt sich st\u00e4ndig von\n",
                 "Verletzungen."
             ]
         },
         "it": {
             "name": "TYROGUE",
-            "category": "Pokémon Baruffa",
+            "category": "Pok\u00e9mon Baruffa",
             "entry_text": [
-                "È famoso per la sua brama di lotta.\n",
+                "\u00c8 famoso per la sua brama di lotta.\n",
                 "Subisce sempre ferite dai nemici\n",
-                "più forti di lui che sfida."
+                "pi\u00f9 forti di lui che sfida."
             ]
         },
         "es": {
             "name": "TYROGUE",
-            "category": "Pokémon Peleón",
+            "category": "Pok\u00e9mon Pele\u00f3n",
             "entry_text": [
-                "Famoso por su disposición a la\n",
+                "Famoso por su disposici\u00f3n a la\n",
                 "lucha. Siempre tiene heridas por\n",
-                "luchar con enemigos más grandes."
+                "luchar con enemigos m\u00e1s grandes."
             ]
         },
         "jp": {
-            "name": "バルキ－",
-            "category": "けんかポケモン",
+            "name": "\u30d0\u30eb\u30ad\uff0d",
+            "category": "\u3051\u3093\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "けんかっぱやいことで　ゆうめい。\n",
-                "じぶんよりも　おおきな　あいてに\n",
-                "いどみかかるので　きずが　たえない。"
+                "\u3051\u3093\u304b\u3063\u3071\u3084\u3044\u3053\u3068\u3067\u3000\u3086\u3046\u3081\u3044\u3002\n",
+                "\u3058\u3076\u3093\u3088\u308a\u3082\u3000\u304a\u304a\u304d\u306a\u3000\u3042\u3044\u3066\u306b\n",
+                "\u3044\u3069\u307f\u304b\u304b\u308b\u306e\u3067\u3000\u304d\u305a\u304c\u3000\u305f\u3048\u306a\u3044\u3002"
             ]
         }
     },

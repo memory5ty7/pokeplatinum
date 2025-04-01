@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 100
     },
-    "types": [ "TYPE_POISON", "TYPE_POISON" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_POISON"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 157,
     "ev_yields": {
@@ -26,86 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_STENCH", "ABILITY_STICKY_HOLD" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_NONE",
+        "ABILITY_GLUTTONY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_POISON_GAS" ],
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 7, "MOVE_MUD_SLAP" ],
-            [ 12, "MOVE_DISABLE" ],
-            [ 17, "MOVE_MINIMIZE" ],
-            [ 20, "MOVE_SLUDGE" ],
-            [ 23, "MOVE_MUD_BOMB" ],
-            [ 28, "MOVE_FLING" ],
-            [ 33, "MOVE_SCREECH" ],
-            [ 36, "MOVE_SLUDGE_BOMB" ],
-            [ 44, "MOVE_ACID_ARMOR" ],
-            [ 54, "MOVE_GUNK_SHOT" ],
-            [ 65, "MOVE_MEMENTO" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM36",
-            "TM38",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM68",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_GUNK_SHOT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -124,7 +65,7 @@
         "pokemon_pos_m": 6,
         "en": {
             "name": "MUK",
-            "category": "Sludge Pokémon",
+            "category": "Sludge Pok\u00e9mon",
             "entry_text": [
                 "A toxic fluid seeps from its body.\n",
                 "The fluid instantly kills plants and\n",
@@ -133,10 +74,10 @@
         },
         "fr": {
             "name": "GROTADMORV",
-            "category": "Pokémon Dégueu",
+            "category": "Pok\u00e9mon D\u00e9gueu",
             "entry_text": [
                 "Son corps exsude un fluide toxique\n",
-                "qui tue instantanément les plantes\n",
+                "qui tue instantan\u00e9ment les plantes\n",
                 "et les arbres au contact."
             ]
         },
@@ -144,36 +85,36 @@
             "name": "SLEIMOK",
             "category": "Schlamm",
             "entry_text": [
-                "Sein Körper sondert eine giftige\n",
+                "Sein K\u00f6rper sondert eine giftige\n",
                 "Substanz ab, die bei Kontakt\n",
-                "Pflanzen und Bäume vernichtet."
+                "Pflanzen und B\u00e4ume vernichtet."
             ]
         },
         "it": {
             "name": "MUK",
-            "category": "Pokémon Melma",
+            "category": "Pok\u00e9mon Melma",
             "entry_text": [
                 "Dal suo corpo filtra un fluido tos-\n",
-                "sico che uccide all’istante piante e\n",
+                "sico che uccide all\u2019istante piante e\n",
                 "alberi con cui viene a contatto."
             ]
         },
         "es": {
             "name": "MUK",
-            "category": "Pokémon Lodo",
+            "category": "Pok\u00e9mon Lodo",
             "entry_text": [
                 "Su cuerpo segrega un fluido\n",
-                "tóxico que elimina la vida vegetal\n",
+                "t\u00f3xico que elimina la vida vegetal\n",
                 "cuando la toca."
             ]
         },
         "jp": {
-            "name": "ベトベトン",
-            "category": "ヘドロポケモン",
+            "name": "\u30d9\u30c8\u30d9\u30c8\u30f3",
+            "category": "\u30d8\u30c9\u30ed\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "からだから　もうどくの　たいえきが\n",
-                "しみでている。その　えきに　ふれた\n",
-                "くさきは　あっというまに　かれる。"
+                "\u304b\u3089\u3060\u304b\u3089\u3000\u3082\u3046\u3069\u304f\u306e\u3000\u305f\u3044\u3048\u304d\u304c\n",
+                "\u3057\u307f\u3067\u3066\u3044\u308b\u3002\u305d\u306e\u3000\u3048\u304d\u306b\u3000\u3075\u308c\u305f\n",
+                "\u304f\u3055\u304d\u306f\u3000\u3042\u3063\u3068\u3044\u3046\u307e\u306b\u3000\u304b\u308c\u308b\u3002"
             ]
         }
     },

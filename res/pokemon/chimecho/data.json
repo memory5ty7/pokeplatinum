@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 80
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 147,
     "ev_yields": {
@@ -26,81 +29,73 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WRAP" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 14, "MOVE_CONFUSION" ],
-            [ 17, "MOVE_UPROAR" ],
-            [ 22, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_YAWN" ],
-            [ 30, "MOVE_PSYWAVE" ],
-            [ 33, "MOVE_DOUBLE_EDGE" ],
-            [ 38, "MOVE_HEAL_BELL" ],
-            [ 41, "MOVE_SAFEGUARD" ],
-            [ 46, "MOVE_EXTRASENSORY" ],
-            [ 49, "MOVE_HEALING_WISH" ]
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                10,
+                "MOVE_CONFUSION"
+            ],
+            [
+                14,
+                "MOVE_YAWN"
+            ],
+            [
+                20,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                24,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                27,
+                "MOVE_TAUNT"
+            ],
+            [
+                30,
+                "MOVE_UPROAR"
+            ],
+            [
+                36,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                40,
+                "MOVE_RECOVER"
+            ],
+            [
+                45,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                50,
+                "MOVE_PSYCHIC"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM49",
-            "TM53",
-            "TM57",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -119,7 +114,7 @@
         "pokemon_pos_m": 65523,
         "en": {
             "name": "CHIMECHO",
-            "category": "Wind Chime Pokémon",
+            "category": "Wind Chime Pok\u00e9mon",
             "entry_text": [
                 "Its cries echo inside its hollow\n",
                 "body to emerge as beautiful notes\n",
@@ -128,11 +123,11 @@
         },
         "fr": {
             "name": "EOKO",
-            "category": "Pokémon Carillon",
+            "category": "Pok\u00e9mon Carillon",
             "entry_text": [
                 "Son langage comporte sept cris.\n",
                 "Il les utilise pour faire vibrer\n",
-                "l’air et projeter son ennemi."
+                "l\u2019air et projeter son ennemi."
             ]
         },
         "de": {
@@ -146,16 +141,16 @@
         },
         "it": {
             "name": "CHIMECHO",
-            "category": "Pokémon Vencampana",
+            "category": "Pok\u00e9mon Vencampana",
             "entry_text": [
-                "Le sue urla sono così potenti da\n",
+                "Le sue urla sono cos\u00ec potenti da\n",
                 "far volar via i nemici. Comunica con\n",
                 "sette versi differenti."
             ]
         },
         "es": {
             "name": "CHIMECHO",
-            "category": "Pokémon Sonido Aire",
+            "category": "Pok\u00e9mon Sonido Aire",
             "entry_text": [
                 "Sus gritos sacuden el aire para\n",
                 "derribar a los rivales voladores.\n",
@@ -163,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "チリ－ン",
-            "category": "ふうりんポケモン",
+            "name": "\u30c1\u30ea\uff0d\u30f3",
+            "category": "\u3075\u3046\u308a\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なきごえで　くうきを　しんどうさせ\n",
-                "あいてを　ふきとばす。７しゅるいの\n",
-                "こえで　なかまと　かいわする。"
+                "\u306a\u304d\u3054\u3048\u3067\u3000\u304f\u3046\u304d\u3092\u3000\u3057\u3093\u3069\u3046\u3055\u305b\n",
+                "\u3042\u3044\u3066\u3092\u3000\u3075\u304d\u3068\u3070\u3059\u3002\uff17\u3057\u3085\u308b\u3044\u306e\n",
+                "\u3053\u3048\u3067\u3000\u306a\u304b\u307e\u3068\u3000\u304b\u3044\u308f\u3059\u308b\u3002"
             ]
         }
     },

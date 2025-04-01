@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 54
     },
-    "types": [ "TYPE_POISON", "TYPE_POISON" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 62,
     "ev_yields": {
@@ -26,70 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_INTIMIDATE", "ABILITY_SHED_SKIN" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_UNNERVE",
+        "ABILITY_SHED_SKIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_WRAP" ],
-            [ 1, "MOVE_LEER" ],
-            [ 4, "MOVE_POISON_STING" ],
-            [ 9, "MOVE_BITE" ],
-            [ 12, "MOVE_GLARE" ],
-            [ 17, "MOVE_SCREECH" ],
-            [ 20, "MOVE_ACID" ],
-            [ 25, "MOVE_STOCKPILE" ],
-            [ 25, "MOVE_SWALLOW" ],
-            [ 25, "MOVE_SPIT_UP" ],
-            [ 28, "MOVE_MUD_BOMB" ],
-            [ 33, "MOVE_GASTRO_ACID" ],
-            [ 36, "MOVE_HAZE" ],
-            [ 41, "MOVE_GUNK_SHOT" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM36",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM58",
-            "TM66",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_AQUA_TAIL",
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_GUNK_SHOT",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +71,7 @@
         "pokemon_pos_m": 19,
         "en": {
             "name": "EKANS",
-            "category": "Snake Pokémon",
+            "category": "Snake Pok\u00e9mon",
             "entry_text": [
                 "It sneaks through grass without\n",
                 "making a sound and strikes\n",
@@ -125,11 +80,11 @@
         },
         "fr": {
             "name": "ABO",
-            "category": "Pokémon Serpent",
+            "category": "Pok\u00e9mon Serpent",
             "entry_text": [
-                "Il se faufile dans l’herbe sans un\n",
+                "Il se faufile dans l\u2019herbe sans un\n",
                 "bruit et frappe dans le dos quand\n",
-                "sa proie s’y attend le moins. "
+                "sa proie s\u2019y attend le moins. "
             ]
         },
         "de": {
@@ -143,29 +98,29 @@
         },
         "it": {
             "name": "EKANS",
-            "category": "Pokémon Serpente",
+            "category": "Pok\u00e9mon Serpente",
             "entry_text": [
-                "Striscia nell’erba senza fare il\n",
+                "Striscia nell\u2019erba senza fare il\n",
                 "minimo rumore e colpisce alle\n",
                 "spalle le prede ignare del pericolo."
             ]
         },
         "es": {
             "name": "EKANS",
-            "category": "Pokémon Serpiente",
+            "category": "Pok\u00e9mon Serpiente",
             "entry_text": [
                 "Se mueve por la hierba en silencio\n",
                 "y sorprende a sus presas atacando\n",
-                "por detrás."
+                "por detr\u00e1s."
             ]
         },
         "jp": {
-            "name": "ア－ボ",
-            "category": "へびポケモン",
+            "name": "\u30a2\uff0d\u30dc",
+            "category": "\u3078\u3073\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "おとを　まったく　たてずに　くさちの\n",
-                "なかを　すすむ。ゆだんしている\n",
-                "えものに　はいごから　おそいかかる。"
+                "\u304a\u3068\u3092\u3000\u307e\u3063\u305f\u304f\u3000\u305f\u3066\u305a\u306b\u3000\u304f\u3055\u3061\u306e\n",
+                "\u306a\u304b\u3092\u3000\u3059\u3059\u3080\u3002\u3086\u3060\u3093\u3057\u3066\u3044\u308b\n",
+                "\u3048\u3082\u306e\u306b\u3000\u306f\u3044\u3054\u304b\u3089\u3000\u304a\u305d\u3044\u304b\u304b\u308b\u3002"
             ]
         }
     },

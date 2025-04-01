@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 70
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,94 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_REST" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 6, "MOVE_IMPRISON" ],
-            [ 16, "MOVE_DETECT" ],
-            [ 21, "MOVE_SWIFT" ],
-            [ 31, "MOVE_UPROAR" ],
-            [ 36, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_NASTY_PLOT" ],
-            [ 51, "MOVE_EXTRASENSORY" ],
-            [ 61, "MOVE_LAST_RESORT" ],
-            [ 66, "MOVE_NATURAL_GIFT" ],
-            [ 76, "MOVE_EXPLOSION" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM48",
-            "TM53",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -132,7 +65,7 @@
         "pokemon_pos_m": 65526,
         "en": {
             "name": "AZELF",
-            "category": "Willpower Pokémon",
+            "category": "Willpower Pok\u00e9mon",
             "entry_text": [
                 "When AZELF flew, people gained the\n",
                 "determination to do things.\n",
@@ -141,47 +74,47 @@
         },
         "fr": {
             "name": "CREFADET",
-            "category": "Pokémon Volonté",
+            "category": "Pok\u00e9mon Volont\u00e9",
             "entry_text": [
-                "On l’appelle “être de la volonté”.\n",
-                "Il dort au fond d’un lac pour\n",
-                "maintenir l’équilibre du monde."
+                "On l\u2019appelle \u201c\u00eatre de la volont\u00e9\u201d.\n",
+                "Il dort au fond d\u2019un lac pour\n",
+                "maintenir l\u2019\u00e9quilibre du monde."
             ]
         },
         "de": {
             "name": "TOBUTZ",
             "category": "Willenskraft",
             "entry_text": [
-                "“Das starke Wesen”.\n",
-                "Es schläft auf dem Grund eines Sees\n",
-                "und hält so die Welt in Balance."
+                "\u201cDas starke Wesen\u201d.\n",
+                "Es schl\u00e4ft auf dem Grund eines Sees\n",
+                "und h\u00e4lt so die Welt in Balance."
             ]
         },
         "it": {
             "name": "AZELF",
-            "category": "Pokémon Volontà",
+            "category": "Pok\u00e9mon Volont\u00e0",
             "entry_text": [
-                "Detto “Essere della volontà”.\n",
+                "Detto \u201cEssere della volont\u00e0\u201d.\n",
                 "Dorme sul fondo di un lago per\n",
                 "mantenere il mondo in equilibrio."
             ]
         },
         "es": {
             "name": "AZELF",
-            "category": "Pokémon Voluntad",
+            "category": "Pok\u00e9mon Voluntad",
             "entry_text": [
-                "Se le conoce como el “ser de la\n",
-                "voluntad”. Duerme en el fondo de\n",
+                "Se le conoce como el \u201cser de la\n",
+                "voluntad\u201d. Duerme en el fondo de\n",
                 "un lago para equilibrar el mundo."
             ]
         },
         "jp": {
-            "name": "アグノム",
-            "category": "いしポケモン",
+            "name": "\u30a2\u30b0\u30ce\u30e0",
+            "category": "\u3044\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いしのかみ　と　よばれている。\n",
-                "みずうみの　そこで　ねむりつづけ\n",
-                "せかいの　バランスを　とっている。"
+                "\u3044\u3057\u306e\u304b\u307f\u3000\u3068\u3000\u3088\u3070\u308c\u3066\u3044\u308b\u3002\n",
+                "\u307f\u305a\u3046\u307f\u306e\u3000\u305d\u3053\u3067\u3000\u306d\u3080\u308a\u3064\u3065\u3051\n",
+                "\u305b\u304b\u3044\u306e\u3000\u30d0\u30e9\u30f3\u30b9\u3092\u3000\u3068\u3063\u3066\u3044\u308b\u3002"
             ]
         }
     },

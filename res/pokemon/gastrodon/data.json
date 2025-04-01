@@ -7,7 +7,10 @@
         "special_attack": 92,
         "special_defense": 82
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 176,
     "ev_yields": {
@@ -26,75 +29,65 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_STICKY_HOLD", "ABILITY_STORM_DRAIN" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_FLOWER_GIFT",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_WATER_PULSE" ],
-            [ 2, "MOVE_MUD_SPORT" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 7, "MOVE_WATER_PULSE" ],
-            [ 11, "MOVE_MUD_BOMB" ],
-            [ 16, "MOVE_HIDDEN_POWER" ],
-            [ 22, "MOVE_RAIN_DANCE" ],
-            [ 29, "MOVE_BODY_SLAM" ],
-            [ 41, "MOVE_MUDDY_WATER" ],
-            [ 54, "MOVE_RECOVER" ]
+            [
+                1,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                7,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                12,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                16,
+                "MOVE_HIDDEN_POWER"
+            ],
+            [
+                24,
+                "MOVE_MUD_BOMB"
+            ],
+            [
+                30,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                36,
+                "MOVE_SCALD"
+            ],
+            [
+                40,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                45,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                50,
+                "MOVE_SLUDGE_BOMB"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM36",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -113,7 +106,7 @@
         "pokemon_pos_m": 17,
         "en": {
             "name": "GASTRODON",
-            "category": "Sea Slug Pokémon",
+            "category": "Sea Slug Pok\u00e9mon",
             "entry_text": [
                 "Long ago, its entire back was\n",
                 "shielded with a sturdy shell. There\n",
@@ -122,25 +115,25 @@
         },
         "fr": {
             "name": "TRITOSOR",
-            "category": "Pokémon Aqualimace",
+            "category": "Pok\u00e9mon Aqualimace",
             "entry_text": [
-                "Son corps pliable est dépourvu\n",
-                "d’os. Lorsqu’on tranche un de ses\n",
-                "membres, il repousse immédiatement."
+                "Son corps pliable est d\u00e9pourvu\n",
+                "d\u2019os. Lorsqu\u2019on tranche un de ses\n",
+                "membres, il repousse imm\u00e9diatement."
             ]
         },
         "de": {
             "name": "GASTRODON",
             "category": "Seeschnecke",
             "entry_text": [
-                "Es hat einen biegsamen Körper ohne\n",
-                "einen Knochen. Wird ein Körperteil\n",
-                "abgetrennt, wächst er nach."
+                "Es hat einen biegsamen K\u00f6rper ohne\n",
+                "einen Knochen. Wird ein K\u00f6rperteil\n",
+                "abgetrennt, w\u00e4chst er nach."
             ]
         },
         "it": {
             "name": "GASTRODON",
-            "category": "Pokémon Lumacomare",
+            "category": "Pok\u00e9mon Lumacomare",
             "entry_text": [
                 "Ha un corpo flessibile e senza ossa.\n",
                 "Qualsiasi parte del corpo che gli\n",
@@ -149,7 +142,7 @@
         },
         "es": {
             "name": "GASTRODON",
-            "category": "Pokémon Babosa Mar.",
+            "category": "Pok\u00e9mon Babosa Mar.",
             "entry_text": [
                 "Posee un cuerpo flexible sin\n",
                 "huesos. Si pierde alguna parte,\n",
@@ -157,12 +150,12 @@
             ]
         },
         "jp": {
-            "name": "トリトドン",
-            "category": "ウミウシポケモン",
+            "name": "\u30c8\u30ea\u30c8\u30c9\u30f3",
+            "category": "\u30a6\u30df\u30a6\u30b7\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ホネがなく　グニャグニャの　からだ。\n",
-                "からだの　いちぶが　ちぎれても\n",
-                "すぐに　さいせいされて　もとどおり。"
+                "\u30db\u30cd\u304c\u306a\u304f\u3000\u30b0\u30cb\u30e3\u30b0\u30cb\u30e3\u306e\u3000\u304b\u3089\u3060\u3002\n",
+                "\u304b\u3089\u3060\u306e\u3000\u3044\u3061\u3076\u304c\u3000\u3061\u304e\u308c\u3066\u3082\n",
+                "\u3059\u3050\u306b\u3000\u3055\u3044\u305b\u3044\u3055\u308c\u3066\u3000\u3082\u3068\u3069\u304a\u308a\u3002"
             ]
         }
     },

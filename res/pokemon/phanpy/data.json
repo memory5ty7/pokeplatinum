@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 124,
     "ev_yields": {
@@ -26,67 +29,55 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_PICKUP", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_BATTLE_ARMOR",
+        "ABILITY_STURDY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 6, "MOVE_FLAIL" ],
-            [ 10, "MOVE_TAKE_DOWN" ],
-            [ 15, "MOVE_ROLLOUT" ],
-            [ 19, "MOVE_NATURAL_GIFT" ],
-            [ 24, "MOVE_SLAM" ],
-            [ 28, "MOVE_ENDURE" ],
-            [ 33, "MOVE_CHARM" ],
-            [ 37, "MOVE_LAST_RESORT" ],
-            [ 42, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                13,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                16,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                20,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                25,
+                "MOVE_CHARM"
+            ],
+            [
+                30,
+                "MOVE_KNOCK_OFF"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_GUNK_SHOT",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,7 +104,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "PHANPY",
-            "category": "Long Nose Pokémon",
+            "category": "Long Nose Pok\u00e9mon",
             "entry_text": [
                 "It is strong despite its compact\n",
                 "size. It can easily pick up and\n",
@@ -122,47 +113,47 @@
         },
         "fr": {
             "name": "PHANPY",
-            "category": "Pokémon Long-Nez",
+            "category": "Pok\u00e9mon Long-Nez",
             "entry_text": [
-                "Il est fort malgré son aspect\n",
-                "ramassé. Il n’a aucun mal à porter\n",
+                "Il est fort malgr\u00e9 son aspect\n",
+                "ramass\u00e9. Il n\u2019a aucun mal \u00e0 porter\n",
                 "un humain adulte sur son dos."
             ]
         },
         "de": {
             "name": "PHANPY",
-            "category": "Langrüssel",
+            "category": "Langr\u00fcssel",
             "entry_text": [
-                "Trotz seiner geringen Größe ist es\n",
+                "Trotz seiner geringen Gr\u00f6\u00dfe ist es\n",
                 "stark. Es kann einen Erwachsenen\n",
-                "mühelos auf dem Rücken tragen."
+                "m\u00fchelos auf dem R\u00fccken tragen."
             ]
         },
         "it": {
             "name": "PHANPY",
-            "category": "Pokémon Nasone",
+            "category": "Pok\u00e9mon Nasone",
             "entry_text": [
-                "Non è molto grande, ma è forte.\n",
-                "Può sollevare un adulto e traspor-\n",
+                "Non \u00e8 molto grande, ma \u00e8 forte.\n",
+                "Pu\u00f2 sollevare un adulto e traspor-\n",
                 "tarlo sul dorso senza fatica."
             ]
         },
         "es": {
             "name": "PHANPY",
-            "category": "Pokémon Narizotas",
+            "category": "Pok\u00e9mon Narizotas",
             "entry_text": [
-                "A pesar de su tamaño reducido,\n",
+                "A pesar de su tama\u00f1o reducido,\n",
                 "es tan fuerte que puede llevar a un\n",
                 "humano a su espalda con facilidad."
             ]
         },
         "jp": {
-            "name": "ゴマゾウ",
-            "category": "ながはなポケモン",
+            "name": "\u30b4\u30de\u30be\u30a6",
+            "category": "\u306a\u304c\u306f\u306a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "からだは　ちいさいが　ちからもち。\n",
-                "おとなの　ひとを　かるがると\n",
-                "せなかに　のせて　あるいてしまう。"
+                "\u304b\u3089\u3060\u306f\u3000\u3061\u3044\u3055\u3044\u304c\u3000\u3061\u304b\u3089\u3082\u3061\u3002\n",
+                "\u304a\u3068\u306a\u306e\u3000\u3072\u3068\u3092\u3000\u304b\u308b\u304c\u308b\u3068\n",
+                "\u305b\u306a\u304b\u306b\u3000\u306e\u305b\u3066\u3000\u3042\u308b\u3044\u3066\u3057\u307e\u3046\u3002"
             ]
         }
     },

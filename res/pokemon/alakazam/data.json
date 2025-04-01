@@ -7,7 +7,10 @@
         "special_attack": 135,
         "special_defense": 85
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 50,
     "base_exp_reward": 186,
     "ev_yields": {
@@ -26,89 +29,77 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_SYNCHRONIZE", "ABILITY_INNER_FOCUS" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_SYNCHRONIZE",
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_MAGIC_GUARD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TELEPORT" ],
-            [ 1, "MOVE_KINESIS" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 16, "MOVE_CONFUSION" ],
-            [ 18, "MOVE_DISABLE" ],
-            [ 22, "MOVE_MIRACLE_EYE" ],
-            [ 24, "MOVE_PSYBEAM" ],
-            [ 28, "MOVE_REFLECT" ],
-            [ 30, "MOVE_RECOVER" ],
-            [ 34, "MOVE_PSYCHO_CUT" ],
-            [ 36, "MOVE_CALM_MIND" ],
-            [ 40, "MOVE_PSYCHIC" ],
-            [ 42, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_TRICK" ]
+            [
+                16,
+                "MOVE_CONFUSION"
+            ],
+            [
+                18,
+                "MOVE_DISABLE"
+            ],
+            [
+                22,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                24,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                30,
+                "MOVE_RECOVER"
+            ],
+            [
+                34,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                36,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                43,
+                "MOVE_AURA_SPHERE"
+            ],
+            [
+                50,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                55,
+                "MOVE_FOCUS_BLAST"
+            ],
+            [
+                55,
+                "MOVE_PSYCHO_SHIFT"
+            ],
+            [
+                60,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM63",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -127,7 +118,7 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "ALAKAZAM",
-            "category": "Psi Pokémon",
+            "category": "Psi Pok\u00e9mon",
             "entry_text": [
                 "The spoons clutched in its hands\n",
                 "are said to have been created by\n",
@@ -136,10 +127,10 @@
         },
         "fr": {
             "name": "ALAKAZAM",
-            "category": "Pokémon Psy",
+            "category": "Pok\u00e9mon Psy",
             "entry_text": [
-                "Grâce à sa mémoire exceptionnelle,\n",
-                "il n’a rien oublié depuis sa \n",
+                "Gr\u00e2ce \u00e0 sa m\u00e9moire exceptionnelle,\n",
+                "il n\u2019a rien oubli\u00e9 depuis sa \n",
                 "naissance. Il a un Q.I. de 5 000."
             ]
         },
@@ -148,13 +139,13 @@
             "category": "Psi",
             "entry_text": [
                 "Es besitzt ein fantastisches Ge-\n",
-                "dächtnis und erinnert sich an alles\n",
-                "seit seiner Geburt. IQ: Über 5 000."
+                "d\u00e4chtnis und erinnert sich an alles\n",
+                "seit seiner Geburt. IQ: \u00dcber 5 000."
             ]
         },
         "it": {
             "name": "ALAKAZAM",
-            "category": "Pokémon Psico",
+            "category": "Pok\u00e9mon Psico",
             "entry_text": [
                 "La sua incredibile memoria gli\n",
                 "fa ricordare ogni evento fin dalla\n",
@@ -163,7 +154,7 @@
         },
         "es": {
             "name": "ALAKAZAM",
-            "category": "Pokémon Psi",
+            "category": "Pok\u00e9mon Psi",
             "entry_text": [
                 "Su gran memoria le permite\n",
                 "recordar todo desde su nacimiento.\n",
@@ -171,12 +162,12 @@
             ]
         },
         "jp": {
-            "name": "フ－ディン",
-            "category": "ねんりきポケモン",
+            "name": "\u30d5\uff0d\u30c7\u30a3\u30f3",
+            "category": "\u306d\u3093\u308a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "うまれてから　たいけんした　すべてを\n",
-                "おぼえているほどの　きおくりょく。\n",
-                "ちのうしすうは　５０００を　こえる。"
+                "\u3046\u307e\u308c\u3066\u304b\u3089\u3000\u305f\u3044\u3051\u3093\u3057\u305f\u3000\u3059\u3079\u3066\u3092\n",
+                "\u304a\u307c\u3048\u3066\u3044\u308b\u307b\u3069\u306e\u3000\u304d\u304a\u304f\u308a\u3087\u304f\u3002\n",
+                "\u3061\u306e\u3046\u3057\u3059\u3046\u306f\u3000\uff15\uff10\uff10\uff10\u3092\u3000\u3053\u3048\u308b\u3002"
             ]
         }
     },

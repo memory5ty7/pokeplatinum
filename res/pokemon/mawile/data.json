@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 55
     },
-    "types": [ "TYPE_STEEL", "TYPE_STEEL" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_STEEL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 98,
     "ev_yields": {
@@ -26,89 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_HUGE_POWER",
+        "ABILITY_INTIMIDATE",
+        "ABILITY_SHEER_FORCE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 6, "MOVE_FAKE_TEARS" ],
-            [ 11, "MOVE_BITE" ],
-            [ 16, "MOVE_SWEET_SCENT" ],
-            [ 21, "MOVE_VICE_GRIP" ],
-            [ 26, "MOVE_FAINT_ATTACK" ],
-            [ 31, "MOVE_BATON_PASS" ],
-            [ 36, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_IRON_DEFENSE" ],
-            [ 46, "MOVE_SUCKER_PUNCH" ],
-            [ 51, "MOVE_STOCKPILE" ],
-            [ 51, "MOVE_SWALLOW" ],
-            [ 51, "MOVE_SPIT_UP" ],
-            [ 56, "MOVE_IRON_HEAD" ]
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                6,
+                "MOVE_TORMENT"
+            ],
+            [
+                12,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                15,
+                "MOVE_BITE"
+            ],
+            [
+                18,
+                "MOVE_PROTECT"
+            ],
+            [
+                22,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                26,
+                "MOVE_CRUNCH"
+            ],
+            [
+                30,
+                "MOVE_METAL_CLAW"
+            ],
+            [
+                36,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                40,
+                "MOVE_IRON_HEAD"
+            ],
+            [
+                45,
+                "MOVE_SMART_STRIKE"
+            ],
+            [
+                50,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                56,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                56,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                56,
+                "MOVE_THUNDER_FANG"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM36",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM63",
-            "TM66",
-            "TM68",
-            "TM75",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -127,7 +126,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "MAWILE",
-            "category": "Deceiver Pokémon",
+            "category": "Deceiver Pok\u00e9mon",
             "entry_text": [
                 "Attached to its head is a huge\n",
                 "set of jaws formed by horns.\n",
@@ -136,10 +135,10 @@
         },
         "fr": {
             "name": "MYSDIBULE",
-            "category": "Pokémon Trompeur",
+            "category": "Pok\u00e9mon Trompeur",
             "entry_text": [
                 "Ses cornes forment une grande\n",
-                "mâchoire attachée à sa tête. Elle\n",
+                "m\u00e2choire attach\u00e9e \u00e0 sa t\u00eate. Elle\n",
                 "peut broyer des barres de fer. "
             ]
         },
@@ -148,35 +147,35 @@
             "category": "Schwindler",
             "entry_text": [
                 "Auf seinem Kopf befindet sich ein\n",
-                "riesiger Kiefer, der aus Hörnern\n",
+                "riesiger Kiefer, der aus H\u00f6rnern\n",
                 "besteht. Er kann Eisen zermalmen."
             ]
         },
         "it": {
             "name": "MAWILE",
-            "category": "Pokémon Inganno",
+            "category": "Pok\u00e9mon Inganno",
             "entry_text": [
                 "Le sue due enormi mandibole sono\n",
-                "corna trasformate. Con esse può\n",
+                "corna trasformate. Con esse pu\u00f2\n",
                 "masticare persino travi di ferro."
             ]
         },
         "es": {
             "name": "MAWILE",
-            "category": "Pokémon Tramposo",
+            "category": "Pok\u00e9mon Tramposo",
             "entry_text": [
                 "Las grandes fauces de su cabeza\n",
-                "están formadas por cuernos.\n",
+                "est\u00e1n formadas por cuernos.\n",
                 "Puede romper el hierro con ellas."
             ]
         },
         "jp": {
-            "name": "クチ－ト",
-            "category": "あざむきポケモン",
+            "name": "\u30af\u30c1\uff0d\u30c8",
+            "category": "\u3042\u3056\u3080\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ツノが　へんけいして　できた\n",
-                "おおあごが　あたまに　ついている。\n",
-                "てっこつを　かみきってしまう。"
+                "\u30c4\u30ce\u304c\u3000\u3078\u3093\u3051\u3044\u3057\u3066\u3000\u3067\u304d\u305f\n",
+                "\u304a\u304a\u3042\u3054\u304c\u3000\u3042\u305f\u307e\u306b\u3000\u3064\u3044\u3066\u3044\u308b\u3002\n",
+                "\u3066\u3063\u3053\u3064\u3092\u3000\u304b\u307f\u304d\u3063\u3066\u3057\u307e\u3046\u3002"
             ]
         }
     },

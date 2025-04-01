@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 85
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 167,
     "ev_yields": {
@@ -26,70 +29,79 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_BLAZE",
+        "ABILITY_FLAME_BODY",
+        "ABILITY_FLASH_FIRE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 16, "MOVE_FAINT_ATTACK" ],
-            [ 19, "MOVE_FIRE_SPIN" ],
-            [ 25, "MOVE_CONFUSE_RAY" ],
-            [ 28, "MOVE_FIRE_PUNCH" ],
-            [ 36, "MOVE_LAVA_PLUME" ],
-            [ 41, "MOVE_FLAMETHROWER" ],
-            [ 49, "MOVE_SUNNY_DAY" ],
-            [ 54, "MOVE_FIRE_BLAST" ]
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                5,
+                "MOVE_LEER"
+            ],
+            [
+                8,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                11,
+                "MOVE_SMOG"
+            ],
+            [
+                14,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                17,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                20,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                23,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                26,
+                "MOVE_TOXIC"
+            ],
+            [
+                29,
+                "MOVE_HEAT_WAVE"
+            ],
+            [
+                34,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                36,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                44,
+                "MOVE_SLACK_OFF"
+            ],
+            [
+                50,
+                "MOVE_PSYCHIC"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM29",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_HEAT_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +128,7 @@
         "pokemon_pos_m": 10,
         "en": {
             "name": "MAGMAR",
-            "category": "Spitfire Pokémon",
+            "category": "Spitfire Pok\u00e9mon",
             "entry_text": [
                 "When it breathes deeply, heat\n",
                 "waves form around its body, making\n",
@@ -125,9 +137,9 @@
         },
         "fr": {
             "name": "MAGMAR",
-            "category": "Pokémon Crache-Feu",
+            "category": "Pok\u00e9mon Crache-Feu",
             "entry_text": [
-                "Il est né au milieu d’un volcan.\n",
+                "Il est n\u00e9 au milieu d\u2019un volcan.\n",
                 "Son corps est couvert de flammes\n",
                 "qui flambent comme un soleil."
             ]
@@ -137,35 +149,35 @@
             "category": "Brenner",
             "entry_text": [
                 "Es wurde bei einem Vulkanausbruch\n",
-                "geboren. Sein Körper ist von\n",
+                "geboren. Sein K\u00f6rper ist von\n",
                 "hellen Flammen umgeben."
             ]
         },
         "it": {
             "name": "MAGMAR",
-            "category": "Pokémon Sputafuoco",
+            "category": "Pok\u00e9mon Sputafuoco",
             "entry_text": [
-                "È nato dallo zampillo di un vulcano.\n",
+                "\u00c8 nato dallo zampillo di un vulcano.\n",
                 "Ha il corpo ricoperto da fiamme\n",
                 "che brillano come i raggi solari."
             ]
         },
         "es": {
             "name": "MAGMAR",
-            "category": "Pokémon Escupfuego",
+            "category": "Pok\u00e9mon Escupfuego",
             "entry_text": [
-                "Nació en el centro de un volcán.\n",
-                "Su cuerpo está cubierto de llamas\n",
+                "Naci\u00f3 en el centro de un volc\u00e1n.\n",
+                "Su cuerpo est\u00e1 cubierto de llamas\n",
                 "que brillan como el Sol."
             ]
         },
         "jp": {
-            "name": "ブ－バ－",
-            "category": "ひふきポケモン",
+            "name": "\u30d6\uff0d\u30d0\uff0d",
+            "category": "\u3072\u3075\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かざんの　かこうで　うまれそだった。\n",
-                "たいようと　おなじような　ほのおの\n",
-                "ゆらめきが　ぜんしんを　おおう。"
+                "\u304b\u3056\u3093\u306e\u3000\u304b\u3053\u3046\u3067\u3000\u3046\u307e\u308c\u305d\u3060\u3063\u305f\u3002\n",
+                "\u305f\u3044\u3088\u3046\u3068\u3000\u304a\u306a\u3058\u3088\u3046\u306a\u3000\u307b\u306e\u304a\u306e\n",
+                "\u3086\u3089\u3081\u304d\u304c\u3000\u305c\u3093\u3057\u3093\u3092\u3000\u304a\u304a\u3046\u3002"
             ]
         }
     },

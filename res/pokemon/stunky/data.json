@@ -7,7 +7,10 @@
         "special_attack": 41,
         "special_defense": 41
     },
-    "types": [ "TYPE_POISON", "TYPE_DARK" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_DARK"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 79,
     "ev_yields": {
@@ -26,71 +29,63 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STENCH", "ABILITY_AFTERMATH" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_THICK_FAT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 4, "MOVE_POISON_GAS" ],
-            [ 7, "MOVE_SCREECH" ],
-            [ 10, "MOVE_FURY_SWIPES" ],
-            [ 14, "MOVE_SMOKE_SCREEN" ],
-            [ 18, "MOVE_FEINT" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 27, "MOVE_TOXIC" ],
-            [ 32, "MOVE_NIGHT_SLASH" ],
-            [ 38, "MOVE_MEMENTO" ],
-            [ 44, "MOVE_EXPLOSION" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_POISON_GAS"
+            ],
+            [
+                5,
+                "MOVE_SCREECH"
+            ],
+            [
+                8,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                11,
+                "MOVE_SLUDGE"
+            ],
+            [
+                15,
+                "MOVE_SLASH"
+            ],
+            [
+                19,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                21,
+                "MOVE_TOXIC"
+            ],
+            [
+                25,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_POISON_JAB"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM35",
-            "TM36",
-            "TM38",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM58",
-            "TM64",
-            "TM65",
-            "TM66",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -117,19 +112,19 @@
         "pokemon_pos_m": 9,
         "en": {
             "name": "STUNKY",
-            "category": "Skunk Pokémon",
+            "category": "Skunk Pok\u00e9mon",
             "entry_text": [
                 "It sprays a foul fluid from its\n",
                 "rear. Its stench spreads over a\n",
-                "mile radius, driving Pokémon away."
+                "mile radius, driving Pok\u00e9mon away."
             ]
         },
         "fr": {
             "name": "MOUFOUETTE",
-            "category": "Pokémon Moufette",
+            "category": "Pok\u00e9mon Moufette",
             "entry_text": [
-                "Il se protège en expulsant un \n",
-                "fluide nocif par son derrière. \n",
+                "Il se prot\u00e8ge en expulsant un \n",
+                "fluide nocif par son derri\u00e8re. \n",
                 "La puanteur dure 24 heures."
             ]
         },
@@ -137,14 +132,14 @@
             "name": "SKUNKAPUH",
             "category": "Stinktier",
             "entry_text": [
-                "Um sich zu schützen, versprüht es\n",
+                "Um sich zu sch\u00fctzen, verspr\u00fcht es\n",
                 "eine Substanz aus seinem\n",
                 "Hinterleib, die 24 Stunden stinkt."
             ]
         },
         "it": {
             "name": "STUNKY",
-            "category": "Pokémon Moffetta",
+            "category": "Pok\u00e9mon Moffetta",
             "entry_text": [
                 "Si protegge spruzzando un\n",
                 "fluido puzzolente dal posteriore.\n",
@@ -153,7 +148,7 @@
         },
         "es": {
             "name": "STUNKY",
-            "category": "Pokémon Mofeta",
+            "category": "Pok\u00e9mon Mofeta",
             "entry_text": [
                 "Se protege expulsando un fluido\n",
                 "nocivo por su parte trasera.\n",
@@ -161,12 +156,12 @@
             ]
         },
         "jp": {
-            "name": "スカンプ－",
-            "category": "スカンクポケモン",
+            "name": "\u30b9\u30ab\u30f3\u30d7\uff0d",
+            "category": "\u30b9\u30ab\u30f3\u30af\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "おしりから　きょうれつに　くさい\n",
-                "えきたいを　とばして　みを　まもる。\n",
-                "においは　２４じかん　きえない。"
+                "\u304a\u3057\u308a\u304b\u3089\u3000\u304d\u3087\u3046\u308c\u3064\u306b\u3000\u304f\u3055\u3044\n",
+                "\u3048\u304d\u305f\u3044\u3092\u3000\u3068\u3070\u3057\u3066\u3000\u307f\u3092\u3000\u307e\u3082\u308b\u3002\n",
+                "\u306b\u304a\u3044\u306f\u3000\uff12\uff14\u3058\u304b\u3093\u3000\u304d\u3048\u306a\u3044\u3002"
             ]
         }
     },

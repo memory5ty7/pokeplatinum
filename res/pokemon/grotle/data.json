@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 141,
     "ev_yields": {
@@ -26,70 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_OVERGROW", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SHELL_ARMOR",
+        "ABILITY_OVERGROW",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_WITHDRAW" ],
-            [ 5, "MOVE_WITHDRAW" ],
-            [ 9, "MOVE_ABSORB" ],
-            [ 13, "MOVE_RAZOR_LEAF" ],
-            [ 17, "MOVE_CURSE" ],
-            [ 22, "MOVE_BITE" ],
-            [ 27, "MOVE_MEGA_DRAIN" ],
-            [ 32, "MOVE_LEECH_SEED" ],
-            [ 37, "MOVE_SYNTHESIS" ],
-            [ 42, "MOVE_CRUNCH" ],
-            [ 47, "MOVE_GIGA_DRAIN" ],
-            [ 52, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                5,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                14,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                16,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                20,
+                "MOVE_CRUNCH"
+            ],
+            [
+                24,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                30,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                36,
+                "MOVE_SYNTHESIS"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM32",
-            "TM33",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_EARTH_POWER",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,19 +108,19 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "GROTLE",
-            "category": "Grove Pokémon",
+            "category": "Grove Pok\u00e9mon",
             "entry_text": [
                 "It knows where pure water wells\n",
-                "up. It carries fellow Pokémon there\n",
+                "up. It carries fellow Pok\u00e9mon there\n",
                 "on its back."
             ]
         },
         "fr": {
             "name": "BOSKARA",
-            "category": "Pokémon Bosquet",
+            "category": "Pok\u00e9mon Bosquet",
             "entry_text": [
-                "Il vit en forêt près de l’eau.\n",
-                "En journée, il la quitte pour dorer\n",
+                "Il vit en for\u00eat pr\u00e8s de l\u2019eau.\n",
+                "En journ\u00e9e, il la quitte pour dorer\n",
                 "sa carapace feuillue au soleil."
             ]
         },
@@ -136,36 +128,36 @@
             "name": "CHELCARAIN",
             "category": "Hain",
             "entry_text": [
-                "Es lebt in der Nähe von Wasser in\n",
-                "Wäldern. Tagsüber verlässt es\n",
+                "Es lebt in der N\u00e4he von Wasser in\n",
+                "W\u00e4ldern. Tags\u00fcber verl\u00e4sst es\n",
                 "diese, um ein Sonnenbad zu nehmen."
             ]
         },
         "it": {
             "name": "GROTLE",
-            "category": "Pokémon Boschetto",
+            "category": "Pok\u00e9mon Boschetto",
             "entry_text": [
-                "Vive nelle foreste vicino all’acqua,\n",
+                "Vive nelle foreste vicino all\u2019acqua,\n",
                 "ma esce di giorno per far pren-\n",
                 "dere sole alle piante sul guscio."
             ]
         },
         "es": {
             "name": "GROTLE",
-            "category": "Pokémon Arboleda",
+            "category": "Pok\u00e9mon Arboleda",
             "entry_text": [
                 "Vive en los bosques cerca del\n",
-                "agua. Por el día, sale a que les dé\n",
+                "agua. Por el d\u00eda, sale a que les d\u00e9\n",
                 "el sol a las plantas de su espalda."
             ]
         },
         "jp": {
-            "name": "ハヤシガメ",
-            "category": "こだちポケモン",
+            "name": "\u30cf\u30e4\u30b7\u30ac\u30e1",
+            "category": "\u3053\u3060\u3061\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "もりの　なかの　みずべで　くらす。\n",
-                "ひるまは　もりの　そとに　でて\n",
-                "こうらの　きに　ひかりを　あてる。"
+                "\u3082\u308a\u306e\u3000\u306a\u304b\u306e\u3000\u307f\u305a\u3079\u3067\u3000\u304f\u3089\u3059\u3002\n",
+                "\u3072\u308b\u307e\u306f\u3000\u3082\u308a\u306e\u3000\u305d\u3068\u306b\u3000\u3067\u3066\n",
+                "\u3053\u3046\u3089\u306e\u3000\u304d\u306b\u3000\u3072\u304b\u308a\u3092\u3000\u3042\u3066\u308b\u3002"
             ]
         }
     },

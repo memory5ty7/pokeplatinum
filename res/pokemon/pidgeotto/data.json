@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 50
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 113,
     "ev_yields": {
@@ -26,67 +29,63 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_TANGLED_FEET" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_GALE_WINGS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 1, "MOVE_GUST" ],
-            [ 5, "MOVE_SAND_ATTACK" ],
-            [ 9, "MOVE_GUST" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 17, "MOVE_WHIRLWIND" ],
-            [ 22, "MOVE_TWISTER" ],
-            [ 27, "MOVE_FEATHER_DANCE" ],
-            [ 32, "MOVE_AGILITY" ],
-            [ 37, "MOVE_WING_ATTACK" ],
-            [ 42, "MOVE_ROOST" ],
-            [ 47, "MOVE_TAILWIND" ],
-            [ 52, "MOVE_MIRROR_MOVE" ],
-            [ 57, "MOVE_AIR_SLASH" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_DEFOG"
+            ],
+            [
+                9,
+                "MOVE_GUST"
+            ],
+            [
+                13,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                16,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                22,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                25,
+                "MOVE_FEATHER_DANCE"
+            ],
+            [
+                30,
+                "MOVE_HYPER_VOICE"
+            ],
+            [
+                32,
+                "MOVE_ROOST"
+            ],
+            [
+                36,
+                "MOVE_AIR_SLASH"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,7 +112,7 @@
         "pokemon_pos_m": 65529,
         "en": {
             "name": "PIDGEOTTO",
-            "category": "Bird Pokémon",
+            "category": "Bird Pok\u00e9mon",
             "entry_text": [
                 "It flies over its wide territory in\n",
                 "search of prey, downing it\n",
@@ -122,10 +121,10 @@
         },
         "fr": {
             "name": "ROUCOUPS",
-            "category": "Pokémon Oiseau",
+            "category": "Pok\u00e9mon Oiseau",
             "entry_text": [
                 "Il survole son vaste territoire en\n",
-                "quête d’une proie avant de fondre\n",
+                "qu\u00eate d\u2019une proie avant de fondre\n",
                 "sur elle toutes griffes en avant."
             ]
         },
@@ -134,13 +133,13 @@
             "category": "Vogel",
             "entry_text": [
                 "Auf der Suche nach Nahrung, die es\n",
-                "mit scharfen Krallen schlägt, fliegt\n",
+                "mit scharfen Krallen schl\u00e4gt, fliegt\n",
                 "es durch riesiges Territorium."
             ]
         },
         "it": {
             "name": "PIDGEOTTO",
-            "category": "Pokémon Uccello",
+            "category": "Pok\u00e9mon Uccello",
             "entry_text": [
                 "Sorvola il suo ampio territorio a\n",
                 "caccia di prede, afferrandole con\n",
@@ -149,7 +148,7 @@
         },
         "es": {
             "name": "PIDGEOTTO",
-            "category": "Pokémon Pájaro",
+            "category": "Pok\u00e9mon P\u00e1jaro",
             "entry_text": [
                 "Sobrevuela su extenso territorio\n",
                 "en busca de presas y ataca con\n",
@@ -157,12 +156,12 @@
             ]
         },
         "jp": {
-            "name": "ピジョン",
-            "category": "とりポケモン",
+            "name": "\u30d4\u30b8\u30e7\u30f3",
+            "category": "\u3068\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひろい　なわばりを　とびまわりながら\n",
-                "えものを　さがす。はったつした\n",
-                "あしの　ツメで　えものを　しとめる。"
+                "\u3072\u308d\u3044\u3000\u306a\u308f\u3070\u308a\u3092\u3000\u3068\u3073\u307e\u308f\u308a\u306a\u304c\u3089\n",
+                "\u3048\u3082\u306e\u3092\u3000\u3055\u304c\u3059\u3002\u306f\u3063\u305f\u3064\u3057\u305f\n",
+                "\u3042\u3057\u306e\u3000\u30c4\u30e1\u3067\u3000\u3048\u3082\u306e\u3092\u3000\u3057\u3068\u3081\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 90
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 5,
     "base_exp_reward": 218,
     "ev_yields": {
@@ -26,93 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_DROUGHT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_DROUGHT",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_MUD_SHOT" ],
-            [ 5, "MOVE_SCARY_FACE" ],
-            [ 15, "MOVE_ANCIENT_POWER" ],
-            [ 20, "MOVE_SLASH" ],
-            [ 30, "MOVE_BULK_UP" ],
-            [ 35, "MOVE_EARTHQUAKE" ],
-            [ 45, "MOVE_FIRE_BLAST" ],
-            [ 50, "MOVE_REST" ],
-            [ 60, "MOVE_FISSURE" ],
-            [ 65, "MOVE_SOLAR_BEAM" ],
-            [ 75, "MOVE_EARTH_POWER" ],
-            [ 80, "MOVE_ERUPTION" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM73",
-            "TM75",
-            "TM76",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -131,7 +65,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "GROUDON",
-            "category": "Continent Pokémon",
+            "category": "Continent Pok\u00e9mon",
             "entry_text": [
                 "It had been asleep in underground\n",
                 "magma ever since it fiercely\n",
@@ -140,10 +74,10 @@
         },
         "fr": {
             "name": "GROUDON",
-            "category": "Pokémon Continent",
+            "category": "Pok\u00e9mon Continent",
             "entry_text": [
                 "Il dormait dans le magma souterrain\n",
-                "depuis sa lutte féroce contre\n",
+                "depuis sa lutte f\u00e9roce contre\n",
                 "KYOGRE, il y a longtemps de cela."
             ]
         },
@@ -158,29 +92,29 @@
         },
         "it": {
             "name": "GROUDON",
-            "category": "Pokémon Continente",
+            "category": "Pok\u00e9mon Continente",
             "entry_text": [
                 "Dopo una lotta colossale contro\n",
-                "KYOGRE, si è addormentato sotto\n",
+                "KYOGRE, si \u00e8 addormentato sotto\n",
                 "terra in mezzo al magma."
             ]
         },
         "es": {
             "name": "GROUDON",
-            "category": "Pokémon Continente",
+            "category": "Pok\u00e9mon Continente",
             "entry_text": [
                 "Ha estado durmiendo en magma\n",
-                "subterráneo desde que luchó\n",
+                "subterr\u00e1neo desde que luch\u00f3\n",
                 "contra KYOGRE en tiempos remotos."
             ]
         },
         "jp": {
-            "name": "グラ－ドン",
-            "category": "たいりくポケモン",
+            "name": "\u30b0\u30e9\uff0d\u30c9\u30f3",
+            "category": "\u305f\u3044\u308a\u304f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "おおむかし　カイオ－ガとの　しとうの\n",
-                "すえに　ちかマグマの　なかで\n",
-                "ねむっていた　ポケモン。"
+                "\u304a\u304a\u3080\u304b\u3057\u3000\u30ab\u30a4\u30aa\uff0d\u30ac\u3068\u306e\u3000\u3057\u3068\u3046\u306e\n",
+                "\u3059\u3048\u306b\u3000\u3061\u304b\u30de\u30b0\u30de\u306e\u3000\u306a\u304b\u3067\n",
+                "\u306d\u3080\u3063\u3066\u3044\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

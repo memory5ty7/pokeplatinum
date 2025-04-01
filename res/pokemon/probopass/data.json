@@ -7,7 +7,10 @@
         "special_attack": 75,
         "special_defense": 150
     },
-    "types": [ "TYPE_ROCK", "TYPE_STEEL" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_STEEL"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 198,
     "ev_yields": {
@@ -26,86 +29,97 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_MAGNET_PULL" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_ANALYTIC",
+        "ABILITY_ADAPTABILITY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MAGNET_RISE" ],
-            [ 1, "MOVE_GRAVITY" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_IRON_DEFENSE" ],
-            [ 1, "MOVE_MAGNET_BOMB" ],
-            [ 1, "MOVE_BLOCK" ],
-            [ 7, "MOVE_IRON_DEFENSE" ],
-            [ 13, "MOVE_MAGNET_BOMB" ],
-            [ 19, "MOVE_BLOCK" ],
-            [ 25, "MOVE_THUNDER_WAVE" ],
-            [ 31, "MOVE_ROCK_SLIDE" ],
-            [ 37, "MOVE_SANDSTORM" ],
-            [ 43, "MOVE_REST" ],
-            [ 49, "MOVE_POWER_GEM" ],
-            [ 55, "MOVE_DISCHARGE" ],
-            [ 61, "MOVE_STONE_EDGE" ],
-            [ 67, "MOVE_ZAP_CANNON" ],
-            [ 73, "MOVE_LOCK_ON" ],
-            [ 79, "MOVE_EARTH_POWER" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                4,
+                "MOVE_MAGNITUDE"
+            ],
+            [
+                7,
+                "MOVE_BLOCK"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                13,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                16,
+                "MOVE_SPARK"
+            ],
+            [
+                19,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                22,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                25,
+                "MOVE_MAGNET_BOMB"
+            ],
+            [
+                28,
+                "MOVE_MAGNET_RISE"
+            ],
+            [
+                30,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                33,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                36,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                40,
+                "MOVE_GRAVITY"
+            ],
+            [
+                42,
+                "MOVE_SMART_STRIKE"
+            ],
+            [
+                45,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                50,
+                "MOVE_FLASH_CANNON"
+            ],
+            [
+                56,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM37",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM64",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM73",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -124,7 +138,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "PROBOPASS",
-            "category": "Compass Pokémon",
+            "category": "Compass Pok\u00e9mon",
             "entry_text": [
                 "It freely controls three small\n",
                 "units called Mini-Noses using\n",
@@ -133,11 +147,11 @@
         },
         "fr": {
             "name": "TARINORME",
-            "category": "Pokémon Boussole",
+            "category": "Pok\u00e9mon Boussole",
             "entry_text": [
-                "Son corps libère une puissante\n",
-                "force magnétique. Il dirige trois\n",
-                "petites unités appelées Mini-nez."
+                "Son corps lib\u00e8re une puissante\n",
+                "force magn\u00e9tique. Il dirige trois\n",
+                "petites unit\u00e9s appel\u00e9es Mini-nez."
             ]
         },
         "de": {
@@ -151,29 +165,29 @@
         },
         "it": {
             "name": "PROBOPASS",
-            "category": "Pokémon Bussola",
+            "category": "Pok\u00e9mon Bussola",
             "entry_text": [
                 "Emana un forte magnetismo da\n",
                 "tutto il corpo. Controlla tre\n",
-                "piccole unità, dette Mininasi."
+                "piccole unit\u00e0, dette Mininasi."
             ]
         },
         "es": {
             "name": "PROBOPASS",
-            "category": "Pokémon Brújula",
+            "category": "Pok\u00e9mon Br\u00fajula",
             "entry_text": [
                 "Emana un fuerte magnetismo.\n",
-                "Controla tres pequeñas unidades\n",
+                "Controla tres peque\u00f1as unidades\n",
                 "llamadas Mini-Narices."
             ]
         },
         "jp": {
-            "name": "ダイノ－ズ",
-            "category": "コンパスポケモン",
+            "name": "\u30c0\u30a4\u30ce\uff0d\u30ba",
+            "category": "\u30b3\u30f3\u30d1\u30b9\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ぜんしんから　つよい　じりょくを\n",
-                "だしている。３この　チビノ－ズと\n",
-                "よばれる　ユニットを　あやつる。"
+                "\u305c\u3093\u3057\u3093\u304b\u3089\u3000\u3064\u3088\u3044\u3000\u3058\u308a\u3087\u304f\u3092\n",
+                "\u3060\u3057\u3066\u3044\u308b\u3002\uff13\u3053\u306e\u3000\u30c1\u30d3\u30ce\uff0d\u30ba\u3068\n",
+                "\u3088\u3070\u308c\u308b\u3000\u30e6\u30cb\u30c3\u30c8\u3092\u3000\u3042\u3084\u3064\u308b\u3002"
             ]
         }
     },

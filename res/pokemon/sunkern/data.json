@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 235,
     "base_exp_reward": 52,
     "ev_yields": {
@@ -26,65 +29,63 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_SOLAR_POWER" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SOLAR_POWER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 5, "MOVE_MEGA_DRAIN" ],
-            [ 9, "MOVE_INGRAIN" ],
-            [ 13, "MOVE_GRASS_WHISTLE" ],
-            [ 17, "MOVE_LEECH_SEED" ],
-            [ 21, "MOVE_ENDEAVOR" ],
-            [ 25, "MOVE_WORRY_SEED" ],
-            [ 29, "MOVE_RAZOR_LEAF" ],
-            [ 33, "MOVE_SYNTHESIS" ],
-            [ 37, "MOVE_SUNNY_DAY" ],
-            [ 41, "MOVE_GIGA_DRAIN" ],
-            [ 45, "MOVE_SEED_BOMB" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                5,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                9,
+                "MOVE_INGRAIN"
+            ],
+            [
+                13,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                17,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                20,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                25,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                28,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                30,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                34,
+                "MOVE_SOLAR_BEAM"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -111,7 +112,7 @@
         "pokemon_pos_m": 28,
         "en": {
             "name": "SUNKERN",
-            "category": "Seed Pokémon",
+            "category": "Seed Pok\u00e9mon",
             "entry_text": [
                 "It suddenly falls out of the sky in\n",
                 "the morning. A year after a cold\n",
@@ -120,47 +121,47 @@
         },
         "fr": {
             "name": "TOURNEGRIN",
-            "category": "Pokémon Graine",
+            "category": "Pok\u00e9mon Graine",
             "entry_text": [
                 "Il tombe du ciel sans crier gare en\n",
-                "matinée. On en croise énormément \n",
-                "l’année suivant un été froid."
+                "matin\u00e9e. On en croise \u00e9norm\u00e9ment \n",
+                "l\u2019ann\u00e9e suivant un \u00e9t\u00e9 froid."
             ]
         },
         "de": {
             "name": "SONNKERN",
             "category": "Samen",
             "entry_text": [
-                "Morgens fällt es plötzlich aus dem\n",
+                "Morgens f\u00e4llt es pl\u00f6tzlich aus dem\n",
                 "Himmel. War der Sommer kalt,\n",
                 "explodiert seine Population."
             ]
         },
         "it": {
             "name": "SUNKERN",
-            "category": "Pokémon Seme",
+            "category": "Pok\u00e9mon Seme",
             "entry_text": [
-                "Cade improvvisamente giù dal cielo\n",
-                "al mattino. Dopo un’estate fredda,\n",
+                "Cade improvvisamente gi\u00f9 dal cielo\n",
+                "al mattino. Dopo un\u2019estate fredda,\n",
                 "la popolazione di SUNKERN esplode."
             ]
         },
         "es": {
             "name": "SUNKERN",
-            "category": "Pokémon Semilla",
+            "category": "Pok\u00e9mon Semilla",
             "entry_text": [
                 "Cae de repente del cielo por las\n",
-                "mañanas. Los años de veranos\n",
-                "suaves su número se multiplica."
+                "ma\u00f1anas. Los a\u00f1os de veranos\n",
+                "suaves su n\u00famero se multiplica."
             ]
         },
         "jp": {
-            "name": "ヒマナッツ",
-            "category": "たねポケモン",
+            "name": "\u30d2\u30de\u30ca\u30c3\u30c4",
+            "category": "\u305f\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あるあさ　とつぜん　ふってくる。\n",
-                "なつが　さむかった　つぎの　としは\n",
-                "かずが　ばくはつてきに　ふえる。"
+                "\u3042\u308b\u3042\u3055\u3000\u3068\u3064\u305c\u3093\u3000\u3075\u3063\u3066\u304f\u308b\u3002\n",
+                "\u306a\u3064\u304c\u3000\u3055\u3080\u304b\u3063\u305f\u3000\u3064\u304e\u306e\u3000\u3068\u3057\u306f\n",
+                "\u304b\u305a\u304c\u3000\u3070\u304f\u306f\u3064\u3066\u304d\u306b\u3000\u3075\u3048\u308b\u3002"
             ]
         }
     },

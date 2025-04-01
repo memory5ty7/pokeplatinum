@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 77
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 132,
     "ev_yields": {
@@ -26,72 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_IRON_FIST",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TRICK" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_THUNDER_WAVE" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_CONFUSE_RAY" ],
-            [ 8, "MOVE_UPROAR" ],
-            [ 15, "MOVE_DOUBLE_TEAM" ],
-            [ 22, "MOVE_SHOCK_WAVE" ],
-            [ 29, "MOVE_OMINOUS_WIND" ],
-            [ 36, "MOVE_SUBSTITUTE" ],
-            [ 43, "MOVE_CHARGE" ],
-            [ 50, "MOVE_DISCHARGE" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM46",
-            "TM49",
-            "TM57",
-            "TM58",
-            "TM61",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -110,7 +65,7 @@
         "pokemon_pos_m": 65528,
         "en": {
             "name": "ROTOM",
-            "category": "Plasma Pokémon",
+            "category": "Plasma Pok\u00e9mon",
             "entry_text": [
                 "Its electric-like body can enter\n",
                 "some kinds of machines and take\n",
@@ -119,47 +74,47 @@
         },
         "fr": {
             "name": "MOTISMA",
-            "category": "Pokémon Plasma",
+            "category": "Pok\u00e9mon Plasma",
             "entry_text": [
                 "Son corps est fait de plasma. Il\n",
-                "cause de gros dégâts en infiltrant\n",
-                "des appareils électroniques."
+                "cause de gros d\u00e9g\u00e2ts en infiltrant\n",
+                "des appareils \u00e9lectroniques."
             ]
         },
         "de": {
             "name": "ROTOM",
             "category": "Plasma",
             "entry_text": [
-                "Sein Körper besteht aus Plasma. Mit\n",
-                "ihm kann es in elektrische Geräte\n",
-                "eindringen und für Chaos sorgen."
+                "Sein K\u00f6rper besteht aus Plasma. Mit\n",
+                "ihm kann es in elektrische Ger\u00e4te\n",
+                "eindringen und f\u00fcr Chaos sorgen."
             ]
         },
         "it": {
             "name": "ROTOM",
-            "category": "Pokémon Plasma",
+            "category": "Pok\u00e9mon Plasma",
             "entry_text": [
-                "Il suo corpo è composto di plasma.\n",
-                "È solito infiltrarsi negli strumenti\n",
+                "Il suo corpo \u00e8 composto di plasma.\n",
+                "\u00c8 solito infiltrarsi negli strumenti\n",
                 "elettronici per provocare caos."
             ]
         },
         "es": {
             "name": "ROTOM",
-            "category": "Pokémon Plasma",
+            "category": "Pok\u00e9mon Plasma",
             "entry_text": [
-                "Su cuerpo está hecho de plasma.\n",
+                "Su cuerpo est\u00e1 hecho de plasma.\n",
                 "Puede infiltrarse en dispositivos\n",
-                "electrónicos e inutilizarlos."
+                "electr\u00f3nicos e inutilizarlos."
             ]
         },
         "jp": {
-            "name": "ロトム",
-            "category": "プラズマポケモン",
+            "name": "\u30ed\u30c8\u30e0",
+            "category": "\u30d7\u30e9\u30ba\u30de\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "プラズマで　できた　からだを　もつ。\n",
-                "でんかせいひんに　もぐりこみ\n",
-                "わるさを　することで　しられている。"
+                "\u30d7\u30e9\u30ba\u30de\u3067\u3000\u3067\u304d\u305f\u3000\u304b\u3089\u3060\u3092\u3000\u3082\u3064\u3002\n",
+                "\u3067\u3093\u304b\u305b\u3044\u3072\u3093\u306b\u3000\u3082\u3050\u308a\u3053\u307f\n",
+                "\u308f\u308b\u3055\u3092\u3000\u3059\u308b\u3053\u3068\u3067\u3000\u3057\u3089\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

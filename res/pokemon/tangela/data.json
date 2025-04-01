@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 40
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 166,
     "ev_yields": {
@@ -26,73 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_LEAF_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_TANGLING_HAIR",
+        "ABILITY_REGENERATOR"
+    ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_INGRAIN" ],
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 5, "MOVE_SLEEP_POWDER" ],
-            [ 8, "MOVE_ABSORB" ],
-            [ 12, "MOVE_GROWTH" ],
-            [ 15, "MOVE_POISON_POWDER" ],
-            [ 19, "MOVE_VINE_WHIP" ],
-            [ 22, "MOVE_BIND" ],
-            [ 26, "MOVE_MEGA_DRAIN" ],
-            [ 29, "MOVE_STUN_SPORE" ],
-            [ 33, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_KNOCK_OFF" ],
-            [ 40, "MOVE_NATURAL_GIFT" ],
-            [ 43, "MOVE_SLAM" ],
-            [ 47, "MOVE_TICKLE" ],
-            [ 50, "MOVE_WRING_OUT" ],
-            [ 54, "MOVE_POWER_WHIP" ]
+            [
+                1,
+                "MOVE_INGRAIN"
+            ],
+            [
+                4,
+                "MOVE_ABSORB"
+            ],
+            [
+                7,
+                "MOVE_VINE_WHIP"
+            ],
+            [
+                13,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                13,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                13,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                16,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                22,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                30,
+                "MOVE_ANCIENT_POWER"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -119,7 +108,7 @@
         "pokemon_pos_m": 17,
         "en": {
             "name": "TANGELA",
-            "category": "Vine Pokémon",
+            "category": "Vine Pok\u00e9mon",
             "entry_text": [
                 "The blue vines shrouding its body\n",
                 "are covered in a growth of fine\n",
@@ -128,11 +117,11 @@
         },
         "fr": {
             "name": "SAQUEDENEU",
-            "category": "Pokémon Vigne",
+            "category": "Pok\u00e9mon Vigne",
             "entry_text": [
-                "Il s’abrite derrière des lianes\n",
-                "bleues. Nul n’a jamais vu le\n",
-                "visage qu’elles dissimulent."
+                "Il s\u2019abrite derri\u00e8re des lianes\n",
+                "bleues. Nul n\u2019a jamais vu le\n",
+                "visage qu\u2019elles dissimulent."
             ]
         },
         "de": {
@@ -141,34 +130,34 @@
             "entry_text": [
                 "Es ist von blauen Ranken umgeben.\n",
                 "Niemand hat jemals das Gesicht\n",
-                "dieses Pokémon gesehen."
+                "dieses Pok\u00e9mon gesehen."
             ]
         },
         "it": {
             "name": "TANGELA",
-            "category": "Pokémon Liana",
+            "category": "Pok\u00e9mon Liana",
             "entry_text": [
-                "È ricoperto di liane blu. Nessuno\n",
-                "ha mai visto il suo volto, poiché è\n",
+                "\u00c8 ricoperto di liane blu. Nessuno\n",
+                "ha mai visto il suo volto, poich\u00e9 \u00e8\n",
                 "celato dal groviglio di liane."
             ]
         },
         "es": {
             "name": "TANGELA",
-            "category": "Pokémon Enredadera",
+            "category": "Pok\u00e9mon Enredadera",
             "entry_text": [
-                "Está envuelto en lianas azules.\n",
+                "Est\u00e1 envuelto en lianas azules.\n",
                 "Nadie ha logrado ver el rostro\n",
                 "que se oculta tras ellas."
             ]
         },
         "jp": {
-            "name": "モンジャラ",
-            "category": "ツルじょうポケモン",
+            "name": "\u30e2\u30f3\u30b8\u30e3\u30e9",
+            "category": "\u30c4\u30eb\u3058\u3087\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あおい　ツルに　おおわれている。\n",
-                "ツルに　かくれている　かおを\n",
-                "みたものは　まだ　いない。"
+                "\u3042\u304a\u3044\u3000\u30c4\u30eb\u306b\u3000\u304a\u304a\u308f\u308c\u3066\u3044\u308b\u3002\n",
+                "\u30c4\u30eb\u306b\u3000\u304b\u304f\u308c\u3066\u3044\u308b\u3000\u304b\u304a\u3092\n",
+                "\u307f\u305f\u3082\u306e\u306f\u3000\u307e\u3060\u3000\u3044\u306a\u3044\u3002"
             ]
         }
     },

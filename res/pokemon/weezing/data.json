@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 70
     },
-    "types": [ "TYPE_POISON", "TYPE_POISON" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_POISON"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 173,
     "ev_yields": {
@@ -26,75 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_AFTERMATH"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_POISON_GAS" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 6, "MOVE_SMOG" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 15, "MOVE_ASSURANCE" ],
-            [ 19, "MOVE_SELFDESTRUCT" ],
-            [ 24, "MOVE_SLUDGE" ],
-            [ 28, "MOVE_HAZE" ],
-            [ 33, "MOVE_DOUBLE_HIT" ],
-            [ 40, "MOVE_EXPLOSION" ],
-            [ 48, "MOVE_SLUDGE_BOMB" ],
-            [ 55, "MOVE_DESTINY_BOND" ],
-            [ 63, "MOVE_MEMENTO" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM36",
-            "TM38",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM58",
-            "TM61",
-            "TM64",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM74",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -113,7 +65,7 @@
         "pokemon_pos_m": 65526,
         "en": {
             "name": "WEEZING",
-            "category": "Poison Gas Pokémon",
+            "category": "Poison Gas Pok\u00e9mon",
             "entry_text": [
                 "It grows by feeding on gases\n",
                 "released by garbage. Though very\n",
@@ -122,25 +74,25 @@
         },
         "fr": {
             "name": "SMOGOGO",
-            "category": "Pokémon Gaz Mortel",
+            "category": "Pok\u00e9mon Gaz Mortel",
             "entry_text": [
                 "Il grandit en absorbant les gaz des\n",
-                "détritus. Des triplés existent, bien\n",
-                "qu’ils soient fort rares."
+                "d\u00e9tritus. Des tripl\u00e9s existent, bien\n",
+                "qu\u2019ils soient fort rares."
             ]
         },
         "de": {
             "name": "SMOGMOG",
             "category": "Giftwolke",
             "entry_text": [
-                "Es wächst, indem es Gase aufnimmt,\n",
-                "die aus dem Müll aufsteigen. Selten\n",
+                "Es w\u00e4chst, indem es Gase aufnimmt,\n",
+                "die aus dem M\u00fcll aufsteigen. Selten\n",
                 "kann man Drillinge von ihnen finden."
             ]
         },
         "it": {
             "name": "WEEZING",
-            "category": "Pokémon Velenuvola",
+            "category": "Pok\u00e9mon Velenuvola",
             "entry_text": [
                 "Cresce nutrendosi dei gas emanati\n",
                 "dai rifiuti. Anche se rarissimi, ne\n",
@@ -149,20 +101,20 @@
         },
         "es": {
             "name": "WEEZING",
-            "category": "Pokémon Gas Veneno",
+            "category": "Pok\u00e9mon Gas Veneno",
             "entry_text": [
-                "Crece alimentándose de los gases\n",
+                "Crece aliment\u00e1ndose de los gases\n",
                 "emanados por la basura. Se han\n",
                 "dado raros casos de trillizos."
             ]
         },
         "jp": {
-            "name": "マタドガス",
-            "category": "どくガスポケモン",
+            "name": "\u30de\u30bf\u30c9\u30ac\u30b9",
+            "category": "\u3069\u304f\u30ac\u30b9\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ゴミから　はっせいする　ガスを\n",
-                "たべて　おおきくなる。ごくまれに\n",
-                "３つごの　マタドガスが　みつかる。"
+                "\u30b4\u30df\u304b\u3089\u3000\u306f\u3063\u305b\u3044\u3059\u308b\u3000\u30ac\u30b9\u3092\n",
+                "\u305f\u3079\u3066\u3000\u304a\u304a\u304d\u304f\u306a\u308b\u3002\u3054\u304f\u307e\u308c\u306b\n",
+                "\uff13\u3064\u3054\u306e\u3000\u30de\u30bf\u30c9\u30ac\u30b9\u304c\u3000\u307f\u3064\u304b\u308b\u3002"
             ]
         }
     },

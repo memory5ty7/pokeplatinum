@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 90
     },
-    "types": [ "TYPE_WATER", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 185,
     "ev_yields": {
@@ -26,74 +29,97 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_WATER_ABSORB", "ABILITY_DAMP" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_WATER_ABSORB"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BUBBLE_BEAM" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 1, "MOVE_DOUBLE_SLAP" ],
-            [ 1, "MOVE_SUBMISSION" ],
-            [ 43, "MOVE_DYNAMIC_PUNCH" ],
-            [ 53, "MOVE_MIND_READER" ]
+            [
+                1,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                5,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                10,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                18,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                24,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                30,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                32,
+                "MOVE_TAUNT"
+            ],
+            [
+                34,
+                "MOVE_FLING"
+            ],
+            [
+                36,
+                "MOVE_WATERFALL"
+            ],
+            [
+                42,
+                "MOVE_HIGH_HORSEPOWER"
+            ],
+            [
+                45,
+                "MOVE_VACUUM_WAVE"
+            ],
+            [
+                45,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                50,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                55,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                62,
+                "MOVE_WAVE_CRASH"
+            ],
+            [
+                67,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                70,
+                "MOVE_MAT_BLOCK"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM08",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -112,7 +138,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "POLIWRATH",
-            "category": "Tadpole Pokémon",
+            "category": "Tadpole Pok\u00e9mon",
             "entry_text": [
                 "With its extremely tough muscles,\n",
                 "it can keep swimming in the Pacific\n",
@@ -121,11 +147,11 @@
         },
         "fr": {
             "name": "TARTARD",
-            "category": "Pokémon Têtard",
+            "category": "Pok\u00e9mon T\u00eatard",
             "entry_text": [
-                "Il possède de sacrés biscoteaux.\n",
-                "Il peut parcourir sans relâche\n",
-                "l’Océan Pacifique."
+                "Il poss\u00e8de de sacr\u00e9s biscoteaux.\n",
+                "Il peut parcourir sans rel\u00e2che\n",
+                "l\u2019Oc\u00e9an Pacifique."
             ]
         },
         "de": {
@@ -134,34 +160,34 @@
             "entry_text": [
                 "Es hat extrem starke Muskeln und\n",
                 "kann durch den Ozean schwimmen,\n",
-                "ohne sich ausruhen zu müssen."
+                "ohne sich ausruhen zu m\u00fcssen."
             ]
         },
         "it": {
             "name": "POLIWRATH",
-            "category": "Pokémon Girino",
+            "category": "Pok\u00e9mon Girino",
             "entry_text": [
                 "Ha dei muscoli tanto sviluppati da\n",
                 "riuscire ad attraversare a nuoto\n",
-                "l’Oceano Pacifico senza fermarsi."
+                "l\u2019Oceano Pacifico senza fermarsi."
             ]
         },
         "es": {
             "name": "POLIWRATH",
-            "category": "Pokémon Renacuajo",
+            "category": "Pok\u00e9mon Renacuajo",
             "entry_text": [
-                "Tiene músculos muy desarrollados.\n",
-                "Es capaz de nadar en el océano\n",
+                "Tiene m\u00fasculos muy desarrollados.\n",
+                "Es capaz de nadar en el oc\u00e9ano\n",
                 "sin descanso."
             ]
         },
         "jp": {
-            "name": "ニョロボン",
-            "category": "おたまポケモン",
+            "name": "\u30cb\u30e7\u30ed\u30dc\u30f3",
+            "category": "\u304a\u305f\u307e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きょうじんな　きんにくを　もつ。\n",
-                "たいへいようを　やすむことなく\n",
-                "およぎつづけることが　できるのだ。"
+                "\u304d\u3087\u3046\u3058\u3093\u306a\u3000\u304d\u3093\u306b\u304f\u3092\u3000\u3082\u3064\u3002\n",
+                "\u305f\u3044\u3078\u3044\u3088\u3046\u3092\u3000\u3084\u3059\u3080\u3053\u3068\u306a\u304f\n",
+                "\u304a\u3088\u304e\u3064\u3065\u3051\u308b\u3053\u3068\u304c\u3000\u3067\u304d\u308b\u306e\u3060\u3002"
             ]
         }
     },

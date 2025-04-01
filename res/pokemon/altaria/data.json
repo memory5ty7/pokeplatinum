@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 105
     },
-    "types": [ "TYPE_DRAGON", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_DRAGON",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 188,
     "ev_yields": {
@@ -26,86 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_FLUFFY",
+        "ABILITY_AERILATE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_PLUCK" ],
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_SING" ],
-            [ 5, "MOVE_ASTONISH" ],
-            [ 9, "MOVE_SING" ],
-            [ 13, "MOVE_FURY_ATTACK" ],
-            [ 18, "MOVE_SAFEGUARD" ],
-            [ 23, "MOVE_MIST" ],
-            [ 28, "MOVE_TAKE_DOWN" ],
-            [ 32, "MOVE_NATURAL_GIFT" ],
-            [ 35, "MOVE_DRAGON_BREATH" ],
-            [ 39, "MOVE_DRAGON_DANCE" ],
-            [ 46, "MOVE_REFRESH" ],
-            [ 54, "MOVE_DRAGON_PULSE" ],
-            [ 62, "MOVE_PERISH_SONG" ],
-            [ 70, "MOVE_SKY_ATTACK" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM59",
-            "TM68",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM88",
-            "TM90",
-            "HM02",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_OUTRAGE",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -124,7 +65,7 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "ALTARIA",
-            "category": "Humming Pokémon",
+            "category": "Humming Pok\u00e9mon",
             "entry_text": [
                 "If it bonds with a person, it will\n",
                 "gently envelop the friend with its\n",
@@ -133,10 +74,10 @@
         },
         "fr": {
             "name": "ALTARIA",
-            "category": "Pokémon Virevolteur",
+            "category": "Pok\u00e9mon Virevolteur",
             "entry_text": [
-                "En vol, il ressemble à un nuage\n",
-                "cotonneux. Il fredonne d’une voix\n",
+                "En vol, il ressemble \u00e0 un nuage\n",
+                "cotonneux. Il fredonne d\u2019une voix\n",
                 "de soprano."
             ]
         },
@@ -151,7 +92,7 @@
         },
         "it": {
             "name": "ALTARIA",
-            "category": "Pokémon Canterino",
+            "category": "Pok\u00e9mon Canterino",
             "entry_text": [
                 "Quando lotta, sembra una morbida\n",
                 "nuvola. Canticchia con la sua\n",
@@ -160,20 +101,20 @@
         },
         "es": {
             "name": "ALTARIA",
-            "category": "Pokémon Cantor",
+            "category": "Pok\u00e9mon Cantor",
             "entry_text": [
                 "Cuando vuela, parece una nube\n",
-                "de algodón. Entona bellas\n",
-                "melodías con su voz de soprano."
+                "de algod\u00f3n. Entona bellas\n",
+                "melod\u00edas con su voz de soprano."
             ]
         },
         "jp": {
-            "name": "チルタリス",
-            "category": "ハミングポケモン",
+            "name": "\u30c1\u30eb\u30bf\u30ea\u30b9",
+            "category": "\u30cf\u30df\u30f3\u30b0\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "そらを　とぶ　すがたは\n",
-                "まるで　わたぐものように　みえる。\n",
-                "ソプラノの　こえで　ハミングする。"
+                "\u305d\u3089\u3092\u3000\u3068\u3076\u3000\u3059\u304c\u305f\u306f\n",
+                "\u307e\u308b\u3067\u3000\u308f\u305f\u3050\u3082\u306e\u3088\u3046\u306b\u3000\u307f\u3048\u308b\u3002\n",
+                "\u30bd\u30d7\u30e9\u30ce\u306e\u3000\u3053\u3048\u3067\u3000\u30cf\u30df\u30f3\u30b0\u3059\u308b\u3002"
             ]
         }
     },

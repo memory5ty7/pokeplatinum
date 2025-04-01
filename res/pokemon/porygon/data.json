@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 75
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 130,
     "ev_yields": {
@@ -26,76 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_TRACE", "ABILITY_DOWNLOAD" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_ANALYTIC",
+        "ABILITY_TRACE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_CONVERSION_2" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_CONVERSION" ],
-            [ 1, "MOVE_SHARPEN" ],
-            [ 7, "MOVE_PSYBEAM" ],
-            [ 12, "MOVE_AGILITY" ],
-            [ 18, "MOVE_RECOVER" ],
-            [ 23, "MOVE_MAGNET_RISE" ],
-            [ 29, "MOVE_SIGNAL_BEAM" ],
-            [ 34, "MOVE_RECYCLE" ],
-            [ 40, "MOVE_DISCHARGE" ],
-            [ 45, "MOVE_LOCK_ON" ],
-            [ 51, "MOVE_TRI_ATTACK" ],
-            [ 56, "MOVE_MAGIC_COAT" ],
-            [ 62, "MOVE_ZAP_CANNON" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -122,56 +71,56 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "PORYGON",
-            "category": "Virtual Pokémon",
+            "category": "Virtual Pok\u00e9mon",
             "entry_text": [
-                "A man-made Pokémon created using\n",
+                "A man-made Pok\u00e9mon created using\n",
                 "advanced scientific means. It can\n",
                 "move freely in cyberspace."
             ]
         },
         "fr": {
             "name": "PORYGON",
-            "category": "Pokémon Virtuel",
+            "category": "Pok\u00e9mon Virtuel",
             "entry_text": [
-                "Le premier Pokémon artificiel au\n",
-                "monde. Il a le pouvoir d’arpenter\n",
-                "l’espace électronique."
+                "Le premier Pok\u00e9mon artificiel au\n",
+                "monde. Il a le pouvoir d\u2019arpenter\n",
+                "l\u2019espace \u00e9lectronique."
             ]
         },
         "de": {
             "name": "PORYGON",
             "category": "Virtuell",
             "entry_text": [
-                "Das erste künstlich erzeugte PKMN\n",
+                "Das erste k\u00fcnstlich erzeugte PKMN\n",
                 "der Welt. Es kann durch\n",
                 "elektronischen Raum reisen."
             ]
         },
         "it": {
             "name": "PORYGON",
-            "category": "Pokémon Virtuale",
+            "category": "Pok\u00e9mon Virtuale",
             "entry_text": [
-                "Il primo Pokémon al mondo creato\n",
+                "Il primo Pok\u00e9mon al mondo creato\n",
                 "artificialmente. Riesce a muoversi\n",
                 "liberamente nel ciberspazio."
             ]
         },
         "es": {
             "name": "PORYGON",
-            "category": "Pokémon Virtual",
+            "category": "Pok\u00e9mon Virtual",
             "entry_text": [
-                "Es el primer Pokémon creado de\n",
+                "Es el primer Pok\u00e9mon creado de\n",
                 "forma artificial. Puede viajar por\n",
                 "el ciberespacio."
             ]
         },
         "jp": {
-            "name": "ポリゴン",
-            "category": "バ－チャルポケモン",
+            "name": "\u30dd\u30ea\u30b4\u30f3",
+            "category": "\u30d0\uff0d\u30c1\u30e3\u30eb\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "せかいで　はじめて　じんこうてきに\n",
-                "つくりだされた　ポケモン。\n",
-                "でんしくうかんを　いどうできる。"
+                "\u305b\u304b\u3044\u3067\u3000\u306f\u3058\u3081\u3066\u3000\u3058\u3093\u3053\u3046\u3066\u304d\u306b\n",
+                "\u3064\u304f\u308a\u3060\u3055\u308c\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3067\u3093\u3057\u304f\u3046\u304b\u3093\u3092\u3000\u3044\u3069\u3046\u3067\u304d\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 45
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 73,
     "ev_yields": {
@@ -26,61 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_ARENA_TRAP" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_ARENA_TRAP",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BITE" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_DIG" ],
-            [ 49, "MOVE_SANDSTORM" ],
-            [ 57, "MOVE_HYPER_BEAM" ],
-            [ 65, "MOVE_EARTH_POWER" ],
-            [ 73, "MOVE_EARTHQUAKE" ],
-            [ 81, "MOVE_FEINT" ],
-            [ 89, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_ENDURE"
+            ],
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                5,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                10,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                14,
+                "MOVE_DIG"
+            ],
+            [
+                17,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                20,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                23,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                28,
+                "MOVE_CRUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -107,7 +108,7 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "TRAPINCH",
-            "category": "Ant Pit Pokémon",
+            "category": "Ant Pit Pok\u00e9mon",
             "entry_text": [
                 "It makes a conical pit in desert\n",
                 "sand and lies in wait at the bottom\n",
@@ -116,25 +117,25 @@
         },
         "fr": {
             "name": "KRAKNOIX",
-            "category": "Pokémon Piégeur",
+            "category": "Pok\u00e9mon Pi\u00e9geur",
             "entry_text": [
                 "Il creuse un trou conique dans le\n",
-                "sable du désert et se terre en\n",
-                "attendant qu’une proie trébuche."
+                "sable du d\u00e9sert et se terre en\n",
+                "attendant qu\u2019une proie tr\u00e9buche."
             ]
         },
         "de": {
             "name": "KNACKLION",
-            "category": "Ameisenlöwe",
+            "category": "Ameisenl\u00f6we",
             "entry_text": [
-                "Es baut im Wüstensand eine\n",
+                "Es baut im W\u00fcstensand eine\n",
                 "Fallgrube, setzt sich in ihr auf den\n",
                 "Boden und wartet auf Beute."
             ]
         },
         "it": {
             "name": "TRAPINCH",
-            "category": "Pokémon Trappola",
+            "category": "Pok\u00e9mon Trappola",
             "entry_text": [
                 "Scava fosse coniche nella sabbia\n",
                 "del deserto e attende che le prede\n",
@@ -143,20 +144,20 @@
         },
         "es": {
             "name": "TRAPINCH",
-            "category": "Pokémon Hormigaleón",
+            "category": "Pok\u00e9mon Hormigale\u00f3n",
             "entry_text": [
-                "Cava fosas cóncavas en el desierto\n",
+                "Cava fosas c\u00f3ncavas en el desierto\n",
                 "y espera en el fondo a que las\n",
                 "presas caigan en ellas."
             ]
         },
         "jp": {
-            "name": "ナックラ－",
-            "category": "ありじごくポケモン",
+            "name": "\u30ca\u30c3\u30af\u30e9\uff0d",
+            "category": "\u3042\u308a\u3058\u3054\u304f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "さばくに　つくった　すりばちがたの\n",
-                "あなの　そこで　えものが　はまって\n",
-                "おちてくるのを　まちつづける。"
+                "\u3055\u3070\u304f\u306b\u3000\u3064\u304f\u3063\u305f\u3000\u3059\u308a\u3070\u3061\u304c\u305f\u306e\n",
+                "\u3042\u306a\u306e\u3000\u305d\u3053\u3067\u3000\u3048\u3082\u306e\u304c\u3000\u306f\u307e\u3063\u3066\n",
+                "\u304a\u3061\u3066\u304f\u308b\u306e\u3092\u3000\u307e\u3061\u3064\u3065\u3051\u308b\u3002"
             ]
         }
     },

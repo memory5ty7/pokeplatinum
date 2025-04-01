@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 65
     },
-    "types": [ "TYPE_STEEL", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 25,
     "base_exp_reward": 196,
     "ev_yields": {
@@ -26,91 +29,93 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_ROCK_HEAD", "ABILITY_STURDY" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_SHEER_FORCE",
+        "ABILITY_STRONG_JAW",
+        "ABILITY_STURDY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_BIND" ],
-            [ 6, "MOVE_SCREECH" ],
-            [ 9, "MOVE_ROCK_THROW" ],
-            [ 14, "MOVE_RAGE" ],
-            [ 17, "MOVE_ROCK_TOMB" ],
-            [ 22, "MOVE_SANDSTORM" ],
-            [ 25, "MOVE_SLAM" ],
-            [ 30, "MOVE_ROCK_POLISH" ],
-            [ 33, "MOVE_DRAGON_BREATH" ],
-            [ 38, "MOVE_CURSE" ],
-            [ 41, "MOVE_IRON_TAIL" ],
-            [ 46, "MOVE_CRUNCH" ],
-            [ 49, "MOVE_DOUBLE_EDGE" ],
-            [ 54, "MOVE_STONE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_BIND"
+            ],
+            [
+                5,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                10,
+                "MOVE_SCREECH"
+            ],
+            [
+                12,
+                "MOVE_DRAGON_BREATH"
+            ],
+            [
+                14,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                16,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                18,
+                "MOVE_BLOCK"
+            ],
+            [
+                20,
+                "MOVE_IRON_HEAD"
+            ],
+            [
+                22,
+                "MOVE_ACCELEROCK"
+            ],
+            [
+                25,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                28,
+                "MOVE_IRON_TAIL"
+            ],
+            [
+                32,
+                "MOVE_DIG"
+            ],
+            [
+                36,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                42,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_GYRO_BALL"
+            ],
+            [
+                56,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM59",
-            "TM64",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_MAGNET_RISE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -129,7 +134,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "STEELIX",
-            "category": "Iron Snake Pokémon",
+            "category": "Iron Snake Pok\u00e9mon",
             "entry_text": [
                 "It is thought its body transformed\n",
                 "as a result of iron accumulating\n",
@@ -138,11 +143,11 @@
         },
         "fr": {
             "name": "STEELIX",
-            "category": "Pokémon Serpenfer",
+            "category": "Pok\u00e9mon Serpenfer",
             "entry_text": [
-                "Grâce à la température élevée et la\n",
+                "Gr\u00e2ce \u00e0 la temp\u00e9rature \u00e9lev\u00e9e et la\n",
                 "haute pression souterraines, son\n",
-                "corps est plus dur que le métal."
+                "corps est plus dur que le m\u00e9tal."
             ]
         },
         "de": {
@@ -150,35 +155,35 @@
             "category": "Stahlboa",
             "entry_text": [
                 "Hoher Druck und hohe Temperaturen\n",
-                "haben seinen Körper härter als\n",
+                "haben seinen K\u00f6rper h\u00e4rter als\n",
                 "Stahl werden lassen."
             ]
         },
         "it": {
             "name": "STEELIX",
-            "category": "Pokémon Ferroserpe",
+            "category": "Pok\u00e9mon Ferroserpe",
             "entry_text": [
                 "Temprato dalla pressione e dal\n",
-                "calore sotterraneo, il suo corpo è\n",
-                "più duro di qualsiasi metallo."
+                "calore sotterraneo, il suo corpo \u00e8\n",
+                "pi\u00f9 duro di qualsiasi metallo."
             ]
         },
         "es": {
             "name": "STEELIX",
-            "category": "Pokémon Serpférrea",
+            "category": "Pok\u00e9mon Serpf\u00e9rrea",
             "entry_text": [
-                "Su cuerpo es más duro que\n",
+                "Su cuerpo es m\u00e1s duro que\n",
                 "cualquier metal debido a la gran\n",
-                "presión y calor de su hábitat."
+                "presi\u00f3n y calor de su h\u00e1bitat."
             ]
         },
         "jp": {
-            "name": "ハガネ－ル",
-            "category": "てつへびポケモン",
+            "name": "\u30cf\u30ac\u30cd\uff0d\u30eb",
+            "category": "\u3066\u3064\u3078\u3073\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ちちゅうの　たかい　あつりょくと\n",
-                "ねつで　きたえられた　からだは\n",
-                "あらゆる　きんぞくよりも　かたい。"
+                "\u3061\u3061\u3085\u3046\u306e\u3000\u305f\u304b\u3044\u3000\u3042\u3064\u308a\u3087\u304f\u3068\n",
+                "\u306d\u3064\u3067\u3000\u304d\u305f\u3048\u3089\u308c\u305f\u3000\u304b\u3089\u3060\u306f\n",
+                "\u3042\u3089\u3086\u308b\u3000\u304d\u3093\u305e\u304f\u3088\u308a\u3082\u3000\u304b\u305f\u3044\u3002"
             ]
         }
     },

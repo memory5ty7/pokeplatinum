@@ -7,7 +7,10 @@
         "special_attack": 25,
         "special_defense": 25
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 72,
     "ev_yields": {
@@ -26,18 +29,31 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHED_SKIN",
+        "ABILITY_SHED_SKIN",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HARDEN" ],
-            [ 7, "MOVE_HARDEN" ]
+            [
+                1,
+                "MOVE_HARDEN"
+            ],
+            [
+                7,
+                "MOVE_HARDEN"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_IRON_DEFENSE" ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -64,7 +80,7 @@
         "pokemon_pos_m": 22,
         "en": {
             "name": "SILCOON",
-            "category": "Cocoon Pokémon",
+            "category": "Cocoon Pok\u00e9mon",
             "entry_text": [
                 "It wraps silk around the branches\n",
                 "of a tree. It drinks rainwater on\n",
@@ -73,47 +89,47 @@
         },
         "fr": {
             "name": "ARMULYS",
-            "category": "Pokémon Cocon",
+            "category": "Pok\u00e9mon Cocon",
             "entry_text": [
-                "Il s’accroche en enroulant sa soie\n",
+                "Il s\u2019accroche en enroulant sa soie\n",
                 "autour des branches. Il reste\n",
-                "immobile en attendant d’évoluer."
+                "immobile en attendant d\u2019\u00e9voluer."
             ]
         },
         "de": {
             "name": "SCHALOKO",
             "category": "Kokon",
             "entry_text": [
-                "Es bindet sich mit Seidenfäden an\n",
-                "Ästen fest und wartet so starr auf\n",
+                "Es bindet sich mit Seidenf\u00e4den an\n",
+                "\u00c4sten fest und wartet so starr auf\n",
                 "seine Entwicklung."
             ]
         },
         "it": {
             "name": "SILCOON",
-            "category": "Pokémon Bozzolo",
+            "category": "Pok\u00e9mon Bozzolo",
             "entry_text": [
                 "SILCOON si ancora ai rami con\n",
                 "fili di seta. In questa posizione\n",
-                "aspetta immobile l’evoluzione."
+                "aspetta immobile l\u2019evoluzione."
             ]
         },
         "es": {
             "name": "SILCOON",
-            "category": "Pokémon Capullo",
+            "category": "Pok\u00e9mon Capullo",
             "entry_text": [
                 "La seda que segrega su cuerpo le\n",
-                "permite agarrarse a los árboles y\n",
-                "esperar su evolución."
+                "permite agarrarse a los \u00e1rboles y\n",
+                "esperar su evoluci\u00f3n."
             ]
         },
         "jp": {
-            "name": "カラサリス",
-            "category": "さなぎポケモン",
+            "name": "\u30ab\u30e9\u30b5\u30ea\u30b9",
+            "category": "\u3055\u306a\u304e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "からだから　のびる　いとを　えだに\n",
-                "まきつけて　おちないように　こてい。\n",
-                "じっと　うごかずに　しんかを　まつ。"
+                "\u304b\u3089\u3060\u304b\u3089\u3000\u306e\u3073\u308b\u3000\u3044\u3068\u3092\u3000\u3048\u3060\u306b\n",
+                "\u307e\u304d\u3064\u3051\u3066\u3000\u304a\u3061\u306a\u3044\u3088\u3046\u306b\u3000\u3053\u3066\u3044\u3002\n",
+                "\u3058\u3063\u3068\u3000\u3046\u3054\u304b\u305a\u306b\u3000\u3057\u3093\u304b\u3092\u3000\u307e\u3064\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 115,
         "special_defense": 70
     },
-    "types": [ "TYPE_ROCK", "TYPE_WATER" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 199,
     "ev_yields": {
@@ -26,79 +29,69 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_SHELL_ARMOR" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SHELL_ARMOR",
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 1, "MOVE_WITHDRAW" ],
-            [ 1, "MOVE_BITE" ],
-            [ 7, "MOVE_BITE" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 16, "MOVE_ROLLOUT" ],
-            [ 19, "MOVE_LEER" ],
-            [ 25, "MOVE_MUD_SHOT" ],
-            [ 28, "MOVE_BRINE" ],
-            [ 34, "MOVE_PROTECT" ],
-            [ 37, "MOVE_ANCIENT_POWER" ],
-            [ 40, "MOVE_SPIKE_CANNON" ],
-            [ 48, "MOVE_TICKLE" ],
-            [ 56, "MOVE_ROCK_BLAST" ],
-            [ 67, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_TICKLE"
+            ],
+            [
+                5,
+                "MOVE_PROTECT"
+            ],
+            [
+                10,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                15,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                25,
+                "MOVE_CRUNCH"
+            ],
+            [
+                30,
+                "MOVE_BRINE"
+            ],
+            [
+                36,
+                "MOVE_SCALD"
+            ],
+            [
+                40,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                50,
+                "MOVE_EARTH_POWER"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM55",
-            "TM58",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM06",
-            "HM07",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -117,20 +110,20 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "OMASTAR",
-            "category": "Spiral Pokémon",
+            "category": "Spiral Pok\u00e9mon",
             "entry_text": [
-                "It is thought that this Pokémon\n",
+                "It is thought that this Pok\u00e9mon\n",
                 "became extinct because its spiral\n",
                 "shell grew too large."
             ]
         },
         "fr": {
             "name": "AMONISTAR",
-            "category": "Pokémon Spirale",
+            "category": "Pok\u00e9mon Spirale",
             "entry_text": [
-                "On pense que ce Pokémon a\n",
+                "On pense que ce Pok\u00e9mon a\n",
                 "disparu parce que sa coquille en\n",
-                "spirale était devenue trop grosse."
+                "spirale \u00e9tait devenue trop grosse."
             ]
         },
         "de": {
@@ -139,34 +132,34 @@
             "entry_text": [
                 "Man geht davon aus, dass das PKMN\n",
                 "ausgestorben ist, weil seine spiral-\n",
-                "förmige Schale zu groß wurde."
+                "f\u00f6rmige Schale zu gro\u00df wurde."
             ]
         },
         "it": {
             "name": "OMASTAR",
-            "category": "Pokémon Spirale",
+            "category": "Pok\u00e9mon Spirale",
             "entry_text": [
-                "Si pensa che questo Pokémon si\n",
-                "sia estinto perché la sua conchiglia\n",
-                "a spirale è cresciuta troppo."
+                "Si pensa che questo Pok\u00e9mon si\n",
+                "sia estinto perch\u00e9 la sua conchiglia\n",
+                "a spirale \u00e8 cresciuta troppo."
             ]
         },
         "es": {
             "name": "OMASTAR",
-            "category": "Pokémon Espiral",
+            "category": "Pok\u00e9mon Espiral",
             "entry_text": [
-                "Se cree que este Pokémon se\n",
-                "extinguió porque su concha\n",
-                "espiral creció demasiado."
+                "Se cree que este Pok\u00e9mon se\n",
+                "extingui\u00f3 porque su concha\n",
+                "espiral creci\u00f3 demasiado."
             ]
         },
         "jp": {
-            "name": "オムスタ－",
-            "category": "うずまきポケモン",
+            "name": "\u30aa\u30e0\u30b9\u30bf\uff0d",
+            "category": "\u3046\u305a\u307e\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "らせんじょうの　カラが　おおきく\n",
-                "なりすぎたことが　げんいんで\n",
-                "ぜつめつしたと　かんがえられている。"
+                "\u3089\u305b\u3093\u3058\u3087\u3046\u306e\u3000\u30ab\u30e9\u304c\u3000\u304a\u304a\u304d\u304f\n",
+                "\u306a\u308a\u3059\u304e\u305f\u3053\u3068\u304c\u3000\u3052\u3093\u3044\u3093\u3067\n",
+                "\u305c\u3064\u3081\u3064\u3057\u305f\u3068\u3000\u304b\u3093\u304c\u3048\u3089\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

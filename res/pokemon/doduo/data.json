@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 35
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 96,
     "ev_yields": {
@@ -26,60 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_RECKLESS",
+        "ABILITY_QUICK_FEET",
+        "ABILITY_TANGLED_FEET"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 10, "MOVE_RAGE" ],
-            [ 14, "MOVE_FURY_ATTACK" ],
-            [ 19, "MOVE_PURSUIT" ],
-            [ 23, "MOVE_UPROAR" ],
-            [ 28, "MOVE_ACUPRESSURE" ],
-            [ 32, "MOVE_DOUBLE_HIT" ],
-            [ 37, "MOVE_AGILITY" ],
-            [ 41, "MOVE_DRILL_PECK" ],
-            [ 46, "MOVE_ENDEAVOR" ]
+            [
+                1,
+                "MOVE_TAILWIND"
+            ],
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                6,
+                "MOVE_RAGE"
+            ],
+            [
+                9,
+                "MOVE_PLUCK"
+            ],
+            [
+                12,
+                "MOVE_THIEF"
+            ],
+            [
+                13,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                15,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                18,
+                "MOVE_TAUNT"
+            ],
+            [
+                20,
+                "MOVE_DOUBLE_HIT"
+            ],
+            [
+                26,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                30,
+                "MOVE_DRILL_PECK"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM90",
-            "HM02"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ENDEAVOR",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -106,7 +120,7 @@
         "pokemon_pos_m": 12,
         "en": {
             "name": "DODUO",
-            "category": "Twin Bird Pokémon",
+            "category": "Twin Bird Pok\u00e9mon",
             "entry_text": [
                 "The brains in its two heads appear\n",
                 "to communicate emotions to each\n",
@@ -115,25 +129,25 @@
         },
         "fr": {
             "name": "DODUO",
-            "category": "Pokémon Duoiseau",
+            "category": "Pok\u00e9mon Duoiseau",
             "entry_text": [
                 "Ses deux cerveaux semblent\n",
-                "communiquer leurs émotions\n",
-                "grâce à un lien télépathique."
+                "communiquer leurs \u00e9motions\n",
+                "gr\u00e2ce \u00e0 un lien t\u00e9l\u00e9pathique."
             ]
         },
         "de": {
             "name": "DODU",
             "category": "Duovogel",
             "entry_text": [
-                "Die Gehirne der beiden Köpfe\n",
-                "kommunizieren ihre Gefühle\n",
-                "über Telepathie."
+                "Die Gehirne der beiden K\u00f6pfe\n",
+                "kommunizieren ihre Gef\u00fchle\n",
+                "\u00fcber Telepathie."
             ]
         },
         "it": {
             "name": "DODUO",
-            "category": "Pokémon Biuccello",
+            "category": "Pok\u00e9mon Biuccello",
             "entry_text": [
                 "I suoi due cervelli si comunicano\n",
                 "le emozioni grazie ai poteri\n",
@@ -142,20 +156,20 @@
         },
         "es": {
             "name": "DODUO",
-            "category": "Pokémon Ave Gemela",
+            "category": "Pok\u00e9mon Ave Gemela",
             "entry_text": [
                 "Parece que los cerebros de sus\n",
                 "dos cabezas se comunican por\n",
-                "telepatía."
+                "telepat\u00eda."
             ]
         },
         "jp": {
-            "name": "ド－ド－",
-            "category": "ふたごどりポケモン",
+            "name": "\u30c9\uff0d\u30c9\uff0d",
+            "category": "\u3075\u305f\u3054\u3069\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "２つの　あたまの　のうみそは\n",
-                "テレパシ－のような　ちからで\n",
-                "きもちを　つうじあわせているらしい。"
+                "\uff12\u3064\u306e\u3000\u3042\u305f\u307e\u306e\u3000\u306e\u3046\u307f\u305d\u306f\n",
+                "\u30c6\u30ec\u30d1\u30b7\uff0d\u306e\u3088\u3046\u306a\u3000\u3061\u304b\u3089\u3067\n",
+                "\u304d\u3082\u3061\u3092\u3000\u3064\u3046\u3058\u3042\u308f\u305b\u3066\u3044\u308b\u3089\u3057\u3044\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 34
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 235,
     "base_exp_reward": 60,
     "ev_yields": {
@@ -26,63 +29,51 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RIVALRY", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_STRONG_JAW",
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 17, "MOVE_BITE" ],
-            [ 21, "MOVE_ROAR" ],
-            [ 25, "MOVE_SWAGGER" ],
-            [ 29, "MOVE_THUNDER_FANG" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 37, "MOVE_SCARY_FACE" ],
-            [ 41, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_SPARK"
+            ],
+            [
+                13,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                17,
+                "MOVE_BITE"
+            ],
+            [
+                20,
+                "MOVE_CHARM"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -109,7 +100,7 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "SHINX",
-            "category": "Flash Pokémon",
+            "category": "Flash Pok\u00e9mon",
             "entry_text": [
                 "The extension and contraction of\n",
                 "its muscles generates electricity.\n",
@@ -118,11 +109,11 @@
         },
         "fr": {
             "name": "LIXY",
-            "category": "Pokémon Flash",
+            "category": "Pok\u00e9mon Flash",
             "entry_text": [
-                "Sa fourrure étincelle en cas de\n",
+                "Sa fourrure \u00e9tincelle en cas de\n",
                 "danger. Il profite du fait que \n",
-                "l’ennemi est aveuglé pour s’enfuir."
+                "l\u2019ennemi est aveugl\u00e9 pour s\u2019enfuir."
             ]
         },
         "de": {
@@ -130,13 +121,13 @@
             "category": "Flacker",
             "entry_text": [
                 "In Gefahr blendet es seinen Gegner\n",
-                "mit seinem Fell und flieht, während\n",
+                "mit seinem Fell und flieht, w\u00e4hrend\n",
                 "der Gegner einen Moment blind ist."
             ]
         },
         "it": {
             "name": "SHINX",
-            "category": "Pokémon Baleno",
+            "category": "Pok\u00e9mon Baleno",
             "entry_text": [
                 "In caso di pericolo, la sua pelliccia\n",
                 "si illumina. Il nemico rimane acceca-\n",
@@ -145,7 +136,7 @@
         },
         "es": {
             "name": "SHINX",
-            "category": "Pokémon Flash",
+            "category": "Pok\u00e9mon Flash",
             "entry_text": [
                 "Si siente peligro, todo su pelaje\n",
                 "brilla. Aprovecha la ceguera\n",
@@ -153,12 +144,12 @@
             ]
         },
         "jp": {
-            "name": "コリンク",
-            "category": "せんこうポケモン",
+            "name": "\u30b3\u30ea\u30f3\u30af",
+            "category": "\u305b\u3093\u3053\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きけんを　かんじると　ぜんしんの\n",
-                "たいもうが　ひかる。あいてが　めを\n",
-                "くらませている　あいだに　にげる。"
+                "\u304d\u3051\u3093\u3092\u3000\u304b\u3093\u3058\u308b\u3068\u3000\u305c\u3093\u3057\u3093\u306e\n",
+                "\u305f\u3044\u3082\u3046\u304c\u3000\u3072\u304b\u308b\u3002\u3042\u3044\u3066\u304c\u3000\u3081\u3092\n",
+                "\u304f\u3089\u307e\u305b\u3066\u3044\u308b\u3000\u3042\u3044\u3060\u306b\u3000\u306b\u3052\u308b\u3002"
             ]
         }
     },

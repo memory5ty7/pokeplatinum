@@ -7,7 +7,10 @@
         "special_attack": 115,
         "special_defense": 95
     },
-    "types": [ "TYPE_ICE", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 137,
     "ev_yields": {
@@ -26,91 +29,81 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_FOREWARN" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_UNBURDEN",
+        "ABILITY_NONE",
+        "ABILITY_DRY_SKIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_LICK" ],
-            [ 1, "MOVE_LOVELY_KISS" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 5, "MOVE_LICK" ],
-            [ 8, "MOVE_LOVELY_KISS" ],
-            [ 11, "MOVE_POWDER_SNOW" ],
-            [ 15, "MOVE_DOUBLE_SLAP" ],
-            [ 18, "MOVE_ICE_PUNCH" ],
-            [ 21, "MOVE_MEAN_LOOK" ],
-            [ 25, "MOVE_FAKE_TEARS" ],
-            [ 28, "MOVE_WAKE_UP_SLAP" ],
-            [ 33, "MOVE_AVALANCHE" ],
-            [ 39, "MOVE_BODY_SLAM" ],
-            [ 44, "MOVE_WRING_OUT" ],
-            [ 49, "MOVE_PERISH_SONG" ],
-            [ 55, "MOVE_BLIZZARD" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                5,
+                "MOVE_LICK"
+            ],
+            [
+                8,
+                "MOVE_SWEET_KISS"
+            ],
+            [
+                11,
+                "MOVE_POWDER_SNOW"
+            ],
+            [
+                14,
+                "MOVE_CONFUSION"
+            ],
+            [
+                17,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                23,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                26,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                29,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                33,
+                "MOVE_ENCORE"
+            ],
+            [
+                36,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                43,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                51,
+                "MOVE_BLIZZARD"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM66",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM72",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -129,7 +122,7 @@
         "pokemon_pos_m": 5,
         "en": {
             "name": "JYNX",
-            "category": "Human Shape Pokémon",
+            "category": "Human Shape Pok\u00e9mon",
             "entry_text": [
                 "Its cries sound like human speech.\n",
                 "However, it is impossible to tell\n",
@@ -138,11 +131,11 @@
         },
         "fr": {
             "name": "LIPPOUTOU",
-            "category": "Pokémon Humanoïde",
+            "category": "Pok\u00e9mon Humano\u00efde",
             "entry_text": [
-                "Son cri ressemble à des paroles\n",
-                "humaines. Mais nul n’est jamais\n",
-                "parvenu à les comprendre. "
+                "Son cri ressemble \u00e0 des paroles\n",
+                "humaines. Mais nul n\u2019est jamais\n",
+                "parvenu \u00e0 les comprendre. "
             ]
         },
         "de": {
@@ -156,16 +149,16 @@
         },
         "it": {
             "name": "JYNX",
-            "category": "Pokémon Umanoide",
+            "category": "Pok\u00e9mon Umanoide",
             "entry_text": [
                 "Le sue grida ricordano il linguaggio\n",
-                "umano, ma è impossibile capire\n",
+                "umano, ma \u00e8 impossibile capire\n",
                 "il significato delle sue parole."
             ]
         },
         "es": {
             "name": "JYNX",
-            "category": "Pokémon F. Humana",
+            "category": "Pok\u00e9mon F. Humana",
             "entry_text": [
                 "Sus gritos se parecen al lenguaje\n",
                 "humano, pero es imposible\n",
@@ -173,12 +166,12 @@
             ]
         },
         "jp": {
-            "name": "ル－ジュラ",
-            "category": "ひとがたポケモン",
+            "name": "\u30eb\uff0d\u30b8\u30e5\u30e9",
+            "category": "\u3072\u3068\u304c\u305f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なきごえは　まるで　にんげんの\n",
-                "ことばのように　きこえるが\n",
-                "いみは　まったく　りかいできない。"
+                "\u306a\u304d\u3054\u3048\u306f\u3000\u307e\u308b\u3067\u3000\u306b\u3093\u3052\u3093\u306e\n",
+                "\u3053\u3068\u3070\u306e\u3088\u3046\u306b\u3000\u304d\u3053\u3048\u308b\u304c\n",
+                "\u3044\u307f\u306f\u3000\u307e\u3063\u305f\u304f\u3000\u308a\u304b\u3044\u3067\u304d\u306a\u3044\u3002"
             ]
         }
     },

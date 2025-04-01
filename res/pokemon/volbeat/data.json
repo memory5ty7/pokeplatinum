@@ -7,7 +7,10 @@
         "special_attack": 47,
         "special_defense": 75
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 146,
     "ev_yields": {
@@ -26,81 +29,73 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_ILLUMINATE", "ABILITY_SWARM" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_PRANKSTER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FLASH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_DOUBLE_TEAM" ],
-            [ 9, "MOVE_CONFUSE_RAY" ],
-            [ 13, "MOVE_MOONLIGHT" ],
-            [ 17, "MOVE_QUICK_ATTACK" ],
-            [ 21, "MOVE_TAIL_GLOW" ],
-            [ 25, "MOVE_SIGNAL_BEAM" ],
-            [ 29, "MOVE_PROTECT" ],
-            [ 33, "MOVE_HELPING_HAND" ],
-            [ 37, "MOVE_ZEN_HEADBUTT" ],
-            [ 41, "MOVE_BUG_BUZZ" ],
-            [ 45, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_FLASH"
+            ],
+            [
+                6,
+                "MOVE_TAUNT"
+            ],
+            [
+                9,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                12,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                15,
+                "MOVE_TAILWIND"
+            ],
+            [
+                20,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                24,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                30,
+                "MOVE_PROTECT"
+            ],
+            [
+                36,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                40,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                45,
+                "MOVE_ROOST"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM62",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -119,19 +114,19 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "VOLBEAT",
-            "category": "Firefly Pokémon",
+            "category": "Firefly Pok\u00e9mon",
             "entry_text": [
                 "It communicates with others by\n",
                 "lighting up its rear at night. It\n",
-                "loves ILLUMISE’s sweet aroma."
+                "loves ILLUMISE\u2019s sweet aroma."
             ]
         },
         "fr": {
             "name": "MUCIOLE",
-            "category": "Pokémon Luciole",
+            "category": "Pok\u00e9mon Luciole",
             "entry_text": [
                 "Il communique avec ses pairs en\n",
-                "allumant son postérieur la nuit. Il\n",
+                "allumant son post\u00e9rieur la nuit. Il\n",
                 "adore le doux parfum de LUMIVOLE."
             ]
         },
@@ -146,7 +141,7 @@
         },
         "it": {
             "name": "VOLBEAT",
-            "category": "Pokémon Lucciola",
+            "category": "Pok\u00e9mon Lucciola",
             "entry_text": [
                 "Di notte comunica con gli altri\n",
                 "illuminando la sua coda.\n",
@@ -155,7 +150,7 @@
         },
         "es": {
             "name": "VOLBEAT",
-            "category": "Pokémon Luciérnaga",
+            "category": "Pok\u00e9mon Luci\u00e9rnaga",
             "entry_text": [
                 "Se comunica con otros iluminando\n",
                 "su cola por la noche. Le encanta el\n",
@@ -163,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "バルビ－ト",
-            "category": "ほたるポケモン",
+            "name": "\u30d0\u30eb\u30d3\uff0d\u30c8",
+            "category": "\u307b\u305f\u308b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "よるになると　おしりを　ひからせ\n",
-                "なかまと　かいわする。イルミ－ゼの\n",
-                "だす　あまい　かおりが　だいすき。"
+                "\u3088\u308b\u306b\u306a\u308b\u3068\u3000\u304a\u3057\u308a\u3092\u3000\u3072\u304b\u3089\u305b\n",
+                "\u306a\u304b\u307e\u3068\u3000\u304b\u3044\u308f\u3059\u308b\u3002\u30a4\u30eb\u30df\uff0d\u30bc\u306e\n",
+                "\u3060\u3059\u3000\u3042\u307e\u3044\u3000\u304b\u304a\u308a\u304c\u3000\u3060\u3044\u3059\u304d\u3002"
             ]
         }
     },

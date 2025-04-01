@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 125
     },
-    "types": [ "TYPE_ICE", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,77 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_REFRIGERATE",
+        "ABILITY_NONE",
+        "ABILITY_COMPETITIVE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_GUST" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 8, "MOVE_MIST" ],
-            [ 15, "MOVE_ICE_SHARD" ],
-            [ 22, "MOVE_MIND_READER" ],
-            [ 29, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_AGILITY" ],
-            [ 43, "MOVE_ICE_BEAM" ],
-            [ 50, "MOVE_REFLECT" ],
-            [ 57, "MOVE_ROOST" ],
-            [ 64, "MOVE_TAILWIND" ],
-            [ 71, "MOVE_BLIZZARD" ],
-            [ 78, "MOVE_SHEER_COLD" ],
-            [ 85, "MOVE_HAIL" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM33",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM68",
-            "TM72",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -115,56 +65,56 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "ARTICUNO",
-            "category": "Freeze Pokémon",
+            "category": "Freeze Pok\u00e9mon",
             "entry_text": [
-                "A legendary bird Pokémon.\n",
+                "A legendary bird Pok\u00e9mon.\n",
                 "It can create blizzards by\n",
                 "freezing moisture in the air."
             ]
         },
         "fr": {
             "name": "ARTIKODIN",
-            "category": "Pokémon Glaciaire",
+            "category": "Pok\u00e9mon Glaciaire",
             "entry_text": [
-                "Un Pokémon Oiseau légendaire.\n",
+                "Un Pok\u00e9mon Oiseau l\u00e9gendaire.\n",
                 "Il peut provoquer des blizzards\n",
-                "en gelant l’humidité de l’air."
+                "en gelant l\u2019humidit\u00e9 de l\u2019air."
             ]
         },
         "de": {
             "name": "ARKTOS",
             "category": "Eis",
             "entry_text": [
-                "Ein Legendäres Vogel-Pokémon.\n",
+                "Ein Legend\u00e4res Vogel-Pok\u00e9mon.\n",
                 "Es kann Blizzards verursachen,\n",
                 "indem es Feuchtigkeit gefriert."
             ]
         },
         "it": {
             "name": "ARTICUNO",
-            "category": "Pokémon Gelo",
+            "category": "Pok\u00e9mon Gelo",
             "entry_text": [
-                "Un Pokémon uccello leggendario.\n",
+                "Un Pok\u00e9mon uccello leggendario.\n",
                 "Riesce a creare bufere di neve\n",
-                "congelando l’umidità dell’aria."
+                "congelando l\u2019umidit\u00e0 dell\u2019aria."
             ]
         },
         "es": {
             "name": "ARTICUNO",
-            "category": "Pokémon Congelar",
+            "category": "Pok\u00e9mon Congelar",
             "entry_text": [
-                "Legendario Pokémon pájaro capaz\n",
+                "Legendario Pok\u00e9mon p\u00e1jaro capaz\n",
                 "de generar ventiscas congelando\n",
                 "la humedad del aire."
             ]
         },
         "jp": {
-            "name": "フリ－ザ－",
-            "category": "れいとうポケモン",
+            "name": "\u30d5\u30ea\uff0d\u30b6\uff0d",
+            "category": "\u308c\u3044\u3068\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "でんせつの　とりポケモン。\n",
-                "くうきちゅうの　すいぶんを　こおらせ\n",
-                "ふぶきを　つくりだすことが　できる。"
+                "\u3067\u3093\u305b\u3064\u306e\u3000\u3068\u308a\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u304f\u3046\u304d\u3061\u3085\u3046\u306e\u3000\u3059\u3044\u3076\u3093\u3092\u3000\u3053\u304a\u3089\u305b\n",
+                "\u3075\u3076\u304d\u3092\u3000\u3064\u304f\u308a\u3060\u3059\u3053\u3068\u304c\u3000\u3067\u304d\u308b\u3002"
             ]
         }
     },

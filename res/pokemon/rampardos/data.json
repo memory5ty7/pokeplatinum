@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 50
     },
-    "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 199,
     "ev_yields": {
@@ -26,96 +29,77 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_MONSTER" ],
-    "abilities": [ "ABILITY_MOLD_BREAKER", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_MONSTER"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_MOLD_BREAKER",
+        "ABILITY_SHEER_FORCE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_PURSUIT" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_SCARY_FACE" ],
-            [ 24, "MOVE_ASSURANCE" ],
-            [ 28, "MOVE_ANCIENT_POWER" ],
-            [ 30, "MOVE_ENDEAVOR" ],
-            [ 36, "MOVE_ZEN_HEADBUTT" ],
-            [ 43, "MOVE_SCREECH" ],
-            [ 52, "MOVE_HEAD_SMASH" ]
+            [
+                1,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                16,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                21,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                25,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                30,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                35,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                40,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                45,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                50,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                55,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                60,
+                "MOVE_HEAD_SMASH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM72",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ENDEAVOR",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_EARTH_POWER",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -134,7 +118,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "RAMPARDOS",
-            "category": "Head Butt Pokémon",
+            "category": "Head Butt Pok\u00e9mon",
             "entry_text": [
                 "If two were to smash their heads\n",
                 "together, their foot-thick skulls\n",
@@ -143,39 +127,45 @@
         },
         "fr": {
             "name": "CHARKOS",
-            "category": "Pokémon Coud’Boule",
+            "category": "Pok\u00e9mon Coud\u2019Boule",
             "entry_text": [
-                "Son violent coup de tête est\n",
-                "assez puissant pour pulvériser\n",
-                "les matériaux les plus résistants."
+                "Son violent coup de t\u00eate est\n",
+                "assez puissant pour pulv\u00e9riser\n",
+                "les mat\u00e9riaux les plus r\u00e9sistants."
             ]
         },
         "de": {
             "name": "RAMEIDON",
-            "category": "Kopfstoß",
+            "category": "Kopfsto\u00df",
             "entry_text": [
-                "Sein kräftiger Kopfstoß hat genug\n",
+                "Sein kr\u00e4ftiger Kopfsto\u00df hat genug\n",
                 "Kraft, um selbst die stabilsten\n",
                 "Dinge zu zerschmettern."
             ]
         },
         "it": {
             "name": "RAMPARDOS",
-            "category": "Pokémon Cranioso",
-            "entry_text": [ "Tira testate talmente potenti da\n", "frantumare anche oggetti durissimi." ]
+            "category": "Pok\u00e9mon Cranioso",
+            "entry_text": [
+                "Tira testate talmente potenti da\n",
+                "frantumare anche oggetti durissimi."
+            ]
         },
         "es": {
             "name": "RAMPARDOS",
-            "category": "Pokémon Cabezazo",
-            "entry_text": [ "Su potente cabezazo puede\n", "hacer añicos cualquier cosa." ]
+            "category": "Pok\u00e9mon Cabezazo",
+            "entry_text": [
+                "Su potente cabezazo puede\n",
+                "hacer a\u00f1icos cualquier cosa."
+            ]
         },
         "jp": {
-            "name": "ラムパルド",
-            "category": "ずつきポケモン",
+            "name": "\u30e9\u30e0\u30d1\u30eb\u30c9",
+            "category": "\u305a\u3064\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きょうれつな　ずつきの　こうげきは\n",
-                "どんなに　がんじょうな　ものでも\n",
-                "いちげきで　ふんさいする　いりょく。"
+                "\u304d\u3087\u3046\u308c\u3064\u306a\u3000\u305a\u3064\u304d\u306e\u3000\u3053\u3046\u3052\u304d\u306f\n",
+                "\u3069\u3093\u306a\u306b\u3000\u304c\u3093\u3058\u3087\u3046\u306a\u3000\u3082\u306e\u3067\u3082\n",
+                "\u3044\u3061\u3052\u304d\u3067\u3000\u3075\u3093\u3055\u3044\u3059\u308b\u3000\u3044\u308a\u3087\u304f\u3002"
             ]
         }
     },

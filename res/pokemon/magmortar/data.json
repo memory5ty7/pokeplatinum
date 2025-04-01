@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 95
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 199,
     "ev_yields": {
@@ -26,82 +29,89 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_TANGLING_HAIR",
+        "ABILITY_REGENERATOR"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_PUNCH" ],
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 16, "MOVE_FAINT_ATTACK" ],
-            [ 19, "MOVE_FIRE_SPIN" ],
-            [ 25, "MOVE_CONFUSE_RAY" ],
-            [ 28, "MOVE_FIRE_PUNCH" ],
-            [ 37, "MOVE_LAVA_PLUME" ],
-            [ 43, "MOVE_FLAMETHROWER" ],
-            [ 52, "MOVE_SUNNY_DAY" ],
-            [ 58, "MOVE_FIRE_BLAST" ],
-            [ 67, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                1,
+                "MOVE_FOCUS_BLAST"
+            ],
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                5,
+                "MOVE_LEER"
+            ],
+            [
+                8,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                11,
+                "MOVE_SMOG"
+            ],
+            [
+                14,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                17,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                20,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                23,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                26,
+                "MOVE_TOXIC"
+            ],
+            [
+                29,
+                "MOVE_HEAT_WAVE"
+            ],
+            [
+                34,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                36,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                44,
+                "MOVE_SLACK_OFF"
+            ],
+            [
+                50,
+                "MOVE_ARMOR_CANNON"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM68",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_HEAT_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -120,7 +130,7 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "MAGMORTAR",
-            "category": "Blast Pokémon",
+            "category": "Blast Pok\u00e9mon",
             "entry_text": [
                 "When launching 3,600 degrees F\n",
                 "fireballs, its body takes on a\n",
@@ -129,47 +139,47 @@
         },
         "fr": {
             "name": "MAGANON",
-            "category": "Pokémon Explosion",
+            "category": "Pok\u00e9mon Explosion",
             "entry_text": [
                 "Il projette des boules de feu de\n",
-                "2 000 °C à bout de bras. Il\n",
-                "vit dans les cratères volcaniques."
+                "2 000 \u00b0C \u00e0 bout de bras. Il\n",
+                "vit dans les crat\u00e8res volcaniques."
             ]
         },
         "de": {
             "name": "MAGBRANT",
             "category": "Detonation",
             "entry_text": [
-                "Aus den Enden seiner Arme schießen\n",
-                "Feuerbälle mit 2 000 Grad.\n",
+                "Aus den Enden seiner Arme schie\u00dfen\n",
+                "Feuerb\u00e4lle mit 2 000 Grad.\n",
                 "Es lebt in Vulkankratern."
             ]
         },
         "it": {
             "name": "MAGMORTAR",
-            "category": "Pokémon Esplosivo",
+            "category": "Pok\u00e9mon Esplosivo",
             "entry_text": [
                 "Spara palle di fuoco di oltre\n",
-                "2000°C dagli arti superiori.\n",
+                "2000\u00b0C dagli arti superiori.\n",
                 "Vive nei crateri dei vulcani."
             ]
         },
         "es": {
             "name": "MAGMORTAR",
-            "category": "Pokémon Explosión",
+            "category": "Pok\u00e9mon Explosi\u00f3n",
             "entry_text": [
                 "Sus brazos disparan bolas de\n",
-                "fuego de más de 2000 grados.\n",
-                "Vive en cráteres volcánicos."
+                "fuego de m\u00e1s de 2000 grados.\n",
+                "Vive en cr\u00e1teres volc\u00e1nicos."
             ]
         },
         "jp": {
-            "name": "ブ－バ－ン",
-            "category": "ばくえんポケモン",
+            "name": "\u30d6\uff0d\u30d0\uff0d\u30f3",
+            "category": "\u3070\u304f\u3048\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "うでの　さきから　せっし２０００どの\n",
-                "ひのたまを　はっしゃする。\n",
-                "かざんの　かこうを　すみかにする。"
+                "\u3046\u3067\u306e\u3000\u3055\u304d\u304b\u3089\u3000\u305b\u3063\u3057\uff12\uff10\uff10\uff10\u3069\u306e\n",
+                "\u3072\u306e\u305f\u307e\u3092\u3000\u306f\u3063\u3057\u3083\u3059\u308b\u3002\n",
+                "\u304b\u3056\u3093\u306e\u3000\u304b\u3053\u3046\u3092\u3000\u3059\u307f\u304b\u306b\u3059\u308b\u3002"
             ]
         }
     },

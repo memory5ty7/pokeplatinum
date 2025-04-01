@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 70
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 211,
     "ev_yields": {
@@ -26,82 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_INTIMIDATE", "ABILITY_ANGER_POINT" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_SHEER_FORCE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 3, "MOVE_TAIL_WHIP" ],
-            [ 5, "MOVE_RAGE" ],
-            [ 8, "MOVE_HORN_ATTACK" ],
-            [ 11, "MOVE_SCARY_FACE" ],
-            [ 15, "MOVE_PURSUIT" ],
-            [ 19, "MOVE_REST" ],
-            [ 24, "MOVE_PAYBACK" ],
-            [ 29, "MOVE_ZEN_HEADBUTT" ],
-            [ 35, "MOVE_TAKE_DOWN" ],
-            [ 41, "MOVE_SWAGGER" ],
-            [ 48, "MOVE_THRASH" ],
-            [ 55, "MOVE_GIGA_IMPACT" ]
+            [
+                5,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                9,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                13,
+                "MOVE_PURSUIT"
+            ],
+            [
+                17,
+                "MOVE_STOMP"
+            ],
+            [
+                21,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                25,
+                "MOVE_REVENGE"
+            ],
+            [
+                29,
+                "MOVE_PAYBACK"
+            ],
+            [
+                33,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                37,
+                "MOVE_HIGH_HORSEPOWER"
+            ],
+            [
+                41,
+                "MOVE_STRENGTH"
+            ],
+            [
+                45,
+                "MOVE_THRASH"
+            ],
+            [
+                49,
+                "MOVE_EARTHQUAKE"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM71",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_OUTRAGE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -120,7 +114,7 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "TAUROS",
-            "category": "Wild Bull Pokémon",
+            "category": "Wild Bull Pok\u00e9mon",
             "entry_text": [
                 "Once it takes aim at its foe, it\n",
                 "makes a headlong charge. It is\n",
@@ -129,10 +123,10 @@
         },
         "fr": {
             "name": "TAUROS",
-            "category": "Pokémon Buffle",
+            "category": "Pok\u00e9mon Buffle",
             "entry_text": [
-                "Après avoir choisi sa cible, il fonce\n",
-                "dessus tête baissée. Il est réputé\n",
+                "Apr\u00e8s avoir choisi sa cible, il fonce\n",
+                "dessus t\u00eate baiss\u00e9e. Il est r\u00e9put\u00e9\n",
                 "pour sa nature violente."
             ]
         },
@@ -147,29 +141,29 @@
         },
         "it": {
             "name": "TAUROS",
-            "category": "Pokémon Torobrado",
+            "category": "Pok\u00e9mon Torobrado",
             "entry_text": [
                 "Dopo aver puntato il nemico, lo\n",
                 "carica a testa bassa.\n",
-                "È noto per la sua indole violenta."
+                "\u00c8 noto per la sua indole violenta."
             ]
         },
         "es": {
             "name": "TAUROS",
-            "category": "Pokémon Toro Bravo",
+            "category": "Pok\u00e9mon Toro Bravo",
             "entry_text": [
                 "Cuando elige una presa, ataca sin\n",
-                "pensárselo. Este Pokémon es\n",
-                "famoso por su carácter violento."
+                "pens\u00e1rselo. Este Pok\u00e9mon es\n",
+                "famoso por su car\u00e1cter violento."
             ]
         },
         "jp": {
-            "name": "ケンタロス",
-            "category": "あばれうしポケモン",
+            "name": "\u30b1\u30f3\u30bf\u30ed\u30b9",
+            "category": "\u3042\u3070\u308c\u3046\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "えものに　ねらいを　さだめると\n",
-                "いっちょくせんに　とっしんする。\n",
-                "あらっぽい　せいかくで　ゆうめい。"
+                "\u3048\u3082\u306e\u306b\u3000\u306d\u3089\u3044\u3092\u3000\u3055\u3060\u3081\u308b\u3068\n",
+                "\u3044\u3063\u3061\u3087\u304f\u305b\u3093\u306b\u3000\u3068\u3063\u3057\u3093\u3059\u308b\u3002\n",
+                "\u3042\u3089\u3063\u307d\u3044\u3000\u305b\u3044\u304b\u304f\u3067\u3000\u3086\u3046\u3081\u3044\u3002"
             ]
         }
     },

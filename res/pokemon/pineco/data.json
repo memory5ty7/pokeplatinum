@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 35
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 60,
     "ev_yields": {
@@ -26,67 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_ROUGH_SKIN",
+        "ABILITY_SHELL_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_PROTECT" ],
-            [ 6, "MOVE_SELFDESTRUCT" ],
-            [ 9, "MOVE_BUG_BITE" ],
-            [ 12, "MOVE_TAKE_DOWN" ],
-            [ 17, "MOVE_RAPID_SPIN" ],
-            [ 20, "MOVE_BIDE" ],
-            [ 23, "MOVE_NATURAL_GIFT" ],
-            [ 28, "MOVE_SPIKES" ],
-            [ 31, "MOVE_PAYBACK" ],
-            [ 34, "MOVE_EXPLOSION" ],
-            [ 39, "MOVE_IRON_DEFENSE" ],
-            [ 42, "MOVE_GYRO_BALL" ],
-            [ 45, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_PROTECT"
+            ],
+            [
+                6,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                9,
+                "MOVE_SELFDESTRUCT"
+            ],
+            [
+                12,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                15,
+                "MOVE_PAYBACK"
+            ],
+            [
+                19,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                24,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_MAGNET_RISE"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM33",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM74",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_IRON_DEFENSE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,19 +108,19 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "PINECO",
-            "category": "Bagworm Pokémon",
+            "category": "Bagworm Pok\u00e9mon",
             "entry_text": [
                 "It looks just like a pinecone.\n",
                 "Its shell protects it from bird\n",
-                "Pokémon that peck it by mistake."
+                "Pok\u00e9mon that peck it by mistake."
             ]
         },
         "fr": {
             "name": "POMDEPIK",
-            "category": "Pokémon Ver Caché",
+            "category": "Pok\u00e9mon Ver Cach\u00e9",
             "entry_text": [
-                "Il ressemble à une pomme de pin.\n",
-                "Sa carapace le protège des Pokémon\n",
+                "Il ressemble \u00e0 une pomme de pin.\n",
+                "Sa carapace le prot\u00e8ge des Pok\u00e9mon\n",
                 "Oiseau qui le picorent par erreur."
             ]
         },
@@ -134,35 +129,35 @@
             "category": "Beutelwurm",
             "entry_text": [
                 "Es sieht aus wie ein Tannenzapfen.\n",
-                "Seine Schale schützt es vor Vogel-\n",
-                "Pokémon, die an ihm picken wollen."
+                "Seine Schale sch\u00fctzt es vor Vogel-\n",
+                "Pok\u00e9mon, die an ihm picken wollen."
             ]
         },
         "it": {
             "name": "PINECO",
-            "category": "Pokémon Larva",
+            "category": "Pok\u00e9mon Larva",
             "entry_text": [
-                "Ha l’aspetto di una pigna. Il suo\n",
-                "guscio lo protegge dai Pokémon\n",
+                "Ha l\u2019aspetto di una pigna. Il suo\n",
+                "guscio lo protegge dai Pok\u00e9mon\n",
                 "uccello che lo beccano per errore."
             ]
         },
         "es": {
             "name": "PINECO",
-            "category": "Pokémon Larva",
+            "category": "Pok\u00e9mon Larva",
             "entry_text": [
-                "Es como una piña piñonera. Su\n",
-                "coraza lo protege de los pájaros\n",
+                "Es como una pi\u00f1a pi\u00f1onera. Su\n",
+                "coraza lo protege de los p\u00e1jaros\n",
                 "que lo picotean por error."
             ]
         },
         "jp": {
-            "name": "クヌギダマ",
-            "category": "みのむしポケモン",
+            "name": "\u30af\u30cc\u30ae\u30c0\u30de",
+            "category": "\u307f\u306e\u3080\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きのみに　そっくり。まちがわれて\n",
-                "とりポケモンに　つつかれてしまうが\n",
-                "かたい　カラで　まもられている。"
+                "\u304d\u306e\u307f\u306b\u3000\u305d\u3063\u304f\u308a\u3002\u307e\u3061\u304c\u308f\u308c\u3066\n",
+                "\u3068\u308a\u30dd\u30b1\u30e2\u30f3\u306b\u3000\u3064\u3064\u304b\u308c\u3066\u3057\u307e\u3046\u304c\n",
+                "\u304b\u305f\u3044\u3000\u30ab\u30e9\u3067\u3000\u307e\u3082\u3089\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

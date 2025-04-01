@@ -7,7 +7,10 @@
         "special_attack": 58,
         "special_defense": 44
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 65,
     "ev_yields": {
@@ -26,81 +29,47 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_IRON_FIST",
+        "ABILITY_BLAZE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 9, "MOVE_TAUNT" ],
-            [ 15, "MOVE_FURY_SWIPES" ],
-            [ 17, "MOVE_FLAME_WHEEL" ],
-            [ 23, "MOVE_NASTY_PLOT" ],
-            [ 25, "MOVE_TORMENT" ],
-            [ 31, "MOVE_FACADE" ],
-            [ 33, "MOVE_FIRE_SPIN" ],
-            [ 39, "MOVE_SLACK_OFF" ],
-            [ 41, "MOVE_FLAMETHROWER" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_EMBER"
+            ],
+            [
+                10,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                14,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                16,
+                "MOVE_TAUNT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_GUNK_SHOT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -127,7 +96,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "CHIMCHAR",
-            "category": "Chimp Pokémon",
+            "category": "Chimp Pok\u00e9mon",
             "entry_text": [
                 "It is very agile. Before going to\n",
                 "sleep, it extinguishes the flame\n",
@@ -136,25 +105,25 @@
         },
         "fr": {
             "name": "OUISTICRAM",
-            "category": "Pokémon Chimpanzé",
+            "category": "Pok\u00e9mon Chimpanz\u00e9",
             "entry_text": [
                 "Il escalade prestement les falaises\n",
-                "escarpées et vit sur les sommets.\n",
-                "Sa flamme s’éteint quand il dort."
+                "escarp\u00e9es et vit sur les sommets.\n",
+                "Sa flamme s\u2019\u00e9teint quand il dort."
             ]
         },
         "de": {
             "name": "PANFLAM",
             "category": "Schimpanse",
             "entry_text": [
-                "Es klettert behände steile Felsen\n",
+                "Es klettert beh\u00e4nde steile Felsen\n",
                 "hinauf, um auf Bergen zu leben. Sein\n",
-                "Feuer ist aus, wenn es schläft."
+                "Feuer ist aus, wenn es schl\u00e4ft."
             ]
         },
         "it": {
             "name": "CHIMCHAR",
-            "category": "Pokémon Scimpanzé",
+            "category": "Pok\u00e9mon Scimpanz\u00e9",
             "entry_text": [
                 "Scala agilmente le rocce scoscese\n",
                 "e vive in cima ai monti. Prima\n",
@@ -163,20 +132,20 @@
         },
         "es": {
             "name": "CHIMCHAR",
-            "category": "Pokémon Chimpancé",
+            "category": "Pok\u00e9mon Chimpanc\u00e9",
             "entry_text": [
                 "Escala acantilados escarpados con\n",
-                "agilidad. Vive en las montañas y\n",
+                "agilidad. Vive en las monta\u00f1as y\n",
                 "su fuego se apaga cuando duerme."
             ]
         },
         "jp": {
-            "name": "ヒコザル",
-            "category": "こざるポケモン",
+            "name": "\u30d2\u30b3\u30b6\u30eb",
+            "category": "\u3053\u3056\u308b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "だんがいぜっぺきを　みがるに　のぼり\n",
-                "いわやまの　うえで　せいかつする。\n",
-                "ほのおを　けして　ねむる。"
+                "\u3060\u3093\u304c\u3044\u305c\u3063\u307a\u304d\u3092\u3000\u307f\u304c\u308b\u306b\u3000\u306e\u307c\u308a\n",
+                "\u3044\u308f\u3084\u307e\u306e\u3000\u3046\u3048\u3067\u3000\u305b\u3044\u304b\u3064\u3059\u308b\u3002\n",
+                "\u307b\u306e\u304a\u3092\u3000\u3051\u3057\u3066\u3000\u306d\u3080\u308b\u3002"
             ]
         }
     },

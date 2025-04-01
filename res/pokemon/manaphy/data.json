@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 100
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,82 +29,24 @@
     "hatch_cycles": 10,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HYDRATION", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_PRESSURE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_GLOW" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 9, "MOVE_CHARM" ],
-            [ 16, "MOVE_SUPERSONIC" ],
-            [ 24, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_ACID_ARMOR" ],
-            [ 39, "MOVE_WHIRLPOOL" ],
-            [ 46, "MOVE_WATER_PULSE" ],
-            [ 54, "MOVE_AQUA_RING" ],
-            [ 61, "MOVE_DIVE" ],
-            [ 69, "MOVE_RAIN_DANCE" ],
-            [ 76, "MOVE_HEART_SWAP" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM48",
-            "TM53",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_LAST_RESORT",
-            "MOVE_BOUNCE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -120,19 +65,19 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "MANAPHY",
-            "category": "Seafaring Pokémon",
+            "category": "Seafaring Pok\u00e9mon",
             "entry_text": [
                 "It is born with a wondrous power\n",
                 "that lets it bond with any kind of\n",
-                "Pokémon."
+                "Pok\u00e9mon."
             ]
         },
         "fr": {
             "name": "MANAPHY",
-            "category": "Pokémon Voyagenmer",
+            "category": "Pok\u00e9mon Voyagenmer",
             "entry_text": [
-                "Né dans les profondeurs froides de\n",
-                "l’océan, il parcourt un long chemin\n",
+                "N\u00e9 dans les profondeurs froides de\n",
+                "l\u2019oc\u00e9an, il parcourt un long chemin\n",
                 "pour gagner son lieu de naissance."
             ]
         },
@@ -141,13 +86,13 @@
             "category": "Seefahrer",
             "entry_text": [
                 "Geboren auf dem Meeresboden,\n",
-                "legt es große Entfernungen zurück,\n",
-                "um dorthin zurückzukehren."
+                "legt es gro\u00dfe Entfernungen zur\u00fcck,\n",
+                "um dorthin zur\u00fcckzukehren."
             ]
         },
         "it": {
             "name": "MANAPHY",
-            "category": "Pokémon Oceandante",
+            "category": "Pok\u00e9mon Oceandante",
             "entry_text": [
                 "Nato su freddi fondali marini, per-\n",
                 "corre a nuoto lunghe distanze per\n",
@@ -156,20 +101,20 @@
         },
         "es": {
             "name": "MANAPHY",
-            "category": "Pokémon Náutico",
+            "category": "Pok\u00e9mon N\u00e1utico",
             "entry_text": [
-                "Nació en el frío fondo marino.\n",
+                "Naci\u00f3 en el fr\u00edo fondo marino.\n",
                 "Nada grandes distancias para\n",
                 "regresar a su lugar de origen."
             ]
         },
         "jp": {
-            "name": "マナフィ",
-            "category": "かいゆうポケモン",
+            "name": "\u30de\u30ca\u30d5\u30a3",
+            "category": "\u304b\u3044\u3086\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "つめたい　うみの　そこで　うまれた。\n",
-                "じぶんが　うまれた　うみの　そこへ\n",
-                "ながい　きょりを　およいで　かえる。"
+                "\u3064\u3081\u305f\u3044\u3000\u3046\u307f\u306e\u3000\u305d\u3053\u3067\u3000\u3046\u307e\u308c\u305f\u3002\n",
+                "\u3058\u3076\u3093\u304c\u3000\u3046\u307e\u308c\u305f\u3000\u3046\u307f\u306e\u3000\u305d\u3053\u3078\n",
+                "\u306a\u304c\u3044\u3000\u304d\u3087\u308a\u3092\u3000\u304a\u3088\u3044\u3067\u3000\u304b\u3048\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 75
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 153,
     "ev_yields": {
@@ -26,93 +29,89 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_PURE_POWER", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_PURE_POWER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FIRE_PUNCH" ],
-            [ 1, "MOVE_THUNDER_PUNCH" ],
-            [ 1, "MOVE_ICE_PUNCH" ],
-            [ 1, "MOVE_BIDE" ],
-            [ 1, "MOVE_MEDITATE" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_DETECT" ],
-            [ 4, "MOVE_MEDITATE" ],
-            [ 8, "MOVE_CONFUSION" ],
-            [ 11, "MOVE_DETECT" ],
-            [ 15, "MOVE_HIDDEN_POWER" ],
-            [ 18, "MOVE_MIND_READER" ],
-            [ 22, "MOVE_FEINT" ],
-            [ 25, "MOVE_CALM_MIND" ],
-            [ 29, "MOVE_FORCE_PALM" ],
-            [ 32, "MOVE_HI_JUMP_KICK" ],
-            [ 36, "MOVE_PSYCH_UP" ],
-            [ 42, "MOVE_POWER_TRICK" ],
-            [ 49, "MOVE_REVERSAL" ],
-            [ 55, "MOVE_RECOVER" ]
+            [
+                1,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                4,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                7,
+                "MOVE_CONFUSION"
+            ],
+            [
+                9,
+                "MOVE_DETECT"
+            ],
+            [
+                12,
+                "MOVE_ENDURE"
+            ],
+            [
+                15,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                20,
+                "MOVE_FORCE_PALM"
+            ],
+            [
+                25,
+                "MOVE_PSYCHO_CUT"
+            ],
+            [
+                28,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                30,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                34,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                40,
+                "MOVE_RECOVER"
+            ],
+            [
+                45,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                50,
+                "MOVE_CLOSE_COMBAT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -131,7 +130,7 @@
         "pokemon_pos_m": 8,
         "en": {
             "name": "MEDICHAM",
-            "category": "Meditate Pokémon",
+            "category": "Meditate Pok\u00e9mon",
             "entry_text": [
                 "It gains the ability to see the aura\n",
                 "of its opponents by honing its mind\n",
@@ -140,10 +139,10 @@
         },
         "fr": {
             "name": "CHARMINA",
-            "category": "Pokémon Méditation",
+            "category": "Pok\u00e9mon M\u00e9ditation",
             "entry_text": [
-                "Il a développé son sixième sens\n",
-                "grâce au yoga. Ses mouvements\n",
+                "Il a d\u00e9velopp\u00e9 son sixi\u00e8me sens\n",
+                "gr\u00e2ce au yoga. Ses mouvements\n",
                 "sont gracieux."
             ]
         },
@@ -152,13 +151,13 @@
             "category": "Meditation",
             "entry_text": [
                 "Mit Yoga-Training hat es seinen\n",
-                "6. Sinn geschärft. Seine\n",
+                "6. Sinn gesch\u00e4rft. Seine\n",
                 "Bewegungen sind sehr elegant."
             ]
         },
         "it": {
             "name": "MEDICHAM",
-            "category": "Pokémon Meditazione",
+            "category": "Pok\u00e9mon Meditazione",
             "entry_text": [
                 "Con gli esercizi di yoga ha affinato\n",
                 "il sesto senso. I suoi movimenti\n",
@@ -167,7 +166,7 @@
         },
         "es": {
             "name": "MEDICHAM",
-            "category": "Pokémon Meditador",
+            "category": "Pok\u00e9mon Meditador",
             "entry_text": [
                 "El yoga ha perfeccionado su\n",
                 "sexto sentido. Sus movimientos\n",
@@ -175,12 +174,12 @@
             ]
         },
         "jp": {
-            "name": "チャ－レム",
-            "category": "めいそうポケモン",
+            "name": "\u30c1\u30e3\uff0d\u30ec\u30e0",
+            "category": "\u3081\u3044\u305d\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ヨガの　しゅぎょうによって\n",
-                "だい６かんが　はったつした。\n",
-                "ゆうがに　おどるような　みのこなし。"
+                "\u30e8\u30ac\u306e\u3000\u3057\u3085\u304e\u3087\u3046\u306b\u3088\u3063\u3066\n",
+                "\u3060\u3044\uff16\u304b\u3093\u304c\u3000\u306f\u3063\u305f\u3064\u3057\u305f\u3002\n",
+                "\u3086\u3046\u304c\u306b\u3000\u304a\u3069\u308b\u3088\u3046\u306a\u3000\u307f\u306e\u3053\u306a\u3057\u3002"
             ]
         }
     },

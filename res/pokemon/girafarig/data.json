@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 149,
     "ev_yields": {
@@ -26,85 +29,69 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_INNER_FOCUS", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_QUICK_FEET",
+        "ABILITY_NONE",
+        "ABILITY_ADAPTABILITY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POWER_SWAP" ],
-            [ 1, "MOVE_GUARD_SWAP" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 5, "MOVE_ODOR_SLEUTH" ],
-            [ 10, "MOVE_STOMP" ],
-            [ 14, "MOVE_AGILITY" ],
-            [ 19, "MOVE_PSYBEAM" ],
-            [ 23, "MOVE_BATON_PASS" ],
-            [ 28, "MOVE_ASSURANCE" ],
-            [ 32, "MOVE_DOUBLE_HIT" ],
-            [ 37, "MOVE_PSYCHIC" ],
-            [ 41, "MOVE_ZEN_HEADBUTT" ],
-            [ 46, "MOVE_CRUNCH" ]
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                10,
+                "MOVE_ASSURANCE"
+            ],
+            [
+                14,
+                "MOVE_STOMP"
+            ],
+            [
+                19,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                23,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                28,
+                "MOVE_DOUBLE_HIT"
+            ],
+            [
+                32,
+                "MOVE_PSYCHIC_FANGS"
+            ],
+            [
+                37,
+                "MOVE_CRUNCH"
+            ],
+            [
+                41,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                46,
+                "MOVE_MIRROR_COAT"
+            ],
+            [
+                50,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM53",
-            "TM57",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -123,7 +110,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "GIRAFARIG",
-            "category": "Long Neck Pokémon",
+            "category": "Long Neck Pok\u00e9mon",
             "entry_text": [
                 "The head on its tail contains a\n",
                 "small brain. It can instinctively\n",
@@ -132,10 +119,10 @@
         },
         "fr": {
             "name": "GIRAFARIG",
-            "category": "Pokémon Long-Cou",
+            "category": "Pok\u00e9mon Long-Cou",
             "entry_text": [
                 "Sa queue contient un minuscule\n",
-                "cerveau. Elle mord l’ennemi qui\n",
+                "cerveau. Elle mord l\u2019ennemi qui\n",
                 "essaie de le frapper dans le dos."
             ]
         },
@@ -144,13 +131,13 @@
             "category": "Langhals",
             "entry_text": [
                 "Sein Schweif besitzt ebenfalls ein\n",
-                "Gehirn. Er beißt jeden Gegner, der\n",
+                "Gehirn. Er bei\u00dft jeden Gegner, der\n",
                 "sich von hinten heranschleicht."
             ]
         },
         "it": {
             "name": "GIRAFARIG",
-            "category": "Pokémon Lungocollo",
+            "category": "Pok\u00e9mon Lungocollo",
             "entry_text": [
                 "Ha due cervelli, uno piccolo anche\n",
                 "sulla coda. Morde per respingere i\n",
@@ -159,20 +146,20 @@
         },
         "es": {
             "name": "GIRAFARIG",
-            "category": "Pokémon Grancuello",
+            "category": "Pok\u00e9mon Grancuello",
             "entry_text": [
-                "Su cola tiene un pequeño cerebro\n",
+                "Su cola tiene un peque\u00f1o cerebro\n",
                 "y muerde a los enemigos que\n",
                 "intentan acercarse por la espalda."
             ]
         },
         "jp": {
-            "name": "キリンリキ",
-            "category": "くびながポケモン",
+            "name": "\u30ad\u30ea\u30f3\u30ea\u30ad",
+            "category": "\u304f\u3073\u306a\u304c\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しっぽも　ちいさい　のうを　もつ。\n",
-                "うしろから　しのびよる　あいてを\n",
-                "かみついて　げきたいする。"
+                "\u3057\u3063\u307d\u3082\u3000\u3061\u3044\u3055\u3044\u3000\u306e\u3046\u3092\u3000\u3082\u3064\u3002\n",
+                "\u3046\u3057\u308d\u304b\u3089\u3000\u3057\u306e\u3073\u3088\u308b\u3000\u3042\u3044\u3066\u3092\n",
+                "\u304b\u307f\u3064\u3044\u3066\u3000\u3052\u304d\u305f\u3044\u3059\u308b\u3002"
             ]
         }
     },

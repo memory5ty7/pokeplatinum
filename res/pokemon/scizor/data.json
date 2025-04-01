@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 80
     },
-    "types": [ "TYPE_BUG", "TYPE_STEEL" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_STEEL"
+    ],
     "catch_rate": 25,
     "base_exp_reward": 200,
     "ev_yields": {
@@ -26,83 +29,24 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_TECHNICIAN" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_SWARM",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_BULLET_PUNCH" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_FOCUS_ENERGY" ],
-            [ 9, "MOVE_PURSUIT" ],
-            [ 13, "MOVE_FALSE_SWIPE" ],
-            [ 17, "MOVE_AGILITY" ],
-            [ 21, "MOVE_METAL_CLAW" ],
-            [ 25, "MOVE_FURY_CUTTER" ],
-            [ 29, "MOVE_SLASH" ],
-            [ 33, "MOVE_RAZOR_WIND" ],
-            [ 37, "MOVE_IRON_DEFENSE" ],
-            [ 41, "MOVE_X_SCISSOR" ],
-            [ 45, "MOVE_NIGHT_SLASH" ],
-            [ 49, "MOVE_DOUBLE_HIT" ],
-            [ 53, "MOVE_IRON_HEAD" ],
-            [ 57, "MOVE_SWORDS_DANCE" ],
-            [ 61, "MOVE_FEINT" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM75",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "TM91",
-            "HM01",
-            "HM04",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_FURY_CUTTER",
-            "MOVE_SUPERPOWER",
-            "MOVE_IRON_HEAD",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -121,7 +65,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "SCIZOR",
-            "category": "Pincer Pokémon",
+            "category": "Pincer Pok\u00e9mon",
             "entry_text": [
                 "It raises its pincers with eyelike\n",
                 "markings for intimidation. It also\n",
@@ -130,34 +74,34 @@
         },
         "fr": {
             "name": "CIZAYOX",
-            "category": "Pokémon Pince",
+            "category": "Pok\u00e9mon Pince",
             "entry_text": [
-                "Son corps est dur comme l’acier.\n",
+                "Son corps est dur comme l\u2019acier.\n",
                 "Il intimide ses ennemis en levant\n",
-                "ses pinces pareilles à des yeux. "
+                "ses pinces pareilles \u00e0 des yeux. "
             ]
         },
         "de": {
             "name": "SCHEROX",
             "category": "Kneifer",
             "entry_text": [
-                "Sein Körper ist stahlhart. Es\n",
+                "Sein K\u00f6rper ist stahlhart. Es\n",
                 "bedroht seine Gegner, indem es die\n",
                 "Augen auf seinen Scheren zeigt."
             ]
         },
         "it": {
             "name": "SCIZOR",
-            "category": "Pokémon Chela",
+            "category": "Pok\u00e9mon Chela",
             "entry_text": [
-                "Ha un corpo duro come l’acciaio.\n",
+                "Ha un corpo duro come l\u2019acciaio.\n",
                 "Spaventa i nemici con le chele, su\n",
                 "cui sono disegnati degli occhi."
             ]
         },
         "es": {
             "name": "SCIZOR",
-            "category": "Pokémon Tenaza",
+            "category": "Pok\u00e9mon Tenaza",
             "entry_text": [
                 "Su cuerpo es duro como el acero.\n",
                 "Confunde a los rivales con los\n",
@@ -165,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "ハッサム",
-            "category": "はさみポケモン",
+            "name": "\u30cf\u30c3\u30b5\u30e0",
+            "category": "\u306f\u3055\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はがねの　からだを　もつ。\n",
-                "めだまもようの　ついた　はさみを\n",
-                "ふりあげて　あいてを　いかくする。"
+                "\u306f\u304c\u306d\u306e\u3000\u304b\u3089\u3060\u3092\u3000\u3082\u3064\u3002\n",
+                "\u3081\u3060\u307e\u3082\u3088\u3046\u306e\u3000\u3064\u3044\u305f\u3000\u306f\u3055\u307f\u3092\n",
+                "\u3075\u308a\u3042\u3052\u3066\u3000\u3042\u3044\u3066\u3092\u3000\u3044\u304b\u304f\u3059\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 150,
         "special_defense": 90
     },
-    "types": [ "TYPE_DRAGON", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_DRAGON",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 220,
     "ev_yields": {
@@ -26,99 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_AIR_LOCK", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_AERILATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TWISTER" ],
-            [ 5, "MOVE_SCARY_FACE" ],
-            [ 15, "MOVE_ANCIENT_POWER" ],
-            [ 20, "MOVE_DRAGON_CLAW" ],
-            [ 30, "MOVE_DRAGON_DANCE" ],
-            [ 35, "MOVE_CRUNCH" ],
-            [ 45, "MOVE_FLY" ],
-            [ 50, "MOVE_REST" ],
-            [ 60, "MOVE_EXTREME_SPEED" ],
-            [ 65, "MOVE_HYPER_BEAM" ],
-            [ 75, "MOVE_DRAGON_PULSE" ],
-            [ 80, "MOVE_OUTRAGE" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM50",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM68",
-            "TM71",
-            "TM72",
-            "TM73",
-            "TM74",
-            "TM75",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM02",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -137,7 +65,7 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "RAYQUAZA",
-            "category": "Sky High Pokémon",
+            "category": "Sky High Pok\u00e9mon",
             "entry_text": [
                 "It lives in the ozone layer far\n",
                 "above the clouds and cannot be\n",
@@ -146,9 +74,9 @@
         },
         "fr": {
             "name": "RAYQUAZA",
-            "category": "Pokémon Cieux",
+            "category": "Pok\u00e9mon Cieux",
             "entry_text": [
-                "Il vit dans la couche d’ozone, au\n",
+                "Il vit dans la couche d\u2019ozone, au\n",
                 "dessus des nuages. Il est invisible\n",
                 "depuis le sol."
             ]
@@ -158,22 +86,22 @@
             "category": "Himmelhoch",
             "entry_text": [
                 "Es lebt in der Ozonschicht hoch\n",
-                "über den Wolken und kann vom\n",
+                "\u00fcber den Wolken und kann vom\n",
                 "Boden aus nicht gesehen werden."
             ]
         },
         "it": {
             "name": "RAYQUAZA",
-            "category": "Pokémon Stratosfera",
+            "category": "Pok\u00e9mon Stratosfera",
             "entry_text": [
                 "Vive nello strato di ozono oltre le\n",
-                "nuvole e non può essere avvistato\n",
+                "nuvole e non pu\u00f2 essere avvistato\n",
                 "da terra."
             ]
         },
         "es": {
             "name": "RAYQUAZA",
-            "category": "Pokémon Cielo",
+            "category": "Pok\u00e9mon Cielo",
             "entry_text": [
                 "Vive en la capa de ozono sobre\n",
                 "las nubes y no puede ser visto\n",
@@ -181,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "レックウザ",
-            "category": "てんくうポケモン",
+            "name": "\u30ec\u30c3\u30af\u30a6\u30b6",
+            "category": "\u3066\u3093\u304f\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "くもより　はるかうえの　オゾンそうに\n",
-                "せいそくしているため　ちじょうから\n",
-                "すがたを　みることは　できない。"
+                "\u304f\u3082\u3088\u308a\u3000\u306f\u308b\u304b\u3046\u3048\u306e\u3000\u30aa\u30be\u30f3\u305d\u3046\u306b\n",
+                "\u305b\u3044\u305d\u304f\u3057\u3066\u3044\u308b\u305f\u3081\u3000\u3061\u3058\u3087\u3046\u304b\u3089\n",
+                "\u3059\u304c\u305f\u3092\u3000\u307f\u308b\u3053\u3068\u306f\u3000\u3067\u304d\u306a\u3044\u3002"
             ]
         }
     },

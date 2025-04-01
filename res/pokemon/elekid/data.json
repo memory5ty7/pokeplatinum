@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 55
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 106,
     "ev_yields": {
@@ -26,70 +29,63 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_STATIC",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 7, "MOVE_THUNDER_SHOCK" ],
-            [ 10, "MOVE_LOW_KICK" ],
-            [ 16, "MOVE_SWIFT" ],
-            [ 19, "MOVE_SHOCK_WAVE" ],
-            [ 25, "MOVE_LIGHT_SCREEN" ],
-            [ 28, "MOVE_THUNDER_PUNCH" ],
-            [ 34, "MOVE_DISCHARGE" ],
-            [ 37, "MOVE_THUNDERBOLT" ],
-            [ 43, "MOVE_SCREECH" ],
-            [ 46, "MOVE_THUNDER" ]
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                5,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                8,
+                "MOVE_FLASH"
+            ],
+            [
+                11,
+                "MOVE_KARATE_CHOP"
+            ],
+            [
+                14,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                17,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                20,
+                "MOVE_SCREECH"
+            ],
+            [
+                23,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                26,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                29,
+                "MOVE_ELECTROWEB"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +112,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "ELEKID",
-            "category": "Electric Pokémon",
+            "category": "Electric Pok\u00e9mon",
             "entry_text": [
                 "A weak electric current flows\n",
                 "between its horns. Sticking a hand\n",
@@ -125,11 +121,11 @@
         },
         "fr": {
             "name": "ELEKID",
-            "category": "Pokémon Electrique",
+            "category": "Pok\u00e9mon Electrique",
             "entry_text": [
-                "Il génère de l’électricité en\n",
-                "battant des bras, mais il n’a aucun\n",
-                "moyen de stocker cette énergie."
+                "Il g\u00e9n\u00e8re de l\u2019\u00e9lectricit\u00e9 en\n",
+                "battant des bras, mais il n\u2019a aucun\n",
+                "moyen de stocker cette \u00e9nergie."
             ]
         },
         "de": {
@@ -137,35 +133,35 @@
             "category": "Elektro",
             "entry_text": [
                 "Es bewegt seine Arme und generiert\n",
-                "damit Elektrizität. Diese kann es\n",
+                "damit Elektrizit\u00e4t. Diese kann es\n",
                 "aber nicht speichern."
             ]
         },
         "it": {
             "name": "ELEKID",
-            "category": "Pokémon Elettrico",
+            "category": "Pok\u00e9mon Elettrico",
             "entry_text": [
-                "Genera elettricità roteando le\n",
+                "Genera elettricit\u00e0 roteando le\n",
                 "braccia. Tuttavia, non riesce ad\n",
-                "immagazzinare l’energia creata."
+                "immagazzinare l\u2019energia creata."
             ]
         },
         "es": {
             "name": "ELEKID",
-            "category": "Pokémon Eléctrico",
+            "category": "Pok\u00e9mon El\u00e9ctrico",
             "entry_text": [
                 "Genera electricidad girando los\n",
                 "brazos. No obstante, es incapaz\n",
-                "de almacenar la energía creada."
+                "de almacenar la energ\u00eda creada."
             ]
         },
         "jp": {
-            "name": "エレキッド",
-            "category": "でんきポケモン",
+            "name": "\u30a8\u30ec\u30ad\u30c3\u30c9",
+            "category": "\u3067\u3093\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "りょううでを　ぐるぐる　ふりまわして\n",
-                "でんきを　はっせいさせる。しかし\n",
-                "つくった　でんきは　ためておけない。"
+                "\u308a\u3087\u3046\u3046\u3067\u3092\u3000\u3050\u308b\u3050\u308b\u3000\u3075\u308a\u307e\u308f\u3057\u3066\n",
+                "\u3067\u3093\u304d\u3092\u3000\u306f\u3063\u305b\u3044\u3055\u305b\u308b\u3002\u3057\u304b\u3057\n",
+                "\u3064\u304f\u3063\u305f\u3000\u3067\u3093\u304d\u306f\u3000\u305f\u3081\u3066\u304a\u3051\u306a\u3044\u3002"
             ]
         }
     },

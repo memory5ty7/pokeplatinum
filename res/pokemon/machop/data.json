@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 35
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 180,
     "base_exp_reward": 75,
     "ev_yields": {
@@ -26,74 +29,87 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NO_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_GUTS",
+        "ABILITY_STEADFAST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LOW_KICK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_KARATE_CHOP" ],
-            [ 13, "MOVE_FORESIGHT" ],
-            [ 19, "MOVE_SEISMIC_TOSS" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 31, "MOVE_SUBMISSION" ],
-            [ 34, "MOVE_WAKE_UP_SLAP" ],
-            [ 37, "MOVE_CROSS_CHOP" ],
-            [ 43, "MOVE_SCARY_FACE" ],
-            [ 46, "MOVE_DYNAMIC_PUNCH" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                10,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                13,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                15,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                21,
+                "MOVE_LOW_SWEEP"
+            ],
+            [
+                25,
+                "MOVE_VITAL_THROW"
+            ],
+            [
+                30,
+                "MOVE_DUAL_CHOP"
+            ],
+            [
+                36,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                48,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                50,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                54,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                60,
+                "MOVE_DYNAMIC_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -120,7 +136,7 @@
         "pokemon_pos_m": 19,
         "en": {
             "name": "MACHOP",
-            "category": "Superpower Pokémon",
+            "category": "Superpower Pok\u00e9mon",
             "entry_text": [
                 "Though small in stature, it is\n",
                 "powerful enough to easily heft and\n",
@@ -129,11 +145,11 @@
         },
         "fr": {
             "name": "MACHOC",
-            "category": "Pokémon Colosse",
+            "category": "Pok\u00e9mon Colosse",
             "entry_text": [
                 "Il muscle son corps en soulevant\n",
-                "régulièrement un GRAVALANCH. Il\n",
-                "est rompu à tous les arts martiaux."
+                "r\u00e9guli\u00e8rement un GRAVALANCH. Il\n",
+                "est rompu \u00e0 tous les arts martiaux."
             ]
         },
         "de": {
@@ -141,13 +157,13 @@
             "category": "Kraftprotz",
             "entry_text": [
                 "Es hebt GEOROK hoch, um seinen\n",
-                "Körper zu trainieren. Außerdem übt\n",
+                "K\u00f6rper zu trainieren. Au\u00dferdem \u00fcbt\n",
                 "es sich in jeder Art v. Kampfsport."
             ]
         },
         "it": {
             "name": "MACHOP",
-            "category": "Pokémon Megaforza",
+            "category": "Pok\u00e9mon Megaforza",
             "entry_text": [
                 "Solleva GRAVELER ripetutamente\n",
                 "per mantenersi forte. Conosce\n",
@@ -156,20 +172,20 @@
         },
         "es": {
             "name": "MACHOP",
-            "category": "Pokémon Superpoder",
+            "category": "Pok\u00e9mon Superpoder",
             "entry_text": [
                 "Levanta un GRAVELER para mantener\n",
-                "sus músculos en forma. Domina\n",
+                "sus m\u00fasculos en forma. Domina\n",
                 "todas las artes marciales."
             ]
         },
         "jp": {
-            "name": "ワンリキ－",
-            "category": "かいりきポケモン",
+            "name": "\u30ef\u30f3\u30ea\u30ad\uff0d",
+            "category": "\u304b\u3044\u308a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ゴロ－ンを　なんども　あげおろしして\n",
-                "ぜんしんの　きんにくを　きたえる。\n",
-                "あらゆる　かくとうぎを　つかう。"
+                "\u30b4\u30ed\uff0d\u30f3\u3092\u3000\u306a\u3093\u3069\u3082\u3000\u3042\u3052\u304a\u308d\u3057\u3057\u3066\n",
+                "\u305c\u3093\u3057\u3093\u306e\u3000\u304d\u3093\u306b\u304f\u3092\u3000\u304d\u305f\u3048\u308b\u3002\n",
+                "\u3042\u3089\u3086\u308b\u3000\u304b\u304f\u3068\u3046\u304e\u3092\u3000\u3064\u304b\u3046\u3002"
             ]
         }
     },

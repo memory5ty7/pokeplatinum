@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 55
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 116,
     "ev_yields": {
@@ -26,94 +29,24 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_KEEN_EYE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_ADAPTABILITY",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 4, "MOVE_DEFENSE_CURL" ],
-            [ 7, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_FURY_SWIPES" ],
-            [ 17, "MOVE_HELPING_HAND" ],
-            [ 21, "MOVE_FOLLOW_ME" ],
-            [ 28, "MOVE_SLAM" ],
-            [ 32, "MOVE_REST" ],
-            [ 36, "MOVE_SUCKER_PUNCH" ],
-            [ 42, "MOVE_AMNESIA" ],
-            [ 46, "MOVE_BATON_PASS" ],
-            [ 50, "MOVE_ME_FIRST" ],
-            [ 56, "MOVE_HYPER_VOICE" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM65",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_LAST_RESORT",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -132,7 +65,7 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "FURRET",
-            "category": "Long Body Pokémon",
+            "category": "Long Body Pok\u00e9mon",
             "entry_text": [
                 "The mother puts its offspring to\n",
                 "sleep by curling up around them.\n",
@@ -141,11 +74,11 @@
         },
         "fr": {
             "name": "FOUINAR",
-            "category": "Pokémon Allongé",
+            "category": "Pok\u00e9mon Allong\u00e9",
             "entry_text": [
-                "La femelle s’enroule autour des\n",
+                "La femelle s\u2019enroule autour des\n",
                 "petits pour les bercer. Il accule\n",
-                "l’ennemi grâce à sa vitesse."
+                "l\u2019ennemi gr\u00e2ce \u00e0 sa vitesse."
             ]
         },
         "de": {
@@ -159,29 +92,29 @@
         },
         "it": {
             "name": "FURRET",
-            "category": "Pokémon Lungocorpo",
+            "category": "Pok\u00e9mon Lungocorpo",
             "entry_text": [
-                "Si addormenta avvolto nell’esile\n",
-                "corpo della madre. Mette all’angolo\n",
+                "Si addormenta avvolto nell\u2019esile\n",
+                "corpo della madre. Mette all\u2019angolo\n",
                 "i nemici con movimenti rapidi."
             ]
         },
         "es": {
             "name": "FURRET",
-            "category": "Pokémon Alargado",
+            "category": "Pok\u00e9mon Alargado",
             "entry_text": [
-                "Acurruca a sus crías para que\n",
+                "Acurruca a sus cr\u00edas para que\n",
                 "duerman. Acorrala a los enemigos\n",
                 "con su enorme velocidad."
             ]
         },
         "jp": {
-            "name": "オオタチ",
-            "category": "どうながポケモン",
+            "name": "\u30aa\u30aa\u30bf\u30c1",
+            "category": "\u3069\u3046\u306a\u304c\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ははおやは　ほそながい　からだで\n",
-                "こどもを　つつみこみ　ねむらせる。\n",
-                "はやい　うごきで　てきを　おいこむ。"
+                "\u306f\u306f\u304a\u3084\u306f\u3000\u307b\u305d\u306a\u304c\u3044\u3000\u304b\u3089\u3060\u3067\n",
+                "\u3053\u3069\u3082\u3092\u3000\u3064\u3064\u307f\u3053\u307f\u3000\u306d\u3080\u3089\u305b\u308b\u3002\n",
+                "\u306f\u3084\u3044\u3000\u3046\u3054\u304d\u3067\u3000\u3066\u304d\u3092\u3000\u304a\u3044\u3053\u3080\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 62,
         "special_defense": 60
     },
-    "types": [ "TYPE_GRASS", "TYPE_ICE" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_ICE"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 131,
     "ev_yields": {
@@ -26,69 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_SNOW_WARNING", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_STORM_DRAIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_RAZOR_LEAF" ],
-            [ 9, "MOVE_ICY_WIND" ],
-            [ 13, "MOVE_GRASS_WHISTLE" ],
-            [ 17, "MOVE_SWAGGER" ],
-            [ 21, "MOVE_MIST" ],
-            [ 26, "MOVE_ICE_SHARD" ],
-            [ 31, "MOVE_INGRAIN" ],
-            [ 36, "MOVE_WOOD_HAMMER" ],
-            [ 41, "MOVE_BLIZZARD" ],
-            [ 46, "MOVE_SHEER_COLD" ]
+            [
+                1,
+                "MOVE_POWDER_SNOW"
+            ],
+            [
+                1,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                4,
+                "MOVE_LEER"
+            ],
+            [
+                8,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                11,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                14,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                17,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                21,
+                "MOVE_AVALANCHE"
+            ],
+            [
+                24,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                28,
+                "MOVE_NATURAL_GIFT"
+            ],
+            [
+                30,
+                "MOVE_GIGA_DRAIN"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM09",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM72",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -115,7 +116,7 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "SNOVER",
-            "category": "Frost Tree Pokémon",
+            "category": "Frost Tree Pok\u00e9mon",
             "entry_text": [
                 "Seemingly curious about people,\n",
                 "they gather around footsteps they\n",
@@ -124,11 +125,11 @@
         },
         "fr": {
             "name": "BLIZZI",
-            "category": "Pokémon Arbregelé",
+            "category": "Pok\u00e9mon Arbregel\u00e9",
             "entry_text": [
-                "Il vit sur les monts enneigés.\n",
+                "Il vit sur les monts enneig\u00e9s.\n",
                 "Ignorant des coutumes humaines,\n",
-                "il lui arrive d’être très indiscret."
+                "il lui arrive d\u2019\u00eatre tr\u00e8s indiscret."
             ]
         },
         "de": {
@@ -142,29 +143,29 @@
         },
         "it": {
             "name": "SNOVER",
-            "category": "Pokémon Albergelo",
+            "category": "Pok\u00e9mon Albergelo",
             "entry_text": [
                 "Vive sui monti innevati. Ha avuto\n",
                 "pochi contatti con gli umani, quindi\n",
-                "è molto curioso nei loro confronti."
+                "\u00e8 molto curioso nei loro confronti."
             ]
         },
         "es": {
             "name": "SNOVER",
-            "category": "Pokémon Árbol Nieve",
+            "category": "Pok\u00e9mon \u00c1rbol Nieve",
             "entry_text": [
-                "Vive en montañas nevadas.\n",
+                "Vive en monta\u00f1as nevadas.\n",
                 "Apenas tiene contacto con los\n",
                 "humanos y es muy curioso."
             ]
         },
         "jp": {
-            "name": "ユキカブリ",
-            "category": "じゅひょうポケモン",
+            "name": "\u30e6\u30ad\u30ab\u30d6\u30ea",
+            "category": "\u3058\u3085\u3072\u3087\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ゆきやまで　くらしている。\n",
-                "めったに　であわない　にんげんを\n",
-                "めずらしがって　ちかよってくる。"
+                "\u3086\u304d\u3084\u307e\u3067\u3000\u304f\u3089\u3057\u3066\u3044\u308b\u3002\n",
+                "\u3081\u3063\u305f\u306b\u3000\u3067\u3042\u308f\u306a\u3044\u3000\u306b\u3093\u3052\u3093\u3092\n",
+                "\u3081\u305a\u3089\u3057\u304c\u3063\u3066\u3000\u3061\u304b\u3088\u3063\u3066\u304f\u308b\u3002"
             ]
         }
     },

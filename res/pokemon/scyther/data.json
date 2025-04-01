@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 80
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 187,
     "ev_yields": {
@@ -26,74 +29,22 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_TECHNICIAN" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_SHARPNESS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_VACUUM_WAVE" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_FOCUS_ENERGY" ],
-            [ 9, "MOVE_PURSUIT" ],
-            [ 13, "MOVE_FALSE_SWIPE" ],
-            [ 17, "MOVE_AGILITY" ],
-            [ 21, "MOVE_WING_ATTACK" ],
-            [ 25, "MOVE_FURY_CUTTER" ],
-            [ 29, "MOVE_SLASH" ],
-            [ 33, "MOVE_RAZOR_WIND" ],
-            [ 37, "MOVE_DOUBLE_TEAM" ],
-            [ 41, "MOVE_X_SCISSOR" ],
-            [ 45, "MOVE_NIGHT_SLASH" ],
-            [ 49, "MOVE_DOUBLE_HIT" ],
-            [ 53, "MOVE_AIR_SLASH" ],
-            [ 57, "MOVE_SWORDS_DANCE" ],
-            [ 61, "MOVE_FEINT" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM54",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM75",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_FURY_CUTTER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -120,7 +71,7 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "SCYTHER",
-            "category": "Mantis Pokémon",
+            "category": "Mantis Pok\u00e9mon",
             "entry_text": [
                 "The sharp scythes on its forearms\n",
                 "become increasingly sharp by\n",
@@ -129,47 +80,47 @@
         },
         "fr": {
             "name": "INSECATEUR",
-            "category": "Pokémon Mante",
+            "category": "Pok\u00e9mon Mante",
             "entry_text": [
                 "Ses coups de faux sont \n",
                 "pratiquement imparables. Il se \n",
-                "déplace comme un ninja."
+                "d\u00e9place comme un ninja."
             ]
         },
         "de": {
             "name": "SICHLOR",
             "category": "Mantis",
             "entry_text": [
-                "Es ist fast unmöglich, seinen\n",
+                "Es ist fast unm\u00f6glich, seinen\n",
                 "Sensen auszuweichen, da es mit der\n",
-                "Schnelligkeit eines Ninja zuschlägt."
+                "Schnelligkeit eines Ninja zuschl\u00e4gt."
             ]
         },
         "it": {
             "name": "SCYTHER",
-            "category": "Pokémon Mantide",
+            "category": "Pok\u00e9mon Mantide",
             "entry_text": [
-                "È quasi impossibile parare gli\n",
+                "\u00c8 quasi impossibile parare gli\n",
                 "attacchi sferrati dalle sue falci.\n",
                 "Si muove come un ninja."
             ]
         },
         "es": {
             "name": "SCYTHER",
-            "category": "Pokémon Mantis",
+            "category": "Pok\u00e9mon Mantis",
             "entry_text": [
                 "Es casi imposible evitar el ataque\n",
-                "de sus guadañas. Se mueve como\n",
+                "de sus guada\u00f1as. Se mueve como\n",
                 "un ninja."
             ]
         },
         "jp": {
-            "name": "ストライク",
-            "category": "かまきりポケモン",
+            "name": "\u30b9\u30c8\u30e9\u30a4\u30af",
+            "category": "\u304b\u307e\u304d\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "りょううでの　カマによる　こうげきを\n",
-                "ふせぐことは　ふかのうに　ちかい。\n",
-                "その　うごきは　まるで　ニンジャだ。"
+                "\u308a\u3087\u3046\u3046\u3067\u306e\u3000\u30ab\u30de\u306b\u3088\u308b\u3000\u3053\u3046\u3052\u304d\u3092\n",
+                "\u3075\u305b\u3050\u3053\u3068\u306f\u3000\u3075\u304b\u306e\u3046\u306b\u3000\u3061\u304b\u3044\u3002\n",
+                "\u305d\u306e\u3000\u3046\u3054\u304d\u306f\u3000\u307e\u308b\u3067\u3000\u30cb\u30f3\u30b8\u30e3\u3060\u3002"
             ]
         }
     },

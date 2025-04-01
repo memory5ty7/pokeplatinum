@@ -7,7 +7,10 @@
         "special_attack": 49,
         "special_defense": 61
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 90,
     "ev_yields": {
@@ -26,71 +29,51 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_STORM_DRAIN" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_NONE",
+        "ABILITY_RATTLED",
+        "ABILITY_DRY_SKIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 6, "MOVE_WATER_GUN" ],
-            [ 10, "MOVE_ATTRACT" ],
-            [ 13, "MOVE_RAIN_DANCE" ],
-            [ 17, "MOVE_GUST" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_CAPTIVATE" ],
-            [ 29, "MOVE_SAFEGUARD" ],
-            [ 33, "MOVE_AQUA_RING" ],
-            [ 38, "MOVE_WHIRLPOOL" ],
-            [ 42, "MOVE_U_TURN" ],
-            [ 45, "MOVE_BOUNCE" ],
-            [ 49, "MOVE_SILVER_WIND" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                6,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                11,
+                "MOVE_DEFOG"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                25,
+                "MOVE_BOUNCE"
+            ],
+            [
+                30,
+                "MOVE_FLIP_TURN"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM62",
-            "TM66",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM03",
-            "HM05",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -117,7 +100,7 @@
         "pokemon_pos_m": 65534,
         "en": {
             "name": "FINNEON",
-            "category": "Wing Fish Pokémon",
+            "category": "Wing Fish Pok\u00e9mon",
             "entry_text": [
                 "The line running down its side can\n",
                 "store sunlight. It shines vividly at\n",
@@ -126,16 +109,16 @@
         },
         "fr": {
             "name": "ECAYON",
-            "category": "Pokémon Poisson Ailé",
+            "category": "Pok\u00e9mon Poisson Ail\u00e9",
             "entry_text": [
-                "Après une longue exposition au\n",
+                "Apr\u00e8s une longue exposition au\n",
                 "soleil, les motifs de ses nageoires\n",
-                "caudales luisent à la nuit tombée."
+                "caudales luisent \u00e0 la nuit tomb\u00e9e."
             ]
         },
         "de": {
             "name": "FINNEON",
-            "category": "Flügelfisch",
+            "category": "Fl\u00fcgelfisch",
             "entry_text": [
                 "Wurden die Flossen lange dem\n",
                 "Sonnenlicht ausgesetzt, leuchten\n",
@@ -144,16 +127,16 @@
         },
         "it": {
             "name": "FINNEON",
-            "category": "Pokémon Pescealato",
+            "category": "Pok\u00e9mon Pescealato",
             "entry_text": [
                 "Dopo una lunga esposizione al sole,\n",
                 "i motivi sulle sue pinne brillano\n",
-                "vividamente al calar dell’oscurità."
+                "vividamente al calar dell\u2019oscurit\u00e0."
             ]
         },
         "es": {
             "name": "FINNEON",
-            "category": "Pokémon Pez Ala",
+            "category": "Pok\u00e9mon Pez Ala",
             "entry_text": [
                 "Si se expone mucho al sol, los\n",
                 "dibujos de sus aletas brillan\n",
@@ -161,12 +144,12 @@
             ]
         },
         "jp": {
-            "name": "ケイコウオ",
-            "category": "はねうおポケモン",
+            "name": "\u30b1\u30a4\u30b3\u30a6\u30aa",
+            "category": "\u306f\u306d\u3046\u304a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たいようを　いっぱいに　あびた\n",
-                "おびれの　もようは　くらくなると\n",
-                "あざやかな　いろで　ひかりだす。"
+                "\u305f\u3044\u3088\u3046\u3092\u3000\u3044\u3063\u3071\u3044\u306b\u3000\u3042\u3073\u305f\n",
+                "\u304a\u3073\u308c\u306e\u3000\u3082\u3088\u3046\u306f\u3000\u304f\u3089\u304f\u306a\u308b\u3068\n",
+                "\u3042\u3056\u3084\u304b\u306a\u3000\u3044\u308d\u3067\u3000\u3072\u304b\u308a\u3060\u3059\u3002"
             ]
         }
     },

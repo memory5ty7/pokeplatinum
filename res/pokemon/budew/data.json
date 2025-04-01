@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 70
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,62 +29,41 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_POISON_POINT" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_POISON_POINT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 4, "MOVE_GROWTH" ],
-            [ 7, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_MEGA_DRAIN" ],
-            [ 16, "MOVE_WORRY_SEED" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                10,
+                "MOVE_SLUDGE"
+            ],
+            [
+                15,
+                "MOVE_WORRY_SEED"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_DAY", "SPECIES_ROSELIA" ]
+        [
+            "EVO_LEVEL_HAPPINESS_DAY",
+            "SPECIES_ROSELIA"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -101,56 +83,56 @@
         "pokemon_pos_m": 29,
         "en": {
             "name": "BUDEW",
-            "category": "Bud Pokémon",
+            "category": "Bud Pok\u00e9mon",
             "entry_text": [
                 "Sensitive to changing temperature,\n",
                 "the bud is said to bloom when it\n",
-                "feels the sun’s warm touch."
+                "feels the sun\u2019s warm touch."
             ]
         },
         "fr": {
             "name": "ROZBOUTON",
-            "category": "Pokémon Bourgeon",
+            "category": "Pok\u00e9mon Bourgeon",
             "entry_text": [
                 "En hiver, son bourgeon se referme\n",
-                "pour résister au froid. Il s’ouvre\n",
-                "au printemps et libère du pollen."
+                "pour r\u00e9sister au froid. Il s\u2019ouvre\n",
+                "au printemps et lib\u00e8re du pollen."
             ]
         },
         "de": {
             "name": "KNOSPI",
             "category": "Knospe",
             "entry_text": [
-                "Im Winter schließt es die Knospe.\n",
-                "Im Frühjahr öffnet es die Knospe\n",
+                "Im Winter schlie\u00dft es die Knospe.\n",
+                "Im Fr\u00fchjahr \u00f6ffnet es die Knospe\n",
                 "und gibt Pollen ab."
             ]
         },
         "it": {
             "name": "BUDEW",
-            "category": "Pokémon Germoglio",
+            "category": "Pok\u00e9mon Germoglio",
             "entry_text": [
-                "D’inverno chiude la sua gemma e\n",
+                "D\u2019inverno chiude la sua gemma e\n",
                 "resiste al freddo. In primavera la\n",
                 "gemma si riapre e rilascia polline."
             ]
         },
         "es": {
             "name": "BUDEW",
-            "category": "Pokémon Brote",
+            "category": "Pok\u00e9mon Brote",
             "entry_text": [
                 "En invierno cierra su capullo para\n",
-                "protegerse del frío. En primavera,\n",
+                "protegerse del fr\u00edo. En primavera,\n",
                 "el capullo se abre y esparce polen."
             ]
         },
         "jp": {
-            "name": "スボミ－",
-            "category": "つぼみポケモン",
+            "name": "\u30b9\u30dc\u30df\uff0d",
+            "category": "\u3064\u307c\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ふゆの　あいだは　つぼみを　とざして\n",
-                "さむさに　たえる。はるになると\n",
-                "つぼみを　ひらき　かふんを　とばす。"
+                "\u3075\u3086\u306e\u3000\u3042\u3044\u3060\u306f\u3000\u3064\u307c\u307f\u3092\u3000\u3068\u3056\u3057\u3066\n",
+                "\u3055\u3080\u3055\u306b\u3000\u305f\u3048\u308b\u3002\u306f\u308b\u306b\u306a\u308b\u3068\n",
+                "\u3064\u307c\u307f\u3092\u3000\u3072\u3089\u304d\u3000\u304b\u3075\u3093\u3092\u3000\u3068\u3070\u3059\u3002"
             ]
         }
     },

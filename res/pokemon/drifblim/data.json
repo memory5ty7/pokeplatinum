@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 54
     },
-    "types": [ "TYPE_GHOST", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_GHOST",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 204,
     "ev_yields": {
@@ -26,89 +29,69 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FLUCTUATING",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_AFTERMATH", "ABILITY_UNBURDEN" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 1, "MOVE_MINIMIZE" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_GUST" ],
-            [ 6, "MOVE_ASTONISH" ],
-            [ 11, "MOVE_GUST" ],
-            [ 14, "MOVE_FOCUS_ENERGY" ],
-            [ 17, "MOVE_PAYBACK" ],
-            [ 22, "MOVE_STOCKPILE" ],
-            [ 27, "MOVE_SWALLOW" ],
-            [ 27, "MOVE_SPIT_UP" ],
-            [ 32, "MOVE_OMINOUS_WIND" ],
-            [ 37, "MOVE_BATON_PASS" ],
-            [ 44, "MOVE_SHADOW_BALL" ],
-            [ 51, "MOVE_EXPLOSION" ]
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                1,
+                "MOVE_GUST"
+            ],
+            [
+                8,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                13,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                18,
+                "MOVE_PAYBACK"
+            ],
+            [
+                23,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                28,
+                "MOVE_OMINOUS_WIND"
+            ],
+            [
+                36,
+                "MOVE_DEFOG"
+            ],
+            [
+                40,
+                "MOVE_SELFDESTRUCT"
+            ],
+            [
+                44,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                50,
+                "MOVE_ACROBATICS"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM57",
-            "TM58",
-            "TM61",
-            "TM62",
-            "TM63",
-            "TM64",
-            "TM66",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM74",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -127,7 +110,7 @@
         "pokemon_pos_m": 65528,
         "en": {
             "name": "DRIFBLIM",
-            "category": "Blimp Pokémon",
+            "category": "Blimp Pok\u00e9mon",
             "entry_text": [
                 "At dusk, swarms of them are\n",
                 "carried aloft on winds. When\n",
@@ -136,25 +119,25 @@
         },
         "fr": {
             "name": "GRODRIVE",
-            "category": "Pokémon Ballon",
+            "category": "Pok\u00e9mon Ballon",
             "entry_text": [
-                "Il somnole la journée et s’envole\n",
+                "Il somnole la journ\u00e9e et s\u2019envole\n",
                 "en grands groupes le soir venu. Nul\n",
-                "ne sait où ils vont."
+                "ne sait o\u00f9 ils vont."
             ]
         },
         "de": {
             "name": "DRIFZEPELI",
             "category": "Luftschiff",
             "entry_text": [
-                "Tagsüber treibt es faul vor sich\n",
+                "Tags\u00fcber treibt es faul vor sich\n",
                 "hin, nachts fliegt es mit anderen\n",
-                "umher. Niemand weiß wohin."
+                "umher. Niemand wei\u00df wohin."
             ]
         },
         "it": {
             "name": "DRIFBLIM",
-            "category": "Pokémon Dirigibile",
+            "category": "Pok\u00e9mon Dirigibile",
             "entry_text": [
                 "Di giorno fluttua con aria\n",
                 "sonnolenta, ma di notte vola via\n",
@@ -163,20 +146,20 @@
         },
         "es": {
             "name": "DRIFBLIM",
-            "category": "Pokémon Dirigible",
+            "category": "Pok\u00e9mon Dirigible",
             "entry_text": [
-                "Durante el día está somnoliento,\n",
+                "Durante el d\u00eda est\u00e1 somnoliento,\n",
                 "pero por la noche sale volando en\n",
-                "grupo, aunque nadie sabe adónde."
+                "grupo, aunque nadie sabe ad\u00f3nde."
             ]
         },
         "jp": {
-            "name": "フワライド",
-            "category": "ききゅうポケモン",
+            "name": "\u30d5\u30ef\u30e9\u30a4\u30c9",
+            "category": "\u304d\u304d\u3085\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひるまは　ねぼけて　うかんでいるが\n",
-                "ゆうがた　たいぐんで　とんでいく。\n",
-                "いきさきは　だれも　しらない。"
+                "\u3072\u308b\u307e\u306f\u3000\u306d\u307c\u3051\u3066\u3000\u3046\u304b\u3093\u3067\u3044\u308b\u304c\n",
+                "\u3086\u3046\u304c\u305f\u3000\u305f\u3044\u3050\u3093\u3067\u3000\u3068\u3093\u3067\u3044\u304f\u3002\n",
+                "\u3044\u304d\u3055\u304d\u306f\u3000\u3060\u308c\u3082\u3000\u3057\u3089\u306a\u3044\u3002"
             ]
         }
     },

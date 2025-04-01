@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 110
     },
-    "types": [ "TYPE_WATER", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 70,
     "base_exp_reward": 164,
     "ev_yields": {
@@ -26,101 +29,65 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_OWN_TEMPO" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_ANALYTIC",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POWER_GEM" ],
-            [ 1, "MOVE_HIDDEN_POWER" ],
-            [ 1, "MOVE_CURSE" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_CONFUSION" ],
-            [ 20, "MOVE_DISABLE" ],
-            [ 25, "MOVE_HEADBUTT" ],
-            [ 29, "MOVE_WATER_PULSE" ],
-            [ 34, "MOVE_ZEN_HEADBUTT" ],
-            [ 39, "MOVE_NASTY_PLOT" ],
-            [ 43, "MOVE_SWAGGER" ],
-            [ 48, "MOVE_PSYCHIC" ],
-            [ 53, "MOVE_TRUMP_CARD" ],
-            [ 57, "MOVE_PSYCH_UP" ]
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_CONFUSION"
+            ],
+            [
+                14,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                18,
+                "MOVE_DISABLE"
+            ],
+            [
+                22,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                26,
+                "MOVE_RAZOR_SHELL"
+            ],
+            [
+                30,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                36,
+                "MOVE_SCALD"
+            ],
+            [
+                43,
+                "MOVE_YAWN"
+            ],
+            [
+                50,
+                "MOVE_PSYCHIC"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM52",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM72",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM03",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -139,7 +106,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "SLOWKING",
-            "category": "Royal Pokémon",
+            "category": "Royal Pok\u00e9mon",
             "entry_text": [
                 "Being bitten by SHELLDER gave it\n",
                 "intelligence comparable to that of\n",
@@ -148,11 +115,11 @@
         },
         "fr": {
             "name": "ROIGADA",
-            "category": "Pokémon Royal",
+            "category": "Pok\u00e9mon Royal",
             "entry_text": [
                 "La morsure de KOKIYAS a fait\n",
-                "de lui un génie dont l’intelligence\n",
-                "rivalise avec celle d’un prix Nobel."
+                "de lui un g\u00e9nie dont l\u2019intelligence\n",
+                "rivalise avec celle d\u2019un prix Nobel."
             ]
         },
         "de": {
@@ -161,34 +128,34 @@
             "entry_text": [
                 "Wird es von MUSCHAS gebissen, wird\n",
                 "es so intelligent, dass es sich mit\n",
-                "Nobelpreisträgern messen kann."
+                "Nobelpreistr\u00e4gern messen kann."
             ]
         },
         "it": {
             "name": "SLOWKING",
-            "category": "Pokémon Reale",
+            "category": "Pok\u00e9mon Reale",
             "entry_text": [
                 "Il morso di SHELLDER gli ha infuso\n",
-                "un’intelligenza pari a quella di\n",
+                "un\u2019intelligenza pari a quella di\n",
                 "rinomati scienziati."
             ]
         },
         "es": {
             "name": "SLOWKING",
-            "category": "Pokémon Regio",
+            "category": "Pok\u00e9mon Regio",
             "entry_text": [
                 "Al ser mordido por un SHELLDER\n",
-                "desarrolló una inteligencia propia\n",
+                "desarroll\u00f3 una inteligencia propia\n",
                 "de un ganador del premio Nobel."
             ]
         },
         "jp": {
-            "name": "ヤドキング",
-            "category": "おうじゃポケモン",
+            "name": "\u30e4\u30c9\u30ad\u30f3\u30b0",
+            "category": "\u304a\u3046\u3058\u3083\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "シェルダ－に　かまれたことによって\n",
-                "ノ－ベルしょうを　じゅしょうした\n",
-                "かがくしゃなみの　ちのうを　えた。"
+                "\u30b7\u30a7\u30eb\u30c0\uff0d\u306b\u3000\u304b\u307e\u308c\u305f\u3053\u3068\u306b\u3088\u3063\u3066\n",
+                "\u30ce\uff0d\u30d9\u30eb\u3057\u3087\u3046\u3092\u3000\u3058\u3085\u3057\u3087\u3046\u3057\u305f\n",
+                "\u304b\u304c\u304f\u3057\u3083\u306a\u307f\u306e\u3000\u3061\u306e\u3046\u3092\u3000\u3048\u305f\u3002"
             ]
         }
     },

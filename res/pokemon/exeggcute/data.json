@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 45
     },
-    "types": [ "TYPE_GRASS", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 98,
     "ev_yields": {
@@ -26,73 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BARRAGE" ],
-            [ 1, "MOVE_UPROAR" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 7, "MOVE_REFLECT" ],
-            [ 11, "MOVE_LEECH_SEED" ],
-            [ 17, "MOVE_BULLET_SEED" ],
-            [ 19, "MOVE_STUN_SPORE" ],
-            [ 21, "MOVE_POISON_POWDER" ],
-            [ 23, "MOVE_SLEEP_POWDER" ],
-            [ 27, "MOVE_CONFUSION" ],
-            [ 33, "MOVE_WORRY_SEED" ],
-            [ 37, "MOVE_NATURAL_GIFT" ],
-            [ 43, "MOVE_SOLAR_BEAM" ],
-            [ 47, "MOVE_PSYCHIC" ]
+            [
+                1,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                1,
+                "MOVE_REFLECT"
+            ],
+            [
+                10,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                10,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                16,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                25,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                30,
+                "MOVE_SIGNAL_BEAM"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM33",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM53",
-            "TM58",
-            "TM64",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -119,7 +108,7 @@
         "pokemon_pos_m": 28,
         "en": {
             "name": "EXEGGCUTE",
-            "category": "Egg Pokémon",
+            "category": "Egg Pok\u00e9mon",
             "entry_text": [
                 "Its six eggs converse using\n",
                 "telepathy. They can quickly gather\n",
@@ -128,11 +117,11 @@
         },
         "fr": {
             "name": "NOEUNOEUF",
-            "category": "Pokémon Oeuf",
+            "category": "Pok\u00e9mon Oeuf",
             "entry_text": [
-                "Ces six œufs communiquent par\n",
-                "télépathie. Ils peuvent se réunir\n",
-                "rapidement si on les sépare."
+                "Ces six \u0153ufs communiquent par\n",
+                "t\u00e9l\u00e9pathie. Ils peuvent se r\u00e9unir\n",
+                "rapidement si on les s\u00e9pare."
             ]
         },
         "de": {
@@ -146,7 +135,7 @@
         },
         "it": {
             "name": "EXEGGCUTE",
-            "category": "Pokémon Uovo",
+            "category": "Pok\u00e9mon Uovo",
             "entry_text": [
                 "Queste sei uova comunicano per\n",
                 "telepatia. Si riuniscono subito\n",
@@ -155,20 +144,20 @@
         },
         "es": {
             "name": "EXEGGCUTE",
-            "category": "Pokémon Huevo",
+            "category": "Pok\u00e9mon Huevo",
             "entry_text": [
                 "Estos seis huevos se comunican por\n",
-                "telepatía. Si se separan se pueden\n",
-                "reunir rápidamente."
+                "telepat\u00eda. Si se separan se pueden\n",
+                "reunir r\u00e1pidamente."
             ]
         },
         "jp": {
-            "name": "タマタマ",
-            "category": "たまごポケモン",
+            "name": "\u30bf\u30de\u30bf\u30de",
+            "category": "\u305f\u307e\u3054\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "テレパシ－で　かいわをしているため\n",
-                "タマタマを　ひきはなそうとしても\n",
-                "すぐに　あつまって　６ぴきになる。"
+                "\u30c6\u30ec\u30d1\u30b7\uff0d\u3067\u3000\u304b\u3044\u308f\u3092\u3057\u3066\u3044\u308b\u305f\u3081\n",
+                "\u30bf\u30de\u30bf\u30de\u3092\u3000\u3072\u304d\u306f\u306a\u305d\u3046\u3068\u3057\u3066\u3082\n",
+                "\u3059\u3050\u306b\u3000\u3042\u3064\u307e\u3063\u3066\u3000\uff16\u3074\u304d\u306b\u306a\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 212,
     "ev_yields": {
@@ -26,72 +29,81 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SEED_BOMB" ],
-            [ 1, "MOVE_BARRAGE" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 17, "MOVE_STOMP" ],
-            [ 27, "MOVE_EGG_BOMB" ],
-            [ 37, "MOVE_WOOD_HAMMER" ],
-            [ 47, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                1,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                10,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                10,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                17,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                25,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                30,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                36,
+                "MOVE_WOOD_HAMMER"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                45,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                50,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                56,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM33",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM53",
-            "TM58",
-            "TM64",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SYNTHESIS",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -110,19 +122,19 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "EXEGGUTOR",
-            "category": "Coconut Pokémon",
+            "category": "Coconut Pok\u00e9mon",
             "entry_text": [
-                "It is called “The Walking Jungle.”\n",
+                "It is called \u201cThe Walking Jungle.\u201d\n",
                 "If a head grows too big, it falls\n",
                 "off and becomes an EXEGGCUTE."
             ]
         },
         "fr": {
             "name": "NOADKOKO",
-            "category": "Pokémon Fruitpalme",
+            "category": "Pok\u00e9mon Fruitpalme",
             "entry_text": [
-                "On l’appelle “jungle sur pattes”.\n",
-                "Si une tête devient trop grosse,\n",
+                "On l\u2019appelle \u201cjungle sur pattes\u201d.\n",
+                "Si une t\u00eate devient trop grosse,\n",
                 "elle tombe et produit un NOEUNOEUF."
             ]
         },
@@ -130,36 +142,36 @@
             "name": "KOKOWEI",
             "category": "Palmfrucht",
             "entry_text": [
-                "Man nennt es den “Laufenden\n",
-                "Dschungel”. Wird ein Kopf zu groß,\n",
-                "fällt er ab und wird zu einem OWEI."
+                "Man nennt es den \u201cLaufenden\n",
+                "Dschungel\u201d. Wird ein Kopf zu gro\u00df,\n",
+                "f\u00e4llt er ab und wird zu einem OWEI."
             ]
         },
         "it": {
             "name": "EXEGGUTOR",
-            "category": "Pokémon Nocecocco",
+            "category": "Pok\u00e9mon Nocecocco",
             "entry_text": [
-                "Noto come “Giungla in moto”. Se\n",
+                "Noto come \u201cGiungla in moto\u201d. Se\n",
                 "una testa diventa troppo grande,\n",
                 "cade e si trasforma in EXEGGCUTE."
             ]
         },
         "es": {
             "name": "EXEGGUTOR",
-            "category": "Pokémon Coco",
+            "category": "Pok\u00e9mon Coco",
             "entry_text": [
-                "Se le llama la “selva andante”.\n",
+                "Se le llama la \u201cselva andante\u201d.\n",
                 "Si una cabeza crece demasiado,\n",
                 "se cae y forma un EXEGGCUTE."
             ]
         },
         "jp": {
-            "name": "ナッシ－",
-            "category": "やしのみポケモン",
+            "name": "\u30ca\u30c3\u30b7\uff0d",
+            "category": "\u3084\u3057\u306e\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あるく　ねったいうりんと　よばれる。\n",
-                "おおきくなった　あたまの　ひとつが\n",
-                "じめんに　おちると　タマタマになる。"
+                "\u3042\u308b\u304f\u3000\u306d\u3063\u305f\u3044\u3046\u308a\u3093\u3068\u3000\u3088\u3070\u308c\u308b\u3002\n",
+                "\u304a\u304a\u304d\u304f\u306a\u3063\u305f\u3000\u3042\u305f\u307e\u306e\u3000\u3072\u3068\u3064\u304c\n",
+                "\u3058\u3081\u3093\u306b\u3000\u304a\u3061\u308b\u3068\u3000\u30bf\u30de\u30bf\u30de\u306b\u306a\u308b\u3002"
             ]
         }
     },

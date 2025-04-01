@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_WATER", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 99,
     "ev_yields": {
@@ -26,85 +29,63 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_OWN_TEMPO" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_HYDRATION",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CURSE" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_CONFUSION" ],
-            [ 20, "MOVE_DISABLE" ],
-            [ 25, "MOVE_HEADBUTT" ],
-            [ 29, "MOVE_WATER_PULSE" ],
-            [ 34, "MOVE_ZEN_HEADBUTT" ],
-            [ 39, "MOVE_SLACK_OFF" ],
-            [ 43, "MOVE_AMNESIA" ],
-            [ 48, "MOVE_PSYCHIC" ],
-            [ 53, "MOVE_RAIN_DANCE" ],
-            [ 57, "MOVE_PSYCH_UP" ]
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_CONFUSION"
+            ],
+            [
+                14,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                18,
+                "MOVE_DISABLE"
+            ],
+            [
+                22,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                26,
+                "MOVE_RAZOR_SHELL"
+            ],
+            [
+                30,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                36,
+                "MOVE_SCALD"
+            ],
+            [
+                43,
+                "MOVE_YAWN"
+            ],
+            [
+                50,
+                "MOVE_PSYCHIC"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM55",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM03",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -136,7 +117,7 @@
         "pokemon_pos_m": 19,
         "en": {
             "name": "SLOWPOKE",
-            "category": "Dopey Pokémon",
+            "category": "Dopey Pok\u00e9mon",
             "entry_text": [
                 "Although slow, it is skilled at\n",
                 "fishing with its tail. It does not\n",
@@ -145,9 +126,9 @@
         },
         "fr": {
             "name": "RAMOLOSS",
-            "category": "Pokémon Crétin",
+            "category": "Pok\u00e9mon Cr\u00e9tin",
             "entry_text": [
-                "Bien que lent, c’est un pêcheur\n",
+                "Bien que lent, c\u2019est un p\u00eacheur\n",
                 "adroit qui utilise sa queue. Elle\n",
                 "est insensible aux morsures."
             ]
@@ -157,22 +138,22 @@
             "category": "Schnarcher",
             "entry_text": [
                 "Es ist langsam, hat aber ein Talent,\n",
-                "mit seinem Schweif zu fischen. Beißt\n",
+                "mit seinem Schweif zu fischen. Bei\u00dft\n",
                 "etwas an, tut es ihm nicht weh."
             ]
         },
         "it": {
             "name": "SLOWPOKE",
-            "category": "Pokémon Ronfone",
+            "category": "Pok\u00e9mon Ronfone",
             "entry_text": [
-                "Anche se è lento, è abile a pescare\n",
+                "Anche se \u00e8 lento, \u00e8 abile a pescare\n",
                 "con la coda. Non avverte alcun\n",
                 "dolore se gliela mordono."
             ]
         },
         "es": {
             "name": "SLOWPOKE",
-            "category": "Pokémon Atontado",
+            "category": "Pok\u00e9mon Atontado",
             "entry_text": [
                 "A pesar de su lentitud, tiene una\n",
                 "gran habilidad para pescar con la\n",
@@ -180,12 +161,12 @@
             ]
         },
         "jp": {
-            "name": "ヤドン",
-            "category": "まぬけポケモン",
+            "name": "\u30e4\u30c9\u30f3",
+            "category": "\u307e\u306c\u3051\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "うごきは　のろいが　しっぽを　つかう\n",
-                "つりが　とくい。どんかんなので\n",
-                "しっぽを　かまれても　いたくない。"
+                "\u3046\u3054\u304d\u306f\u3000\u306e\u308d\u3044\u304c\u3000\u3057\u3063\u307d\u3092\u3000\u3064\u304b\u3046\n",
+                "\u3064\u308a\u304c\u3000\u3068\u304f\u3044\u3002\u3069\u3093\u304b\u3093\u306a\u306e\u3067\n",
+                "\u3057\u3063\u307d\u3092\u3000\u304b\u307e\u308c\u3066\u3082\u3000\u3044\u305f\u304f\u306a\u3044\u3002"
             ]
         }
     },

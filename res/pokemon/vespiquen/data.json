@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 102
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 188,
     "ev_yields": {
@@ -26,75 +29,65 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_QUEENLY_MAJESTY", "ABILITY_NONE", "ABILITY_SUPERSWEET_SYRUP" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TINTED_LENS",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_GUST" ],
-            [ 3, "MOVE_POISON_STING" ],
-            [ 7, "MOVE_CONFUSE_RAY" ],
-            [ 9, "MOVE_FURY_CUTTER" ],
-            [ 13, "MOVE_DEFEND_ORDER" ],
-            [ 15, "MOVE_PURSUIT" ],
-            [ 19, "MOVE_FURY_SWIPES" ],
-            [ 21, "MOVE_POWER_GEM" ],
-            [ 25, "MOVE_HEAL_ORDER" ],
-            [ 27, "MOVE_TOXIC" ],
-            [ 31, "MOVE_SLASH" ],
-            [ 33, "MOVE_CAPTIVATE" ],
-            [ 37, "MOVE_ATTACK_ORDER" ],
-            [ 39, "MOVE_SWAGGER" ],
-            [ 43, "MOVE_DESTINY_BOND" ]
+            [
+                1,
+                "MOVE_GUST"
+            ],
+            [
+                12,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                21,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                24,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                30,
+                "MOVE_U_TURN"
+            ],
+            [
+                36,
+                "MOVE_PROTECT"
+            ],
+            [
+                40,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                42,
+                "MOVE_DUAL_WINGBEAT"
+            ],
+            [
+                45,
+                "MOVE_REVENGE"
+            ],
+            [
+                50,
+                "MOVE_ATTACK_ORDER"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM56",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ENDEAVOR",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -113,7 +106,7 @@
         "pokemon_pos_m": 65532,
         "en": {
             "name": "VESPIQUEN",
-            "category": "Beehive Pokémon",
+            "category": "Beehive Pok\u00e9mon",
             "entry_text": [
                 "It releases various pheromones\n",
                 "to make the grubs in its body do\n",
@@ -122,25 +115,25 @@
         },
         "fr": {
             "name": "APIREINE",
-            "category": "Pokémon Ruche",
+            "category": "Pok\u00e9mon Ruche",
             "entry_text": [
-                "Son abdomen est un rayon où\n",
-                "vivent ses larves, élevées avec\n",
-                "le nectar récolté par APITRINI."
+                "Son abdomen est un rayon o\u00f9\n",
+                "vivent ses larves, \u00e9lev\u00e9es avec\n",
+                "le nectar r\u00e9colt\u00e9 par APITRINI."
             ]
         },
         "de": {
             "name": "HONWEISEL",
             "category": "Bienenstock",
             "entry_text": [
-                "Ihr Bauch ist die Wabe für die\n",
-                "Larven. Sie füttert ihre Larven mit\n",
+                "Ihr Bauch ist die Wabe f\u00fcr die\n",
+                "Larven. Sie f\u00fcttert ihre Larven mit\n",
                 "dem Honig, den WADRIBIE sammelt."
             ]
         },
         "it": {
             "name": "VESPIQUEN",
-            "category": "Pokémon Alveare",
+            "category": "Pok\u00e9mon Alveare",
             "entry_text": [
                 "Il suo addome funge da rifugio per\n",
                 "le larve, che nutre con il nettare\n",
@@ -149,7 +142,7 @@
         },
         "es": {
             "name": "VESPIQUEN",
-            "category": "Pokémon Colmena",
+            "category": "Pok\u00e9mon Colmena",
             "entry_text": [
                 "Su abdomen es un panal de larvas\n",
                 "que alimenta con la miel recogida\n",
@@ -157,12 +150,12 @@
             ]
         },
         "jp": {
-            "name": "ビ－クイン",
-            "category": "はちのすポケモン",
+            "name": "\u30d3\uff0d\u30af\u30a4\u30f3",
+            "category": "\u306f\u3061\u306e\u3059\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "どうたいが　こどもたちの　すあなに\n",
-                "なっている。ミツハニ－の　あつめた\n",
-                "ミツで　こどもたちを　そだてる。"
+                "\u3069\u3046\u305f\u3044\u304c\u3000\u3053\u3069\u3082\u305f\u3061\u306e\u3000\u3059\u3042\u306a\u306b\n",
+                "\u306a\u3063\u3066\u3044\u308b\u3002\u30df\u30c4\u30cf\u30cb\uff0d\u306e\u3000\u3042\u3064\u3081\u305f\n",
+                "\u30df\u30c4\u3067\u3000\u3053\u3069\u3082\u305f\u3061\u3092\u3000\u305d\u3060\u3066\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 81,
         "special_defense": 107
     },
-    "types": [ "TYPE_ROCK", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 199,
     "ev_yields": {
@@ -26,78 +29,73 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SUCTION_CUPS", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 1, "MOVE_ACID" ],
-            [ 1, "MOVE_INGRAIN" ],
-            [ 8, "MOVE_ACID" ],
-            [ 15, "MOVE_INGRAIN" ],
-            [ 22, "MOVE_CONFUSE_RAY" ],
-            [ 29, "MOVE_AMNESIA" ],
-            [ 36, "MOVE_ANCIENT_POWER" ],
-            [ 46, "MOVE_GASTRO_ACID" ],
-            [ 56, "MOVE_ENERGY_BALL" ],
-            [ 66, "MOVE_STOCKPILE" ],
-            [ 66, "MOVE_SPIT_UP" ],
-            [ 66, "MOVE_SWALLOW" ],
-            [ 76, "MOVE_WRING_OUT" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                4,
+                "MOVE_ACID"
+            ],
+            [
+                7,
+                "MOVE_BLOCK"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                15,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                25,
+                "MOVE_RECOVER"
+            ],
+            [
+                30,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                34,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                40,
+                "MOVE_MIRROR_COAT"
+            ],
+            [
+                45,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                50,
+                "MOVE_ENERGY_BALL"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM69",
-            "TM70",
-            "TM71",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SYNTHESIS",
-            "MOVE_EARTH_POWER",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -116,7 +114,7 @@
         "pokemon_pos_m": 6,
         "en": {
             "name": "CRADILY",
-            "category": "Barnacle Pokémon",
+            "category": "Barnacle Pok\u00e9mon",
             "entry_text": [
                 "It lives in the shallows of warm\n",
                 "seas. When the tide goes out, it\n",
@@ -125,16 +123,16 @@
         },
         "fr": {
             "name": "VACILYS",
-            "category": "Pokémon Bernacle",
+            "category": "Pok\u00e9mon Bernacle",
             "entry_text": [
                 "Vit dans les hauts-fonds des mers\n",
-                "chaudes. Il déterre sa proie du\n",
-                "sable quand la marée se retire."
+                "chaudes. Il d\u00e9terre sa proie du\n",
+                "sable quand la mar\u00e9e se retire."
             ]
         },
         "de": {
             "name": "WIELIE",
-            "category": "Rankfüßer",
+            "category": "Rankf\u00fc\u00dfer",
             "entry_text": [
                 "Es lebt in seichten Stellen warmer\n",
                 "Meere. Bei Ebbe sucht es im Sand\n",
@@ -143,7 +141,7 @@
         },
         "it": {
             "name": "CRADILY",
-            "category": "Pokémon Lepade",
+            "category": "Pok\u00e9mon Lepade",
             "entry_text": [
                 "Vive in acque poco profonde nei\n",
                 "mari caldi. Con la bassa marea,\n",
@@ -152,7 +150,7 @@
         },
         "es": {
             "name": "CRADILY",
-            "category": "Pokémon Percebe",
+            "category": "Pok\u00e9mon Percebe",
             "entry_text": [
                 "Vive en el fondo de los mares de\n",
                 "aguas templadas. Emerge para\n",
@@ -160,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "ユレイドル",
-            "category": "いわつぼポケモン",
+            "name": "\u30e6\u30ec\u30a4\u30c9\u30eb",
+            "category": "\u3044\u308f\u3064\u307c\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あたたかい　うみの　あさせに　いる。\n",
-                "しおが　ひくと　すなはまに　もぐった\n",
-                "えものを　ほりだして　たべる。"
+                "\u3042\u305f\u305f\u304b\u3044\u3000\u3046\u307f\u306e\u3000\u3042\u3055\u305b\u306b\u3000\u3044\u308b\u3002\n",
+                "\u3057\u304a\u304c\u3000\u3072\u304f\u3068\u3000\u3059\u306a\u306f\u307e\u306b\u3000\u3082\u3050\u3063\u305f\n",
+                "\u3048\u3082\u306e\u3092\u3000\u307b\u308a\u3060\u3057\u3066\u3000\u305f\u3079\u308b\u3002"
             ]
         }
     },

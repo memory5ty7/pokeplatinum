@@ -7,7 +7,10 @@
         "special_attack": 87,
         "special_defense": 78
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 133,
     "ev_yields": {
@@ -26,64 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_FLOWER_GIFT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_TECHNICIAN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 10, "MOVE_LEECH_SEED" ],
-            [ 13, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_SUNNY_DAY" ],
-            [ 25, "MOVE_PETAL_DANCE" ],
-            [ 30, "MOVE_WORRY_SEED" ],
-            [ 35, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SOLAR_BEAM" ],
-            [ 48, "MOVE_LUCKY_CHANT" ]
+            [
+                1,
+                "MOVE_MORNING_SUN"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                8,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                12,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                15,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                20,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                25,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                28,
+                "MOVE_PETAL_DANCE"
+            ],
+            [
+                30,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                36,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                42,
+                "MOVE_MORNING_SUN"
+            ],
+            [
+                50,
+                "MOVE_WEATHER_BALL"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -102,56 +114,56 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "CHERRIM",
-            "category": "Blossom Pokémon",
+            "category": "Blossom Pok\u00e9mon",
             "entry_text": [
                 "If it senses strong sunlight, it\n",
                 "opens its folded petals to absorb\n",
-                "the sun’s rays with its whole body."
+                "the sun\u2019s rays with its whole body."
             ]
         },
         "fr": {
             "name": "CERIFLOR",
-            "category": "Pokémon Floraison",
+            "category": "Pok\u00e9mon Floraison",
             "entry_text": [
                 "Il fleurit lorsque le soleil est au\n",
-                "beau fixe. Il cherche à prendre sa\n",
+                "beau fixe. Il cherche \u00e0 prendre sa\n",
                 "revanche sur une vie de bourgeon."
             ]
         },
         "de": {
             "name": "KINOSO",
-            "category": "Blüte",
+            "category": "Bl\u00fcte",
             "entry_text": [
                 "In Zeiten mit viel Sonnenschein\n",
-                "blüht es auf. Es holt nach, was ihm\n",
+                "bl\u00fcht es auf. Es holt nach, was ihm\n",
                 "als Knospe verwehrt blieb."
             ]
         },
         "it": {
             "name": "CHERRIM",
-            "category": "Pokémon Bocciolo",
+            "category": "Pok\u00e9mon Bocciolo",
             "entry_text": [
                 "Sboccia quando fa caldo e cerca\n",
-                "di godersi fino all’ultimo ogni mo-\n",
-                "mento che può passare al sole."
+                "di godersi fino all\u2019ultimo ogni mo-\n",
+                "mento che pu\u00f2 passare al sole."
             ]
         },
         "es": {
             "name": "CHERRIM",
-            "category": "Pokémon Floración",
+            "category": "Pok\u00e9mon Floraci\u00f3n",
             "entry_text": [
-                "Florece en épocas de mucha\n",
+                "Florece en \u00e9pocas de mucha\n",
                 "luz solar. Intenta compensar\n",
-                "lo que soportó como capullo."
+                "lo que soport\u00f3 como capullo."
             ]
         },
         "jp": {
-            "name": "チェリム",
-            "category": "サクラポケモン",
+            "name": "\u30c1\u30a7\u30ea\u30e0",
+            "category": "\u30b5\u30af\u30e9\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひざしが　つよくなると　はなひらく。\n",
-                "つぼみの　ときに　たえしのんだ\n",
-                "うっぷんを　いっきに　はらすのだ。"
+                "\u3072\u3056\u3057\u304c\u3000\u3064\u3088\u304f\u306a\u308b\u3068\u3000\u306f\u306a\u3072\u3089\u304f\u3002\n",
+                "\u3064\u307c\u307f\u306e\u3000\u3068\u304d\u306b\u3000\u305f\u3048\u3057\u306e\u3093\u3060\n",
+                "\u3046\u3063\u3077\u3093\u3092\u3000\u3044\u3063\u304d\u306b\u3000\u306f\u3089\u3059\u306e\u3060\u3002"
             ]
         }
     },

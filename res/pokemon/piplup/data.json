@@ -7,7 +7,10 @@
         "special_attack": 61,
         "special_defense": 56
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 66,
     "ev_yields": {
@@ -26,70 +29,47 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_CLEAR_BODY",
+        "ABILITY_TORRENT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 4, "MOVE_GROWL" ],
-            [ 8, "MOVE_BUBBLE" ],
-            [ 11, "MOVE_WATER_SPORT" ],
-            [ 15, "MOVE_PECK" ],
-            [ 18, "MOVE_BUBBLE_BEAM" ],
-            [ 22, "MOVE_BIDE" ],
-            [ 25, "MOVE_FURY_ATTACK" ],
-            [ 29, "MOVE_BRINE" ],
-            [ 32, "MOVE_WHIRLPOOL" ],
-            [ 36, "MOVE_MIST" ],
-            [ 39, "MOVE_DRILL_PECK" ],
-            [ 43, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                6,
+                "MOVE_BUBBLE"
+            ],
+            [
+                10,
+                "MOVE_PLUCK"
+            ],
+            [
+                14,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                16,
+                "MOVE_AQUA_JET"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM76",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM88",
-            "TM90",
-            "HM01",
-            "HM03",
-            "HM05",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +96,7 @@
         "pokemon_pos_m": 28,
         "en": {
             "name": "PIPLUP",
-            "category": "Penguin Pokémon",
+            "category": "Penguin Pok\u00e9mon",
             "entry_text": [
                 "A poor walker, it often falls down.\n",
                 "However, its strong pride makes it\n",
@@ -125,11 +105,11 @@
         },
         "fr": {
             "name": "TIPLOUF",
-            "category": "Pokémon Pingouin",
+            "category": "Pok\u00e9mon Pingouin",
             "entry_text": [
-                "Il est fier et déteste accepter\n",
-                "la nourriture qu’on lui offre. Son\n",
-                "pelage épais le protège du froid."
+                "Il est fier et d\u00e9teste accepter\n",
+                "la nourriture qu\u2019on lui offre. Son\n",
+                "pelage \u00e9pais le prot\u00e8ge du froid."
             ]
         },
         "de": {
@@ -138,34 +118,34 @@
             "entry_text": [
                 "Es ist sehr stolz und nimmt daher\n",
                 "kein Futter von anderen an. Seine\n",
-                "dicken Daunen schützen vor Kälte."
+                "dicken Daunen sch\u00fctzen vor K\u00e4lte."
             ]
         },
         "it": {
             "name": "PIPLUP",
-            "category": "Pokémon Pinguino",
+            "category": "Pok\u00e9mon Pinguino",
             "entry_text": [
-                "È molto orgoglioso e odia accettare\n",
+                "\u00c8 molto orgoglioso e odia accettare\n",
                 "cibo dalla gente. Le fitte piume lo\n",
                 "proteggono dal freddo."
             ]
         },
         "es": {
             "name": "PIPLUP",
-            "category": "Pokémon Pingüino",
+            "category": "Pok\u00e9mon Ping\u00fcino",
             "entry_text": [
                 "Es muy orgulloso, por lo que odia\n",
                 "aceptar comida de la gente. Su\n",
-                "grueso plumón le protege del frío."
+                "grueso plum\u00f3n le protege del fr\u00edo."
             ]
         },
         "jp": {
-            "name": "ポッチャマ",
-            "category": "ペンギンポケモン",
+            "name": "\u30dd\u30c3\u30c1\u30e3\u30de",
+            "category": "\u30da\u30f3\u30ae\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "プライドが　たかく　ひとから\n",
-                "たべものを　もらう　ことを　きらう。\n",
-                "ながい　うぶげが　さむさを　ふせぐ。"
+                "\u30d7\u30e9\u30a4\u30c9\u304c\u3000\u305f\u304b\u304f\u3000\u3072\u3068\u304b\u3089\n",
+                "\u305f\u3079\u3082\u306e\u3092\u3000\u3082\u3089\u3046\u3000\u3053\u3068\u3092\u3000\u304d\u3089\u3046\u3002\n",
+                "\u306a\u304c\u3044\u3000\u3046\u3076\u3052\u304c\u3000\u3055\u3080\u3055\u3092\u3000\u3075\u305b\u3050\u3002"
             ]
         }
     },

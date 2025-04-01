@@ -7,7 +7,10 @@
         "special_attack": 15,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 130,
     "base_exp_reward": 255,
     "ev_yields": {
@@ -26,68 +29,22 @@
     "hatch_cycles": 40,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_SERENE_GRACE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 5, "MOVE_COPYCAT" ],
-            [ 9, "MOVE_REFRESH" ],
-            [ 12, "MOVE_SWEET_KISS" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -114,34 +71,34 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "HAPPINY",
-            "category": "Playhouse Pokémon",
+            "category": "Playhouse Pok\u00e9mon",
             "entry_text": [
                 "It likes to carry around a small\n",
-                "rock. It may wander around others’\n",
+                "rock. It may wander around others\u2019\n",
                 "feet and cause them to stumble."
             ]
         },
         "fr": {
             "name": "PTIRAVI",
-            "category": "Pokémon Maisonjouet",
+            "category": "Pok\u00e9mon Maisonjouet",
             "entry_text": [
-                "Ce Pokémon aime ce qui est rond et\n",
+                "Ce Pok\u00e9mon aime ce qui est rond et\n",
                 "blanc et transporte un caillou en\n",
-                "forme d’œuf pour imiter LEVEINARD."
+                "forme d\u2019\u0153uf pour imiter LEVEINARD."
             ]
         },
         "de": {
             "name": "WONNEIRA",
             "category": "Spielhaus",
             "entry_text": [
-                "Es liebt runde, weiße Dinge. Es\n",
-                "trägt einen eiförmigen Stein bei\n",
+                "Es liebt runde, wei\u00dfe Dinge. Es\n",
+                "tr\u00e4gt einen eif\u00f6rmigen Stein bei\n",
                 "sich, und imitiert damit CHANEIRA."
             ]
         },
         "it": {
             "name": "HAPPINY",
-            "category": "Pokémon Ovettino",
+            "category": "Pok\u00e9mon Ovettino",
             "entry_text": [
                 "Ama gli oggetti bianchi e tondi.\n",
                 "Imita CHANSEY trasportando una\n",
@@ -150,7 +107,7 @@
         },
         "es": {
             "name": "HAPPINY",
-            "category": "Pokémon Casita",
+            "category": "Pok\u00e9mon Casita",
             "entry_text": [
                 "Le encantan las cosas blancas y\n",
                 "redondas. Imita a CHANSEY llevando\n",
@@ -158,12 +115,12 @@
             ]
         },
         "jp": {
-            "name": "ピンプク",
-            "category": "ままごとポケモン",
+            "name": "\u30d4\u30f3\u30d7\u30af",
+            "category": "\u307e\u307e\u3054\u3068\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しろくて　まるいものが　だいすき。\n",
-                "ラッキ－の　まねをして　タマゴに\n",
-                "そっくりな　いしを　かかえている。"
+                "\u3057\u308d\u304f\u3066\u3000\u307e\u308b\u3044\u3082\u306e\u304c\u3000\u3060\u3044\u3059\u304d\u3002\n",
+                "\u30e9\u30c3\u30ad\uff0d\u306e\u3000\u307e\u306d\u3092\u3057\u3066\u3000\u30bf\u30de\u30b4\u306b\n",
+                "\u305d\u3063\u304f\u308a\u306a\u3000\u3044\u3057\u3092\u3000\u304b\u304b\u3048\u3066\u3044\u308b\u3002"
             ]
         }
     },

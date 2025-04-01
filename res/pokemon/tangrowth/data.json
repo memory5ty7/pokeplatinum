@@ -7,7 +7,10 @@
         "special_attack": 110,
         "special_defense": 50
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 211,
     "ev_yields": {
@@ -26,87 +29,77 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_LEAF_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_OBLIVIOUS",
+        "ABILITY_NONE",
+        "ABILITY_SIMPLE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_INGRAIN" ],
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 5, "MOVE_SLEEP_POWDER" ],
-            [ 8, "MOVE_ABSORB" ],
-            [ 12, "MOVE_GROWTH" ],
-            [ 15, "MOVE_POISON_POWDER" ],
-            [ 19, "MOVE_VINE_WHIP" ],
-            [ 22, "MOVE_BIND" ],
-            [ 26, "MOVE_MEGA_DRAIN" ],
-            [ 29, "MOVE_STUN_SPORE" ],
-            [ 33, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_KNOCK_OFF" ],
-            [ 40, "MOVE_NATURAL_GIFT" ],
-            [ 43, "MOVE_SLAM" ],
-            [ 47, "MOVE_TICKLE" ],
-            [ 50, "MOVE_WRING_OUT" ],
-            [ 54, "MOVE_POWER_WHIP" ],
-            [ 57, "MOVE_BLOCK" ]
+            [
+                1,
+                "MOVE_INGRAIN"
+            ],
+            [
+                4,
+                "MOVE_ABSORB"
+            ],
+            [
+                7,
+                "MOVE_VINE_WHIP"
+            ],
+            [
+                13,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                13,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                13,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                16,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                22,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                30,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                36,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                42,
+                "MOVE_SLAM"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BLADE"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM36",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -125,7 +118,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "TANGROWTH",
-            "category": "Vine Pokémon",
+            "category": "Vine Pok\u00e9mon",
             "entry_text": [
                 "Its arms are made of plants that\n",
                 "bind themselves to things. They\n",
@@ -134,11 +127,11 @@
         },
         "fr": {
             "name": "BOULDENEU",
-            "category": "Pokémon Vigne",
+            "category": "Pok\u00e9mon Vigne",
             "entry_text": [
-                "Il ligote sa proie en étirant ses\n",
+                "Il ligote sa proie en \u00e9tirant ses\n",
                 "bras en lianes. Il ne craint pas de\n",
-                "perdre un bras face à un ennemi."
+                "perdre un bras face \u00e0 un ennemi."
             ]
         },
         "de": {
@@ -147,12 +140,12 @@
             "entry_text": [
                 "Es umwickelt Beute, indem es seine\n",
                 "Arme, die aus Ranken bestehen,\n",
-                "verlängert."
+                "verl\u00e4ngert."
             ]
         },
         "it": {
             "name": "TANGROWTH",
-            "category": "Pokémon Liana",
+            "category": "Pok\u00e9mon Liana",
             "entry_text": [
                 "Intrappola le prede con gli arti,\n",
                 "che sono costituiti da liane. Se ne\n",
@@ -161,7 +154,7 @@
         },
         "es": {
             "name": "TANGROWTH",
-            "category": "Pokémon Enredadera",
+            "category": "Pok\u00e9mon Enredadera",
             "entry_text": [
                 "Atrapa a su presa desplegando las\n",
                 "ramas de sus brazos, que no le\n",
@@ -169,12 +162,12 @@
             ]
         },
         "jp": {
-            "name": "モジャンボ",
-            "category": "ツルじょうポケモン",
+            "name": "\u30e2\u30b8\u30e3\u30f3\u30dc",
+            "category": "\u30c4\u30eb\u3058\u3087\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しょくぶつの　ツルで　できた　うでを\n",
-                "のばして　えものを　からめとる。\n",
-                "うでを　たべられても　へっちゃら。"
+                "\u3057\u3087\u304f\u3076\u3064\u306e\u3000\u30c4\u30eb\u3067\u3000\u3067\u304d\u305f\u3000\u3046\u3067\u3092\n",
+                "\u306e\u3070\u3057\u3066\u3000\u3048\u3082\u306e\u3092\u3000\u304b\u3089\u3081\u3068\u308b\u3002\n",
+                "\u3046\u3067\u3092\u3000\u305f\u3079\u3089\u308c\u3066\u3082\u3000\u3078\u3063\u3061\u3083\u3089\u3002"
             ]
         }
     },

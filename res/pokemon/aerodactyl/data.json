@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 75
     },
-    "types": [ "TYPE_ROCK", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 202,
     "ev_yields": {
@@ -26,90 +29,24 @@
     "hatch_cycles": 35,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_ROCK_HEAD", "ABILITY_PRESSURE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_UNNERVE",
+        "ABILITY_TOUGH_CLAWS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_WING_ATTACK" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_SCARY_FACE" ],
-            [ 9, "MOVE_ROAR" ],
-            [ 17, "MOVE_AGILITY" ],
-            [ 25, "MOVE_ANCIENT_POWER" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_TAKE_DOWN" ],
-            [ 49, "MOVE_IRON_HEAD" ],
-            [ 57, "MOVE_HYPER_BEAM" ],
-            [ 65, "MOVE_ROCK_SLIDE" ],
-            [ 73, "MOVE_GIGA_IMPACT" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM59",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM02",
-            "HM04",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -128,20 +65,20 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "AERODACTYL",
-            "category": "Fossil Pokémon",
+            "category": "Fossil Pok\u00e9mon",
             "entry_text": [
-                "A Pokémon that roamed the skies\n",
+                "A Pok\u00e9mon that roamed the skies\n",
                 "in the dinosaur era. Its teeth are\n",
                 "like saw blades."
             ]
         },
         "fr": {
             "name": "PTERA",
-            "category": "Pokémon Fossile",
+            "category": "Pok\u00e9mon Fossile",
             "entry_text": [
-                "Un Pokémon qui arpentait le ciel\n",
+                "Un Pok\u00e9mon qui arpentait le ciel\n",
                 "au temps des dinosaures. Ses \n",
-                "crocs sont pareils à des scies."
+                "crocs sont pareils \u00e0 des scies."
             ]
         },
         "de": {
@@ -150,34 +87,34 @@
             "entry_text": [
                 "Dieses PKMN flog zu Zeiten der\n",
                 "Dinosaurier am Himmel. Seine\n",
-                "Zähne sind wie Sägeblätter."
+                "Z\u00e4hne sind wie S\u00e4gebl\u00e4tter."
             ]
         },
         "it": {
             "name": "AERODACTYL",
-            "category": "Pokémon Fossile",
+            "category": "Pok\u00e9mon Fossile",
             "entry_text": [
-                "Un Pokémon che vagava nei cieli\n",
-                "nell’era dei dinosauri. Le sue zanne\n",
+                "Un Pok\u00e9mon che vagava nei cieli\n",
+                "nell\u2019era dei dinosauri. Le sue zanne\n",
                 "sono affilate come lame."
             ]
         },
         "es": {
             "name": "AERODACTYL",
-            "category": "Pokémon Fósil",
+            "category": "Pok\u00e9mon F\u00f3sil",
             "entry_text": [
-                "Este Pokémon surcó los cielos\n",
-                "en la época de los dinosaurios.\n",
+                "Este Pok\u00e9mon surc\u00f3 los cielos\n",
+                "en la \u00e9poca de los dinosaurios.\n",
                 "Sus colmillos son muy afilados."
             ]
         },
         "jp": {
-            "name": "プテラ",
-            "category": "かせきポケモン",
+            "name": "\u30d7\u30c6\u30e9",
+            "category": "\u304b\u305b\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きょうりゅうじだいの　おおぞらを\n",
-                "とびまわっていた　ポケモン。\n",
-                "のこぎりのような　キバを　もつ。"
+                "\u304d\u3087\u3046\u308a\u3085\u3046\u3058\u3060\u3044\u306e\u3000\u304a\u304a\u305e\u3089\u3092\n",
+                "\u3068\u3073\u307e\u308f\u3063\u3066\u3044\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u306e\u3053\u304e\u308a\u306e\u3088\u3046\u306a\u3000\u30ad\u30d0\u3092\u3000\u3082\u3064\u3002"
             ]
         }
     },

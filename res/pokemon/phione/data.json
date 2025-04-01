@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 80
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 165,
     "ev_yields": {
@@ -26,70 +29,24 @@
     "hatch_cycles": 40,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HYDRATION", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 9, "MOVE_CHARM" ],
-            [ 16, "MOVE_SUPERSONIC" ],
-            [ 24, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_ACID_ARMOR" ],
-            [ 39, "MOVE_WHIRLPOOL" ],
-            [ 46, "MOVE_WATER_PULSE" ],
-            [ 54, "MOVE_AQUA_RING" ],
-            [ 61, "MOVE_DIVE" ],
-            [ 69, "MOVE_RAIN_DANCE" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_LAST_RESORT",
-            "MOVE_BOUNCE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -108,7 +65,7 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "PHIONE",
-            "category": "Sea Drifter Pokémon",
+            "category": "Sea Drifter Pok\u00e9mon",
             "entry_text": [
                 "It drifts in warm seas. It always\n",
                 "returns to where it was born, no\n",
@@ -117,11 +74,11 @@
         },
         "fr": {
             "name": "PHIONE",
-            "category": "Pokémon Dérivenmer",
+            "category": "Pok\u00e9mon D\u00e9rivenmer",
             "entry_text": [
-                "Un Pokémon des mers chaudes. Il\n",
-                "gonfle la bouée sur sa tête et\n",
-                "dérive en quête de vivres."
+                "Un Pok\u00e9mon des mers chaudes. Il\n",
+                "gonfle la bou\u00e9e sur sa t\u00eate et\n",
+                "d\u00e9rive en qu\u00eate de vivres."
             ]
         },
         "de": {
@@ -129,13 +86,13 @@
             "category": "Seedrift",
             "entry_text": [
                 "Es lebt in warmen Meeren. Geht\n",
-                "es auf Nahrungssuche, füllt es den\n",
+                "es auf Nahrungssuche, f\u00fcllt es den\n",
                 "Beutel auf seinem Kopf mit Luft."
             ]
         },
         "it": {
             "name": "PHIONE",
-            "category": "Pokémon Oceanbondo",
+            "category": "Pok\u00e9mon Oceanbondo",
             "entry_text": [
                 "Vive nei mari caldi. Sulla testa ha\n",
                 "un galleggiante gonfiabile grazie al\n",
@@ -144,20 +101,20 @@
         },
         "es": {
             "name": "PHIONE",
-            "category": "Pokémon Marino",
+            "category": "Pok\u00e9mon Marino",
             "entry_text": [
-                "Vive en los mares cálidos.\n",
+                "Vive en los mares c\u00e1lidos.\n",
                 "Infla el flotador de la cabeza\n",
                 "para nadar en busca de comida."
             ]
         },
         "jp": {
-            "name": "フィオネ",
-            "category": "かいようポケモン",
+            "name": "\u30d5\u30a3\u30aa\u30cd",
+            "category": "\u304b\u3044\u3088\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あたたかい　うみに　すむ　ポケモン。\n",
-                "あたまの　うきぶくろを　ふくらませて\n",
-                "なみまを　ただよい　えさを　さがす。"
+                "\u3042\u305f\u305f\u304b\u3044\u3000\u3046\u307f\u306b\u3000\u3059\u3080\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3042\u305f\u307e\u306e\u3000\u3046\u304d\u3076\u304f\u308d\u3092\u3000\u3075\u304f\u3089\u307e\u305b\u3066\n",
+                "\u306a\u307f\u307e\u3092\u3000\u305f\u3060\u3088\u3044\u3000\u3048\u3055\u3092\u3000\u3055\u304c\u3059\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 92,
     "ev_yields": {
@@ -26,59 +29,32 @@
     "hatch_cycles": 35,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_ADAPTABILITY" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_ADAPTABILITY",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_GROWL" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_BITE" ],
-            [ 36, "MOVE_BATON_PASS" ],
-            [ 43, "MOVE_TAKE_DOWN" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_TRUMP_CARD" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_LAST_RESORT",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_MOSS_ROCK", "SPECIES_LEAFEON" ],
-        [ "EVO_LEVEL_ICE_ROCK", "SPECIES_GLACEON" ],
+        [
+            "EVO_LEVEL_MOSS_ROCK",
+            "SPECIES_LEAFEON"
+        ],
+        [
+            "EVO_LEVEL_ICE_ROCK",
+            "SPECIES_GLACEON"
+        ],
         [
             "EVO_USE_ITEM",
             "ITEM_THUNDERSTONE",
@@ -94,8 +70,14 @@
             "ITEM_FIRE_STONE",
             "SPECIES_FLAREON"
         ],
-        [ "EVO_LEVEL_HAPPINESS_DAY", "SPECIES_ESPEON" ],
-        [ "EVO_LEVEL_HAPPINESS_NIGHT", "SPECIES_UMBREON" ]
+        [
+            "EVO_LEVEL_HAPPINESS_DAY",
+            "SPECIES_ESPEON"
+        ],
+        [
+            "EVO_LEVEL_HAPPINESS_NIGHT",
+            "SPECIES_UMBREON"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -115,7 +97,7 @@
         "pokemon_pos_m": 29,
         "en": {
             "name": "EEVEE",
-            "category": "Evolution Pokémon",
+            "category": "Evolution Pok\u00e9mon",
             "entry_text": [
                 "Because its genetic makeup is\n",
                 "irregular, it quickly changes its\n",
@@ -124,11 +106,11 @@
         },
         "fr": {
             "name": "EVOLI",
-            "category": "Pokémon Evolutif",
+            "category": "Pok\u00e9mon Evolutif",
             "entry_text": [
-                "Un Pokémon rare qui s’adapte\n",
+                "Un Pok\u00e9mon rare qui s\u2019adapte\n",
                 "aux environnements hostiles \n",
-                "en variant ses formes évolutives."
+                "en variant ses formes \u00e9volutives."
             ]
         },
         "de": {
@@ -142,29 +124,29 @@
         },
         "it": {
             "name": "EEVEE",
-            "category": "Pokémon Evoluzione",
+            "category": "Pok\u00e9mon Evoluzione",
             "entry_text": [
-                "Un Pokémon raro che si adatta\n",
-                "agli ambienti più difficili assumendo\n",
-                "diverse forme nell’evoluzione."
+                "Un Pok\u00e9mon raro che si adatta\n",
+                "agli ambienti pi\u00f9 difficili assumendo\n",
+                "diverse forme nell\u2019evoluzione."
             ]
         },
         "es": {
             "name": "EEVEE",
-            "category": "Pokémon Evolución",
+            "category": "Pok\u00e9mon Evoluci\u00f3n",
             "entry_text": [
-                "Un extraño Pokémon que se adapta\n",
-                "a los entornos más hostiles gracias\n",
+                "Un extra\u00f1o Pok\u00e9mon que se adapta\n",
+                "a los entornos m\u00e1s hostiles gracias\n",
                 "a sus diferentes evoluciones."
             ]
         },
         "jp": {
-            "name": "イ－ブイ",
-            "category": "しんかポケモン",
+            "name": "\u30a4\uff0d\u30d6\u30a4",
+            "category": "\u3057\u3093\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しんかのとき　すがたと　のうりょくが\n",
-                "かわることで　きびしい　かんきょうに\n",
-                "たいおうする　めずらしい　ポケモン。"
+                "\u3057\u3093\u304b\u306e\u3068\u304d\u3000\u3059\u304c\u305f\u3068\u3000\u306e\u3046\u308a\u3087\u304f\u304c\n",
+                "\u304b\u308f\u308b\u3053\u3068\u3067\u3000\u304d\u3073\u3057\u3044\u3000\u304b\u3093\u304d\u3087\u3046\u306b\n",
+                "\u305f\u3044\u304a\u3046\u3059\u308b\u3000\u3081\u305a\u3089\u3057\u3044\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

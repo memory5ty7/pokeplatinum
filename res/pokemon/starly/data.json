@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 56,
     "ev_yields": {
@@ -26,63 +29,43 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_RECKLESS",
+        "ABILITY_INTIMIDATE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 9, "MOVE_WING_ATTACK" ],
-            [ 13, "MOVE_DOUBLE_TEAM" ],
-            [ 17, "MOVE_ENDEAVOR" ],
-            [ 21, "MOVE_WHIRLWIND" ],
-            [ 25, "MOVE_AERIAL_ACE" ],
-            [ 29, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_AGILITY" ],
-            [ 37, "MOVE_BRAVE_BIRD" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                15,
+                "MOVE_ENDEAVOR"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ENDEAVOR",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -109,7 +92,7 @@
         "pokemon_pos_m": 29,
         "en": {
             "name": "STARLY",
-            "category": "Starling Pokémon",
+            "category": "Starling Pok\u00e9mon",
             "entry_text": [
                 "Because they are weak individually,\n",
                 "they form groups. However, they\n",
@@ -118,7 +101,7 @@
         },
         "fr": {
             "name": "ETOURMI",
-            "category": "Pokémon Etourneau",
+            "category": "Pok\u00e9mon Etourneau",
             "entry_text": [
                 "Ils volent en nombre. Bien que\n",
                 "minuscule, il bat des ailes avec\n",
@@ -129,14 +112,14 @@
             "name": "STARALILI",
             "category": "Star",
             "entry_text": [
-                "Ihr Schwarm ist stets groß. Obwohl\n",
+                "Ihr Schwarm ist stets gro\u00df. Obwohl\n",
                 "es kleine PKMN sind, schwingen sie\n",
-                "ihre Flügel mit enormer Kraft."
+                "ihre Fl\u00fcgel mit enormer Kraft."
             ]
         },
         "it": {
             "name": "STARLY",
-            "category": "Pokémon Storno",
+            "category": "Pok\u00e9mon Storno",
             "entry_text": [
                 "Si muove in grandi gruppi. Anche\n",
                 "se piccolo, batte le ali in maniera\n",
@@ -145,20 +128,20 @@
         },
         "es": {
             "name": "STARLY",
-            "category": "Pokémon Estornino",
+            "category": "Pok\u00e9mon Estornino",
             "entry_text": [
                 "Viaja en grandes bandadas.\n",
-                "Aunque es pequeño, agita\n",
+                "Aunque es peque\u00f1o, agita\n",
                 "las alas con gran fuerza."
             ]
         },
         "jp": {
-            "name": "ムックル",
-            "category": "むくどりポケモン",
+            "name": "\u30e0\u30c3\u30af\u30eb",
+            "category": "\u3080\u304f\u3069\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たくさんの　むれで　こうどうする。\n",
-                "からだは　ちいさいが　はばたく\n",
-                "ちからは　ひじょうに　つよい。"
+                "\u305f\u304f\u3055\u3093\u306e\u3000\u3080\u308c\u3067\u3000\u3053\u3046\u3069\u3046\u3059\u308b\u3002\n",
+                "\u304b\u3089\u3060\u306f\u3000\u3061\u3044\u3055\u3044\u304c\u3000\u306f\u3070\u305f\u304f\n",
+                "\u3061\u304b\u3089\u306f\u3000\u3072\u3058\u3087\u3046\u306b\u3000\u3064\u3088\u3044\u3002"
             ]
         }
     },

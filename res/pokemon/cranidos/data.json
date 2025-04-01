@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 99,
     "ev_yields": {
@@ -26,84 +29,55 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_MONSTER" ],
-    "abilities": [ "ABILITY_MOLD_BREAKER", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_MONSTER"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_MOLD_BREAKER",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_PURSUIT" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_SCARY_FACE" ],
-            [ 24, "MOVE_ASSURANCE" ],
-            [ 28, "MOVE_ANCIENT_POWER" ],
-            [ 33, "MOVE_ZEN_HEADBUTT" ],
-            [ 37, "MOVE_SCREECH" ],
-            [ 43, "MOVE_HEAD_SMASH" ]
+            [
+                1,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                16,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                21,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                25,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                30,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                35,
+                "MOVE_ASSURANCE"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM66",
-            "TM69",
-            "TM71",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ENDEAVOR",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_EARTH_POWER",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -130,7 +104,7 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "CRANIDOS",
-            "category": "Head Butt Pokémon",
+            "category": "Head Butt Pok\u00e9mon",
             "entry_text": [
                 "A lifelong jungle dweller from 100\n",
                 "million years ago, it would snap\n",
@@ -139,47 +113,47 @@
         },
         "fr": {
             "name": "KRANIDOS",
-            "category": "Pokémon Coud’Boule",
+            "category": "Pok\u00e9mon Coud\u2019Boule",
             "entry_text": [
                 "Il vivait dans la jungle il y a \n",
-                "environ 100 millions d’années. Son\n",
-                "crâne est dur comme du fer."
+                "environ 100 millions d\u2019ann\u00e9es. Son\n",
+                "cr\u00e2ne est dur comme du fer."
             ]
         },
         "de": {
             "name": "KOKNODON",
-            "category": "Kopfstoß",
+            "category": "Kopfsto\u00df",
             "entry_text": [
-                "Vor über 100 Millionen Jahren lebte\n",
-                "es in den Dschungeln. Sein Schädel\n",
+                "Vor \u00fcber 100 Millionen Jahren lebte\n",
+                "es in den Dschungeln. Sein Sch\u00e4del\n",
                 "ist hart wie Eisen."
             ]
         },
         "it": {
             "name": "CRANIDOS",
-            "category": "Pokémon Cranioso",
+            "category": "Pok\u00e9mon Cranioso",
             "entry_text": [
                 "Viveva nella giungla circa 100\n",
                 "milioni di anni fa. Il suo cranio\n",
-                "è duro come il ferro."
+                "\u00e8 duro come il ferro."
             ]
         },
         "es": {
             "name": "CRANIDOS",
-            "category": "Pokémon Cabezazo",
+            "category": "Pok\u00e9mon Cabezazo",
             "entry_text": [
-                "Vivía en la jungla hace unos 100\n",
-                "millones de años. Su cráneo es\n",
+                "Viv\u00eda en la jungla hace unos 100\n",
+                "millones de a\u00f1os. Su cr\u00e1neo es\n",
                 "tan duro como el hierro."
             ]
         },
         "jp": {
-            "name": "ズガイドス",
-            "category": "ずつきポケモン",
+            "name": "\u30ba\u30ac\u30a4\u30c9\u30b9",
+            "category": "\u305a\u3064\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "およそ　１おくねんまえに\n",
-                "こだいの　みつりんで　くらしていた。\n",
-                "てつのように　かたい　ずがいこつ。"
+                "\u304a\u3088\u305d\u3000\uff11\u304a\u304f\u306d\u3093\u307e\u3048\u306b\n",
+                "\u3053\u3060\u3044\u306e\u3000\u307f\u3064\u308a\u3093\u3067\u3000\u304f\u3089\u3057\u3066\u3044\u305f\u3002\n",
+                "\u3066\u3064\u306e\u3088\u3046\u306b\u3000\u304b\u305f\u3044\u3000\u305a\u304c\u3044\u3053\u3064\u3002"
             ]
         }
     },

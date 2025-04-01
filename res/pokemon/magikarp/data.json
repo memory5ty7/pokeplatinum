@@ -7,7 +7,10 @@
         "special_attack": 15,
         "special_defense": 20
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 20,
     "ev_yields": {
@@ -26,19 +29,27 @@
     "hatch_cycles": 5,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 15, "MOVE_TACKLE" ],
-            [ 30, "MOVE_FLAIL" ]
+            [
+                1,
+                "MOVE_FLAIL"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_BOUNCE" ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -65,7 +76,7 @@
         "pokemon_pos_m": 65531,
         "en": {
             "name": "MAGIKARP",
-            "category": "Fish Pokémon",
+            "category": "Fish Pok\u00e9mon",
             "entry_text": [
                 "A MAGIKARP living for many years\n",
                 "can leap a mountain using Splash.\n",
@@ -74,47 +85,47 @@
         },
         "fr": {
             "name": "MAGICARPE",
-            "category": "Pokémon Poisson",
+            "category": "Pok\u00e9mon Poisson",
             "entry_text": [
-                "Ce Pokémon est réputé pour être\n",
+                "Ce Pok\u00e9mon est r\u00e9put\u00e9 pour \u00eatre\n",
                 "le plus faible au monde. Nul ne\n",
-                "sait comment son espèce perdure."
+                "sait comment son esp\u00e8ce perdure."
             ]
         },
         "de": {
             "name": "KARPADOR",
             "category": "Fisch",
             "entry_text": [
-                "Man sagt, es sei das schwächste\n",
-                "PKMN der Welt. Niemand weiß, wie\n",
-                "es bisher überleben konnte."
+                "Man sagt, es sei das schw\u00e4chste\n",
+                "PKMN der Welt. Niemand wei\u00df, wie\n",
+                "es bisher \u00fcberleben konnte."
             ]
         },
         "it": {
             "name": "MAGIKARP",
-            "category": "Pokémon Pesce",
+            "category": "Pok\u00e9mon Pesce",
             "entry_text": [
-                "Si dice che sia il Pokémon più\n",
+                "Si dice che sia il Pok\u00e9mon pi\u00f9\n",
                 "debole del mondo. Nessuno sa\n",
                 "come abbia fatto a sopravvivere."
             ]
         },
         "es": {
             "name": "MAGIKARP",
-            "category": "Pokémon Pez",
+            "category": "Pok\u00e9mon Pez",
             "entry_text": [
-                "Se dice que es el Pokémon más\n",
-                "débil del mundo. No se sabe cómo\n",
+                "Se dice que es el Pok\u00e9mon m\u00e1s\n",
+                "d\u00e9bil del mundo. No se sabe c\u00f3mo\n",
                 "ha logrado sobrevivir."
             ]
         },
         "jp": {
-            "name": "コイキング",
-            "category": "さかなポケモン",
+            "name": "\u30b3\u30a4\u30ad\u30f3\u30b0",
+            "category": "\u3055\u304b\u306a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "せかいいち　よわいと　いわれる\n",
-                "コイキングが　なぜ　いきのこって\n",
-                "いるのか　だれも　わからない。"
+                "\u305b\u304b\u3044\u3044\u3061\u3000\u3088\u308f\u3044\u3068\u3000\u3044\u308f\u308c\u308b\n",
+                "\u30b3\u30a4\u30ad\u30f3\u30b0\u304c\u3000\u306a\u305c\u3000\u3044\u304d\u306e\u3053\u3063\u3066\n",
+                "\u3044\u308b\u306e\u304b\u3000\u3060\u308c\u3082\u3000\u308f\u304b\u3089\u306a\u3044\u3002"
             ]
         }
     },

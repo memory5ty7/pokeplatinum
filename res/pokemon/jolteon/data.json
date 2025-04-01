@@ -7,7 +7,10 @@
         "special_attack": 110,
         "special_defense": 95
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 197,
     "ev_yields": {
@@ -26,74 +29,24 @@
     "hatch_cycles": 35,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_VOLT_ABSORB", "ABILITY_VOLT_ABSORB" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_QUICK_FEET",
+        "ABILITY_NONE",
+        "ABILITY_VOLT_ABSORB"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_THUNDER_SHOCK" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_DOUBLE_KICK" ],
-            [ 36, "MOVE_PIN_MISSILE" ],
-            [ 43, "MOVE_THUNDER_FANG" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_THUNDER_WAVE" ],
-            [ 64, "MOVE_AGILITY" ],
-            [ 71, "MOVE_THUNDER" ],
-            [ 78, "MOVE_DISCHARGE" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM57",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_LAST_RESORT",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -112,7 +65,7 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "JOLTEON",
-            "category": "Lightning Pokémon",
+            "category": "Lightning Pok\u00e9mon",
             "entry_text": [
                 "If agitated, it uses electricity to\n",
                 "straighten out its fur and launch\n",
@@ -121,11 +74,11 @@
         },
         "fr": {
             "name": "VOLTALI",
-            "category": "Pokémon Orage",
+            "category": "Pok\u00e9mon Orage",
             "entry_text": [
-                "Il contrôle une puissance de 10 000\n",
-                "volts. Il peut hérisser sa fourrure\n",
-                "comme s’il s’agissait de piquants."
+                "Il contr\u00f4le une puissance de 10 000\n",
+                "volts. Il peut h\u00e9risser sa fourrure\n",
+                "comme s\u2019il s\u2019agissait de piquants."
             ]
         },
         "de": {
@@ -139,29 +92,29 @@
         },
         "it": {
             "name": "JOLTEON",
-            "category": "Pokémon Luminoso",
+            "category": "Pok\u00e9mon Luminoso",
             "entry_text": [
-                "Scarica elettricità a 10000 volt e\n",
+                "Scarica elettricit\u00e0 a 10000 volt e\n",
                 "rizza tutti i peli come se fossero\n",
                 "aghi pungenti."
             ]
         },
         "es": {
             "name": "JOLTEON",
-            "category": "Pokémon Relámpago",
+            "category": "Pok\u00e9mon Rel\u00e1mpago",
             "entry_text": [
                 "Lanza rayos de 10000 voltios.\n",
                 "Es capaz de convertir su pelaje\n",
-                "en púas afiladísimas."
+                "en p\u00faas afilad\u00edsimas."
             ]
         },
         "jp": {
-            "name": "サンダ－ス",
-            "category": "かみなりポケモン",
+            "name": "\u30b5\u30f3\u30c0\uff0d\u30b9",
+            "category": "\u304b\u307f\u306a\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "１まんボルトの　でんきを　あやつる。\n",
-                "ぜんしんの　たいもうが　さかだつと\n",
-                "ハリのように　するどく　とがる。"
+                "\uff11\u307e\u3093\u30dc\u30eb\u30c8\u306e\u3000\u3067\u3093\u304d\u3092\u3000\u3042\u3084\u3064\u308b\u3002\n",
+                "\u305c\u3093\u3057\u3093\u306e\u3000\u305f\u3044\u3082\u3046\u304c\u3000\u3055\u304b\u3060\u3064\u3068\n",
+                "\u30cf\u30ea\u306e\u3088\u3046\u306b\u3000\u3059\u308b\u3069\u304f\u3000\u3068\u304c\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 51,
         "special_defense": 23
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,66 +29,47 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SOUNDPROOF", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SOUNDPROOF",
+        "ABILITY_PUNK_ROCK",
+        "ABILITY_SCRAPPY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 5, "MOVE_UPROAR" ],
-            [ 11, "MOVE_ASTONISH" ],
-            [ 15, "MOVE_HOWL" ],
-            [ 21, "MOVE_SUPERSONIC" ],
-            [ 25, "MOVE_STOMP" ],
-            [ 31, "MOVE_SCREECH" ],
-            [ 35, "MOVE_ROAR" ],
-            [ 41, "MOVE_REST" ],
-            [ 41, "MOVE_SLEEP_TALK" ],
-            [ 45, "MOVE_HYPER_VOICE" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                5,
+                "MOVE_UPROAR"
+            ],
+            [
+                11,
+                "MOVE_ASTONISH"
+            ],
+            [
+                15,
+                "MOVE_BITE"
+            ],
+            [
+                21,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                25,
+                "MOVE_STOMP"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -112,7 +96,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "WHISMUR",
-            "category": "Whisper Pokémon",
+            "category": "Whisper Pok\u00e9mon",
             "entry_text": [
                 "Usually, its cries are like quiet\n",
                 "murmurs. If frightened, it shrieks\n",
@@ -121,16 +105,16 @@
         },
         "fr": {
             "name": "CHUCHMUR",
-            "category": "Pokémon Chuchoteur",
+            "category": "Pok\u00e9mon Chuchoteur",
             "entry_text": [
                 "En temps normal, son cri est pareil\n",
-                "à un murmure. Effrayé, il atteint le\n",
-                "volume d’un avion à réaction."
+                "\u00e0 un murmure. Effray\u00e9, il atteint le\n",
+                "volume d\u2019un avion \u00e0 r\u00e9action."
             ]
         },
         "de": {
             "name": "FLURMEL",
-            "category": "Flüster",
+            "category": "Fl\u00fcster",
             "entry_text": [
                 "Normalerweise klingen seine Rufe\n",
                 "wie Gemurmel. Hat es aber Angst,\n",
@@ -139,7 +123,7 @@
         },
         "it": {
             "name": "WHISMUR",
-            "category": "Pokémon Sussurro",
+            "category": "Pok\u00e9mon Sussurro",
             "entry_text": [
                 "Di solito ha una voce molto tenue,\n",
                 "ma se si spaventa, emette un suono\n",
@@ -148,7 +132,7 @@
         },
         "es": {
             "name": "WHISMUR",
-            "category": "Pokémon Susurro",
+            "category": "Pok\u00e9mon Susurro",
             "entry_text": [
                 "Suele murmurar a un volumen casi\n",
                 "inaudible, pero cuando se asusta\n",
@@ -156,12 +140,12 @@
             ]
         },
         "jp": {
-            "name": "ゴニョニョ",
-            "category": "ささやきポケモン",
+            "name": "\u30b4\u30cb\u30e7\u30cb\u30e7",
+            "category": "\u3055\u3055\u3084\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ふだんは　ささやくような　なきごえ。\n",
-                "ふあんになると　ジェットきと　おなじ\n",
-                "おんりょうで　なきつづける。"
+                "\u3075\u3060\u3093\u306f\u3000\u3055\u3055\u3084\u304f\u3088\u3046\u306a\u3000\u306a\u304d\u3054\u3048\u3002\n",
+                "\u3075\u3042\u3093\u306b\u306a\u308b\u3068\u3000\u30b8\u30a7\u30c3\u30c8\u304d\u3068\u3000\u304a\u306a\u3058\n",
+                "\u304a\u3093\u308a\u3087\u3046\u3067\u3000\u306a\u304d\u3064\u3065\u3051\u308b\u3002"
             ]
         }
     },

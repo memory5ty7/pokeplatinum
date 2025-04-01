@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 50
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 87,
     "ev_yields": {
@@ -26,81 +29,55 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_MONSTER" ],
-    "abilities": [ "ABILITY_ROCK_HEAD", "ABILITY_LIGHTNING_ROD" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_MONSTER"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_BATTLE_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 3, "MOVE_TAIL_WHIP" ],
-            [ 7, "MOVE_BONE_CLUB" ],
-            [ 11, "MOVE_HEADBUTT" ],
-            [ 13, "MOVE_LEER" ],
-            [ 17, "MOVE_FOCUS_ENERGY" ],
-            [ 21, "MOVE_BONEMERANG" ],
-            [ 23, "MOVE_RAGE" ],
-            [ 27, "MOVE_FALSE_SWIPE" ],
-            [ 31, "MOVE_THRASH" ],
-            [ 33, "MOVE_FLING" ],
-            [ 37, "MOVE_BONE_RUSH" ],
-            [ 41, "MOVE_ENDEAVOR" ],
-            [ 43, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                3,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                7,
+                "MOVE_BONE_CLUB"
+            ],
+            [
+                11,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                13,
+                "MOVE_LEER"
+            ],
+            [
+                21,
+                "MOVE_BONEMERANG"
+            ],
+            [
+                23,
+                "MOVE_RAGE"
+            ],
+            [
+                27,
+                "MOVE_FALSE_SWIPE"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -127,7 +104,7 @@
         "pokemon_pos_m": 28,
         "en": {
             "name": "CUBONE",
-            "category": "Lonely Pokémon",
+            "category": "Lonely Pok\u00e9mon",
             "entry_text": [
                 "When it thinks of its dead mother,\n",
                 "it cries. Its crying makes the\n",
@@ -136,11 +113,11 @@
         },
         "fr": {
             "name": "OSSELAIT",
-            "category": "Pokémon Solitaire",
+            "category": "Pok\u00e9mon Solitaire",
             "entry_text": [
-                "Il pleure en pensant à sa mère\n",
-                "disparue, et ses larmes résonnent\n",
-                "dans son crâne creux."
+                "Il pleure en pensant \u00e0 sa m\u00e8re\n",
+                "disparue, et ses larmes r\u00e9sonnent\n",
+                "dans son cr\u00e2ne creux."
             ]
         },
         "de": {
@@ -148,13 +125,13 @@
             "category": "Einsam",
             "entry_text": [
                 "Denkt es an seine verstorbene\n",
-                "Mutter, weint es, wobei der Schädel\n",
+                "Mutter, weint es, wobei der Sch\u00e4del\n",
                 "auf seinem Kopf hohl klingt."
             ]
         },
         "it": {
             "name": "CUBONE",
-            "category": "Pokémon Solitario",
+            "category": "Pok\u00e9mon Solitario",
             "entry_text": [
                 "Piange pensando alla madre defunta\n",
                 "e dal teschio che ha in testa pro-\n",
@@ -163,20 +140,20 @@
         },
         "es": {
             "name": "CUBONE",
-            "category": "Pokémon Solitario",
+            "category": "Pok\u00e9mon Solitario",
             "entry_text": [
                 "Llora cuando se acuerda de su\n",
                 "madre fallecida. Cuando lo hace,\n",
-                "sus llantos resuenan en su cráneo."
+                "sus llantos resuenan en su cr\u00e1neo."
             ]
         },
         "jp": {
-            "name": "カラカラ",
-            "category": "こどくポケモン",
+            "name": "\u30ab\u30e9\u30ab\u30e9",
+            "category": "\u3053\u3069\u304f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しにわかれた　ははおやを　おもいだし\n",
-                "ないてしまうとき　あたまに　かぶった\n",
-                "ホネが　からからと　おとを　たてる。"
+                "\u3057\u306b\u308f\u304b\u308c\u305f\u3000\u306f\u306f\u304a\u3084\u3092\u3000\u304a\u3082\u3044\u3060\u3057\n",
+                "\u306a\u3044\u3066\u3057\u307e\u3046\u3068\u304d\u3000\u3042\u305f\u307e\u306b\u3000\u304b\u3076\u3063\u305f\n",
+                "\u30db\u30cd\u304c\u3000\u304b\u3089\u304b\u3089\u3068\u3000\u304a\u3068\u3092\u3000\u305f\u3066\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 79,
         "special_defense": 116
     },
-    "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 188,
     "ev_yields": {
@@ -26,90 +29,69 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_HEATPROOF" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_AFTERMATH",
+        "ABILITY_STENCH",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SUNNY_DAY" ],
-            [ 1, "MOVE_RAIN_DANCE" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 1, "MOVE_IMPRISON" ],
-            [ 7, "MOVE_HYPNOSIS" ],
-            [ 12, "MOVE_IMPRISON" ],
-            [ 14, "MOVE_CONFUSE_RAY" ],
-            [ 19, "MOVE_EXTRASENSORY" ],
-            [ 26, "MOVE_IRON_DEFENSE" ],
-            [ 30, "MOVE_SAFEGUARD" ],
-            [ 33, "MOVE_BLOCK" ],
-            [ 38, "MOVE_GYRO_BALL" ],
-            [ 43, "MOVE_FUTURE_SIGHT" ],
-            [ 50, "MOVE_FAINT_ATTACK" ],
-            [ 61, "MOVE_PAYBACK" ],
-            [ 67, "MOVE_HEAL_BLOCK" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                5,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                7,
+                "MOVE_IMPRISON"
+            ],
+            [
+                9,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                13,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                17,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                30,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                36,
+                "MOVE_GYRO_BALL"
+            ],
+            [
+                42,
+                "MOVE_PAYBACK"
+            ],
+            [
+                50,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM48",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM67",
-            "TM68",
-            "TM69",
-            "TM70",
-            "TM74",
-            "TM76",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM91",
-            "TM92",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -128,7 +110,7 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "BRONZONG",
-            "category": "Bronze Bell Pokémon",
+            "category": "Bronze Bell Pok\u00e9mon",
             "entry_text": [
                 "It brought rains by opening portals\n",
                 "to another world. It was revered\n",
@@ -137,10 +119,10 @@
         },
         "fr": {
             "name": "ARCHEODONG",
-            "category": "Pokémon Clochebronze",
+            "category": "Pok\u00e9mon Clochebronze",
             "entry_text": [
-                "La découverte d’un de ces Pokémon\n",
-                "sur un site de fouilles après 2 000 \n",
+                "La d\u00e9couverte d\u2019un de ces Pok\u00e9mon\n",
+                "sur un site de fouilles apr\u00e8s 2 000 \n",
                 "ans de sommeil a fait sensation."
             ]
         },
@@ -155,7 +137,7 @@
         },
         "it": {
             "name": "BRONZONG",
-            "category": "Pokémon Squibronzo",
+            "category": "Pok\u00e9mon Squibronzo",
             "entry_text": [
                 "Il suo ritrovamento in un cantiere\n",
                 "dopo un sonno di 2000 anni fece a\n",
@@ -164,20 +146,20 @@
         },
         "es": {
             "name": "BRONZONG",
-            "category": "Pokémon Cam. Bronce",
+            "category": "Pok\u00e9mon Cam. Bronce",
             "entry_text": [
                 "Se produjo un gran revuelo cuando\n",
                 "encontraron uno en una obra\n",
-                "después de 2000 años durmiendo."
+                "despu\u00e9s de 2000 a\u00f1os durmiendo."
             ]
         },
         "jp": {
-            "name": "ド－タクン",
-            "category": "どうたくポケモン",
+            "name": "\u30c9\uff0d\u30bf\u30af\u30f3",
+            "category": "\u3069\u3046\u305f\u304f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "２０００ねん　いじょう　ねむっていた\n",
-                "ド－タクンが　こうじげんばから\n",
-                "ほりだされ　だいニュ－スに　なった。"
+                "\uff12\uff10\uff10\uff10\u306d\u3093\u3000\u3044\u3058\u3087\u3046\u3000\u306d\u3080\u3063\u3066\u3044\u305f\n",
+                "\u30c9\uff0d\u30bf\u30af\u30f3\u304c\u3000\u3053\u3046\u3058\u3052\u3093\u3070\u304b\u3089\n",
+                "\u307b\u308a\u3060\u3055\u308c\u3000\u3060\u3044\u30cb\u30e5\uff0d\u30b9\u306b\u3000\u306a\u3063\u305f\u3002"
             ]
         }
     },

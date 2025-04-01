@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 60
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 117,
     "ev_yields": {
@@ -26,67 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_STATIC",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 5, "MOVE_GROWL" ],
-            [ 10, "MOVE_THUNDER_SHOCK" ],
-            [ 14, "MOVE_THUNDER_WAVE" ],
-            [ 20, "MOVE_COTTON_SPORE" ],
-            [ 25, "MOVE_CHARGE" ],
-            [ 31, "MOVE_DISCHARGE" ],
-            [ 36, "MOVE_SIGNAL_BEAM" ],
-            [ 42, "MOVE_LIGHT_SCREEN" ],
-            [ 47, "MOVE_POWER_GEM" ],
-            [ 53, "MOVE_THUNDER" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                4,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                8,
+                "MOVE_GROWL"
+            ],
+            [
+                11,
+                "MOVE_COTTON_SPORE"
+            ],
+            [
+                15,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                18,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                22,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                25,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                29,
+                "MOVE_HEAL_BELL"
+            ],
+            [
+                32,
+                "MOVE_ELECTROWEB"
+            ],
+            [
+                36,
+                "MOVE_DISCHARGE"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,7 +120,7 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "FLAAFFY",
-            "category": "Wool Pokémon",
+            "category": "Wool Pok\u00e9mon",
             "entry_text": [
                 "If its coat becomes fully charged\n",
                 "with electricity, its tail lights up.\n",
@@ -122,34 +129,34 @@
         },
         "fr": {
             "name": "LAINERGIE",
-            "category": "Pokémon Laine",
+            "category": "Pok\u00e9mon Laine",
             "entry_text": [
-                "Sa queue s’allume lorsque sa\n",
-                "laine se charge d’électricité.\n",
-                "Il projette des poils électrifiés."
+                "Sa queue s\u2019allume lorsque sa\n",
+                "laine se charge d\u2019\u00e9lectricit\u00e9.\n",
+                "Il projette des poils \u00e9lectrifi\u00e9s."
             ]
         },
         "de": {
             "name": "WAATY",
             "category": "Wolle",
             "entry_text": [
-                "Hat es sich mit Elektrizität aufge-\n",
+                "Hat es sich mit Elektrizit\u00e4t aufge-\n",
                 "laden, leuchtet sein Schweif und es\n",
                 "feuert Haare ab, die sich entladen."
             ]
         },
         "it": {
             "name": "FLAAFFY",
-            "category": "Pokémon Lana",
+            "category": "Pok\u00e9mon Lana",
             "entry_text": [
-                "Se il suo manto è del tutto carico\n",
-                "d’elettricità, la coda s’illumina.\n",
+                "Se il suo manto \u00e8 del tutto carico\n",
+                "d\u2019elettricit\u00e0, la coda s\u2019illumina.\n",
                 "Lancia peli che danno la scossa."
             ]
         },
         "es": {
             "name": "FLAAFFY",
-            "category": "Pokémon Lana",
+            "category": "Pok\u00e9mon Lana",
             "entry_text": [
                 "Cuando su pelaje se carga de\n",
                 "electricidad, su cola se enciende.\n",
@@ -157,12 +164,12 @@
             ]
         },
         "jp": {
-            "name": "モココ",
-            "category": "わたげポケモン",
+            "name": "\u30e2\u30b3\u30b3",
+            "category": "\u308f\u305f\u3052\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たいもうに　ためた　でんきが\n",
-                "まんたんになると　しっぽが　ひかる。\n",
-                "ふれると　しびれる　けを　とばす。"
+                "\u305f\u3044\u3082\u3046\u306b\u3000\u305f\u3081\u305f\u3000\u3067\u3093\u304d\u304c\n",
+                "\u307e\u3093\u305f\u3093\u306b\u306a\u308b\u3068\u3000\u3057\u3063\u307d\u304c\u3000\u3072\u304b\u308b\u3002\n",
+                "\u3075\u308c\u308b\u3068\u3000\u3057\u3073\u308c\u308b\u3000\u3051\u3092\u3000\u3068\u3070\u3059\u3002"
             ]
         }
     },

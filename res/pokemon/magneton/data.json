@@ -7,7 +7,10 @@
         "special_attack": 120,
         "special_defense": 70
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_STEEL" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_STEEL"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 161,
     "ev_yields": {
@@ -26,76 +29,81 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_MAGNET_PULL", "ABILITY_STURDY" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_MAGNET_PULL",
+        "ABILITY_GALVANIZE",
+        "ABILITY_STURDY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TRI_ATTACK" ],
-            [ 1, "MOVE_METAL_SOUND" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 6, "MOVE_THUNDER_SHOCK" ],
-            [ 11, "MOVE_SUPERSONIC" ],
-            [ 14, "MOVE_SONIC_BOOM" ],
-            [ 17, "MOVE_THUNDER_WAVE" ],
-            [ 22, "MOVE_SPARK" ],
-            [ 27, "MOVE_LOCK_ON" ],
-            [ 30, "MOVE_MAGNET_BOMB" ],
-            [ 34, "MOVE_SCREECH" ],
-            [ 40, "MOVE_DISCHARGE" ],
-            [ 46, "MOVE_MIRROR_SHOT" ],
-            [ 50, "MOVE_MAGNET_RISE" ],
-            [ 54, "MOVE_GYRO_BALL" ],
-            [ 60, "MOVE_ZAP_CANNON" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                5,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                7,
+                "MOVE_SCREECH"
+            ],
+            [
+                10,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                12,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                17,
+                "MOVE_MAGNET_BOMB"
+            ],
+            [
+                21,
+                "MOVE_FLASH"
+            ],
+            [
+                25,
+                "MOVE_RECYCLE"
+            ],
+            [
+                29,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                30,
+                "MOVE_TRI_ATTACK"
+            ],
+            [
+                36,
+                "MOVE_ELECTROWEB"
+            ],
+            [
+                40,
+                "MOVE_FLASH_CANNON"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM74",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_MAGNETIC_FIELD", "SPECIES_MAGNEZONE" ]
+        [
+            "EVO_LEVEL_MAGNETIC_FIELD",
+            "SPECIES_MAGNEZONE"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -115,7 +123,7 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "MAGNETON",
-            "category": "Magnet Pokémon",
+            "category": "Magnet Pok\u00e9mon",
             "entry_text": [
                 "Many mysteriously appear when more\n",
                 "sunspots dot the sun. They stop\n",
@@ -124,11 +132,11 @@
         },
         "fr": {
             "name": "MAGNETON",
-            "category": "Pokémon Magnétique",
+            "category": "Pok\u00e9mon Magn\u00e9tique",
             "entry_text": [
-                "Il est formé de trois MAGNETI liés\n",
-                "par magnétisme. En groupe, ils\n",
-                "déclenchent un orage magnétique."
+                "Il est form\u00e9 de trois MAGNETI li\u00e9s\n",
+                "par magn\u00e9tisme. En groupe, ils\n",
+                "d\u00e9clenchent un orage magn\u00e9tique."
             ]
         },
         "de": {
@@ -142,29 +150,29 @@
         },
         "it": {
             "name": "MAGNETON",
-            "category": "Pokémon Calamita",
+            "category": "Pok\u00e9mon Calamita",
             "entry_text": [
-                "Pokémon formato da tre MAGNEMITE\n",
-                "uniti dalla forza magnetica. Più di\n",
+                "Pok\u00e9mon formato da tre MAGNEMITE\n",
+                "uniti dalla forza magnetica. Pi\u00f9 di\n",
                 "tre creano una tempesta magnetica."
             ]
         },
         "es": {
             "name": "MAGNETON",
-            "category": "Pokémon Imán",
+            "category": "Pok\u00e9mon Im\u00e1n",
             "entry_text": [
                 "Realmente son tres MAGNEMITE\n",
-                "unidos por un campo magnético.\n",
-                "Provocan tormentas magnéticas."
+                "unidos por un campo magn\u00e9tico.\n",
+                "Provocan tormentas magn\u00e9ticas."
             ]
         },
         "jp": {
-            "name": "レアコイル",
-            "category": "じしゃくポケモン",
+            "name": "\u30ec\u30a2\u30b3\u30a4\u30eb",
+            "category": "\u3058\u3057\u3083\u304f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "３びきの　コイルが　じりょくで\n",
-                "れんけつした　ポケモン。レアコイルが\n",
-                "ふえると　じきあらしが　おこる。"
+                "\uff13\u3073\u304d\u306e\u3000\u30b3\u30a4\u30eb\u304c\u3000\u3058\u308a\u3087\u304f\u3067\n",
+                "\u308c\u3093\u3051\u3064\u3057\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u3002\u30ec\u30a2\u30b3\u30a4\u30eb\u304c\n",
+                "\u3075\u3048\u308b\u3068\u3000\u3058\u304d\u3042\u3089\u3057\u304c\u3000\u304a\u3053\u308b\u3002"
             ]
         }
     },

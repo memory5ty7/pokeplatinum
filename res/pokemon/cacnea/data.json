@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 40
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 97,
     "ev_yields": {
@@ -26,75 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_SAND_VEIL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_ROUGH_SKIN",
+        "ABILITY_SAND_RUSH",
+        "ABILITY_WATER_ABSORB"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_ABSORB" ],
-            [ 9, "MOVE_GROWTH" ],
-            [ 13, "MOVE_LEECH_SEED" ],
-            [ 17, "MOVE_SAND_ATTACK" ],
-            [ 21, "MOVE_PIN_MISSILE" ],
-            [ 25, "MOVE_INGRAIN" ],
-            [ 29, "MOVE_FAINT_ATTACK" ],
-            [ 33, "MOVE_SPIKES" ],
-            [ 37, "MOVE_SUCKER_PUNCH" ],
-            [ 41, "MOVE_PAYBACK" ],
-            [ 45, "MOVE_NEEDLE_ARM" ],
-            [ 49, "MOVE_COTTON_SPORE" ],
-            [ 53, "MOVE_SANDSTORM" ],
-            [ 57, "MOVE_DESTINY_BOND" ]
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_ABSORB"
+            ],
+            [
+                9,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                15,
+                "MOVE_SAND_ATTACK"
+            ],
+            [
+                21,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                25,
+                "MOVE_INGRAIN"
+            ],
+            [
+                29,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                34,
+                "MOVE_ENERGY_BALL"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM37",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM66",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -121,7 +108,7 @@
         "pokemon_pos_m": 27,
         "en": {
             "name": "CACNEA",
-            "category": "Cactus Pokémon",
+            "category": "Cactus Pok\u00e9mon",
             "entry_text": [
                 "By storing water in its body, this\n",
                 "desert dweller can survive for 30\n",
@@ -130,10 +117,10 @@
         },
         "fr": {
             "name": "CACNEA",
-            "category": "Pokémon Cactus",
+            "category": "Pok\u00e9mon Cactus",
             "entry_text": [
-                "En stockant l’eau dans son corps,\n",
-                "cet habitant du désert peut \n",
+                "En stockant l\u2019eau dans son corps,\n",
+                "cet habitant du d\u00e9sert peut \n",
                 "survivre 30 jours sans boire."
             ]
         },
@@ -141,36 +128,36 @@
             "name": "TUSKA",
             "category": "Kaktus",
             "entry_text": [
-                "Dieser Wüstenbewohner speichert\n",
-                "Wasser in seinem Körper. So kann er\n",
-                "30 Tage ohne Wasser überleben."
+                "Dieser W\u00fcstenbewohner speichert\n",
+                "Wasser in seinem K\u00f6rper. So kann er\n",
+                "30 Tage ohne Wasser \u00fcberleben."
             ]
         },
         "it": {
             "name": "CACNEA",
-            "category": "Pokémon Cactus",
+            "category": "Pok\u00e9mon Cactus",
             "entry_text": [
                 "Immagazzina acqua nel corpo e\n",
                 "riesce a sopravvivere nel deserto\n",
-                "senz’acqua anche per 30 giorni."
+                "senz\u2019acqua anche per 30 giorni."
             ]
         },
         "es": {
             "name": "CACNEA",
-            "category": "Pokémon Cactus",
+            "category": "Pok\u00e9mon Cactus",
             "entry_text": [
                 "Habita en el desierto. Aguanta\n",
-                "treinta días sin agua gracias a la\n",
+                "treinta d\u00edas sin agua gracias a la\n",
                 "que almacena en su cuerpo."
             ]
         },
         "jp": {
-            "name": "サボネア",
-            "category": "サボテンポケモン",
+            "name": "\u30b5\u30dc\u30cd\u30a2",
+            "category": "\u30b5\u30dc\u30c6\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "さばくに　せいそく。たいないに\n",
-                "すいぶんを　ためることで　みずを\n",
-                "のまずに　３０にちかん　いきられる。"
+                "\u3055\u3070\u304f\u306b\u3000\u305b\u3044\u305d\u304f\u3002\u305f\u3044\u306a\u3044\u306b\n",
+                "\u3059\u3044\u3076\u3093\u3092\u3000\u305f\u3081\u308b\u3053\u3068\u3067\u3000\u307f\u305a\u3092\n",
+                "\u306e\u307e\u305a\u306b\u3000\uff13\uff10\u306b\u3061\u304b\u3093\u3000\u3044\u304d\u3089\u308c\u308b\u3002"
             ]
         }
     },

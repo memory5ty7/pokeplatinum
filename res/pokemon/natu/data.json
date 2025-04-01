@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 45
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 73,
     "ev_yields": {
@@ -26,82 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_SYNCHRONIZE", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_SYNCHRONIZE",
+        "ABILITY_MAGIC_BOUNCE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_NIGHT_SHADE" ],
-            [ 9, "MOVE_TELEPORT" ],
-            [ 12, "MOVE_LUCKY_CHANT" ],
-            [ 17, "MOVE_MIRACLE_EYE" ],
-            [ 20, "MOVE_ME_FIRST" ],
-            [ 23, "MOVE_CONFUSE_RAY" ],
-            [ 28, "MOVE_WISH" ],
-            [ 33, "MOVE_PSYCHO_SHIFT" ],
-            [ 36, "MOVE_FUTURE_SIGHT" ],
-            [ 39, "MOVE_OMINOUS_WIND" ],
-            [ 44, "MOVE_POWER_SWAP" ],
-            [ 44, "MOVE_GUARD_SWAP" ],
-            [ 47, "MOVE_PSYCHIC" ]
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                12,
+                "MOVE_CONFUSION"
+            ],
+            [
+                16,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                23,
+                "MOVE_OMINOUS_WIND"
+            ],
+            [
+                26,
+                "MOVE_WISH"
+            ],
+            [
+                30,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                34,
+                "MOVE_TAILWIND"
+            ],
+            [
+                40,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                45,
+                "MOVE_U_TURN"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM48",
-            "TM51",
-            "TM58",
-            "TM62",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TWISTER",
-            "MOVE_TRICK",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -128,7 +120,7 @@
         "pokemon_pos_m": 31,
         "en": {
             "name": "NATU",
-            "category": "Tiny Bird Pokémon",
+            "category": "Tiny Bird Pok\u00e9mon",
             "entry_text": [
                 "It picks food from cactus plants,\n",
                 "deftly avoiding buds and spines.\n",
@@ -137,11 +129,11 @@
         },
         "fr": {
             "name": "NATU",
-            "category": "Pokémon Minoiseau",
+            "category": "Pok\u00e9mon Minoiseau",
             "entry_text": [
                 "Il mange des cactus en prenant\n",
-                "soin d’éviter les bourgeons et les\n",
-                "épines. Il ne tient pas en place. "
+                "soin d\u2019\u00e9viter les bourgeons et les\n",
+                "\u00e9pines. Il ne tient pas en place. "
             ]
         },
         "de": {
@@ -155,7 +147,7 @@
         },
         "it": {
             "name": "NATU",
-            "category": "Pokémon Uccellino",
+            "category": "Pok\u00e9mon Uccellino",
             "entry_text": [
                 "Raccoglie cibo dai cactus, evitando\n",
                 "agilmente germogli e spine. Si muove\n",
@@ -164,7 +156,7 @@
         },
         "es": {
             "name": "NATU",
-            "category": "Pokémon Pajarito",
+            "category": "Pok\u00e9mon Pajarito",
             "entry_text": [
                 "Recoge alimento de los cactos\n",
                 "evitando los pinchos. Se mueve\n",
@@ -172,12 +164,12 @@
             ]
         },
         "jp": {
-            "name": "ネイティ",
-            "category": "ことりポケモン",
+            "name": "\u30cd\u30a4\u30c6\u30a3",
+            "category": "\u3053\u3068\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "サボテンの　つぼみや　トゲを\n",
-                "きように　よけながら　ついばむ。\n",
-                "とびはねるようにして　いどうする。"
+                "\u30b5\u30dc\u30c6\u30f3\u306e\u3000\u3064\u307c\u307f\u3084\u3000\u30c8\u30b2\u3092\n",
+                "\u304d\u3088\u3046\u306b\u3000\u3088\u3051\u306a\u304c\u3089\u3000\u3064\u3044\u3070\u3080\u3002\n",
+                "\u3068\u3073\u306f\u306d\u308b\u3088\u3046\u306b\u3057\u3066\u3000\u3044\u3069\u3046\u3059\u308b\u3002"
             ]
         }
     },

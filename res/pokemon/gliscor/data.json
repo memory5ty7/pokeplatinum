@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 75
     },
-    "types": [ "TYPE_GROUND", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 192,
     "ev_yields": {
@@ -26,95 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_SAND_VEIL" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_NONE",
+        "ABILITY_SHARPNESS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_POISON_JAB" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_KNOCK_OFF" ],
-            [ 5, "MOVE_SAND_ATTACK" ],
-            [ 9, "MOVE_HARDEN" ],
-            [ 12, "MOVE_KNOCK_OFF" ],
-            [ 16, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_FURY_CUTTER" ],
-            [ 23, "MOVE_FAINT_ATTACK" ],
-            [ 27, "MOVE_SCREECH" ],
-            [ 31, "MOVE_NIGHT_SLASH" ],
-            [ 34, "MOVE_SWORDS_DANCE" ],
-            [ 38, "MOVE_U_TURN" ],
-            [ 42, "MOVE_X_SCISSOR" ],
-            [ 45, "MOVE_GUILLOTINE" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM36",
-            "TM37",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_EARTH_POWER",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -133,7 +65,7 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "GLISCOR",
-            "category": "Fang Scorp Pokémon",
+            "category": "Fang Scorp Pok\u00e9mon",
             "entry_text": [
                 "If it succeeds in catching even a\n",
                 "faint breeze properly, it can circle\n",
@@ -142,34 +74,34 @@
         },
         "fr": {
             "name": "SCORVOL",
-            "category": "Pokémon Scorpicroc",
+            "category": "Pok\u00e9mon Scorpicroc",
             "entry_text": [
-                "Il guette sa proie, pendu à une\n",
-                "branche la tête en bas, et s’en\n",
-                "saisit à la première occasion. "
+                "Il guette sa proie, pendu \u00e0 une\n",
+                "branche la t\u00eate en bas, et s\u2019en\n",
+                "saisit \u00e0 la premi\u00e8re occasion. "
             ]
         },
         "de": {
             "name": "SKORGRO",
             "category": "Zahnskorpi",
             "entry_text": [
-                "Es hängt kopfüber von einem Ast\n",
+                "Es h\u00e4ngt kopf\u00fcber von einem Ast\n",
                 "und beobachtet seine Beute. Bei\n",
-                "Gelegenheit stürzt es sich auf sie."
+                "Gelegenheit st\u00fcrzt es sich auf sie."
             ]
         },
         "it": {
             "name": "GLISCOR",
-            "category": "Pokémon Scorpidente",
+            "category": "Pok\u00e9mon Scorpidente",
             "entry_text": [
                 "Sta appeso ai rami con la testa in\n",
-                "giù. Alla prima occasione, si butta a\n",
+                "gi\u00f9. Alla prima occasione, si butta a\n",
                 "capofitto sulla preda."
             ]
         },
         "es": {
             "name": "GLISCOR",
-            "category": "Pokémon Colmicorpio",
+            "category": "Pok\u00e9mon Colmicorpio",
             "entry_text": [
                 "Espera a sus presas colgado de\n",
                 "una rama bocabajo. Cuando llega\n",
@@ -177,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "グライオン",
-            "category": "キバさそりポケモン",
+            "name": "\u30b0\u30e9\u30a4\u30aa\u30f3",
+            "category": "\u30ad\u30d0\u3055\u305d\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しっぽで　きのえだに　ぶらさがり\n",
-                "えものを　かんさつする。すきを\n",
-                "みて　じょうくうから　おそいかかる。"
+                "\u3057\u3063\u307d\u3067\u3000\u304d\u306e\u3048\u3060\u306b\u3000\u3076\u3089\u3055\u304c\u308a\n",
+                "\u3048\u3082\u306e\u3092\u3000\u304b\u3093\u3055\u3064\u3059\u308b\u3002\u3059\u304d\u3092\n",
+                "\u307f\u3066\u3000\u3058\u3087\u3046\u304f\u3046\u304b\u3089\u3000\u304a\u305d\u3044\u304b\u304b\u308b\u3002"
             ]
         }
     },

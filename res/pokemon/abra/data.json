@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 55
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 200,
     "base_exp_reward": 75,
     "ev_yields": {
@@ -26,71 +29,75 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_SYNCHRONIZE", "ABILITY_INNER_FOCUS" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_SYNCHRONIZE",
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_MAGIC_GUARD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TELEPORT" ]
+            [
+                16,
+                "MOVE_CONFUSION"
+            ],
+            [
+                18,
+                "MOVE_DISABLE"
+            ],
+            [
+                22,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                24,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                30,
+                "MOVE_RECOVER"
+            ],
+            [
+                34,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                36,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                43,
+                "MOVE_AURA_SPHERE"
+            ],
+            [
+                50,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                55,
+                "MOVE_FOCUS_BLAST"
+            ],
+            [
+                55,
+                "MOVE_PSYCHO_SHIFT"
+            ],
+            [
+                60,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM53",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM63",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -117,7 +124,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "ABRA",
-            "category": "Psi Pokémon",
+            "category": "Psi Pok\u00e9mon",
             "entry_text": [
                 "Using its psychic power is such a\n",
                 "strain on its brain that it needs\n",
@@ -126,25 +133,25 @@
         },
         "fr": {
             "name": "ABRA",
-            "category": "Pokémon Psy",
+            "category": "Pok\u00e9mon Psy",
             "entry_text": [
-                "Il dort 18 heures par jour. Même\n",
-                "éveillé, il ne prend pas la peine\n",
-                "de se lever pour se téléporter."
+                "Il dort 18 heures par jour. M\u00eame\n",
+                "\u00e9veill\u00e9, il ne prend pas la peine\n",
+                "de se lever pour se t\u00e9l\u00e9porter."
             ]
         },
         "de": {
             "name": "ABRA",
             "category": "Psi",
             "entry_text": [
-                "18 Stunden am Tag schläft es. Und\n",
+                "18 Stunden am Tag schl\u00e4ft es. Und\n",
                 "wenn es wach ist, teleportiert es\n",
-                "sich, während es sitzen bleibt."
+                "sich, w\u00e4hrend es sitzen bleibt."
             ]
         },
         "it": {
             "name": "ABRA",
-            "category": "Pokémon Psico",
+            "category": "Pok\u00e9mon Psico",
             "entry_text": [
                 "Dorme per 18 ore al giorno.\n",
                 "Anche da sveglio, si teletrasporta\n",
@@ -153,20 +160,20 @@
         },
         "es": {
             "name": "ABRA",
-            "category": "Pokémon Psi",
+            "category": "Pok\u00e9mon Psi",
             "entry_text": [
-                "Duerme 18 horas al día. Cuando\n",
-                "está despierto no se levanta ni\n",
+                "Duerme 18 horas al d\u00eda. Cuando\n",
+                "est\u00e1 despierto no se levanta ni\n",
                 "para teletransportarse."
             ]
         },
         "jp": {
-            "name": "ケ－シィ",
-            "category": "ねんりきポケモン",
+            "name": "\u30b1\uff0d\u30b7\u30a3",
+            "category": "\u306d\u3093\u308a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "まいにち　１８じかん　ねむる。\n",
-                "めざめている　ときも　すわったまま\n",
-                "テレポ－トで　いどうする。"
+                "\u307e\u3044\u306b\u3061\u3000\uff11\uff18\u3058\u304b\u3093\u3000\u306d\u3080\u308b\u3002\n",
+                "\u3081\u3056\u3081\u3066\u3044\u308b\u3000\u3068\u304d\u3082\u3000\u3059\u308f\u3063\u305f\u307e\u307e\n",
+                "\u30c6\u30ec\u30dd\uff0d\u30c8\u3067\u3000\u3044\u3069\u3046\u3059\u308b\u3002"
             ]
         }
     },

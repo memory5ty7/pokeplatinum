@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 55
     },
-    "types": [ "TYPE_GROUND", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 217,
     "ev_yields": {
@@ -26,107 +29,93 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_LIGHTNING_ROD", "ABILITY_SOLID_ROCK" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_MAGNET_PULL",
+        "ABILITY_GALVANIZE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_JAB" ],
-            [ 1, "MOVE_HORN_ATTACK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 1, "MOVE_FURY_ATTACK" ],
-            [ 9, "MOVE_STOMP" ],
-            [ 13, "MOVE_FURY_ATTACK" ],
-            [ 21, "MOVE_SCARY_FACE" ],
-            [ 25, "MOVE_ROCK_BLAST" ],
-            [ 33, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_HORN_DRILL" ],
-            [ 42, "MOVE_HAMMER_ARM" ],
-            [ 45, "MOVE_STONE_EDGE" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_MEGAHORN" ],
-            [ 61, "MOVE_ROCK_WRECKER" ]
+            [
+                1,
+                "MOVE_HORN_ATTACK"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                5,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                9,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                12,
+                "MOVE_ROCK_BLAST"
+            ],
+            [
+                16,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                21,
+                "MOVE_STOMP"
+            ],
+            [
+                25,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                29,
+                "MOVE_DRILL_RUN"
+            ],
+            [
+                34,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                40,
+                "MOVE_HIGH_HORSEPOWER"
+            ],
+            [
+                46,
+                "MOVE_MEGAHORN"
+            ],
+            [
+                50,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                56,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                60,
+                "MOVE_ROCK_WRECKER"
+            ],
+            [
+                65,
+                "MOVE_HEAD_SMASH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM72",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ENDEAVOR",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -145,7 +134,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "RHYPERIOR",
-            "category": "Drill Pokémon",
+            "category": "Drill Pok\u00e9mon",
             "entry_text": [
                 "It can launch a rock held in its\n",
                 "hand like a missile by tightening\n",
@@ -154,7 +143,7 @@
         },
         "fr": {
             "name": "RHINASTOC",
-            "category": "Pokémon Perceur",
+            "category": "Pok\u00e9mon Perceur",
             "entry_text": [
                 "Il bande ses muscles pour projeter\n",
                 "des pierres ou des RACAILLOU\n",
@@ -165,36 +154,36 @@
             "name": "RIHORNIOR",
             "category": "Bohrer",
             "entry_text": [
-                "Es legt Steine in die Löcher seiner\n",
-                "Hände und wirft sie mit Muskelkraft.\n",
+                "Es legt Steine in die L\u00f6cher seiner\n",
+                "H\u00e4nde und wirft sie mit Muskelkraft.\n",
                 "Sogar GEOROK werden verwendet."
             ]
         },
         "it": {
             "name": "RHYPERIOR",
-            "category": "Pokémon Trapano",
+            "category": "Pok\u00e9mon Trapano",
             "entry_text": [
-                "Mette rocce nelle cavità dei suoi\n",
+                "Mette rocce nelle cavit\u00e0 dei suoi\n",
                 "palmi e le getta con tutta la sua\n",
                 "forza. Talvolta lancia GEODUDE."
             ]
         },
         "es": {
             "name": "RHYPERIOR",
-            "category": "Pokémon Taladro",
+            "category": "Pok\u00e9mon Taladro",
             "entry_text": [
                 "Pone rocas en los agujeros de sus\n",
-                "manos y las lanza con los músculos.\n",
+                "manos y las lanza con los m\u00fasculos.\n",
                 "Pocas veces ataca a GEODUDE."
             ]
         },
         "jp": {
-            "name": "ドサイドン",
-            "category": "ドリルポケモン",
+            "name": "\u30c9\u30b5\u30a4\u30c9\u30f3",
+            "category": "\u30c9\u30ea\u30eb\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いわを　てのひらの　あなに　つめて\n",
-                "きんにくの　ちからで　はっしゃする。\n",
-                "まれに　イシツブテを　とばす。"
+                "\u3044\u308f\u3092\u3000\u3066\u306e\u3072\u3089\u306e\u3000\u3042\u306a\u306b\u3000\u3064\u3081\u3066\n",
+                "\u304d\u3093\u306b\u304f\u306e\u3000\u3061\u304b\u3089\u3067\u3000\u306f\u3063\u3057\u3083\u3059\u308b\u3002\n",
+                "\u307e\u308c\u306b\u3000\u30a4\u30b7\u30c4\u30d6\u30c6\u3092\u3000\u3068\u3070\u3059\u3002"
             ]
         }
     },

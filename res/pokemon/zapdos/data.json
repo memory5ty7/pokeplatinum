@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 90
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 216,
     "ev_yields": {
@@ -26,78 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_GALVANIZE",
+        "ABILITY_NONE",
+        "ABILITY_COMPETITIVE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 8, "MOVE_THUNDER_WAVE" ],
-            [ 15, "MOVE_DETECT" ],
-            [ 22, "MOVE_PLUCK" ],
-            [ 29, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_CHARGE" ],
-            [ 43, "MOVE_AGILITY" ],
-            [ 50, "MOVE_DISCHARGE" ],
-            [ 57, "MOVE_ROOST" ],
-            [ 64, "MOVE_LIGHT_SCREEN" ],
-            [ 71, "MOVE_DRILL_PECK" ],
-            [ 78, "MOVE_THUNDER" ],
-            [ 85, "MOVE_RAIN_DANCE" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM47",
-            "TM51",
-            "TM57",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -116,56 +65,56 @@
         "pokemon_pos_m": 0,
         "en": {
             "name": "ZAPDOS",
-            "category": "Electric Pokémon",
+            "category": "Electric Pok\u00e9mon",
             "entry_text": [
-                "A legendary Pokémon that is said\n",
+                "A legendary Pok\u00e9mon that is said\n",
                 "to live in thunderclouds. It freely\n",
                 "controls lightning bolts."
             ]
         },
         "fr": {
             "name": "ELECTHOR",
-            "category": "Pokémon Electrique",
+            "category": "Pok\u00e9mon Electrique",
             "entry_text": [
-                "Un Pokémon Oiseau légendaire dont\n",
-                "on dit qu’il vit dans les nuages \n",
-                "d’orage. Il contrôle la foudre."
+                "Un Pok\u00e9mon Oiseau l\u00e9gendaire dont\n",
+                "on dit qu\u2019il vit dans les nuages \n",
+                "d\u2019orage. Il contr\u00f4le la foudre."
             ]
         },
         "de": {
             "name": "ZAPDOS",
             "category": "Elektro",
             "entry_text": [
-                "Ein Legendäres Vogel-Pokémon,\n",
+                "Ein Legend\u00e4res Vogel-Pok\u00e9mon,\n",
                 "das in Gewitterwolken leben soll.\n",
                 "Es kontrolliert Blitze. "
             ]
         },
         "it": {
             "name": "ZAPDOS",
-            "category": "Pokémon Elettrico",
+            "category": "Pok\u00e9mon Elettrico",
             "entry_text": [
-                "Un Pokémon uccello leggendario.\n",
+                "Un Pok\u00e9mon uccello leggendario.\n",
                 "Si dice che viva tra le nubi tempo-\n",
                 "ralesche. Controlla i fulmini."
             ]
         },
         "es": {
             "name": "ZAPDOS",
-            "category": "Pokémon Eléctrico",
+            "category": "Pok\u00e9mon El\u00e9ctrico",
             "entry_text": [
-                "Legendario Pokémon pájaro del que\n",
+                "Legendario Pok\u00e9mon p\u00e1jaro del que\n",
                 "se dice que vive en los nubarrones.\n",
-                "Controla los rayos eléctricos."
+                "Controla los rayos el\u00e9ctricos."
             ]
         },
         "jp": {
-            "name": "サンダ－",
-            "category": "でんげきポケモン",
+            "name": "\u30b5\u30f3\u30c0\uff0d",
+            "category": "\u3067\u3093\u3052\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かみなりぐもの　なかに　いると\n",
-                "いわれる　でんせつの　ポケモン。\n",
-                "カミナリを　じざいに　あやつる。"
+                "\u304b\u307f\u306a\u308a\u3050\u3082\u306e\u3000\u306a\u304b\u306b\u3000\u3044\u308b\u3068\n",
+                "\u3044\u308f\u308c\u308b\u3000\u3067\u3093\u305b\u3064\u306e\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u30ab\u30df\u30ca\u30ea\u3092\u3000\u3058\u3056\u3044\u306b\u3000\u3042\u3084\u3064\u308b\u3002"
             ]
         }
     },

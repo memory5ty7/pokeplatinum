@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 45
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 206,
     "ev_yields": {
@@ -26,76 +29,69 @@
     "hatch_cycles": 40,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FLUCTUATING",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_WATER_VEIL", "ABILITY_OBLIVIOUS" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_NONE",
+        "ABILITY_SWIFT_SWIM"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_ROLLOUT" ],
-            [ 4, "MOVE_GROWL" ],
-            [ 7, "MOVE_WATER_GUN" ],
-            [ 11, "MOVE_ROLLOUT" ],
-            [ 14, "MOVE_WHIRLPOOL" ],
-            [ 17, "MOVE_ASTONISH" ],
-            [ 21, "MOVE_WATER_PULSE" ],
-            [ 24, "MOVE_MIST" ],
-            [ 27, "MOVE_REST" ],
-            [ 31, "MOVE_BRINE" ],
-            [ 34, "MOVE_WATER_SPOUT" ],
-            [ 37, "MOVE_AMNESIA" ],
-            [ 46, "MOVE_DIVE" ],
-            [ 54, "MOVE_BOUNCE" ],
-            [ 62, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_SOAK"
+            ],
+            [
+                7,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_BRINE"
+            ],
+            [
+                24,
+                "MOVE_REST"
+            ],
+            [
+                30,
+                "MOVE_WATER_SPOUT"
+            ],
+            [
+                36,
+                "MOVE_DIVE"
+            ],
+            [
+                40,
+                "MOVE_BOUNCE"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                55,
+                "MOVE_LIQUIDATION"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM68",
-            "TM72",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_BOUNCE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -114,19 +110,19 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "WAILORD",
-            "category": "Float Whale Pokémon",
+            "category": "Float Whale Pok\u00e9mon",
             "entry_text": [
-                "The biggest of all Pokémon.\n",
+                "The biggest of all Pok\u00e9mon.\n",
                 "It can dive to a depth of almost\n",
                 "10,000 feet on only one breath."
             ]
         },
         "fr": {
             "name": "WAILORD",
-            "category": "Pokémon Cachabouée",
+            "category": "Pok\u00e9mon Cachabou\u00e9e",
             "entry_text": [
-                "Le plus grand des Pokémon. Il peut\n",
-                "plonger à une profondeur de \n",
+                "Le plus grand des Pok\u00e9mon. Il peut\n",
+                "plonger \u00e0 une profondeur de \n",
                 "3 000 m en retenant son souffle."
             ]
         },
@@ -134,36 +130,36 @@
             "name": "WAILORD",
             "category": "Flutwal",
             "entry_text": [
-                "Das größte PKMN. Es kann mit nur\n",
+                "Das gr\u00f6\u00dfte PKMN. Es kann mit nur\n",
                 "einem Atemzug in Tiefen bis\n",
                 "3 000 Meter tauchen."
             ]
         },
         "it": {
             "name": "WAILORD",
-            "category": "Pokémon Megabalena",
+            "category": "Pok\u00e9mon Megabalena",
             "entry_text": [
-                "Il Pokémon più grande che esista.\n",
+                "Il Pok\u00e9mon pi\u00f9 grande che esista.\n",
                 "Dopo aver inalato aria, si immerge a\n",
-                "una profondità di 3000 metri."
+                "una profondit\u00e0 di 3000 metri."
             ]
         },
         "es": {
             "name": "WAILORD",
-            "category": "Pokémon Ballenaflot",
+            "category": "Pok\u00e9mon Ballenaflot",
             "entry_text": [
-                "Es el más grande de los Pokémon.\n",
+                "Es el m\u00e1s grande de los Pok\u00e9mon.\n",
                 "Puede nadar a una profundidad de\n",
-                "3000 m aguantando la respiración."
+                "3000 m aguantando la respiraci\u00f3n."
             ]
         },
         "jp": {
-            "name": "ホエルオ－",
-            "category": "うきくじらポケモン",
+            "name": "\u30db\u30a8\u30eb\u30aa\uff0d",
+            "category": "\u3046\u304d\u304f\u3058\u3089\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いちばん　おおきい　ポケモン。\n",
-                "いきつぎせずに　３０００メ－トルの\n",
-                "ふかさまで　もぐることが　できる。"
+                "\u3044\u3061\u3070\u3093\u3000\u304a\u304a\u304d\u3044\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3044\u304d\u3064\u304e\u305b\u305a\u306b\u3000\uff13\uff10\uff10\uff10\u30e1\uff0d\u30c8\u30eb\u306e\n",
+                "\u3075\u304b\u3055\u307e\u3067\u3000\u3082\u3050\u308b\u3053\u3068\u304c\u3000\u3067\u304d\u308b\u3002"
             ]
         }
     },

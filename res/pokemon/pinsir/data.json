@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 70
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 200,
     "ev_yields": {
@@ -26,78 +29,24 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_MOLD_BREAKER" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SKILL_LINK",
+        "ABILITY_HYPER_CUTTER",
+        "ABILITY_MOXIE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_VICE_GRIP" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 4, "MOVE_BIND" ],
-            [ 8, "MOVE_SEISMIC_TOSS" ],
-            [ 13, "MOVE_HARDEN" ],
-            [ 18, "MOVE_REVENGE" ],
-            [ 21, "MOVE_BRICK_BREAK" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 30, "MOVE_X_SCISSOR" ],
-            [ 35, "MOVE_THRASH" ],
-            [ 38, "MOVE_SWORDS_DANCE" ],
-            [ 42, "MOVE_SUBMISSION" ],
-            [ 47, "MOVE_GUILLOTINE" ],
-            [ 52, "MOVE_SUPERPOWER" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM68",
-            "TM71",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_FURY_CUTTER",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -116,43 +65,43 @@
         "pokemon_pos_m": 5,
         "en": {
             "name": "PINSIR",
-            "category": "Stag Beetle Pokémon",
+            "category": "Stag Beetle Pok\u00e9mon",
             "entry_text": [
                 "It grips prey with its pincers\n",
                 "until the prey is torn in half.\n",
-                "What it can’t tear, it tosses far."
+                "What it can\u2019t tear, it tosses far."
             ]
         },
         "fr": {
             "name": "SCARABRUTE",
-            "category": "Pokémon Scarabée",
+            "category": "Pok\u00e9mon Scarab\u00e9e",
             "entry_text": [
                 "Il serre les proies dans ses pinces\n",
-                "pour les trancher en deux. S’il n’y\n",
+                "pour les trancher en deux. S\u2019il n\u2019y\n",
                 "arrive pas, il les jette au loin."
             ]
         },
         "de": {
             "name": "PINSIR",
-            "category": "Kneifkäfer",
+            "category": "Kneifk\u00e4fer",
             "entry_text": [
-                "Es hält seine Beute mit seiner\n",
+                "Es h\u00e4lt seine Beute mit seiner\n",
                 "Zange fest und teilt sie dann. Was\n",
                 "es nicht teilen kann, wirft es fort."
             ]
         },
         "it": {
             "name": "PINSIR",
-            "category": "Pokémon Cervolante",
+            "category": "Pok\u00e9mon Cervolante",
             "entry_text": [
                 "Afferra la preda con le pinze e non\n",
-                "la molla finché non l’ha tranciata.\n",
+                "la molla finch\u00e9 non l\u2019ha tranciata.\n",
                 "Se non ci riesce, la scaglia via."
             ]
         },
         "es": {
             "name": "PINSIR",
-            "category": "Pokémon Escarabajo",
+            "category": "Pok\u00e9mon Escarabajo",
             "entry_text": [
                 "Atrapa presas con sus pinzas\n",
                 "hasta que las parte en dos. Lanza\n",
@@ -160,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "カイロス",
-            "category": "くわがたポケモン",
+            "name": "\u30ab\u30a4\u30ed\u30b9",
+            "category": "\u304f\u308f\u304c\u305f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "２ほんの　ツノで　えものを　はさんで\n",
-                "ちぎれるまで　はなさない。ちぎれない\n",
-                "ときは　かなたまで　なげとばすのだ。"
+                "\uff12\u307b\u3093\u306e\u3000\u30c4\u30ce\u3067\u3000\u3048\u3082\u306e\u3092\u3000\u306f\u3055\u3093\u3067\n",
+                "\u3061\u304e\u308c\u308b\u307e\u3067\u3000\u306f\u306a\u3055\u306a\u3044\u3002\u3061\u304e\u308c\u306a\u3044\n",
+                "\u3068\u304d\u306f\u3000\u304b\u306a\u305f\u307e\u3067\u3000\u306a\u3052\u3068\u3070\u3059\u306e\u3060\u3002"
             ]
         }
     },

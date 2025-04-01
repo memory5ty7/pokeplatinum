@@ -7,7 +7,10 @@
         "special_attack": 79,
         "special_defense": 83
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,95 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_TORRENT",
+        "ABILITY_SHEER_FORCE",
+        "ABILITY_STRONG_JAW"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_RAGE" ],
-            [ 6, "MOVE_WATER_GUN" ],
-            [ 8, "MOVE_RAGE" ],
-            [ 13, "MOVE_BITE" ],
-            [ 15, "MOVE_SCARY_FACE" ],
-            [ 21, "MOVE_ICE_FANG" ],
-            [ 24, "MOVE_FLAIL" ],
-            [ 30, "MOVE_AGILITY" ],
-            [ 32, "MOVE_CRUNCH" ],
-            [ 37, "MOVE_SLASH" ],
-            [ 45, "MOVE_SCREECH" ],
-            [ 50, "MOVE_THRASH" ],
-            [ 58, "MOVE_AQUA_TAIL" ],
-            [ 63, "MOVE_SUPERPOWER" ],
-            [ 71, "MOVE_HYDRO_PUMP" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM02",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM68",
-            "TM72",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -133,7 +65,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "FERALIGATR",
-            "category": "Big Jaw Pokémon",
+            "category": "Big Jaw Pok\u00e9mon",
             "entry_text": [
                 "It usually moves slowly, but it\n",
                 "goes at blinding speed when it\n",
@@ -142,16 +74,16 @@
         },
         "fr": {
             "name": "ALIGATUEUR",
-            "category": "Pokémon Mâchoire",
+            "category": "Pok\u00e9mon M\u00e2choire",
             "entry_text": [
-                "Ce Pokémon à l’air pataud est\n",
-                "capable d’attaquer à la vitesse\n",
-                "de l’éclair pour mordre sa proie."
+                "Ce Pok\u00e9mon \u00e0 l\u2019air pataud est\n",
+                "capable d\u2019attaquer \u00e0 la vitesse\n",
+                "de l\u2019\u00e9clair pour mordre sa proie."
             ]
         },
         "de": {
             "name": "IMPERGATOR",
-            "category": "Großmaul",
+            "category": "Gro\u00dfmaul",
             "entry_text": [
                 "Eigentlich bewegt es sich langsam,\n",
                 "doch seine Beute greift es\n",
@@ -160,29 +92,29 @@
         },
         "it": {
             "name": "FERALIGATR",
-            "category": "Pokémon Mascellone",
+            "category": "Pok\u00e9mon Mascellone",
             "entry_text": [
                 "Di solito si muove lentamente, ma\n",
                 "quando attacca e morde la preda si\n",
-                "muove ad una velocità incredibile."
+                "muove ad una velocit\u00e0 incredibile."
             ]
         },
         "es": {
             "name": "FERALIGATR",
-            "category": "Pokémon Fauces",
+            "category": "Pok\u00e9mon Fauces",
             "entry_text": [
                 "Se suele mover lento, pero alcanza\n",
-                "velocidades de vértigo al atacar\n",
+                "velocidades de v\u00e9rtigo al atacar\n",
                 "y morder a sus enemigos."
             ]
         },
         "jp": {
-            "name": "オ－ダイル",
-            "category": "おおあごポケモン",
+            "name": "\u30aa\uff0d\u30c0\u30a4\u30eb",
+            "category": "\u304a\u304a\u3042\u3054\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ふだんは　ゆっくりとした　うごきだが\n",
-                "えものに　かみつくときは\n",
-                "めにも　とまらない　スピ－ドだ。"
+                "\u3075\u3060\u3093\u306f\u3000\u3086\u3063\u304f\u308a\u3068\u3057\u305f\u3000\u3046\u3054\u304d\u3060\u304c\n",
+                "\u3048\u3082\u306e\u306b\u3000\u304b\u307f\u3064\u304f\u3068\u304d\u306f\n",
+                "\u3081\u306b\u3082\u3000\u3068\u307e\u3089\u306a\u3044\u3000\u30b9\u30d4\uff0d\u30c9\u3060\u3002"
             ]
         }
     },

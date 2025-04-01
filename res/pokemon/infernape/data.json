@@ -7,7 +7,10 @@
         "special_attack": 104,
         "special_defense": 71
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 209,
     "ev_yields": {
@@ -26,96 +29,81 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_IRON_FIST",
+        "ABILITY_BLAZE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_TAUNT" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 9, "MOVE_TAUNT" ],
-            [ 14, "MOVE_MACH_PUNCH" ],
-            [ 17, "MOVE_FURY_SWIPES" ],
-            [ 21, "MOVE_FLAME_WHEEL" ],
-            [ 29, "MOVE_FEINT" ],
-            [ 33, "MOVE_PUNISHMENT" ],
-            [ 41, "MOVE_CLOSE_COMBAT" ],
-            [ 45, "MOVE_FIRE_SPIN" ],
-            [ 53, "MOVE_CALM_MIND" ],
-            [ 57, "MOVE_FLARE_BLITZ" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_EMBER"
+            ],
+            [
+                10,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                14,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                16,
+                "MOVE_LOW_SWEEP"
+            ],
+            [
+                20,
+                "MOVE_TORMENT"
+            ],
+            [
+                24,
+                "MOVE_FIRE_SPIN"
+            ],
+            [
+                30,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                34,
+                "MOVE_BLAZE_KICK"
+            ],
+            [
+                36,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                40,
+                "MOVE_AURA_SPHERE"
+            ],
+            [
+                45,
+                "MOVE_FLARE_BLITZ"
+            ],
+            [
+                50,
+                "MOVE_OVERHEAT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM68",
-            "TM71",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_GUNK_SHOT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -134,7 +122,7 @@
         "pokemon_pos_m": 13,
         "en": {
             "name": "INFERNAPE",
-            "category": "Flame Pokémon",
+            "category": "Flame Pok\u00e9mon",
             "entry_text": [
                 "It uses unique fighting moves with\n",
                 "fire on its hands and feet. It will\n",
@@ -143,25 +131,25 @@
         },
         "fr": {
             "name": "SIMIABRAZ",
-            "category": "Pokémon Flamme",
+            "category": "Pok\u00e9mon Flamme",
             "entry_text": [
-                "Il pratique un art martial spécial\n",
+                "Il pratique un art martial sp\u00e9cial\n",
                 "qui utilise tous ses membres.\n",
-                "Sa flamme ne s’éteint jamais."
+                "Sa flamme ne s\u2019\u00e9teint jamais."
             ]
         },
         "de": {
             "name": "PANFERNO",
             "category": "Flamme",
             "entry_text": [
-                "Es kämpft auf besondere Art, indem\n",
-                "es alle Gliedmaßen einsetzt. Sein\n",
+                "Es k\u00e4mpft auf besondere Art, indem\n",
+                "es alle Gliedma\u00dfen einsetzt. Sein\n",
                 "Feuer erlischt nie."
             ]
         },
         "it": {
             "name": "INFERNAPE",
-            "category": "Pokémon Fiamma",
+            "category": "Pok\u00e9mon Fiamma",
             "entry_text": [
                 "Usa un tipo speciale di arte marzia-\n",
                 "le che coinvolge tutti gli arti. Le\n",
@@ -170,7 +158,7 @@
         },
         "es": {
             "name": "INFERNAPE",
-            "category": "Pokémon Llama",
+            "category": "Pok\u00e9mon Llama",
             "entry_text": [
                 "Utiliza un tipo especial de artes\n",
                 "marciales con todos sus miembros.\n",
@@ -178,12 +166,12 @@
             ]
         },
         "jp": {
-            "name": "ゴウカザル",
-            "category": "かえんポケモン",
+            "name": "\u30b4\u30a6\u30ab\u30b6\u30eb",
+            "category": "\u304b\u3048\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "りょうて　りょうあしを　つかった\n",
-                "とくしゅな　かくとうわざを　つかう。\n",
-                "ほのおは　いっしょう　きえない。"
+                "\u308a\u3087\u3046\u3066\u3000\u308a\u3087\u3046\u3042\u3057\u3092\u3000\u3064\u304b\u3063\u305f\n",
+                "\u3068\u304f\u3057\u3085\u306a\u3000\u304b\u304f\u3068\u3046\u308f\u3056\u3092\u3000\u3064\u304b\u3046\u3002\n",
+                "\u307b\u306e\u304a\u306f\u3000\u3044\u3063\u3057\u3087\u3046\u3000\u304d\u3048\u306a\u3044\u3002"
             ]
         }
     },

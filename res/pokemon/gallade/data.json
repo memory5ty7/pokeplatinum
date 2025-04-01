@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 115
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 208,
     "ev_yields": {
@@ -26,110 +29,69 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_STEADFAST", "ABILITY_STEADFAST" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_SLUSH_RUSH",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEAF_BLADE" ],
-            [ 1, "MOVE_NIGHT_SLASH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_DOUBLE_TEAM" ],
-            [ 1, "MOVE_TELEPORT" ],
-            [ 6, "MOVE_CONFUSION" ],
-            [ 10, "MOVE_DOUBLE_TEAM" ],
-            [ 12, "MOVE_TELEPORT" ],
-            [ 17, "MOVE_FURY_CUTTER" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 25, "MOVE_SWORDS_DANCE" ],
-            [ 31, "MOVE_PSYCHO_CUT" ],
-            [ 36, "MOVE_HELPING_HAND" ],
-            [ 39, "MOVE_FEINT" ],
-            [ 45, "MOVE_FALSE_SWIPE" ],
-            [ 50, "MOVE_PROTECT" ],
-            [ 53, "MOVE_CLOSE_COMBAT" ]
+            [
+                1,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                1,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                4,
+                "MOVE_CONFUSION"
+            ],
+            [
+                10,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                15,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                23,
+                "MOVE_PROTECT"
+            ],
+            [
+                31,
+                "MOVE_PSYCHO_CUT"
+            ],
+            [
+                33,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                37,
+                "MOVE_LEAF_BLADE"
+            ],
+            [
+                42,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                50,
+                "MOVE_DRAIN_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM24",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM52",
-            "TM54",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM73",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -148,7 +110,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "GALLADE",
-            "category": "Blade Pokémon",
+            "category": "Blade Pok\u00e9mon",
             "entry_text": [
                 "When trying to protect someone,\n",
                 "it extends its elbows as if they\n",
@@ -157,47 +119,47 @@
         },
         "fr": {
             "name": "GALLAME",
-            "category": "Pokémon Lame",
+            "category": "Pok\u00e9mon Lame",
             "entry_text": [
-                "Il frappe avec les grandes lames à\n",
-                "ses coudes. Son talent d’escrimeur\n",
-                "n’a d’égal que sa courtoisie."
+                "Il frappe avec les grandes lames \u00e0\n",
+                "ses coudes. Son talent d\u2019escrimeur\n",
+                "n\u2019a d\u2019\u00e9gal que sa courtoisie."
             ]
         },
         "de": {
             "name": "GALAGLADI",
             "category": "Klinge",
             "entry_text": [
-                "Es kämpft, indem es die Schwerter\n",
-                "an seinen Ellbogen verlängert. Es\n",
+                "Es k\u00e4mpft, indem es die Schwerter\n",
+                "an seinen Ellbogen verl\u00e4ngert. Es\n",
                 "ist ein Meister des Kampfes."
             ]
         },
         "it": {
             "name": "GALLADE",
-            "category": "Pokémon Lama",
+            "category": "Pok\u00e9mon Lama",
             "entry_text": [
-                "Pokémon elegante e ottimo\n",
+                "Pok\u00e9mon elegante e ottimo\n",
                 "spadaccino, combatte allungando le\n",
                 "lame che ha sui gomiti."
             ]
         },
         "es": {
             "name": "GALLADE",
-            "category": "Pokémon Cuchilla",
+            "category": "Pok\u00e9mon Cuchilla",
             "entry_text": [
                 "Lucha con las espadas que salen\n",
                 "de sus codos. Es un maestro de\n",
-                "la cortesía y la esgrima."
+                "la cortes\u00eda y la esgrima."
             ]
         },
         "jp": {
-            "name": "エルレイド",
-            "category": "やいばポケモン",
+            "name": "\u30a8\u30eb\u30ec\u30a4\u30c9",
+            "category": "\u3084\u3044\u3070\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "のびちぢみする　ひじの　かたなで\n",
-                "たたかう。いあいの　めいしゅ。\n",
-                "れいぎ　ただしい　ポケモン。"
+                "\u306e\u3073\u3061\u3062\u307f\u3059\u308b\u3000\u3072\u3058\u306e\u3000\u304b\u305f\u306a\u3067\n",
+                "\u305f\u305f\u304b\u3046\u3002\u3044\u3042\u3044\u306e\u3000\u3081\u3044\u3057\u3085\u3002\n",
+                "\u308c\u3044\u304e\u3000\u305f\u3060\u3057\u3044\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

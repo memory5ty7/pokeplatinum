@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 100
     },
-    "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,97 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 100,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_SERENE_GRACE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_SERENE_GRACE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_WISH" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 5, "MOVE_REST" ],
-            [ 10, "MOVE_SWIFT" ],
-            [ 15, "MOVE_HELPING_HAND" ],
-            [ 20, "MOVE_PSYCHIC" ],
-            [ 25, "MOVE_REFRESH" ],
-            [ 30, "MOVE_REST" ],
-            [ 35, "MOVE_ZEN_HEADBUTT" ],
-            [ 40, "MOVE_DOUBLE_EDGE" ],
-            [ 45, "MOVE_GRAVITY" ],
-            [ 50, "MOVE_HEALING_WISH" ],
-            [ 55, "MOVE_FUTURE_SIGHT" ],
-            [ 60, "MOVE_COSMIC_POWER" ],
-            [ 65, "MOVE_LAST_RESORT" ],
-            [ 70, "MOVE_DOOM_DESIRE" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM48",
-            "TM53",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "TM91",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -135,7 +65,7 @@
         "pokemon_pos_m": 65518,
         "en": {
             "name": "JIRACHI",
-            "category": "Wish Pokémon",
+            "category": "Wish Pok\u00e9mon",
             "entry_text": [
                 "It is said to have the ability to\n",
                 "grant any wish for just one week\n",
@@ -144,47 +74,47 @@
         },
         "fr": {
             "name": "JIRACHI",
-            "category": "Pokémon Souhait",
+            "category": "Pok\u00e9mon Souhait",
             "entry_text": [
-                "On raconte qu’une fois tous les\n",
-                "mille ans, il a la capacité d’exaucer\n",
-                "tous les vœux durant une semaine."
+                "On raconte qu\u2019une fois tous les\n",
+                "mille ans, il a la capacit\u00e9 d\u2019exaucer\n",
+                "tous les v\u0153ux durant une semaine."
             ]
         },
         "de": {
             "name": "JIRACHI",
-            "category": "Wünscher",
+            "category": "W\u00fcnscher",
             "entry_text": [
                 "Man sagt, es kann alle tausend\n",
-                "Jahre für eine Woche jeden Wunsch\n",
-                "erfüllen."
+                "Jahre f\u00fcr eine Woche jeden Wunsch\n",
+                "erf\u00fcllen."
             ]
         },
         "it": {
             "name": "JIRACHI",
-            "category": "Pokémon Desiderio",
+            "category": "Pok\u00e9mon Desiderio",
             "entry_text": [
-                "Ha l’abilità di realizzare ogni\n",
+                "Ha l\u2019abilit\u00e0 di realizzare ogni\n",
                 "desiderio, ma soltanto per\n",
                 "una settimana ogni 1000 anni."
             ]
         },
         "es": {
             "name": "JIRACHI",
-            "category": "Pokémon Deseo",
+            "category": "Pok\u00e9mon Deseo",
             "entry_text": [
                 "Se dice que puede otorgar\n",
                 "cualquier deseo durante una\n",
-                "semana cada mil años."
+                "semana cada mil a\u00f1os."
             ]
         },
         "jp": {
-            "name": "ジラ－チ",
-            "category": "ねがいごとポケモン",
+            "name": "\u30b8\u30e9\uff0d\u30c1",
+            "category": "\u306d\u304c\u3044\u3054\u3068\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "１０００ねんかんで　７にちだけ\n",
-                "めを　さまし　どんな　ねがいごとでも\n",
-                "かなえる　ちからを　つかうという。"
+                "\uff11\uff10\uff10\uff10\u306d\u3093\u304b\u3093\u3067\u3000\uff17\u306b\u3061\u3060\u3051\n",
+                "\u3081\u3092\u3000\u3055\u307e\u3057\u3000\u3069\u3093\u306a\u3000\u306d\u304c\u3044\u3054\u3068\u3067\u3082\n",
+                "\u304b\u306a\u3048\u308b\u3000\u3061\u304b\u3089\u3092\u3000\u3064\u304b\u3046\u3068\u3044\u3046\u3002"
             ]
         }
     },

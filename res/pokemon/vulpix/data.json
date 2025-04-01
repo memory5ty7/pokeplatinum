@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 65
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 63,
     "ev_yields": {
@@ -26,67 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_FLASH_FIRE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_FLAME_BODY",
+        "ABILITY_NONE",
+        "ABILITY_DROUGHT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_EMBER" ],
-            [ 4, "MOVE_TAIL_WHIP" ],
-            [ 7, "MOVE_ROAR" ],
-            [ 11, "MOVE_QUICK_ATTACK" ],
-            [ 14, "MOVE_WILL_O_WISP" ],
-            [ 17, "MOVE_CONFUSE_RAY" ],
-            [ 21, "MOVE_IMPRISON" ],
-            [ 24, "MOVE_FLAMETHROWER" ],
-            [ 27, "MOVE_SAFEGUARD" ],
-            [ 31, "MOVE_PAYBACK" ],
-            [ 34, "MOVE_FIRE_SPIN" ],
-            [ 37, "MOVE_CAPTIVATE" ],
-            [ 41, "MOVE_GRUDGE" ],
-            [ 44, "MOVE_EXTRASENSORY" ],
-            [ 47, "MOVE_FIRE_BLAST" ]
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                5,
+                "MOVE_DISABLE"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_SPITE"
+            ],
+            [
+                14,
+                "MOVE_FLAME_WHEEL"
+            ],
+            [
+                20,
+                "MOVE_IMPRISON"
+            ],
+            [
+                30,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                36,
+                "MOVE_ENCORE"
+            ],
+            [
+                40,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                60,
+                "MOVE_OVERHEAT"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM66",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,7 +120,7 @@
         "pokemon_pos_m": 17,
         "en": {
             "name": "VULPIX",
-            "category": "Fox Pokémon",
+            "category": "Fox Pok\u00e9mon",
             "entry_text": [
                 "It controls balls of fire. As it\n",
                 "grows, its six tails split from\n",
@@ -122,10 +129,10 @@
         },
         "fr": {
             "name": "GOUPIX",
-            "category": "Pokémon Renard",
+            "category": "Pok\u00e9mon Renard",
             "entry_text": [
                 "Il envoie des boules de feu. Avec\n",
-                "l’âge, ses six queues en forment de\n",
+                "l\u2019\u00e2ge, ses six queues en forment de\n",
                 "nouvelles. "
             ]
         },
@@ -133,14 +140,14 @@
             "name": "VULPIX",
             "category": "Fuchs",
             "entry_text": [
-                "Es beherrscht Feuerbälle. Während\n",
-                "es wächst, teilen sich seine sechs\n",
+                "Es beherrscht Feuerb\u00e4lle. W\u00e4hrend\n",
+                "es w\u00e4chst, teilen sich seine sechs\n",
                 "Schweife, um weitere zu bilden."
             ]
         },
         "it": {
             "name": "VULPIX",
-            "category": "Pokémon Volpe",
+            "category": "Pok\u00e9mon Volpe",
             "entry_text": [
                 "Controlla palle infuocate. Via via\n",
                 "che cresce, dalle sue sei code\n",
@@ -149,7 +156,7 @@
         },
         "es": {
             "name": "VULPIX",
-            "category": "Pokémon Zorro",
+            "category": "Pok\u00e9mon Zorro",
             "entry_text": [
                 "Controla bolas de fuego. A medida\n",
                 "que crece, sus seis colas se\n",
@@ -157,12 +164,12 @@
             ]
         },
         "jp": {
-            "name": "ロコン",
-            "category": "きつねポケモン",
+            "name": "\u30ed\u30b3\u30f3",
+            "category": "\u304d\u3064\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ほのおの　たまを　あやつる。\n",
-                "せいちょうすると　６ほんの　しっぽは\n",
-                "さきが　わかれて　さらに　ふえる。"
+                "\u307b\u306e\u304a\u306e\u3000\u305f\u307e\u3092\u3000\u3042\u3084\u3064\u308b\u3002\n",
+                "\u305b\u3044\u3061\u3087\u3046\u3059\u308b\u3068\u3000\uff16\u307b\u3093\u306e\u3000\u3057\u3063\u307d\u306f\n",
+                "\u3055\u304d\u304c\u3000\u308f\u304b\u308c\u3066\u3000\u3055\u3089\u306b\u3000\u3075\u3048\u308b\u3002"
             ]
         }
     },

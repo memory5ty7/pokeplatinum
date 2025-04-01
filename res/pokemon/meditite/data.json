@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 55
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 180,
     "base_exp_reward": 91,
     "ev_yields": {
@@ -26,82 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_PURE_POWER", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_PURE_POWER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BIDE" ],
-            [ 4, "MOVE_MEDITATE" ],
-            [ 8, "MOVE_CONFUSION" ],
-            [ 11, "MOVE_DETECT" ],
-            [ 15, "MOVE_HIDDEN_POWER" ],
-            [ 18, "MOVE_MIND_READER" ],
-            [ 22, "MOVE_FEINT" ],
-            [ 25, "MOVE_CALM_MIND" ],
-            [ 29, "MOVE_FORCE_PALM" ],
-            [ 32, "MOVE_HI_JUMP_KICK" ],
-            [ 36, "MOVE_PSYCH_UP" ],
-            [ 39, "MOVE_POWER_TRICK" ],
-            [ 43, "MOVE_REVERSAL" ],
-            [ 46, "MOVE_RECOVER" ]
+            [
+                1,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                4,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                7,
+                "MOVE_CONFUSION"
+            ],
+            [
+                9,
+                "MOVE_DETECT"
+            ],
+            [
+                12,
+                "MOVE_ENDURE"
+            ],
+            [
+                15,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                20,
+                "MOVE_FORCE_PALM"
+            ],
+            [
+                25,
+                "MOVE_PSYCHO_CUT"
+            ],
+            [
+                28,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                30,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -128,7 +120,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "MEDITITE",
-            "category": "Meditate Pokémon",
+            "category": "Meditate Pok\u00e9mon",
             "entry_text": [
                 "It always trains deep in mountains.\n",
                 "It levitates when it heightens its\n",
@@ -137,10 +129,10 @@
         },
         "fr": {
             "name": "MEDITIKKA",
-            "category": "Pokémon Méditation",
+            "category": "Pok\u00e9mon M\u00e9ditation",
             "entry_text": [
-                "Il ne mange qu’une Baie par jour.\n",
-                "La faim lui a forgé une volonté\n",
+                "Il ne mange qu\u2019une Baie par jour.\n",
+                "La faim lui a forg\u00e9 une volont\u00e9\n",
                 "de fer."
             ]
         },
@@ -150,12 +142,12 @@
             "entry_text": [
                 "Es isst gerade mal eine Beere am\n",
                 "Tag. Durch Hunger wird sein Geist\n",
-                "ruhiger und schärfer."
+                "ruhiger und sch\u00e4rfer."
             ]
         },
         "it": {
             "name": "MEDITITE",
-            "category": "Pokémon Meditazione",
+            "category": "Pok\u00e9mon Meditazione",
             "entry_text": [
                 "Mangia solo una bacca al giorno.\n",
                 "Resistendo alla fame, il suo spirito\n",
@@ -164,20 +156,20 @@
         },
         "es": {
             "name": "MEDITITE",
-            "category": "Pokémon Meditador",
+            "category": "Pok\u00e9mon Meditador",
             "entry_text": [
-                "Solo come una baya al día. El\n",
-                "ayuno fortalece su espíritu y\n",
-                "su capacidad de concentración."
+                "Solo come una baya al d\u00eda. El\n",
+                "ayuno fortalece su esp\u00edritu y\n",
+                "su capacidad de concentraci\u00f3n."
             ]
         },
         "jp": {
-            "name": "アサナン",
-            "category": "めいそうポケモン",
+            "name": "\u30a2\u30b5\u30ca\u30f3",
+            "category": "\u3081\u3044\u305d\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "１にち　１こだけ　きのみを　たべる。\n",
-                "くうふくに　たえることで\n",
-                "こころが　とぎすまされていく。"
+                "\uff11\u306b\u3061\u3000\uff11\u3053\u3060\u3051\u3000\u304d\u306e\u307f\u3092\u3000\u305f\u3079\u308b\u3002\n",
+                "\u304f\u3046\u3075\u304f\u306b\u3000\u305f\u3048\u308b\u3053\u3068\u3067\n",
+                "\u3053\u3053\u308d\u304c\u3000\u3068\u304e\u3059\u307e\u3055\u308c\u3066\u3044\u304f\u3002"
             ]
         }
     },

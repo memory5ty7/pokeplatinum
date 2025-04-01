@@ -7,7 +7,10 @@
         "special_attack": 130,
         "special_defense": 95
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 197,
     "ev_yields": {
@@ -26,76 +29,24 @@
     "hatch_cycles": 35,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SYNCHRONIZE", "ABILITY_SYNCHRONIZE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_MAGIC_GUARD",
+        "ABILITY_NONE",
+        "ABILITY_SYNCHRONIZE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_CONFUSION" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_SWIFT" ],
-            [ 36, "MOVE_PSYBEAM" ],
-            [ 43, "MOVE_FUTURE_SIGHT" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_PSYCH_UP" ],
-            [ 64, "MOVE_PSYCHIC" ],
-            [ 71, "MOVE_MORNING_SUN" ],
-            [ 78, "MOVE_POWER_SWAP" ]
-        ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -114,7 +65,7 @@
         "pokemon_pos_m": 12,
         "en": {
             "name": "ESPEON",
-            "category": "Sun Pokémon",
+            "category": "Sun Pok\u00e9mon",
             "entry_text": [
                 "Its fur is so sensitive, it can\n",
                 "sense minute shifts in the air\n",
@@ -123,10 +74,10 @@
         },
         "fr": {
             "name": "MENTALI",
-            "category": "Pokémon Soleil",
+            "category": "Pok\u00e9mon Soleil",
             "entry_text": [
-                "Son pelage a l’aspect et la texture\n",
-                "du velours. L’orbe à son front luit\n",
+                "Son pelage a l\u2019aspect et la texture\n",
+                "du velours. L\u2019orbe \u00e0 son front luit\n",
                 "quand il utilise ses pouvoirs psy."
             ]
         },
@@ -135,35 +86,35 @@
             "category": "Sonne",
             "entry_text": [
                 "Sein Fell ist wie Samt. Setzt es\n",
-                "Psycho-Kräfte ein, leuchtet die\n",
+                "Psycho-Kr\u00e4fte ein, leuchtet die\n",
                 "Kugel in seiner Stirn."
             ]
         },
         "it": {
             "name": "ESPEON",
-            "category": "Pokémon Sole",
+            "category": "Pok\u00e9mon Sole",
             "entry_text": [
-                "Il suo pelo è simile al velluto.\n",
+                "Il suo pelo \u00e8 simile al velluto.\n",
                 "Quando usa i suoi poteri psichici,\n",
                 "la sfera che ha sulla fronte brilla."
             ]
         },
         "es": {
             "name": "ESPEON",
-            "category": "Pokémon Sol",
+            "category": "Pok\u00e9mon Sol",
             "entry_text": [
                 "Su pelaje es como el terciopelo.\n",
                 "La esfera de su frente brilla\n",
-                "cuando usa sus poderes psíquicos."
+                "cuando usa sus poderes ps\u00edquicos."
             ]
         },
         "jp": {
-            "name": "エ－フィ",
-            "category": "たいようポケモン",
+            "name": "\u30a8\uff0d\u30d5\u30a3",
+            "category": "\u305f\u3044\u3088\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たいもうは　ビロ－ドの　つやと\n",
-                "はだざわり。サイコパワ－を　つかう\n",
-                "とき　ひたいの　たまが　かがやく。"
+                "\u305f\u3044\u3082\u3046\u306f\u3000\u30d3\u30ed\uff0d\u30c9\u306e\u3000\u3064\u3084\u3068\n",
+                "\u306f\u3060\u3056\u308f\u308a\u3002\u30b5\u30a4\u30b3\u30d1\u30ef\uff0d\u3092\u3000\u3064\u304b\u3046\n",
+                "\u3068\u304d\u3000\u3072\u305f\u3044\u306e\u3000\u305f\u307e\u304c\u3000\u304b\u304c\u3084\u304f\u3002"
             ]
         }
     },

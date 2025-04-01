@@ -7,7 +7,10 @@
         "special_attack": 75,
         "special_defense": 60
     },
-    "types": [ "TYPE_DARK", "TYPE_DARK" ],
+    "types": [
+        "TYPE_DARK",
+        "TYPE_DARK"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 174,
     "ev_yields": {
@@ -26,105 +29,24 @@
     "hatch_cycles": 25,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_SUPER_LUCK" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SUPER_LUCK",
+        "ABILITY_SHARPNESS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": true,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FEINT" ],
-            [ 4, "MOVE_LEER" ],
-            [ 9, "MOVE_TAUNT" ],
-            [ 12, "MOVE_QUICK_ATTACK" ],
-            [ 17, "MOVE_RAZOR_WIND" ],
-            [ 20, "MOVE_PURSUIT" ],
-            [ 25, "MOVE_SWORDS_DANCE" ],
-            [ 28, "MOVE_BITE" ],
-            [ 33, "MOVE_DOUBLE_TEAM" ],
-            [ 36, "MOVE_SLASH" ],
-            [ 41, "MOVE_FUTURE_SIGHT" ],
-            [ 44, "MOVE_SUCKER_PUNCH" ],
-            [ 49, "MOVE_DETECT" ],
-            [ 52, "MOVE_NIGHT_SLASH" ],
-            [ 57, "MOVE_ME_FIRST" ],
-            [ 60, "MOVE_PSYCHO_CUT" ],
-            [ 65, "MOVE_PERISH_SONG" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM54",
-            "TM57",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM73",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_BOUNCE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -143,7 +65,7 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "ABSOL",
-            "category": "Disaster Pokémon",
+            "category": "Disaster Pok\u00e9mon",
             "entry_text": [
                 "Rumored to sense disasters with its\n",
                 "horn, it became a target. It fled\n",
@@ -152,34 +74,34 @@
         },
         "fr": {
             "name": "ABSOL",
-            "category": "Pokémon Désastre",
+            "category": "Pok\u00e9mon D\u00e9sastre",
             "entry_text": [
                 "Il pressent les catastrophes et\n",
-                "n’apparaît aux gens que pour les\n",
-                "prévenir d’un danger imminent."
+                "n\u2019appara\u00eet aux gens que pour les\n",
+                "pr\u00e9venir d\u2019un danger imminent."
             ]
         },
         "de": {
             "name": "ABSOL",
             "category": "Desaster",
             "entry_text": [
-                "Es spürt drohende Katastrophen\n",
+                "Es sp\u00fcrt drohende Katastrophen\n",
                 "und erscheint nur dann, wenn es\n",
                 "andere vor der Gefahr warnen will."
             ]
         },
         "it": {
             "name": "ABSOL",
-            "category": "Pokémon Catastrofe",
+            "category": "Pok\u00e9mon Catastrofe",
             "entry_text": [
-                "Percepisce l’arrivo di disastri na-\n",
+                "Percepisce l\u2019arrivo di disastri na-\n",
                 "turali e appare alla gente solo per\n",
                 "avvisarla del pericolo imminente."
             ]
         },
         "es": {
             "name": "ABSOL",
-            "category": "Pokémon Catástrofe",
+            "category": "Pok\u00e9mon Cat\u00e1strofe",
             "entry_text": [
                 "Presiente desastres inminentes\n",
                 "y se aparece a la gente para\n",
@@ -187,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "アブソル",
-            "category": "わざわいポケモン",
+            "name": "\u30a2\u30d6\u30bd\u30eb",
+            "category": "\u308f\u3056\u308f\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "さいがいの　よかんを　かんじとる。\n",
-                "きけんを　しらせる　ときだけ\n",
-                "ひとまえに　あらわれるという。"
+                "\u3055\u3044\u304c\u3044\u306e\u3000\u3088\u304b\u3093\u3092\u3000\u304b\u3093\u3058\u3068\u308b\u3002\n",
+                "\u304d\u3051\u3093\u3092\u3000\u3057\u3089\u305b\u308b\u3000\u3068\u304d\u3060\u3051\n",
+                "\u3072\u3068\u307e\u3048\u306b\u3000\u3042\u3089\u308f\u308c\u308b\u3068\u3044\u3046\u3002"
             ]
         }
     },

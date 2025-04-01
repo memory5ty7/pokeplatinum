@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 30
     },
-    "types": [ "TYPE_WATER", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 64,
     "ev_yields": {
@@ -26,70 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_GALE_WINGS",
+        "ABILITY_DRIZZLE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_SUPERSONIC" ],
-            [ 11, "MOVE_WING_ATTACK" ],
-            [ 16, "MOVE_MIST" ],
-            [ 19, "MOVE_WATER_PULSE" ],
-            [ 24, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_ROOST" ],
-            [ 34, "MOVE_PURSUIT" ],
-            [ 37, "MOVE_AGILITY" ],
-            [ 42, "MOVE_AERIAL_ACE" ],
-            [ 47, "MOVE_AIR_SLASH" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                15,
+                "MOVE_WING_ATTACK"
+            ],
+            [
+                20,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                25,
+                "MOVE_PROTECT"
+            ],
+            [
+                30,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                35,
+                "MOVE_DEFOG"
+            ],
+            [
+                40,
+                "MOVE_ROOST"
+            ],
+            [
+                45,
+                "MOVE_HURRICANE"
+            ],
+            [
+                48,
+                "MOVE_U_TURN"
+            ],
+            [
+                50,
+                "MOVE_TAILWIND"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM55",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +116,7 @@
         "pokemon_pos_m": 65534,
         "en": {
             "name": "WINGULL",
-            "category": "Seagull Pokémon",
+            "category": "Seagull Pok\u00e9mon",
             "entry_text": [
                 "It soars high in the sky, riding on\n",
                 "updrafts like a glider. It carries\n",
@@ -125,25 +125,25 @@
         },
         "fr": {
             "name": "GOELISE",
-            "category": "Pokémon Mouette",
+            "category": "Pok\u00e9mon Mouette",
             "entry_text": [
-                "Il niche sur les falaises escarpées\n",
-                "face à la mer. Il vole en altitude\n",
-                "grâce aux courants ascendants."
+                "Il niche sur les falaises escarp\u00e9es\n",
+                "face \u00e0 la mer. Il vole en altitude\n",
+                "gr\u00e2ce aux courants ascendants."
             ]
         },
         "de": {
             "name": "WINGULL",
-            "category": "Seemöwe",
+            "category": "Seem\u00f6we",
             "entry_text": [
                 "Es baut sein Nest auf steilen\n",
                 "Klippen. Es nutzt die Aufwinde, um\n",
-                "in größerer Höhe fliegen zu können."
+                "in gr\u00f6\u00dferer H\u00f6he fliegen zu k\u00f6nnen."
             ]
         },
         "it": {
             "name": "WINGULL",
-            "category": "Pokémon Gabbiano",
+            "category": "Pok\u00e9mon Gabbiano",
             "entry_text": [
                 "Nidifica su scogliere a picco sul\n",
                 "mare. Si fa trasportare ad alta\n",
@@ -152,7 +152,7 @@
         },
         "es": {
             "name": "WINGULL",
-            "category": "Pokémon Gaviota",
+            "category": "Pok\u00e9mon Gaviota",
             "entry_text": [
                 "Anida en acantilados y alcanza\n",
                 "gran altura aprovechando las\n",
@@ -160,12 +160,12 @@
             ]
         },
         "jp": {
-            "name": "キャモメ",
-            "category": "うみねこポケモン",
+            "name": "\u30ad\u30e3\u30e2\u30e1",
+            "category": "\u3046\u307f\u306d\u3053\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "うみべの　だんがいぜっぺきに\n",
-                "すを　つくる。じょうしょうきりゅうを\n",
-                "りようして　おおぞらに　まいあがる。"
+                "\u3046\u307f\u3079\u306e\u3000\u3060\u3093\u304c\u3044\u305c\u3063\u307a\u304d\u306b\n",
+                "\u3059\u3092\u3000\u3064\u304f\u308b\u3002\u3058\u3087\u3046\u3057\u3087\u3046\u304d\u308a\u3085\u3046\u3092\n",
+                "\u308a\u3088\u3046\u3057\u3066\u3000\u304a\u304a\u305e\u3089\u306b\u3000\u307e\u3044\u3042\u304c\u308b\u3002"
             ]
         }
     },

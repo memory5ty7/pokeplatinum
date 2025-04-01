@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 40
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 82,
     "ev_yields": {
@@ -26,72 +29,22 @@
     "hatch_cycles": 10,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_STATIC",
+        "ABILITY_NONE",
+        "ABILITY_LIGHTNING_ROD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_TAIL_WHIP" ],
-            [ 10, "MOVE_THUNDER_WAVE" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 18, "MOVE_DOUBLE_TEAM" ],
-            [ 21, "MOVE_SLAM" ],
-            [ 26, "MOVE_THUNDERBOLT" ],
-            [ 29, "MOVE_FEINT" ],
-            [ 34, "MOVE_AGILITY" ],
-            [ 37, "MOVE_DISCHARGE" ],
-            [ 42, "MOVE_LIGHT_SCREEN" ],
-            [ 45, "MOVE_THUNDER" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -118,7 +71,7 @@
         "pokemon_pos_m": 27,
         "en": {
             "name": "PIKACHU",
-            "category": "Mouse Pokémon",
+            "category": "Mouse Pok\u00e9mon",
             "entry_text": [
                 "It occasionally uses an electric\n",
                 "shock to recharge a fellow PIKACHU\n",
@@ -127,10 +80,10 @@
         },
         "fr": {
             "name": "PIKACHU",
-            "category": "Pokémon Souris",
+            "category": "Pok\u00e9mon Souris",
             "entry_text": [
-                "Il vit en forêt avec ses pairs.\n",
-                "Il accumule l’électricité dans\n",
+                "Il vit en for\u00eat avec ses pairs.\n",
+                "Il accumule l\u2019\u00e9lectricit\u00e9 dans\n",
                 "les poches de ses joues."
             ]
         },
@@ -139,22 +92,22 @@
             "category": "Maus",
             "entry_text": [
                 "Es lebt zusammen mit anderen\n",
-                "in Wäldern. In seinen Backen-\n",
-                "taschen speichert es Elektrizität."
+                "in W\u00e4ldern. In seinen Backen-\n",
+                "taschen speichert es Elektrizit\u00e4t."
             ]
         },
         "it": {
             "name": "PIKACHU",
-            "category": "Pokémon Topo",
+            "category": "Pok\u00e9mon Topo",
             "entry_text": [
                 "Vive nelle foreste insieme agli\n",
-                "altri. Immagazzina elettricità\n",
+                "altri. Immagazzina elettricit\u00e0\n",
                 "nelle sacche sulle guance."
             ]
         },
         "es": {
             "name": "PIKACHU",
-            "category": "Pokémon Ratón",
+            "category": "Pok\u00e9mon Rat\u00f3n",
             "entry_text": [
                 "Vive en grupo en los bosques.\n",
                 "Almacena electricidad en las\n",
@@ -162,12 +115,12 @@
             ]
         },
         "jp": {
-            "name": "ピカチュウ",
-            "category": "ねずみポケモン",
+            "name": "\u30d4\u30ab\u30c1\u30e5\u30a6",
+            "category": "\u306d\u305a\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "もりの　なかで　なかまと　くらす。\n",
-                "ほっぺたの　りょうがわにある\n",
-                "でんきぶくろに　でんきを　ためる。"
+                "\u3082\u308a\u306e\u3000\u306a\u304b\u3067\u3000\u306a\u304b\u307e\u3068\u3000\u304f\u3089\u3059\u3002\n",
+                "\u307b\u3063\u307a\u305f\u306e\u3000\u308a\u3087\u3046\u304c\u308f\u306b\u3042\u308b\n",
+                "\u3067\u3093\u304d\u3076\u304f\u308d\u306b\u3000\u3067\u3093\u304d\u3092\u3000\u305f\u3081\u308b\u3002"
             ]
         }
     },

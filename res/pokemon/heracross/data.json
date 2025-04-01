@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 95
     },
-    "types": [ "TYPE_BUG", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 200,
     "ev_yields": {
@@ -26,77 +29,73 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_GUTS" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_SWARM",
+        "ABILITY_SKILL_LINK"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_NIGHT_SLASH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_HORN_ATTACK" ],
-            [ 1, "MOVE_ENDURE" ],
-            [ 7, "MOVE_FURY_ATTACK" ],
-            [ 13, "MOVE_AERIAL_ACE" ],
-            [ 19, "MOVE_BRICK_BREAK" ],
-            [ 25, "MOVE_COUNTER" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_CLOSE_COMBAT" ],
-            [ 43, "MOVE_REVERSAL" ],
-            [ 49, "MOVE_FEINT" ],
-            [ 55, "MOVE_MEGAHORN" ]
+            [
+                1,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                7,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                13,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                20,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                25,
+                "MOVE_ARM_THRUST"
+            ],
+            [
+                25,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                30,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                35,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                40,
+                "MOVE_REVENGE"
+            ],
+            [
+                44,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                47,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                50,
+                "MOVE_REVERSAL"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM65",
-            "TM68",
-            "TM71",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -115,7 +114,7 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "HERACROSS",
-            "category": "Single Horn Pokémon",
+            "category": "Single Horn Pok\u00e9mon",
             "entry_text": [
                 "It loves sweet honey. To keep all\n",
                 "the honey to itself, it hurls rivals\n",
@@ -124,11 +123,11 @@
         },
         "fr": {
             "name": "SCARHINO",
-            "category": "Pokémon Unicorne",
+            "category": "Pok\u00e9mon Unicorne",
             "entry_text": [
-                "Il arpente la forêt en quête de\n",
-                "sève, son mets favori. Il est assez\n",
-                "fort pour projeter l’ennemi."
+                "Il arpente la for\u00eat en qu\u00eate de\n",
+                "s\u00e8ve, son mets favori. Il est assez\n",
+                "fort pour projeter l\u2019ennemi."
             ]
         },
         "de": {
@@ -136,35 +135,35 @@
             "category": "Einzelhorn",
             "entry_text": [
                 "Auf der Suche nach Baumsaft durch-\n",
-                "streift es die Wälder. Es ist stark\n",
+                "streift es die W\u00e4lder. Es ist stark\n",
                 "genug, um Gegner wegzuschleudern."
             ]
         },
         "it": {
             "name": "HERACROSS",
-            "category": "Pokémon Monocorno",
+            "category": "Pok\u00e9mon Monocorno",
             "entry_text": [
                 "Si aggira nelle foreste in cerca di\n",
-                "linfa, di cui è ghiotto. È tanto\n",
+                "linfa, di cui \u00e8 ghiotto. \u00c8 tanto\n",
                 "forte da scagliare lontano i nemici."
             ]
         },
         "es": {
             "name": "HERACROSS",
-            "category": "Pokémon Unicornio",
+            "category": "Pok\u00e9mon Unicornio",
             "entry_text": [
                 "Forman grupos en los bosques para\n",
-                "buscar savia de árboles, su comida\n",
+                "buscar savia de \u00e1rboles, su comida\n",
                 "favorita. Puede voltear a su presa."
             ]
         },
         "jp": {
-            "name": "ヘラクロス",
-            "category": "１ぽんヅノポケモン",
+            "name": "\u30d8\u30e9\u30af\u30ed\u30b9",
+            "category": "\uff11\u307d\u3093\u30c5\u30ce\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "こうぶつの　じゅえきを　もとめて\n",
-                "もりに　あつまる。たくましい　ツノで\n",
-                "あいてを　ぶんなげる　ちからもち。"
+                "\u3053\u3046\u3076\u3064\u306e\u3000\u3058\u3085\u3048\u304d\u3092\u3000\u3082\u3068\u3081\u3066\n",
+                "\u3082\u308a\u306b\u3000\u3042\u3064\u307e\u308b\u3002\u305f\u304f\u307e\u3057\u3044\u3000\u30c4\u30ce\u3067\n",
+                "\u3042\u3044\u3066\u3092\u3000\u3076\u3093\u306a\u3052\u308b\u3000\u3061\u304b\u3089\u3082\u3061\u3002"
             ]
         }
     },

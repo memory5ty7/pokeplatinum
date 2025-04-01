@@ -7,7 +7,10 @@
         "special_attack": 20,
         "special_defense": 20
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 53,
     "ev_yields": {
@@ -26,19 +29,22 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_TELEPATHY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHIELD_DUST",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_STRING_SHOT" ],
-            [ 15, "MOVE_BUG_BITE" ]
-        ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_SNORE" ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -65,7 +71,7 @@
         "pokemon_pos_m": 28,
         "en": {
             "name": "CATERPIE",
-            "category": "Worm Pokémon",
+            "category": "Worm Pok\u00e9mon",
             "entry_text": [
                 "It releases a stench from its red\n",
                 "antenna to repel enemies. It\n",
@@ -74,11 +80,11 @@
         },
         "fr": {
             "name": "CHENIPAN",
-            "category": "Pokémon Ver",
+            "category": "Pok\u00e9mon Ver",
             "entry_text": [
-                "Ses antennes rouges libèrent une\n",
-                "puanteur qui repousse l’ennemi. Il\n",
-                "grandit par mues régulières."
+                "Ses antennes rouges lib\u00e8rent une\n",
+                "puanteur qui repousse l\u2019ennemi. Il\n",
+                "grandit par mues r\u00e9guli\u00e8res."
             ]
         },
         "de": {
@@ -87,34 +93,34 @@
             "entry_text": [
                 "Seine roten Antennen sondern einen\n",
                 "Gestank ab, der Feinde verjagt. Es\n",
-                "wächst, indem es sich häutet."
+                "w\u00e4chst, indem es sich h\u00e4utet."
             ]
         },
         "it": {
             "name": "CATERPIE",
-            "category": "Pokémon Baco",
+            "category": "Pok\u00e9mon Baco",
             "entry_text": [
                 "Dalle antenne rosse emana un puzzo\n",
                 "che respinge il nemico. Cresce\n",
-                "cambiando più volte la pelle."
+                "cambiando pi\u00f9 volte la pelle."
             ]
         },
         "es": {
             "name": "CATERPIE",
-            "category": "Pokémon Gusano",
+            "category": "Pok\u00e9mon Gusano",
             "entry_text": [
                 "Su antena roja desprende un gran\n",
                 "hedor para repeler a los enemigos.\n",
-                "Crece mudándose repetidamente."
+                "Crece mud\u00e1ndose repetidamente."
             ]
         },
         "jp": {
-            "name": "キャタピ－",
-            "category": "いもむしポケモン",
+            "name": "\u30ad\u30e3\u30bf\u30d4\uff0d",
+            "category": "\u3044\u3082\u3080\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あかい　しょっかくから　においを\n",
-                "だして　てきを　おいはらう。\n",
-                "だっぴを　くりかえし　おおきくなる。"
+                "\u3042\u304b\u3044\u3000\u3057\u3087\u3063\u304b\u304f\u304b\u3089\u3000\u306b\u304a\u3044\u3092\n",
+                "\u3060\u3057\u3066\u3000\u3066\u304d\u3092\u3000\u304a\u3044\u306f\u3089\u3046\u3002\n",
+                "\u3060\u3063\u3074\u3092\u3000\u304f\u308a\u304b\u3048\u3057\u3000\u304a\u304a\u304d\u304f\u306a\u308b\u3002"
             ]
         }
     },

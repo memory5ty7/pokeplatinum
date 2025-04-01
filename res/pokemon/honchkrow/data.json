@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 52
     },
-    "types": [ "TYPE_DARK", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_DARK",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 187,
     "ev_yields": {
@@ -26,77 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_INSOMNIA", "ABILITY_SUPER_LUCK", "ABILITY_MOXIE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_IRON_FIST",
+        "ABILITY_SCRAPPY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_PURSUIT" ],
-            [ 1, "MOVE_HAZE" ],
-            [ 1, "MOVE_WING_ATTACK" ],
-            [ 25, "MOVE_SWAGGER" ],
-            [ 35, "MOVE_NASTY_PLOT" ],
-            [ 45, "MOVE_NIGHT_SLASH" ],
-            [ 55, "MOVE_DARK_PULSE" ]
+            [
+                1,
+                "MOVE_PLUCK"
+            ],
+            [
+                5,
+                "MOVE_TAUNT"
+            ],
+            [
+                10,
+                "MOVE_TORMENT"
+            ],
+            [
+                14,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                16,
+                "MOVE_ROOST"
+            ],
+            [
+                20,
+                "MOVE_MIRROR_MOVE"
+            ],
+            [
+                24,
+                "MOVE_PURSUIT"
+            ],
+            [
+                30,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                36,
+                "MOVE_DRILL_PECK"
+            ],
+            [
+                42,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                46,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                50,
+                "MOVE_TAILWIND"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM49",
-            "TM51",
-            "TM58",
-            "TM63",
-            "TM66",
-            "TM68",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM88",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SUPERPOWER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SPITE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -115,34 +114,34 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "HONCHKROW",
-            "category": "Big Boss Pokémon",
+            "category": "Big Boss Pok\u00e9mon",
             "entry_text": [
                 "If one utters a deep cry, many\n",
                 "MURKROW gather quickly. For this,\n",
-                "it is called “Summoner of Night.”"
+                "it is called \u201cSummoner of Night.\u201d"
             ]
         },
         "fr": {
             "name": "CORBOSS",
-            "category": "Pokémon Big Boss",
+            "category": "Pok\u00e9mon Big Boss",
             "entry_text": [
-                "Ce Pokémon nocturne évolue en\n",
-                "grandes volées escortées par des\n",
+                "Ce Pok\u00e9mon nocturne \u00e9volue en\n",
+                "grandes vol\u00e9es escort\u00e9es par des\n",
                 "CORNEBRE."
             ]
         },
         "de": {
             "name": "KRAMSHEF",
-            "category": "Anführer",
+            "category": "Anf\u00fchrer",
             "entry_text": [
                 "Ein nachtaktives PKMN, das sich in\n",
-                "Schwärmen mit KRAMURX durch die\n",
+                "Schw\u00e4rmen mit KRAMURX durch die\n",
                 "Nacht bewegt."
             ]
         },
         "it": {
             "name": "HONCHKROW",
-            "category": "Pokémon Grancapo",
+            "category": "Pok\u00e9mon Grancapo",
             "entry_text": [
                 "Diventa attivo di notte e lo si vede\n",
                 "spesso in compagnia di numerosi\n",
@@ -151,20 +150,20 @@
         },
         "es": {
             "name": "HONCHKROW",
-            "category": "Pokémon Gran Jefe",
+            "category": "Pok\u00e9mon Gran Jefe",
             "entry_text": [
-                "Está activo por la noche y\n",
+                "Est\u00e1 activo por la noche y\n",
                 "pulula arrastrando a\n",
                 "numerosos MURKROW."
             ]
         },
         "jp": {
-            "name": "ドンカラス",
-            "category": "おおボスポケモン",
+            "name": "\u30c9\u30f3\u30ab\u30e9\u30b9",
+            "category": "\u304a\u304a\u30dc\u30b9\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "よるになると　かつどうを　はじめる。\n",
-                "たくさんの　ヤミカラスを　ひきつれ\n",
-                "むれを　つくることで　しられる。"
+                "\u3088\u308b\u306b\u306a\u308b\u3068\u3000\u304b\u3064\u3069\u3046\u3092\u3000\u306f\u3058\u3081\u308b\u3002\n",
+                "\u305f\u304f\u3055\u3093\u306e\u3000\u30e4\u30df\u30ab\u30e9\u30b9\u3092\u3000\u3072\u304d\u3064\u308c\n",
+                "\u3080\u308c\u3092\u3000\u3064\u304f\u308b\u3053\u3068\u3067\u3000\u3057\u3089\u308c\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 50
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 161,
     "ev_yields": {
@@ -26,69 +29,69 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TINTED_LENS",
+        "ABILITY_SWARM",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 10, "MOVE_ABSORB" ],
-            [ 13, "MOVE_GUST" ],
-            [ 17, "MOVE_STUN_SPORE" ],
-            [ 20, "MOVE_MORNING_SUN" ],
-            [ 24, "MOVE_MEGA_DRAIN" ],
-            [ 27, "MOVE_WHIRLWIND" ],
-            [ 31, "MOVE_ATTRACT" ],
-            [ 34, "MOVE_SILVER_WIND" ],
-            [ 38, "MOVE_GIGA_DRAIN" ],
-            [ 41, "MOVE_BUG_BUZZ" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                10,
+                "MOVE_ABSORB"
+            ],
+            [
+                13,
+                "MOVE_GUST"
+            ],
+            [
+                17,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                20,
+                "MOVE_MORNING_SUN"
+            ],
+            [
+                24,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                27,
+                "MOVE_U_TURN"
+            ],
+            [
+                32,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                36,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                40,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                45,
+                "MOVE_ACROBATICS"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM53",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -107,7 +110,7 @@
         "pokemon_pos_m": 65526,
         "en": {
             "name": "BEAUTIFLY",
-            "category": "Butterfly Pokémon",
+            "category": "Butterfly Pok\u00e9mon",
             "entry_text": [
                 "Despite its looks, it is aggressive.\n",
                 "It jabs with its long, thin mouth if\n",
@@ -116,11 +119,11 @@
         },
         "fr": {
             "name": "CHARMILLON",
-            "category": "Pokémon Papillon",
+            "category": "Pok\u00e9mon Papillon",
             "entry_text": [
-                "Il est très agressif. Il pique sa \n",
+                "Il est tr\u00e8s agressif. Il pique sa \n",
                 "proie avec son long museau \n",
-                "étroit et absorbe sa vitalité."
+                "\u00e9troit et absorbe sa vitalit\u00e9."
             ]
         },
         "de": {
@@ -128,35 +131,35 @@
             "category": "Falter",
             "entry_text": [
                 "Es besitzt ein aggressives Wesen.\n",
-                "Es sticht seinen Rüssel in seine\n",
+                "Es sticht seinen R\u00fcssel in seine\n",
                 "Beute und saugt sie aus."
             ]
         },
         "it": {
             "name": "BEAUTIFLY",
-            "category": "Pokémon Farfalla",
+            "category": "Pok\u00e9mon Farfalla",
             "entry_text": [
-                "Ha un’indole aggressiva. Conficca\n",
+                "Ha un\u2019indole aggressiva. Conficca\n",
                 "la sua bocca lunga e sottile nelle\n",
                 "prede e ne succhia i fluidi."
             ]
         },
         "es": {
             "name": "BEAUTIFLY",
-            "category": "Pokémon Mariposa",
+            "category": "Pok\u00e9mon Mariposa",
             "entry_text": [
-                "Es un Pokémon agresivo. Con su\n",
+                "Es un Pok\u00e9mon agresivo. Con su\n",
                 "boca larga y afilada ataca a sus\n",
                 "rivales para drenar sus fluidos."
             ]
         },
         "jp": {
-            "name": "アゲハント",
-            "category": "ちょうちょポケモン",
+            "name": "\u30a2\u30b2\u30cf\u30f3\u30c8",
+            "category": "\u3061\u3087\u3046\u3061\u3087\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ほそながい　くちを　つきさして\n",
-                "あいての　たいえきを　すいとる。\n",
-                "こうげきてきな　せいかく。"
+                "\u307b\u305d\u306a\u304c\u3044\u3000\u304f\u3061\u3092\u3000\u3064\u304d\u3055\u3057\u3066\n",
+                "\u3042\u3044\u3066\u306e\u3000\u305f\u3044\u3048\u304d\u3092\u3000\u3059\u3044\u3068\u308b\u3002\n",
+                "\u3053\u3046\u3052\u304d\u3066\u304d\u306a\u3000\u305b\u3044\u304b\u304f\u3002"
             ]
         }
     },

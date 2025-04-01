@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 50
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 155,
     "ev_yields": {
@@ -26,80 +29,24 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SPEED_BOOST", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SPEED_BOOST",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_BUG_BITE" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_LEECH_LIFE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 5, "MOVE_LEECH_LIFE" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 14, "MOVE_FURY_SWIPES" ],
-            [ 19, "MOVE_MIND_READER" ],
-            [ 20, "MOVE_DOUBLE_TEAM" ],
-            [ 20, "MOVE_FURY_CUTTER" ],
-            [ 20, "MOVE_SCREECH" ],
-            [ 25, "MOVE_SWORDS_DANCE" ],
-            [ 31, "MOVE_SLASH" ],
-            [ 38, "MOVE_AGILITY" ],
-            [ 45, "MOVE_BATON_PASS" ],
-            [ 52, "MOVE_X_SCISSOR" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM54",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -118,7 +65,7 @@
         "pokemon_pos_m": 65534,
         "en": {
             "name": "NINJASK",
-            "category": "Ninja Pokémon",
+            "category": "Ninja Pok\u00e9mon",
             "entry_text": [
                 "Because it moves so quickly, it\n",
                 "sometimes becomes unseeable. It\n",
@@ -127,11 +74,11 @@
         },
         "fr": {
             "name": "NINJASK",
-            "category": "Pokémon Ninja",
+            "category": "Pok\u00e9mon Ninja",
             "entry_text": [
-                "Il bouge si vite que l’œil a parfois\n",
-                "du mal à le suivre. Ils se regrou-\n",
-                "pent près de la sève des arbres."
+                "Il bouge si vite que l\u2019\u0153il a parfois\n",
+                "du mal \u00e0 le suivre. Ils se regrou-\n",
+                "pent pr\u00e8s de la s\u00e8ve des arbres."
             ]
         },
         "de": {
@@ -145,29 +92,29 @@
         },
         "it": {
             "name": "NINJASK",
-            "category": "Pokémon Ninja",
+            "category": "Pok\u00e9mon Ninja",
             "entry_text": [
-                "Si muove così in fretta da risultare\n",
+                "Si muove cos\u00ec in fretta da risultare\n",
                 "quasi invisibile. Lo si vede in gruppo\n",
                 "attorno agli alberi ricchi di linfa."
             ]
         },
         "es": {
             "name": "NINJASK",
-            "category": "Pokémon Ninja",
+            "category": "Pok\u00e9mon Ninja",
             "entry_text": [
-                "Se mueve tan rápido que a veces\n",
+                "Se mueve tan r\u00e1pido que a veces\n",
                 "resulta invisible. Le atrae la savia\n",
-                "de los árboles."
+                "de los \u00e1rboles."
             ]
         },
         "jp": {
-            "name": "テッカニン",
-            "category": "しのびポケモン",
+            "name": "\u30c6\u30c3\u30ab\u30cb\u30f3",
+            "category": "\u3057\u306e\u3073\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あまりに　こうそくで　うごくため\n",
-                "すがたが　みえなくなる　ことがある。\n",
-                "じゅえきに　あつまってくる。"
+                "\u3042\u307e\u308a\u306b\u3000\u3053\u3046\u305d\u304f\u3067\u3000\u3046\u3054\u304f\u305f\u3081\n",
+                "\u3059\u304c\u305f\u304c\u3000\u307f\u3048\u306a\u304f\u306a\u308b\u3000\u3053\u3068\u304c\u3042\u308b\u3002\n",
+                "\u3058\u3085\u3048\u304d\u306b\u3000\u3042\u3064\u307e\u3063\u3066\u304f\u308b\u3002"
             ]
         }
     },

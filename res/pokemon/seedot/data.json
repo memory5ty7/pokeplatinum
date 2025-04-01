@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 74,
     "ev_yields": {
@@ -26,58 +29,35 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_PRANKSTER",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BIDE" ],
-            [ 3, "MOVE_HARDEN" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 13, "MOVE_NATURE_POWER" ],
-            [ 21, "MOVE_SYNTHESIS" ],
-            [ 31, "MOVE_SUNNY_DAY" ],
-            [ 43, "MOVE_EXPLOSION" ]
+            [
+                1,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                10,
+                "MOVE_NATURE_POWER"
+            ],
+            [
+                20,
+                "MOVE_SYNTHESIS"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM64",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -104,20 +84,20 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "SEEDOT",
-            "category": "Acorn Pokémon",
+            "category": "Acorn Pok\u00e9mon",
             "entry_text": [
                 "When it dangles from a tree\n",
                 "branch, it looks just like an acorn.\n",
-                "It enjoys scaring other Pokémon."
+                "It enjoys scaring other Pok\u00e9mon."
             ]
         },
         "fr": {
             "name": "GRAINIPIOT",
-            "category": "Pokémon Gland",
+            "category": "Pok\u00e9mon Gland",
             "entry_text": [
-                "Il ressemble à un gland pendu\n",
-                "à une branche. Il adore effrayer\n",
-                "les autres Pokémon."
+                "Il ressemble \u00e0 un gland pendu\n",
+                "\u00e0 une branche. Il adore effrayer\n",
+                "les autres Pok\u00e9mon."
             ]
         },
         "de": {
@@ -125,35 +105,35 @@
             "category": "Eichelnuss",
             "entry_text": [
                 "Es sieht aus wie eine Eichel, die am\n",
-                "Baum hängt. Es liebt es, andere\n",
+                "Baum h\u00e4ngt. Es liebt es, andere\n",
                 "PKMN zu erschrecken."
             ]
         },
         "it": {
             "name": "SEEDOT",
-            "category": "Pokémon Ghianda",
+            "category": "Pok\u00e9mon Ghianda",
             "entry_text": [
                 "Quando si attacca a un ramo,\n",
                 "sembra una vera ghianda. Si diverte\n",
-                "a spaventare gli altri Pokémon."
+                "a spaventare gli altri Pok\u00e9mon."
             ]
         },
         "es": {
             "name": "SEEDOT",
-            "category": "Pokémon Bellota",
+            "category": "Pok\u00e9mon Bellota",
             "entry_text": [
                 "Cuando cuelga de las ramas\n",
                 "parece una bellota. Le encanta\n",
-                "asustar a otros Pokémon."
+                "asustar a otros Pok\u00e9mon."
             ]
         },
         "jp": {
-            "name": "タネボ－",
-            "category": "どんぐりポケモン",
+            "name": "\u30bf\u30cd\u30dc\uff0d",
+            "category": "\u3069\u3093\u3050\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "えだに　ぶらさがっていると\n",
-                "きのみに　そっくり。ついばもうとした\n",
-                "ポケモンを　おどろかせて　よろこぶ。"
+                "\u3048\u3060\u306b\u3000\u3076\u3089\u3055\u304c\u3063\u3066\u3044\u308b\u3068\n",
+                "\u304d\u306e\u307f\u306b\u3000\u305d\u3063\u304f\u308a\u3002\u3064\u3044\u3070\u3082\u3046\u3068\u3057\u305f\n",
+                "\u30dd\u30b1\u30e2\u30f3\u3092\u3000\u304a\u3069\u308d\u304b\u305b\u3066\u3000\u3088\u308d\u3053\u3076\u3002"
             ]
         }
     },

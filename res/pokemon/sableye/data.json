@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 65
     },
-    "types": [ "TYPE_DARK", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_DARK",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 98,
     "ev_yields": {
@@ -26,96 +29,65 @@
     "hatch_cycles": 25,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_STALL" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_PRANKSTER",
+        "ABILITY_MAGIC_BOUNCE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 4, "MOVE_FORESIGHT" ],
-            [ 8, "MOVE_NIGHT_SHADE" ],
-            [ 11, "MOVE_ASTONISH" ],
-            [ 15, "MOVE_FURY_SWIPES" ],
-            [ 18, "MOVE_FAKE_OUT" ],
-            [ 22, "MOVE_DETECT" ],
-            [ 25, "MOVE_SHADOW_SNEAK" ],
-            [ 29, "MOVE_KNOCK_OFF" ],
-            [ 32, "MOVE_FAINT_ATTACK" ],
-            [ 36, "MOVE_PUNISHMENT" ],
-            [ 39, "MOVE_SHADOW_CLAW" ],
-            [ 43, "MOVE_POWER_GEM" ],
-            [ 46, "MOVE_CONFUSE_RAY" ],
-            [ 50, "MOVE_ZEN_HEADBUTT" ],
-            [ 53, "MOVE_SHADOW_BALL" ],
-            [ 57, "MOVE_MEAN_LOOK" ]
+            [
+                1,
+                "MOVE_DETECT"
+            ],
+            [
+                9,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                13,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                20,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                25,
+                "MOVE_SHADOW_CLAW"
+            ],
+            [
+                30,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                35,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                39,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                44,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                49,
+                "MOVE_SHADOW_BALL"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM63",
-            "TM65",
-            "TM66",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -134,7 +106,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "SABLEYE",
-            "category": "Darkness Pokémon",
+            "category": "Darkness Pok\u00e9mon",
             "entry_text": [
                 "It hides in the darkness of caves.\n",
                 "Its diet of gems has transformed\n",
@@ -143,10 +115,10 @@
         },
         "fr": {
             "name": "TENEFIX",
-            "category": "Pokémon Obscurité",
+            "category": "Pok\u00e9mon Obscurit\u00e9",
             "entry_text": [
                 "A force de manger des gemmes, \n",
-                "les yeux de ce Pokémon des grottes\n",
+                "les yeux de ce Pok\u00e9mon des grottes\n",
                 "obscures sont devenus des joyaux."
             ]
         },
@@ -155,22 +127,22 @@
             "category": "Finsternis",
             "entry_text": [
                 "Es versteckt sich im Dunkeln von\n",
-                "Höhlen. Seine Augen sind\n",
+                "H\u00f6hlen. Seine Augen sind\n",
                 "Edelsteine."
             ]
         },
         "it": {
             "name": "SABLEYE",
-            "category": "Pokémon Oscurità",
+            "category": "Pok\u00e9mon Oscurit\u00e0",
             "entry_text": [
-                "Si cela nell’oscurità delle caverne.\n",
+                "Si cela nell\u2019oscurit\u00e0 delle caverne.\n",
                 "Si nutre di gemme e per questo i\n",
                 "suoi occhi sono pietre preziose."
             ]
         },
         "es": {
             "name": "SABLEYE",
-            "category": "Pokémon Oscuridad",
+            "category": "Pok\u00e9mon Oscuridad",
             "entry_text": [
                 "Se oculta en cavernas oscuras.\n",
                 "De tanto comer gemas sus ojos\n",
@@ -178,12 +150,12 @@
             ]
         },
         "jp": {
-            "name": "ヤミラミ",
-            "category": "くらやみポケモン",
+            "name": "\u30e4\u30df\u30e9\u30df",
+            "category": "\u304f\u3089\u3084\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "どうくつの　くらやみに　ひそむ。\n",
-                "ほうせきを　たべているうちに\n",
-                "めが　ほうせきに　なってしまった。"
+                "\u3069\u3046\u304f\u3064\u306e\u3000\u304f\u3089\u3084\u307f\u306b\u3000\u3072\u305d\u3080\u3002\n",
+                "\u307b\u3046\u305b\u304d\u3092\u3000\u305f\u3079\u3066\u3044\u308b\u3046\u3061\u306b\n",
+                "\u3081\u304c\u3000\u307b\u3046\u305b\u304d\u306b\u3000\u306a\u3063\u3066\u3057\u307e\u3063\u305f\u3002"
             ]
         }
     },

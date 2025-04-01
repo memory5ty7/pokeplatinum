@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 50
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 65,
     "ev_yields": {
@@ -26,60 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_BLAZE",
+        "ABILITY_MOLD_BREAKER",
+        "ABILITY_FLASH_FIRE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 4, "MOVE_SMOKE_SCREEN" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 19, "MOVE_FLAME_WHEEL" ],
-            [ 22, "MOVE_DEFENSE_CURL" ],
-            [ 28, "MOVE_SWIFT" ],
-            [ 31, "MOVE_LAVA_PLUME" ],
-            [ 37, "MOVE_FLAMETHROWER" ],
-            [ 40, "MOVE_ROLLOUT" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ],
-            [ 49, "MOVE_ERUPTION" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -106,7 +71,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "CYNDAQUIL",
-            "category": "Fire Mouse Pokémon",
+            "category": "Fire Mouse Pok\u00e9mon",
             "entry_text": [
                 "It has a timid nature. If it is\n",
                 "startled, the flames on its back\n",
@@ -115,11 +80,11 @@
         },
         "fr": {
             "name": "HERICENDRE",
-            "category": "Pokémon Souris Feu",
+            "category": "Pok\u00e9mon Souris Feu",
             "entry_text": [
-                "Ce Pokémon est un grand timide.\n",
+                "Ce Pok\u00e9mon est un grand timide.\n",
                 "Les flammes sur son dos \n",
-                "s’intensifient lorsqu’il prend peur."
+                "s\u2019intensifient lorsqu\u2019il prend peur."
             ]
         },
         "de": {
@@ -128,34 +93,34 @@
             "entry_text": [
                 "Erschrickt sich dieses scheue PKMN,\n",
                 "lodern die Flammen auf seinem\n",
-                "Rücken kräftiger."
+                "R\u00fccken kr\u00e4ftiger."
             ]
         },
         "it": {
             "name": "CYNDAQUIL",
-            "category": "Pokémon Fuocotopo",
+            "category": "Pok\u00e9mon Fuocotopo",
             "entry_text": [
-                "È riservato per natura. Se viene\n",
+                "\u00c8 riservato per natura. Se viene\n",
                 "spaventato, le fiamme sul suo\n",
                 "dorso bruciano ardentemente."
             ]
         },
         "es": {
             "name": "CYNDAQUIL",
-            "category": "Pokémon Ratónfuego",
+            "category": "Pok\u00e9mon Rat\u00f3nfuego",
             "entry_text": [
-                "Es un Pokémon muy tímido. Si\n",
+                "Es un Pok\u00e9mon muy t\u00edmido. Si\n",
                 "se asusta, las llamas de su lomo\n",
-                "arden con más fuerza."
+                "arden con m\u00e1s fuerza."
             ]
         },
         "jp": {
-            "name": "ヒノアラシ",
-            "category": "ひねずみポケモン",
+            "name": "\u30d2\u30ce\u30a2\u30e9\u30b7",
+            "category": "\u3072\u306d\u305a\u307f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "おくびょうな　せいかく。\n",
-                "おどろくと　せなかの　ほのおが\n",
-                "いちだんと　つよく　もえあがる。"
+                "\u304a\u304f\u3073\u3087\u3046\u306a\u3000\u305b\u3044\u304b\u304f\u3002\n",
+                "\u304a\u3069\u308d\u304f\u3068\u3000\u305b\u306a\u304b\u306e\u3000\u307b\u306e\u304a\u304c\n",
+                "\u3044\u3061\u3060\u3093\u3068\u3000\u3064\u3088\u304f\u3000\u3082\u3048\u3042\u304c\u308b\u3002"
             ]
         }
     },

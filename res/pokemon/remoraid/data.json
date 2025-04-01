@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 35
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 78,
     "ev_yields": {
@@ -26,70 +29,83 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_HUSTLE", "ABILITY_SNIPER" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_SNIPER",
+        "ABILITY_HUSTLE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_LOCK_ON" ],
-            [ 10, "MOVE_PSYBEAM" ],
-            [ 14, "MOVE_AURORA_BEAM" ],
-            [ 19, "MOVE_BUBBLE_BEAM" ],
-            [ 23, "MOVE_FOCUS_ENERGY" ],
-            [ 27, "MOVE_BULLET_SEED" ],
-            [ 32, "MOVE_WATER_PULSE" ],
-            [ 36, "MOVE_SIGNAL_BEAM" ],
-            [ 40, "MOVE_ICE_BEAM" ],
-            [ 45, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                4,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                9,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                16,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                20,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                24,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                28,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                32,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                36,
+                "MOVE_SCALD"
+            ],
+            [
+                40,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                40,
+                "MOVE_DRAGON_PULSE"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                50,
+                "MOVE_SOAK"
+            ],
+            [
+                55,
+                "MOVE_HYPER_BEAM"
+            ],
+            [
+                60,
+                "MOVE_GUNK_SHOT"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM55",
-            "TM57",
-            "TM58",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_GUNK_SHOT",
-            "MOVE_SEED_BOMB",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -116,7 +132,7 @@
         "pokemon_pos_m": 5,
         "en": {
             "name": "REMORAID",
-            "category": "Jet Pokémon",
+            "category": "Jet Pok\u00e9mon",
             "entry_text": [
                 "It forcefully squirts water. The\n",
                 "water jet never misses prey even\n",
@@ -125,39 +141,45 @@
         },
         "fr": {
             "name": "REMORAID",
-            "category": "Pokémon Jet",
-            "entry_text": [ "Il crache un puissant jet d’eau\n", "pour abattre les proies volantes." ]
+            "category": "Pok\u00e9mon Jet",
+            "entry_text": [
+                "Il crache un puissant jet d\u2019eau\n",
+                "pour abattre les proies volantes."
+            ]
         },
         "de": {
             "name": "REMORAID",
             "category": "Hochdruck",
             "entry_text": [
                 "Es spritzt Wasser mit Hochdruck\n",
-                "aus seinem Maul und schießt damit\n",
+                "aus seinem Maul und schie\u00dft damit\n",
                 "auf fliegende Beute."
             ]
         },
         "it": {
             "name": "REMORAID",
-            "category": "Pokémon Jet",
+            "category": "Pok\u00e9mon Jet",
             "entry_text": [
-                "Emette potenti getti d’acqua con i\n",
+                "Emette potenti getti d\u2019acqua con i\n",
                 "quali riesce ad abbattere persino\n",
                 "le prede in volo."
             ]
         },
         "es": {
             "name": "REMORAID",
-            "category": "Pokémon Reactor",
-            "entry_text": [ "Escupe potentes chorros de agua\n", "para derribar presas voladoras." ]
+            "category": "Pok\u00e9mon Reactor",
+            "entry_text": [
+                "Escupe potentes chorros de agua\n",
+                "para derribar presas voladoras."
+            ]
         },
         "jp": {
-            "name": "テッポウオ",
-            "category": "ふんしゃポケモン",
+            "name": "\u30c6\u30c3\u30dd\u30a6\u30aa",
+            "category": "\u3075\u3093\u3057\u3083\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "くちから　みずを　はっしゃして\n",
-                "そらを　とぶ　えものを　うちおとす\n",
-                "ことから　この　なまえが　ついた。"
+                "\u304f\u3061\u304b\u3089\u3000\u307f\u305a\u3092\u3000\u306f\u3063\u3057\u3083\u3057\u3066\n",
+                "\u305d\u3089\u3092\u3000\u3068\u3076\u3000\u3048\u3082\u306e\u3092\u3000\u3046\u3061\u304a\u3068\u3059\n",
+                "\u3053\u3068\u304b\u3089\u3000\u3053\u306e\u3000\u306a\u307e\u3048\u304c\u3000\u3064\u3044\u305f\u3002"
             ]
         }
     },

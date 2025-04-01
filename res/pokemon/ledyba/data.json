@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 80
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 54,
     "ev_yields": {
@@ -26,74 +29,71 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_RATTLED",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_SUPERSONIC" ],
-            [ 9, "MOVE_COMET_PUNCH" ],
-            [ 14, "MOVE_LIGHT_SCREEN" ],
-            [ 14, "MOVE_REFLECT" ],
-            [ 14, "MOVE_SAFEGUARD" ],
-            [ 17, "MOVE_MACH_PUNCH" ],
-            [ 22, "MOVE_BATON_PASS" ],
-            [ 25, "MOVE_SILVER_WIND" ],
-            [ 30, "MOVE_AGILITY" ],
-            [ 33, "MOVE_SWIFT" ],
-            [ 38, "MOVE_DOUBLE_EDGE" ],
-            [ 41, "MOVE_BUG_BUZZ" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_U_TURN"
+            ],
+            [
+                8,
+                "MOVE_DEFOG"
+            ],
+            [
+                12,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                12,
+                "MOVE_REFLECT"
+            ],
+            [
+                12,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                15,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                19,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                25,
+                "MOVE_TAILWIND"
+            ],
+            [
+                30,
+                "MOVE_ENCORE"
+            ],
+            [
+                34,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                36,
+                "MOVE_BUG_BUZZ"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM62",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -120,25 +120,25 @@
         "pokemon_pos_m": 65531,
         "en": {
             "name": "LEDYBA",
-            "category": "Five Star Pokémon",
+            "category": "Five Star Pok\u00e9mon",
             "entry_text": [
-                "It is so timid, it can’t move if it\n",
-                "isn’t with a swarm of others. It\n",
+                "It is so timid, it can\u2019t move if it\n",
+                "isn\u2019t with a swarm of others. It\n",
                 "conveys its feelings with scent."
             ]
         },
         "fr": {
             "name": "COXY",
-            "category": "Pokémon 5 Etoiles",
+            "category": "Pok\u00e9mon 5 Etoiles",
             "entry_text": [
-                "Il est si timide qu’il ne se déplace\n",
-                "qu’au milieu d’un essaim. Il exprime\n",
-                "ses émotions par l’odeur."
+                "Il est si timide qu\u2019il ne se d\u00e9place\n",
+                "qu\u2019au milieu d\u2019un essaim. Il exprime\n",
+                "ses \u00e9motions par l\u2019odeur."
             ]
         },
         "de": {
             "name": "LEDYBA",
-            "category": "Fünf-Punkt",
+            "category": "F\u00fcnf-Punkt",
             "entry_text": [
                 "Es ist so scheu, dass es sich\n",
                 "nur dann bewegt, wenn es sich\n",
@@ -147,16 +147,16 @@
         },
         "it": {
             "name": "LEDYBA",
-            "category": "Pokémon Pentastra",
+            "category": "Pok\u00e9mon Pentastra",
             "entry_text": [
-                "È tanto timido da non muoversi se\n",
-                "non è in gruppo. Trasmette le sue\n",
+                "\u00c8 tanto timido da non muoversi se\n",
+                "non \u00e8 in gruppo. Trasmette le sue\n",
                 "emozioni emanando una fragranza."
             ]
         },
         "es": {
             "name": "LEDYBA",
-            "category": "Pokémon 5estrellas",
+            "category": "Pok\u00e9mon 5estrellas",
             "entry_text": [
                 "Es tan temeroso que no se mueve\n",
                 "si no es en grupo. Comunica sus\n",
@@ -164,12 +164,12 @@
             ]
         },
         "jp": {
-            "name": "レディバ",
-            "category": "いつつぼしポケモン",
+            "name": "\u30ec\u30c7\u30a3\u30d0",
+            "category": "\u3044\u3064\u3064\u307c\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "むれを　つくらないと　ふあんで\n",
-                "うごけなくなるほど　おくびょう。\n",
-                "においで　きもちを　つたえあう。"
+                "\u3080\u308c\u3092\u3000\u3064\u304f\u3089\u306a\u3044\u3068\u3000\u3075\u3042\u3093\u3067\n",
+                "\u3046\u3054\u3051\u306a\u304f\u306a\u308b\u307b\u3069\u3000\u304a\u304f\u3073\u3087\u3046\u3002\n",
+                "\u306b\u304a\u3044\u3067\u3000\u304d\u3082\u3061\u3092\u3000\u3064\u305f\u3048\u3042\u3046\u3002"
             ]
         }
     },

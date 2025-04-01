@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 105
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 204,
     "ev_yields": {
@@ -26,63 +29,77 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_POISON_POINT" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_POISON_POINT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WEATHER_BALL" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_MEGA_DRAIN" ],
-            [ 1, "MOVE_MAGICAL_LEAF" ],
-            [ 1, "MOVE_SWEET_SCENT" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                10,
+                "MOVE_SLUDGE"
+            ],
+            [
+                15,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                16,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                24,
+                "MOVE_TOXIC"
+            ],
+            [
+                30,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                36,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                40,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                45,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                50,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                56,
+                "MOVE_WEATHER_BALL"
+            ],
+            [
+                60,
+                "MOVE_SOLAR_BEAM"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -101,7 +118,7 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "ROSERADE",
-            "category": "Bouquet Pokémon",
+            "category": "Bouquet Pok\u00e9mon",
             "entry_text": [
                 "Each of its hands contains\n",
                 "different toxins, but both hands\n",
@@ -110,47 +127,47 @@
         },
         "fr": {
             "name": "ROSERADE",
-            "category": "Pokémon Bouquet",
+            "category": "Pok\u00e9mon Bouquet",
             "entry_text": [
                 "Il attire ses proies avec son doux\n",
-                "parfum et les achève grâce aux\n",
-                "fouets d’épines de ses bras."
+                "parfum et les ach\u00e8ve gr\u00e2ce aux\n",
+                "fouets d\u2019\u00e9pines de ses bras."
             ]
         },
         "de": {
             "name": "ROSERADE",
-            "category": "Blumenstrauß",
+            "category": "Blumenstrau\u00df",
             "entry_text": [
-                "Mit einem süßen Duft lockt es Beute\n",
+                "Mit einem s\u00fc\u00dfen Duft lockt es Beute\n",
                 "an, die es dann mit den dornigen\n",
-                "Ranken in seinen Armen schlägt."
+                "Ranken in seinen Armen schl\u00e4gt."
             ]
         },
         "it": {
             "name": "ROSERADE",
-            "category": "Pokémon Floreale",
+            "category": "Pok\u00e9mon Floreale",
             "entry_text": [
                 "Attira la preda con un dolce aroma,\n",
-                "poi l’abbatte con le fruste spinose\n",
+                "poi l\u2019abbatte con le fruste spinose\n",
                 "celate fra i bouquet delle braccia."
             ]
         },
         "es": {
             "name": "ROSERADE",
-            "category": "Pokémon Ramillete",
+            "category": "Pok\u00e9mon Ramillete",
             "entry_text": [
                 "Atrae a las presas con un dulce\n",
                 "aroma y las derrota con los\n",
-                "látigos espinosos de sus brazos."
+                "l\u00e1tigos espinosos de sus brazos."
             ]
         },
         "jp": {
-            "name": "ロズレイド",
-            "category": "ブ－ケポケモン",
+            "name": "\u30ed\u30ba\u30ec\u30a4\u30c9",
+            "category": "\u30d6\uff0d\u30b1\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あまい　かおりで　おびきよせて\n",
-                "りょううでの　はなたばの　なかに\n",
-                "ある　トゲの　ムチで　しとめる。"
+                "\u3042\u307e\u3044\u3000\u304b\u304a\u308a\u3067\u3000\u304a\u3073\u304d\u3088\u305b\u3066\n",
+                "\u308a\u3087\u3046\u3046\u3067\u306e\u3000\u306f\u306a\u305f\u3070\u306e\u3000\u306a\u304b\u306b\n",
+                "\u3042\u308b\u3000\u30c8\u30b2\u306e\u3000\u30e0\u30c1\u3067\u3000\u3057\u3068\u3081\u308b\u3002"
             ]
         }
     },

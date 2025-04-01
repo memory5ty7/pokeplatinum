@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 45
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 57,
     "ev_yields": {
@@ -26,83 +29,22 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_KEEN_EYE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_ADAPTABILITY",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 4, "MOVE_DEFENSE_CURL" ],
-            [ 7, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_FURY_SWIPES" ],
-            [ 16, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_FOLLOW_ME" ],
-            [ 25, "MOVE_SLAM" ],
-            [ 28, "MOVE_REST" ],
-            [ 31, "MOVE_SUCKER_PUNCH" ],
-            [ 36, "MOVE_AMNESIA" ],
-            [ 39, "MOVE_BATON_PASS" ],
-            [ 42, "MOVE_ME_FIRST" ],
-            [ 47, "MOVE_HYPER_VOICE" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM65",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM03"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_LAST_RESORT",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -129,7 +71,7 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "SENTRET",
-            "category": "Scout Pokémon",
+            "category": "Scout Pok\u00e9mon",
             "entry_text": [
                 "It has a very nervous nature.\n",
                 "It stands up high on its tail so it\n",
@@ -138,34 +80,34 @@
         },
         "fr": {
             "name": "FOUINETTE",
-            "category": "Pokémon Espion",
+            "category": "Pok\u00e9mon Espion",
             "entry_text": [
-                "Ce Pokémon très nerveux\n",
+                "Ce Pok\u00e9mon tr\u00e8s nerveux\n",
                 "prend appui sur sa queue pour\n",
                 "observer ses alentours."
             ]
         },
         "de": {
             "name": "WIESOR",
-            "category": "Späher",
+            "category": "Sp\u00e4her",
             "entry_text": [
-                "Ein sehr nervöses PKMN. Es steht\n",
+                "Ein sehr nerv\u00f6ses PKMN. Es steht\n",
                 "auf seinem Schweif und betrachtet\n",
                 "seine Umgebung ganz genau."
             ]
         },
         "it": {
             "name": "SENTRET",
-            "category": "Pokémon Esplorante",
+            "category": "Pok\u00e9mon Esplorante",
             "entry_text": [
-                "Ha un’indole alquanto nervosa. Sta\n",
+                "Ha un\u2019indole alquanto nervosa. Sta\n",
                 "ritto sulla punta della coda per\n",
                 "riuscire a sorvegliare ampie aree."
             ]
         },
         "es": {
             "name": "SENTRET",
-            "category": "Pokémon Explorador",
+            "category": "Pok\u00e9mon Explorador",
             "entry_text": [
                 "Es de naturaleza nerviosa. Se alza\n",
                 "sobre su cola para otear grandes\n",
@@ -173,12 +115,12 @@
             ]
         },
         "jp": {
-            "name": "オタチ",
-            "category": "みはりポケモン",
+            "name": "\u30aa\u30bf\u30c1",
+            "category": "\u307f\u306f\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "とても　しんけいしつな　せいかく。\n",
-                "とおくまで　みわたせるように\n",
-                "しっぽを　つかって　せのびをする。"
+                "\u3068\u3066\u3082\u3000\u3057\u3093\u3051\u3044\u3057\u3064\u306a\u3000\u305b\u3044\u304b\u304f\u3002\n",
+                "\u3068\u304a\u304f\u307e\u3067\u3000\u307f\u308f\u305f\u305b\u308b\u3088\u3046\u306b\n",
+                "\u3057\u3063\u307d\u3092\u3000\u3064\u304b\u3063\u3066\u3000\u305b\u306e\u3073\u3092\u3059\u308b\u3002"
             ]
         }
     },

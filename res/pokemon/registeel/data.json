@@ -7,7 +7,10 @@
         "special_attack": 75,
         "special_defense": 150
     },
-    "types": [ "TYPE_STEEL", "TYPE_STEEL" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_STEEL"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,87 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_IRON_FIST",
+        "ABILITY_HEATPROOF",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_EXPLOSION" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 9, "MOVE_METAL_CLAW" ],
-            [ 17, "MOVE_CURSE" ],
-            [ 25, "MOVE_SUPERPOWER" ],
-            [ 33, "MOVE_ANCIENT_POWER" ],
-            [ 41, "MOVE_IRON_DEFENSE" ],
-            [ 41, "MOVE_AMNESIA" ],
-            [ 49, "MOVE_CHARGE_BEAM" ],
-            [ 57, "MOVE_LOCK_ON" ],
-            [ 65, "MOVE_ZAP_CANNON" ],
-            [ 73, "MOVE_IRON_HEAD" ],
-            [ 73, "MOVE_FLASH_CANNON" ],
-            [ 81, "MOVE_HAMMER_ARM" ],
-            [ 89, "MOVE_HYPER_BEAM" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM37",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM52",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM65",
-            "TM68",
-            "TM69",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -125,7 +65,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "REGISTEEL",
-            "category": "Iron Pokémon",
+            "category": "Iron Pok\u00e9mon",
             "entry_text": [
                 "Tempered by pressure underground\n",
                 "over tens of thousands of years,\n",
@@ -134,11 +74,11 @@
         },
         "fr": {
             "name": "REGISTEEL",
-            "category": "Pokémon Fer",
+            "category": "Pok\u00e9mon Fer",
             "entry_text": [
-                "Son corps invulnérable fut forgé\n",
+                "Son corps invuln\u00e9rable fut forg\u00e9\n",
                 "par la pression souterraine durant\n",
-                "des dizaines de milliers d’années."
+                "des dizaines de milliers d\u2019ann\u00e9es."
             ]
         },
         "de": {
@@ -147,12 +87,12 @@
             "entry_text": [
                 "Im Laufe der Jahrtausende, die es\n",
                 "unterirdisch lebte, wurde sein\n",
-                "Körper durch Druck u. Wärme hart."
+                "K\u00f6rper durch Druck u. W\u00e4rme hart."
             ]
         },
         "it": {
             "name": "REGISTEEL",
-            "category": "Pokémon Ferro",
+            "category": "Pok\u00e9mon Ferro",
             "entry_text": [
                 "La pressione subita sottoterra\n",
                 "per decine di migliaia di anni ha\n",
@@ -161,20 +101,20 @@
         },
         "es": {
             "name": "REGISTEEL",
-            "category": "Pokémon Hierro",
+            "category": "Pok\u00e9mon Hierro",
             "entry_text": [
                 "Su cuerpo ha estado sometido a la\n",
-                "presión subterránea durante miles\n",
-                "de años y no puede arañarse."
+                "presi\u00f3n subterr\u00e1nea durante miles\n",
+                "de a\u00f1os y no puede ara\u00f1arse."
             ]
         },
         "jp": {
-            "name": "レジスチル",
-            "category": "くろがねポケモン",
+            "name": "\u30ec\u30b8\u30b9\u30c1\u30eb",
+            "category": "\u304f\u308d\u304c\u306d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なんまんねんも　ちかの　あつりょくで\n",
-                "きたえられた　きんぞくの　ボディは\n",
-                "きずひとつ　つかない。"
+                "\u306a\u3093\u307e\u3093\u306d\u3093\u3082\u3000\u3061\u304b\u306e\u3000\u3042\u3064\u308a\u3087\u304f\u3067\n",
+                "\u304d\u305f\u3048\u3089\u308c\u305f\u3000\u304d\u3093\u305e\u304f\u306e\u3000\u30dc\u30c7\u30a3\u306f\n",
+                "\u304d\u305a\u3072\u3068\u3064\u3000\u3064\u304b\u306a\u3044\u3002"
             ]
         }
     },

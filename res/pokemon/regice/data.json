@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 200
     },
-    "types": [ "TYPE_ICE", "TYPE_ICE" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_ICE"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 216,
     "ev_yields": {
@@ -26,84 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_REFRIGERATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_EXPLOSION" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 9, "MOVE_ICY_WIND" ],
-            [ 17, "MOVE_CURSE" ],
-            [ 25, "MOVE_SUPERPOWER" ],
-            [ 33, "MOVE_ANCIENT_POWER" ],
-            [ 41, "MOVE_AMNESIA" ],
-            [ 49, "MOVE_CHARGE_BEAM" ],
-            [ 57, "MOVE_LOCK_ON" ],
-            [ 65, "MOVE_ZAP_CANNON" ],
-            [ 73, "MOVE_ICE_BEAM" ],
-            [ 81, "MOVE_HAMMER_ARM" ],
-            [ 89, "MOVE_HYPER_BEAM" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM52",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM68",
-            "TM69",
-            "TM72",
-            "TM73",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_SIGNAL_BEAM"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -122,7 +65,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "REGICE",
-            "category": "Iceberg Pokémon",
+            "category": "Iceberg Pok\u00e9mon",
             "entry_text": [
                 "Its body is made of ice from the\n",
                 "ice age. It controls frigid air of\n",
@@ -131,47 +74,47 @@
         },
         "fr": {
             "name": "REGICE",
-            "category": "Pokémon Iceberg",
+            "category": "Pok\u00e9mon Iceberg",
             "entry_text": [
                 "Son corps est fait de glace datant\n",
-                "de l’ère glaciaire. Il contrôle un\n",
-                "air gelé de -200 °C."
+                "de l\u2019\u00e8re glaciaire. Il contr\u00f4le un\n",
+                "air gel\u00e9 de -200 \u00b0C."
             ]
         },
         "de": {
             "name": "REGICE",
             "category": "Eisberg",
             "entry_text": [
-                "Sein Körper besteht aus Eis aus der\n",
+                "Sein K\u00f6rper besteht aus Eis aus der\n",
                 "Eiszeit. Es kontrolliert gefrorene\n",
                 "Luft, die minus 200 Grad kalt ist."
             ]
         },
         "it": {
             "name": "REGICE",
-            "category": "Pokémon Iceberg",
+            "category": "Pok\u00e9mon Iceberg",
             "entry_text": [
-                "Il suo corpo è costituito da ghiac-\n",
-                "cio dell’era glaciale. Mantiene\n",
-                "l’aria a una temperatura di -200°C."
+                "Il suo corpo \u00e8 costituito da ghiac-\n",
+                "cio dell\u2019era glaciale. Mantiene\n",
+                "l\u2019aria a una temperatura di -200\u00b0C."
             ]
         },
         "es": {
             "name": "REGICE",
-            "category": "Pokémon Iceberg",
+            "category": "Pok\u00e9mon Iceberg",
             "entry_text": [
-                "Su cuerpo está hecho con hielo\n",
-                "de la glaciación. Controla aire\n",
-                "gélido a 200 grados bajo cero."
+                "Su cuerpo est\u00e1 hecho con hielo\n",
+                "de la glaciaci\u00f3n. Controla aire\n",
+                "g\u00e9lido a 200 grados bajo cero."
             ]
         },
         "jp": {
-            "name": "レジアイス",
-            "category": "ひょうざんポケモン",
+            "name": "\u30ec\u30b8\u30a2\u30a4\u30b9",
+            "category": "\u3072\u3087\u3046\u3056\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひょうがきに　できた　こおりで\n",
-                "からだが　つくられている。マイナス\n",
-                "２００どの　れいきを　あやつる。"
+                "\u3072\u3087\u3046\u304c\u304d\u306b\u3000\u3067\u304d\u305f\u3000\u3053\u304a\u308a\u3067\n",
+                "\u304b\u3089\u3060\u304c\u3000\u3064\u304f\u3089\u308c\u3066\u3044\u308b\u3002\u30de\u30a4\u30ca\u30b9\n",
+                "\uff12\uff10\uff10\u3069\u306e\u3000\u308c\u3044\u304d\u3092\u3000\u3042\u3084\u3064\u308b\u3002"
             ]
         }
     },

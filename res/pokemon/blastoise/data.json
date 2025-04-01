@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 105
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,91 +29,29 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_TORRENT",
+        "ABILITY_MEGA_LAUNCHER"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FLASH_CANNON" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_WITHDRAW" ],
-            [ 4, "MOVE_TAIL_WHIP" ],
-            [ 7, "MOVE_BUBBLE" ],
-            [ 10, "MOVE_WITHDRAW" ],
-            [ 13, "MOVE_WATER_GUN" ],
-            [ 16, "MOVE_BITE" ],
-            [ 20, "MOVE_RAPID_SPIN" ],
-            [ 24, "MOVE_PROTECT" ],
-            [ 28, "MOVE_WATER_PULSE" ],
-            [ 32, "MOVE_AQUA_TAIL" ],
-            [ 39, "MOVE_SKULL_BASH" ],
-            [ 46, "MOVE_IRON_DEFENSE" ],
-            [ 53, "MOVE_RAIN_DANCE" ],
-            [ 60, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_WATER_SPOUT"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM68",
-            "TM72",
-            "TM74",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_IRON_DEFENSE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -129,7 +70,7 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "BLASTOISE",
-            "category": "Shellfish Pokémon",
+            "category": "Shellfish Pok\u00e9mon",
             "entry_text": [
                 "The jets of water it spouts from\n",
                 "the rocket cannons on its shell\n",
@@ -138,11 +79,11 @@
         },
         "fr": {
             "name": "TORTANK",
-            "category": "Pokémon Carapace",
+            "category": "Pok\u00e9mon Carapace",
             "entry_text": [
-                "Les trombes d’eau projetées par\n",
+                "Les trombes d\u2019eau projet\u00e9es par\n",
                 "les canons de sa carapace peuvent\n",
-                "percer le métal le plus résistant."
+                "percer le m\u00e9tal le plus r\u00e9sistant."
             ]
         },
         "de": {
@@ -150,35 +91,35 @@
             "category": "Panzer",
             "entry_text": [
                 "Der Wasserstrahl, der aus den\n",
-                "Wasserdüsen schießt, kann\n",
-                "sogar Stahlwände durchdringen."
+                "Wasserd\u00fcsen schie\u00dft, kann\n",
+                "sogar Stahlw\u00e4nde durchdringen."
             ]
         },
         "it": {
             "name": "BLASTOISE",
-            "category": "Pokémon Crostaceo",
+            "category": "Pok\u00e9mon Crostaceo",
             "entry_text": [
-                "I getti d’acqua lanciati dai\n",
+                "I getti d\u2019acqua lanciati dai\n",
                 "cannoni sul suo guscio riescono\n",
-                "a perforare persino l’acciaio."
+                "a perforare persino l\u2019acciaio."
             ]
         },
         "es": {
             "name": "BLASTOISE",
-            "category": "Pokémon Marisco",
+            "category": "Pok\u00e9mon Marisco",
             "entry_text": [
                 "Los chorros de agua que lanza\n",
-                "por los tubos de su caparazón\n",
+                "por los tubos de su caparaz\u00f3n\n",
                 "pueden atravesar el acero."
             ]
         },
         "jp": {
-            "name": "カメックス",
-            "category": "こうらポケモン",
+            "name": "\u30ab\u30e1\u30c3\u30af\u30b9",
+            "category": "\u3053\u3046\u3089\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "こうらの　ロケットほうから　ふきだす\n",
-                "すいりゅうは　ぶあつい　てっぱんも\n",
-                "いっぱつで　つらぬく　はかいりょく。"
+                "\u3053\u3046\u3089\u306e\u3000\u30ed\u30b1\u30c3\u30c8\u307b\u3046\u304b\u3089\u3000\u3075\u304d\u3060\u3059\n",
+                "\u3059\u3044\u308a\u3085\u3046\u306f\u3000\u3076\u3042\u3064\u3044\u3000\u3066\u3063\u3071\u3093\u3082\n",
+                "\u3044\u3063\u3071\u3064\u3067\u3000\u3064\u3089\u306c\u304f\u3000\u306f\u304b\u3044\u308a\u3087\u304f\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 80
     },
-    "types": [ "TYPE_POISON", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 204,
     "ev_yields": {
@@ -26,80 +29,77 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_INNER_FOCUS", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CROSS_POISON" ],
-            [ 1, "MOVE_SCREECH" ],
-            [ 1, "MOVE_LEECH_LIFE" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 5, "MOVE_SUPERSONIC" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 13, "MOVE_BITE" ],
-            [ 17, "MOVE_WING_ATTACK" ],
-            [ 21, "MOVE_CONFUSE_RAY" ],
-            [ 27, "MOVE_AIR_CUTTER" ],
-            [ 33, "MOVE_MEAN_LOOK" ],
-            [ 39, "MOVE_POISON_FANG" ],
-            [ 45, "MOVE_HAZE" ],
-            [ 51, "MOVE_AIR_SLASH" ]
+            [
+                5,
+                "MOVE_ASTONISH"
+            ],
+            [
+                9,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                11,
+                "MOVE_BITE"
+            ],
+            [
+                13,
+                "MOVE_WING_ATTACK"
+            ],
+            [
+                15,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                17,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                20,
+                "MOVE_HAZE"
+            ],
+            [
+                24,
+                "MOVE_LEECH_LIFE"
+            ],
+            [
+                28,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                32,
+                "MOVE_DUAL_WINGBEAT"
+            ],
+            [
+                36,
+                "MOVE_CROSS_POISON"
+            ],
+            [
+                40,
+                "MOVE_U_TURN"
+            ],
+            [
+                50,
+                "MOVE_BRAVE_BIRD"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM36",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM49",
-            "TM51",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM78",
-            "TM79",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -118,7 +118,7 @@
         "pokemon_pos_m": 65533,
         "en": {
             "name": "CROBAT",
-            "category": "Bat Pokémon",
+            "category": "Bat Pok\u00e9mon",
             "entry_text": [
                 "The transformation of its legs into\n",
                 "wings made it better at flying, but\n",
@@ -127,47 +127,47 @@
         },
         "fr": {
             "name": "NOSTENFER",
-            "category": "Pokémon Chovsouris",
+            "category": "Pok\u00e9mon Chovsouris",
             "entry_text": [
                 "Il vole rapidement et sans faire\n",
-                "de bruit grâce à ses quatre ailes.\n",
-                "C’est un Pokémon nocturne."
+                "de bruit gr\u00e2ce \u00e0 ses quatre ailes.\n",
+                "C\u2019est un Pok\u00e9mon nocturne."
             ]
         },
         "de": {
             "name": "IKSBAT",
             "category": "Fledermaus",
             "entry_text": [
-                "Seine vier Flügel erlauben es dem\n",
+                "Seine vier Fl\u00fcgel erlauben es dem\n",
                 "PKMN, schneller und leiser zu\n",
                 "fliegen. Es ist nachtaktiv."
             ]
         },
         "it": {
             "name": "CROBAT",
-            "category": "Pokémon Pipistrello",
+            "category": "Pok\u00e9mon Pipistrello",
             "entry_text": [
                 "Le sue quattro ali gli permettono\n",
-                "di volare più velocemente e più\n",
-                "silenziosamente. È attivo di notte."
+                "di volare pi\u00f9 velocemente e pi\u00f9\n",
+                "silenziosamente. \u00c8 attivo di notte."
             ]
         },
         "es": {
             "name": "CROBAT",
-            "category": "Pokémon Murciélago",
+            "category": "Pok\u00e9mon Murci\u00e9lago",
             "entry_text": [
                 "Sus cuatro alas le permiten volar\n",
-                "más rápida y sigilosamente. Es\n",
-                "un Pokémon nocturno."
+                "m\u00e1s r\u00e1pida y sigilosamente. Es\n",
+                "un Pok\u00e9mon nocturno."
             ]
         },
         "jp": {
-            "name": "クロバット",
-            "category": "こうもりポケモン",
+            "name": "\u30af\u30ed\u30d0\u30c3\u30c8",
+            "category": "\u3053\u3046\u3082\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "４まいの　はねで　より　しずかに\n",
-                "より　はやく　とべるように　なった。\n",
-                "よるになると　かつどうを　はじめる。"
+                "\uff14\u307e\u3044\u306e\u3000\u306f\u306d\u3067\u3000\u3088\u308a\u3000\u3057\u305a\u304b\u306b\n",
+                "\u3088\u308a\u3000\u306f\u3084\u304f\u3000\u3068\u3079\u308b\u3088\u3046\u306b\u3000\u306a\u3063\u305f\u3002\n",
+                "\u3088\u308b\u306b\u306a\u308b\u3068\u3000\u304b\u3064\u3069\u3046\u3092\u3000\u306f\u3058\u3081\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 76,
         "special_defense": 96
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 162,
     "ev_yields": {
@@ -26,79 +29,24 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_INSOMNIA", "ABILITY_KEEN_EYE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_TINTED_LENS",
+        "ABILITY_ANALYTIC",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SKY_ATTACK" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 5, "MOVE_HYPNOSIS" ],
-            [ 9, "MOVE_PECK" ],
-            [ 13, "MOVE_UPROAR" ],
-            [ 17, "MOVE_REFLECT" ],
-            [ 22, "MOVE_CONFUSION" ],
-            [ 27, "MOVE_TAKE_DOWN" ],
-            [ 32, "MOVE_AIR_SLASH" ],
-            [ 37, "MOVE_ZEN_HEADBUTT" ],
-            [ 42, "MOVE_EXTRASENSORY" ],
-            [ 47, "MOVE_PSYCHO_SHIFT" ],
-            [ 52, "MOVE_ROOST" ],
-            [ 57, "MOVE_DREAM_EATER" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM62",
-            "TM67",
-            "TM68",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM88",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_AIR_CUTTER",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -117,7 +65,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "NOCTOWL",
-            "category": "Owl Pokémon",
+            "category": "Owl Pok\u00e9mon",
             "entry_text": [
                 "Its eyes are specially developed\n",
                 "to enable it to see clearly even in\n",
@@ -126,10 +74,10 @@
         },
         "fr": {
             "name": "NOARFANG",
-            "category": "Pokémon Hibou",
+            "category": "Pok\u00e9mon Hibou",
             "entry_text": [
                 "Ses yeux sont particuliers. La\n",
-                "plus petite source de lumière leur\n",
+                "plus petite source de lumi\u00e8re leur\n",
                 "permet de distinguer les objets."
             ]
         },
@@ -138,22 +86,22 @@
             "category": "Eule",
             "entry_text": [
                 "Seine Augen sind etwas Besonderes.\n",
-                "Sie können selbst bei schwächstem\n",
+                "Sie k\u00f6nnen selbst bei schw\u00e4chstem\n",
                 "Licht alles erkennen."
             ]
         },
         "it": {
             "name": "NOCTOWL",
-            "category": "Pokémon Gufo",
+            "category": "Pok\u00e9mon Gufo",
             "entry_text": [
                 "Ha una vista acutissima, tanto da\n",
                 "riuscire a scorgere oggetti anche\n",
-                "con la luce più fioca."
+                "con la luce pi\u00f9 fioca."
             ]
         },
         "es": {
             "name": "NOCTOWL",
-            "category": "Pokémon Búho",
+            "category": "Pok\u00e9mon B\u00faho",
             "entry_text": [
                 "Sus ojos son especiales: pueden\n",
                 "distinguir objetos siempre y cuando\n",
@@ -161,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "ヨルノズク",
-            "category": "ふくろうポケモン",
+            "name": "\u30e8\u30eb\u30ce\u30ba\u30af",
+            "category": "\u3075\u304f\u308d\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "すこしの　ひかりが　あれば\n",
-                "くらやみでも　みわけられる\n",
-                "とくしゅな　めを　もつ。"
+                "\u3059\u3053\u3057\u306e\u3000\u3072\u304b\u308a\u304c\u3000\u3042\u308c\u3070\n",
+                "\u304f\u3089\u3084\u307f\u3067\u3082\u3000\u307f\u308f\u3051\u3089\u308c\u308b\n",
+                "\u3068\u304f\u3057\u3085\u306a\u3000\u3081\u3092\u3000\u3082\u3064\u3002"
             ]
         }
     },

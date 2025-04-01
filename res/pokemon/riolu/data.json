@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 40
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 72,
     "ev_yields": {
@@ -26,77 +29,61 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STEADFAST", "ABILITY_INNER_FOCUS" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_ROUGH_SKIN",
+        "ABILITY_NONE",
+        "ABILITY_SAND_VEIL"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_ENDURE" ],
-            [ 6, "MOVE_COUNTER" ],
-            [ 11, "MOVE_FORCE_PALM" ],
-            [ 15, "MOVE_FEINT" ],
-            [ 19, "MOVE_REVERSAL" ],
-            [ 24, "MOVE_SCREECH" ],
-            [ 29, "MOVE_COPYCAT" ]
+            [
+                1,
+                "MOVE_ENDURE"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                1,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                6,
+                "MOVE_COPYCAT"
+            ],
+            [
+                12,
+                "MOVE_METAL_CLAW"
+            ],
+            [
+                17,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                24,
+                "MOVE_FORCE_PALM"
+            ],
+            [
+                30,
+                "MOVE_VACUUM_WAVE"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM65",
-            "TM66",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_DAY", "SPECIES_LUCARIO" ]
+        [
+            "EVO_LEVEL_HAPPINESS_DAY",
+            "SPECIES_LUCARIO"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -116,7 +103,7 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "RIOLU",
-            "category": "Emanation Pokémon",
+            "category": "Emanation Pok\u00e9mon",
             "entry_text": [
                 "It has the peculiar power of being\n",
                 "able to see emotions such as joy\n",
@@ -125,11 +112,11 @@
         },
         "fr": {
             "name": "RIOLU",
-            "category": "Pokémon Emanation",
+            "category": "Pok\u00e9mon Emanation",
             "entry_text": [
-                "Son aura s’intensifie pour\n",
-                "prévenir son entourage quand\n",
-                "il a peur ou qu’il est triste."
+                "Son aura s\u2019intensifie pour\n",
+                "pr\u00e9venir son entourage quand\n",
+                "il a peur ou qu\u2019il est triste."
             ]
         },
         "de": {
@@ -137,35 +124,35 @@
             "category": "Wellenspiel",
             "entry_text": [
                 "Die Aura, die dieses PKMN umgibt,\n",
-                "verstärkt sich, wenn es zeigen will,\n",
-                "dass es ängstlich oder traurig ist."
+                "verst\u00e4rkt sich, wenn es zeigen will,\n",
+                "dass es \u00e4ngstlich oder traurig ist."
             ]
         },
         "it": {
             "name": "RIOLU",
-            "category": "Pokémon Emanazione",
+            "category": "Pok\u00e9mon Emanazione",
             "entry_text": [
-                "L’aura che emana si intensifica\n",
-                "per comunicare agli altri se è\n",
+                "L\u2019aura che emana si intensifica\n",
+                "per comunicare agli altri se \u00e8\n",
                 "triste o spaventato."
             ]
         },
         "es": {
             "name": "RIOLU",
-            "category": "Pokémon Emanación",
+            "category": "Pok\u00e9mon Emanaci\u00f3n",
             "entry_text": [
                 "Su aura se intensifica para alertar\n",
-                "a otros cuando está triste o tiene\n",
+                "a otros cuando est\u00e1 triste o tiene\n",
                 "miedo."
             ]
         },
         "jp": {
-            "name": "リオル",
-            "category": "はもんポケモン",
+            "name": "\u30ea\u30aa\u30eb",
+            "category": "\u306f\u3082\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "からだから　はっする　はどうは\n",
-                "こわいとき　かなしいときに　つよまり\n",
-                "ピンチを　なかまに　つたえる。"
+                "\u304b\u3089\u3060\u304b\u3089\u3000\u306f\u3063\u3059\u308b\u3000\u306f\u3069\u3046\u306f\n",
+                "\u3053\u308f\u3044\u3068\u304d\u3000\u304b\u306a\u3057\u3044\u3068\u304d\u306b\u3000\u3064\u3088\u307e\u308a\n",
+                "\u30d4\u30f3\u30c1\u3092\u3000\u306a\u304b\u307e\u306b\u3000\u3064\u305f\u3048\u308b\u3002"
             ]
         }
     },

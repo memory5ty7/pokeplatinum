@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 85
     },
-    "types": [ "TYPE_GHOST", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_GHOST",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 147,
     "ev_yields": {
@@ -26,79 +29,63 @@
     "hatch_cycles": 25,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_PSYWAVE" ],
-            [ 5, "MOVE_SPITE" ],
-            [ 10, "MOVE_ASTONISH" ],
-            [ 14, "MOVE_CONFUSE_RAY" ],
-            [ 19, "MOVE_MEAN_LOOK" ],
-            [ 23, "MOVE_PSYBEAM" ],
-            [ 28, "MOVE_PAIN_SPLIT" ],
-            [ 32, "MOVE_PAYBACK" ],
-            [ 37, "MOVE_SHADOW_BALL" ],
-            [ 41, "MOVE_PERISH_SONG" ],
-            [ 46, "MOVE_GRUDGE" ],
-            [ 50, "MOVE_POWER_GEM" ]
+            [
+                1,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                10,
+                "MOVE_PAIN_SPLIT"
+            ],
+            [
+                16,
+                "MOVE_HEX"
+            ],
+            [
+                22,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                28,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                32,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                36,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                40,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                44,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                50,
+                "MOVE_MAGICAL_LEAF"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM57",
-            "TM58",
-            "TM61",
-            "TM63",
-            "TM66",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -125,18 +112,18 @@
         "pokemon_pos_m": 65527,
         "en": {
             "name": "MISDREAVUS",
-            "category": "Screech Pokémon",
+            "category": "Screech Pok\u00e9mon",
             "entry_text": [
-                "A Pokémon that startles people in\n",
+                "A Pok\u00e9mon that startles people in\n",
                 "the middle of the night. It gathers\n",
                 "fear as its energy."
             ]
         },
         "fr": {
             "name": "FEUFOREVE",
-            "category": "Pokémon Strident",
+            "category": "Pok\u00e9mon Strident",
             "entry_text": [
-                "Il adore se faufiler derrière les\n",
+                "Il adore se faufiler derri\u00e8re les\n",
                 "gens la nuit pour les effrayer\n",
                 "avec son cri strident."
             ]
@@ -152,7 +139,7 @@
         },
         "it": {
             "name": "MISDREAVUS",
-            "category": "Pokémon Strido",
+            "category": "Pok\u00e9mon Strido",
             "entry_text": [
                 "Ama avvicinarsi alle persone in\n",
                 "piena notte per terrorizzarle con\n",
@@ -161,7 +148,7 @@
         },
         "es": {
             "name": "MISDREAVUS",
-            "category": "Pokémon Chirrido",
+            "category": "Pok\u00e9mon Chirrido",
             "entry_text": [
                 "Le encanta sorprender a la gente\n",
                 "de noche y asustarla con sus\n",
@@ -169,12 +156,12 @@
             ]
         },
         "jp": {
-            "name": "ムウマ",
-            "category": "よなきポケモン",
+            "name": "\u30e0\u30a6\u30de",
+            "category": "\u3088\u306a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "まよなか　はいごから　ちかづき\n",
-                "なきさけぶような　なきごえを　あげて\n",
-                "おどろかせては　よろこぶ　ポケモン。"
+                "\u307e\u3088\u306a\u304b\u3000\u306f\u3044\u3054\u304b\u3089\u3000\u3061\u304b\u3065\u304d\n",
+                "\u306a\u304d\u3055\u3051\u3076\u3088\u3046\u306a\u3000\u306a\u304d\u3054\u3048\u3092\u3000\u3042\u3052\u3066\n",
+                "\u304a\u3069\u308d\u304b\u305b\u3066\u306f\u3000\u3088\u308d\u3053\u3076\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

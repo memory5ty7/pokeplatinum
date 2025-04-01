@@ -7,7 +7,10 @@
         "special_attack": 73,
         "special_defense": 115
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 165,
     "ev_yields": {
@@ -26,88 +29,97 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_INSOMNIA", "ABILITY_FOREWARN" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_BAD_DREAMS",
+        "ABILITY_MAGIC_BOUNCE",
+        "ABILITY_INNER_FOCUS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_NIGHTMARE" ],
-            [ 1, "MOVE_SWITCHEROO" ],
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 1, "MOVE_DISABLE" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 7, "MOVE_DISABLE" ],
-            [ 9, "MOVE_CONFUSION" ],
-            [ 15, "MOVE_HEADBUTT" ],
-            [ 18, "MOVE_POISON_GAS" ],
-            [ 21, "MOVE_MEDITATE" ],
-            [ 28, "MOVE_PSYBEAM" ],
-            [ 33, "MOVE_PSYCH_UP" ],
-            [ 38, "MOVE_HEADBUTT" ],
-            [ 45, "MOVE_SWAGGER" ],
-            [ 50, "MOVE_PSYCHIC" ],
-            [ 55, "MOVE_NASTY_PLOT" ],
-            [ 64, "MOVE_ZEN_HEADBUTT" ],
-            [ 69, "MOVE_FUTURE_SIGHT" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                1,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                5,
+                "MOVE_DISABLE"
+            ],
+            [
+                9,
+                "MOVE_CONFUSION"
+            ],
+            [
+                14,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                18,
+                "MOVE_POISON_GAS"
+            ],
+            [
+                24,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                28,
+                "MOVE_POWER_SWAP"
+            ],
+            [
+                28,
+                "MOVE_GUARD_SWAP"
+            ],
+            [
+                30,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                30,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                30,
+                "MOVE_YAWN"
+            ],
+            [
+                36,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                42,
+                "MOVE_DREAM_EATER"
+            ],
+            [
+                45,
+                "MOVE_SNATCH"
+            ],
+            [
+                48,
+                "MOVE_IMPRISON"
+            ],
+            [
+                50,
+                "MOVE_FUTURE_SIGHT"
+            ],
+            [
+                60,
+                "MOVE_TRICK"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -126,7 +138,7 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "HYPNO",
-            "category": "Hypnosis Pokémon",
+            "category": "Hypnosis Pok\u00e9mon",
             "entry_text": [
                 "Seeing its swinging pendulum can\n",
                 "induce sleep in three seconds,\n",
@@ -135,11 +147,11 @@
         },
         "fr": {
             "name": "HYPNOMADE",
-            "category": "Pokémon Hypnose",
+            "category": "Pok\u00e9mon Hypnose",
             "entry_text": [
                 "La vue de son pendule oscillant\n",
-                "endort en trois secondes, même\n",
-                "quand on vient de se réveiller. "
+                "endort en trois secondes, m\u00eame\n",
+                "quand on vient de se r\u00e9veiller. "
             ]
         },
         "de": {
@@ -148,34 +160,34 @@
             "entry_text": [
                 "Ein Blick auf das Pendel versetzt\n",
                 "einen in 3 Sekunden in Schlaf,\n",
-                "selbst wenn man gar nicht müde ist."
+                "selbst wenn man gar nicht m\u00fcde ist."
             ]
         },
         "it": {
             "name": "HYPNO",
-            "category": "Pokémon Ipnosi",
+            "category": "Pok\u00e9mon Ipnosi",
             "entry_text": [
                 "Con il suo pendolo fa addormentare\n",
                 "chiunque nel giro di tre secondi,\n",
-                "anche chi si è appena svegliato."
+                "anche chi si \u00e8 appena svegliato."
             ]
         },
         "es": {
             "name": "HYPNO",
-            "category": "Pokémon Hipnosis",
+            "category": "Pok\u00e9mon Hipnosis",
             "entry_text": [
-                "Mirar su péndulo puede inducir al\n",
-                "sueño en tres segundos, incluso\n",
+                "Mirar su p\u00e9ndulo puede inducir al\n",
+                "sue\u00f1o en tres segundos, incluso\n",
                 "si acabas de despertarte."
             ]
         },
         "jp": {
-            "name": "スリ－パ－",
-            "category": "さいみんポケモン",
+            "name": "\u30b9\u30ea\uff0d\u30d1\uff0d",
+            "category": "\u3055\u3044\u307f\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ふりこを　めのまえで　ゆらされると\n",
-                "たったいま　めざめたばかりの　ひとも\n",
-                "３びょうごには　ねむってしまう。"
+                "\u3075\u308a\u3053\u3092\u3000\u3081\u306e\u307e\u3048\u3067\u3000\u3086\u3089\u3055\u308c\u308b\u3068\n",
+                "\u305f\u3063\u305f\u3044\u307e\u3000\u3081\u3056\u3081\u305f\u3070\u304b\u308a\u306e\u3000\u3072\u3068\u3082\n",
+                "\uff13\u3073\u3087\u3046\u3054\u306b\u306f\u3000\u306d\u3080\u3063\u3066\u3057\u307e\u3046\u3002"
             ]
         }
     },

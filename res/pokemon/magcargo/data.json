@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 80
     },
-    "types": [ "TYPE_FIRE", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 154,
     "ev_yields": {
@@ -26,79 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_MAGMA_ARMOR", "ABILITY_FLAME_BODY" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_SOLID_ROCK",
+        "ABILITY_MAGMA_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_ROCK_THROW" ],
-            [ 8, "MOVE_EMBER" ],
-            [ 11, "MOVE_ROCK_THROW" ],
-            [ 16, "MOVE_HARDEN" ],
-            [ 23, "MOVE_RECOVER" ],
-            [ 26, "MOVE_ANCIENT_POWER" ],
-            [ 31, "MOVE_AMNESIA" ],
-            [ 40, "MOVE_LAVA_PLUME" ],
-            [ 45, "MOVE_ROCK_SLIDE" ],
-            [ 52, "MOVE_BODY_SLAM" ],
-            [ 61, "MOVE_FLAMETHROWER" ],
-            [ 66, "MOVE_EARTH_POWER" ]
+            [
+                1,
+                "MOVE_SMOG"
+            ],
+            [
+                1,
+                "MOVE_YAWN"
+            ],
+            [
+                6,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                8,
+                "MOVE_EMBER"
+            ],
+            [
+                12,
+                "MOVE_RECOVER"
+            ],
+            [
+                15,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                26,
+                "MOVE_FLAME_CHARGE"
+            ],
+            [
+                30,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                36,
+                "MOVE_HEAT_WAVE"
+            ],
+            [
+                40,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                45,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                50,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                55,
+                "MOVE_ARMOR_CANNON"
+            ],
+            [
+                60,
+                "MOVE_OVERHEAT"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM33",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM64",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_HEAT_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -117,7 +126,7 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "MAGCARGO",
-            "category": "Lava Pokémon",
+            "category": "Lava Pok\u00e9mon",
             "entry_text": [
                 "Its body temperature is roughly\n",
                 "18,000 degrees F. Flames spout\n",
@@ -126,10 +135,10 @@
         },
         "fr": {
             "name": "VOLCAROPOD",
-            "category": "Pokémon Lave",
+            "category": "Pok\u00e9mon Lave",
             "entry_text": [
-                "Sa température corporelle avoisine\n",
-                "les 10 000 °C. Des flammes \n",
+                "Sa temp\u00e9rature corporelle avoisine\n",
+                "les 10 000 \u00b0C. Des flammes \n",
                 "fusent des fissures de sa coquille."
             ]
         },
@@ -137,36 +146,36 @@
             "name": "MAGCARGO",
             "category": "Lava",
             "entry_text": [
-                "Seine Körpertemperatur beträgt\n",
+                "Seine K\u00f6rpertemperatur betr\u00e4gt\n",
                 "etwa 10 000 Grad. Aus seiner Schale\n",
                 "treten immer wieder Flammen aus."
             ]
         },
         "it": {
             "name": "MAGCARGO",
-            "category": "Pokémon Lava",
+            "category": "Pok\u00e9mon Lava",
             "entry_text": [
                 "Ha una temperatura corporea di\n",
-                "circa 10000°C. Dai fori del guscio\n",
+                "circa 10000\u00b0C. Dai fori del guscio\n",
                 "fuoriescono intense fiammate."
             ]
         },
         "es": {
             "name": "MAGCARGO",
-            "category": "Pokémon Lava",
+            "category": "Pok\u00e9mon Lava",
             "entry_text": [
-                "Su cuerpo está a una temperatura\n",
+                "Su cuerpo est\u00e1 a una temperatura\n",
                 "de 10000 grados. De las fisuras\n",
                 "de su cuerpo escapan llamas."
             ]
         },
         "jp": {
-            "name": "マグカルゴ",
-            "category": "ようがんポケモン",
+            "name": "\u30de\u30b0\u30ab\u30eb\u30b4",
+            "category": "\u3088\u3046\u304c\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たいおんは　やく１まんど。\n",
-                "マグマが　かたまって　できた　カラの\n",
-                "すきまから　ほのおを　ふきだす。"
+                "\u305f\u3044\u304a\u3093\u306f\u3000\u3084\u304f\uff11\u307e\u3093\u3069\u3002\n",
+                "\u30de\u30b0\u30de\u304c\u3000\u304b\u305f\u307e\u3063\u3066\u3000\u3067\u304d\u305f\u3000\u30ab\u30e9\u306e\n",
+                "\u3059\u304d\u307e\u304b\u3089\u3000\u307b\u306e\u304a\u3092\u3000\u3075\u304d\u3060\u3059\u3002"
             ]
         }
     },

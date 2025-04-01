@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,100 +29,75 @@
     "hatch_cycles": 10,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_MAGIC_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_MAGIC_GUARD",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 4, "MOVE_ENCORE" ],
-            [ 7, "MOVE_SING" ],
-            [ 10, "MOVE_DOUBLE_SLAP" ],
-            [ 13, "MOVE_DEFENSE_CURL" ],
-            [ 16, "MOVE_FOLLOW_ME" ],
-            [ 19, "MOVE_MINIMIZE" ],
-            [ 22, "MOVE_WAKE_UP_SLAP" ],
-            [ 25, "MOVE_COSMIC_POWER" ],
-            [ 28, "MOVE_LUCKY_CHANT" ],
-            [ 31, "MOVE_METRONOME" ],
-            [ 34, "MOVE_GRAVITY" ],
-            [ 37, "MOVE_MOONLIGHT" ],
-            [ 40, "MOVE_LIGHT_SCREEN" ],
-            [ 43, "MOVE_METEOR_MASH" ],
-            [ 46, "MOVE_HEALING_WISH" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                1,
+                "MOVE_CHARM"
+            ],
+            [
+                4,
+                "MOVE_SING"
+            ],
+            [
+                7,
+                "MOVE_ENCORE"
+            ],
+            [
+                13,
+                "MOVE_COPYCAT"
+            ],
+            [
+                16,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                21,
+                "MOVE_FOLLOW_ME"
+            ],
+            [
+                25,
+                "MOVE_WAKE_UP_SLAP"
+            ],
+            [
+                30,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                32,
+                "MOVE_METEOR_MASH"
+            ],
+            [
+                36,
+                "MOVE_MOONLIGHT"
+            ],
+            [
+                45,
+                "MOVE_ENCORE"
+            ],
+            [
+                50,
+                "MOVE_WISH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM49",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_BOUNCE",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -146,7 +124,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "CLEFAIRY",
-            "category": "Fairy Pokémon",
+            "category": "Fairy Pok\u00e9mon",
             "entry_text": [
                 "It is said that happiness will come\n",
                 "to those who see a gathering of\n",
@@ -155,10 +133,10 @@
         },
         "fr": {
             "name": "MELOFEE",
-            "category": "Pokémon Fée",
+            "category": "Pok\u00e9mon F\u00e9e",
             "entry_text": [
                 "Tout le monde craque pour cet\n",
-                "adorable Pokémon. Il vit en groupe\n",
+                "adorable Pok\u00e9mon. Il vit en groupe\n",
                 "dans le calme des montagnes."
             ]
         },
@@ -166,36 +144,36 @@
             "name": "PIEPI",
             "category": "Fee",
             "entry_text": [
-                "Es ist bekannt für sein liebens-\n",
+                "Es ist bekannt f\u00fcr sein liebens-\n",
                 "wertes Wesen. Man sagt, es lebt\n",
                 "in der Stille der Berge."
             ]
         },
         "it": {
             "name": "CLEFAIRY",
-            "category": "Pokémon Fata",
+            "category": "Pok\u00e9mon Fata",
             "entry_text": [
-                "È molto amato per la sua indole\n",
+                "\u00c8 molto amato per la sua indole\n",
                 "docile. Si pensa che viva in gruppo\n",
                 "nella quiete delle montagne."
             ]
         },
         "es": {
             "name": "CLEFAIRY",
-            "category": "Pokémon Hada",
+            "category": "Pok\u00e9mon Hada",
             "entry_text": [
                 "El preferido de mucha gente por su\n",
                 "naturaleza afable. Se cree que vive\n",
-                "en grupo en montañas tranquilas."
+                "en grupo en monta\u00f1as tranquilas."
             ]
         },
         "jp": {
-            "name": "ピッピ",
-            "category": "ようせいポケモン",
+            "name": "\u30d4\u30c3\u30d4",
+            "category": "\u3088\u3046\u305b\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あいくるしい　しぐさで　だいにんき。\n",
-                "しずかな　やまおくで　なかまたちと\n",
-                "くらしていると　かんがえられている。"
+                "\u3042\u3044\u304f\u308b\u3057\u3044\u3000\u3057\u3050\u3055\u3067\u3000\u3060\u3044\u306b\u3093\u304d\u3002\n",
+                "\u3057\u305a\u304b\u306a\u3000\u3084\u307e\u304a\u304f\u3067\u3000\u306a\u304b\u307e\u305f\u3061\u3068\n",
+                "\u304f\u3089\u3057\u3066\u3044\u308b\u3068\u3000\u304b\u3093\u304c\u3048\u3089\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

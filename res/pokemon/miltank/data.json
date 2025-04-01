@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 70
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 200,
     "ev_yields": {
@@ -26,87 +29,69 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_THICK_FAT", "ABILITY_SCRAPPY" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_SCRAPPY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 5, "MOVE_DEFENSE_CURL" ],
-            [ 8, "MOVE_STOMP" ],
-            [ 11, "MOVE_MILK_DRINK" ],
-            [ 15, "MOVE_BIDE" ],
-            [ 19, "MOVE_ROLLOUT" ],
-            [ 24, "MOVE_BODY_SLAM" ],
-            [ 29, "MOVE_ZEN_HEADBUTT" ],
-            [ 35, "MOVE_CAPTIVATE" ],
-            [ 41, "MOVE_GYRO_BALL" ],
-            [ 48, "MOVE_HEAL_BELL" ],
-            [ 55, "MOVE_WAKE_UP_SLAP" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                3,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_STOMP"
+            ],
+            [
+                11,
+                "MOVE_MILK_DRINK"
+            ],
+            [
+                15,
+                "MOVE_BIDE"
+            ],
+            [
+                19,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                24,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                29,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                36,
+                "MOVE_HIGH_HORSEPOWER"
+            ],
+            [
+                42,
+                "MOVE_CHARM"
+            ],
+            [
+                50,
+                "MOVE_RETURN"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM68",
-            "TM73",
-            "TM74",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ZEN_HEADBUTT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -125,19 +110,19 @@
         "pokemon_pos_m": 11,
         "en": {
             "name": "MILTANK",
-            "category": "Milk Cow Pokémon",
+            "category": "Milk Cow Pok\u00e9mon",
             "entry_text": [
                 "It is said that kids who drink\n",
-                "MILTANK’s milk grow up to become\n",
+                "MILTANK\u2019s milk grow up to become\n",
                 "hearty, healthy adults."
             ]
         },
         "fr": {
             "name": "ECREMEUH",
-            "category": "Pokémon Vachalait",
+            "category": "Pok\u00e9mon Vachalait",
             "entry_text": [
-                "On raconte que les enfants élevés\n",
-                "au lait d’ECREMEUH deviennent des\n",
+                "On raconte que les enfants \u00e9lev\u00e9s\n",
+                "au lait d\u2019ECREMEUH deviennent des\n",
                 "adultes braves et robustes."
             ]
         },
@@ -152,29 +137,29 @@
         },
         "it": {
             "name": "MILTANK",
-            "category": "Pokémon Bovino",
+            "category": "Pok\u00e9mon Bovino",
             "entry_text": [
                 "Si dice che se un bambino beve\n",
-                "il latte di MILTANK crescerà bene\n",
-                "e da adulto sarà sano e buono."
+                "il latte di MILTANK crescer\u00e0 bene\n",
+                "e da adulto sar\u00e0 sano e buono."
             ]
         },
         "es": {
             "name": "MILTANK",
-            "category": "Pokémon Lechera",
+            "category": "Pok\u00e9mon Lechera",
             "entry_text": [
-                "Se dice que si un niño bebe leche\n",
-                "de MILTANK crecerá y se convertirá\n",
+                "Se dice que si un ni\u00f1o bebe leche\n",
+                "de MILTANK crecer\u00e1 y se convertir\u00e1\n",
                 "en un adulto sano y campechano."
             ]
         },
         "jp": {
-            "name": "ミルタンク",
-            "category": "ちちうしポケモン",
+            "name": "\u30df\u30eb\u30bf\u30f3\u30af",
+            "category": "\u3061\u3061\u3046\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ミルタンクの　ミルクを　のんで\n",
-                "そだった　こどもは　けんこうで\n",
-                "たくましい　おとなに　なるという。"
+                "\u30df\u30eb\u30bf\u30f3\u30af\u306e\u3000\u30df\u30eb\u30af\u3092\u3000\u306e\u3093\u3067\n",
+                "\u305d\u3060\u3063\u305f\u3000\u3053\u3069\u3082\u306f\u3000\u3051\u3093\u3053\u3046\u3067\n",
+                "\u305f\u304f\u307e\u3057\u3044\u3000\u304a\u3068\u306a\u306b\u3000\u306a\u308b\u3068\u3044\u3046\u3002"
             ]
         }
     },

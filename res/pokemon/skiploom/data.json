@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 136,
     "ev_yields": {
@@ -26,69 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_LEAF_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_COTTON_DOWN",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 1, "MOVE_SYNTHESIS" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_SYNTHESIS" ],
-            [ 7, "MOVE_TAIL_WHIP" ],
-            [ 10, "MOVE_TACKLE" ],
-            [ 12, "MOVE_POISON_POWDER" ],
-            [ 14, "MOVE_STUN_SPORE" ],
-            [ 16, "MOVE_SLEEP_POWDER" ],
-            [ 20, "MOVE_BULLET_SEED" ],
-            [ 24, "MOVE_LEECH_SEED" ],
-            [ 28, "MOVE_MEGA_DRAIN" ],
-            [ 32, "MOVE_COTTON_SPORE" ],
-            [ 36, "MOVE_U_TURN" ],
-            [ 40, "MOVE_WORRY_SEED" ],
-            [ 44, "MOVE_GIGA_DRAIN" ],
-            [ 48, "MOVE_BOUNCE" ],
-            [ 52, "MOVE_MEMENTO" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                4,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                7,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                12,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                14,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                16,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                19,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                22,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                25,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                27,
+                "MOVE_ACROBATICS"
+            ],
+            [
+                30,
+                "MOVE_U_TURN"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM62",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_BOUNCE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -115,7 +116,7 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "SKIPLOOM",
-            "category": "Cottonweed Pokémon",
+            "category": "Cottonweed Pok\u00e9mon",
             "entry_text": [
                 "It blooms when the weather warms.\n",
                 "It floats in the sky to soak up as\n",
@@ -124,47 +125,47 @@
         },
         "fr": {
             "name": "FLORAVOL",
-            "category": "Pokémon Pissenlit",
+            "category": "Pok\u00e9mon Pissenlit",
             "entry_text": [
-                "Il fleurit lorsque les températures\n",
+                "Il fleurit lorsque les temp\u00e9ratures\n",
                 "remontent. Il flotte dans le ciel \n",
                 "pour absorber les rayons du soleil."
             ]
         },
         "de": {
             "name": "HUBELUPF",
-            "category": "Löwenzahn",
+            "category": "L\u00f6wenzahn",
             "entry_text": [
-                "Sobald es wärmer wird, blüht es\n",
+                "Sobald es w\u00e4rmer wird, bl\u00fcht es\n",
                 "auf. Es schwebt am Himmel und nimmt\n",
-                "so viel Sonnenlicht auf wie möglich."
+                "so viel Sonnenlicht auf wie m\u00f6glich."
             ]
         },
         "it": {
             "name": "SKIPLOOM",
-            "category": "Pokémon Gramigna",
+            "category": "Pok\u00e9mon Gramigna",
             "entry_text": [
-                "Il suo fiore sboccia appena l’aria\n",
+                "Il suo fiore sboccia appena l\u2019aria\n",
                 "si riscalda. Fluttua nel cielo\n",
-                "per assorbire l’energia solare."
+                "per assorbire l\u2019energia solare."
             ]
         },
         "es": {
             "name": "SKIPLOOM",
-            "category": "Pokémon Algadón",
+            "category": "Pok\u00e9mon Algad\u00f3n",
             "entry_text": [
-                "Florece en épocas cálidas. Flota\n",
+                "Florece en \u00e9pocas c\u00e1lidas. Flota\n",
                 "en el aire para absorber toda la\n",
                 "luz solar que puede."
             ]
         },
         "jp": {
-            "name": "ポポッコ",
-            "category": "わたくさポケモン",
+            "name": "\u30dd\u30dd\u30c3\u30b3",
+            "category": "\u308f\u305f\u304f\u3055\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "きおんが　たかくなると　はなひらく。\n",
-                "そらに　うかんで　ひざしを\n",
-                "いっぱい　あびようとする。"
+                "\u304d\u304a\u3093\u304c\u3000\u305f\u304b\u304f\u306a\u308b\u3068\u3000\u306f\u306a\u3072\u3089\u304f\u3002\n",
+                "\u305d\u3089\u306b\u3000\u3046\u304b\u3093\u3067\u3000\u3072\u3056\u3057\u3092\n",
+                "\u3044\u3063\u3071\u3044\u3000\u3042\u3073\u3088\u3046\u3068\u3059\u308b\u3002"
             ]
         }
     },

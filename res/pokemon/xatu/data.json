@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 70
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 171,
     "ev_yields": {
@@ -26,89 +29,81 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_SYNCHRONIZE", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_SYNCHRONIZE",
+        "ABILITY_MAGIC_BOUNCE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_NIGHT_SHADE" ],
-            [ 9, "MOVE_TELEPORT" ],
-            [ 12, "MOVE_LUCKY_CHANT" ],
-            [ 17, "MOVE_MIRACLE_EYE" ],
-            [ 20, "MOVE_ME_FIRST" ],
-            [ 23, "MOVE_CONFUSE_RAY" ],
-            [ 27, "MOVE_TAILWIND" ],
-            [ 30, "MOVE_WISH" ],
-            [ 37, "MOVE_PSYCHO_SHIFT" ],
-            [ 42, "MOVE_FUTURE_SIGHT" ],
-            [ 47, "MOVE_OMINOUS_WIND" ],
-            [ 54, "MOVE_POWER_SWAP" ],
-            [ 54, "MOVE_GUARD_SWAP" ],
-            [ 59, "MOVE_PSYCHIC" ]
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                12,
+                "MOVE_CONFUSION"
+            ],
+            [
+                16,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                23,
+                "MOVE_OMINOUS_WIND"
+            ],
+            [
+                26,
+                "MOVE_WISH"
+            ],
+            [
+                30,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                34,
+                "MOVE_TAILWIND"
+            ],
+            [
+                40,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                45,
+                "MOVE_U_TURN"
+            ],
+            [
+                50,
+                "MOVE_ROOST"
+            ],
+            [
+                56,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM48",
-            "TM51",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "TM92",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TWISTER",
-            "MOVE_TRICK",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -127,19 +122,19 @@
         "pokemon_pos_m": 4,
         "en": {
             "name": "XATU",
-            "category": "Mystic Pokémon",
+            "category": "Mystic Pok\u00e9mon",
             "entry_text": [
-                "This odd Pokémon can see both\n",
+                "This odd Pok\u00e9mon can see both\n",
                 "the past and the future. It eyes\n",
-                "the sun’s movement all day."
+                "the sun\u2019s movement all day."
             ]
         },
         "fr": {
             "name": "XATU",
-            "category": "Pokémon Mystique",
+            "category": "Pok\u00e9mon Mystique",
             "entry_text": [
-                "Cet étrange Pokémon peut voir\n",
-                "l’avenir et le passé. Il guette \n",
+                "Cet \u00e9trange Pok\u00e9mon peut voir\n",
+                "l\u2019avenir et le pass\u00e9. Il guette \n",
                 "sans cesse la course du soleil."
             ]
         },
@@ -149,34 +144,34 @@
             "entry_text": [
                 "Dieses PKMN kann die Vergangenheit\n",
                 "und die Zukunft sehen. Es\n",
-                "beobachtet ständig die Sonne."
+                "beobachtet st\u00e4ndig die Sonne."
             ]
         },
         "it": {
             "name": "XATU",
-            "category": "Pokémon Magico",
+            "category": "Pok\u00e9mon Magico",
             "entry_text": [
-                "Pokémon enigmatico che vede il\n",
+                "Pok\u00e9mon enigmatico che vede il\n",
                 "passato e prevede il futuro osser-\n",
                 "vando il sole tutto il giorno."
             ]
         },
         "es": {
             "name": "XATU",
-            "category": "Pokémon Místico",
+            "category": "Pok\u00e9mon M\u00edstico",
             "entry_text": [
-                "Este extraño Pokémon puede ver\n",
+                "Este extra\u00f1o Pok\u00e9mon puede ver\n",
                 "el pasado y el futuro. Se pasa el\n",
-                "día mirando al sol."
+                "d\u00eda mirando al sol."
             ]
         },
         "jp": {
-            "name": "ネイティオ",
-            "category": "せいれいポケモン",
+            "name": "\u30cd\u30a4\u30c6\u30a3\u30aa",
+            "category": "\u305b\u3044\u308c\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かこと　みらいを　みとおせる。\n",
-                "まいにち　たいようの　うごきを\n",
-                "みつづけている　ふしぎな　ポケモン。"
+                "\u304b\u3053\u3068\u3000\u307f\u3089\u3044\u3092\u3000\u307f\u3068\u304a\u305b\u308b\u3002\n",
+                "\u307e\u3044\u306b\u3061\u3000\u305f\u3044\u3088\u3046\u306e\u3000\u3046\u3054\u304d\u3092\n",
+                "\u307f\u3064\u3065\u3051\u3066\u3044\u308b\u3000\u3075\u3057\u304e\u306a\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

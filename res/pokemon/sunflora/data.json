@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 85
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 146,
     "ev_yields": {
@@ -26,70 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_SOLAR_POWER" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SOLAR_POWER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 5, "MOVE_MEGA_DRAIN" ],
-            [ 9, "MOVE_INGRAIN" ],
-            [ 13, "MOVE_GRASS_WHISTLE" ],
-            [ 17, "MOVE_LEECH_SEED" ],
-            [ 21, "MOVE_BULLET_SEED" ],
-            [ 25, "MOVE_WORRY_SEED" ],
-            [ 29, "MOVE_RAZOR_LEAF" ],
-            [ 33, "MOVE_PETAL_DANCE" ],
-            [ 37, "MOVE_SUNNY_DAY" ],
-            [ 41, "MOVE_SOLAR_BEAM" ],
-            [ 43, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                5,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                9,
+                "MOVE_INGRAIN"
+            ],
+            [
+                13,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                17,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                20,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                25,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                28,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                30,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                34,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                40,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                45,
+                "MOVE_LEAF_STORM"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -108,7 +114,7 @@
         "pokemon_pos_m": 18,
         "en": {
             "name": "SUNFLORA",
-            "category": "Sun Pokémon",
+            "category": "Sun Pok\u00e9mon",
             "entry_text": [
                 "It gets energy from warm sunlight\n",
                 "and is known for its habit of\n",
@@ -117,11 +123,11 @@
         },
         "fr": {
             "name": "HELIATRONC",
-            "category": "Pokémon Soleil",
+            "category": "Pok\u00e9mon Soleil",
             "entry_text": [
                 "Les rayons du soleil lui donnent de\n",
-                "l’énergie. Il est connu pour migrer\n",
-                "vers les régions ensoleillées."
+                "l\u2019\u00e9nergie. Il est connu pour migrer\n",
+                "vers les r\u00e9gions ensoleill\u00e9es."
             ]
         },
         "de": {
@@ -135,29 +141,29 @@
         },
         "it": {
             "name": "SUNFLORA",
-            "category": "Pokémon Sole",
+            "category": "Pok\u00e9mon Sole",
             "entry_text": [
                 "Trae energia dalla luce del sole e\n",
                 "si muove di continuo per cercare\n",
-                "di assorbirne sempre di più."
+                "di assorbirne sempre di pi\u00f9."
             ]
         },
         "es": {
             "name": "SUNFLORA",
-            "category": "Pokémon Sol",
+            "category": "Pok\u00e9mon Sol",
             "entry_text": [
-                "Obtiene energía de la luz solar.\n",
-                "Este Pokémon es famoso por\n",
+                "Obtiene energ\u00eda de la luz solar.\n",
+                "Este Pok\u00e9mon es famoso por\n",
                 "su heliotropismo."
             ]
         },
         "jp": {
-            "name": "キマワリ",
-            "category": "たいようポケモン",
+            "name": "\u30ad\u30de\u30ef\u30ea",
+            "category": "\u305f\u3044\u3088\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あたたかい　ひざしが　エネルギ－。\n",
-                "たいようを　おいかけて　いどうする\n",
-                "しゅうせいで　しられている。"
+                "\u3042\u305f\u305f\u304b\u3044\u3000\u3072\u3056\u3057\u304c\u3000\u30a8\u30cd\u30eb\u30ae\uff0d\u3002\n",
+                "\u305f\u3044\u3088\u3046\u3092\u3000\u304a\u3044\u304b\u3051\u3066\u3000\u3044\u3069\u3046\u3059\u308b\n",
+                "\u3057\u3085\u3046\u305b\u3044\u3067\u3000\u3057\u3089\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

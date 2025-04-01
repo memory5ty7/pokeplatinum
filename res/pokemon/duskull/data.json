@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 90
     },
-    "types": [ "TYPE_GHOST", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_GHOST",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 97,
     "ev_yields": {
@@ -26,75 +29,63 @@
     "hatch_cycles": 25,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_NIGHT_SHADE" ],
-            [ 6, "MOVE_DISABLE" ],
-            [ 9, "MOVE_FORESIGHT" ],
-            [ 14, "MOVE_ASTONISH" ],
-            [ 17, "MOVE_CONFUSE_RAY" ],
-            [ 22, "MOVE_SHADOW_SNEAK" ],
-            [ 25, "MOVE_PURSUIT" ],
-            [ 30, "MOVE_CURSE" ],
-            [ 33, "MOVE_WILL_O_WISP" ],
-            [ 38, "MOVE_MEAN_LOOK" ],
-            [ 41, "MOVE_PAYBACK" ],
-            [ 46, "MOVE_FUTURE_SIGHT" ]
+            [
+                1,
+                "MOVE_DISABLE"
+            ],
+            [
+                8,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                12,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                16,
+                "MOVE_PAIN_SPLIT"
+            ],
+            [
+                20,
+                "MOVE_PAYBACK"
+            ],
+            [
+                24,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                28,
+                "MOVE_HEX"
+            ],
+            [
+                32,
+                "MOVE_SHADOW_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                44,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM49",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM61",
-            "TM63",
-            "TM66",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -121,7 +112,7 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "DUSKULL",
-            "category": "Requiem Pokémon",
+            "category": "Requiem Pok\u00e9mon",
             "entry_text": [
                 "It loves the crying of children. It\n",
                 "startles bad kids by passing\n",
@@ -130,11 +121,11 @@
         },
         "fr": {
             "name": "SKELENOX",
-            "category": "Pokémon Requiem",
+            "category": "Pok\u00e9mon Requiem",
             "entry_text": [
-                "Il poursuit assidûment sa proie, où\n",
-                "qu’elle aille. Il n’abandonne sa\n",
-                "traque qu’au lever du soleil."
+                "Il poursuit assid\u00fbment sa proie, o\u00f9\n",
+                "qu\u2019elle aille. Il n\u2019abandonne sa\n",
+                "traque qu\u2019au lever du soleil."
             ]
         },
         "de": {
@@ -142,35 +133,35 @@
             "category": "Requiem",
             "entry_text": [
                 "Verbissen verfolgt es seine Beute\n",
-                "überallhin. Doch sobald die Sonne\n",
+                "\u00fcberallhin. Doch sobald die Sonne\n",
                 "aufgeht, ist die Jagd vorbei."
             ]
         },
         "it": {
             "name": "DUSKULL",
-            "category": "Pokémon Requiem",
+            "category": "Pok\u00e9mon Requiem",
             "entry_text": [
                 "Segue ostinatamente la preda\n",
                 "ovunque essa vada. Abbandona la\n",
-                "caccia solo all’alba."
+                "caccia solo all\u2019alba."
             ]
         },
         "es": {
             "name": "DUSKULL",
-            "category": "Pokémon Réquiem",
+            "category": "Pok\u00e9mon R\u00e9quiem",
             "entry_text": [
                 "Persigue a su presa como un perro\n",
-                "allá donde vaya. No obstante,\n",
+                "all\u00e1 donde vaya. No obstante,\n",
                 "abandona la caza al amanecer."
             ]
         },
         "jp": {
-            "name": "ヨマワル",
-            "category": "おむかえポケモン",
+            "name": "\u30e8\u30de\u30ef\u30eb",
+            "category": "\u304a\u3080\u304b\u3048\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "どこまでも　えものを　おいつづける\n",
-                "しゅうねんぶかい　せいかくだが\n",
-                "あさひが　のぼると　あきらめる。"
+                "\u3069\u3053\u307e\u3067\u3082\u3000\u3048\u3082\u306e\u3092\u3000\u304a\u3044\u3064\u3065\u3051\u308b\n",
+                "\u3057\u3085\u3046\u306d\u3093\u3076\u304b\u3044\u3000\u305b\u3044\u304b\u304f\u3060\u304c\n",
+                "\u3042\u3055\u3072\u304c\u3000\u306e\u307c\u308b\u3068\u3000\u3042\u304d\u3089\u3081\u308b\u3002"
             ]
         }
     },

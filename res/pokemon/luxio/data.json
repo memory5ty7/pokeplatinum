@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 49
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 117,
     "ev_yields": {
@@ -26,64 +29,59 @@
     "hatch_cycles": 20,
     "base_friendship": 100,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RIVALRY", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_STRONG_JAW",
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 18, "MOVE_BITE" ],
-            [ 23, "MOVE_ROAR" ],
-            [ 28, "MOVE_SWAGGER" ],
-            [ 33, "MOVE_THUNDER_FANG" ],
-            [ 38, "MOVE_CRUNCH" ],
-            [ 43, "MOVE_SCARY_FACE" ],
-            [ 48, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_SPARK"
+            ],
+            [
+                13,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                17,
+                "MOVE_BITE"
+            ],
+            [
+                20,
+                "MOVE_CHARM"
+            ],
+            [
+                24,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_FANG"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -110,7 +108,7 @@
         "pokemon_pos_m": 17,
         "en": {
             "name": "LUXIO",
-            "category": "Spark Pokémon",
+            "category": "Spark Pok\u00e9mon",
             "entry_text": [
                 "Strong electricity courses through\n",
                 "the tips of its sharp claws. A light\n",
@@ -119,10 +117,10 @@
         },
         "fr": {
             "name": "LUXIO",
-            "category": "Pokémon Etincelle",
+            "category": "Pok\u00e9mon Etincelle",
             "entry_text": [
-                "L’électricité libérée par ses\n",
-                "griffes peut assommer l’ennemi.\n",
+                "L\u2019\u00e9lectricit\u00e9 lib\u00e9r\u00e9e par ses\n",
+                "griffes peut assommer l\u2019ennemi.\n",
                 "Il vit en petits groupes."
             ]
         },
@@ -130,36 +128,36 @@
             "name": "LUXIO",
             "category": "Funken",
             "entry_text": [
-                "Seine Krallen geben Elektrizität ab,\n",
+                "Seine Krallen geben Elektrizit\u00e4t ab,\n",
                 "die stark genug ist, jemanden\n",
                 "bewusstlos zu machen."
             ]
         },
         "it": {
             "name": "LUXIO",
-            "category": "Pokémon Favilla",
+            "category": "Pok\u00e9mon Favilla",
             "entry_text": [
-                "Dagli artigli rilascia un’elettricità\n",
+                "Dagli artigli rilascia un\u2019elettricit\u00e0\n",
                 "talmente intensa da mandare KO il\n",
                 "nemico. Vive in piccoli gruppi."
             ]
         },
         "es": {
             "name": "LUXIO",
-            "category": "Pokémon Chispa",
+            "category": "Pok\u00e9mon Chispa",
             "entry_text": [
                 "Sus garras emiten electricidad\n",
                 "que puede debilitar a sus rivales.\n",
-                "Viven en grupos pequeños."
+                "Viven en grupos peque\u00f1os."
             ]
         },
         "jp": {
-            "name": "ルクシオ",
-            "category": "でんこうポケモン",
+            "name": "\u30eb\u30af\u30b7\u30aa",
+            "category": "\u3067\u3093\u3053\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いっぱつで　きぜつさせるほどの\n",
-                "でんりゅうを　ツメから　ながす。\n",
-                "すうひきの　グル－プで　くらす。"
+                "\u3044\u3063\u3071\u3064\u3067\u3000\u304d\u305c\u3064\u3055\u305b\u308b\u307b\u3069\u306e\n",
+                "\u3067\u3093\u308a\u3085\u3046\u3092\u3000\u30c4\u30e1\u304b\u3089\u3000\u306a\u304c\u3059\u3002\n",
+                "\u3059\u3046\u3072\u304d\u306e\u3000\u30b0\u30eb\uff0d\u30d7\u3067\u3000\u304f\u3089\u3059\u3002"
             ]
         }
     },

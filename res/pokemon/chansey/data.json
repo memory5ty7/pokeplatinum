@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 105
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 255,
     "ev_yields": {
@@ -26,103 +29,28 @@
     "hatch_cycles": 40,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_SERENE_GRACE" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_NATURAL_CURE",
+        "ABILITY_SERENE_GRACE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_TAIL_WHIP" ],
-            [ 9, "MOVE_REFRESH" ],
-            [ 12, "MOVE_SOFTBOILED" ],
-            [ 16, "MOVE_DOUBLE_SLAP" ],
-            [ 20, "MOVE_MINIMIZE" ],
-            [ 23, "MOVE_SING" ],
-            [ 27, "MOVE_FLING" ],
-            [ 31, "MOVE_DEFENSE_CURL" ],
-            [ 34, "MOVE_LIGHT_SCREEN" ],
-            [ 38, "MOVE_EGG_BOMB" ],
-            [ 42, "MOVE_HEALING_WISH" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM49",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM60",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS", "SPECIES_BLISSEY" ]
+        [
+            "EVO_LEVEL_HAPPINESS",
+            "SPECIES_BLISSEY"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -142,43 +70,43 @@
         "pokemon_pos_m": 10,
         "en": {
             "name": "CHANSEY",
-            "category": "Egg Pokémon",
+            "category": "Egg Pok\u00e9mon",
             "entry_text": [
-                "A kindly Pokémon that lays highly\n",
+                "A kindly Pok\u00e9mon that lays highly\n",
                 "nutritious eggs and shares them\n",
-                "with injured Pokémon or people."
+                "with injured Pok\u00e9mon or people."
             ]
         },
         "fr": {
             "name": "LEVEINARD",
-            "category": "Pokémon Oeuf",
+            "category": "Pok\u00e9mon Oeuf",
             "entry_text": [
-                "Il est censé apporter la joie. Ce\n",
-                "Pokémon charitable offre ses\n",
-                "œufs aux blessés."
+                "Il est cens\u00e9 apporter la joie. Ce\n",
+                "Pok\u00e9mon charitable offre ses\n",
+                "\u0153ufs aux bless\u00e9s."
             ]
         },
         "de": {
             "name": "CHANEIRA",
             "category": "Ei",
             "entry_text": [
-                "Man sagt, es bringe Glück. Es ist\n",
-                "sehr mitfühlend und teilt seine Eier\n",
+                "Man sagt, es bringe Gl\u00fcck. Es ist\n",
+                "sehr mitf\u00fchlend und teilt seine Eier\n",
                 "mit Verletzten."
             ]
         },
         "it": {
             "name": "CHANSEY",
-            "category": "Pokémon Uovo",
+            "category": "Pok\u00e9mon Uovo",
             "entry_text": [
-                "Si dice che porti felicità.\n",
-                "È molto altruista e condivide\n",
-                "le uova con chi è ferito."
+                "Si dice che porti felicit\u00e0.\n",
+                "\u00c8 molto altruista e condivide\n",
+                "le uova con chi \u00e8 ferito."
             ]
         },
         "es": {
             "name": "CHANSEY",
-            "category": "Pokémon Huevo",
+            "category": "Pok\u00e9mon Huevo",
             "entry_text": [
                 "Se dice que reparte felicidad.\n",
                 "Es compasivo y reparte sus\n",
@@ -186,12 +114,12 @@
             ]
         },
         "jp": {
-            "name": "ラッキ－",
-            "category": "たまごポケモン",
+            "name": "\u30e9\u30c3\u30ad\uff0d",
+            "category": "\u305f\u307e\u3054\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しあわせを　はこぶと　いわれている。\n",
-                "きずついた　ひとに　タマゴを\n",
-                "わけてあげる　やさしい　ポケモン。"
+                "\u3057\u3042\u308f\u305b\u3092\u3000\u306f\u3053\u3076\u3068\u3000\u3044\u308f\u308c\u3066\u3044\u308b\u3002\n",
+                "\u304d\u305a\u3064\u3044\u305f\u3000\u3072\u3068\u306b\u3000\u30bf\u30de\u30b4\u3092\n",
+                "\u308f\u3051\u3066\u3042\u3052\u308b\u3000\u3084\u3055\u3057\u3044\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 92,
         "special_defense": 42
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 107,
     "ev_yields": {
@@ -26,68 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_TANGLED_FEET" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_FILTER",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 5, "MOVE_GROWL" ],
-            [ 9, "MOVE_MIRROR_MOVE" ],
-            [ 13, "MOVE_SING" ],
-            [ 17, "MOVE_FURY_ATTACK" ],
-            [ 21, "MOVE_CHATTER" ],
-            [ 25, "MOVE_TAUNT" ],
-            [ 29, "MOVE_MIMIC" ],
-            [ 33, "MOVE_ROOST" ],
-            [ 37, "MOVE_UPROAR" ],
-            [ 41, "MOVE_FEATHER_DANCE" ],
-            [ 45, "MOVE_HYPER_VOICE" ]
+            [
+                1,
+                "MOVE_GUST"
+            ],
+            [
+                1,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                6,
+                "MOVE_GROWL"
+            ],
+            [
+                10,
+                "MOVE_MIRROR_MOVE"
+            ],
+            [
+                12,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                15,
+                "MOVE_TAUNT"
+            ],
+            [
+                24,
+                "MOVE_U_TURN"
+            ],
+            [
+                30,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                36,
+                "MOVE_HEAT_WAVE"
+            ],
+            [
+                42,
+                "MOVE_ROOST"
+            ],
+            [
+                45,
+                "MOVE_UPROAR"
+            ],
+            [
+                50,
+                "MOVE_DEFOG"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -106,20 +114,20 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "CHATOT",
-            "category": "Music Note Pokémon",
+            "category": "Music Note Pok\u00e9mon",
             "entry_text": [
-                "Its tongue is just like a human’s.\n",
+                "Its tongue is just like a human\u2019s.\n",
                 "As a result, it can cleverly mimic\n",
                 "human speech."
             ]
         },
         "fr": {
             "name": "PIJAKO",
-            "category": "Pokémon Note Musique",
+            "category": "Pok\u00e9mon Note Musique",
             "entry_text": [
                 "On peut lui enseigner quelques\n",
-                "mots. S’il s’agit d’un groupe, ils\n",
-                "retiendront les mêmes phrases."
+                "mots. S\u2019il s\u2019agit d\u2019un groupe, ils\n",
+                "retiendront les m\u00eames phrases."
             ]
         },
         "de": {
@@ -133,16 +141,16 @@
         },
         "it": {
             "name": "CHATOT",
-            "category": "Pokémon Musicale",
+            "category": "Pok\u00e9mon Musicale",
             "entry_text": [
-                "Può imparare il linguaggio umano.\n",
+                "Pu\u00f2 imparare il linguaggio umano.\n",
                 "Se un gruppo si raduna, tutti\n",
                 "imparano le stesse parole."
             ]
         },
         "es": {
             "name": "CHATOT",
-            "category": "Pokémon Corchea",
+            "category": "Pok\u00e9mon Corchea",
             "entry_text": [
                 "Pueden aprender y hablar lenguas\n",
                 "humanas. Si se juntan, todos\n",
@@ -150,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "ペラップ",
-            "category": "おんぷポケモン",
+            "name": "\u30da\u30e9\u30c3\u30d7",
+            "category": "\u304a\u3093\u3077\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひとの　ことばを　おぼえて　なく。\n",
-                "なかまが　いっかしょに　あつまると\n",
-                "みんな　おなじ　ことばを　おぼえる。"
+                "\u3072\u3068\u306e\u3000\u3053\u3068\u3070\u3092\u3000\u304a\u307c\u3048\u3066\u3000\u306a\u304f\u3002\n",
+                "\u306a\u304b\u307e\u304c\u3000\u3044\u3063\u304b\u3057\u3087\u306b\u3000\u3042\u3064\u307e\u308b\u3068\n",
+                "\u307f\u3093\u306a\u3000\u304a\u306a\u3058\u3000\u3053\u3068\u3070\u3092\u3000\u304a\u307c\u3048\u308b\u3002"
             ]
         }
     },

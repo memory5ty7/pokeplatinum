@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 77,
     "ev_yields": {
@@ -26,61 +29,95 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_WATER_ABSORB", "ABILITY_DAMP" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_WATER_ABSORB"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 5, "MOVE_BUBBLE" ],
-            [ 8, "MOVE_HYPNOSIS" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_DOUBLE_SLAP" ],
-            [ 18, "MOVE_RAIN_DANCE" ],
-            [ 21, "MOVE_BODY_SLAM" ],
-            [ 25, "MOVE_BUBBLE_BEAM" ],
-            [ 28, "MOVE_MUD_SHOT" ],
-            [ 31, "MOVE_BELLY_DRUM" ],
-            [ 35, "MOVE_WAKE_UP_SLAP" ],
-            [ 38, "MOVE_HYDRO_PUMP" ],
-            [ 41, "MOVE_MUD_BOMB" ]
+            [
+                1,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                5,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                10,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                18,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                24,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                30,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                32,
+                "MOVE_TAUNT"
+            ],
+            [
+                34,
+                "MOVE_FLING"
+            ],
+            [
+                36,
+                "MOVE_WATERFALL"
+            ],
+            [
+                42,
+                "MOVE_HIGH_HORSEPOWER"
+            ],
+            [
+                45,
+                "MOVE_VACUUM_WAVE"
+            ],
+            [
+                45,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                50,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                55,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                62,
+                "MOVE_WAVE_CRASH"
+            ],
+            [
+                67,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                70,
+                "MOVE_MAT_BLOCK"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -107,7 +144,7 @@
         "pokemon_pos_m": 21,
         "en": {
             "name": "POLIWAG",
-            "category": "Tadpole Pokémon",
+            "category": "Tadpole Pok\u00e9mon",
             "entry_text": [
                 "Its skin is so thin, its internal\n",
                 "organs are visible. It has trouble\n",
@@ -116,47 +153,47 @@
         },
         "fr": {
             "name": "PTITARD",
-            "category": "Pokémon Têtard",
+            "category": "Pok\u00e9mon T\u00eatard",
             "entry_text": [
-                "Sa peau est si mince qu’on\n",
+                "Sa peau est si mince qu\u2019on\n",
                 "voit ses organes internes. Il tient\n",
-                "à peine sur ses nouveaux pieds."
+                "\u00e0 peine sur ses nouveaux pieds."
             ]
         },
         "de": {
             "name": "QUAPSEL",
             "category": "Kaulquappe",
             "entry_text": [
-                "Seine Haut ist so dünn, dass man die\n",
+                "Seine Haut ist so d\u00fcnn, dass man die\n",
                 "inneren Organe sehen kann. Es hat\n",
                 "Schwierigkeiten beim Laufen."
             ]
         },
         "it": {
             "name": "POLIWAG",
-            "category": "Pokémon Girino",
+            "category": "Pok\u00e9mon Girino",
             "entry_text": [
-                "La sua pelle è così sottile che si\n",
+                "La sua pelle \u00e8 cos\u00ec sottile che si\n",
                 "intravedono gli organi. Cammina a\n",
                 "fatica sulle zampe poco sviluppate."
             ]
         },
         "es": {
             "name": "POLIWAG",
-            "category": "Pokémon Renacuajo",
+            "category": "Pok\u00e9mon Renacuajo",
             "entry_text": [
                 "Su piel es tan fina que permite\n",
-                "ver sus órganos. Le cuesta andar\n",
+                "ver sus \u00f3rganos. Le cuesta andar\n",
                 "con sus nuevas patas."
             ]
         },
         "jp": {
-            "name": "ニョロモ",
-            "category": "おたまポケモン",
+            "name": "\u30cb\u30e7\u30ed\u30e2",
+            "category": "\u304a\u305f\u307e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ないぞうが　すけて　みえるほど\n",
-                "ひふが　うすい。はえたばかりの\n",
-                "あしは　あるくことが　にがて。"
+                "\u306a\u3044\u305e\u3046\u304c\u3000\u3059\u3051\u3066\u3000\u307f\u3048\u308b\u307b\u3069\n",
+                "\u3072\u3075\u304c\u3000\u3046\u3059\u3044\u3002\u306f\u3048\u305f\u3070\u304b\u308a\u306e\n",
+                "\u3042\u3057\u306f\u3000\u3042\u308b\u304f\u3053\u3068\u304c\u3000\u306b\u304c\u3066\u3002"
             ]
         }
     },

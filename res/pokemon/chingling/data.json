@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 50
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 74,
     "ev_yields": {
@@ -26,75 +29,49 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_TECHNICIAN",
+        "ABILITY_THICK_FAT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WRAP" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 14, "MOVE_CONFUSION" ],
-            [ 17, "MOVE_UPROAR" ],
-            [ 22, "MOVE_LAST_RESORT" ]
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                10,
+                "MOVE_CONFUSION"
+            ],
+            [
+                14,
+                "MOVE_YAWN"
+            ],
+            [
+                20,
+                "MOVE_LIGHT_SCREEN"
+            ]
         ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM48",
-            "TM49",
-            "TM57",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_NIGHT", "SPECIES_CHIMECHO" ]
+        [
+            "EVO_LEVEL_HAPPINESS_NIGHT",
+            "SPECIES_CHIMECHO"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -114,7 +91,7 @@
         "pokemon_pos_m": 65527,
         "en": {
             "name": "CHINGLING",
-            "category": "Bell Pokémon",
+            "category": "Bell Pok\u00e9mon",
             "entry_text": [
                 "There is an orb inside its mouth.\n",
                 "When it hops, the orb bounces all\n",
@@ -123,16 +100,16 @@
         },
         "fr": {
             "name": "KORILLON",
-            "category": "Pokémon Clochette",
+            "category": "Pok\u00e9mon Clochette",
             "entry_text": [
-                "Il émet des cris en agitant\n",
-                "l’orbe à l’arrière de sa gorge. Il\n",
-                "avance par bonds désordonnés."
+                "Il \u00e9met des cris en agitant\n",
+                "l\u2019orbe \u00e0 l\u2019arri\u00e8re de sa gorge. Il\n",
+                "avance par bonds d\u00e9sordonn\u00e9s."
             ]
         },
         "de": {
             "name": "KLINGPLIM",
-            "category": "Glöckchen",
+            "category": "Gl\u00f6ckchen",
             "entry_text": [
                 "Es ruft, indem es eine Kugel in\n",
                 "seiner Kehle bewegt. Es bewegt sich\n",
@@ -141,7 +118,7 @@
         },
         "it": {
             "name": "CHINGLING",
-            "category": "Pokémon Sonaglio",
+            "category": "Pok\u00e9mon Sonaglio",
             "entry_text": [
                 "Emette versi muovendo la sfera\n",
                 "che ha nella gola.\n",
@@ -150,20 +127,20 @@
         },
         "es": {
             "name": "CHINGLING",
-            "category": "Pokémon Campana",
+            "category": "Pok\u00e9mon Campana",
             "entry_text": [
                 "Emite chillidos al agitar la esfera\n",
                 "de su garganta. Se mueve con\n",
-                "enérgicos saltos."
+                "en\u00e9rgicos saltos."
             ]
         },
         "jp": {
-            "name": "リ－シャン",
-            "category": "すずポケモン",
+            "name": "\u30ea\uff0d\u30b7\u30e3\u30f3",
+            "category": "\u3059\u305a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "のどの　おくで　まるい　たまを\n",
-                "ふるわせて　なきごえを　だす。\n",
-                "ふわりと　はずんで　いどうする。"
+                "\u306e\u3069\u306e\u3000\u304a\u304f\u3067\u3000\u307e\u308b\u3044\u3000\u305f\u307e\u3092\n",
+                "\u3075\u308b\u308f\u305b\u3066\u3000\u306a\u304d\u3054\u3048\u3092\u3000\u3060\u3059\u3002\n",
+                "\u3075\u308f\u308a\u3068\u3000\u306f\u305a\u3093\u3067\u3000\u3044\u3069\u3046\u3059\u308b\u3002"
             ]
         }
     },

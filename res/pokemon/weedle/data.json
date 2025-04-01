@@ -7,7 +7,10 @@
         "special_attack": 20,
         "special_defense": 20
     },
-    "types": [ "TYPE_BUG", "TYPE_POISON" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 52,
     "ev_yields": {
@@ -26,19 +29,35 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHIELD_DUST", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHIELD_DUST",
+        "ABILITY_SHIELD_DUST",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_STRING_SHOT" ],
-            [ 15, "MOVE_BUG_BITE" ]
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_STRING_SHOT"
+            ],
+            [
+                15,
+                "MOVE_BUG_BITE"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [  ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -65,7 +84,7 @@
         "pokemon_pos_m": 26,
         "en": {
             "name": "WEEDLE",
-            "category": "Hairy Bug Pokémon",
+            "category": "Hairy Bug Pok\u00e9mon",
             "entry_text": [
                 "It eats its weight in leaves every\n",
                 "day. It fends off attackers with\n",
@@ -74,47 +93,47 @@
         },
         "fr": {
             "name": "ASPICOT",
-            "category": "Pokémon Insectopic",
+            "category": "Pok\u00e9mon Insectopic",
             "entry_text": [
                 "Il mange chaque jour son poids en\n",
-                "feuilles. Il utilise l’aiguillon sur sa\n",
-                "tête pour repousser l’ennemi."
+                "feuilles. Il utilise l\u2019aiguillon sur sa\n",
+                "t\u00eate pour repousser l\u2019ennemi."
             ]
         },
         "de": {
             "name": "HORNLIU",
             "category": "Raupe",
             "entry_text": [
-                "Es frisst täglich sein Gewicht in\n",
-                "Blättern. Die Nadel auf seinem Kopf\n",
+                "Es frisst t\u00e4glich sein Gewicht in\n",
+                "Bl\u00e4ttern. Die Nadel auf seinem Kopf\n",
                 "dient der Verteidigung."
             ]
         },
         "it": {
             "name": "WEEDLE",
-            "category": "Pokémon Millepiedi",
+            "category": "Pok\u00e9mon Millepiedi",
             "entry_text": [
-                "Divora ogni giorno una quantità di\n",
+                "Divora ogni giorno una quantit\u00e0 di\n",
                 "foglie pari al suo peso. Respinge i\n",
-                "nemici con l’aculeo sulla testa."
+                "nemici con l\u2019aculeo sulla testa."
             ]
         },
         "es": {
             "name": "WEEDLE",
-            "category": "Pokémon Oruga",
+            "category": "Pok\u00e9mon Oruga",
             "entry_text": [
                 "Come el equivalente a su peso en\n",
-                "hojas todos los días. Se defiende\n",
-                "con el aguijón de su cabeza."
+                "hojas todos los d\u00edas. Se defiende\n",
+                "con el aguij\u00f3n de su cabeza."
             ]
         },
         "jp": {
-            "name": "ビ－ドル",
-            "category": "けむしポケモン",
+            "name": "\u30d3\uff0d\u30c9\u30eb",
+            "category": "\u3051\u3080\u3057\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "まいにち　じぶんと　おなじ　おもさの\n",
-                "はっぱを　たべる。あたまの　ハリで\n",
-                "おそってきた　てきを　げきたい。"
+                "\u307e\u3044\u306b\u3061\u3000\u3058\u3076\u3093\u3068\u3000\u304a\u306a\u3058\u3000\u304a\u3082\u3055\u306e\n",
+                "\u306f\u3063\u3071\u3092\u3000\u305f\u3079\u308b\u3002\u3042\u305f\u307e\u306e\u3000\u30cf\u30ea\u3067\n",
+                "\u304a\u305d\u3063\u3066\u304d\u305f\u3000\u3066\u304d\u3092\u3000\u3052\u304d\u305f\u3044\u3002"
             ]
         }
     },

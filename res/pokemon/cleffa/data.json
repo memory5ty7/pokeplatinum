@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 55
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 37,
     "ev_yields": {
@@ -26,76 +29,53 @@
     "hatch_cycles": 10,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_MAGIC_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_MAGIC_GUARD",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 4, "MOVE_ENCORE" ],
-            [ 7, "MOVE_SING" ],
-            [ 10, "MOVE_SWEET_KISS" ],
-            [ 13, "MOVE_COPYCAT" ],
-            [ 16, "MOVE_MAGICAL_LEAF" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                1,
+                "MOVE_CHARM"
+            ],
+            [
+                4,
+                "MOVE_SING"
+            ],
+            [
+                7,
+                "MOVE_ENCORE"
+            ],
+            [
+                13,
+                "MOVE_COPYCAT"
+            ],
+            [
+                21,
+                "MOVE_MAGICAL_LEAF"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ENDEAVOR",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_LAST_RESORT",
-            "MOVE_TRICK",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS", "SPECIES_CLEFAIRY" ]
+        [
+            "EVO_LEVEL_HAPPINESS",
+            "SPECIES_CLEFAIRY"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -115,20 +95,20 @@
         "pokemon_pos_m": 29,
         "en": {
             "name": "CLEFFA",
-            "category": "Star Shape Pokémon",
+            "category": "Star Shape Pok\u00e9mon",
             "entry_text": [
                 "It is often seen when shooting\n",
-                "stars fill the night skies. It’s said\n",
+                "stars fill the night skies. It\u2019s said\n",
                 "to arrive riding on a shooting star."
             ]
         },
         "fr": {
             "name": "MELO",
-            "category": "Pokémon Etoile",
+            "category": "Pok\u00e9mon Etoile",
             "entry_text": [
-                "Sa silhouette rappelle une étoile.\n",
-                "On dit qu’il descend sur terre\n",
-                "en chevauchant une étoile filante."
+                "Sa silhouette rappelle une \u00e9toile.\n",
+                "On dit qu\u2019il descend sur terre\n",
+                "en chevauchant une \u00e9toile filante."
             ]
         },
         "de": {
@@ -136,13 +116,13 @@
             "category": "Sternform",
             "entry_text": [
                 "Seine Silhouette sieht aus wie ein\n",
-                "Stern. Man sagt, es würde auf\n",
+                "Stern. Man sagt, es w\u00fcrde auf\n",
                 "Sternschnuppen reisen."
             ]
         },
         "it": {
             "name": "CLEFFA",
-            "category": "Pokémon Stella",
+            "category": "Pok\u00e9mon Stella",
             "entry_text": [
                 "La sua sagoma ricorda quella di\n",
                 "una stella. Si ritiene che giunga\n",
@@ -151,7 +131,7 @@
         },
         "es": {
             "name": "CLEFFA",
-            "category": "Pokémon Estrellada",
+            "category": "Pok\u00e9mon Estrellada",
             "entry_text": [
                 "Tiene forma de estrella. Se cree\n",
                 "que llega cabalgando sobre\n",
@@ -159,12 +139,12 @@
             ]
         },
         "jp": {
-            "name": "ピィ",
-            "category": "ほしがたポケモン",
+            "name": "\u30d4\u30a3",
+            "category": "\u307b\u3057\u304c\u305f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "よぞらの　ほしに　にた　シルエット。\n",
-                "ながれぼしに　のって　やってくると\n",
-                "しんじられている　ポケモン。"
+                "\u3088\u305e\u3089\u306e\u3000\u307b\u3057\u306b\u3000\u306b\u305f\u3000\u30b7\u30eb\u30a8\u30c3\u30c8\u3002\n",
+                "\u306a\u304c\u308c\u307c\u3057\u306b\u3000\u306e\u3063\u3066\u3000\u3084\u3063\u3066\u304f\u308b\u3068\n",
+                "\u3057\u3093\u3058\u3089\u308c\u3066\u3044\u308b\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

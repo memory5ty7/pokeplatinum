@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 45
     },
-    "types": [ "TYPE_ROCK", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 108,
     "ev_yields": {
@@ -26,80 +29,91 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_ROCK_HEAD", "ABILITY_STURDY" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_NONE",
+        "ABILITY_STURDY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_BIND" ],
-            [ 6, "MOVE_SCREECH" ],
-            [ 9, "MOVE_ROCK_THROW" ],
-            [ 14, "MOVE_RAGE" ],
-            [ 17, "MOVE_ROCK_TOMB" ],
-            [ 22, "MOVE_SANDSTORM" ],
-            [ 25, "MOVE_SLAM" ],
-            [ 30, "MOVE_ROCK_POLISH" ],
-            [ 33, "MOVE_DRAGON_BREATH" ],
-            [ 38, "MOVE_CURSE" ],
-            [ 41, "MOVE_IRON_TAIL" ],
-            [ 46, "MOVE_SAND_TOMB" ],
-            [ 49, "MOVE_DOUBLE_EDGE" ],
-            [ 54, "MOVE_STONE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_BIND"
+            ],
+            [
+                5,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                10,
+                "MOVE_SCREECH"
+            ],
+            [
+                12,
+                "MOVE_DRAGON_BREATH"
+            ],
+            [
+                14,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                16,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                18,
+                "MOVE_BLOCK"
+            ],
+            [
+                20,
+                "MOVE_IRON_HEAD"
+            ],
+            [
+                22,
+                "MOVE_ACCELEROCK"
+            ],
+            [
+                25,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                28,
+                "MOVE_IRON_TAIL"
+            ],
+            [
+                32,
+                "MOVE_DIG"
+            ],
+            [
+                36,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                42,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_GYRO_BALL"
+            ],
+            [
+                56,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM59",
-            "TM64",
-            "TM66",
-            "TM69",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -126,7 +140,7 @@
         "pokemon_pos_m": 1,
         "en": {
             "name": "ONIX",
-            "category": "Rock Snake Pokémon",
+            "category": "Rock Snake Pok\u00e9mon",
             "entry_text": [
                 "It burrows through the ground\n",
                 "at a speed of 50 mph while\n",
@@ -135,7 +149,7 @@
         },
         "fr": {
             "name": "ONIX",
-            "category": "Pokémon Serpenroc",
+            "category": "Pok\u00e9mon Serpenroc",
             "entry_text": [
                 "Il provoque des secousses\n",
                 "sismiques en creusant.\n",
@@ -148,21 +162,21 @@
             "entry_text": [
                 "Wenn es sich unter dem Boden mit\n",
                 "bis zu 80 km/h bewegt, verursacht\n",
-                "es Erschütterungen."
+                "es Ersch\u00fctterungen."
             ]
         },
         "it": {
             "name": "ONIX",
-            "category": "Pokémon Serpesasso",
+            "category": "Pok\u00e9mon Serpesasso",
             "entry_text": [
                 "Si muove sottoterra provocando\n",
-                "scosse e boati. Può raggiungere\n",
-                "anche la velocità di 80 km/h."
+                "scosse e boati. Pu\u00f2 raggiungere\n",
+                "anche la velocit\u00e0 di 80 km/h."
             ]
         },
         "es": {
             "name": "ONIX",
-            "category": "Pokémon Serp. Roca",
+            "category": "Pok\u00e9mon Serp. Roca",
             "entry_text": [
                 "Cuando viaja bajo tierra causa\n",
                 "temblores y estruendo. Se puede\n",
@@ -170,12 +184,12 @@
             ]
         },
         "jp": {
-            "name": "イワ－ク",
-            "category": "いわへびポケモン",
+            "name": "\u30a4\u30ef\uff0d\u30af",
+            "category": "\u3044\u308f\u3078\u3073\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "イワ－クが　ちちゅうを　ほりすすむと\n",
-                "じなりが　きこえ　じめんが　ゆれる。\n",
-                "いどうそくどは　じそく８０キロ。"
+                "\u30a4\u30ef\uff0d\u30af\u304c\u3000\u3061\u3061\u3085\u3046\u3092\u3000\u307b\u308a\u3059\u3059\u3080\u3068\n",
+                "\u3058\u306a\u308a\u304c\u3000\u304d\u3053\u3048\u3000\u3058\u3081\u3093\u304c\u3000\u3086\u308c\u308b\u3002\n",
+                "\u3044\u3069\u3046\u305d\u304f\u3069\u306f\u3000\u3058\u305d\u304f\uff18\uff10\u30ad\u30ed\u3002"
             ]
         }
     },

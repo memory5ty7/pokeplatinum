@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 45
     },
-    "types": [ "TYPE_ROCK", "TYPE_WATER" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 99,
     "ev_yields": {
@@ -26,71 +29,51 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_BATTLE_ARMOR" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_BATTLE_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 6, "MOVE_ABSORB" ],
-            [ 11, "MOVE_LEER" ],
-            [ 16, "MOVE_MUD_SHOT" ],
-            [ 21, "MOVE_SAND_ATTACK" ],
-            [ 26, "MOVE_ENDURE" ],
-            [ 31, "MOVE_AQUA_JET" ],
-            [ 36, "MOVE_MEGA_DRAIN" ],
-            [ 41, "MOVE_METAL_SOUND" ],
-            [ 46, "MOVE_ANCIENT_POWER" ],
-            [ 51, "MOVE_WRING_OUT" ]
+            [
+                1,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                5,
+                "MOVE_PROTECT"
+            ],
+            [
+                10,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                15,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                20,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                25,
+                "MOVE_SLASH"
+            ],
+            [
+                30,
+                "MOVE_RAZOR_SHELL"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM55",
-            "TM58",
-            "TM69",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -117,7 +100,7 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "KABUTO",
-            "category": "Shellfish Pokémon",
+            "category": "Shellfish Pok\u00e9mon",
             "entry_text": [
                 "It is thought to have inhabited\n",
                 "beaches 300 million years ago.\n",
@@ -126,11 +109,11 @@
         },
         "fr": {
             "name": "KABUTO",
-            "category": "Pokémon Carapace",
+            "category": "Pok\u00e9mon Carapace",
             "entry_text": [
-                "On pense qu’il peuplait les plages\n",
-                "il y a 300 millions d’années. Il est\n",
-                "protégé par une coquille robuste."
+                "On pense qu\u2019il peuplait les plages\n",
+                "il y a 300 millions d\u2019ann\u00e9es. Il est\n",
+                "prot\u00e9g\u00e9 par une coquille robuste."
             ]
         },
         "de": {
@@ -139,34 +122,34 @@
             "entry_text": [
                 "Man geht davon aus, dass dieses\n",
                 "PKMN vor 300 Millionen Jahren die\n",
-                "Strände bevölkerte."
+                "Str\u00e4nde bev\u00f6lkerte."
             ]
         },
         "it": {
             "name": "KABUTO",
-            "category": "Pokémon Crostaceo",
+            "category": "Pok\u00e9mon Crostaceo",
             "entry_text": [
                 "Si ritiene che vivesse sulle spiagge\n",
-                "300 milioni di anni fa. È protetto da\n",
+                "300 milioni di anni fa. \u00c8 protetto da\n",
                 "una conchiglia robusta."
             ]
         },
         "es": {
             "name": "KABUTO",
-            "category": "Pokémon Marisco",
+            "category": "Pok\u00e9mon Marisco",
             "entry_text": [
-                "Se cree que habitó las playas\n",
-                "hace 300 millones de años.\n",
+                "Se cree que habit\u00f3 las playas\n",
+                "hace 300 millones de a\u00f1os.\n",
                 "Se protege con una dura concha."
             ]
         },
         "jp": {
-            "name": "カブト",
-            "category": "こうらポケモン",
+            "name": "\u30ab\u30d6\u30c8",
+            "category": "\u3053\u3046\u3089\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "３おくねんまえの　すなはまで\n",
-                "くらしていたと　かんがえられている。\n",
-                "かたい　カラが　みを　まもる。"
+                "\uff13\u304a\u304f\u306d\u3093\u307e\u3048\u306e\u3000\u3059\u306a\u306f\u307e\u3067\n",
+                "\u304f\u3089\u3057\u3066\u3044\u305f\u3068\u3000\u304b\u3093\u304c\u3048\u3089\u308c\u3066\u3044\u308b\u3002\n",
+                "\u304b\u305f\u3044\u3000\u30ab\u30e9\u304c\u3000\u307f\u3092\u3000\u307e\u3082\u308b\u3002"
             ]
         }
     },

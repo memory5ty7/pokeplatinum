@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 75
     },
-    "types": [ "TYPE_FIRE", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 175,
     "ev_yields": {
@@ -26,78 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_MAGMA_ARMOR", "ABILITY_SOLID_ROCK" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SOLID_ROCK",
+        "ABILITY_MAGMA_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_MAGNITUDE" ],
-            [ 5, "MOVE_EMBER" ],
-            [ 11, "MOVE_MAGNITUDE" ],
-            [ 15, "MOVE_FOCUS_ENERGY" ],
-            [ 21, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_LAVA_PLUME" ],
-            [ 33, "MOVE_ROCK_SLIDE" ],
-            [ 39, "MOVE_EARTH_POWER" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_ERUPTION" ],
-            [ 67, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_EMBER"
+            ],
+            [
+                8,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                12,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                17,
+                "MOVE_STOMP"
+            ],
+            [
+                22,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                26,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                29,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                31,
+                "MOVE_YAWN"
+            ],
+            [
+                36,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                42,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                47,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                52,
+                "MOVE_EXPLOSION"
+            ],
+            [
+                56,
+                "MOVE_ERUPTION"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM64",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_EARTH_POWER",
-            "MOVE_HEAT_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -116,7 +126,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "CAMERUPT",
-            "category": "Eruption Pokémon",
+            "category": "Eruption Pok\u00e9mon",
             "entry_text": [
                 "It has volcanoes on its back. If\n",
                 "magma builds up in its body, it\n",
@@ -125,25 +135,25 @@
         },
         "fr": {
             "name": "CAMERUPT",
-            "category": "Pokémon Eruption",
+            "category": "Pok\u00e9mon Eruption",
             "entry_text": [
                 "Il porte des volcans sur son dos.\n",
                 "Quand le magma remonte, il\n",
-                "frissonne et entre en éruption."
+                "frissonne et entre en \u00e9ruption."
             ]
         },
         "de": {
             "name": "CAMERUPT",
             "category": "Ausbruch",
             "entry_text": [
-                "Auf seinem Rücken befinden sich\n",
+                "Auf seinem R\u00fccken befinden sich\n",
                 "Vulkane. Magma bildet sich in seinem\n",
-                "Körper, die irgendwann ausbricht."
+                "K\u00f6rper, die irgendwann ausbricht."
             ]
         },
         "it": {
             "name": "CAMERUPT",
-            "category": "Pokémon Eruzione",
+            "category": "Pok\u00e9mon Eruzione",
             "entry_text": [
                 "Ha dei vulcani sul dorso. Se il\n",
                 "magma nel suo corpo aumenta,\n",
@@ -152,7 +162,7 @@
         },
         "es": {
             "name": "CAMERUPT",
-            "category": "Pokémon Erupción",
+            "category": "Pok\u00e9mon Erupci\u00f3n",
             "entry_text": [
                 "Tiene volcanes en el lomo. Si el\n",
                 "magma se acumula en su cuerpo,\n",
@@ -160,12 +170,12 @@
             ]
         },
         "jp": {
-            "name": "バク－ダ",
-            "category": "ふんかポケモン",
+            "name": "\u30d0\u30af\uff0d\u30c0",
+            "category": "\u3075\u3093\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "せなかに　かざんを　もつ　ポケモン。\n",
-                "たいないの　マグマが　ふえると\n",
-                "ふるえた　あとに　だいばくはつする。"
+                "\u305b\u306a\u304b\u306b\u3000\u304b\u3056\u3093\u3092\u3000\u3082\u3064\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u305f\u3044\u306a\u3044\u306e\u3000\u30de\u30b0\u30de\u304c\u3000\u3075\u3048\u308b\u3068\n",
+                "\u3075\u308b\u3048\u305f\u3000\u3042\u3068\u306b\u3000\u3060\u3044\u3070\u304f\u306f\u3064\u3059\u308b\u3002"
             ]
         }
     },

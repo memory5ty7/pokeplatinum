@@ -7,7 +7,10 @@
         "special_attack": 10,
         "special_defense": 45
     },
-    "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,65 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_ROCK_HEAD" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_HEATPROOF",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_FAKE_TEARS" ],
-            [ 1, "MOVE_COPYCAT" ],
-            [ 6, "MOVE_FLAIL" ],
-            [ 9, "MOVE_LOW_KICK" ],
-            [ 14, "MOVE_ROCK_THROW" ],
-            [ 17, "MOVE_MIMIC" ],
-            [ 22, "MOVE_BLOCK" ],
-            [ 25, "MOVE_FAINT_ATTACK" ],
-            [ 30, "MOVE_ROCK_TOMB" ],
-            [ 33, "MOVE_ROCK_SLIDE" ],
-            [ 38, "MOVE_SLAM" ],
-            [ 41, "MOVE_SUCKER_PUNCH" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ]
-        ],
-        "by_tm": [
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM58",
-            "TM64",
-            "TM69",
-            "TM76",
-            "TM77",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_EARTH_POWER",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_UPROAR"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -111,7 +71,7 @@
         "pokemon_pos_m": 27,
         "en": {
             "name": "BONSLY",
-            "category": "Bonsai Pokémon",
+            "category": "Bonsai Pok\u00e9mon",
             "entry_text": [
                 "It prefers an arid atmosphere. It\n",
                 "leaks water that looks like tears\n",
@@ -120,47 +80,47 @@
         },
         "fr": {
             "name": "MANZAI",
-            "category": "Pokémon Bonsaï",
+            "category": "Pok\u00e9mon Bonsa\u00ef",
             "entry_text": [
-                "On dirait qu’il pleure constamment.\n",
-                "En fait, il régule ses fluides\n",
-                "corporels en éliminant le surplus."
+                "On dirait qu\u2019il pleure constamment.\n",
+                "En fait, il r\u00e9gule ses fluides\n",
+                "corporels en \u00e9liminant le surplus."
             ]
         },
         "de": {
             "name": "MOBAI",
             "category": "Bonsai",
             "entry_text": [
-                "Es sieht aus, als würde es immer\n",
+                "Es sieht aus, als w\u00fcrde es immer\n",
                 "weinen. Dabei reguliert es nur\n",
                 "seinen Wasserhaushalt."
             ]
         },
         "it": {
             "name": "BONSLY",
-            "category": "Pokémon Bonsai",
+            "category": "Pok\u00e9mon Bonsai",
             "entry_text": [
                 "Sembra che pianga tutto il tempo.\n",
-                "In realtà regola il livello dei fluidi\n",
+                "In realt\u00e0 regola il livello dei fluidi\n",
                 "del corpo eliminando gli eccessi."
             ]
         },
         "es": {
             "name": "BONSLY",
-            "category": "Pokémon Bonsái",
+            "category": "Pok\u00e9mon Bons\u00e1i",
             "entry_text": [
-                "Parece que siempre está llorando,\n",
-                "pero en realidad está eliminando\n",
+                "Parece que siempre est\u00e1 llorando,\n",
+                "pero en realidad est\u00e1 eliminando\n",
                 "el exceso de fluidos corporales."
             ]
         },
         "jp": {
-            "name": "ウソハチ",
-            "category": "ぼんさいポケモン",
+            "name": "\u30a6\u30bd\u30cf\u30c1",
+            "category": "\u307c\u3093\u3055\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いつも　ないているように　みえるが\n",
-                "たいないの　すいぶんを　そとに\n",
-                "だして　ちょうせつしているのだ。"
+                "\u3044\u3064\u3082\u3000\u306a\u3044\u3066\u3044\u308b\u3088\u3046\u306b\u3000\u307f\u3048\u308b\u304c\n",
+                "\u305f\u3044\u306a\u3044\u306e\u3000\u3059\u3044\u3076\u3093\u3092\u3000\u305d\u3068\u306b\n",
+                "\u3060\u3057\u3066\u3000\u3061\u3087\u3046\u305b\u3064\u3057\u3066\u3044\u308b\u306e\u3060\u3002"
             ]
         }
     },

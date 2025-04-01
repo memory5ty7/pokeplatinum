@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 65
     },
-    "types": [ "TYPE_ROCK", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 177,
     "ev_yields": {
@@ -26,85 +29,93 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_ROCK_HEAD", "ABILITY_STURDY" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_STURDY",
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_SAND_VEIL"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_ROCK_POLISH" ],
-            [ 4, "MOVE_MUD_SPORT" ],
-            [ 8, "MOVE_ROCK_POLISH" ],
-            [ 11, "MOVE_ROCK_THROW" ],
-            [ 15, "MOVE_MAGNITUDE" ],
-            [ 18, "MOVE_SELFDESTRUCT" ],
-            [ 22, "MOVE_ROLLOUT" ],
-            [ 27, "MOVE_ROCK_BLAST" ],
-            [ 33, "MOVE_EARTHQUAKE" ],
-            [ 38, "MOVE_EXPLOSION" ],
-            [ 44, "MOVE_DOUBLE_EDGE" ],
-            [ 49, "MOVE_STONE_EDGE" ]
+            [
+                1,
+                "MOVE_HEAD_SMASH"
+            ],
+            [
+                10,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                13,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                16,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                20,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                24,
+                "MOVE_SELFDESTRUCT"
+            ],
+            [
+                27,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                30,
+                "MOVE_ROCK_BLAST"
+            ],
+            [
+                32,
+                "MOVE_ENDURE"
+            ],
+            [
+                36,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                38,
+                "MOVE_FLING"
+            ],
+            [
+                42,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                46,
+                "MOVE_HAMMER_ARM"
+            ],
+            [
+                50,
+                "MOVE_EXPLOSION"
+            ],
+            [
+                56,
+                "MOVE_ICE_HAMMER"
+            ],
+            [
+                65,
+                "MOVE_BODY_PRESS"
+            ],
+            [
+                70,
+                "MOVE_FOCUS_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM64",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -123,20 +134,20 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "GOLEM",
-            "category": "Megaton Pokémon",
+            "category": "Megaton Pok\u00e9mon",
             "entry_text": [
-                "Even dynamite can’t harm its hard,\n",
+                "Even dynamite can\u2019t harm its hard,\n",
                 "boulderlike body. It sheds its hide\n",
                 "just once a year."
             ]
         },
         "fr": {
             "name": "GROLEM",
-            "category": "Pokémon Titanesque",
+            "category": "Pok\u00e9mon Titanesque",
             "entry_text": [
                 "Il mue une fois par an. Son corps\n",
-                "rocailleux est si dur qu’il résiste\n",
-                "même à la dynamite."
+                "rocailleux est si dur qu\u2019il r\u00e9siste\n",
+                "m\u00eame \u00e0 la dynamite."
             ]
         },
         "de": {
@@ -144,35 +155,35 @@
             "category": "Urgestein",
             "entry_text": [
                 "Einmal im Jahr wechselt es seine\n",
-                "Haut. Seinem Körper kann\n",
+                "Haut. Seinem K\u00f6rper kann\n",
                 "selbst Dynamit nichts anhaben."
             ]
         },
         "it": {
             "name": "GOLEM",
-            "category": "Pokémon Megatone",
+            "category": "Pok\u00e9mon Megatone",
             "entry_text": [
-                "Muta il guscio una volta all’anno. Il\n",
+                "Muta il guscio una volta all\u2019anno. Il\n",
                 "suo corpo duro come la roccia non\n",
-                "è scalfito neanche dalla dinamite."
+                "\u00e8 scalfito neanche dalla dinamite."
             ]
         },
         "es": {
             "name": "GOLEM",
-            "category": "Pokémon Megatón",
+            "category": "Pok\u00e9mon Megat\u00f3n",
             "entry_text": [
-                "Muda su piel una vez al año.\n",
+                "Muda su piel una vez al a\u00f1o.\n",
                 "Su cuerpo rocoso es tan duro\n",
-                "que ni la dinamita lo daña."
+                "que ni la dinamita lo da\u00f1a."
             ]
         },
         "jp": {
-            "name": "ゴロ－ニャ",
-            "category": "メガトンポケモン",
+            "name": "\u30b4\u30ed\uff0d\u30cb\u30e3",
+            "category": "\u30e1\u30ac\u30c8\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "１ねんに　１かい　だっぴする。\n",
-                "がんせきのような　かたい　からだは\n",
-                "ダイナマイトでも　きずつかない。"
+                "\uff11\u306d\u3093\u306b\u3000\uff11\u304b\u3044\u3000\u3060\u3063\u3074\u3059\u308b\u3002\n",
+                "\u304c\u3093\u305b\u304d\u306e\u3088\u3046\u306a\u3000\u304b\u305f\u3044\u3000\u304b\u3089\u3060\u306f\n",
+                "\u30c0\u30a4\u30ca\u30de\u30a4\u30c8\u3067\u3082\u3000\u304d\u305a\u3064\u304b\u306a\u3044\u3002"
             ]
         }
     },

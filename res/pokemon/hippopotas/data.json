@@ -7,7 +7,10 @@
         "special_attack": 38,
         "special_defense": 42
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 140,
     "base_exp_reward": 95,
     "ev_yields": {
@@ -26,59 +29,59 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SAND_STREAM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_STEADFAST",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 7, "MOVE_BITE" ],
-            [ 13, "MOVE_YAWN" ],
-            [ 19, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 31, "MOVE_CRUNCH" ],
-            [ 37, "MOVE_EARTHQUAKE" ],
-            [ 44, "MOVE_DOUBLE_EDGE" ],
-            [ 50, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_SAND_ATTACK"
+            ],
+            [
+                7,
+                "MOVE_BITE"
+            ],
+            [
+                13,
+                "MOVE_YAWN"
+            ],
+            [
+                15,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                19,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                23,
+                "MOVE_DIG"
+            ],
+            [
+                27,
+                "MOVE_CRUNCH"
+            ],
+            [
+                30,
+                "MOVE_BODY_SLAM"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -105,7 +108,7 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "HIPPOPOTAS",
-            "category": "Hippo Pokémon",
+            "category": "Hippo Pok\u00e9mon",
             "entry_text": [
                 "It shuts its nostrils tight then\n",
                 "travels through sand as if walking.\n",
@@ -114,7 +117,7 @@
         },
         "fr": {
             "name": "HIPPOPOTAS",
-            "category": "Pokémon Hippo",
+            "category": "Pok\u00e9mon Hippo",
             "entry_text": [
                 "Il vit dans des endroits arides.\n",
                 "Il exsude du sable granuleux\n",
@@ -127,12 +130,12 @@
             "entry_text": [
                 "Es lebt in ausgetrockneten\n",
                 "Gebieten. Statt zu schwitzen,\n",
-                "sondert sein Körper Sand ab. "
+                "sondert sein K\u00f6rper Sand ab. "
             ]
         },
         "it": {
             "name": "HIPPOPOTAS",
-            "category": "Pokémon Ippo",
+            "category": "Pok\u00e9mon Ippo",
             "entry_text": [
                 "Vive in territori aridi. Invece del\n",
                 "sudore, espelle dal corpo sabbia\n",
@@ -141,20 +144,20 @@
         },
         "es": {
             "name": "HIPPOPOTAS",
-            "category": "Pokémon Hipo",
+            "category": "Pok\u00e9mon Hipo",
             "entry_text": [
-                "Vive en zonas áridas. En lugar\n",
+                "Vive en zonas \u00e1ridas. En lugar\n",
                 "de sudar, su cuerpo expulsa\n",
                 "granos de arena."
             ]
         },
         "jp": {
-            "name": "ヒポポタス",
-            "category": "カバポケモン",
+            "name": "\u30d2\u30dd\u30dd\u30bf\u30b9",
+            "category": "\u30ab\u30d0\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かんそうした　とちで　くらす。\n",
-                "あせの　かわりに　すなつぶを\n",
-                "からだから　ぶんぴつする　ポケモン。"
+                "\u304b\u3093\u305d\u3046\u3057\u305f\u3000\u3068\u3061\u3067\u3000\u304f\u3089\u3059\u3002\n",
+                "\u3042\u305b\u306e\u3000\u304b\u308f\u308a\u306b\u3000\u3059\u306a\u3064\u3076\u3092\n",
+                "\u304b\u3089\u3060\u304b\u3089\u3000\u3076\u3093\u3074\u3064\u3059\u308b\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

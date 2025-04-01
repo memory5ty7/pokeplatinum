@@ -7,7 +7,10 @@
         "special_attack": 25,
         "special_defense": 25
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 72,
     "ev_yields": {
@@ -26,18 +29,31 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHED_SKIN",
+        "ABILITY_SHED_SKIN",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HARDEN" ],
-            [ 7, "MOVE_HARDEN" ]
+            [
+                1,
+                "MOVE_HARDEN"
+            ],
+            [
+                7,
+                "MOVE_HARDEN"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_IRON_DEFENSE" ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -64,7 +80,7 @@
         "pokemon_pos_m": 22,
         "en": {
             "name": "CASCOON",
-            "category": "Cocoon Pokémon",
+            "category": "Cocoon Pok\u00e9mon",
             "entry_text": [
                 "It never forgets any attack it\n",
                 "endured while in the cocoon.\n",
@@ -73,47 +89,47 @@
         },
         "fr": {
             "name": "BLINDALYS",
-            "category": "Pokémon Cocon",
+            "category": "Pok\u00e9mon Cocon",
             "entry_text": [
                 "Il est au chaud dans son cocon.\n",
-                "Ses cellules produisent l’énergie\n",
-                "nécessaire à son évolution."
+                "Ses cellules produisent l\u2019\u00e9nergie\n",
+                "n\u00e9cessaire \u00e0 son \u00e9volution."
             ]
         },
         "de": {
             "name": "PANEKON",
             "category": "Kokon",
             "entry_text": [
-                "In seinem Kokon ist es heiß. Seine\n",
-                "Körperzellen produzieren die Hitze,\n",
+                "In seinem Kokon ist es hei\u00df. Seine\n",
+                "K\u00f6rperzellen produzieren die Hitze,\n",
                 "damit es sich entwickeln kann."
             ]
         },
         "it": {
             "name": "CASCOON",
-            "category": "Pokémon Bozzolo",
+            "category": "Pok\u00e9mon Bozzolo",
             "entry_text": [
-                "Dentro, il suo bozzolo è caldo. Ogni\n",
+                "Dentro, il suo bozzolo \u00e8 caldo. Ogni\n",
                 "cellula del suo corpo contribuisce\n",
-                "a creare energia per l’evoluzione."
+                "a creare energia per l\u2019evoluzione."
             ]
         },
         "es": {
             "name": "CASCOON",
-            "category": "Pokémon Capullo",
+            "category": "Pok\u00e9mon Capullo",
             "entry_text": [
                 "Mantiene el calor en su capullo.\n",
-                "Dedica todas las células de su\n",
+                "Dedica todas las c\u00e9lulas de su\n",
                 "cuerpo a evolucionar."
             ]
         },
         "jp": {
-            "name": "マユルド",
-            "category": "さなぎポケモン",
+            "name": "\u30de\u30e6\u30eb\u30c9",
+            "category": "\u3055\u306a\u304e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "マユの　なかは　おんどが　たかい。\n",
-                "そのなかで　ぜんしんの　さいぼうが\n",
-                "しんかの　エネルギ－を　つくりだす。"
+                "\u30de\u30e6\u306e\u3000\u306a\u304b\u306f\u3000\u304a\u3093\u3069\u304c\u3000\u305f\u304b\u3044\u3002\n",
+                "\u305d\u306e\u306a\u304b\u3067\u3000\u305c\u3093\u3057\u3093\u306e\u3000\u3055\u3044\u307c\u3046\u304c\n",
+                "\u3057\u3093\u304b\u306e\u3000\u30a8\u30cd\u30eb\u30ae\uff0d\u3092\u3000\u3064\u304f\u308a\u3060\u3059\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 46,
         "special_defense": 41
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 92,
     "ev_yields": {
@@ -26,65 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_ANTICIPATION" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_HYDRATION",
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_SIMPLE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 6, "MOVE_MUD_SPORT" ],
-            [ 6, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_MUD_BOMB" ],
-            [ 18, "MOVE_AMNESIA" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_MAGNITUDE" ],
-            [ 31, "MOVE_REST" ],
-            [ 31, "MOVE_SNORE" ],
-            [ 35, "MOVE_AQUA_TAIL" ],
-            [ 39, "MOVE_EARTHQUAKE" ],
-            [ 43, "MOVE_FUTURE_SIGHT" ],
-            [ 47, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                6,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                12,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                17,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                24,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                30,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                36,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                42,
+                "MOVE_FUTURE_SIGHT"
+            ],
+            [
+                45,
+                "MOVE_FLIP_TURN"
+            ],
+            [
+                50,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                55,
+                "MOVE_WAVE_CRASH"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_EARTH_POWER",
-            "MOVE_BOUNCE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -111,7 +116,7 @@
         "pokemon_pos_m": 65531,
         "en": {
             "name": "BARBOACH",
-            "category": "Whiskers Pokémon",
+            "category": "Whiskers Pok\u00e9mon",
             "entry_text": [
                 "Its slimy body is hard to grasp. In\n",
                 "one region, it is said to have been\n",
@@ -120,47 +125,47 @@
         },
         "fr": {
             "name": "BARLOCHE",
-            "category": "Pokémon Barbillon",
+            "category": "Pok\u00e9mon Barbillon",
             "entry_text": [
-                "Il enduit son corps d’une \n",
+                "Il enduit son corps d\u2019une \n",
                 "substance visqueuse pour glisser\n",
-                "et se libérer quand on l’agrippe."
+                "et se lib\u00e9rer quand on l\u2019agrippe."
             ]
         },
         "de": {
             "name": "SCHMERBE",
             "category": "Barthaar",
             "entry_text": [
-                "Es bedeckt seinen Körper mit einer\n",
+                "Es bedeckt seinen K\u00f6rper mit einer\n",
                 "schleimigen Substanz und kann\n",
                 "sich so aus Umklammerungen winden."
             ]
         },
         "it": {
             "name": "BARBOACH",
-            "category": "Pokémon Baffetti",
+            "category": "Pok\u00e9mon Baffetti",
             "entry_text": [
-                "Il suo corpo è ricoperto da una\n",
+                "Il suo corpo \u00e8 ricoperto da una\n",
                 "pellicola viscida, che gli permette\n",
                 "di sgusciare via, se afferrato."
             ]
         },
         "es": {
             "name": "BARBOACH",
-            "category": "Pokémon Bigotudo",
+            "category": "Pok\u00e9mon Bigotudo",
             "entry_text": [
-                "Recubre su cuerpo de una película\n",
+                "Recubre su cuerpo de una pel\u00edcula\n",
                 "viscosa que le permite escapar si\n",
                 "alguien lo agarra."
             ]
         },
         "jp": {
-            "name": "ドジョッチ",
-            "category": "ひげうおポケモン",
+            "name": "\u30c9\u30b8\u30e7\u30c3\u30c1",
+            "category": "\u3072\u3052\u3046\u304a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ぜんしんが　ヌルヌルの　たいえきで\n",
-                "おおわれているため　つかまっても\n",
-                "ぬるりと　ぬけだすことが　できる。"
+                "\u305c\u3093\u3057\u3093\u304c\u3000\u30cc\u30eb\u30cc\u30eb\u306e\u3000\u305f\u3044\u3048\u304d\u3067\n",
+                "\u304a\u304a\u308f\u308c\u3066\u3044\u308b\u305f\u3081\u3000\u3064\u304b\u307e\u3063\u3066\u3082\n",
+                "\u306c\u308b\u308a\u3068\u3000\u306c\u3051\u3060\u3059\u3053\u3068\u304c\u3000\u3067\u304d\u308b\u3002"
             ]
         }
     },

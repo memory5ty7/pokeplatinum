@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 63,
     "ev_yields": {
@@ -26,82 +29,67 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_INTIMIDATE", "ABILITY_RUN_AWAY" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SCARY_FACE" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 7, "MOVE_BITE" ],
-            [ 13, "MOVE_LICK" ],
-            [ 19, "MOVE_HEADBUTT" ],
-            [ 25, "MOVE_ROAR" ],
-            [ 31, "MOVE_RAGE" ],
-            [ 37, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_PAYBACK" ],
-            [ 49, "MOVE_CRUNCH" ]
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                5,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                10,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                15,
+                "MOVE_TAUNT"
+            ],
+            [
+                20,
+                "MOVE_PAYBACK"
+            ],
+            [
+                24,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                27,
+                "MOVE_CRUNCH"
+            ],
+            [
+                30,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                30,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_FANG"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM36",
-            "TM38",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM50",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_LAST_RESORT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -128,19 +116,19 @@
         "pokemon_pos_m": 22,
         "en": {
             "name": "SNUBBULL",
-            "category": "Fairy Pokémon",
+            "category": "Fairy Pok\u00e9mon",
             "entry_text": [
-                "Small Pokémon flee from its scary\n",
+                "Small Pok\u00e9mon flee from its scary\n",
                 "face. It is, however, considered\n",
                 "by women to be cute."
             ]
         },
         "fr": {
             "name": "SNUBBULL",
-            "category": "Pokémon Fée",
+            "category": "Pok\u00e9mon F\u00e9e",
             "entry_text": [
                 "Son visage horrible fait fuir les\n",
-                "petits Pokémon. Par contre, les\n",
+                "petits Pok\u00e9mon. Par contre, les\n",
                 "femmes le trouvent mignon."
             ]
         },
@@ -155,29 +143,29 @@
         },
         "it": {
             "name": "SNUBBULL",
-            "category": "Pokémon Fata",
+            "category": "Pok\u00e9mon Fata",
             "entry_text": [
-                "I Pokémon più piccoli fuggono alla\n",
+                "I Pok\u00e9mon pi\u00f9 piccoli fuggono alla\n",
                 "vista della sua faccia terrificante.\n",
                 "Ma le donne lo trovano carino."
             ]
         },
         "es": {
             "name": "SNUBBULL",
-            "category": "Pokémon Hada",
+            "category": "Pok\u00e9mon Hada",
             "entry_text": [
-                "Los Pokémon pequeños huyen al\n",
+                "Los Pok\u00e9mon peque\u00f1os huyen al\n",
                 "ver su cara agresiva. No obstante,\n",
-                "para muchas féminas es mono."
+                "para muchas f\u00e9minas es mono."
             ]
         },
         "jp": {
-            "name": "ブル－",
-            "category": "ようせいポケモン",
+            "name": "\u30d6\u30eb\uff0d",
+            "category": "\u3088\u3046\u305b\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ちいさな　ポケモンが　にげだすほどの\n",
-                "こわいかおが　ぎゃくに　かわいいと\n",
-                "じょせいに　にんきの　ポケモン。"
+                "\u3061\u3044\u3055\u306a\u3000\u30dd\u30b1\u30e2\u30f3\u304c\u3000\u306b\u3052\u3060\u3059\u307b\u3069\u306e\n",
+                "\u3053\u308f\u3044\u304b\u304a\u304c\u3000\u304e\u3083\u304f\u306b\u3000\u304b\u308f\u3044\u3044\u3068\n",
+                "\u3058\u3087\u305b\u3044\u306b\u3000\u306b\u3093\u304d\u306e\u3000\u30dd\u30b1\u30e2\u30f3\u3002"
             ]
         }
     },

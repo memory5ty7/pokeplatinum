@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 65
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 142,
     "ev_yields": {
@@ -26,67 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_BLAZE",
+        "ABILITY_MOLD_BREAKER",
+        "ABILITY_FLASH_FIRE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 4, "MOVE_SMOKE_SCREEN" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_FLAME_WHEEL" ],
-            [ 24, "MOVE_DEFENSE_CURL" ],
-            [ 31, "MOVE_SWIFT" ],
-            [ 35, "MOVE_LAVA_PLUME" ],
-            [ 42, "MOVE_FLAMETHROWER" ],
-            [ 46, "MOVE_ROLLOUT" ],
-            [ 53, "MOVE_DOUBLE_EDGE" ],
-            [ 57, "MOVE_ERUPTION" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -113,7 +71,7 @@
         "pokemon_pos_m": 19,
         "en": {
             "name": "QUILAVA",
-            "category": "Volcano Pokémon",
+            "category": "Volcano Pok\u00e9mon",
             "entry_text": [
                 "It intimidates foes with the heat\n",
                 "of its flames. The fire burns more\n",
@@ -122,11 +80,11 @@
         },
         "fr": {
             "name": "FEURISSON",
-            "category": "Pokémon Volcan",
+            "category": "Pok\u00e9mon Volcan",
             "entry_text": [
                 "La chaleur de ses flammes intimide\n",
-                "l’ennemi. Elles s’intensifient\n",
-                "lorsqu’il se prépare à combattre."
+                "l\u2019ennemi. Elles s\u2019intensifient\n",
+                "lorsqu\u2019il se pr\u00e9pare \u00e0 combattre."
             ]
         },
         "de": {
@@ -135,21 +93,21 @@
             "entry_text": [
                 "Es bedroht seine Gegner mit der\n",
                 "Hitze seiner Flammen. Ist es\n",
-                "kampfbereit, lodern sie stärker."
+                "kampfbereit, lodern sie st\u00e4rker."
             ]
         },
         "it": {
             "name": "QUILAVA",
-            "category": "Pokémon Vulcano",
+            "category": "Pok\u00e9mon Vulcano",
             "entry_text": [
                 "Intimorisce i nemici con il calore\n",
-                "delle sue fiamme. Se è pronto a lot-\n",
-                "tare, le vampate sono più ardenti."
+                "delle sue fiamme. Se \u00e8 pronto a lot-\n",
+                "tare, le vampate sono pi\u00f9 ardenti."
             ]
         },
         "es": {
             "name": "QUILAVA",
-            "category": "Pokémon Volcán",
+            "category": "Pok\u00e9mon Volc\u00e1n",
             "entry_text": [
                 "Intimida a sus enemigos con el\n",
                 "calor de sus llamas. Arde con\n",
@@ -157,12 +115,12 @@
             ]
         },
         "jp": {
-            "name": "マグマラシ",
-            "category": "かざんポケモン",
+            "name": "\u30de\u30b0\u30de\u30e9\u30b7",
+            "category": "\u304b\u3056\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ほのおの　ねつで　あいてを　いかく。\n",
-                "たたかう　たいせいになると\n",
-                "ほのおの　いきおいが　ます。"
+                "\u307b\u306e\u304a\u306e\u3000\u306d\u3064\u3067\u3000\u3042\u3044\u3066\u3092\u3000\u3044\u304b\u304f\u3002\n",
+                "\u305f\u305f\u304b\u3046\u3000\u305f\u3044\u305b\u3044\u306b\u306a\u308b\u3068\n",
+                "\u307b\u306e\u304a\u306e\u3000\u3044\u304d\u304a\u3044\u304c\u3000\u307e\u3059\u3002"
             ]
         }
     },

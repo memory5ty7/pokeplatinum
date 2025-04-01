@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 141,
     "ev_yields": {
@@ -26,80 +29,63 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_OVERGROW", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_UNBURDEN",
+        "ABILITY_OVERGROW",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 6, "MOVE_ABSORB" ],
-            [ 11, "MOVE_QUICK_ATTACK" ],
-            [ 16, "MOVE_FURY_CUTTER" ],
-            [ 17, "MOVE_PURSUIT" ],
-            [ 23, "MOVE_SCREECH" ],
-            [ 29, "MOVE_LEAF_BLADE" ],
-            [ 35, "MOVE_AGILITY" ],
-            [ 41, "MOVE_SLAM" ],
-            [ 47, "MOVE_DETECT" ],
-            [ 53, "MOVE_FALSE_SWIPE" ],
-            [ 59, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                9,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                13,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                17,
+                "MOVE_PURSUIT"
+            ],
+            [
+                21,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                23,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                25,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                30,
+                "MOVE_LEAF_BLADE"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -126,7 +112,7 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "GROVYLE",
-            "category": "Wood Gecko Pokémon",
+            "category": "Wood Gecko Pok\u00e9mon",
             "entry_text": [
                 "It lives in dense jungles. While \n",
                 "closing in on its prey, it leaps\n",
@@ -135,7 +121,7 @@
         },
         "fr": {
             "name": "MASSKO",
-            "category": "Pokémon Bois Gecko",
+            "category": "Pok\u00e9mon Bois Gecko",
             "entry_text": [
                 "Il vit dans les jungles denses. \n",
                 "Il saute de branche en branche\n",
@@ -148,17 +134,20 @@
             "entry_text": [
                 "Es lebt im dichten Dschungel.\n",
                 "Es springt von Ast zu Ast, wenn es\n",
-                "sich einer Beute nähert."
+                "sich einer Beute n\u00e4hert."
             ]
         },
         "it": {
             "name": "GROVYLE",
-            "category": "Pokémon Legnogeco",
-            "entry_text": [ "Vive in giungle fitte. Si avvicina\n", "alle prede saltando di ramo in ramo." ]
+            "category": "Pok\u00e9mon Legnogeco",
+            "entry_text": [
+                "Vive in giungle fitte. Si avvicina\n",
+                "alle prede saltando di ramo in ramo."
+            ]
         },
         "es": {
             "name": "GROVYLE",
-            "category": "Pokémon Geco Bosque",
+            "category": "Pok\u00e9mon Geco Bosque",
             "entry_text": [
                 "Vive en selvas frondosas. Salta de\n",
                 "rama en rama para acercarse a\n",
@@ -166,12 +155,12 @@
             ]
         },
         "jp": {
-            "name": "ジュプトル",
-            "category": "もりトカゲポケモン",
+            "name": "\u30b8\u30e5\u30d7\u30c8\u30eb",
+            "category": "\u3082\u308a\u30c8\u30ab\u30b2\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "みつりんに　せいそくする。\n",
-                "えだから　えだへ　とびうつりながら\n",
-                "いどうして　えものに　せっきんする。"
+                "\u307f\u3064\u308a\u3093\u306b\u3000\u305b\u3044\u305d\u304f\u3059\u308b\u3002\n",
+                "\u3048\u3060\u304b\u3089\u3000\u3048\u3060\u3078\u3000\u3068\u3073\u3046\u3064\u308a\u306a\u304c\u3089\n",
+                "\u3044\u3069\u3046\u3057\u3066\u3000\u3048\u3082\u306e\u306b\u3000\u305b\u3063\u304d\u3093\u3059\u308b\u3002"
             ]
         }
     },

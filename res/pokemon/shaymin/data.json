@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 100
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 64,
     "ev_yields": {
@@ -26,68 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 100,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_MAGMA_ARMOR",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_GROWTH" ],
-            [ 10, "MOVE_MAGICAL_LEAF" ],
-            [ 19, "MOVE_LEECH_SEED" ],
-            [ 28, "MOVE_SYNTHESIS" ],
-            [ 37, "MOVE_SWEET_SCENT" ],
-            [ 46, "MOVE_NATURAL_GIFT" ],
-            [ 55, "MOVE_WORRY_SEED" ],
-            [ 64, "MOVE_AROMATHERAPY" ],
-            [ 73, "MOVE_ENERGY_BALL" ],
-            [ 82, "MOVE_SWEET_KISS" ],
-            [ 91, "MOVE_HEALING_WISH" ],
-            [ 100, "MOVE_SEED_FLARE" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_SYNTHESIS",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_EARTH_POWER",
-            "MOVE_SEED_BOMB",
-            "MOVE_LAST_RESORT",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -106,7 +65,7 @@
         "pokemon_pos_m": 32,
         "en": {
             "name": "SHAYMIN",
-            "category": "Gratitude Pokémon",
+            "category": "Gratitude Pok\u00e9mon",
             "entry_text": [
                 "The flowers all over its body burst\n",
                 "into bloom if it is lovingly hugged\n",
@@ -115,10 +74,10 @@
         },
         "fr": {
             "name": "SHAYMIN",
-            "category": "Pokémon Gratitude",
+            "category": "Pok\u00e9mon Gratitude",
             "entry_text": [
                 "Il vit dans les champs de fleurs et\n",
-                "se cache en s’enroulant pour\n",
+                "se cache en s\u2019enroulant pour\n",
                 "imiter une plante fleurie."
             ]
         },
@@ -133,7 +92,7 @@
         },
         "it": {
             "name": "SHAYMIN",
-            "category": "Pokémon Gratitudine",
+            "category": "Pok\u00e9mon Gratitudine",
             "entry_text": [
                 "Vive nei campi di fiori e cerca di\n",
                 "non farsi vedere arrotolandosi per\n",
@@ -142,7 +101,7 @@
         },
         "es": {
             "name": "SHAYMIN",
-            "category": "Pokémon Gratitud",
+            "category": "Pok\u00e9mon Gratitud",
             "entry_text": [
                 "Vive entre las flores. Para evitar\n",
                 "ser descubierto, se enrosca\n",
@@ -150,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "シェイミ",
-            "category": "かんしゃポケモン",
+            "name": "\u30b7\u30a7\u30a4\u30df",
+            "category": "\u304b\u3093\u3057\u3083\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はなばたけの　なかで　くらしているが\n",
-                "からだを　まるめると　はなのように\n",
-                "みえるため　だれも　きづかないのだ。"
+                "\u306f\u306a\u3070\u305f\u3051\u306e\u3000\u306a\u304b\u3067\u3000\u304f\u3089\u3057\u3066\u3044\u308b\u304c\n",
+                "\u304b\u3089\u3060\u3092\u3000\u307e\u308b\u3081\u308b\u3068\u3000\u306f\u306a\u306e\u3088\u3046\u306b\n",
+                "\u307f\u3048\u308b\u305f\u3081\u3000\u3060\u308c\u3082\u3000\u304d\u3065\u304b\u306a\u3044\u306e\u3060\u3002"
             ]
         }
     },

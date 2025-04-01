@@ -7,7 +7,10 @@
         "special_attack": 10,
         "special_defense": 55
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 61,
     "ev_yields": {
@@ -26,48 +29,35 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 15, "MOVE_TACKLE" ],
-            [ 30, "MOVE_FLAIL" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                6,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_FLAIL"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -94,56 +84,56 @@
         "pokemon_pos_m": 65535,
         "en": {
             "name": "FEEBAS",
-            "category": "Fish Pokémon",
+            "category": "Fish Pok\u00e9mon",
             "entry_text": [
-                "It is a shabby and ugly Pokémon.\n",
+                "It is a shabby and ugly Pok\u00e9mon.\n",
                 "However, it is very hardy and\n",
                 "can survive on little water."
             ]
         },
         "fr": {
             "name": "BARPAU",
-            "category": "Pokémon Poisson",
+            "category": "Pok\u00e9mon Poisson",
             "entry_text": [
                 "Il est connu pour son teint maladif.\n",
-                "Bien que nombreux, ces Pokémon\n",
-                "se regroupent aux mêmes endroits."
+                "Bien que nombreux, ces Pok\u00e9mon\n",
+                "se regroupent aux m\u00eames endroits."
             ]
         },
         "de": {
             "name": "BARSCHWA",
             "category": "Fisch",
             "entry_text": [
-                "Seine lumpige Gestalt ist berühmt.\n",
+                "Seine lumpige Gestalt ist ber\u00fchmt.\n",
                 "Es lebt mit anderen in Gruppen an\n",
                 "bestimmten Orten."
             ]
         },
         "it": {
             "name": "FEEBAS",
-            "category": "Pokémon Pesce",
+            "category": "Pok\u00e9mon Pesce",
             "entry_text": [
-                "È noto per il suo aspetto disordi-\n",
-                "nato. È molto comune e tende a\n",
+                "\u00c8 noto per il suo aspetto disordi-\n",
+                "nato. \u00c8 molto comune e tende a\n",
                 "raggrupparsi nei soliti posti."
             ]
         },
         "es": {
             "name": "FEEBAS",
-            "category": "Pokémon Pez",
+            "category": "Pok\u00e9mon Pez",
             "entry_text": [
                 "Se caracterizan por su aspecto\n",
                 "endeble. Se agrupan en gran\n",
-                "número en lugares muy concretos."
+                "n\u00famero en lugares muy concretos."
             ]
         },
         "jp": {
-            "name": "ヒンバス",
-            "category": "さかなポケモン",
+            "name": "\u30d2\u30f3\u30d0\u30b9",
+            "category": "\u3055\u304b\u306a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "みすぼらしい　すがたで　ゆうめい。\n",
-                "せいそくすうは　おおいが\n",
-                "いっかしょに　あつまる　しゅうせい。"
+                "\u307f\u3059\u307c\u3089\u3057\u3044\u3000\u3059\u304c\u305f\u3067\u3000\u3086\u3046\u3081\u3044\u3002\n",
+                "\u305b\u3044\u305d\u304f\u3059\u3046\u306f\u3000\u304a\u304a\u3044\u304c\n",
+                "\u3044\u3063\u304b\u3057\u3087\u306b\u3000\u3042\u3064\u307e\u308b\u3000\u3057\u3085\u3046\u305b\u3044\u3002"
             ]
         }
     },

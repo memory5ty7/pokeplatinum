@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 80
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 160,
     "ev_yields": {
@@ -26,76 +29,24 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_COMPOUND_EYES", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_COMPOUND_EYES",
+        "ABILITY_TINTED_LENS",
+        "ABILITY_SHIELD_DUST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_CONFUSION" ],
-            [ 10, "MOVE_CONFUSION" ],
-            [ 12, "MOVE_POISON_POWDER" ],
-            [ 12, "MOVE_STUN_SPORE" ],
-            [ 12, "MOVE_SLEEP_POWDER" ],
-            [ 16, "MOVE_GUST" ],
-            [ 18, "MOVE_SUPERSONIC" ],
-            [ 22, "MOVE_WHIRLWIND" ],
-            [ 24, "MOVE_PSYBEAM" ],
-            [ 28, "MOVE_SILVER_WIND" ],
-            [ 30, "MOVE_TAILWIND" ],
-            [ 34, "MOVE_SAFEGUARD" ],
-            [ 36, "MOVE_CAPTIVATE" ],
-            [ 40, "MOVE_BUG_BUZZ" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM51",
-            "TM53",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -114,7 +65,7 @@
         "pokemon_pos_m": 65532,
         "en": {
             "name": "BUTTERFREE",
-            "category": "Butterfly Pokémon",
+            "category": "Butterfly Pok\u00e9mon",
             "entry_text": [
                 "It loves the honey of flowers and\n",
                 "can locate flower patches that\n",
@@ -123,47 +74,47 @@
         },
         "fr": {
             "name": "PAPILUSION",
-            "category": "Pokémon Papillon",
+            "category": "Pok\u00e9mon Papillon",
             "entry_text": [
                 "Il raffole du nectar des fleurs. Il\n",
-                "est capable de repérer la plus\n",
-                "petite quantité de pollen."
+                "est capable de rep\u00e9rer la plus\n",
+                "petite quantit\u00e9 de pollen."
             ]
         },
         "de": {
             "name": "SMETTBO",
             "category": "Falter",
             "entry_text": [
-                "Es liebt Blütenhonig. Es findet\n",
+                "Es liebt Bl\u00fctenhonig. Es findet\n",
                 "selbst Blumen, die sehr wenig\n",
                 "Pollen haben."
             ]
         },
         "it": {
             "name": "BUTTERFREE",
-            "category": "Pokémon Farfalla",
+            "category": "Pok\u00e9mon Farfalla",
             "entry_text": [
                 "Adora il nettare dei fiori e riesce a\n",
                 "localizzare i campi in cui si trova\n",
-                "anche una minima quantità di polline."
+                "anche una minima quantit\u00e0 di polline."
             ]
         },
         "es": {
             "name": "BUTTERFREE",
-            "category": "Pokémon Mariposa",
+            "category": "Pok\u00e9mon Mariposa",
             "entry_text": [
-                "Adora el néctar de las flores.\n",
-                "Puede localizar hasta las más\n",
-                "pequeñas cantidades de polen."
+                "Adora el n\u00e9ctar de las flores.\n",
+                "Puede localizar hasta las m\u00e1s\n",
+                "peque\u00f1as cantidades de polen."
             ]
         },
         "jp": {
-            "name": "バタフリ－",
-            "category": "ちょうちょポケモン",
+            "name": "\u30d0\u30bf\u30d5\u30ea\uff0d",
+            "category": "\u3061\u3087\u3046\u3061\u3087\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はなの　ミツが　だいこうぶつ。\n",
-                "わずかな　かふんで　はなばたけの\n",
-                "ばしょを　さがしだすことが　できる。"
+                "\u306f\u306a\u306e\u3000\u30df\u30c4\u304c\u3000\u3060\u3044\u3053\u3046\u3076\u3064\u3002\n",
+                "\u308f\u305a\u304b\u306a\u3000\u304b\u3075\u3093\u3067\u3000\u306f\u306a\u3070\u305f\u3051\u306e\n",
+                "\u3070\u3057\u3087\u3092\u3000\u3055\u304c\u3057\u3060\u3059\u3053\u3068\u304c\u3000\u3067\u304d\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 109,
         "special_defense": 85
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 209,
     "ev_yields": {
@@ -26,84 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_BLAZE",
+        "ABILITY_MOLD_BREAKER",
+        "ABILITY_FLASH_FIRE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_GYRO_BALL" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 4, "MOVE_SMOKE_SCREEN" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_FLAME_WHEEL" ],
-            [ 24, "MOVE_DEFENSE_CURL" ],
-            [ 31, "MOVE_SWIFT" ],
-            [ 35, "MOVE_LAVA_PLUME" ],
-            [ 42, "MOVE_FLAMETHROWER" ],
-            [ 46, "MOVE_ROLLOUT" ],
-            [ 53, "MOVE_DOUBLE_EDGE" ],
-            [ 57, "MOVE_ERUPTION" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM68",
-            "TM74",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -122,7 +65,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "TYPHLOSION",
-            "category": "Volcano Pokémon",
+            "category": "Volcano Pok\u00e9mon",
             "entry_text": [
                 "It attacks using blasts of fire.\n",
                 "It creates heat shimmers with\n",
@@ -131,11 +74,11 @@
         },
         "fr": {
             "name": "TYPHLOSION",
-            "category": "Pokémon Volcan",
+            "category": "Pok\u00e9mon Volcan",
             "entry_text": [
                 "Il attaque en projetant des\n",
-                "flammes. Il se dissimule derrière\n",
-                "les vagues de chaleur qu’il produit."
+                "flammes. Il se dissimule derri\u00e8re\n",
+                "les vagues de chaleur qu\u2019il produit."
             ]
         },
         "de": {
@@ -149,7 +92,7 @@
         },
         "it": {
             "name": "TYPHLOSION",
-            "category": "Pokémon Vulcano",
+            "category": "Pok\u00e9mon Vulcano",
             "entry_text": [
                 "Attacca usando fiamme esplosive.\n",
                 "Si cela in una scintillante nube di\n",
@@ -158,7 +101,7 @@
         },
         "es": {
             "name": "TYPHLOSION",
-            "category": "Pokémon Volcán",
+            "category": "Pok\u00e9mon Volc\u00e1n",
             "entry_text": [
                 "Ataca con llamaradas. Con ellas\n",
                 "crea reflejos de calor para\n",
@@ -166,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "バクフ－ン",
-            "category": "かざんポケモン",
+            "name": "\u30d0\u30af\u30d5\uff0d\u30f3",
+            "category": "\u304b\u3056\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ほのおの　ばくふうで　こうげき。\n",
-                "しゃくねつの　ほのおで　かげろうを\n",
-                "つくりだし　すがたを　かくす。"
+                "\u307b\u306e\u304a\u306e\u3000\u3070\u304f\u3075\u3046\u3067\u3000\u3053\u3046\u3052\u304d\u3002\n",
+                "\u3057\u3083\u304f\u306d\u3064\u306e\u3000\u307b\u306e\u304a\u3067\u3000\u304b\u3052\u308d\u3046\u3092\n",
+                "\u3064\u304f\u308a\u3060\u3057\u3000\u3059\u304c\u305f\u3092\u3000\u304b\u304f\u3059\u3002"
             ]
         }
     },

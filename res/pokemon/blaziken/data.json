@@ -7,7 +7,10 @@
         "special_attack": 110,
         "special_defense": 70
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 209,
     "ev_yields": {
@@ -26,93 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_BLAZE",
+        "ABILITY_SPEED_BOOST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_FIRE_PUNCH" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 13, "MOVE_EMBER" ],
-            [ 16, "MOVE_DOUBLE_KICK" ],
-            [ 17, "MOVE_PECK" ],
-            [ 21, "MOVE_SAND_ATTACK" ],
-            [ 28, "MOVE_BULK_UP" ],
-            [ 32, "MOVE_QUICK_ATTACK" ],
-            [ 36, "MOVE_BLAZE_KICK" ],
-            [ 42, "MOVE_SLASH" ],
-            [ 49, "MOVE_BRAVE_BIRD" ],
-            [ 59, "MOVE_SKY_UPPERCUT" ],
-            [ 66, "MOVE_FLARE_BLITZ" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM68",
-            "TM71",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE",
-            "MOVE_LAST_RESORT",
-            "MOVE_BOUNCE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -131,7 +65,7 @@
         "pokemon_pos_m": 5,
         "en": {
             "name": "BLAZIKEN",
-            "category": "Blaze Pokémon",
+            "category": "Blaze Pok\u00e9mon",
             "entry_text": [
                 "Flames spout from its wrists,\n",
                 "enveloping its knuckles. Its\n",
@@ -140,25 +74,25 @@
         },
         "fr": {
             "name": "BRASEGALI",
-            "category": "Pokémon Ardent",
+            "category": "Pok\u00e9mon Ardent",
             "entry_text": [
                 "Des flammes fusent de ses\n",
-                "poignets et ses coups brûlent\n",
-                "l’ennemi."
+                "poignets et ses coups br\u00fblent\n",
+                "l\u2019ennemi."
             ]
         },
         "de": {
             "name": "LOHGOCK",
-            "category": "Großbrand",
+            "category": "Gro\u00dfbrand",
             "entry_text": [
                 "Aus seinen Handgelenken kommt\n",
-                "Feuer, das seine Knöchel umhüllt.\n",
-                "Schläge verbrennen den Gegner."
+                "Feuer, das seine Kn\u00f6chel umh\u00fcllt.\n",
+                "Schl\u00e4ge verbrennen den Gegner."
             ]
         },
         "it": {
             "name": "BLAZIKEN",
-            "category": "Pokémon Vampe",
+            "category": "Pok\u00e9mon Vampe",
             "entry_text": [
                 "Le fiamme che fuoriescono dai suoi\n",
                 "polsi gli avvolgono i pugni. Quando\n",
@@ -167,20 +101,20 @@
         },
         "es": {
             "name": "BLAZIKEN",
-            "category": "Pokémon Llameante",
+            "category": "Pok\u00e9mon Llameante",
             "entry_text": [
-                "Sus puños están envueltos en\n",
+                "Sus pu\u00f1os est\u00e1n envueltos en\n",
                 "llamas. Con sus golpes puede\n",
                 "quemar a sus rivales."
             ]
         },
         "jp": {
-            "name": "バシャ－モ",
-            "category": "もうかポケモン",
+            "name": "\u30d0\u30b7\u30e3\uff0d\u30e2",
+            "category": "\u3082\u3046\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "てくびから　ふきだした　ほのおで\n",
-                "こぶしを　つつみこんだ　パンチは\n",
-                "あいてを　くろこげに　してしまう。"
+                "\u3066\u304f\u3073\u304b\u3089\u3000\u3075\u304d\u3060\u3057\u305f\u3000\u307b\u306e\u304a\u3067\n",
+                "\u3053\u3076\u3057\u3092\u3000\u3064\u3064\u307f\u3053\u3093\u3060\u3000\u30d1\u30f3\u30c1\u306f\n",
+                "\u3042\u3044\u3066\u3092\u3000\u304f\u308d\u3053\u3052\u306b\u3000\u3057\u3066\u3057\u307e\u3046\u3002"
             ]
         }
     },

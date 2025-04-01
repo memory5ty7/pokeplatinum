@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 95
     },
-    "types": [ "TYPE_WATER", "TYPE_DRAGON" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_DRAGON"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 207,
     "ev_yields": {
@@ -26,73 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_SNIPER" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_NONE",
+        "ABILITY_SNIPER"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 4, "MOVE_SMOKE_SCREEN" ],
-            [ 8, "MOVE_LEER" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_FOCUS_ENERGY" ],
-            [ 18, "MOVE_BUBBLE_BEAM" ],
-            [ 23, "MOVE_AGILITY" ],
-            [ 26, "MOVE_TWISTER" ],
-            [ 30, "MOVE_BRINE" ],
-            [ 40, "MOVE_HYDRO_PUMP" ],
-            [ 48, "MOVE_DRAGON_DANCE" ],
-            [ 57, "MOVE_DRAGON_PULSE" ]
+            [
+                1,
+                "MOVE_BUBBLE"
+            ],
+            [
+                4,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                8,
+                "MOVE_LEER"
+            ],
+            [
+                11,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                18,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                23,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                26,
+                "MOVE_TWISTER"
+            ],
+            [
+                30,
+                "MOVE_BRINE"
+            ],
+            [
+                32,
+                "MOVE_OCTAZOOKA"
+            ],
+            [
+                36,
+                "MOVE_WATERFALL"
+            ],
+            [
+                42,
+                "MOVE_DRAGON_PULSE"
+            ],
+            [
+                50,
+                "MOVE_FLIP_TURN"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM59",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -111,7 +114,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "KINGDRA",
-            "category": "Dragon Pokémon",
+            "category": "Dragon Pok\u00e9mon",
             "entry_text": [
                 "It lives in caves on the seafloor\n",
                 "and creates giant whirlpools\n",
@@ -120,9 +123,9 @@
         },
         "fr": {
             "name": "HYPOROI",
-            "category": "Pokémon Dragon",
+            "category": "Pok\u00e9mon Dragon",
             "entry_text": [
-                "Chacun de ses déplacements\n",
+                "Chacun de ses d\u00e9placements\n",
                 "provoque des tourbillons. Il vit\n",
                 "dans les grottes sous-marines."
             ]
@@ -131,14 +134,14 @@
             "name": "SEEDRAKING",
             "category": "Drache",
             "entry_text": [
-                "Es lebt in Höhlen auf dem Meeres-\n",
+                "Es lebt in H\u00f6hlen auf dem Meeres-\n",
                 "grund. Jedes Mal, wenn es sich\n",
                 "bewegt, entsteht ein Strudel. "
             ]
         },
         "it": {
             "name": "KINGDRA",
-            "category": "Pokémon Drago",
+            "category": "Pok\u00e9mon Drago",
             "entry_text": [
                 "Vive in caverne sui fondali marini\n",
                 "e crea vortici giganteschi ogni\n",
@@ -147,7 +150,7 @@
         },
         "es": {
             "name": "KINGDRA",
-            "category": "Pokémon Dragón",
+            "category": "Pok\u00e9mon Drag\u00f3n",
             "entry_text": [
                 "Vive en cavernas del fondo marino\n",
                 "y crea grandes remolinos cuando\n",
@@ -155,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "キングドラ",
-            "category": "ドラゴンポケモン",
+            "name": "\u30ad\u30f3\u30b0\u30c9\u30e9",
+            "category": "\u30c9\u30e9\u30b4\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かいていどうくつに　すんでいる。\n",
-                "キングドラが　みうごきすると\n",
-                "きょだいな　うずしおが　うまれる。"
+                "\u304b\u3044\u3066\u3044\u3069\u3046\u304f\u3064\u306b\u3000\u3059\u3093\u3067\u3044\u308b\u3002\n",
+                "\u30ad\u30f3\u30b0\u30c9\u30e9\u304c\u3000\u307f\u3046\u3054\u304d\u3059\u308b\u3068\n",
+                "\u304d\u3087\u3060\u3044\u306a\u3000\u3046\u305a\u3057\u304a\u304c\u3000\u3046\u307e\u308c\u308b\u3002"
             ]
         }
     },

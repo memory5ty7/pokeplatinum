@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 70
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 100,
     "ev_yields": {
@@ -26,66 +29,75 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_THICK_FAT", "ABILITY_HYDRATION" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_ICE_BODY",
+        "ABILITY_THICK_FAT",
+        "ABILITY_SLUSH_RUSH"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 7, "MOVE_WATER_SPORT" ],
-            [ 11, "MOVE_ICY_WIND" ],
-            [ 13, "MOVE_ENCORE" ],
-            [ 17, "MOVE_ICE_SHARD" ],
-            [ 21, "MOVE_REST" ],
-            [ 23, "MOVE_AQUA_RING" ],
-            [ 27, "MOVE_AURORA_BEAM" ],
-            [ 31, "MOVE_AQUA_JET" ],
-            [ 33, "MOVE_BRINE" ],
-            [ 37, "MOVE_TAKE_DOWN" ],
-            [ 41, "MOVE_DIVE" ],
-            [ 43, "MOVE_AQUA_TAIL" ],
-            [ 47, "MOVE_ICE_BEAM" ],
-            [ 51, "MOVE_SAFEGUARD" ]
+            [
+                1,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                3,
+                "MOVE_GROWL"
+            ],
+            [
+                7,
+                "MOVE_CHARM"
+            ],
+            [
+                10,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                13,
+                "MOVE_DISABLE"
+            ],
+            [
+                16,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                20,
+                "MOVE_BRINE"
+            ],
+            [
+                24,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                30,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                33,
+                "MOVE_SCALD"
+            ],
+            [
+                40,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                50,
+                "MOVE_BLIZZARD"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -112,56 +124,56 @@
         "pokemon_pos_m": 13,
         "en": {
             "name": "SEEL",
-            "category": "Sea Lion Pokémon",
+            "category": "Sea Lion Pok\u00e9mon",
             "entry_text": [
-                "A Pokémon that lives on icebergs.\n",
+                "A Pok\u00e9mon that lives on icebergs.\n",
                 "It swims in the sea using the point\n",
                 "on its head to break up ice."
             ]
         },
         "fr": {
             "name": "OTARIA",
-            "category": "Pokémon Otarie",
+            "category": "Pok\u00e9mon Otarie",
             "entry_text": [
                 "Un habitant des icebergs. \n",
                 "En mer, il utilise la corne sur \n",
-                "sa tête pour briser la banquise."
+                "sa t\u00eate pour briser la banquise."
             ]
         },
         "de": {
             "name": "JUROB",
             "category": "Seehund",
             "entry_text": [
-                "Dieses Pokémon lebt auf Eisbergen.\n",
+                "Dieses Pok\u00e9mon lebt auf Eisbergen.\n",
                 "Es schwimmt im Eiswasser und bricht\n",
                 "das Eis mithilfe seines Horns."
             ]
         },
         "it": {
             "name": "SEEL",
-            "category": "Pokémon Otaria",
+            "category": "Pok\u00e9mon Otaria",
             "entry_text": [
-                "Pokémon che vive sugli iceberg.\n",
+                "Pok\u00e9mon che vive sugli iceberg.\n",
                 "Nuota spaccando il ghiaccio\n",
                 "con la punta che ha sulla testa."
             ]
         },
         "es": {
             "name": "SEEL",
-            "category": "Pokémon León Mar.",
+            "category": "Pok\u00e9mon Le\u00f3n Mar.",
             "entry_text": [
-                "Este Pokémon vive en icebergs.\n",
+                "Este Pok\u00e9mon vive en icebergs.\n",
                 "Nada en el mar y usa el cuerno de\n",
                 "su cabeza para romper el hielo."
             ]
         },
         "jp": {
-            "name": "パウワウ",
-            "category": "あしかポケモン",
+            "name": "\u30d1\u30a6\u30ef\u30a6",
+            "category": "\u3042\u3057\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ひょうざんで　くらす　ポケモン。\n",
-                "あたまの　とがった　でっぱりで\n",
-                "こおりを　わって　うみを　およぐ。"
+                "\u3072\u3087\u3046\u3056\u3093\u3067\u3000\u304f\u3089\u3059\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3042\u305f\u307e\u306e\u3000\u3068\u304c\u3063\u305f\u3000\u3067\u3063\u3071\u308a\u3067\n",
+                "\u3053\u304a\u308a\u3092\u3000\u308f\u3063\u3066\u3000\u3046\u307f\u3092\u3000\u304a\u3088\u3050\u3002"
             ]
         }
     },

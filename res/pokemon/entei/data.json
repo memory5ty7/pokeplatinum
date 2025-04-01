@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 75
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 217,
     "ev_yields": {
@@ -26,76 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 8, "MOVE_EMBER" ],
-            [ 15, "MOVE_ROAR" ],
-            [ 22, "MOVE_FIRE_SPIN" ],
-            [ 29, "MOVE_STOMP" ],
-            [ 36, "MOVE_FLAMETHROWER" ],
-            [ 43, "MOVE_SWAGGER" ],
-            [ 50, "MOVE_FIRE_FANG" ],
-            [ 57, "MOVE_LAVA_PLUME" ],
-            [ 64, "MOVE_EXTRASENSORY" ],
-            [ 71, "MOVE_FIRE_BLAST" ],
-            [ 78, "MOVE_CALM_MIND" ],
-            [ 85, "MOVE_ERUPTION" ]
-        ],
-        "by_tm": [
-            "TM04",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -114,7 +65,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "ENTEI",
-            "category": "Volcano Pokémon",
+            "category": "Volcano Pok\u00e9mon",
             "entry_text": [
                 "It is said that when it roars, a\n",
                 "volcano erupts somewhere around\n",
@@ -123,21 +74,24 @@
         },
         "fr": {
             "name": "ENTEI",
-            "category": "Pokémon Volcan",
+            "category": "Pok\u00e9mon Volcan",
             "entry_text": [
-                "On raconte qu’à chaque fois qu’il\n",
-                "rugit, un volcan entre en éruption\n",
+                "On raconte qu\u2019\u00e0 chaque fois qu\u2019il\n",
+                "rugit, un volcan entre en \u00e9ruption\n",
                 "quelque part."
             ]
         },
         "de": {
             "name": "ENTEI",
             "category": "Vulkan",
-            "entry_text": [ "Man sagt, wenn es brüllt, bricht\n", "irgendwo in der Welt ein Vulkan aus." ]
+            "entry_text": [
+                "Man sagt, wenn es br\u00fcllt, bricht\n",
+                "irgendwo in der Welt ein Vulkan aus."
+            ]
         },
         "it": {
             "name": "ENTEI",
-            "category": "Pokémon Vulcano",
+            "category": "Pok\u00e9mon Vulcano",
             "entry_text": [
                 "Si dice che quando emette il suo\n",
                 "verso, da qualche parte nel mondo\n",
@@ -146,20 +100,20 @@
         },
         "es": {
             "name": "ENTEI",
-            "category": "Pokémon Volcán",
+            "category": "Pok\u00e9mon Volc\u00e1n",
             "entry_text": [
                 "Se dice que, cuando ruge, un\n",
-                "volcán entra en erupción en algún\n",
+                "volc\u00e1n entra en erupci\u00f3n en alg\u00fan\n",
                 "punto del globo."
             ]
         },
         "jp": {
-            "name": "エンテイ",
-            "category": "かざんポケモン",
+            "name": "\u30a8\u30f3\u30c6\u30a4",
+            "category": "\u304b\u3056\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "エンテイが　ほえると\n",
-                "せかいの　どこかの　かざんが\n",
-                "ふんかすると　いわれている。"
+                "\u30a8\u30f3\u30c6\u30a4\u304c\u3000\u307b\u3048\u308b\u3068\n",
+                "\u305b\u304b\u3044\u306e\u3000\u3069\u3053\u304b\u306e\u3000\u304b\u3056\u3093\u304c\n",
+                "\u3075\u3093\u304b\u3059\u308b\u3068\u3000\u3044\u308f\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

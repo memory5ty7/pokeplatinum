@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 60
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 146,
     "ev_yields": {
@@ -26,78 +29,93 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NO_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LOW_KICK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_KARATE_CHOP" ],
-            [ 13, "MOVE_FORESIGHT" ],
-            [ 19, "MOVE_SEISMIC_TOSS" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 32, "MOVE_SUBMISSION" ],
-            [ 36, "MOVE_WAKE_UP_SLAP" ],
-            [ 40, "MOVE_CROSS_CHOP" ],
-            [ 44, "MOVE_SCARY_FACE" ],
-            [ 51, "MOVE_DYNAMIC_PUNCH" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                10,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                13,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                15,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                21,
+                "MOVE_LOW_SWEEP"
+            ],
+            [
+                25,
+                "MOVE_VITAL_THROW"
+            ],
+            [
+                30,
+                "MOVE_DUAL_CHOP"
+            ],
+            [
+                36,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                48,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                50,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                54,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                60,
+                "MOVE_DYNAMIC_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
-        [ "EVO_TRADE", "SPECIES_MACHAMP" ]
+        [
+            "EVO_TRADE",
+            "SPECIES_MACHAMP"
+        ]
     ],
     "footprint": {
         "has": true,
@@ -117,7 +135,7 @@
         "pokemon_pos_m": 7,
         "en": {
             "name": "MACHOKE",
-            "category": "Superpower Pokémon",
+            "category": "Superpower Pok\u00e9mon",
             "entry_text": [
                 "It happily carries heavy cargo to\n",
                 "toughen up. It willingly does hard\n",
@@ -126,11 +144,11 @@
         },
         "fr": {
             "name": "MACHOPEUR",
-            "category": "Pokémon Colosse",
+            "category": "Pok\u00e9mon Colosse",
             "entry_text": [
-                "La force herculéenne du MACHOPEUR\n",
-                "est très dangereuse. Il utilise une\n",
-                "ceinture pour contenir son énergie."
+                "La force hercul\u00e9enne du MACHOPEUR\n",
+                "est tr\u00e8s dangereuse. Il utilise une\n",
+                "ceinture pour contenir son \u00e9nergie."
             ]
         },
         "de": {
@@ -138,35 +156,35 @@
             "category": "Kraftprotz",
             "entry_text": [
                 "MASCHOCKs unbegrenzte Kraft ist\n",
-                "gefährlich, daher trägt es einen\n",
-                "Gürtel, der die Kraft unterdrückt."
+                "gef\u00e4hrlich, daher tr\u00e4gt es einen\n",
+                "G\u00fcrtel, der die Kraft unterdr\u00fcckt."
             ]
         },
         "it": {
             "name": "MACHOKE",
-            "category": "Pokémon Megaforza",
+            "category": "Pok\u00e9mon Megaforza",
             "entry_text": [
-                "La sua incredibile forza può essere\n",
+                "La sua incredibile forza pu\u00f2 essere\n",
                 "molto pericolosa. Indossa una cin-\n",
                 "tura per tenerla sotto controllo."
             ]
         },
         "es": {
             "name": "MACHOKE",
-            "category": "Pokémon Superpoder",
+            "category": "Pok\u00e9mon Superpoder",
             "entry_text": [
                 "La gran fortaleza de MACHOKE es\n",
-                "peligrosa, así que lleva un cinturón\n",
-                "que disminuye su energía."
+                "peligrosa, as\u00ed que lleva un cintur\u00f3n\n",
+                "que disminuye su energ\u00eda."
             ]
         },
         "jp": {
-            "name": "ゴ－リキ－",
-            "category": "かいりきポケモン",
+            "name": "\u30b4\uff0d\u30ea\u30ad\uff0d",
+            "category": "\u304b\u3044\u308a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ゴ－リキ－の　そこしれない　パワ－は\n",
-                "とても　きけんなので　ちからを\n",
-                "せいぎょする　ベルトを　まいている。"
+                "\u30b4\uff0d\u30ea\u30ad\uff0d\u306e\u3000\u305d\u3053\u3057\u308c\u306a\u3044\u3000\u30d1\u30ef\uff0d\u306f\n",
+                "\u3068\u3066\u3082\u3000\u304d\u3051\u3093\u306a\u306e\u3067\u3000\u3061\u304b\u3089\u3092\n",
+                "\u305b\u3044\u304e\u3087\u3059\u308b\u3000\u30d9\u30eb\u30c8\u3092\u3000\u307e\u3044\u3066\u3044\u308b\u3002"
             ]
         }
     },

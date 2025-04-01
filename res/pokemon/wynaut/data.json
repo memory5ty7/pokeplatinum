@@ -7,7 +7,10 @@
         "special_attack": 23,
         "special_defense": 48
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 125,
     "base_exp_reward": 44,
     "ev_yields": {
@@ -26,23 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_SHADOW_TAG", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_SHADOW_TAG",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 1, "MOVE_ENCORE" ],
-            [ 15, "MOVE_COUNTER" ],
-            [ 15, "MOVE_MIRROR_COAT" ],
-            [ 15, "MOVE_SAFEGUARD" ],
-            [ 15, "MOVE_DESTINY_BOND" ]
-        ],
-        "by_tm": [  ],
-        "by_tutor": [  ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -69,7 +71,7 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "WYNAUT",
-            "category": "Bright Pokémon",
+            "category": "Bright Pok\u00e9mon",
             "entry_text": [
                 "It grows strong by pushing up\n",
                 "against others en masse.\n",
@@ -78,47 +80,47 @@
         },
         "fr": {
             "name": "OKEOKE",
-            "category": "Pokémon Ravi",
+            "category": "Pok\u00e9mon Ravi",
             "entry_text": [
                 "Il se muscle en bousculant ses\n",
-                "semblables lors de mêlées. Il\n",
-                "raffole des fruits sucrés."
+                "semblables lors de m\u00eal\u00e9es. Il\n",
+                "raffole des fruits sucr\u00e9s."
             ]
         },
         "de": {
             "name": "ISSO",
             "category": "Strahlekind",
             "entry_text": [
-                "Es wird stärker, indem es andere\n",
-                "ständig anrempelt. Es liebt\n",
-                "Süßigkeiten."
+                "Es wird st\u00e4rker, indem es andere\n",
+                "st\u00e4ndig anrempelt. Es liebt\n",
+                "S\u00fc\u00dfigkeiten."
             ]
         },
         "it": {
             "name": "WYNAUT",
-            "category": "Pokémon Brillante",
+            "category": "Pok\u00e9mon Brillante",
             "entry_text": [
-                "Questi Pokémon si allenano in\n",
-                "gruppo caricandosi l’un l’altro per\n",
+                "Questi Pok\u00e9mon si allenano in\n",
+                "gruppo caricandosi l\u2019un l\u2019altro per\n",
                 "rafforzarsi. Amano i frutti dolci."
             ]
         },
         "es": {
             "name": "WYNAUT",
-            "category": "Pokémon Radiante",
+            "category": "Pok\u00e9mon Radiante",
             "entry_text": [
-                "Se fortalecen empujándose unos\n",
+                "Se fortalecen empuj\u00e1ndose unos\n",
                 "a otros en grupos. Les encantan\n",
                 "los dulces."
             ]
         },
         "jp": {
-            "name": "ソ－ナノ",
-            "category": "ほがらかポケモン",
+            "name": "\u30bd\uff0d\u30ca\u30ce",
+            "category": "\u307b\u304c\u3089\u304b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なかまたちと　おしくらまんじゅうを\n",
-                "やることで　がまんづよく　そだつ。\n",
-                "あまい　くだものが　だいこうぶつ。"
+                "\u306a\u304b\u307e\u305f\u3061\u3068\u3000\u304a\u3057\u304f\u3089\u307e\u3093\u3058\u3085\u3046\u3092\n",
+                "\u3084\u308b\u3053\u3068\u3067\u3000\u304c\u307e\u3093\u3065\u3088\u304f\u3000\u305d\u3060\u3064\u3002\n",
+                "\u3042\u307e\u3044\u3000\u304f\u3060\u3082\u306e\u304c\u3000\u3060\u3044\u3053\u3046\u3076\u3064\u3002"
             ]
         }
     },

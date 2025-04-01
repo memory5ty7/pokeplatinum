@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 50
     },
-    "types": [ "TYPE_WATER", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 74,
     "ev_yields": {
@@ -26,66 +29,59 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_RAIN_DISH" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_RAIN_DISH",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 5, "MOVE_ABSORB" ],
-            [ 7, "MOVE_NATURE_POWER" ],
-            [ 11, "MOVE_MIST" ],
-            [ 15, "MOVE_NATURAL_GIFT" ],
-            [ 19, "MOVE_MEGA_DRAIN" ],
-            [ 25, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_ZEN_HEADBUTT" ],
-            [ 37, "MOVE_RAIN_DANCE" ],
-            [ 45, "MOVE_ENERGY_BALL" ]
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                3,
+                "MOVE_GROWL"
+            ],
+            [
+                6,
+                "MOVE_ABSORB"
+            ],
+            [
+                9,
+                "MOVE_NATURAL_GIFT"
+            ],
+            [
+                12,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                14,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                24,
+                "MOVE_NATURE_POWER"
+            ],
+            [
+                30,
+                "MOVE_GIGA_DRAIN"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM03"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_SEED_BOMB",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -112,20 +108,20 @@
         "pokemon_pos_m": 24,
         "en": {
             "name": "LOTAD",
-            "category": "Water Weed Pokémon",
+            "category": "Water Weed Pok\u00e9mon",
             "entry_text": [
                 "It looks like an aquatic plant and\n",
-                "serves as a ferry to Pokémon\n",
-                "that can’t swim."
+                "serves as a ferry to Pok\u00e9mon\n",
+                "that can\u2019t swim."
             ]
         },
         "fr": {
             "name": "NENUPIOT",
-            "category": "Pokémon Aquaplante",
+            "category": "Pok\u00e9mon Aquaplante",
             "entry_text": [
-                "Il ressemble à une plante aquatique\n",
+                "Il ressemble \u00e0 une plante aquatique\n",
                 "et fait la navette pour les\n",
-                "Pokémon qui ne savent pas nager."
+                "Pok\u00e9mon qui ne savent pas nager."
             ]
         },
         "de": {
@@ -134,34 +130,34 @@
             "entry_text": [
                 "Es sieht aus wie eine Wasser-\n",
                 "pflanze. Es dient den PKMN, die\n",
-                "nicht schwimmen können, als Fähre."
+                "nicht schwimmen k\u00f6nnen, als F\u00e4hre."
             ]
         },
         "it": {
             "name": "LOTAD",
-            "category": "Pokémon Alga",
+            "category": "Pok\u00e9mon Alga",
             "entry_text": [
                 "Sembra una pianta acquatica e\n",
                 "viene usato come traghetto dai\n",
-                "Pokémon che non sanno nuotare."
+                "Pok\u00e9mon che non sanno nuotare."
             ]
         },
         "es": {
             "name": "LOTAD",
-            "category": "Pokémon Alga",
+            "category": "Pok\u00e9mon Alga",
             "entry_text": [
-                "Parece una planta acuática. Hace\n",
-                "de ferry para los Pokémon que no\n",
+                "Parece una planta acu\u00e1tica. Hace\n",
+                "de ferry para los Pok\u00e9mon que no\n",
                 "saben nadar."
             ]
         },
         "jp": {
-            "name": "ハスボ－",
-            "category": "うきくさポケモン",
+            "name": "\u30cf\u30b9\u30dc\uff0d",
+            "category": "\u3046\u304d\u304f\u3055\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "みずくさに　そっくりな　ポケモン。\n",
-                "およげない　ポケモンを　はっぱに\n",
-                "のせて　むこうぎしまで　はこぶ。"
+                "\u307f\u305a\u304f\u3055\u306b\u3000\u305d\u3063\u304f\u308a\u306a\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u304a\u3088\u3052\u306a\u3044\u3000\u30dd\u30b1\u30e2\u30f3\u3092\u3000\u306f\u3063\u3071\u306b\n",
+                "\u306e\u305b\u3066\u3000\u3080\u3053\u3046\u304e\u3057\u307e\u3067\u3000\u306f\u3053\u3076\u3002"
             ]
         }
     },

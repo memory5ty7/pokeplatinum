@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 50
     },
-    "types": [ "TYPE_GROUND", "TYPE_DRAGON" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_DRAGON"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 126,
     "ev_yields": {
@@ -26,74 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_LEVITATE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SONIC_BOOM" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 1, "MOVE_FAINT_ATTACK" ],
-            [ 1, "MOVE_SAND_TOMB" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 33, "MOVE_SUPERSONIC" ],
-            [ 35, "MOVE_DRAGON_BREATH" ],
-            [ 41, "MOVE_SCREECH" ],
-            [ 49, "MOVE_SANDSTORM" ],
-            [ 57, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_ENDURE"
+            ],
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                5,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                10,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                14,
+                "MOVE_DIG"
+            ],
+            [
+                17,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                20,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                23,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                28,
+                "MOVE_CRUNCH"
+            ],
+            [
+                32,
+                "MOVE_DRAGON_BREATH"
+            ],
+            [
+                36,
+                "MOVE_LEECH_LIFE"
+            ],
+            [
+                42,
+                "MOVE_FIRST_IMPRESSION"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM47",
-            "TM51",
-            "TM58",
-            "TM59",
-            "TM62",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM02",
-            "HM04",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_OUTRAGE",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -120,7 +120,7 @@
         "pokemon_pos_m": 65532,
         "en": {
             "name": "VIBRAVA",
-            "category": "Vibration Pokémon",
+            "category": "Vibration Pok\u00e9mon",
             "entry_text": [
                 "It violently shudders its wings,\n",
                 "generating ultrasonic waves to\n",
@@ -129,25 +129,25 @@
         },
         "fr": {
             "name": "VIBRANINF",
-            "category": "Pokémon Vibration",
+            "category": "Pok\u00e9mon Vibration",
             "entry_text": [
-                "Ses violents battements d’ailes\n",
-                "génèrent des vagues d’ultrasons\n",
-                "qui donnent mal au crâne."
+                "Ses violents battements d\u2019ailes\n",
+                "g\u00e9n\u00e8rent des vagues d\u2019ultrasons\n",
+                "qui donnent mal au cr\u00e2ne."
             ]
         },
         "de": {
             "name": "VIBRAVA",
             "category": "Vibration",
             "entry_text": [
-                "Es schlägt wild mit den Flügeln.\n",
+                "Es schl\u00e4gt wild mit den Fl\u00fcgeln.\n",
                 "So entstehen Ultraschallwellen,\n",
                 "die Kopfschmerzen verursachen."
             ]
         },
         "it": {
             "name": "VIBRAVA",
-            "category": "Pokémon Vibrazione",
+            "category": "Pok\u00e9mon Vibrazione",
             "entry_text": [
                 "Fa vibrare violentemente le ali\n",
                 "generando onde ultrasoniche che\n",
@@ -156,20 +156,20 @@
         },
         "es": {
             "name": "VIBRAVA",
-            "category": "Pokémon Vibrante",
+            "category": "Pok\u00e9mon Vibrante",
             "entry_text": [
                 "Agita violentamente sus alas para\n",
-                "crear ondas ultrasónicas que\n",
+                "crear ondas ultras\u00f3nicas que\n",
                 "provocan dolores de cabeza."
             ]
         },
         "jp": {
-            "name": "ビブラ－バ",
-            "category": "しんどうポケモン",
+            "name": "\u30d3\u30d6\u30e9\uff0d\u30d0",
+            "category": "\u3057\u3093\u3069\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はねを　はげしく　しんどうさせて\n",
-                "ちょうおんぱを　だす。にんげんも\n",
-                "ずつうを　おこすほど　きょうりょく。"
+                "\u306f\u306d\u3092\u3000\u306f\u3052\u3057\u304f\u3000\u3057\u3093\u3069\u3046\u3055\u305b\u3066\n",
+                "\u3061\u3087\u3046\u304a\u3093\u3071\u3092\u3000\u3060\u3059\u3002\u306b\u3093\u3052\u3093\u3082\n",
+                "\u305a\u3064\u3046\u3092\u3000\u304a\u3053\u3059\u307b\u3069\u3000\u304d\u3087\u3046\u308a\u3087\u304f\u3002"
             ]
         }
     },

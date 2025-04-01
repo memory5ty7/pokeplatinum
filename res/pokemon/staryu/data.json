@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 55
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 106,
     "ev_yields": {
@@ -26,72 +29,71 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_ILLUMINATE", "ABILITY_NATURAL_CURE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_ANALYTIC",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 6, "MOVE_WATER_GUN" ],
-            [ 10, "MOVE_RAPID_SPIN" ],
-            [ 15, "MOVE_RECOVER" ],
-            [ 19, "MOVE_CAMOUFLAGE" ],
-            [ 24, "MOVE_SWIFT" ],
-            [ 28, "MOVE_BUBBLE_BEAM" ],
-            [ 33, "MOVE_MINIMIZE" ],
-            [ 37, "MOVE_GYRO_BALL" ],
-            [ 42, "MOVE_LIGHT_SCREEN" ],
-            [ 46, "MOVE_POWER_GEM" ],
-            [ 51, "MOVE_COSMIC_POWER" ],
-            [ 55, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                8,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                12,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                16,
+                "MOVE_BRINE"
+            ],
+            [
+                20,
+                "MOVE_SWIFT"
+            ],
+            [
+                24,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                28,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                32,
+                "MOVE_RECOVER"
+            ],
+            [
+                36,
+                "MOVE_SURF"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                50,
+                "MOVE_THUNDER"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM33",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM55",
-            "TM58",
-            "TM67",
-            "TM70",
-            "TM73",
-            "TM74",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -118,7 +120,7 @@
         "pokemon_pos_m": 19,
         "en": {
             "name": "STARYU",
-            "category": "Star Shape Pokémon",
+            "category": "Star Shape Pok\u00e9mon",
             "entry_text": [
                 "If its body is torn, it can grow\n",
                 "back if the red core remains.\n",
@@ -127,47 +129,47 @@
         },
         "fr": {
             "name": "STARI",
-            "category": "Pokémon Etoile",
+            "category": "Pok\u00e9mon Etoile",
             "entry_text": [
-                "Même amoché, son corps se régé-\n",
-                "nère tant que le noyau rouge est\n",
-                "intact. Le noyau s’illumine à minuit."
+                "M\u00eame amoch\u00e9, son corps se r\u00e9g\u00e9-\n",
+                "n\u00e8re tant que le noyau rouge est\n",
+                "intact. Le noyau s\u2019illumine \u00e0 minuit."
             ]
         },
         "de": {
             "name": "STERNDU",
             "category": "Sternform",
             "entry_text": [
-                "Wird sein Körper verletzt, kann\n",
+                "Wird sein K\u00f6rper verletzt, kann\n",
                 "es sich regenerieren, sofern\n",
                 "der rote Kern intakt ist."
             ]
         },
         "it": {
             "name": "STARYU",
-            "category": "Pokémon Stella",
+            "category": "Pok\u00e9mon Stella",
             "entry_text": [
-                "Se il corpo è lacerato, si rigenera\n",
-                "se il nucleo rosso è ancora intat-\n",
+                "Se il corpo \u00e8 lacerato, si rigenera\n",
+                "se il nucleo rosso \u00e8 ancora intat-\n",
                 "to. Il nucleo brilla a mezzanotte."
             ]
         },
         "es": {
             "name": "STARYU",
-            "category": "Pokémon Estrellada",
+            "category": "Pok\u00e9mon Estrellada",
             "entry_text": [
                 "Puede recuperar las extremidades\n",
                 "que pierde si mantiene intacto su\n",
-                "núcleo rojo, que brilla en la noche."
+                "n\u00facleo rojo, que brilla en la noche."
             ]
         },
         "jp": {
-            "name": "ヒトデマン",
-            "category": "ほしがたポケモン",
+            "name": "\u30d2\u30c8\u30c7\u30de\u30f3",
+            "category": "\u307b\u3057\u304c\u305f\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あかい　コアが　あるかぎり　からだが\n",
-                "ちぎれても　すぐに　さいせいする。\n",
-                "まよなか　コアが　てんめつする。"
+                "\u3042\u304b\u3044\u3000\u30b3\u30a2\u304c\u3000\u3042\u308b\u304b\u304e\u308a\u3000\u304b\u3089\u3060\u304c\n",
+                "\u3061\u304e\u308c\u3066\u3082\u3000\u3059\u3050\u306b\u3000\u3055\u3044\u305b\u3044\u3059\u308b\u3002\n",
+                "\u307e\u3088\u306a\u304b\u3000\u30b3\u30a2\u304c\u3000\u3066\u3093\u3081\u3064\u3059\u308b\u3002"
             ]
         }
     },

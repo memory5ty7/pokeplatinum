@@ -7,7 +7,10 @@
         "special_attack": 69,
         "special_defense": 86
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 156,
     "ev_yields": {
@@ -26,77 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_STORM_DRAIN" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_ATTRACT" ],
-            [ 6, "MOVE_WATER_GUN" ],
-            [ 10, "MOVE_ATTRACT" ],
-            [ 13, "MOVE_RAIN_DANCE" ],
-            [ 17, "MOVE_GUST" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_CAPTIVATE" ],
-            [ 29, "MOVE_SAFEGUARD" ],
-            [ 35, "MOVE_AQUA_RING" ],
-            [ 42, "MOVE_WHIRLPOOL" ],
-            [ 48, "MOVE_U_TURN" ],
-            [ 53, "MOVE_BOUNCE" ],
-            [ 59, "MOVE_SILVER_WIND" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                6,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                11,
+                "MOVE_DEFOG"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                25,
+                "MOVE_BOUNCE"
+            ],
+            [
+                30,
+                "MOVE_FLIP_TURN"
+            ],
+            [
+                36,
+                "MOVE_ENCORE"
+            ],
+            [
+                40,
+                "MOVE_U_TURN"
+            ],
+            [
+                42,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                50,
+                "MOVE_HURRICANE"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM62",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM03",
-            "HM05",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -115,7 +114,7 @@
         "pokemon_pos_m": 65531,
         "en": {
             "name": "LUMINEON",
-            "category": "Neon Pokémon",
+            "category": "Neon Pok\u00e9mon",
             "entry_text": [
                 "It crawls along the seafloor using\n",
                 "its long front fins like legs. It\n",
@@ -124,9 +123,9 @@
         },
         "fr": {
             "name": "LUMINEON",
-            "category": "Pokémon Néon",
+            "category": "Pok\u00e9mon N\u00e9on",
             "entry_text": [
-                "Il vit au plus profond de l’océan.\n",
+                "Il vit au plus profond de l\u2019oc\u00e9an.\n",
                 "Il attire sa proie en illuminant les\n",
                 "motifs de ses 4 nageoires."
             ]
@@ -137,12 +136,12 @@
             "entry_text": [
                 "Es lebt tief auf dem Meeresboden.\n",
                 "Das blinkende Muster auf seinen\n",
-                "vier Rückenflossen zieht Beute an."
+                "vier R\u00fcckenflossen zieht Beute an."
             ]
         },
         "it": {
             "name": "LUMINEON",
-            "category": "Pokémon Neon",
+            "category": "Pok\u00e9mon Neon",
             "entry_text": [
                 "Vive negli abissi marini.\n",
                 "Attira le prede illuminando i\n",
@@ -151,7 +150,7 @@
         },
         "es": {
             "name": "LUMINEON",
-            "category": "Pokémon Neón",
+            "category": "Pok\u00e9mon Ne\u00f3n",
             "entry_text": [
                 "Vive en las profundidades marinas.\n",
                 "Atrae a sus presas con parpadeos\n",
@@ -159,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "ネオラント",
-            "category": "ネオンポケモン",
+            "name": "\u30cd\u30aa\u30e9\u30f3\u30c8",
+            "category": "\u30cd\u30aa\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ふかい　うみの　そこで　くらす。\n",
-                "４まいの　ひれの　もようを　ひからせ\n",
-                "えものを　おびきよせる。"
+                "\u3075\u304b\u3044\u3000\u3046\u307f\u306e\u3000\u305d\u3053\u3067\u3000\u304f\u3089\u3059\u3002\n",
+                "\uff14\u307e\u3044\u306e\u3000\u3072\u308c\u306e\u3000\u3082\u3088\u3046\u3092\u3000\u3072\u304b\u3089\u305b\n",
+                "\u3048\u3082\u306e\u3092\u3000\u304a\u3073\u304d\u3088\u305b\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 80
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 213,
     "ev_yields": {
@@ -26,65 +29,89 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_INTIMIDATE", "ABILITY_FLASH_FIRE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_NONE",
+        "ABILITY_ROCK_HEAD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_ROAR" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 39, "MOVE_EXTREME_SPEED" ]
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                5,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                12,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                16,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                22,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                26,
+                "MOVE_FLAME_CHARGE"
+            ],
+            [
+                35,
+                "MOVE_EXTREME_SPEED"
+            ],
+            [
+                40,
+                "MOVE_CRUNCH"
+            ],
+            [
+                45,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                48,
+                "MOVE_FLARE_BLITZ"
+            ],
+            [
+                52,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                55,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                58,
+                "MOVE_OUTRAGE"
+            ],
+            [
+                65,
+                "MOVE_OVERHEAT"
+            ],
+            [
+                70,
+                "MOVE_REVERSAL"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM50",
-            "TM58",
-            "TM59",
-            "TM61",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -103,7 +130,7 @@
         "pokemon_pos_m": 6,
         "en": {
             "name": "ARCANINE",
-            "category": "Legendary Pokémon",
+            "category": "Legendary Pok\u00e9mon",
             "entry_text": [
                 "Its proud and regal appearance\n",
                 "has captured the hearts of\n",
@@ -112,47 +139,47 @@
         },
         "fr": {
             "name": "ARCANIN",
-            "category": "Pokémon Légendaire",
+            "category": "Pok\u00e9mon L\u00e9gendaire",
             "entry_text": [
                 "Son port altier et son attitude \n",
-                "fière ont depuis longtemps conquis\n",
-                "le cœur des hommes."
+                "fi\u00e8re ont depuis longtemps conquis\n",
+                "le c\u0153ur des hommes."
             ]
         },
         "de": {
             "name": "ARKANI",
-            "category": "Legendär",
+            "category": "Legend\u00e4r",
             "entry_text": [
-                "Mit seiner stolzen und königlichen\n",
+                "Mit seiner stolzen und k\u00f6niglichen\n",
                 "Erscheinung gewinnt es die\n",
                 "Herzen der Menschen."
             ]
         },
         "it": {
             "name": "ARCANINE",
-            "category": "Pokémon Leggenda",
+            "category": "Pok\u00e9mon Leggenda",
             "entry_text": [
                 "Con il suo aspetto fiero ed\n",
-                "elegante, è riuscito da tempo\n",
+                "elegante, \u00e8 riuscito da tempo\n",
                 "a conquistare i cuori della gente."
             ]
         },
         "es": {
             "name": "ARCANINE",
-            "category": "Pokémon Legendario",
+            "category": "Pok\u00e9mon Legendario",
             "entry_text": [
                 "Su aspecto regio y orgulloso se\n",
-                "ha ganado el corazón de la\n",
+                "ha ganado el coraz\u00f3n de la\n",
                 "gente hace tiempo."
             ]
         },
         "jp": {
-            "name": "ウインディ",
-            "category": "でんせつポケモン",
+            "name": "\u30a6\u30a4\u30f3\u30c7\u30a3",
+            "category": "\u3067\u3093\u305b\u3064\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "いふうどうどうとした　すがたは\n",
-                "ふるくから　ひとびとの　こころを\n",
-                "とりこにしてきた。"
+                "\u3044\u3075\u3046\u3069\u3046\u3069\u3046\u3068\u3057\u305f\u3000\u3059\u304c\u305f\u306f\n",
+                "\u3075\u308b\u304f\u304b\u3089\u3000\u3072\u3068\u3073\u3068\u306e\u3000\u3053\u3053\u308d\u3092\n",
+                "\u3068\u308a\u3053\u306b\u3057\u3066\u304d\u305f\u3002"
             ]
         }
     },

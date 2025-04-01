@@ -7,7 +7,10 @@
         "special_attack": 20,
         "special_defense": 45
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 106,
     "ev_yields": {
@@ -26,28 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_OWN_TEMPO", "ABILITY_TECHNICIAN" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_TRACE",
+        "ABILITY_NONE",
+        "ABILITY_MOODY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SKETCH" ],
-            [ 11, "MOVE_SKETCH" ],
-            [ 21, "MOVE_SKETCH" ],
-            [ 31, "MOVE_SKETCH" ],
-            [ 41, "MOVE_SKETCH" ],
-            [ 51, "MOVE_SKETCH" ],
-            [ 61, "MOVE_SKETCH" ],
-            [ 71, "MOVE_SKETCH" ],
-            [ 81, "MOVE_SKETCH" ],
-            [ 91, "MOVE_SKETCH" ]
-        ],
-        "by_tm": [  ],
-        "by_tutor": [  ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -66,7 +65,7 @@
         "pokemon_pos_m": 15,
         "en": {
             "name": "SMEARGLE",
-            "category": "Painter Pokémon",
+            "category": "Painter Pok\u00e9mon",
             "entry_text": [
                 "It marks its territory by using its\n",
                 "tail like a paintbrush. There are\n",
@@ -75,11 +74,11 @@
         },
         "fr": {
             "name": "QUEULORIOR",
-            "category": "Pokémon Peintre",
+            "category": "Pok\u00e9mon Peintre",
             "entry_text": [
                 "Il marque son territoire en maniant\n",
                 "sa queue comme un pinceau. On\n",
-                "dénombre plus de 5 000 marques."
+                "d\u00e9nombre plus de 5 000 marques."
             ]
         },
         "de": {
@@ -93,7 +92,7 @@
         },
         "it": {
             "name": "SMEARGLE",
-            "category": "Pokémon Pittore",
+            "category": "Pok\u00e9mon Pittore",
             "entry_text": [
                 "Delimita il suo territorio usando la\n",
                 "coda come se fosse un pennello. Ha\n",
@@ -102,20 +101,20 @@
         },
         "es": {
             "name": "SMEARGLE",
-            "category": "Pokémon Pintor",
+            "category": "Pok\u00e9mon Pintor",
             "entry_text": [
                 "Marca su territorio usando su\n",
                 "cola a modo de pincel. Ha hecho\n",
-                "más de 5000 marcas diferentes."
+                "m\u00e1s de 5000 marcas diferentes."
             ]
         },
         "jp": {
-            "name": "ド－ブル",
-            "category": "えかきポケモン",
+            "name": "\u30c9\uff0d\u30d6\u30eb",
+            "category": "\u3048\u304b\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しっぽを　ふでのように　つかって\n",
-                "なわばりに　マ－クを　えがく。\n",
-                "その　しゅるいは　５０００いじょう。"
+                "\u3057\u3063\u307d\u3092\u3000\u3075\u3067\u306e\u3088\u3046\u306b\u3000\u3064\u304b\u3063\u3066\n",
+                "\u306a\u308f\u3070\u308a\u306b\u3000\u30de\uff0d\u30af\u3092\u3000\u3048\u304c\u304f\u3002\n",
+                "\u305d\u306e\u3000\u3057\u3085\u308b\u3044\u306f\u3000\uff15\uff10\uff10\uff10\u3044\u3058\u3087\u3046\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 75
     },
-    "types": [ "TYPE_BUG", "TYPE_POISON" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_POISON"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 138,
     "ev_yields": {
@@ -26,77 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHIELD_DUST", "ABILITY_TINTED_LENS" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_TINTED_LENS",
+        "ABILITY_COMPOUND_EYES",
+        "ABILITY_SHIELD_DUST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SILVER_WIND" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_DISABLE" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 5, "MOVE_SUPERSONIC" ],
-            [ 11, "MOVE_CONFUSION" ],
-            [ 13, "MOVE_POISON_POWDER" ],
-            [ 17, "MOVE_LEECH_LIFE" ],
-            [ 23, "MOVE_STUN_SPORE" ],
-            [ 25, "MOVE_PSYBEAM" ],
-            [ 29, "MOVE_SLEEP_POWDER" ],
-            [ 31, "MOVE_GUST" ],
-            [ 37, "MOVE_SIGNAL_BEAM" ],
-            [ 41, "MOVE_ZEN_HEADBUTT" ],
-            [ 47, "MOVE_POISON_FANG" ],
-            [ 55, "MOVE_PSYCHIC" ],
-            [ 59, "MOVE_BUG_BUZZ" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM29",
-            "TM32",
-            "TM36",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM48",
-            "TM51",
-            "TM53",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -115,7 +65,7 @@
         "pokemon_pos_m": 65530,
         "en": {
             "name": "VENOMOTH",
-            "category": "Poison Moth Pokémon",
+            "category": "Poison Moth Pok\u00e9mon",
             "entry_text": [
                 "It flutters its wings to scatter\n",
                 "dustlike scales. The scales leach\n",
@@ -124,9 +74,9 @@
         },
         "fr": {
             "name": "AEROMITE",
-            "category": "Pokémon Papipoison",
+            "category": "Pok\u00e9mon Papipoison",
             "entry_text": [
-                "Il répand ses écailles poudreuses\n",
+                "Il r\u00e9pand ses \u00e9cailles poudreuses\n",
                 "en battant des ailes. Elles sont\n",
                 "toxiques au toucher."
             ]
@@ -135,14 +85,14 @@
             "name": "OMOT",
             "category": "Giftmotte",
             "entry_text": [
-                "Es schlägt mit den Flügeln, um\n",
+                "Es schl\u00e4gt mit den Fl\u00fcgeln, um\n",
                 "staubartige Schuppen abzusondern.\n",
                 "Diese geben bei Kontakt Gift ab."
             ]
         },
         "it": {
             "name": "VENOMOTH",
-            "category": "Pokémon Velentarma",
+            "category": "Pok\u00e9mon Velentarma",
             "entry_text": [
                 "Sbattendo le ali sparge una\n",
                 "polvere velenosa a contatto\n",
@@ -151,7 +101,7 @@
         },
         "es": {
             "name": "VENOMOTH",
-            "category": "Pokémon Polilla V.",
+            "category": "Pok\u00e9mon Polilla V.",
             "entry_text": [
                 "Agita las alas para dispersar\n",
                 "un polvillo de escamas que\n",
@@ -159,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "モルフォン",
-            "category": "どくがポケモン",
+            "name": "\u30e2\u30eb\u30d5\u30a9\u30f3",
+            "category": "\u3069\u304f\u304c\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はばたいて　りんぷんを　まきちらす。\n",
-                "りんぷんが　からだに　つくと　どくの\n",
-                "せいぶんが　ひふに　しみこんでくる。"
+                "\u306f\u3070\u305f\u3044\u3066\u3000\u308a\u3093\u3077\u3093\u3092\u3000\u307e\u304d\u3061\u3089\u3059\u3002\n",
+                "\u308a\u3093\u3077\u3093\u304c\u3000\u304b\u3089\u3060\u306b\u3000\u3064\u304f\u3068\u3000\u3069\u304f\u306e\n",
+                "\u305b\u3044\u3076\u3093\u304c\u3000\u3072\u3075\u306b\u3000\u3057\u307f\u3053\u3093\u3067\u304f\u308b\u3002"
             ]
         }
     },

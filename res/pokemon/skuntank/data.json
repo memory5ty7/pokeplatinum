@@ -7,7 +7,10 @@
         "special_attack": 71,
         "special_defense": 61
     },
-    "types": [ "TYPE_POISON", "TYPE_DARK" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_DARK"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 209,
     "ev_yields": {
@@ -26,79 +29,77 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STENCH", "ABILITY_AFTERMATH" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 1, "MOVE_POISON_GAS" ],
-            [ 4, "MOVE_POISON_GAS" ],
-            [ 7, "MOVE_SCREECH" ],
-            [ 10, "MOVE_FURY_SWIPES" ],
-            [ 14, "MOVE_SMOKE_SCREEN" ],
-            [ 18, "MOVE_FEINT" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 27, "MOVE_TOXIC" ],
-            [ 32, "MOVE_NIGHT_SLASH" ],
-            [ 34, "MOVE_FLAMETHROWER" ],
-            [ 42, "MOVE_MEMENTO" ],
-            [ 52, "MOVE_EXPLOSION" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_POISON_GAS"
+            ],
+            [
+                5,
+                "MOVE_SCREECH"
+            ],
+            [
+                8,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                11,
+                "MOVE_SLUDGE"
+            ],
+            [
+                15,
+                "MOVE_SLASH"
+            ],
+            [
+                19,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                21,
+                "MOVE_TOXIC"
+            ],
+            [
+                25,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                40,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                45,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                50,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM35",
-            "TM36",
-            "TM38",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM58",
-            "TM64",
-            "TM65",
-            "TM66",
-            "TM68",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM05",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -117,7 +118,7 @@
         "pokemon_pos_m": 15,
         "en": {
             "name": "SKUNTANK",
-            "category": "Skunk Pokémon",
+            "category": "Skunk Pok\u00e9mon",
             "entry_text": [
                 "It attacks by spraying a horribly\n",
                 "smelly fluid from the tip of its tail.\n",
@@ -126,47 +127,47 @@
         },
         "fr": {
             "name": "MOUFFLAIR",
-            "category": "Pokémon Moufette",
+            "category": "Pok\u00e9mon Moufette",
             "entry_text": [
                 "Il attaque en projetant un\n",
-                "liquide fétide du bout de sa queue.\n",
-                "Il peut tirer à 50 mètres."
+                "liquide f\u00e9tide du bout de sa queue.\n",
+                "Il peut tirer \u00e0 50 m\u00e8tres."
             ]
         },
         "de": {
             "name": "SKUNTANK",
             "category": "Stinktier",
             "entry_text": [
-                "Über seine Schweifspitze versprüht\n",
-                "es eine übelriechende Substanz. Die\n",
-                "Reichweite liegt bei über 50 Metern."
+                "\u00dcber seine Schweifspitze verspr\u00fcht\n",
+                "es eine \u00fcbelriechende Substanz. Die\n",
+                "Reichweite liegt bei \u00fcber 50 Metern."
             ]
         },
         "it": {
             "name": "SKUNTANK",
-            "category": "Pokémon Moffetta",
+            "category": "Pok\u00e9mon Moffetta",
             "entry_text": [
                 "Attacca spruzzando un fluido\n",
                 "puzzolente dalla coda. Ha un\n",
-                "raggio d’azione di oltre 50 metri."
+                "raggio d\u2019azione di oltre 50 metri."
             ]
         },
         "es": {
             "name": "SKUNTANK",
-            "category": "Pokémon Mofeta",
+            "category": "Pok\u00e9mon Mofeta",
             "entry_text": [
                 "Para atacar, emite un fluido\n",
                 "maloliente por la punta de su cola\n",
-                "que puede llegar a más de 50 m."
+                "que puede llegar a m\u00e1s de 50 m."
             ]
         },
         "jp": {
-            "name": "スカタンク",
-            "category": "スカンクポケモン",
+            "name": "\u30b9\u30ab\u30bf\u30f3\u30af",
+            "category": "\u30b9\u30ab\u30f3\u30af\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しっぽの　さきから　ひどい　においの\n",
-                "えきたいを　とばして　こうげきする。\n",
-                "ひきょりは　５０メ－トルいじょう。"
+                "\u3057\u3063\u307d\u306e\u3000\u3055\u304d\u304b\u3089\u3000\u3072\u3069\u3044\u3000\u306b\u304a\u3044\u306e\n",
+                "\u3048\u304d\u305f\u3044\u3092\u3000\u3068\u3070\u3057\u3066\u3000\u3053\u3046\u3052\u304d\u3059\u308b\u3002\n",
+                "\u3072\u304d\u3087\u308a\u306f\u3000\uff15\uff10\u30e1\uff0d\u30c8\u30eb\u3044\u3058\u3087\u3046\u3002"
             ]
         }
     },

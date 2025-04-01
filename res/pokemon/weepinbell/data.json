@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 45
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 151,
     "ev_yields": {
@@ -26,66 +29,91 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE",
+        "ABILITY_GLUTTONY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_VINE_WHIP" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 1, "MOVE_WRAP" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 11, "MOVE_WRAP" ],
-            [ 13, "MOVE_SLEEP_POWDER" ],
-            [ 15, "MOVE_POISON_POWDER" ],
-            [ 17, "MOVE_STUN_SPORE" ],
-            [ 23, "MOVE_ACID" ],
-            [ 27, "MOVE_KNOCK_OFF" ],
-            [ 29, "MOVE_SWEET_SCENT" ],
-            [ 35, "MOVE_GASTRO_ACID" ],
-            [ 39, "MOVE_RAZOR_LEAF" ],
-            [ 41, "MOVE_SLAM" ],
-            [ 47, "MOVE_WRING_OUT" ]
+            [
+                1,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                9,
+                "MOVE_ACID"
+            ],
+            [
+                13,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                16,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                24,
+                "MOVE_TRAILBLAZE"
+            ],
+            [
+                27,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                30,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                30,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                32,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                36,
+                "MOVE_LEAF_BLADE"
+            ],
+            [
+                40,
+                "MOVE_ENCORE"
+            ],
+            [
+                45,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                55,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                60,
+                "MOVE_SLUDGE_WAVE"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                50,
+                "MOVE_SOLAR_BLADE"
+            ],
+            [
+                55,
+                "MOVE_WEATHER_BALL"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -112,56 +140,56 @@
         "pokemon_pos_m": 16,
         "en": {
             "name": "WEEPINBELL",
-            "category": "Flycatcher Pokémon",
+            "category": "Flycatcher Pok\u00e9mon",
             "entry_text": [
-                "A Pokémon that appears to be a\n",
+                "A Pok\u00e9mon that appears to be a\n",
                 "plant. It captures unwary prey by\n",
                 "dousing them with a toxic powder."
             ]
         },
         "fr": {
             "name": "BOUSTIFLOR",
-            "category": "Pokémon Carnivore",
+            "category": "Pok\u00e9mon Carnivore",
             "entry_text": [
-                "Un Pokémon végétal. Il capture les\n",
-                "proies étourdies en les endormant\n",
-                "à l’aide d’une poudre toxique."
+                "Un Pok\u00e9mon v\u00e9g\u00e9tal. Il capture les\n",
+                "proies \u00e9tourdies en les endormant\n",
+                "\u00e0 l\u2019aide d\u2019une poudre toxique."
             ]
         },
         "de": {
             "name": "ULTRIGARIA",
             "category": "Fliegentot",
             "entry_text": [
-                "Ein Pokémon, das wie eine Pflanze\n",
-                "aussieht. Es fängt Beute, indem es\n",
-                "giftigen Puder darüber verteilt."
+                "Ein Pok\u00e9mon, das wie eine Pflanze\n",
+                "aussieht. Es f\u00e4ngt Beute, indem es\n",
+                "giftigen Puder dar\u00fcber verteilt."
             ]
         },
         "it": {
             "name": "WEEPINBELL",
-            "category": "Pokémon Moschivoro",
+            "category": "Pok\u00e9mon Moschivoro",
             "entry_text": [
-                "Questo Pokémon sembra una pianta.\n",
+                "Questo Pok\u00e9mon sembra una pianta.\n",
                 "Cattura le prede con una polvere\n",
                 "tossica."
             ]
         },
         "es": {
             "name": "WEEPINBELL",
-            "category": "Pokémon Matamoscas",
+            "category": "Pok\u00e9mon Matamoscas",
             "entry_text": [
-                "Este Pokémon parece una planta.\n",
+                "Este Pok\u00e9mon parece una planta.\n",
                 "Captura a sus presas usando polvo\n",
-                "tóxico cuando están desprevenidas."
+                "t\u00f3xico cuando est\u00e1n desprevenidas."
             ]
         },
         "jp": {
-            "name": "ウツドン",
-            "category": "ハエとりポケモン",
+            "name": "\u30a6\u30c4\u30c9\u30f3",
+            "category": "\u30cf\u30a8\u3068\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "しょくぶつに　そっくりな　ポケモン。\n",
-                "ゆだんして　ちかよってきた　えものに\n",
-                "どくのこなを　あびせて　つかまえる。"
+                "\u3057\u3087\u304f\u3076\u3064\u306b\u3000\u305d\u3063\u304f\u308a\u306a\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+                "\u3086\u3060\u3093\u3057\u3066\u3000\u3061\u304b\u3088\u3063\u3066\u304d\u305f\u3000\u3048\u3082\u306e\u306b\n",
+                "\u3069\u304f\u306e\u3053\u306a\u3092\u3000\u3042\u3073\u305b\u3066\u3000\u3064\u304b\u307e\u3048\u308b\u3002"
             ]
         }
     },

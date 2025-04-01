@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 79
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 194,
     "ev_yields": {
@@ -26,70 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RIVALRY", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_STRONG_JAW",
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_CHARGE" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 18, "MOVE_BITE" ],
-            [ 23, "MOVE_ROAR" ],
-            [ 28, "MOVE_SWAGGER" ],
-            [ 35, "MOVE_THUNDER_FANG" ],
-            [ 42, "MOVE_CRUNCH" ],
-            [ 49, "MOVE_SCARY_FACE" ],
-            [ 56, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_SPARK"
+            ],
+            [
+                13,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                17,
+                "MOVE_BITE"
+            ],
+            [
+                20,
+                "MOVE_CHARM"
+            ],
+            [
+                24,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                30,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                30,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                36,
+                "MOVE_CRUNCH"
+            ],
+            [
+                42,
+                "MOVE_THUNDERBOLT"
+            ],
+            [
+                45,
+                "MOVE_PSYCHIC_FANGS"
+            ],
+            [
+                50,
+                "MOVE_VOLT_SWITCH"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -108,7 +126,7 @@
         "pokemon_pos_m": 8,
         "en": {
             "name": "LUXRAY",
-            "category": "Gleam Eyes Pokémon",
+            "category": "Gleam Eyes Pok\u00e9mon",
             "entry_text": [
                 "It can see clearly through walls\n",
                 "to track down its prey and seek\n",
@@ -117,16 +135,16 @@
         },
         "fr": {
             "name": "LUXRAY",
-            "category": "Pokémon Brilloeil",
+            "category": "Pok\u00e9mon Brilloeil",
             "entry_text": [
-                "Ses yeux voient à travers tout. Il\n",
-                "repère les proies cachées derrière\n",
+                "Ses yeux voient \u00e0 travers tout. Il\n",
+                "rep\u00e8re les proies cach\u00e9es derri\u00e8re\n",
                 "un objet pour les capturer."
             ]
         },
         "de": {
             "name": "LUXTRA",
-            "category": "Glühauge",
+            "category": "Gl\u00fchauge",
             "entry_text": [
                 "Mit seinen Augen kann es durch\n",
                 "alles hindurch sehen. So findet es\n",
@@ -135,7 +153,7 @@
         },
         "it": {
             "name": "LUXRAY",
-            "category": "Pokémon Occhiluce",
+            "category": "Pok\u00e9mon Occhiluce",
             "entry_text": [
                 "Vede attraverso qualsiasi cosa.\n",
                 "Individua e cattura le prede che\n",
@@ -144,20 +162,20 @@
         },
         "es": {
             "name": "LUXRAY",
-            "category": "Pokémon Chispa Ojos",
+            "category": "Pok\u00e9mon Chispa Ojos",
             "entry_text": [
-                "Sus ojos pueden ver a través\n",
+                "Sus ojos pueden ver a trav\u00e9s\n",
                 "de todo. Localiza a las presas\n",
-                "detrás de objetos y las captura."
+                "detr\u00e1s de objetos y las captura."
             ]
         },
         "jp": {
-            "name": "レントラ－",
-            "category": "がんこうポケモン",
+            "name": "\u30ec\u30f3\u30c8\u30e9\uff0d",
+            "category": "\u304c\u3093\u3053\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あらゆるものを　とうししてしまう\n",
-                "めを　もつ。ものかげに　かくれた\n",
-                "えものを　みつけて　とらえる。"
+                "\u3042\u3089\u3086\u308b\u3082\u306e\u3092\u3000\u3068\u3046\u3057\u3057\u3066\u3057\u307e\u3046\n",
+                "\u3081\u3092\u3000\u3082\u3064\u3002\u3082\u306e\u304b\u3052\u306b\u3000\u304b\u304f\u308c\u305f\n",
+                "\u3048\u3082\u306e\u3092\u3000\u307f\u3064\u3051\u3066\u3000\u3068\u3089\u3048\u308b\u3002"
             ]
         }
     },

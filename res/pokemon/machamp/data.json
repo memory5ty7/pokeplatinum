@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 85
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 193,
     "ev_yields": {
@@ -26,80 +29,89 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NO_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LOW_KICK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_KARATE_CHOP" ],
-            [ 13, "MOVE_FORESIGHT" ],
-            [ 19, "MOVE_SEISMIC_TOSS" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 32, "MOVE_SUBMISSION" ],
-            [ 36, "MOVE_WAKE_UP_SLAP" ],
-            [ 40, "MOVE_CROSS_CHOP" ],
-            [ 44, "MOVE_SCARY_FACE" ],
-            [ 51, "MOVE_DYNAMIC_PUNCH" ]
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                10,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                13,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                15,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                21,
+                "MOVE_LOW_SWEEP"
+            ],
+            [
+                25,
+                "MOVE_VITAL_THROW"
+            ],
+            [
+                30,
+                "MOVE_DUAL_CHOP"
+            ],
+            [
+                36,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                48,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                50,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                54,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                60,
+                "MOVE_DYNAMIC_PUNCH"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM71",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_VACUUM_WAVE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -118,7 +130,7 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "MACHAMP",
-            "category": "Superpower Pokémon",
+            "category": "Superpower Pok\u00e9mon",
             "entry_text": [
                 "Its four muscled arms slam foes\n",
                 "with powerful punches and chops\n",
@@ -127,9 +139,9 @@
         },
         "fr": {
             "name": "MACKOGNEUR",
-            "category": "Pokémon Colosse",
+            "category": "Pok\u00e9mon Colosse",
             "entry_text": [
-                "Ses quatre bras frappent à une\n",
+                "Ses quatre bras frappent \u00e0 une\n",
                 "vitesse aveuglante. Il peut porter\n",
                 "1 000 coups en deux secondes."
             ]
@@ -138,23 +150,23 @@
             "name": "MACHOMEI",
             "category": "Kraftprotz",
             "entry_text": [
-                "Mit seinen vier Armen schlägt es\n",
+                "Mit seinen vier Armen schl\u00e4gt es\n",
                 "blitzschnell zu. Es kann in zwei\n",
                 "Sekunden 1 000-mal zuschlagen."
             ]
         },
         "it": {
             "name": "MACHAMP",
-            "category": "Pokémon Megaforza",
+            "category": "Pok\u00e9mon Megaforza",
             "entry_text": [
                 "Tira pugni con le quattro braccia\n",
-                "ad una velocità impressionante.\n",
+                "ad una velocit\u00e0 impressionante.\n",
                 "Scaglia 1000 pugni ogni 2 secondi."
             ]
         },
         "es": {
             "name": "MACHAMP",
-            "category": "Pokémon Superpoder",
+            "category": "Pok\u00e9mon Superpoder",
             "entry_text": [
                 "Golpea con sus cuatro brazos a\n",
                 "gran velocidad. Puede dar 1000\n",
@@ -162,12 +174,12 @@
             ]
         },
         "jp": {
-            "name": "カイリキ－",
-            "category": "かいりきポケモン",
+            "name": "\u30ab\u30a4\u30ea\u30ad\uff0d",
+            "category": "\u304b\u3044\u308a\u304d\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "４ほんの　うでを　めにもとまらぬ\n",
-                "はやさで　うごかし　２びょうかんに\n",
-                "１０００ぱつの　パンチを　くりだす。"
+                "\uff14\u307b\u3093\u306e\u3000\u3046\u3067\u3092\u3000\u3081\u306b\u3082\u3068\u307e\u3089\u306c\n",
+                "\u306f\u3084\u3055\u3067\u3000\u3046\u3054\u304b\u3057\u3000\uff12\u3073\u3087\u3046\u304b\u3093\u306b\n",
+                "\uff11\uff10\uff10\uff10\u3071\u3064\u306e\u3000\u30d1\u30f3\u30c1\u3092\u3000\u304f\u308a\u3060\u3059\u3002"
             ]
         }
     },

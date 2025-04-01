@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 25
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 97,
     "ev_yields": {
@@ -26,61 +29,83 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SHELL_ARMOR", "ABILITY_SKILL_LINK" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SHELL_ARMOR",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_WITHDRAW" ],
-            [ 8, "MOVE_SUPERSONIC" ],
-            [ 13, "MOVE_ICICLE_SPEAR" ],
-            [ 16, "MOVE_PROTECT" ],
-            [ 20, "MOVE_LEER" ],
-            [ 25, "MOVE_CLAMP" ],
-            [ 28, "MOVE_ICE_SHARD" ],
-            [ 32, "MOVE_AURORA_BEAM" ],
-            [ 37, "MOVE_WHIRLPOOL" ],
-            [ 40, "MOVE_IRON_DEFENSE" ],
-            [ 44, "MOVE_BRINE" ],
-            [ 49, "MOVE_ICE_BEAM" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                4,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                8,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                14,
+                "MOVE_ENDURE"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                24,
+                "MOVE_PROTECT"
+            ],
+            [
+                30,
+                "MOVE_RAZOR_SHELL"
+            ],
+            [
+                36,
+                "MOVE_ICICLE_SPEAR"
+            ],
+            [
+                40,
+                "MOVE_ROCK_BLAST"
+            ],
+            [
+                45,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                40,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                45,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                50,
+                "MOVE_ICICLE_CRASH"
+            ],
+            [
+                55,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -107,7 +132,7 @@
         "pokemon_pos_m": 29,
         "en": {
             "name": "SHELLDER",
-            "category": "Bivalve Pokémon",
+            "category": "Bivalve Pok\u00e9mon",
             "entry_text": [
                 "It swims backward by opening and\n",
                 "closing its two shells. Its large\n",
@@ -116,47 +141,47 @@
         },
         "fr": {
             "name": "KOKIYAS",
-            "category": "Pokémon Bivalve",
+            "category": "Pok\u00e9mon Bivalve",
             "entry_text": [
-                "Il nage à reculons en ouvrant et en\n",
+                "Il nage \u00e0 reculons en ouvrant et en\n",
                 "refermant ses deux coquilles. Il\n",
-                "laisse traîner sa large langue."
+                "laisse tra\u00eener sa large langue."
             ]
         },
         "de": {
             "name": "MUSCHAS",
             "category": "Muschel",
             "entry_text": [
-                "Es schwimmt rückwärts, indem es\n",
-                "seine Schale öffnet und schließt.\n",
+                "Es schwimmt r\u00fcckw\u00e4rts, indem es\n",
+                "seine Schale \u00f6ffnet und schlie\u00dft.\n",
                 "Es zeigt immer seine breite Zunge."
             ]
         },
         "it": {
             "name": "SHELLDER",
-            "category": "Pokémon Bivalve",
+            "category": "Pok\u00e9mon Bivalve",
             "entry_text": [
-                "Nuota all’indietro aprendo e\n",
+                "Nuota all\u2019indietro aprendo e\n",
                 "chiudendo le due valve. La lingua\n",
-                "è sempre fuori a penzoloni."
+                "\u00e8 sempre fuori a penzoloni."
             ]
         },
         "es": {
             "name": "SHELLDER",
-            "category": "Pokémon Bivalvo",
+            "category": "Pok\u00e9mon Bivalvo",
             "entry_text": [
-                "Nada hacia atrás abriendo y\n",
+                "Nada hacia atr\u00e1s abriendo y\n",
                 "cerrando su concha. Su gran\n",
                 "lengua siempre queda colgando."
             ]
         },
         "jp": {
-            "name": "シェルダ－",
-            "category": "２まいがいポケモン",
+            "name": "\u30b7\u30a7\u30eb\u30c0\uff0d",
+            "category": "\uff12\u307e\u3044\u304c\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "２まいの　カラを　あけしめすることで\n",
-                "うしろむきに　およぐ。どんなときでも\n",
-                "おおきな　ベロは　だしっぱなし。"
+                "\uff12\u307e\u3044\u306e\u3000\u30ab\u30e9\u3092\u3000\u3042\u3051\u3057\u3081\u3059\u308b\u3053\u3068\u3067\n",
+                "\u3046\u3057\u308d\u3080\u304d\u306b\u3000\u304a\u3088\u3050\u3002\u3069\u3093\u306a\u3068\u304d\u3067\u3082\n",
+                "\u304a\u304a\u304d\u306a\u3000\u30d9\u30ed\u306f\u3000\u3060\u3057\u3063\u3071\u306a\u3057\u3002"
             ]
         }
     },

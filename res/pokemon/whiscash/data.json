@@ -7,7 +7,10 @@
         "special_attack": 76,
         "special_defense": 71
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 158,
     "ev_yields": {
@@ -26,78 +29,73 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_ANTICIPATION" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_HYDRATION",
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_SIMPLE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ZEN_HEADBUTT" ],
-            [ 1, "MOVE_TICKLE" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 6, "MOVE_MUD_SPORT" ],
-            [ 6, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_MUD_BOMB" ],
-            [ 18, "MOVE_AMNESIA" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_MAGNITUDE" ],
-            [ 33, "MOVE_REST" ],
-            [ 33, "MOVE_SNORE" ],
-            [ 39, "MOVE_AQUA_TAIL" ],
-            [ 45, "MOVE_EARTHQUAKE" ],
-            [ 51, "MOVE_FUTURE_SIGHT" ],
-            [ 57, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                6,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                12,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                17,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                24,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                30,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                36,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                42,
+                "MOVE_FUTURE_SIGHT"
+            ],
+            [
+                45,
+                "MOVE_FLIP_TURN"
+            ],
+            [
+                50,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                55,
+                "MOVE_WAVE_CRASH"
+            ],
+            [
+                60,
+                "MOVE_HIGH_HORSEPOWER"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM68",
-            "TM71",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_EARTH_POWER",
-            "MOVE_BOUNCE"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -116,7 +114,7 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "WHISCASH",
-            "category": "Whiskers Pokémon",
+            "category": "Whiskers Pok\u00e9mon",
             "entry_text": [
                 "It is extremely protective of its\n",
                 "territory. If any foe approaches,\n",
@@ -125,11 +123,11 @@
         },
         "fr": {
             "name": "BARBICHA",
-            "category": "Pokémon Barbillon",
+            "category": "Pok\u00e9mon Barbillon",
             "entry_text": [
-                "Il est attaché à son territoire.\n",
-                "Il repousse l’ennemi en provoquant\n",
-                "des secousses qui portent à 5 km."
+                "Il est attach\u00e9 \u00e0 son territoire.\n",
+                "Il repousse l\u2019ennemi en provoquant\n",
+                "des secousses qui portent \u00e0 5 km."
             ]
         },
         "de": {
@@ -137,13 +135,13 @@
             "category": "Barthaar",
             "entry_text": [
                 "Es verteidigt sein Revier, indem es\n",
-                "Erschütterungen auslöst, die noch\n",
-                "in 5 km Entfernung zu spüren sind."
+                "Ersch\u00fctterungen ausl\u00f6st, die noch\n",
+                "in 5 km Entfernung zu sp\u00fcren sind."
             ]
         },
         "it": {
             "name": "WHISCASH",
-            "category": "Pokémon Baffetti",
+            "category": "Pok\u00e9mon Baffetti",
             "entry_text": [
                 "Ha un senso del territorio molto\n",
                 "sviluppato. Respinge i nemici scate-\n",
@@ -152,7 +150,7 @@
         },
         "es": {
             "name": "WHISCASH",
-            "category": "Pokémon Bigotudo",
+            "category": "Pok\u00e9mon Bigotudo",
             "entry_text": [
                 "Es muy territorial. Expulsa a los\n",
                 "intrusos con unos temblores que\n",
@@ -160,12 +158,12 @@
             ]
         },
         "jp": {
-            "name": "ナマズン",
-            "category": "ひげうおポケモン",
+            "name": "\u30ca\u30de\u30ba\u30f3",
+            "category": "\u3072\u3052\u3046\u304a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "なわばり　いしきが　とても　つよい。\n",
-                "しゅうい　５キロの　はんいで\n",
-                "じしんを　おこし　げきたいする。"
+                "\u306a\u308f\u3070\u308a\u3000\u3044\u3057\u304d\u304c\u3000\u3068\u3066\u3082\u3000\u3064\u3088\u3044\u3002\n",
+                "\u3057\u3085\u3046\u3044\u3000\uff15\u30ad\u30ed\u306e\u3000\u306f\u3093\u3044\u3067\n",
+                "\u3058\u3057\u3093\u3092\u3000\u304a\u3053\u3057\u3000\u3052\u304d\u305f\u3044\u3059\u308b\u3002"
             ]
         }
     },

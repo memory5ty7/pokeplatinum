@@ -7,7 +7,10 @@
         "special_attack": 85,
         "special_defense": 45
     },
-    "types": [ "TYPE_WATER", "TYPE_ICE" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_ICE"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 203,
     "ev_yields": {
@@ -26,63 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SHELL_ARMOR", "ABILITY_SKILL_LINK" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SKILL_LINK",
+        "ABILITY_SHELL_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TOXIC_SPIKES" ],
-            [ 1, "MOVE_WITHDRAW" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 1, "MOVE_AURORA_BEAM" ],
-            [ 1, "MOVE_PROTECT" ],
-            [ 28, "MOVE_SPIKES" ],
-            [ 40, "MOVE_SPIKE_CANNON" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                4,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                8,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                14,
+                "MOVE_ENDURE"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                24,
+                "MOVE_PROTECT"
+            ],
+            [
+                30,
+                "MOVE_RAZOR_SHELL"
+            ],
+            [
+                36,
+                "MOVE_ICICLE_SPEAR"
+            ],
+            [
+                36,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                36,
+                "MOVE_ROCK_BLAST"
+            ],
+            [
+                40,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                45,
+                "MOVE_LIQUIDATION"
+            ],
+            [
+                50,
+                "MOVE_ICICLE_CRASH"
+            ],
+            [
+                55,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM64",
-            "TM66",
-            "TM68",
-            "TM72",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM03"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -101,7 +126,7 @@
         "pokemon_pos_m": 9,
         "en": {
             "name": "CLOYSTER",
-            "category": "Bivalve Pokémon",
+            "category": "Bivalve Pok\u00e9mon",
             "entry_text": [
                 "It fights by keeping its shell\n",
                 "tightly shut for protection and\n",
@@ -110,9 +135,9 @@
         },
         "fr": {
             "name": "CRUSTABRI",
-            "category": "Pokémon Bivalve",
+            "category": "Pok\u00e9mon Bivalve",
             "entry_text": [
-                "Il se défend en fermant sa coquille\n",
+                "Il se d\u00e9fend en fermant sa coquille\n",
                 "et projette des piquants qui\n",
                 "repoussent ses agresseurs."
             ]
@@ -121,14 +146,14 @@
             "name": "AUSTOS",
             "category": "Muschel",
             "entry_text": [
-                "Im Kampf schließt es seine Schale,\n",
-                "um sich zu schützen. Es schießt mit\n",
+                "Im Kampf schlie\u00dft es seine Schale,\n",
+                "um sich zu sch\u00fctzen. Es schie\u00dft mit\n",
                 "Stacheln auf seine Gegner."
             ]
         },
         "it": {
             "name": "CLOYSTER",
-            "category": "Pokémon Bivalve",
+            "category": "Pok\u00e9mon Bivalve",
             "entry_text": [
                 "Quando lotta si protegge tenendo\n",
                 "la conchiglia chiusa e spara punte\n",
@@ -137,7 +162,7 @@
         },
         "es": {
             "name": "CLOYSTER",
-            "category": "Pokémon Bivalvo",
+            "category": "Pok\u00e9mon Bivalvo",
             "entry_text": [
                 "En la lucha se protege cerrando\n",
                 "su concha y lanzando pinchos\n",
@@ -145,12 +170,12 @@
             ]
         },
         "jp": {
-            "name": "パルシェン",
-            "category": "２まいがいポケモン",
+            "name": "\u30d1\u30eb\u30b7\u30a7\u30f3",
+            "category": "\uff12\u307e\u3044\u304c\u3044\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "カラを　しっかりと　とじて　みを\n",
-                "まもりながら　トゲを　とばして\n",
-                "てきを　げきたいする　せんぽう。"
+                "\u30ab\u30e9\u3092\u3000\u3057\u3063\u304b\u308a\u3068\u3000\u3068\u3058\u3066\u3000\u307f\u3092\n",
+                "\u307e\u3082\u308a\u306a\u304c\u3089\u3000\u30c8\u30b2\u3092\u3000\u3068\u3070\u3057\u3066\n",
+                "\u3066\u304d\u3092\u3000\u3052\u304d\u305f\u3044\u3059\u308b\u3000\u305b\u3093\u307d\u3046\u3002"
             ]
         }
     },

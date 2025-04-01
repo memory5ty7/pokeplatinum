@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 50
     },
-    "types": [ "TYPE_ROCK", "TYPE_BUG" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_BUG"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 99,
     "ev_yields": {
@@ -26,68 +29,59 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_BATTLE_ARMOR", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_BATTLE_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 7, "MOVE_MUD_SPORT" ],
-            [ 13, "MOVE_WATER_GUN" ],
-            [ 19, "MOVE_METAL_CLAW" ],
-            [ 25, "MOVE_PROTECT" ],
-            [ 31, "MOVE_ANCIENT_POWER" ],
-            [ 37, "MOVE_FURY_CUTTER" ],
-            [ 43, "MOVE_SLASH" ],
-            [ 49, "MOVE_ROCK_BLAST" ],
-            [ 55, "MOVE_CRUSH_CLAW" ],
-            [ 61, "MOVE_X_SCISSOR" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                4,
+                "MOVE_FURY_CUTTER"
+            ],
+            [
+                7,
+                "MOVE_BLOCK"
+            ],
+            [
+                10,
+                "MOVE_SLASH"
+            ],
+            [
+                20,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                25,
+                "MOVE_PROTECT"
+            ],
+            [
+                30,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                34,
+                "MOVE_CRUSH_CLAW"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM37",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM54",
-            "TM58",
-            "TM69",
-            "TM75",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -114,19 +108,19 @@
         "pokemon_pos_m": 3,
         "en": {
             "name": "ANORITH",
-            "category": "Old Shrimp Pokémon",
+            "category": "Old Shrimp Pok\u00e9mon",
             "entry_text": [
-                "A Pokémon ancestor that was\n",
+                "A Pok\u00e9mon ancestor that was\n",
                 "reanimated from a fossil. It lived\n",
                 "in the sea and hunted with claws."
             ]
         },
         "fr": {
             "name": "ANORITH",
-            "category": "Pokémon Crustage",
+            "category": "Pok\u00e9mon Crustage",
             "entry_text": [
-                "Un ancêtre Pokémon réanimé \n",
-                "à partir d’un fossile. Il vivait en\n",
+                "Un anc\u00eatre Pok\u00e9mon r\u00e9anim\u00e9 \n",
+                "\u00e0 partir d\u2019un fossile. Il vivait en\n",
                 "mer et chassait avec ses pinces."
             ]
         },
@@ -141,29 +135,29 @@
         },
         "it": {
             "name": "ANORITH",
-            "category": "Pokémon Primaceo",
+            "category": "Pok\u00e9mon Primaceo",
             "entry_text": [
-                "Un antico Pokémon rigenerato\n",
+                "Un antico Pok\u00e9mon rigenerato\n",
                 "da un fossile. Viveva nel mare e\n",
                 "catturava le prede con gli artigli."
             ]
         },
         "es": {
             "name": "ANORITH",
-            "category": "Pokémon Camarón",
+            "category": "Pok\u00e9mon Camar\u00f3n",
             "entry_text": [
-                "Este Pokémon fue recreado a partir\n",
-                "de restos fósiles. Vivía en el mar y\n",
+                "Este Pok\u00e9mon fue recreado a partir\n",
+                "de restos f\u00f3siles. Viv\u00eda en el mar y\n",
                 "cazaba con sus pinzas."
             ]
         },
         "jp": {
-            "name": "アノプス",
-            "category": "むかしエビポケモン",
+            "name": "\u30a2\u30ce\u30d7\u30b9",
+            "category": "\u3080\u304b\u3057\u30a8\u30d3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かせきから　ふっかつした　ポケモンの\n",
-                "せんぞの　いっしゅ。うみで　くらし\n",
-                "ツメで　えものを　つかまえる。"
+                "\u304b\u305b\u304d\u304b\u3089\u3000\u3075\u3063\u304b\u3064\u3057\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u306e\n",
+                "\u305b\u3093\u305e\u306e\u3000\u3044\u3063\u3057\u3085\u3002\u3046\u307f\u3067\u3000\u304f\u3089\u3057\n",
+                "\u30c4\u30e1\u3067\u3000\u3048\u3082\u306e\u3092\u3000\u3064\u304b\u307e\u3048\u308b\u3002"
             ]
         }
     },

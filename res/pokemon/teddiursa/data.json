@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 50
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 124,
     "ev_yields": {
@@ -26,81 +29,55 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_PICKUP", "ABILITY_QUICK_FEET" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_QUICK_FEET",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": true,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_COVET" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_LICK" ],
-            [ 1, "MOVE_FAKE_TEARS" ],
-            [ 8, "MOVE_FURY_SWIPES" ],
-            [ 15, "MOVE_FAINT_ATTACK" ],
-            [ 22, "MOVE_SWEET_SCENT" ],
-            [ 29, "MOVE_SLASH" ],
-            [ 36, "MOVE_CHARM" ],
-            [ 43, "MOVE_REST" ],
-            [ 43, "MOVE_SNORE" ],
-            [ 50, "MOVE_THRASH" ],
-            [ 57, "MOVE_FLING" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                1,
+                "MOVE_LICK"
+            ],
+            [
+                8,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                11,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                15,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                24,
+                "MOVE_SLASH"
+            ],
+            [
+                30,
+                "MOVE_HIGH_HORSEPOWER"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM56",
-            "TM58",
-            "TM65",
-            "TM66",
-            "TM75",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_GUNK_SHOT",
-            "MOVE_SEED_BOMB",
-            "MOVE_LAST_RESORT",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -127,7 +104,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "TEDDIURSA",
-            "category": "Little Bear Pokémon",
+            "category": "Little Bear Pok\u00e9mon",
             "entry_text": [
                 "It lets honey soak into its paws\n",
                 "so it can lick them all the time.\n",
@@ -136,25 +113,25 @@
         },
         "fr": {
             "name": "TEDDIURSA",
-            "category": "Pokémon Mini Ours",
+            "category": "Pok\u00e9mon Mini Ours",
             "entry_text": [
                 "Il baigne ses griffes dans le miel \n",
-                "pour les lécher. Chaque paire\n",
-                "de pattes a un goût unique."
+                "pour les l\u00e9cher. Chaque paire\n",
+                "de pattes a un go\u00fbt unique."
             ]
         },
         "de": {
             "name": "TEDDIURSA",
-            "category": "Kleinbär",
+            "category": "Kleinb\u00e4r",
             "entry_text": [
-                "Es lässt Honig in seine Pranken\n",
+                "Es l\u00e4sst Honig in seine Pranken\n",
                 "eindringen, so dass es immer\n",
                 "welchen dabeihat."
             ]
         },
         "it": {
             "name": "TEDDIURSA",
-            "category": "Pokémon Orsetto",
+            "category": "Pok\u00e9mon Orsetto",
             "entry_text": [
                 "Si impregna le zampe di miele per\n",
                 "poterle leccare in continuazione.\n",
@@ -163,20 +140,20 @@
         },
         "es": {
             "name": "TEDDIURSA",
-            "category": "Pokémon Osito",
+            "category": "Pok\u00e9mon Osito",
             "entry_text": [
                 "Deja que la miel se le pegue a las\n",
-                "garras para lamerla más tarde.\n",
+                "garras para lamerla m\u00e1s tarde.\n",
                 "Cada una de ellas sabe diferente."
             ]
         },
         "jp": {
-            "name": "ヒメグマ",
-            "category": "こぐまポケモン",
+            "name": "\u30d2\u30e1\u30b0\u30de",
+            "category": "\u3053\u3050\u307e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "あまい　ミツを　てのひらに\n",
-                "しみこませて　いつも　なめている。\n",
-                "ヒメグマによって　あじが　ちがう。"
+                "\u3042\u307e\u3044\u3000\u30df\u30c4\u3092\u3000\u3066\u306e\u3072\u3089\u306b\n",
+                "\u3057\u307f\u3053\u307e\u305b\u3066\u3000\u3044\u3064\u3082\u3000\u306a\u3081\u3066\u3044\u308b\u3002\n",
+                "\u30d2\u30e1\u30b0\u30de\u306b\u3088\u3063\u3066\u3000\u3042\u3058\u304c\u3000\u3061\u304c\u3046\u3002"
             ]
         }
     },

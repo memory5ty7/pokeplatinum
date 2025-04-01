@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 40
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 104,
     "ev_yields": {
@@ -26,65 +29,55 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_LIGHTNING_ROD" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_STATIC",
+        "ABILITY_LIGHTNING_ROD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_THUNDER_WAVE" ],
-            [ 9, "MOVE_LEER" ],
-            [ 12, "MOVE_HOWL" ],
-            [ 17, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_SPARK" ],
-            [ 25, "MOVE_ODOR_SLEUTH" ],
-            [ 28, "MOVE_BITE" ],
-            [ 33, "MOVE_THUNDER_FANG" ],
-            [ 36, "MOVE_ROAR" ],
-            [ 41, "MOVE_DISCHARGE" ],
-            [ 44, "MOVE_CHARGE" ],
-            [ 49, "MOVE_THUNDER" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                4,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                9,
+                "MOVE_LEER"
+            ],
+            [
+                12,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                17,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                20,
+                "MOVE_SPARK"
+            ],
+            [
+                25,
+                "MOVE_BITE"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_FANG"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -111,7 +104,7 @@
         "pokemon_pos_m": 23,
         "en": {
             "name": "ELECTRIKE",
-            "category": "Lightning Pokémon",
+            "category": "Lightning Pok\u00e9mon",
             "entry_text": [
                 "Using electricity stored in its fur,\n",
                 "it stimulates its muscles to\n",
@@ -120,47 +113,47 @@
         },
         "fr": {
             "name": "DYNAVOLT",
-            "category": "Pokémon Orage",
+            "category": "Pok\u00e9mon Orage",
             "entry_text": [
-                "Il améliore ses réflexes en\n",
-                "stimulant ses muscles grâce à \n",
-                "l’électricité dans sa fourrure."
+                "Il am\u00e9liore ses r\u00e9flexes en\n",
+                "stimulant ses muscles gr\u00e2ce \u00e0 \n",
+                "l\u2019\u00e9lectricit\u00e9 dans sa fourrure."
             ]
         },
         "de": {
             "name": "FRIZELBLIZ",
             "category": "Gewitter",
             "entry_text": [
-                "Die Elektrizität, die es im Fell\n",
+                "Die Elektrizit\u00e4t, die es im Fell\n",
                 "speichert, nutzt es, um seine\n",
                 "Muskeln zu stimulieren."
             ]
         },
         "it": {
             "name": "ELECTRIKE",
-            "category": "Pokémon Lampo",
+            "category": "Pok\u00e9mon Lampo",
             "entry_text": [
-                "L’elettricità immagazzinata nella\n",
+                "L\u2019elettricit\u00e0 immagazzinata nella\n",
                 "pelliccia gli stimola i muscoli e\n",
-                "aumenta la sua velocità di reazione."
+                "aumenta la sua velocit\u00e0 di reazione."
             ]
         },
         "es": {
             "name": "ELECTRIKE",
-            "category": "Pokémon Calambre",
+            "category": "Pok\u00e9mon Calambre",
             "entry_text": [
-                "Estimula sus músculos y aumenta\n",
+                "Estimula sus m\u00fasculos y aumenta\n",
                 "sus reflejos con la electricidad\n",
                 "que almacena su pelaje."
             ]
         },
         "jp": {
-            "name": "ラクライ",
-            "category": "いなずまポケモン",
+            "name": "\u30e9\u30af\u30e9\u30a4",
+            "category": "\u3044\u306a\u305a\u307e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "たいもうに　ためた　でんきを　つかい\n",
-                "きんにくを　しげきすることで\n",
-                "しゅんぱつりょくを　たかめる。"
+                "\u305f\u3044\u3082\u3046\u306b\u3000\u305f\u3081\u305f\u3000\u3067\u3093\u304d\u3092\u3000\u3064\u304b\u3044\n",
+                "\u304d\u3093\u306b\u304f\u3092\u3000\u3057\u3052\u304d\u3059\u308b\u3053\u3068\u3067\n",
+                "\u3057\u3085\u3093\u3071\u3064\u308a\u3087\u304f\u3092\u3000\u305f\u304b\u3081\u308b\u3002"
             ]
         }
     },

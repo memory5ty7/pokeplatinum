@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 40
     },
-    "types": [ "TYPE_GRASS", "TYPE_DARK" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_DARK"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 141,
     "ev_yields": {
@@ -26,78 +29,55 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_PRANKSTER",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_RAZOR_LEAF" ],
-            [ 1, "MOVE_POUND" ],
-            [ 3, "MOVE_HARDEN" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 13, "MOVE_NATURE_POWER" ],
-            [ 19, "MOVE_FAKE_OUT" ],
-            [ 25, "MOVE_TORMENT" ],
-            [ 31, "MOVE_FAINT_ATTACK" ],
-            [ 37, "MOVE_RAZOR_WIND" ],
-            [ 43, "MOVE_SWAGGER" ],
-            [ 49, "MOVE_EXTRASENSORY" ]
+            [
+                1,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                9,
+                "MOVE_TORMENT"
+            ],
+            [
+                14,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                16,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                20,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                26,
+                "MOVE_LEAF_BLADE"
+            ],
+            [
+                30,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                34,
+                "MOVE_DARK_PULSE"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM63",
-            "TM64",
-            "TM66",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -124,7 +104,7 @@
         "pokemon_pos_m": 14,
         "en": {
             "name": "NUZLEAF",
-            "category": "Wily Pokémon",
+            "category": "Wily Pok\u00e9mon",
             "entry_text": [
                 "The sound of its grass flute makes\n",
                 "its listeners uneasy. It lives deep\n",
@@ -133,47 +113,47 @@
         },
         "fr": {
             "name": "PIFEUIL",
-            "category": "Pokémon Malin",
+            "category": "Pok\u00e9mon Malin",
             "entry_text": [
-                "Le son de sa flûte d’herbe\n",
-                "déstabilise l’auditeur. Il vit au \n",
-                "plus profond des forêts."
+                "Le son de sa fl\u00fbte d\u2019herbe\n",
+                "d\u00e9stabilise l\u2019auditeur. Il vit au \n",
+                "plus profond des for\u00eats."
             ]
         },
         "de": {
             "name": "BLANAS",
             "category": "Hinterlist",
             "entry_text": [
-                "Der Ton seiner Grasflöte\n",
-                "beunruhigt die, die ihn hören.\n",
-                "Es lebt tief in den Wäldern."
+                "Der Ton seiner Grasfl\u00f6te\n",
+                "beunruhigt die, die ihn h\u00f6ren.\n",
+                "Es lebt tief in den W\u00e4ldern."
             ]
         },
         "it": {
             "name": "NUZLEAF",
-            "category": "Pokémon Scaltro",
+            "category": "Pok\u00e9mon Scaltro",
             "entry_text": [
                 "Il fischio del suo flauto di foglia\n",
                 "mette a disagio chi lo sente.\n",
-                "Vive nelle foreste più fitte."
+                "Vive nelle foreste pi\u00f9 fitte."
             ]
         },
         "es": {
             "name": "NUZLEAF",
-            "category": "Pokémon Astuto",
+            "category": "Pok\u00e9mon Astuto",
             "entry_text": [
                 "Cuando usa la hoja de su cabeza\n",
                 "como flauta asusta a la gente. Vive\n",
-                "en lo más profundo de los bosques."
+                "en lo m\u00e1s profundo de los bosques."
             ]
         },
         "jp": {
-            "name": "コノハナ",
-            "category": "いじわるポケモン",
+            "name": "\u30b3\u30ce\u30cf\u30ca",
+            "category": "\u3044\u3058\u308f\u308b\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "コノハナが　かなでる　くさぶえの\n",
-                "ねいろは　ひとを　ふあんにさせる。\n",
-                "もりの　おくに　すんでいる。"
+                "\u30b3\u30ce\u30cf\u30ca\u304c\u3000\u304b\u306a\u3067\u308b\u3000\u304f\u3055\u3076\u3048\u306e\n",
+                "\u306d\u3044\u308d\u306f\u3000\u3072\u3068\u3092\u3000\u3075\u3042\u3093\u306b\u3055\u305b\u308b\u3002\n",
+                "\u3082\u308a\u306e\u3000\u304a\u304f\u306b\u3000\u3059\u3093\u3067\u3044\u308b\u3002"
             ]
         }
     },

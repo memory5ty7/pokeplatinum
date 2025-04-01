@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 82
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 128,
     "ev_yields": {
@@ -26,78 +29,85 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_INTIMIDATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_OMINOUS_WIND" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 7, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_SWEET_SCENT" ],
-            [ 19, "MOVE_WATER_SPORT" ],
-            [ 22, "MOVE_GUST" ],
-            [ 26, "MOVE_SCARY_FACE" ],
-            [ 33, "MOVE_STUN_SPORE" ],
-            [ 40, "MOVE_SILVER_WIND" ],
-            [ 47, "MOVE_AIR_SLASH" ],
-            [ 54, "MOVE_WHIRLWIND" ],
-            [ 61, "MOVE_BUG_BUZZ" ]
+            [
+                1,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                1,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                1,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                6,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                14,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                22,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                22,
+                "MOVE_GUST"
+            ],
+            [
+                24,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                27,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                30,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                32,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                36,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                40,
+                "MOVE_SCALD"
+            ],
+            [
+                46,
+                "MOVE_HURRICANE"
+            ],
+            [
+                50,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM53",
-            "TM58",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -116,7 +126,7 @@
         "pokemon_pos_m": 65533,
         "en": {
             "name": "MASQUERAIN",
-            "category": "Eyeball Pokémon",
+            "category": "Eyeball Pok\u00e9mon",
             "entry_text": [
                 "Its antennae have eye patterns\n",
                 "on them. Its four wings enable it\n",
@@ -125,11 +135,11 @@
         },
         "fr": {
             "name": "MASKADRA",
-            "category": "Pokémon Boule Oeil",
+            "category": "Pok\u00e9mon Boule Oeil",
             "entry_text": [
-                "Des motifs en forme d’yeux ornent\n",
-                "ses antennes. Ses 4 ailes l’aident\n",
-                "à voler dans toutes les directions."
+                "Des motifs en forme d\u2019yeux ornent\n",
+                "ses antennes. Ses 4 ailes l\u2019aident\n",
+                "\u00e0 voler dans toutes les directions."
             ]
         },
         "de": {
@@ -137,13 +147,13 @@
             "category": "Auge",
             "entry_text": [
                 "Seine Antenne besitzt ein Augen-\n",
-                "muster. Seine vier Flügel erlauben\n",
+                "muster. Seine vier Fl\u00fcgel erlauben\n",
                 "es, in alle Richtungen zu fliegen."
             ]
         },
         "it": {
             "name": "MASQUERAIN",
-            "category": "Pokémon Occhi",
+            "category": "Pok\u00e9mon Occhi",
             "entry_text": [
                 "Le sue antenne presentano un\n",
                 "motivo ad occhi. Con le quattro ali\n",
@@ -152,20 +162,20 @@
         },
         "es": {
             "name": "MASQUERAIN",
-            "category": "Pokémon Globocular",
+            "category": "Pok\u00e9mon Globocular",
             "entry_text": [
                 "Sus antenas tienen dibujos de ojos,\n",
                 "mientras que sus alas le permiten\n",
-                "volar en cualquier dirección."
+                "volar en cualquier direcci\u00f3n."
             ]
         },
         "jp": {
-            "name": "アメモ－ス",
-            "category": "めだまポケモン",
+            "name": "\u30a2\u30e1\u30e2\uff0d\u30b9",
+            "category": "\u3081\u3060\u307e\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "めだまもようの　しょっかくを　もつ。\n",
-                "４まいの　はねで　うかびあがり\n",
-                "ぜんごさゆうに　うごくことができる。"
+                "\u3081\u3060\u307e\u3082\u3088\u3046\u306e\u3000\u3057\u3087\u3063\u304b\u304f\u3092\u3000\u3082\u3064\u3002\n",
+                "\uff14\u307e\u3044\u306e\u3000\u306f\u306d\u3067\u3000\u3046\u304b\u3073\u3042\u304c\u308a\n",
+                "\u305c\u3093\u3054\u3055\u3086\u3046\u306b\u3000\u3046\u3054\u304f\u3053\u3068\u304c\u3067\u304d\u308b\u3002"
             ]
         }
     },

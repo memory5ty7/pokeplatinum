@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 80
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 150,
     "ev_yields": {
@@ -26,72 +29,81 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_SOUNDPROOF", "ABILITY_STATIC" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_SOUNDPROOF",
+        "ABILITY_NONE",
+        "ABILITY_GALVANIZE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CHARGE" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SONIC_BOOM" ],
-            [ 1, "MOVE_SPARK" ],
-            [ 5, "MOVE_TACKLE" ],
-            [ 8, "MOVE_SONIC_BOOM" ],
-            [ 12, "MOVE_SPARK" ],
-            [ 15, "MOVE_ROLLOUT" ],
-            [ 19, "MOVE_SCREECH" ],
-            [ 22, "MOVE_LIGHT_SCREEN" ],
-            [ 26, "MOVE_CHARGE_BEAM" ],
-            [ 29, "MOVE_SELFDESTRUCT" ],
-            [ 35, "MOVE_SWIFT" ],
-            [ 40, "MOVE_MAGNET_RISE" ],
-            [ 46, "MOVE_GYRO_BALL" ],
-            [ 51, "MOVE_EXPLOSION" ],
-            [ 57, "MOVE_MIRROR_COAT" ]
+            [
+                1,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                5,
+                "MOVE_TACKLE"
+            ],
+            [
+                12,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                15,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                19,
+                "MOVE_SCREECH"
+            ],
+            [
+                22,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                26,
+                "MOVE_SPARK"
+            ],
+            [
+                30,
+                "MOVE_SELFDESTRUCT"
+            ],
+            [
+                32,
+                "MOVE_VOLT_SWITCH"
+            ],
+            [
+                36,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                42,
+                "MOVE_THUNDERBOLT"
+            ],
+            [
+                46,
+                "MOVE_MAGNET_RISE"
+            ],
+            [
+                50,
+                "MOVE_THUNDER"
+            ],
+            [
+                55,
+                "MOVE_EXPLOSION"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM12",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM46",
-            "TM57",
-            "TM58",
-            "TM64",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM74",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"
@@ -110,7 +122,7 @@
         "pokemon_pos_m": 11,
         "en": {
             "name": "ELECTRODE",
-            "category": "Ball Pokémon",
+            "category": "Ball Pok\u00e9mon",
             "entry_text": [
                 "It is known to drift on winds if it\n",
                 "is bloated to bursting with stored\n",
@@ -119,43 +131,46 @@
         },
         "fr": {
             "name": "ELECTRODE",
-            "category": "Pokémon Balle",
+            "category": "Pok\u00e9mon Balle",
             "entry_text": [
                 "Il se laisse porter par les vents\n",
-                "lorsque son corps est gonflé\n",
-                "d’électricité à en éclater."
+                "lorsque son corps est gonfl\u00e9\n",
+                "d\u2019\u00e9lectricit\u00e9 \u00e0 en \u00e9clater."
             ]
         },
         "de": {
             "name": "LEKTROBAL",
             "category": "Ball",
             "entry_text": [
-                "Es lässt sich vom Wind treiben,\n",
-                "wenn es so voller Elektrizität ist,\n",
+                "Es l\u00e4sst sich vom Wind treiben,\n",
+                "wenn es so voller Elektrizit\u00e4t ist,\n",
                 "dass es fast explodiert."
             ]
         },
         "it": {
             "name": "ELECTRODE",
-            "category": "Pokémon Ball",
+            "category": "Pok\u00e9mon Ball",
             "entry_text": [
-                "Quando ha accumulato elettricità\n",
+                "Quando ha accumulato elettricit\u00e0\n",
                 "fino quasi a scoppiare, si fa\n",
                 "trasportare dal vento."
             ]
         },
         "es": {
             "name": "ELECTRODE",
-            "category": "Pokémon Bola",
-            "entry_text": [ "Se lo lleva el viento si se hincha\n", "con la electricidad que almacena." ]
+            "category": "Pok\u00e9mon Bola",
+            "entry_text": [
+                "Se lo lleva el viento si se hincha\n",
+                "con la electricidad que almacena."
+            ]
         },
         "jp": {
-            "name": "マルマイン",
-            "category": "ボ－ルポケモン",
+            "name": "\u30de\u30eb\u30de\u30a4\u30f3",
+            "category": "\u30dc\uff0d\u30eb\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "でんきエネルギ－を　ためすぎて\n",
-                "ぱんぱんに　ふくらんだ　マルマインが\n",
-                "かぜに　ながされてくることが　ある。"
+                "\u3067\u3093\u304d\u30a8\u30cd\u30eb\u30ae\uff0d\u3092\u3000\u305f\u3081\u3059\u304e\u3066\n",
+                "\u3071\u3093\u3071\u3093\u306b\u3000\u3075\u304f\u3089\u3093\u3060\u3000\u30de\u30eb\u30de\u30a4\u30f3\u304c\n",
+                "\u304b\u305c\u306b\u3000\u306a\u304c\u3055\u308c\u3066\u304f\u308b\u3053\u3068\u304c\u3000\u3042\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 150,
         "special_defense": 100
     },
-    "types": [ "TYPE_STEEL", "TYPE_DRAGON" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_DRAGON"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 220,
     "ev_yields": {
@@ -26,91 +29,24 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_DRAGON_BREATH" ],
-            [ 1, "MOVE_SCARY_FACE" ],
-            [ 10, "MOVE_METAL_CLAW" ],
-            [ 20, "MOVE_ANCIENT_POWER" ],
-            [ 30, "MOVE_DRAGON_CLAW" ],
-            [ 40, "MOVE_ROAR_OF_TIME" ],
-            [ 50, "MOVE_HEAL_BLOCK" ],
-            [ 60, "MOVE_EARTH_POWER" ],
-            [ 70, "MOVE_SLASH" ],
-            [ 80, "MOVE_FLASH_CANNON" ],
-            [ 90, "MOVE_AURA_SPHERE" ]
-        ],
-        "by_tm": [
-            "TM02",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM50",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM68",
-            "TM70",
-            "TM71",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "TM92",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_TWISTER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -129,20 +65,20 @@
         "pokemon_pos_m": 2,
         "en": {
             "name": "DIALGA",
-            "category": "Temporal Pokémon",
+            "category": "Temporal Pok\u00e9mon",
             "entry_text": [
-                "A legendary Pokémon of Sinnoh.\n",
+                "A legendary Pok\u00e9mon of Sinnoh.\n",
                 "It is said that time flows when\n",
-                "DIALGA’s heart beats."
+                "DIALGA\u2019s heart beats."
             ]
         },
         "fr": {
             "name": "DIALGA",
-            "category": "Pokémon Temps",
+            "category": "Pok\u00e9mon Temps",
             "entry_text": [
-                "Il peut contrôler le temps. Les\n",
+                "Il peut contr\u00f4ler le temps. Les\n",
                 "mythes de Sinnoh en parlent\n",
-                "comme d’une divinité ancienne."
+                "comme d\u2019une divinit\u00e9 ancienne."
             ]
         },
         "de": {
@@ -156,16 +92,16 @@
         },
         "it": {
             "name": "DIALGA",
-            "category": "Pokémon Tempo",
+            "category": "Pok\u00e9mon Tempo",
             "entry_text": [
                 "Ha il potere di controllare il tempo.\n",
                 "Descritto nei miti della regione di\n",
-                "Sinnoh come un’antica divinità."
+                "Sinnoh come un\u2019antica divinit\u00e0."
             ]
         },
         "es": {
             "name": "DIALGA",
-            "category": "Pokémon Temporal",
+            "category": "Pok\u00e9mon Temporal",
             "entry_text": [
                 "Tiene el poder de controlar el\n",
                 "tiempo. Aparece en los mitos de\n",
@@ -173,12 +109,12 @@
             ]
         },
         "jp": {
-            "name": "ディアルガ",
-            "category": "じかんポケモン",
+            "name": "\u30c7\u30a3\u30a2\u30eb\u30ac",
+            "category": "\u3058\u304b\u3093\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "じかんを　あやつる　ちからを　もつ。\n",
-                "シンオウちほうでは　かみさまと\n",
-                "よばれ　しんわに　とうじょうする。"
+                "\u3058\u304b\u3093\u3092\u3000\u3042\u3084\u3064\u308b\u3000\u3061\u304b\u3089\u3092\u3000\u3082\u3064\u3002\n",
+                "\u30b7\u30f3\u30aa\u30a6\u3061\u307b\u3046\u3067\u306f\u3000\u304b\u307f\u3055\u307e\u3068\n",
+                "\u3088\u3070\u308c\u3000\u3057\u3093\u308f\u306b\u3000\u3068\u3046\u3058\u3087\u3046\u3059\u308b\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_STEEL", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 205,
     "ev_yields": {
@@ -26,114 +29,93 @@
     "hatch_cycles": 35,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_MONSTER" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_ROCK_HEAD" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_MONSTER"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_NONE",
+        "ABILITY_STURDY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 8, "MOVE_MUD_SLAP" ],
-            [ 11, "MOVE_HEADBUTT" ],
-            [ 15, "MOVE_METAL_CLAW" ],
-            [ 18, "MOVE_IRON_DEFENSE" ],
-            [ 22, "MOVE_ROAR" ],
-            [ 25, "MOVE_TAKE_DOWN" ],
-            [ 29, "MOVE_IRON_HEAD" ],
-            [ 34, "MOVE_PROTECT" ],
-            [ 40, "MOVE_METAL_SOUND" ],
-            [ 48, "MOVE_IRON_TAIL" ],
-            [ 57, "MOVE_DOUBLE_EDGE" ],
-            [ 65, "MOVE_METAL_BURST" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                4,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                7,
+                "MOVE_METAL_CLAW"
+            ],
+            [
+                10,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                13,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                16,
+                "MOVE_PROTECT"
+            ],
+            [
+                19,
+                "MOVE_ROAR"
+            ],
+            [
+                22,
+                "MOVE_IRON_HEAD"
+            ],
+            [
+                25,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                28,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                32,
+                "MOVE_BULLDOZE"
+            ],
+            [
+                36,
+                "MOVE_IRON_TAIL"
+            ],
+            [
+                40,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                45,
+                "MOVE_SMART_STRIKE"
+            ],
+            [
+                50,
+                "MOVE_HEAD_SMASH"
+            ],
+            [
+                56,
+                "MOVE_EARTHQUAKE"
+            ]
         ],
-        "by_tm": [
-            "TM01",
-            "TM02",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM37",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM59",
-            "TM65",
-            "TM66",
-            "TM68",
-            "TM69",
-            "TM71",
-            "TM72",
-            "TM73",
-            "TM76",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_ENDEAVOR",
-            "MOVE_OUTRAGE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_LARGE"
@@ -152,7 +134,7 @@
         "pokemon_pos_m": 6,
         "en": {
             "name": "AGGRON",
-            "category": "Iron Armor Pokémon",
+            "category": "Iron Armor Pok\u00e9mon",
             "entry_text": [
                 "While seeking iron for food, it\n",
                 "digs tunnels by breaking through\n",
@@ -161,11 +143,11 @@
         },
         "fr": {
             "name": "GALEKING",
-            "category": "Pokémon Armurfer",
+            "category": "Pok\u00e9mon Armurfer",
             "entry_text": [
-                "Il creuse des galeries à travers la\n",
-                "pierre avec ses cornes d’acier\n",
-                "pour trouver le fer qu’il apprécie. "
+                "Il creuse des galeries \u00e0 travers la\n",
+                "pierre avec ses cornes d\u2019acier\n",
+                "pour trouver le fer qu\u2019il appr\u00e9cie. "
             ]
         },
         "de": {
@@ -173,35 +155,35 @@
             "category": "Eisenpanzer",
             "entry_text": [
                 "Auf der Suche nach Eisen, seiner\n",
-                "Nahrung, gräbt es mit seinen Stahl-\n",
-                "hörnern sogar Tunnel durch Felsen."
+                "Nahrung, gr\u00e4bt es mit seinen Stahl-\n",
+                "h\u00f6rnern sogar Tunnel durch Felsen."
             ]
         },
         "it": {
             "name": "AGGRON",
-            "category": "Pokémon Corazza",
+            "category": "Pok\u00e9mon Corazza",
             "entry_text": [
                 "Cerca ferro da mangiare scavando\n",
                 "tunnel nella roccia con le sue\n",
-                "corna d’acciaio."
+                "corna d\u2019acciaio."
             ]
         },
         "es": {
             "name": "AGGRON",
-            "category": "Pokémon Cor. Férrea",
+            "category": "Pok\u00e9mon Cor. F\u00e9rrea",
             "entry_text": [
                 "Mientras busca hierro para comer,\n",
-                "excava túneles en la roca con sus\n",
+                "excava t\u00faneles en la roca con sus\n",
                 "potentes cuernos de acero."
             ]
         },
         "jp": {
-            "name": "ボスゴドラ",
-            "category": "てつヨロイポケモン",
+            "name": "\u30dc\u30b9\u30b4\u30c9\u30e9",
+            "category": "\u3066\u3064\u30e8\u30ed\u30a4\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "はがねの　ツノで　かたい　がんばんを\n",
-                "つきくずしながら　しょくりょうの\n",
-                "てつを　さがして　トンネルを　ほる。"
+                "\u306f\u304c\u306d\u306e\u3000\u30c4\u30ce\u3067\u3000\u304b\u305f\u3044\u3000\u304c\u3093\u3070\u3093\u3092\n",
+                "\u3064\u304d\u304f\u305a\u3057\u306a\u304c\u3089\u3000\u3057\u3087\u304f\u308a\u3087\u3046\u306e\n",
+                "\u3066\u3064\u3092\u3000\u3055\u304c\u3057\u3066\u3000\u30c8\u30f3\u30cd\u30eb\u3092\u3000\u307b\u308b\u3002"
             ]
         }
     },

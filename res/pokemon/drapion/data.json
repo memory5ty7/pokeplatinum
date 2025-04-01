@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 75
     },
-    "types": [ "TYPE_POISON", "TYPE_DARK" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_DARK"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 204,
     "ev_yields": {
@@ -26,86 +29,97 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_BATTLE_ARMOR", "ABILITY_SNIPER" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SAND_FORCE",
+        "ABILITY_NONE",
+        "ABILITY_SAND_STREAM"
+    ],
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_KNOCK_OFF" ],
-            [ 6, "MOVE_KNOCK_OFF" ],
-            [ 12, "MOVE_PIN_MISSILE" ],
-            [ 17, "MOVE_ACUPRESSURE" ],
-            [ 23, "MOVE_SCARY_FACE" ],
-            [ 28, "MOVE_TOXIC_SPIKES" ],
-            [ 34, "MOVE_BUG_BITE" ],
-            [ 39, "MOVE_POISON_FANG" ],
-            [ 49, "MOVE_CRUNCH" ],
-            [ 58, "MOVE_CROSS_POISON" ]
+            [
+                1,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                1,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                1,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                1,
+                "MOVE_BITE"
+            ],
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                12,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                18,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                23,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                30,
+                "MOVE_TOXIC"
+            ],
+            [
+                33,
+                "MOVE_POISON_FANG"
+            ],
+            [
+                36,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                40,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                42,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                45,
+                "MOVE_CRUNCH"
+            ],
+            [
+                50,
+                "MOVE_LEECH_LIFE"
+            ],
+            [
+                55,
+                "MOVE_CROSS_POISON"
+            ]
         ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM36",
-            "TM39",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_KNOCK_OFF"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -124,7 +138,7 @@
         "pokemon_pos_m": 10,
         "en": {
             "name": "DRAPION",
-            "category": "Ogre Scorp Pokémon",
+            "category": "Ogre Scorp Pok\u00e9mon",
             "entry_text": [
                 "Possessing a sturdy build, it takes\n",
                 "pride in its strength, taking down\n",
@@ -133,10 +147,10 @@
         },
         "fr": {
             "name": "DRASCORE",
-            "category": "Pokémon Scorpogre",
+            "category": "Pok\u00e9mon Scorpogre",
             "entry_text": [
-                "Il peut réduire une voiture en \n",
-                "pièces avec ses pinces. Le bout\n",
+                "Il peut r\u00e9duire une voiture en \n",
+                "pi\u00e8ces avec ses pinces. Le bout\n",
                 "de ses pinces contient du poison."
             ]
         },
@@ -151,16 +165,16 @@
         },
         "it": {
             "name": "DRAPION",
-            "category": "Pokémon Scorpiaccio",
+            "category": "Pok\u00e9mon Scorpiaccio",
             "entry_text": [
-                "Con le zampe può accartocciare una\n",
+                "Con le zampe pu\u00f2 accartocciare una\n",
                 "macchina. Le punte degli artigli\n",
                 "sono velenose."
             ]
         },
         "es": {
             "name": "DRAPION",
-            "category": "Pokémon Escorpiogro",
+            "category": "Pok\u00e9mon Escorpiogro",
             "entry_text": [
                 "Sus brazos tienen fuerza para\n",
                 "destrozar un coche. La punta\n",
@@ -168,12 +182,12 @@
             ]
         },
         "jp": {
-            "name": "ドラピオン",
-            "category": "ばけさそりポケモン",
+            "name": "\u30c9\u30e9\u30d4\u30aa\u30f3",
+            "category": "\u3070\u3051\u3055\u305d\u308a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "りょううでの　ツメは　じどうしゃを\n",
-                "スクラップにする　はかいりょく。\n",
-                "ツメの　さきから　どくを　だす。"
+                "\u308a\u3087\u3046\u3046\u3067\u306e\u3000\u30c4\u30e1\u306f\u3000\u3058\u3069\u3046\u3057\u3083\u3092\n",
+                "\u30b9\u30af\u30e9\u30c3\u30d7\u306b\u3059\u308b\u3000\u306f\u304b\u3044\u308a\u3087\u304f\u3002\n",
+                "\u30c4\u30e1\u306e\u3000\u3055\u304d\u304b\u3089\u3000\u3069\u304f\u3092\u3000\u3060\u3059\u3002"
             ]
         }
     },

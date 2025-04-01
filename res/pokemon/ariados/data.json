@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_BUG", "TYPE_POISON" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_POISON"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 134,
     "ev_yields": {
@@ -26,67 +29,81 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_INSOMNIA" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SNIPER",
+        "ABILITY_SWARM",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BUG_BITE" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_STRING_SHOT" ],
-            [ 1, "MOVE_SCARY_FACE" ],
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 5, "MOVE_SCARY_FACE" ],
-            [ 8, "MOVE_CONSTRICT" ],
-            [ 12, "MOVE_LEECH_LIFE" ],
-            [ 15, "MOVE_NIGHT_SHADE" ],
-            [ 19, "MOVE_SHADOW_SNEAK" ],
-            [ 23, "MOVE_FURY_SWIPES" ],
-            [ 28, "MOVE_SUCKER_PUNCH" ],
-            [ 32, "MOVE_SPIDER_WEB" ],
-            [ 37, "MOVE_AGILITY" ],
-            [ 41, "MOVE_PIN_MISSILE" ],
-            [ 46, "MOVE_PSYCHIC" ],
-            [ 50, "MOVE_POISON_JAB" ]
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_STRING_SHOT"
+            ],
+            [
+                5,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                8,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                12,
+                "MOVE_LEECH_LIFE"
+            ],
+            [
+                15,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                19,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                22,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                26,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_SPIDER_WEB"
+            ],
+            [
+                36,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                40,
+                "MOVE_FIRST_IMPRESSION"
+            ],
+            [
+                45,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                50,
+                "MOVE_POISON_JAB"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_BOUNCE",
-            "MOVE_SUCKER_PUNCH"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -105,7 +122,7 @@
         "pokemon_pos_m": 12,
         "en": {
             "name": "ARIADOS",
-            "category": "Long Leg Pokémon",
+            "category": "Long Leg Pok\u00e9mon",
             "entry_text": [
                 "It attaches silk to its prey and\n",
                 "sets it free. Later, it tracks the\n",
@@ -114,10 +131,10 @@
         },
         "fr": {
             "name": "MIGALOS",
-            "category": "Pokémon Long-Patte",
+            "category": "Pok\u00e9mon Long-Patte",
             "entry_text": [
-                "Il attache un fil à sa proie avant\n",
-                "de la libérer. Il s’en servira pour\n",
+                "Il attache un fil \u00e0 sa proie avant\n",
+                "de la lib\u00e9rer. Il s\u2019en servira pour\n",
                 "la retrouver, elle et ses amis."
             ]
         },
@@ -126,35 +143,35 @@
             "category": "Langbein",
             "entry_text": [
                 "Es befestigt Seide an der Beute und\n",
-                "lässt sie frei. Es folgt dem Seiden-\n",
+                "l\u00e4sst sie frei. Es folgt dem Seiden-\n",
                 "faden zur Beute u. ihren Freunden."
             ]
         },
         "it": {
             "name": "ARIADOS",
-            "category": "Pokémon Lungazampa",
+            "category": "Pok\u00e9mon Lungazampa",
             "entry_text": [
                 "Aggancia la preda con un filo di se-\n",
                 "ta e la lascia andare. Poi segue il\n",
-                "filo e la trova quando è in gruppo."
+                "filo e la trova quando \u00e8 in gruppo."
             ]
         },
         "es": {
             "name": "ARIADOS",
-            "category": "Pokémon Pata Larga",
+            "category": "Pok\u00e9mon Pata Larga",
             "entry_text": [
                 "Pega hilos de seda a sus presas y\n",
-                "las libera para seguirlas más tarde\n",
-                "y localizar también a sus amigos."
+                "las libera para seguirlas m\u00e1s tarde\n",
+                "y localizar tambi\u00e9n a sus amigos."
             ]
         },
         "jp": {
-            "name": "アリアドス",
-            "category": "あしながポケモン",
+            "name": "\u30a2\u30ea\u30a2\u30c9\u30b9",
+            "category": "\u3042\u3057\u306a\u304c\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "えものの　からだに　いとを　つけて\n",
-                "わざと　にがす。いとを　たどれば\n",
-                "なかまごと　つかまえられるからだ。"
+                "\u3048\u3082\u306e\u306e\u3000\u304b\u3089\u3060\u306b\u3000\u3044\u3068\u3092\u3000\u3064\u3051\u3066\n",
+                "\u308f\u3056\u3068\u3000\u306b\u304c\u3059\u3002\u3044\u3068\u3092\u3000\u305f\u3069\u308c\u3070\n",
+                "\u306a\u304b\u307e\u3054\u3068\u3000\u3064\u304b\u307e\u3048\u3089\u308c\u308b\u304b\u3089\u3060\u3002"
             ]
         }
     },

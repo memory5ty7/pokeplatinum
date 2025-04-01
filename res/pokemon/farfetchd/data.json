@@ -7,7 +7,10 @@
         "special_attack": 58,
         "special_defense": 62
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 94,
     "ev_yields": {
@@ -26,78 +29,85 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_INNER_FOCUS" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_SUPER_LUCK",
+        "ABILITY_DEFIANT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_JAB" ],
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_FURY_CUTTER" ],
-            [ 7, "MOVE_FURY_ATTACK" ],
-            [ 9, "MOVE_KNOCK_OFF" ],
-            [ 13, "MOVE_AERIAL_ACE" ],
-            [ 19, "MOVE_SLASH" ],
-            [ 21, "MOVE_AIR_CUTTER" ],
-            [ 25, "MOVE_SWORDS_DANCE" ],
-            [ 31, "MOVE_AGILITY" ],
-            [ 33, "MOVE_NIGHT_SLASH" ],
-            [ 37, "MOVE_AIR_SLASH" ],
-            [ 43, "MOVE_FEINT" ],
-            [ 45, "MOVE_FALSE_SWIPE" ]
+            [
+                1,
+                "MOVE_PLUCK"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                5,
+                "MOVE_SAND_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_ROCK_SMASH"
+            ],
+            [
+                14,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                19,
+                "MOVE_ROOST"
+            ],
+            [
+                22,
+                "MOVE_DETECT"
+            ],
+            [
+                25,
+                "MOVE_U_TURN"
+            ],
+            [
+                25,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                28,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                30,
+                "MOVE_LEAF_BLADE"
+            ],
+            [
+                36,
+                "MOVE_DUAL_WINGBEAT"
+            ],
+            [
+                40,
+                "MOVE_FIRST_IMPRESSION"
+            ],
+            [
+                45,
+                "MOVE_BRAVE_BIRD"
+            ],
+            [
+                47,
+                "MOVE_HEAT_WAVE"
+            ]
         ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM47",
-            "TM51",
-            "TM54",
-            "TM58",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM87",
-            "TM88",
-            "TM89",
-            "TM90",
-            "HM01",
-            "HM02",
-            "HM05"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_TWISTER",
-            "MOVE_LAST_RESORT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -115,21 +125,21 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "FARFETCH’D",
-            "category": "Wild Duck Pokémon",
+            "name": "FARFETCH\u2019D",
+            "category": "Wild Duck Pok\u00e9mon",
             "entry_text": [
-                "It can’t live without the stalk it\n",
-                "holds. That’s why it defends the\n",
+                "It can\u2019t live without the stalk it\n",
+                "holds. That\u2019s why it defends the\n",
                 "stalk from attackers with its life."
             ]
         },
         "fr": {
             "name": "CANARTICHO",
-            "category": "Pokémon Canard Fou",
+            "category": "Pok\u00e9mon Canard Fou",
             "entry_text": [
                 "Il ne peut pas vivre sans son\n",
-                "légume, c’est pourquoi il le\n",
-                "protégera au péril de sa vie."
+                "l\u00e9gume, c\u2019est pourquoi il le\n",
+                "prot\u00e9gera au p\u00e9ril de sa vie."
             ]
         },
         "de": {
@@ -137,22 +147,22 @@
             "category": "Wildente",
             "entry_text": [
                 "Ohne seinen Stock kann es nicht\n",
-                "leben. Daher beschützt es den\n",
+                "leben. Daher besch\u00fctzt es den\n",
                 "Stock mit seinem Leben."
             ]
         },
         "it": {
-            "name": "FARFETCH’D",
-            "category": "Pokémon Selvanatra",
+            "name": "FARFETCH\u2019D",
+            "category": "Pok\u00e9mon Selvanatra",
             "entry_text": [
-                "Non può vivere senza lo stelo che\n",
-                "tiene con un’ala. Lo difende dagli\n",
+                "Non pu\u00f2 vivere senza lo stelo che\n",
+                "tiene con un\u2019ala. Lo difende dagli\n",
                 "attacchi a costo della vita."
             ]
         },
         "es": {
-            "name": "FARFETCH’D",
-            "category": "Pokémon Pato Salv.",
+            "name": "FARFETCH\u2019D",
+            "category": "Pok\u00e9mon Pato Salv.",
             "entry_text": [
                 "No puede vivir sin el palo que lleva.\n",
                 "Por eso lo protege de sus\n",
@@ -160,12 +170,12 @@
             ]
         },
         "jp": {
-            "name": "カモネギ",
-            "category": "かるがもポケモン",
+            "name": "\u30ab\u30e2\u30cd\u30ae",
+            "category": "\u304b\u308b\u304c\u3082\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "クキが　なくなると　いきていけない。\n",
-                "だから　クキを　ねらう　あいてとは\n",
-                "いのちがけで　たたかうのだ。"
+                "\u30af\u30ad\u304c\u3000\u306a\u304f\u306a\u308b\u3068\u3000\u3044\u304d\u3066\u3044\u3051\u306a\u3044\u3002\n",
+                "\u3060\u304b\u3089\u3000\u30af\u30ad\u3092\u3000\u306d\u3089\u3046\u3000\u3042\u3044\u3066\u3068\u306f\n",
+                "\u3044\u306e\u3061\u304c\u3051\u3067\u3000\u305f\u305f\u304b\u3046\u306e\u3060\u3002"
             ]
         }
     },

@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 25
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 83,
     "ev_yields": {
@@ -26,64 +29,55 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_SNIPER" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_DRAGON"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_SNIPER",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BUBBLE" ],
-            [ 4, "MOVE_SMOKE_SCREEN" ],
-            [ 8, "MOVE_LEER" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_FOCUS_ENERGY" ],
-            [ 18, "MOVE_BUBBLE_BEAM" ],
-            [ 23, "MOVE_AGILITY" ],
-            [ 26, "MOVE_TWISTER" ],
-            [ 30, "MOVE_BRINE" ],
-            [ 35, "MOVE_HYDRO_PUMP" ],
-            [ 38, "MOVE_DRAGON_DANCE" ],
-            [ 42, "MOVE_DRAGON_PULSE" ]
+            [
+                1,
+                "MOVE_BUBBLE"
+            ],
+            [
+                4,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                8,
+                "MOVE_LEER"
+            ],
+            [
+                11,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                18,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                23,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                26,
+                "MOVE_TWISTER"
+            ],
+            [
+                30,
+                "MOVE_BRINE"
+            ]
         ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM59",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM03",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_ICY_WIND",
-            "MOVE_SNORE",
-            "MOVE_OUTRAGE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TWISTER",
-            "MOVE_BOUNCE",
-            "MOVE_SWIFT"
-        ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -110,7 +104,7 @@
         "pokemon_pos_m": 65530,
         "en": {
             "name": "HORSEA",
-            "category": "Dragon Pokémon",
+            "category": "Dragon Pok\u00e9mon",
             "entry_text": [
                 "It makes its nest in the shade of\n",
                 "corals. If it senses danger, it\n",
@@ -119,11 +113,11 @@
         },
         "fr": {
             "name": "HYPOTREMPE",
-            "category": "Pokémon Dragon",
+            "category": "Pok\u00e9mon Dragon",
             "entry_text": [
-                "Il niche à l’ombre du corail. Quand\n",
-                "il se sent menacé, il disparaît\n",
-                "dans un nuage d’encre opaque."
+                "Il niche \u00e0 l\u2019ombre du corail. Quand\n",
+                "il se sent menac\u00e9, il dispara\u00eet\n",
+                "dans un nuage d\u2019encre opaque."
             ]
         },
         "de": {
@@ -131,22 +125,22 @@
             "category": "Drache",
             "entry_text": [
                 "Im Schatten von Korallen legt es\n",
-                "sein Nest an. Bei Gefahr versprüht\n",
+                "sein Nest an. Bei Gefahr verspr\u00fcht\n",
                 "es Tinte und flieht."
             ]
         },
         "it": {
             "name": "HORSEA",
-            "category": "Pokémon Drago",
+            "category": "Pok\u00e9mon Drago",
             "entry_text": [
-                "Crea la sua tana all’ombra dei\n",
+                "Crea la sua tana all\u2019ombra dei\n",
                 "coralli. Se avverte un pericolo,\n",
                 "spruzza inchiostro nero e fugge."
             ]
         },
         "es": {
             "name": "HORSEA",
-            "category": "Pokémon Dragón",
+            "category": "Pok\u00e9mon Drag\u00f3n",
             "entry_text": [
                 "Hace su nido entre los corales.\n",
                 "Si se siente en peligro, escupe\n",
@@ -154,12 +148,12 @@
             ]
         },
         "jp": {
-            "name": "タッツ－",
-            "category": "ドラゴンポケモン",
+            "name": "\u30bf\u30c3\u30c4\uff0d",
+            "category": "\u30c9\u30e9\u30b4\u30f3\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "サンゴの　かげに　すみかを　つくる。\n",
-                "きけんを　かんじると　くちから\n",
-                "まっくろい　スミを　はいて　にげる。"
+                "\u30b5\u30f3\u30b4\u306e\u3000\u304b\u3052\u306b\u3000\u3059\u307f\u304b\u3092\u3000\u3064\u304f\u308b\u3002\n",
+                "\u304d\u3051\u3093\u3092\u3000\u304b\u3093\u3058\u308b\u3068\u3000\u304f\u3061\u304b\u3089\n",
+                "\u307e\u3063\u304f\u308d\u3044\u3000\u30b9\u30df\u3092\u3000\u306f\u3044\u3066\u3000\u306b\u3052\u308b\u3002"
             ]
         }
     },

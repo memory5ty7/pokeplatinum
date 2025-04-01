@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 105
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,88 +29,24 @@
     "hatch_cycles": 80,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_REST" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 6, "MOVE_IMPRISON" ],
-            [ 16, "MOVE_PROTECT" ],
-            [ 21, "MOVE_SWIFT" ],
-            [ 31, "MOVE_LUCKY_CHANT" ],
-            [ 36, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_CHARM" ],
-            [ 51, "MOVE_EXTRASENSORY" ],
-            [ 61, "MOVE_COPYCAT" ],
-            [ 66, "MOVE_NATURAL_GIFT" ],
-            [ 76, "MOVE_HEALING_WISH" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM33",
-            "TM34",
-            "TM37",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM48",
-            "TM53",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM67",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM76",
-            "TM77",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM86",
-            "TM87",
-            "TM89",
-            "TM90",
-            "TM92"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_TRICK",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"
@@ -126,7 +65,7 @@
         "pokemon_pos_m": 65526,
         "en": {
             "name": "MESPRIT",
-            "category": "Emotion Pokémon",
+            "category": "Emotion Pok\u00e9mon",
             "entry_text": [
                 "When MESPRIT flew, people learned\n",
                 "the joy and sadness of living.\n",
@@ -135,10 +74,10 @@
         },
         "fr": {
             "name": "CREFOLLET",
-            "category": "Pokémon Emotion",
+            "category": "Pok\u00e9mon Emotion",
             "entry_text": [
-                "On l’appelle “être de l’émotion”.\n",
-                "Il enseigne aux hommes la beauté de\n",
+                "On l\u2019appelle \u201c\u00eatre de l\u2019\u00e9motion\u201d.\n",
+                "Il enseigne aux hommes la beaut\u00e9 de\n",
                 "la tristesse, la douleur et la joie."
             ]
         },
@@ -146,36 +85,36 @@
             "name": "VESPRIT",
             "category": "Emotion",
             "entry_text": [
-                "“Das fühlende Wesen”.\n",
+                "\u201cDas f\u00fchlende Wesen\u201d.\n",
                 "Es lehrt die Menschen die Ideale\n",
                 "von Trauer, Schmerz und Freude."
             ]
         },
         "it": {
             "name": "MESPRIT",
-            "category": "Pokémon Emozione",
+            "category": "Pok\u00e9mon Emozione",
             "entry_text": [
-                "Detto “Essere delle emozioni”.\n",
-                "Ha insegnato agli uomini la nobiltà\n",
+                "Detto \u201cEssere delle emozioni\u201d.\n",
+                "Ha insegnato agli uomini la nobilt\u00e0\n",
                 "di tristezza, gioia e dolore."
             ]
         },
         "es": {
             "name": "MESPRIT",
-            "category": "Pokémon Sensorio",
+            "category": "Pok\u00e9mon Sensorio",
             "entry_text": [
-                "Se le conoce como el “ser de la\n",
-                "emoción”. Enseñó a los humanos\n",
-                "la nobleza del dolor y la alegría."
+                "Se le conoce como el \u201cser de la\n",
+                "emoci\u00f3n\u201d. Ense\u00f1\u00f3 a los humanos\n",
+                "la nobleza del dolor y la alegr\u00eda."
             ]
         },
         "jp": {
-            "name": "エムリット",
-            "category": "かんじょうポケモン",
+            "name": "\u30a8\u30e0\u30ea\u30c3\u30c8",
+            "category": "\u304b\u3093\u3058\u3087\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "かなしみの　くるしさと　よろこびの\n",
-                "とうとさを　ひとびとに　おしえた。\n",
-                "かんじょうのかみ　と　よばれている。"
+                "\u304b\u306a\u3057\u307f\u306e\u3000\u304f\u308b\u3057\u3055\u3068\u3000\u3088\u308d\u3053\u3073\u306e\n",
+                "\u3068\u3046\u3068\u3055\u3092\u3000\u3072\u3068\u3073\u3068\u306b\u3000\u304a\u3057\u3048\u305f\u3002\n",
+                "\u304b\u3093\u3058\u3087\u3046\u306e\u304b\u307f\u3000\u3068\u3000\u3088\u3070\u308c\u3066\u3044\u308b\u3002"
             ]
         }
     },

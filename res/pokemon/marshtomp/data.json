@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 70
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 143,
     "ev_yields": {
@@ -26,77 +29,22 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_TORRENT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_MUD_SLAP" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_BIDE" ],
-            [ 16, "MOVE_MUD_SHOT" ],
-            [ 20, "MOVE_FORESIGHT" ],
-            [ 25, "MOVE_MUD_BOMB" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_MUDDY_WATER" ],
-            [ 42, "MOVE_PROTECT" ],
-            [ 46, "MOVE_EARTHQUAKE" ],
-            [ 53, "MOVE_ENDEAVOR" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM56",
-            "TM58",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_SUPERPOWER",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_ENDEAVOR",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [
@@ -123,7 +71,7 @@
         "pokemon_pos_m": 20,
         "en": {
             "name": "MARSHTOMP",
-            "category": "Mud Fish Pokémon",
+            "category": "Mud Fish Pok\u00e9mon",
             "entry_text": [
                 "Its sturdy legs give it sure\n",
                 "footing, even in mud. It\n",
@@ -132,25 +80,25 @@
         },
         "fr": {
             "name": "FLOBIO",
-            "category": "Pokémon Poissonboue",
+            "category": "Pok\u00e9mon Poissonboue",
             "entry_text": [
                 "Ses jambes robustes lui donnent\n",
-                "un bon appui, même dans la boue.\n",
-                "Il dort enfoui dans la saleté."
+                "un bon appui, m\u00eame dans la boue.\n",
+                "Il dort enfoui dans la salet\u00e9."
             ]
         },
         "de": {
             "name": "MOORABBEL",
-            "category": "Lehmhüpfer",
+            "category": "Lehmh\u00fcpfer",
             "entry_text": [
-                "Seine kräftigen Beine geben ihm\n",
-                "sicheren Halt. Es gräbt sich in\n",
+                "Seine kr\u00e4ftigen Beine geben ihm\n",
+                "sicheren Halt. Es gr\u00e4bt sich in\n",
                 "Dreck ein, wenn es schlafen will."
             ]
         },
         "it": {
             "name": "MARSHTOMP",
-            "category": "Pokémon Fango Pesce",
+            "category": "Pok\u00e9mon Fango Pesce",
             "entry_text": [
                 "Grazie alle zampe vigorose, si muove\n",
                 "con disinvoltura anche nel fango.\n",
@@ -159,7 +107,7 @@
         },
         "es": {
             "name": "MARSHTOMP",
-            "category": "Pokémon Pez Lodo",
+            "category": "Pok\u00e9mon Pez Lodo",
             "entry_text": [
                 "Sus piernas robustas impiden que\n",
                 "pierda el equilibrio y caiga, incluso\n",
@@ -167,12 +115,12 @@
             ]
         },
         "jp": {
-            "name": "ヌマクロ－",
-            "category": "ぬまうおポケモン",
+            "name": "\u30cc\u30de\u30af\u30ed\uff0d",
+            "category": "\u306c\u307e\u3046\u304a\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "ぬかるんだ　あしばでも　しっかり\n",
-                "あるける　じょうぶな　あしこし。\n",
-                "どろに　からだを　うめて　ねむる。"
+                "\u306c\u304b\u308b\u3093\u3060\u3000\u3042\u3057\u3070\u3067\u3082\u3000\u3057\u3063\u304b\u308a\n",
+                "\u3042\u308b\u3051\u308b\u3000\u3058\u3087\u3046\u3076\u306a\u3000\u3042\u3057\u3053\u3057\u3002\n",
+                "\u3069\u308d\u306b\u3000\u304b\u3089\u3060\u3092\u3000\u3046\u3081\u3066\u3000\u306d\u3080\u308b\u3002"
             ]
         }
     },

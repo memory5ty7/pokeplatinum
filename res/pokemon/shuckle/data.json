@@ -7,7 +7,10 @@
         "special_attack": 10,
         "special_defense": 230
     },
-    "types": [ "TYPE_BUG", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 80,
     "ev_yields": {
@@ -26,68 +29,24 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_GLUTTONY" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SAND_STREAM",
+        "ABILITY_MOODY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [
-            [ 1, "MOVE_WITHDRAW" ],
-            [ 1, "MOVE_CONSTRICT" ],
-            [ 1, "MOVE_BIDE" ],
-            [ 9, "MOVE_ENCORE" ],
-            [ 14, "MOVE_SAFEGUARD" ],
-            [ 22, "MOVE_WRAP" ],
-            [ 27, "MOVE_REST" ],
-            [ 35, "MOVE_GASTRO_ACID" ],
-            [ 40, "MOVE_BUG_BITE" ],
-            [ 48, "MOVE_POWER_TRICK" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM20",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM36",
-            "TM37",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM58",
-            "TM69",
-            "TM70",
-            "TM71",
-            "TM74",
-            "TM76",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER"
-        ]
+        "by_level": [],
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"
@@ -106,7 +65,7 @@
         "pokemon_pos_m": 25,
         "en": {
             "name": "SHUCKLE",
-            "category": "Mold Pokémon",
+            "category": "Mold Pok\u00e9mon",
             "entry_text": [
                 "It stores berries in its shell.\n",
                 "The berries eventually ferment to\n",
@@ -115,11 +74,11 @@
         },
         "fr": {
             "name": "CARATROC",
-            "category": "Pokémon Pourri",
+            "category": "Pok\u00e9mon Pourri",
             "entry_text": [
                 "Il stocke des Baies sous sa\n",
                 "carapace. Elles fermentent et\n",
-                "produisent des jus délicieux."
+                "produisent des jus d\u00e9licieux."
             ]
         },
         "de": {
@@ -133,7 +92,7 @@
         },
         "it": {
             "name": "SHUCKLE",
-            "category": "Pokémon Muffa",
+            "category": "Pok\u00e9mon Muffa",
             "entry_text": [
                 "Conserva nel guscio delle bacche\n",
                 "che, quando fermentano, si\n",
@@ -142,20 +101,20 @@
         },
         "es": {
             "name": "SHUCKLE",
-            "category": "Pokémon Moho",
+            "category": "Pok\u00e9mon Moho",
             "entry_text": [
-                "Almacena bayas en su caparazón,\n",
-                "que más tarde fermentan para\n",
+                "Almacena bayas en su caparaz\u00f3n,\n",
+                "que m\u00e1s tarde fermentan para\n",
                 "producir deliciosos zumos."
             ]
         },
         "jp": {
-            "name": "ツボツボ",
-            "category": "はっこうポケモン",
+            "name": "\u30c4\u30dc\u30c4\u30dc",
+            "category": "\u306f\u3063\u3053\u3046\u30dd\u30b1\u30e2\u30f3",
             "entry_text": [
-                "こうらの　なかに　きのみを　ためる。\n",
-                "そのうち　きのみは　はっこうして\n",
-                "おいしい　ジュ－スに　なるのだ。"
+                "\u3053\u3046\u3089\u306e\u3000\u306a\u304b\u306b\u3000\u304d\u306e\u307f\u3092\u3000\u305f\u3081\u308b\u3002\n",
+                "\u305d\u306e\u3046\u3061\u3000\u304d\u306e\u307f\u306f\u3000\u306f\u3063\u3053\u3046\u3057\u3066\n",
+                "\u304a\u3044\u3057\u3044\u3000\u30b8\u30e5\uff0d\u30b9\u306b\u3000\u306a\u308b\u306e\u3060\u3002"
             ]
         }
     },
