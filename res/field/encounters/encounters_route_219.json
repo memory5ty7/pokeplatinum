@@ -96,115 +96,115 @@
     ],
     "surf_rate": 30,
     "surf_encounters": [
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_WINGULL"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_LAPRAS"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_DRIFLOON"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_SKIPLOOM"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_PHIONE"
-            }
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_WINGULL"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_LAPRAS"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_DRIFLOON"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_SKIPLOOM"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_PHIONE"
+        }
     ],
     "old_rod_rate": 100,
     "old_rod_encounters": [
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_CLAMPERL"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_CHINCHOU"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_QWILFISH"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_CORPHISH"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_STARYU"
-            }
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_CLAMPERL"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_CHINCHOU"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_QWILFISH"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_CORPHISH"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_STARYU"
+        }
     ],
     "good_rod_rate": 100,
     "good_rod_encounters": [
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_SEEL"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_HORSEA"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_WAILMER"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_KRABBY"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_SPHEAL"
-            }
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_SEEL"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_HORSEA"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_WAILMER"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_KRABBY"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_SPHEAL"
+        }
     ],
     "super_rod_rate": 100,
     "super_rod_encounters": [
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_CORSOLA"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_TENTACOOL"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_SHELLDER"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_MANTYKE"
-            },
-            {
-                    "level_max": 5,
-                    "level_min": 5,
-                    "species": "SPECIES_SLOWPOKE"
-            }
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_CORSOLA"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_TENTACOOL"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_SHELLDER"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_MANTYKE"
+        },
+        {
+            "level_max": 5,
+            "level_min": 5,
+            "species": "SPECIES_SLOWPOKE"
+        }
     ],
     "map_category": {
         "map_type": "field",

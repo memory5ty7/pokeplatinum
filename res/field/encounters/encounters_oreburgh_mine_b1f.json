@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-                "level": 9,
-                "species": "SPECIES_MAGNEMITE"
+            "level": 9,
+            "species": "SPECIES_MAGNEMITE"
         },
         {
-                "level": 9,
-                "species": "SPECIES_CRANIDOS"
+            "level": 9,
+            "species": "SPECIES_CRANIDOS"
         },
         {
-                "level": 9,
-                "species": "SPECIES_BRONZOR"
+            "level": 9,
+            "species": "SPECIES_BRONZOR"
         },
         {
-                "level": 9,
-                "species": "SPECIES_BRONZOR"
+            "level": 9,
+            "species": "SPECIES_BRONZOR"
         },
         {
-                "level": 9,
-                "species": "SPECIES_ANORITH"
+            "level": 9,
+            "species": "SPECIES_ANORITH"
         },
         {
-                "level": 9,
-                "species": "SPECIES_ANORITH"
+            "level": 9,
+            "species": "SPECIES_ANORITH"
         },
         {
-                "level": 9,
-                "species": "SPECIES_LILEEP"
+            "level": 9,
+            "species": "SPECIES_LILEEP"
         },
         {
-                "level": 9,
-                "species": "SPECIES_LILEEP"
+            "level": 9,
+            "species": "SPECIES_LILEEP"
         },
         {
-                "level": 9,
-                "species": "SPECIES_ARON"
+            "level": 9,
+            "species": "SPECIES_ARON"
         },
         {
-                "level": 9,
-                "species": "SPECIES_SHIELDON"
+            "level": 9,
+            "species": "SPECIES_SHIELDON"
         },
         {
-                "level": 9,
-                "species": "SPECIES_ARON"
+            "level": 9,
+            "species": "SPECIES_ARON"
         },
         {
-                "level": 9,
-                "species": "SPECIES_SHIELDON"
+            "level": 9,
+            "species": "SPECIES_SHIELDON"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_BRONZOR",
         "SPECIES_BRONZOR"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_BRONZOR",
         "SPECIES_BRONZOR"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_ANORITH",
         "SPECIES_ANORITH",
         "SPECIES_ARON",
         "SPECIES_SHIELDON"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

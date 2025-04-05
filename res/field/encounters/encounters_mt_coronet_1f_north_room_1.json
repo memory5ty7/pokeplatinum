@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-                "level": 20,
-                "species": "SPECIES_LUNATONE"
+            "level": 20,
+            "species": "SPECIES_LUNATONE"
         },
         {
-                "level": 20,
-                "species": "SPECIES_SOLROCK"
+            "level": 20,
+            "species": "SPECIES_SOLROCK"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CHINGLING"
+            "level": 20,
+            "species": "SPECIES_CHINGLING"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CHINGLING"
+            "level": 20,
+            "species": "SPECIES_CHINGLING"
         },
         {
-                "level": 20,
-                "species": "SPECIES_VOLTORB"
+            "level": 20,
+            "species": "SPECIES_VOLTORB"
         },
         {
-                "level": 20,
-                "species": "SPECIES_BRONZOR"
+            "level": 20,
+            "species": "SPECIES_BRONZOR"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CLEFFA"
+            "level": 20,
+            "species": "SPECIES_CLEFFA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CLEFFA"
+            "level": 20,
+            "species": "SPECIES_CLEFFA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_ELECTRIKE"
+            "level": 20,
+            "species": "SPECIES_ELECTRIKE"
         },
         {
-                "level": 20,
-                "species": "SPECIES_MAGNEMITE"
+            "level": 20,
+            "species": "SPECIES_MAGNEMITE"
         },
         {
-                "level": 20,
-                "species": "SPECIES_ELECTRIKE"
+            "level": 20,
+            "species": "SPECIES_ELECTRIKE"
         },
         {
-                "level": 20,
-                "species": "SPECIES_MAGNEMITE"
+            "level": 20,
+            "species": "SPECIES_MAGNEMITE"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_CHINGLING",
         "SPECIES_CHINGLING"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_CHINGLING",
         "SPECIES_CHINGLING"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_VOLTORB",
         "SPECIES_BRONZOR",
         "SPECIES_ELECTRIKE",
         "SPECIES_MAGNEMITE"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

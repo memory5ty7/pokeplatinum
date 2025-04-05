@@ -1,73 +1,73 @@
 {
     "land_rate": 30,
     "land_encounters": [
-                {
-                        "level": 3,
-                        "species": "SPECIES_BIDOOF"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_SKITTY"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_AIPOM"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_BUNEARY"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_ZIGZAGOON"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_POOCHYENA"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_ZIGZAGOON"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_POOCHYENA"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_SNUBBULL"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_SNUBBULL"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_SNUBBULL"
-                },
-                {
-                        "level": 3,
-                        "species": "SPECIES_SNUBBULL"
-                }
-        ],
-        "swarms": [
-                "SPECIES_NONE",
-                "SPECIES_NONE"
-        ],
-        "morning": [
-                "SPECIES_AIPOM",
-                "SPECIES_BUNEARY"
-        ],
-        "night": [
-                "SPECIES_AIPOM",
-                "SPECIES_BUNEARY"
-        ],
-        "radar": [
-                "SPECIES_ZIGZAGOON",
-                "SPECIES_POOCHYENA",
-                "SPECIES_SNUBBULL",
-                "SPECIES_SNUBBULL"
-        ],
+        {
+            "level": 3,
+            "species": "SPECIES_BIDOOF"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_SKITTY"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_AIPOM"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_BUNEARY"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_ZIGZAGOON"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_POOCHYENA"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_ZIGZAGOON"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_POOCHYENA"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_SNUBBULL"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_SNUBBULL"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_SNUBBULL"
+        },
+        {
+            "level": 3,
+            "species": "SPECIES_SNUBBULL"
+        }
+    ],
+    "swarms": [
+        "SPECIES_NONE",
+        "SPECIES_NONE"
+    ],
+    "morning": [
+        "SPECIES_AIPOM",
+        "SPECIES_BUNEARY"
+    ],
+    "night": [
+        "SPECIES_AIPOM",
+        "SPECIES_BUNEARY"
+    ],
+    "radar": [
+        "SPECIES_ZIGZAGOON",
+        "SPECIES_POOCHYENA",
+        "SPECIES_SNUBBULL",
+        "SPECIES_SNUBBULL"
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

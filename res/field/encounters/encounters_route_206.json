@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-                "level": 20,
-                "species": "SPECIES_HOUNDOUR"
+            "level": 20,
+            "species": "SPECIES_HOUNDOUR"
         },
         {
-                "level": 20,
-                "species": "SPECIES_POOCHYENA"
+            "level": 20,
+            "species": "SPECIES_POOCHYENA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_STUNKY"
+            "level": 20,
+            "species": "SPECIES_STUNKY"
         },
         {
-                "level": 20,
-                "species": "SPECIES_STUNKY"
+            "level": 20,
+            "species": "SPECIES_STUNKY"
         },
         {
-                "level": 20,
-                "species": "SPECIES_SKORUPI"
+            "level": 20,
+            "species": "SPECIES_SKORUPI"
         },
         {
-                "level": 20,
-                "species": "SPECIES_MURKROW"
+            "level": 20,
+            "species": "SPECIES_MURKROW"
         },
         {
-                "level": 20,
-                "species": "SPECIES_NUZLEAF"
+            "level": 20,
+            "species": "SPECIES_NUZLEAF"
         },
         {
-                "level": 20,
-                "species": "SPECIES_NUZLEAF"
+            "level": 20,
+            "species": "SPECIES_NUZLEAF"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CACNEA"
+            "level": 20,
+            "species": "SPECIES_CACNEA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CACNEA"
+            "level": 20,
+            "species": "SPECIES_CACNEA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CACNEA"
+            "level": 20,
+            "species": "SPECIES_CACNEA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_CACNEA"
+            "level": 20,
+            "species": "SPECIES_CACNEA"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_STUNKY",
         "SPECIES_STUNKY"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_STUNKY",
         "SPECIES_STUNKY"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_SKORUPI",
         "SPECIES_MURKROW",
         "SPECIES_CACNEA",
         "SPECIES_CACNEA"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

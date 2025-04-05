@@ -2,52 +2,52 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 24,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 23,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_HIPPOPOTAS"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_HIPPOPOTAS"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 24,
-            "species": "SPECIES_HIPPOPOTAS"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_GEODUDE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 26,
-            "species": "SPECIES_HIPPOPOTAS"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

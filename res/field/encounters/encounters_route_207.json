@@ -2,72 +2,72 @@
     "land_rate": 30,
     "land_encounters": [
         {
-                "level": 8,
-                "species": "SPECIES_MAREEP"
+            "level": 8,
+            "species": "SPECIES_MAREEP"
         },
         {
-                "level": 8,
-                "species": "SPECIES_NUMEL"
+            "level": 8,
+            "species": "SPECIES_NUMEL"
         },
         {
-                "level": 8,
-                "species": "SPECIES_AIPOM"
+            "level": 8,
+            "species": "SPECIES_AIPOM"
         },
         {
-                "level": 8,
-                "species": "SPECIES_MAGBY"
+            "level": 8,
+            "species": "SPECIES_MAGBY"
         },
         {
-                "level": 8,
-                "species": "SPECIES_ELEKID"
+            "level": 8,
+            "species": "SPECIES_ELEKID"
         },
         {
-                "level": 8,
-                "species": "SPECIES_MUNCHLAX"
+            "level": 8,
+            "species": "SPECIES_MUNCHLAX"
         },
         {
-                "level": 8,
-                "species": "SPECIES_MUNCHLAX"
+            "level": 8,
+            "species": "SPECIES_MUNCHLAX"
         },
         {
-                "level": 8,
-                "species": "SPECIES_AIPOM"
+            "level": 8,
+            "species": "SPECIES_AIPOM"
         },
         {
-                "level": 8,
-                "species": "SPECIES_SMOOCHUM"
+            "level": 8,
+            "species": "SPECIES_SMOOCHUM"
         },
         {
-                "level": 8,
-                "species": "SPECIES_SMOOCHUM"
+            "level": 8,
+            "species": "SPECIES_SMOOCHUM"
         },
         {
-                "level": 8,
-                "species": "SPECIES_SMOOCHUM"
+            "level": 8,
+            "species": "SPECIES_SMOOCHUM"
         },
         {
-                "level": 8,
-                "species": "SPECIES_SMOOCHUM"
+            "level": 8,
+            "species": "SPECIES_SMOOCHUM"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_AIPOM",
         "SPECIES_MAGBY"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_AIPOM",
         "SPECIES_MAGBY"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_ELEKID",
         "SPECIES_MUNCHLAX",
         "SPECIES_SMOOCHUM",
         "SPECIES_SMOOCHUM"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

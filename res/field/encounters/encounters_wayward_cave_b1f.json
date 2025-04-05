@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-                "level": 20,
-                "species": "SPECIES_ABRA"
+            "level": 20,
+            "species": "SPECIES_ABRA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_ZUBAT"
+            "level": 20,
+            "species": "SPECIES_ZUBAT"
         },
         {
-                "level": 20,
-                "species": "SPECIES_MAWILE"
+            "level": 20,
+            "species": "SPECIES_MAWILE"
         },
         {
-                "level": 20,
-                "species": "SPECIES_DIGLETT"
+            "level": 20,
+            "species": "SPECIES_DIGLETT"
         },
         {
-                "level": 20,
-                "species": "SPECIES_NIDORAN_M"
+            "level": 20,
+            "species": "SPECIES_NIDORAN_M"
         },
         {
-                "level": 20,
-                "species": "SPECIES_NIDORAN_F"
+            "level": 20,
+            "species": "SPECIES_NIDORAN_F"
         },
         {
-                "level": 20,
-                "species": "SPECIES_ONIX"
+            "level": 20,
+            "species": "SPECIES_ONIX"
         },
         {
-                "level": 20,
-                "species": "SPECIES_ONIX"
+            "level": 20,
+            "species": "SPECIES_ONIX"
         },
         {
-                "level": 20,
-                "species": "SPECIES_RATTATA"
+            "level": 20,
+            "species": "SPECIES_RATTATA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_RATTATA"
+            "level": 20,
+            "species": "SPECIES_RATTATA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_RATTATA"
+            "level": 20,
+            "species": "SPECIES_RATTATA"
         },
         {
-                "level": 20,
-                "species": "SPECIES_RATTATA"
+            "level": 20,
+            "species": "SPECIES_RATTATA"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_MAWILE",
         "SPECIES_DIGLETT"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_MAWILE",
         "SPECIES_DIGLETT"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_NIDORAN_M",
         "SPECIES_NIDORAN_F",
         "SPECIES_RATTATA",
         "SPECIES_RATTATA"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

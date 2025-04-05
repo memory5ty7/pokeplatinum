@@ -2,72 +2,72 @@
     "land_rate": 10,
     "land_encounters": [
         {
-                "level": 6,
-                "species": "SPECIES_GEODUDE"
+            "level": 6,
+            "species": "SPECIES_GEODUDE"
         },
         {
-                "level": 6,
-                "species": "SPECIES_GEODUDE"
+            "level": 6,
+            "species": "SPECIES_GEODUDE"
         },
         {
-                "level": 6,
-                "species": "SPECIES_ONIX"
+            "level": 6,
+            "species": "SPECIES_ONIX"
         },
         {
-                "level": 6,
-                "species": "SPECIES_ONIX"
+            "level": 6,
+            "species": "SPECIES_ONIX"
         },
         {
-                "level": 6,
-                "species": "SPECIES_ONIX"
+            "level": 6,
+            "species": "SPECIES_ONIX"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         },
         {
-                "level": 6,
-                "species": "SPECIES_RHYHORN"
+            "level": 6,
+            "species": "SPECIES_RHYHORN"
         }
-],
-"swarms": [
+    ],
+    "swarms": [
         "SPECIES_NONE",
         "SPECIES_NONE"
-],
-"morning": [
+    ],
+    "morning": [
         "SPECIES_ONIX",
         "SPECIES_ONIX"
-],
-"night": [
+    ],
+    "night": [
         "SPECIES_ONIX",
         "SPECIES_ONIX"
-],
-"radar": [
+    ],
+    "radar": [
         "SPECIES_ONIX",
         "SPECIES_RHYHORN",
         "SPECIES_RHYHORN",
         "SPECIES_RHYHORN"
-],
+    ],
     "rate_form0": 0,
     "rate_form1": 0,
     "rate_form2": 0,

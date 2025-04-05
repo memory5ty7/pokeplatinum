@@ -2,52 +2,52 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 21,
-            "species": "SPECIES_PICHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_ROSELIA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_STARAVIA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 23,
-            "species": "SPECIES_KRICKETUNE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 23,
-            "species": "SPECIES_ROSELIA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 24,
-            "species": "SPECIES_STARAVIA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_PIKACHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_PICHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 24,
-            "species": "SPECIES_PIKACHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_PICHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 24,
-            "species": "SPECIES_PIKACHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 22,
-            "species": "SPECIES_PICHU"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

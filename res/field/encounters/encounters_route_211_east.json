@@ -2,52 +2,52 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 27,
-            "species": "SPECIES_MEDITITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 28,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 28,
-            "species": "SPECIES_MEDITITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 29,
-            "species": "SPECIES_MEDITITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 28,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 29,
-            "species": "SPECIES_MACHOKE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 30,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 29,
-            "species": "SPECIES_BRONZOR"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 29,
-            "species": "SPECIES_BRONZOR"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 29,
-            "species": "SPECIES_BRONZOR"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [
