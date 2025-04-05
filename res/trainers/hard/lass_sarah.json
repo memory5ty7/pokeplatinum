@@ -17,8 +17,7 @@
                 "MOVE_SUNNY_DAY",
                 "MOVE_SOLAR_BEAM"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_CHERUBI",
@@ -28,8 +27,7 @@
             "moves": [
                 "MOVE_WEATHER_BALL"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_CHERUBI",
@@ -39,8 +37,7 @@
             "moves": [
                 "MOVE_SOLAR_BEAM"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         }
     ]
 }

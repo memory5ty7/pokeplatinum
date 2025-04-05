@@ -1282,19 +1282,7 @@ static int GetSurfEncounterRate(FieldSystem *fieldSystem)
 
 static int GetFishingEncounterRate(FieldSystem *fieldSystem, const int fishingRodType)
 {
-    WildEncounters *encounterData = MapHeaderData_GetWildEncounters(fieldSystem);
-
-    switch (fishingRodType) {
-    case FISHING_TYPE_OLD_ROD:
-        return encounterData->oldRodEncounters.encounterRate;
-    case FISHING_TYPE_GOOD_ROD:
-        return encounterData->goodRodEncounters.encounterRate;
-    case FISHING_TYPE_SUPER_ROD:
-        return encounterData->superRodEncounters.encounterRate;
-    default:
-        GF_ASSERT(FALSE);
-        return FALSE;
-    }
+    return 100;
 }
 
 // assigns to encounterSlot the index of a slot in encounterTable that contains a mon of type.

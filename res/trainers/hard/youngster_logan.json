@@ -15,8 +15,7 @@
             "moves": [
                 "MOVE_FACADE"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_MAREEP",
@@ -26,8 +25,7 @@
             "moves": [
                 "MOVE_POWER_GEM"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_MUNCHLAX",
@@ -37,8 +35,7 @@
             "moves": [
                 "MOVE_SURF"
             ],
-            "power": 230,
-            "ball_seal": 0
+            "power": 230
         }
     ]
 }

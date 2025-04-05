@@ -15,13 +15,12 @@
             "level": 16,
             "item": "ITEM_AIR_BALLOON",
             "moves": [
-                "MOVE_STEALTH_ROCK",
                 "MOVE_ROCK_TOMB",
                 "MOVE_SPARK",
+                "MOVE_STEALTH_ROCK",
                 "MOVE_PROTECT"
             ],
-            "power": 207,
-            "ball_seal": 0
+            "power": 233
         },
         {
             "species": "SPECIES_SANDSHREW",
@@ -34,8 +33,7 @@
                 "MOVE_LEECH_LIFE",
                 "MOVE_BODY_SLAM"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_TRAPINCH",
@@ -47,8 +45,7 @@
                 "MOVE_BUG_BITE",
                 "MOVE_ROCK_SLIDE"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_BELDUM",
@@ -58,11 +55,10 @@
             "moves": [
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_METAL_CLAW",
-                "MOVE_ICY_WIND",
+                "MOVE_SCARY_FACE",
                 "MOVE_MAGNET_RISE"
             ],
-            "power": 233,
-            "ball_seal": 0
+            "power": 233
         },
         {
             "species": "SPECIES_CORSOLA",
@@ -71,12 +67,11 @@
             "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_BUBBLE_BEAM",
-                "MOVE_EXPLOSION",
+                "MOVE_ANCIENT_POWER",
                 "MOVE_ICY_WIND",
-                "MOVE_ANCIENT_POWER"
+                "MOVE_EXPLOSION"
             ],
-            "power": 225,
-            "ball_seal": 0
+            "power": 525
         },
         {
             "species": "SPECIES_CRANIDOS",
@@ -89,8 +84,7 @@
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 278,
-            "ball_seal": 23
+            "power": 278
         }
     ]
 }

@@ -11,38 +11,35 @@
             "species": "SPECIES_STARLY",
             "form": 0,
             "level": 6,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_QUICK_ATTACK",
+                "MOVE_WING_ATTACK"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_ELEKID",
             "form": 0,
             "level": 6,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_THUNDER_SHOCK",
                 "MOVE_TACKLE"
             ],
-            "power": 236,
-            "ball_seal": 0
+            "power": 236
         },
         {
             "species": "SPECIES_SHELLOS",
             "form": 0,
             "level": 6,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_WHIRLPOOL",
                 "MOVE_AQUA_RING",
                 "MOVE_WATER_GUN"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         }
     ]
 }

@@ -17,8 +17,7 @@
                 "MOVE_RAIN_DANCE",
                 "MOVE_SUNNY_DAY"
             ],
-            "power": 248,
-            "ball_seal": 0
+            "power": 248
         },
         {
             "species": "SPECIES_CARVANHA",
@@ -28,8 +27,7 @@
             "moves": [
                 "MOVE_FLIP_TURN"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_SKIPLOOM",
@@ -39,8 +37,7 @@
             "moves": [
                 "MOVE_U_TURN"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         }
     ]
 }

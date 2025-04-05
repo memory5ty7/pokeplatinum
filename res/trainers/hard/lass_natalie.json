@@ -16,8 +16,7 @@
             "moves": [
                 "MOVE_FLAMETHROWER"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         },
         {
             "species": "SPECIES_SPEAROW",
@@ -27,8 +26,7 @@
             "moves": [
                 "MOVE_U_TURN"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_NIDORAN_F",
@@ -38,8 +36,7 @@
             "moves": [
                 "MOVE_SHADOW_CLAW"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         }
     ]
 }

@@ -20,8 +20,7 @@
                 "MOVE_QUICK_ATTACK",
                 "MOVE_WING_ATTACK"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_PIPLUP",
@@ -33,8 +32,7 @@
                 "MOVE_BUBBLE_BEAM",
                 "MOVE_WHIRLPOOL"
             ],
-            "power": 244,
-            "ball_seal": 0
+            "power": 244
         },
         {
             "species": "SPECIES_TORCHIC",
@@ -46,8 +44,7 @@
                 "MOVE_ROCK_TOMB",
                 "MOVE_PECK"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         }
     ]
 }

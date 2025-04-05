@@ -17,8 +17,7 @@
                 "MOVE_BRICK_BREAK",
                 "MOVE_AERIAL_ACE"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_KRICKETUNE",
@@ -29,8 +28,7 @@
                 "MOVE_FURY_CUTTER",
                 "MOVE_SING"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         }
     ]
 }

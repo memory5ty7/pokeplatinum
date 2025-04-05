@@ -96,31 +96,31 @@
     ],
     "surf_rate": 0,
     "surf_encounters": [
-            {
-                    "level_max": 0,
-                    "level_min": 0,
-                    "species": "SPECIES_NONE"
-            },
-            {
-                    "level_max": 0,
-                    "level_min": 0,
-                    "species": "SPECIES_NONE"
-            },
-            {
-                    "level_max": 0,
-                    "level_min": 0,
-                    "species": "SPECIES_NONE"
-            },
-            {
-                    "level_max": 0,
-                    "level_min": 0,
-                    "species": "SPECIES_NONE"
-            },
-            {
-                    "level_max": 0,
-                    "level_min": 0,
-                    "species": "SPECIES_NONE"
-            }
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_WINGULL"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_LAPRAS"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_DRIFLOON"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_SKIPLOOM"
+        },
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_PHIONE"
+        }
     ],
     "old_rod_rate": 100,
     "old_rod_encounters": [
@@ -152,58 +152,58 @@
     ],
     "good_rod_rate": 100,
     "good_rod_encounters": [
-            {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_CORPHISH"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         }
     ],
     "super_rod_rate": 100,
     "super_rod_encounters": [
-            {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+        {
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_CORPHISH"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         },
         {
-                "level_max": 0,
-                "level_min": 0,
-                "species": "SPECIES_NONE"
+                "level_max": 5,
+                "level_min": 5,
+                "species": "SPECIES_KRABBY"
         }
     ],
     "map_category": {

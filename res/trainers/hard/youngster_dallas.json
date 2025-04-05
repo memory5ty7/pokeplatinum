@@ -18,8 +18,7 @@
                 "MOVE_PROTECT",
                 "MOVE_MEGA_DRAIN"
             ],
-            "power": 230,
-            "ball_seal": 0
+            "power": 230
         },
         {
             "species": "SPECIES_ODDISH",
@@ -32,8 +31,7 @@
                 "MOVE_SLEEP_POWDER",
                 "MOVE_PROTECT"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         },
         {
             "species": "SPECIES_SUNKERN",
@@ -41,12 +39,11 @@
             "level": 14,
             "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_GROWTH",
                 "MOVE_MEGA_DRAIN",
+                "MOVE_GROWTH",
                 "MOVE_SYNTHESIS"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         }
     ]
 }

@@ -14,12 +14,11 @@
             "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_ROCK_TOMB",
-                "MOVE_METAL_CLAW",
+                "MOVE_STEALTH_ROCK",
                 "MOVE_MUD_SLAP",
-                "MOVE_STEALTH_ROCK"
+                "MOVE_METAL_CLAW"
             ],
-            "power": 232,
-            "ball_seal": 0
+            "power": 232
         },
         {
             "species": "SPECIES_SLOWPOKE",
@@ -31,8 +30,7 @@
                 "MOVE_WATER_PULSE",
                 "MOVE_CONFUSION"
             ],
-            "power": 239,
-            "ball_seal": 0
+            "power": 239
         },
         {
             "species": "SPECIES_DUSKULL",
@@ -45,8 +43,7 @@
                 "MOVE_DISABLE",
                 "MOVE_WILL_O_WISP"
             ],
-            "power": 233,
-            "ball_seal": 0
+            "power": 233
         }
     ]
 }

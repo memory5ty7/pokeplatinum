@@ -18,8 +18,7 @@
                 "MOVE_QUICK_ATTACK",
                 "MOVE_WING_ATTACK"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_CHIMCHAR",
@@ -32,8 +31,7 @@
                 "MOVE_FAKE_OUT",
                 "MOVE_TAUNT"
             ],
-            "power": 229,
-            "ball_seal": 0
+            "power": 229
         },
         {
             "species": "SPECIES_BULBASAUR",
@@ -45,8 +43,7 @@
                 "MOVE_SLEEP_POWDER",
                 "MOVE_ACID"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         }
     ]
 }

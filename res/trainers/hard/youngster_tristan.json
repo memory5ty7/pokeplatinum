@@ -16,8 +16,7 @@
                 "MOVE_THUNDERBOLT",
                 "MOVE_CHARGE_BEAM"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         },
         {
             "species": "SPECIES_ZIGZAGOON",
@@ -27,8 +26,7 @@
             "moves": [
                 "MOVE_ICE_BEAM"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_AIPOM",
@@ -38,8 +36,7 @@
             "moves": [
                 "MOVE_PAYBACK"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         }
     ]
 }

@@ -19,8 +19,7 @@
                 "MOVE_SWAGGER",
                 "MOVE_TAILWIND"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         },
         {
             "species": "SPECIES_MAKUHITA",
@@ -32,8 +31,7 @@
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_PAYBACK"
             ],
-            "power": 203,
-            "ball_seal": 0
+            "power": 203
         }
     ]
 }

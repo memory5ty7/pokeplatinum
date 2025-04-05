@@ -19,8 +19,7 @@
                 "MOVE_TRAILBLAZE",
                 "MOVE_SPIKES"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 233
         },
         {
             "species": "SPECIES_PINECO",
@@ -32,8 +31,7 @@
                 "MOVE_BUG_BITE",
                 "MOVE_ROLLOUT"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 232
         },
         {
             "species": "SPECIES_STUNKY",
@@ -44,8 +42,7 @@
                 "MOVE_FURY_SWIPES",
                 "MOVE_TOXIC"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 238
         }
     ]
 }

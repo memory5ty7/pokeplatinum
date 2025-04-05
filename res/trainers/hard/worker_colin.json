@@ -17,8 +17,7 @@
                 "MOVE_BULLDOZE",
                 "MOVE_LOW_SWEEP"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_MANKEY",
@@ -27,12 +26,11 @@
             "item": "ITEM_FOCUS_SASH",
             "moves": [
                 "MOVE_ROCK_SMASH",
-                "MOVE_ROCK_TOMB",
                 "MOVE_REVERSAL",
+                "MOVE_ROCK_TOMB",
                 "MOVE_U_TURN"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_TYROGUE",
@@ -44,8 +42,7 @@
                 "MOVE_BRICK_BREAK",
                 "MOVE_ICE_PUNCH"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         }
     ]
 }

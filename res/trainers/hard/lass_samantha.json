@@ -17,8 +17,7 @@
                 "MOVE_BUG_BITE",
                 "MOVE_STRING_SHOT"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_CASCOON",
@@ -29,8 +28,7 @@
                 "MOVE_BUG_BITE",
                 "MOVE_POISON_STING"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_DUSTOX",
@@ -41,8 +39,7 @@
                 "MOVE_GUST",
                 "MOVE_CONFUSION"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         }
     ]
 }

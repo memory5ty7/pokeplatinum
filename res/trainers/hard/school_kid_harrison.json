@@ -16,8 +16,7 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_MISDREAVUS",
@@ -27,8 +26,7 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         },
         {
             "species": "SPECIES_MACHOP",
@@ -38,8 +36,7 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240,
-            "ball_seal": 0
+            "power": 240
         }
     ]
 }

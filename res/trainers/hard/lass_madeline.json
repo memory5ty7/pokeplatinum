@@ -18,8 +18,7 @@
                 "MOVE_TOXIC",
                 "MOVE_SOFTBOILED"
             ],
-            "power": 230,
-            "ball_seal": 0
+            "power": 230
         },
         {
             "species": "SPECIES_EEVEE",
@@ -30,8 +29,7 @@
                 "MOVE_QUICK_ATTACK",
                 "MOVE_CURSE"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_DELCATTY",
@@ -42,8 +40,7 @@
                 "MOVE_FAKE_OUT",
                 "MOVE_ASSIST"
             ],
-            "power": 236,
-            "ball_seal": 0
+            "power": 236
         }
     ]
 }

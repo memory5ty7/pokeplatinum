@@ -18,8 +18,7 @@
                 "MOVE_YAWN",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 248,
-            "ball_seal": 0
+            "power": 248
         },
         {
             "species": "SPECIES_CUBONE",
@@ -32,8 +31,7 @@
                 "MOVE_FLING",
                 "MOVE_HEADBUTT"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_DIGLETT",
@@ -45,8 +43,7 @@
                 "MOVE_PROTECT",
                 "MOVE_SUCKER_PUNCH"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         },
         {
             "species": "SPECIES_SWINUB",
@@ -55,11 +52,10 @@
             "item": "ITEM_NEVERMELTICE",
             "moves": [
                 "MOVE_ICE_SHARD",
-                "MOVE_BULLDOZE",
-                "MOVE_MAGNITUDE"
+                "MOVE_MAGNITUDE",
+                "MOVE_BULLDOZE"
             ],
-            "power": 228,
-            "ball_seal": 0
+            "power": 228
         }
     ]
 }

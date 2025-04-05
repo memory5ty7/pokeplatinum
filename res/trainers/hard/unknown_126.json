@@ -18,8 +18,7 @@
                 "MOVE_AIR_CUTTER",
                 "MOVE_KNOCK_OFF"
             ],
-            "power": 244,
-            "ball_seal": 0
+            "power": 244
         },
         {
             "species": "SPECIES_SKORUPI",
@@ -32,8 +31,7 @@
                 "MOVE_BITE",
                 "MOVE_PURSUIT"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_HOUNDOUR",
@@ -46,8 +44,7 @@
                 "MOVE_THUNDER_FANG",
                 "MOVE_PURSUIT"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         },
         {
             "species": "SPECIES_BAGON",
@@ -60,8 +57,7 @@
                 "MOVE_DRAGON_DANCE",
                 "MOVE_FIRE_FANG"
             ],
-            "power": 229,
-            "ball_seal": 0
+            "power": 229
         }
     ]
 }

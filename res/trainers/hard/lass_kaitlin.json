@@ -18,8 +18,7 @@
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_ENCORE"
             ],
-            "power": 239,
-            "ball_seal": 0
+            "power": 239
         },
         {
             "species": "SPECIES_VOLBEAT",
@@ -27,12 +26,11 @@
             "level": 13,
             "item": "ITEM_BERRY_JUICE",
             "moves": [
-                "MOVE_CONFUSE_RAY",
                 "MOVE_SIGNAL_BEAM",
+                "MOVE_CONFUSE_RAY",
                 "MOVE_TAIL_GLOW"
             ],
-            "power": 235,
-            "ball_seal": 0
+            "power": 235
         }
     ]
 }

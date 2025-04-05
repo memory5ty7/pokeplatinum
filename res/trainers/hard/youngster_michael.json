@@ -18,8 +18,7 @@
                 "MOVE_MEGA_DRAIN",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 241,
-            "ball_seal": 0
+            "power": 241
         },
         {
             "species": "SPECIES_EKANS",
@@ -32,8 +31,7 @@
                 "MOVE_GLARE",
                 "MOVE_POISON_TAIL"
             ],
-            "power": 238,
-            "ball_seal": 0
+            "power": 238
         }
     ]
 }
