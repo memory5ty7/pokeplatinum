@@ -3,7 +3,7 @@
     "class": "CLASS_SPECIAL",
     "type": "TYPE_PSYCHIC",
     "power": 140,
-    "accuracy": 90,
+    "accuracy": 100,
     "pp": 5,
     "effect": {
         "type": "BATTLE_EFFECT_USER_SP_ATK_DOWN_2",

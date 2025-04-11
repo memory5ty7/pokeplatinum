@@ -2,7 +2,7 @@
     "name": "Dragon Pulse",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_DRAGON",
-    "power": 90,
+    "power": 85,
     "accuracy": 100,
     "pp": 10,
     "effect": {

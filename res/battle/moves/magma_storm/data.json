@@ -2,7 +2,7 @@
     "name": "Magma Storm",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_FIRE",
-    "power": 120,
+    "power": 100,
     "accuracy": 70,
     "pp": 5,
     "effect": {

@@ -2,7 +2,7 @@
     "name": "Jump Kick",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 85,
+    "power": 100,
     "accuracy": 95,
     "pp": 25,
     "effect": {

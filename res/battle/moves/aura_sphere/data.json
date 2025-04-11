@@ -2,7 +2,7 @@
     "name": "Aura Sphere",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_FIGHTING",
-    "power": 90,
+    "power": 80,
     "accuracy": 0,
     "pp": 20,
     "effect": {

@@ -2,7 +2,7 @@
     "name": "Hi Jump Kick",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 100,
+    "power": 130,
     "accuracy": 90,
     "pp": 20,
     "effect": {

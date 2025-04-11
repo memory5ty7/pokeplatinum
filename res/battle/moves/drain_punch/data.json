@@ -2,7 +2,7 @@
     "name": "Drain Punch",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 60,
+    "power": 75,
     "accuracy": 100,
     "pp": 5,
     "effect": {

@@ -4,7 +4,7 @@
     "type": "TYPE_NORMAL",
     "power": 0,
     "accuracy": 100,
-    "pp": 5,
+    "pp": 1,
     "effect": {
         "type": "BATTLE_EFFECT_ENCORE",
         "chance": 0
