@@ -21,7 +21,13 @@
                 "MOVE_SUNNY_DAY"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_AZUMARILL",
@@ -35,7 +41,13 @@
                 "MOVE_AQUA_RING"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_LOPUNNY",
@@ -49,7 +61,13 @@
                 "MOVE_BOUNCE"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

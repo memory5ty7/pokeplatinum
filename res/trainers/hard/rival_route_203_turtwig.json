@@ -13,25 +13,37 @@
             "species": "SPECIES_TAILLOW",
             "form": 0,
             "level": 10,
-            "item": "ITEM_SILK_SCARF",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
+                "MOVE_WING_ATTACK",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_WING_ATTACK"
+                "MOVE_FOCUS_ENERGY"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CHIMCHAR",
             "form": 0,
             "level": 10,
-            "item": "ITEM_CHARCOAL",
+            "item": "ITEM_BLACK_BELT",
             "moves": [
-                "MOVE_MACH_PUNCH",
                 "MOVE_FLAME_WHEEL",
-                "MOVE_FAKE_OUT",
-                "MOVE_TAUNT"
+                "MOVE_MACH_PUNCH",
+                "MOVE_FAKE_OUT"
             ],
-            "power": 229
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_BULBASAUR",
@@ -40,10 +52,16 @@
             "item": "ITEM_BLACK_SLUDGE",
             "moves": [
                 "MOVE_ABSORB",
-                "MOVE_SLEEP_POWDER",
-                "MOVE_ACID"
+                "MOVE_ACID",
+                "MOVE_SLEEP_POWDER"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

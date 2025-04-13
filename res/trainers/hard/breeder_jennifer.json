@@ -8,39 +8,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_SWALOT",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 43,
+            "item": "ITEM_STARF_BERRY",
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_BODY_SLAM",
+                "MOVE_TOXIC",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MIME_JR",
+            "species": "SPECIES_UMBREON",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 43,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_DARK_PULSE",
+                "MOVE_TRAILBLAZE",
+                "MOVE_PSYCHIC",
+                "MOVE_YAWN"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CLEFFA",
+            "species": "SPECIES_WALREIN",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 43,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_ICY_WIND",
+                "MOVE_BRINE",
+                "MOVE_AURORA_BEAM",
+                "MOVE_ENCORE"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_EEVEE",
+            "species": "SPECIES_SABLEYE",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 43,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_DARK_PULSE",
+                "MOVE_FAKE_OUT",
+                "MOVE_WILL_O_WISP"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

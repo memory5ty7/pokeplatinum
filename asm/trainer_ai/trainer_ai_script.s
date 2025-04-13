@@ -219,6 +219,7 @@ Basic_Pursuit2:
 Basic_FakeOut:
     LoadIsFirstTurnInBattle AI_BATTLER_ATTACKER
     IfLoadedEqualTo TRUE, Basic_FakeOut2
+    AddToMoveScore -20
     GoTo Basic_Other
 
 Basic_FakeOut2:

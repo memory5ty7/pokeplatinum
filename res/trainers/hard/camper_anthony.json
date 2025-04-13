@@ -10,12 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHIMCHAR",
+            "species": "SPECIES_MAROWAK",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 32,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_STEALTH_ROCK",
+                "MOVE_EARTHQUAKE",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GABITE",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_ROCKY_HELMET",
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_EARTHQUAKE",
+                "MOVE_DUAL_CHOP",
+                "MOVE_FIRE_FANG"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DONPHAN",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_GRASS_GEM",
+            "moves": [
+                "MOVE_ICE_SHARD",
+                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_TOMB",
+                "MOVE_SEED_BOMB"
+            ],
+            "abilitySlot": 1,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -8,21 +8,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_JOLTEON",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_BODY_SLAM"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 14,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_ROTOM",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_COLBUR_BERRY",
+            "moves": [
+                "MOVE_DISCHARGE",
+                "MOVE_OMINOUS_WIND",
+                "MOVE_HYPER_VOICE",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PIKACHU",
+            "form": 0,
+            "level": 34,
+            "item": "ITEM_LIGHT_BALL",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_GRASS_KNOT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_DIG"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LANTURN",
+            "form": 0,
+            "level": 34,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_CHARGE_BEAM",
+                "MOVE_SURF",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_ICY_WIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

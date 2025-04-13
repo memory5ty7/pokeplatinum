@@ -17,7 +17,12 @@
                 "MOVE_HIGH_HORSEPOWER",
                 "MOVE_ROCK_SLIDE"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -30,7 +35,12 @@
                 "MOVE_SUCKER_PUNCH",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 1,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

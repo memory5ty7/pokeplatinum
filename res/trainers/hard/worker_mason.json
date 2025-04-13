@@ -8,54 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HIPPOPOTAS",
+            "species": "SPECIES_TENTACOOL",
             "form": 0,
             "level": 13,
-            "item": "ITEM_ORAN_BERRY",
+            "item": "ITEM_BINDING_BAND",
             "moves": [
-                "MOVE_SANDSTORM",
-                "MOVE_BULLDOZE",
-                "MOVE_YAWN",
-                "MOVE_ROCK_TOMB"
+                "MOVE_VENOSHOCK",
+                "MOVE_HEX",
+                "MOVE_WRAP",
+                "MOVE_TOXIC_SPIKES"
             ],
-            "power": 248
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_CUBONE",
+            "species": "SPECIES_GASTLY",
             "form": 0,
             "level": 13,
-            "item": "ITEM_KINGS_ROCK",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_KNOCK_OFF",
-                "MOVE_BONEMERANG",
-                "MOVE_FLING",
-                "MOVE_HEADBUTT"
+                "MOVE_HEX",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_VENOSHOCK"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 3,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_DIGLETT",
+            "species": "SPECIES_SHROOMISH",
             "form": 0,
             "level": 13,
-            "item": "ITEM_BLACKGLASSES",
+            "item": "ITEM_TOXIC_ORB",
             "moves": [
-                "MOVE_BULLDOZE",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_VENOSHOCK",
                 "MOVE_PROTECT",
-                "MOVE_SUCKER_PUNCH"
+                "MOVE_LEECH_SEED"
             ],
-            "power": 228
-        },
-        {
-            "species": "SPECIES_SWINUB",
-            "form": 0,
-            "level": 13,
-            "item": "ITEM_NEVERMELTICE",
-            "moves": [
-                "MOVE_ICE_SHARD",
-                "MOVE_MAGNITUDE",
-                "MOVE_BULLDOZE"
-            ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

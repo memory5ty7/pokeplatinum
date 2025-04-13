@@ -15,7 +15,13 @@
             "moves": [
                 "MOVE_FACADE"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_MAREEP",
@@ -25,17 +31,29 @@
             "moves": [
                 "MOVE_POWER_GEM"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_MUNCHLAX",
             "form": 0,
             "level": 8,
-            "item": "ITEM_WATER_GEM",
+            "item": "ITEM_CUSTAP_BERRY",
             "moves": [
                 "MOVE_SURF"
             ],
-            "power": 230
+            "abilitySlot": 2,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 50,
+            "ball_seal": 0
         }
     ]
 }

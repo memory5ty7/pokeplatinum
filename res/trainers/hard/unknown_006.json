@@ -14,11 +14,17 @@
             "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_ROCK_TOMB",
-                "MOVE_STEALTH_ROCK",
+                "MOVE_METAL_CLAW",
                 "MOVE_MUD_SLAP",
-                "MOVE_METAL_CLAW"
+                "MOVE_STEALTH_ROCK"
             ],
-            "power": 232
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SLOWPOKE",
@@ -26,11 +32,17 @@
             "level": 10,
             "item": "ITEM_MYSTIC_WATER",
             "moves": [
-                "MOVE_YAWN",
                 "MOVE_WATER_PULSE",
-                "MOVE_CONFUSION"
+                "MOVE_CONFUSION",
+                "MOVE_YAWN"
             ],
-            "power": 239
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_DUSKULL",
@@ -43,7 +55,13 @@
                 "MOVE_DISABLE",
                 "MOVE_WILL_O_WISP"
             ],
-            "power": 233
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

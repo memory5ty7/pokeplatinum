@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_CARNIVINE",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 44,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_SEED_BOMB",
+                "MOVE_CRUNCH",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_LEECH_SEED"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BEAUTIFLY",
+            "form": 0,
+            "level": 44,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_AIR_SLASH",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_BUG_BUZZ",
+                "MOVE_QUIVER_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RATICATE",
+            "form": 0,
+            "level": 44,
+            "item": "ITEM_NORMAL_GEM",
+            "moves": [
+                "MOVE_FACADE",
+                "MOVE_CRUNCH",
+                "MOVE_REVERSAL",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

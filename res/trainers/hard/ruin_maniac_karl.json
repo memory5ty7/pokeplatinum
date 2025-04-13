@@ -10,30 +10,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_SHUCKLE",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 42,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_BUG_BITE",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_POWER_TRICK"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_SUDOWOODO",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 42,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_WOOD_HAMMER",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_HAMMER_ARM",
+                "MOVE_SUBSTITUTE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRONZOR",
+            "species": "SPECIES_TRAPINCH",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 42,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_X_SCISSOR",
+                "MOVE_PURSUIT"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

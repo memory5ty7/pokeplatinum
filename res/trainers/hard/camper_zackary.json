@@ -15,12 +15,17 @@
             "level": 23,
             "item": "ITEM_MUSCLE_BAND",
             "moves": [
-                "MOVE_FAKE_OUT",
-                "MOVE_BULLET_SEED",
                 "MOVE_DOUBLE_HIT",
-                "MOVE_U_TURN"
+                "MOVE_U_TURN",
+                "MOVE_AERIAL_ACE",
+                "MOVE_FAKE_OUT"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -29,23 +34,33 @@
             "level": 22,
             "item": "ITEM_TOXIC_ORB",
             "moves": [
-                "MOVE_EXTREME_SPEED",
+                "MOVE_SLASH",
                 "MOVE_SEED_BOMB",
                 "MOVE_SURF",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 236,
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_VOLTORB",
             "form": 0,
             "level": 23,
-            "item": "ITEM_CUSTAP_BERRY",
+            "item": "ITEM_LIECHI_BERRY",
             "moves": [
                 "MOVE_EXPLOSION"
             ],
-            "power": 353,
+            "abilitySlot": 2,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 25,
             "ball_seal": 0
         },
         {
@@ -54,12 +69,17 @@
             "level": 22,
             "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_FACADE",
-                "MOVE_EARTHQUAKE",
+                "MOVE_BULLDOZE",
                 "MOVE_ROCK_TOMB",
+                "MOVE_FACADE",
                 "MOVE_DRAGON_DANCE"
             ],
-            "power": 178,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 2,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

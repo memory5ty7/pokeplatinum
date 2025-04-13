@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_TAUROS",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 42,
+            "item": "ITEM_WHITE_HERB",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_FLAMETHROWER",
+                "MOVE_SUPERPOWER",
+                "MOVE_EARTHQUAKE"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SLOWBRO",
+            "form": 0,
+            "level": 42,
+            "item": "ITEM_AGUAV_BERRY",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_ICE_BEAM",
+                "MOVE_FUTURE_SIGHT",
+                "MOVE_SLACK_OFF"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VESPIQUEN",
+            "form": 0,
+            "level": 42,
+            "item": "ITEM_CHARTI_BERRY",
+            "moves": [
+                "MOVE_BUG_BUZZ",
+                "MOVE_AIR_SLASH",
+                "MOVE_POWER_GEM",
+                "MOVE_DESTINY_BOND"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

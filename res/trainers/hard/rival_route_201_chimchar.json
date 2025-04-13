@@ -16,7 +16,13 @@
                 "MOVE_POUND",
                 "MOVE_GROWL"
             ],
-            "power": 243
+            "abilitySlot": 0,
+            "nature": 18,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

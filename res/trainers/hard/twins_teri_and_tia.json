@@ -8,22 +8,80 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_MAGNEZONE",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 46,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_DISCHARGE",
+                "MOVE_FLASH_CANNON",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_LIGHT_SCREEN"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 20
         },
         {
-            "species": "SPECIES_CLEFAIRY",
+            "species": "SPECIES_SWAMPERT",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 46,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_LIQUIDATION",
+                "MOVE_ICE_PUNCH",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 20
+        },
+        {
+            "species": "SPECIES_TROPIUS",
+            "form": 0,
+            "level": 46,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_LEAF_STORM",
+                "MOVE_AIR_SLASH",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAGON_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HARIYAMA",
+            "form": 0,
+            "level": 46,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -24,7 +24,13 @@
                 "MOVE_U_TURN"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_FLOATZEL",
@@ -38,7 +44,13 @@
                 "MOVE_BRICK_BREAK"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_HERACROSS",
@@ -52,7 +64,13 @@
                 "MOVE_ROCK_SLIDE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_ROSERADE",
@@ -66,7 +84,13 @@
                 "MOVE_GRASS_WHISTLE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_SNORLAX",
@@ -80,7 +104,13 @@
                 "MOVE_REST"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_INFERNAPE",
@@ -94,7 +124,13 @@
                 "MOVE_AERIAL_ACE"
             ],
             "power": 250,
-            "ball_seal": 24
+            "ball_seal": 24,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

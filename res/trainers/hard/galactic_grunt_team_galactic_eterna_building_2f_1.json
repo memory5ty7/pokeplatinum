@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_ARBOK",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 30,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_POISON_FANG",
+                "MOVE_SEED_BOMB",
+                "MOVE_ROCK_TOMB",
+                "MOVE_PSYCHIC_FANGS"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUDICOLO",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_FAKE_OUT",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CAMERUPT",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_PASSHO_BERRY",
+            "moves": [
+                "MOVE_YAWN",
+                "MOVE_BULLDOZE",
+                "MOVE_FLAMETHROWER",
+                "MOVE_FLAME_CHARGE"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

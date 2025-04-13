@@ -94,6 +94,10 @@
             [
                 65,
                 "MOVE_THUNDERCLAP"
+            ],
+            [
+                70,
+                "MOVE_ELECTRO_SHOT"
             ]
         ],
         "by_tm": [],

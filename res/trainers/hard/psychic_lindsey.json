@@ -19,7 +19,12 @@
                 "MOVE_AERIAL_ACE",
                 "MOVE_WATER_PULSE"
             ],
-            "power": 236,
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -33,7 +38,12 @@
                 "MOVE_ANCIENT_POWER",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

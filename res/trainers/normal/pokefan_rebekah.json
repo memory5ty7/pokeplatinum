@@ -17,7 +17,13 @@
             "item": "ITEM_SITRUS_BERRY",
             "moves": null,
             "power": 0,
-            "ball_seal": 6
+            "ball_seal": 6,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

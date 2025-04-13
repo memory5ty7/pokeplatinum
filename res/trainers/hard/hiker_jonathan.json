@@ -9,12 +9,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_QUAGSIRE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 35,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_EARTH_POWER",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_STEALTH_ROCK"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NINJASK",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_LEECH_LIFE",
+                "MOVE_DIG",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SUDOWOODO",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_PASSHO_BERRY",
+            "moves": [
+                "MOVE_WOOD_HAMMER",
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGNEZONE",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_FLASH_CANNON",
+                "MOVE_DISCHARGE",
+                "MOVE_MAGNET_RISE",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

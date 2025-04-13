@@ -32,31 +32,51 @@ typedef struct TrainerHeader {
 } TrainerHeader;
 
 typedef struct TrainerMonBase {
-    u16 dv;
-    u16 level;
+    u8 nature;
+    u8 abilitySlot;
+    u8 status;
+    u8 ivs;
+    u8 preDamage;
+    u8 gender;
+    u8 level;
     u16 species;
     u16 cbSeal;
 } TrainerMonBase;
 
 typedef struct TrainerMonWithMoves {
-    u16 dv;
-    u16 level;
+    u8 nature;
+    u8 abilitySlot;
+    u8 status;
+    u8 ivs;
+    u8 preDamage;
+    u8 gender;
+    u8 level;
     u16 species;
     u16 moves[LEARNED_MOVES_MAX];
     u16 cbSeal;
 } TrainerMonWithMoves;
 
 typedef struct TrainerMonWithItem {
-    u16 dv;
-    u16 level;
+    u8 nature;
+    u8 abilitySlot;
+    u8 status;
+    u8 ivs;
+    u8 preDamage;
+    u8 gender;
+    u8 level;
     u16 species;
     u16 item;
     u16 cbSeal;
 } TrainerMonWithItem;
 
 typedef struct TrainerMonWithMovesAndItem {
-    u16 dv;
-    u16 level;
+    u8 nature;
+    u8 abilitySlot;
+    u8 status;
+    u8 ivs;
+    u8 preDamage;
+    u8 gender;
+    u8 level;
     u16 species;
     u16 item;
     u16 moves[LEARNED_MOVES_MAX];

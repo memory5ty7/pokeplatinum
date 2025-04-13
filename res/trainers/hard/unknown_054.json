@@ -1,19 +1,120 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_FISHERMAN",
+    "class": "TRAINER_CLASS_TRAINER_MIRA",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_PORYGON2",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_TRI_ATTACK",
+                "MOVE_THUNDERBOLT",
+                "MOVE_ICE_BEAM",
+                "MOVE_NASTY_PLOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLACEON",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_ICY_WIND",
+                "MOVE_MIRROR_COAT",
+                "MOVE_HELPING_HAND",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JYNX",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_PSYCHIC_GEM",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_ICE_BEAM",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 16,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AMPHAROS",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_CHOICE_SPECS",
+            "moves": [
+                "MOVE_THUNDERBOLT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EXEGGUTOR",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_WISE_GLASSES",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_PSYBEAM",
+                "MOVE_BULLDOZE"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGMAR",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_SOLAR_BEAM",
+                "MOVE_WILL_O_WISP",
+                "MOVE_THUNDERBOLT"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

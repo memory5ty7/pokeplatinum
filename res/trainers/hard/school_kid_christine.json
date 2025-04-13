@@ -18,7 +18,13 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 17,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_UNOWN",
@@ -28,7 +34,13 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 15,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -19,7 +19,12 @@
                 "MOVE_BULLDOZE",
                 "MOVE_STEALTH_ROCK"
             ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -30,19 +35,29 @@
             "moves": [
                 "MOVE_LEAF_BLADE"
             ],
-            "power": 238,
+            "abilitySlot": 1,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BRELOOM",
             "form": 0,
             "level": 29,
-            "item": "ITEM_LOADED_DICE",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_BULLET_SEED",
+                "MOVE_SEED_BOMB",
                 "MOVE_MACH_PUNCH"
             ],
-            "power": 328,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 2,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

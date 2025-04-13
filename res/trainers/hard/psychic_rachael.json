@@ -19,7 +19,12 @@
                 "MOVE_ENERGY_BALL",
                 "MOVE_SHADOW_BALL"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -28,12 +33,17 @@
             "level": 25,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_MAGICAL_LEAF",
                 "MOVE_PSYBEAM",
+                "MOVE_MAGICAL_LEAF",
                 "MOVE_WILL_O_WISP",
                 "MOVE_CALM_MIND"
             ],
-            "power": 235,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -47,7 +57,12 @@
                 "MOVE_DRILL_PECK",
                 "MOVE_STEEL_WING"
             ],
-            "power": 233,
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

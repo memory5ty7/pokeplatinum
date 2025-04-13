@@ -20,7 +20,12 @@
                 "MOVE_PSYBEAM",
                 "MOVE_GIGA_DRAIN"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -34,7 +39,12 @@
                 "MOVE_COUNTER",
                 "MOVE_MIRROR_COAT"
             ],
-            "power": 245,
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -48,7 +58,12 @@
                 "MOVE_LEAF_BLADE",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 236,
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

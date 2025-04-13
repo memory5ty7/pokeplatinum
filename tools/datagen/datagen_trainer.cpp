@@ -120,7 +120,12 @@ static void PackImmediately(const rapidjson::Value &member, TrainerMonBase &base
 static void ParseMovesAndPack(const rapidjson::Value &member, TrainerMonBase &base, unsigned char *bufp)
 {
     TrainerMonWithMoves withMoves = {};
-    withMoves.dv = base.dv;
+    withMoves.nature = base.nature;
+    withMoves.abilitySlot = base.abilitySlot;
+    withMoves.status = base.status;
+    withMoves.ivs = base.ivs;
+    withMoves.preDamage = base.preDamage;
+    withMoves.gender = base.gender;
     withMoves.level = base.level;
     withMoves.species = base.species;
     withMoves.cbSeal = base.cbSeal;
@@ -136,7 +141,12 @@ static void ParseMovesAndPack(const rapidjson::Value &member, TrainerMonBase &ba
 static void ParseItemAndPack(const rapidjson::Value &member, TrainerMonBase &base, unsigned char *bufp)
 {
     TrainerMonWithItem withItem = {};
-    withItem.dv = base.dv;
+    withItem.nature = base.nature;
+    withItem.abilitySlot = base.abilitySlot;
+    withItem.status = base.status;
+    withItem.ivs = base.ivs;
+    withItem.preDamage = base.preDamage;
+    withItem.gender = base.gender;
     withItem.level = base.level;
     withItem.species = base.species;
     withItem.cbSeal = base.cbSeal;
@@ -149,7 +159,12 @@ static void ParseItemAndPack(const rapidjson::Value &member, TrainerMonBase &bas
 static void ParseMovesAndItemAndPack(const rapidjson::Value &member, TrainerMonBase &base, unsigned char *bufp)
 {
     TrainerMonWithMovesAndItem withMovesAndItem = {};
-    withMovesAndItem.dv = base.dv;
+    withMovesAndItem.nature = base.nature;
+    withMovesAndItem.abilitySlot = base.abilitySlot;
+    withMovesAndItem.status = base.status;
+    withMovesAndItem.ivs = base.ivs;
+    withMovesAndItem.preDamage = base.preDamage;
+    withMovesAndItem.gender = base.gender;
     withMovesAndItem.level = base.level;
     withMovesAndItem.species = base.species;
     withMovesAndItem.cbSeal = base.cbSeal;
@@ -182,7 +197,12 @@ static void ParseAndPackParty(const rapidjson::Document &doc, TrainerDataType mo
 
     for (const auto &member : doc["party"].GetArray()) {
         TrainerMonBase base = {};
-        base.dv = member["power"].GetUint();
+        base.nature = member["nature"].GetUint();
+        base.abilitySlot = member["abilitySlot"].GetUint();
+        base.status = member["status"].GetUint();
+        base.ivs = member["ivs"].GetUint();
+        base.preDamage = member["preDamage"].GetUint();
+        base.gender = member["gender"].GetUint();
         base.level = member["level"].GetUint();
         base.species = LookupConst(member["species"].GetString(), Species);
         base.species |= (member["form"].GetUint() << TRAINER_MON_FORM_SHIFT);

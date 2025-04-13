@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_YOUNGSTER",
+    "class": "TRAINER_CLASS_NANDO",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -18,7 +18,12 @@
                 "MOVE_TOXIC",
                 "MOVE_SLEEP_POWDER"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_WILL_O_WISP",
                 "MOVE_CONFUSE_RAY"
             ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -46,7 +56,12 @@
                 "MOVE_LIGHT_SCREEN",
                 "MOVE_GROWTH"
             ],
-            "power": 241,
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -60,7 +75,12 @@
                 "MOVE_BUG_BITE",
                 "MOVE_BULLDOZE"
             ],
-            "power": 278,
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

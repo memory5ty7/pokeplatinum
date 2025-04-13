@@ -10,21 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_CRADILY",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_BULLDOZE",
+                "MOVE_ROCK_TOMB",
+                "MOVE_BRINE"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRONZOR",
+            "species": "SPECIES_ARMALDO",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_AQUA_JET",
+                "MOVE_X_SCISSOR",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

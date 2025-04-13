@@ -8,21 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_SWALOT",
             "form": 0,
-            "level": 16,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 30,
+            "item": "ITEM_AIR_BALLOON",
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_ICE_BEAM",
+                "MOVE_SHADOW_BALL",
+                "MOVE_TOXIC_SPIKES"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_COMBUSKEN",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 30,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_FIRE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_DETECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TANGELA",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_EVIOLITE",
+            "moves": [
+                "MOVE_ANCIENT_POWER",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

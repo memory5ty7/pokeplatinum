@@ -11,14 +11,19 @@
             "species": "SPECIES_YANMA",
             "form": 0,
             "level": 19,
-            "item": "ITEM_WIDE_LENS",
+            "item": "ITEM_SILVERPOWDER",
             "moves": [
                 "MOVE_U_TURN",
                 "MOVE_AIR_CUTTER",
                 "MOVE_ANCIENT_POWER",
                 "MOVE_HYPNOSIS"
             ],
-            "power": 236,
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -27,12 +32,17 @@
             "level": 19,
             "item": "ITEM_LIGHT_CLAY",
             "moves": [
-                "MOVE_VOLT_SWITCH",
-                "MOVE_MIRROR_SHOT",
+                "MOVE_SHOCK_WAVE",
+                "MOVE_HIDDEN_POWER",
                 "MOVE_LIGHT_SCREEN",
                 "MOVE_REFLECT"
             ],
-            "power": 235,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 6,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -41,12 +51,17 @@
             "level": 19,
             "item": "ITEM_ASSAULT_VEST",
             "moves": [
-                "MOVE_VOLT_SWITCH",
+                "MOVE_POWER_GEM",
                 "MOVE_EARTH_POWER",
-                "MOVE_SELFDESTRUCT",
-                "MOVE_POWER_GEM"
-                ],
-            "power": 282,
+                "MOVE_SPARK",
+                "MOVE_SELFDESTRUCT"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

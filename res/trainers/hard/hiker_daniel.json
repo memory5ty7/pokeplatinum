@@ -9,44 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DUNSPARCE",
+            "species": "SPECIES_FURRET",
             "form": 0,
             "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_HEADBUTT",
-                "MOVE_ROLLOUT",
-                "MOVE_GLARE",
-                "MOVE_CURSE"
-            ],
-            "power": 227,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SANDSLASH",
-            "form": 0,
-            "level": 22,
-            "item": "ITEM_SOFT_SAND",
-            "moves": [
-                "MOVE_BULLDOZE",
-                "MOVE_FURY_CUTTER",
-                "MOVE_ROCK_TOMB",
-                "MOVE_ROCK_SMASH"
-            ],
-            "power": 228,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_BELDUM",
-            "form": 0,
-            "level": 22,
-            "item": "ITEM_OCCA_BERRY",
-            "moves": [
-                "MOVE_IRON_HEAD",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SUPER_FANG",
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_AGILITY"
+                "MOVE_ENDEAVOR"
             ],
-            "power": 226,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CROAGUNK",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_EVIOLITE",
+            "moves": [
+                "MOVE_LOW_SWEEP",
+                "MOVE_ACID_SPRAY",
+                "MOVE_SUPER_FANG",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SEALEO",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_BRINE",
+                "MOVE_AURORA_BEAM",
+                "MOVE_SUPER_FANG",
+                "MOVE_ATTRACT"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 1,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

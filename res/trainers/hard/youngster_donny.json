@@ -8,30 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GASTLY",
+            "species": "SPECIES_BANETTE",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_NIGHT_SHADE",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_CURSE"
+                "MOVE_WILL_O_WISP",
+                "MOVE_SHADOW_CLAW",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_SKILL_SWAP"
             ],
-            "power": 10,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFLOON",
+            "species": "SPECIES_ROTOM",
             "form": 0,
-            "level": 22,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_SPIT_UP",
-                "MOVE_SWALLOW",
-                "MOVE_STOCKPILE"
+                "MOVE_WILL_O_WISP",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_DARK_PULSE",
+                "MOVE_HEX"
             ],
-            "power": 10,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

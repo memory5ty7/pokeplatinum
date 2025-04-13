@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_CHLOROPHYLL",
         "ABILITY_SUPERSWEET_SYRUP",
-        "ABILITY_NONE"
+        "ABILITY_GOOEY"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",

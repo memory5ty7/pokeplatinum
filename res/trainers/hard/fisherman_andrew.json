@@ -18,7 +18,12 @@
                 "MOVE_ICY_WIND",
                 "MOVE_SIGNAL_BEAM"
             ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -30,9 +35,14 @@
                 "MOVE_BITE",
                 "MOVE_ICE_FANG",
                 "MOVE_IRON_HEAD",
-                "MOVE_BULLDOZE"
+                "MOVE_DRAGON_DANCE"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -44,9 +54,14 @@
                 "MOVE_THUNDERBOLT",
                 "MOVE_FLAMETHROWER",
                 "MOVE_DARK_PULSE",
-                "MOVE_DRAGON_DANCE"
+                "MOVE_DRAGON_PULSE"
             ],
-            "power": 235,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -55,12 +70,17 @@
             "level": 26,
             "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_TOXIC",
+                "MOVE_DIVE",
                 "MOVE_BULLDOZE",
                 "MOVE_PROTECT",
-                "MOVE_DIVE"
+                "MOVE_TOXIC"
             ],
-            "power": 247,
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

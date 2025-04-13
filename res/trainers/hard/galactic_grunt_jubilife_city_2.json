@@ -18,7 +18,12 @@
                 "MOVE_THUNDERBOLT",
                 "MOVE_PROTECT"
             ],
-            "power": 235,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_GIGA_DRAIN",
                 "MOVE_ICY_WIND"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

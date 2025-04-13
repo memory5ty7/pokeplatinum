@@ -16,7 +16,13 @@
                 "MOVE_TACKLE",
                 "MOVE_WITHDRAW"
             ],
-            "power": 231
+            "abilitySlot": 0,
+            "nature": 6,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -8,30 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LOMBRE",
+            "species": "SPECIES_PSYDUCK",
             "form": 0,
             "level": 14,
-            "item": "ITEM_ORAN_BERRY",
+            "item": "ITEM_CUSTAP_BERRY",
             "moves": [
-                "MOVE_FAKE_OUT",
-                "MOVE_BUBBLE_BEAM",
-                "MOVE_MEGA_DRAIN",
-                "MOVE_ZEN_HEADBUTT"
+                "MOVE_WATER_PULSE",
+                "MOVE_PSYBEAM",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
             ],
-            "power": 241
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_EKANS",
             "form": 0,
-            "level": 14,
+            "level": 13,
             "item": "ITEM_SHUCA_BERRY",
             "moves": [
-                "MOVE_BITE",
-                "MOVE_BULLDOZE",
-                "MOVE_GLARE",
-                "MOVE_POISON_TAIL"
+                "MOVE_POISON_FANG",
+                "MOVE_STOCKPILE",
+                "MOVE_SPIT_UP",
+                "MOVE_SWALLOW"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SPHEAL",
+            "form": 0,
+            "level": 13,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_ICE_BALL",
+                "MOVE_ROLLOUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

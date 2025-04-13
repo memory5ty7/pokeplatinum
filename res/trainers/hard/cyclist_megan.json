@@ -8,12 +8,56 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_YANMEGA",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SWORDS_DANCE",
+                "MOVE_BATON_PASS",
+                "MOVE_BUG_BITE",
+                "MOVE_DUAL_WINGBEAT"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HERACROSS",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_BRICK_BREAK",
+                "MOVE_AERIAL_ACE",
+                "MOVE_BUG_BITE"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KABUTOPS",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_CHOICE_SCARF",
+            "moves": [
+                "MOVE_ROCK_SLIDE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

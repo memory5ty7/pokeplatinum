@@ -16,7 +16,12 @@
             "moves": [
                 "MOVE_ERUPTION"
             ],
-            "power": 28,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -28,7 +33,12 @@
                 "MOVE_FOLLOW_ME",
                 "MOVE_WEATHER_BALL"
             ],
-            "power": 245,
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -37,12 +47,17 @@
             "level": 28,
             "item": "ITEM_SOFT_SAND",
             "moves": [
-                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_DIG",
                 "MOVE_NIGHT_SLASH",
                 "MOVE_ROCK_SLIDE",
                 "MOVE_HELPING_HAND"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -56,7 +71,12 @@
                 "MOVE_SLUDGE_BOMB",
                 "MOVE_BIND"
             ],
-            "power": 239,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

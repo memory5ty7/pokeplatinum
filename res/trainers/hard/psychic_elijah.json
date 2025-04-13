@@ -19,7 +19,12 @@
                 "MOVE_U_TURN",
                 "MOVE_ICY_WIND"
             ],
-            "power": 242,
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -33,7 +38,12 @@
                 "MOVE_WATER_PULSE",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 242,
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

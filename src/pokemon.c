@@ -5118,14 +5118,9 @@ u8 Pokemon_LoadAbilityValue(u16 species, u8 form, u8 abilitySlot)
     u8 ability2 = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_ABILITY_2);
     u8 hiddenAbility = SpeciesData_GetFormValue(trueSpecies, form, SPECIES_DATA_HIDDEN_ABILITY);
 
-    if ((abilitySlot == 100) && (hiddenAbility != ABILITY_NONE))
-    {
-        return hiddenAbility;
-    }
+    u8 abilities[] = {ability1, ability2, hiddenAbility};
 
-    return ((ability2 != 0) && (abilitySlot & 1))
-            ? ability2
-            : ability1;
+    return abilities[abilitySlot];
 }
 
 BOOL isNFE(u16 monSpecies)

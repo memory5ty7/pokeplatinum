@@ -10,59 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_INFERNAPE",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 45,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_ENDEAVOR",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_FAKE_OUT",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_DRAIN_PUNCH"
             ],
-            "power": 50,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_SWELLOW",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 45,
+            "item": "ITEM_FLAME_ORB",
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_PURSUIT",
-                "MOVE_GROWL"
+                "MOVE_FACADE",
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_U_TURN",
+                "MOVE_PROTECT"
             ],
-            "power": 50,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_VENUSAUR",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 45,
+            "item": "ITEM_COBA_BERRY",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_LEECH_SEED",
-                "MOVE_STUN_SPORE"
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_PETAL_DANCE",
+                "MOVE_EARTH_POWER",
+                "MOVE_LEECH_SEED"
             ],
-            "power": 50,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MONFERNO",
-            "form": 0,
-            "level": 27,
-            "item": null,
-            "moves": [
-                "MOVE_FLAME_WHEEL",
-                "MOVE_MACH_PUNCH",
-                "MOVE_FURY_SWIPES",
-                "MOVE_LEER"
-            ],
-            "power": 50,
+            "abilitySlot": 2,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

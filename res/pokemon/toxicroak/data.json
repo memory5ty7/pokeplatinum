@@ -34,7 +34,7 @@
         "EGG_GROUP_HUMAN_LIKE"
     ],
     "abilities": [
-        "ABILITY_NONE",
+        "ABILITY_POISON_TOUCH",
         "ABILITY_RATTLED",
         "ABILITY_DRY_SKIN"
     ],

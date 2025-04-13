@@ -8,12 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GIBLE",
+            "species": "SPECIES_SOLROCK",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_FLYING_GEM",
+            "moves": [
+                "MOVE_ACROBATICS",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SAND_TOMB",
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUNATONE",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_HYPNOSIS",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_ICY_WIND",
+                "MOVE_STORED_POWER"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

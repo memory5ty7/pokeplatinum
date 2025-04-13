@@ -21,7 +21,13 @@
                 "MOVE_PROTECT"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_NINETALES",
@@ -35,7 +41,13 @@
                 "MOVE_EXTRASENSORY"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MAGNEZONE",
@@ -49,7 +61,13 @@
                 "MOVE_HYPER_BEAM"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

@@ -8,21 +8,79 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_MAROWAK",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_THICK_CLUB",
+            "moves": [
+                "MOVE_BONEMERANG",
+                "MOVE_SCORCHING_SANDS",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ROCK_TOMB"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_SEAKING",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_SCALD",
+                "MOVE_POISON_JAB",
+                "MOVE_WHIRLPOOL"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRELOOM",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_MIRACLE_SEED",
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_BULLET_SEED",
+                "MOVE_ROCK_TOMB",
+                "MOVE_SPORE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DODRIO",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_SOFT_SAND",
+            "moves": [
+                "MOVE_BRAVE_BIRD",
+                "MOVE_DRILL_RUN",
+                "MOVE_TAKE_DOWN",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

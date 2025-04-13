@@ -21,7 +21,13 @@
                 "MOVE_MAGNET_RISE"
             ],
             "power": 50,
-            "ball_seal": 11
+            "ball_seal": 11,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

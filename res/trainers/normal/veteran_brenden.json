@@ -21,7 +21,13 @@
                 "MOVE_TOXIC_SPIKES"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_GYARADOS",
@@ -35,7 +41,13 @@
                 "MOVE_DRAGON_PULSE"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_HIPPOWDON",
@@ -49,7 +61,13 @@
                 "MOVE_REST"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

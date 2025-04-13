@@ -16,7 +16,13 @@
             "item": null,
             "moves": null,
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_KINGDRA",
@@ -25,7 +31,13 @@
             "item": null,
             "moves": null,
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

@@ -10,30 +10,98 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_FORRETRESS",
             "form": 0,
-            "level": 21,
-            "item": "ITEM_NONE",
+            "level": 32,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_GIGA_DRAIN",
-                "MOVE_WING_ATTACK",
-                "MOVE_BITE"
+                "MOVE_PIN_MISSILE",
+                "MOVE_ROCK_BLAST",
+                "MOVE_SPIKES",
+                "MOVE_STEALTH_ROCK"
             ],
-            "power": 100,
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELECTRODE",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_MAGNET",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_MAGNET_RISE"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGNETON",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_FLASH_CANNON",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MUK",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_CUSTAP_BERRY",
+            "moves": [
+                "MOVE_POISON_JAB",
+                "MOVE_BULLDOZE",
+                "MOVE_TOXIC",
+                "MOVE_EXPLOSION"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SKUNTANK",
             "form": 0,
-            "level": 23,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 32,
+            "item": "ITEM_AIR_BALLOON",
             "moves": [
-                "MOVE_NIGHT_SLASH",
-                "MOVE_POISON_GAS",
-                "MOVE_SCREECH",
-                "MOVE_SMOKE_SCREEN"
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_DARK_PULSE",
+                "MOVE_KNOCK_OFF",
+                "MOVE_FIRE_SPIN"
             ],
-            "power": 100,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

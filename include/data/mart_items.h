@@ -19,8 +19,11 @@ const PokeMartCommonItem PokeMartCommonItems[] = {
 };
 
 const u16 JubilifeMartSpecialties[] = {
-    ITEM_AIR_MAIL,
-    ITEM_HEAL_BALL,
+    ITEM_PECHA_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_ASPEAR_BERRY,
+    ITEM_PERSIM_BERRY,
     0xffff
 };
 
@@ -197,7 +200,13 @@ const u16 VeilstoneDeptStoreStock_B1F_DOWN_LEFT[] = {
     0xffff
 };
 
+const u16 SandgemTownSpecialties[] = {
+    ITEM_ORAN_BERRY,
+    0xffff
+};
+
 const u16 *PokeMartSpecialties[] = {
+    SandgemTownSpecialties,
     JubilifeMartSpecialties,
     OreburghMartSpecialties,
     FloaromaMartSpecialties,

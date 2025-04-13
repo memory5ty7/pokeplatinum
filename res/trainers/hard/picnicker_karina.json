@@ -10,15 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIPLUP",
+            "species": "SPECIES_WORMADAM",
             "form": 0,
-            "level": 14,
-            "item": null,
+            "level": 22,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_BUBBLE",
-                "MOVE_PECK"
+                "MOVE_BUG_BITE",
+                "MOVE_SEED_BOMB",
+                "MOVE_SWAGGER",
+                "MOVE_INFESTATION"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WORMADAM",
+            "form": 1,
+            "level": 22,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_DIG",
+                "MOVE_SWAGGER",
+                "MOVE_INFESTATION"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WORMADAM",
+            "form": 2,
+            "level": 22,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_IRON_HEAD",
+                "MOVE_SWAGGER",
+                "MOVE_INFESTATION"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

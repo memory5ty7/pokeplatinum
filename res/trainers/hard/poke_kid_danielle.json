@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_DELIBIRD",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 41,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_BLIZZARD",
+                "MOVE_PLUCK",
+                "MOVE_TAILWIND",
+                "MOVE_SPIKES"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GOLDUCK",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_ASSAULT_VEST",
+            "moves": [
+                "MOVE_AQUA_TAIL",
+                "MOVE_AQUA_JET",
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_PSYCHIC"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CAMERUPT",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_HEAT_WAVE",
+                "MOVE_EARTH_POWER",
+                "MOVE_SOLAR_BEAM",
+                "MOVE_FLASH_CANNON"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -6,33 +6,82 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_DAMAGE_PRIORITY"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_BANETTE",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 30,
+            "level": 47,
+            "item": "ITEM_COLBUR_BERRY",
+            "moves": [
+                "MOVE_SHADOW_BALL",
+                "MOVE_WILL_O_WISP",
+                "MOVE_DESTINY_BOND",
+                "MOVE_HYPNOSIS"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_FEAROW",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 30,
+            "level": 46,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_DRILL_PECK",
+                "MOVE_DRILL_RUN",
+                "MOVE_ROOST"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_AMBIPOM",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 30,
+            "level": 46,
+            "item": "ITEM_SILK_SCARF",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_GIGA_IMPACT",
+                "MOVE_KNOCK_OFF",
+                "MOVE_U_TURN"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUDICOLO",
+            "form": 0,
+            "level": 48,
+            "item": "ITEM_SHELL_BELL",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_ENERGY_BALL",
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_ICE_BEAM"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

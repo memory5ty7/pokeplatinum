@@ -11,17 +11,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GASTLY",
+            "species": "SPECIES_SOLROCK",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_NIGHT_SHADE",
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_HYPNOSIS"
+                "MOVE_EXPLOSION",
+                "MOVE_EARTHQUAKE",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_STEALTH_ROCK"
             ],
-            "power": 10,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHIFTRY",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_CUSTAP_BERRY",
+            "moves": [
+                "MOVE_EXPLOSION",
+                "MOVE_ENERGY_BALL",
+                "MOVE_DARK_PULSE",
+                "MOVE_AERIAL_ACE"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

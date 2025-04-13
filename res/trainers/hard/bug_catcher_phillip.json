@@ -17,7 +17,12 @@
                 "MOVE_BUG_BITE",
                 "MOVE_AERIAL_ACE"
             ],
-            "power": 239,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -30,7 +35,12 @@
                 "MOVE_AQUA_JET",
                 "MOVE_BITE"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

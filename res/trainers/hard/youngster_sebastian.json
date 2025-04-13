@@ -17,7 +17,13 @@
                 "MOVE_RAIN_DANCE",
                 "MOVE_SUNNY_DAY"
             ],
-            "power": 248
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CARVANHA",
@@ -27,7 +33,13 @@
             "moves": [
                 "MOVE_FLIP_TURN"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SKIPLOOM",
@@ -37,7 +49,13 @@
             "moves": [
                 "MOVE_U_TURN"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -9,21 +9,57 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_HITMONTOP",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 20,
+            "level": 33,
+            "item": "ITEM_PAYAPA_BERRY",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_MACH_PUNCH",
+                "MOVE_BULK_UP"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_HITMONLEE",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 20,
+            "level": 33,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_LOW_KICK",
+                "MOVE_BLAZE_KICK",
+                "MOVE_BULLDOZE",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HITMONCHAN",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_SALAC_BERRY",
+            "moves": [
+                "MOVE_CLOSE_COMBAT"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 25,
             "ball_seal": 0
         }
     ]

@@ -1,6 +1,6 @@
 {
     "name": "Angelica",
-    "class": "TRAINER_CLASS_WAITRESS",
+    "class": "TRAINER_CLASS_NANDO",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_LOPUNNY",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 40,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_BOUNCE",
+                "MOVE_BLAZE_KICK",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ROSERADE",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_SHADOW_BALL",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ALTARIA",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_LAVA_PLUME",
+                "MOVE_DRAGON_PULSE",
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_SOLAR_BEAM"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -9,12 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_ABOMASNOW",
             "form": 0,
-            "level": 26,
-            "item": null,
-            "moves": null,
-            "power": 30,
+            "level": 46,
+            "item": "ITEM_NEVERMELTICE",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_ENERGY_BALL",
+                "MOVE_ICE_SHARD",
+                "MOVE_LEECH_SEED"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_POLIWRATH",
+            "form": 0,
+            "level": 46,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_POISON_JAB",
+                "MOVE_LIQUIDATION",
+                "MOVE_ICE_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DODRIO",
+            "form": 0,
+            "level": 46,
+            "item": "ITEM_SHELL_BELL",
+            "moves": [
+                "MOVE_GIGA_IMPACT",
+                "MOVE_BRAVE_BIRD",
+                "MOVE_KNOCK_OFF",
+                "MOVE_ROOST"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

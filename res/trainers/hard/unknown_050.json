@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_POKEFAN_MALE",
+    "class": "TRAINER_CLASS_PLAYER_MALE",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,117 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_CROBAT",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_CROSS_POISON",
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_HYPNOSIS",
+                "MOVE_TAILWIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GALLADE",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_CROSS_CHOP",
+                "MOVE_PSYCHO_CUT",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_STONE_EDGE"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ROTOM",
+            "form": 5,
+            "level": 36,
+            "item": "ITEM_CHESTO_BERRY",
+            "moves": [
+                "MOVE_ENERGY_BALL",
+                "MOVE_THUNDERBOLT",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_REST"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HOUNDOOM",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_DARK_PULSE",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_NASTY_PLOT"
+            ],
+            "abilitySlot": 1,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WORMADAM",
+            "form": 1,
+            "level": 36,
+            "item": "ITEM_COBA_BERRY",
+            "moves": [
+                "MOVE_FISSURE",
+                "MOVE_BUG_BUZZ",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SUBSTITUTE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EMPOLEON",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_FLASH_CANNON",
+                "MOVE_GRASS_KNOT",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

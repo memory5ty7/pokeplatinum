@@ -16,7 +16,13 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 3,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_MISDREAVUS",
@@ -26,7 +32,13 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 16,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOP",
@@ -36,7 +48,13 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 19,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

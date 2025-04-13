@@ -10,12 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_AIPOM",
+            "species": "SPECIES_SCEPTILE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_LEAF_BLADE",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_X_SCISSOR",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DRIFBLIM",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_OMINOUS_WIND",
+                "MOVE_AIR_SLASH",
+                "MOVE_THUNDERBOLT",
+                "MOVE_EXPLOSION"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CLAYDOL",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_WEAKNESS_POLICY",
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_EARTH_POWER",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_EXPLOSION"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -21,7 +21,13 @@
                 "MOVE_TOXIC"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_RAPIDASH",
@@ -35,7 +41,13 @@
                 "MOVE_FIRE_BLAST"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_FLOATZEL",
@@ -49,7 +61,13 @@
                 "MOVE_QUICK_ATTACK"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

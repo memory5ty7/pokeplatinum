@@ -10,28 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_SHIFTRY",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 33,
+            "item": "ITEM_TANGA_BERRY",
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_SWIFT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_NIGHT_SLASH",
+                "MOVE_LEAF_BLADE",
+                "MOVE_EXTRASENSORY",
+                "MOVE_ROCK_TOMB"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_TROPIUS",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 33,
+            "item": "ITEM_LIFE_ORB",
             "moves": [
-                "MOVE_SPARK",
-                "MOVE_BITE"
+                "MOVE_BODY_SLAM",
+                "MOVE_AIR_SLASH",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ROCK_SMASH"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 19,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHERRIM",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SOLAR_BEAM",
+                "MOVE_STUN_SPORE",
+                "MOVE_PROTECT",
+                "MOVE_WEATHER_BALL"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

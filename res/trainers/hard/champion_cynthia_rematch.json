@@ -26,7 +26,13 @@
                 "MOVE_OMINOUS_WIND"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_ROSERADE",
@@ -40,7 +46,13 @@
                 "MOVE_EXTRASENSORY"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_TOGEKISS",
@@ -54,7 +66,13 @@
                 "MOVE_PSYCHIC"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_LUCARIO",
@@ -68,7 +86,13 @@
                 "MOVE_EARTHQUAKE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MILOTIC",
@@ -82,7 +106,13 @@
                 "MOVE_AQUA_RING"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_GARCHOMP",
@@ -96,7 +126,13 @@
                 "MOVE_GIGA_IMPACT"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

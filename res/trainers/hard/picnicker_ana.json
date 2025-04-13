@@ -10,12 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HOOTHOOT",
+            "species": "SPECIES_TORKOAL",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_STEALTH_ROCK",
+                "MOVE_CURSE",
+                "MOVE_FLAME_WHEEL",
+                "MOVE_BODY_SLAM"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGCARGO",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_EARTH_POWER",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_YAWN"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

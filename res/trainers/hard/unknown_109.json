@@ -1,6 +1,6 @@
 {
     "name": "Angelica",
-    "class": "TRAINER_CLASS_BATTLE_GIRL",
+    "class": "TRAINER_CLASS_PAUL",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_MAGMORTAR",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 40,
+            "item": "ITEM_CHARCOAL",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_THUNDERBOLT",
+                "MOVE_AURA_SPHERE",
+                "MOVE_NASTY_PLOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DRAPION",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_KNOCK_OFF",
+                "MOVE_POISON_JAB",
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_TOXIC_SPIKES"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_URSARING",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_FLAME_ORB",
+            "moves": [
+                "MOVE_FACADE",
+                "MOVE_CRUNCH",
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

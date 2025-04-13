@@ -10,31 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HAUNTER",
+            "species": "SPECIES_FROSLASS",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_LUM_BERRY",
             "moves": [
-                "MOVE_NIGHT_SHADE",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_CURSE"
+                "MOVE_ICY_WIND",
+                "MOVE_SHADOW_BALL",
+                "MOVE_PSYCHIC",
+                "MOVE_WATER_PULSE"
             ],
-            "power": 60,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MISDREAVUS",
+            "species": "SPECIES_GLALIE",
             "form": 0,
-            "level": 24,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_OCCA_BERRY",
             "moves": [
-                "MOVE_PSYBEAM",
-                "MOVE_PAIN_SPLIT",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_SPITE"
+                "MOVE_BLIZZARD",
+                "MOVE_CRUNCH",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_SWAGGER"
             ],
-            "power": 60,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

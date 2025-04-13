@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_SOLID_ROCK",
         "ABILITY_MAGMA_ARMOR",
-        "ABILITY_NONE"
+        "ABILITY_WEAK_ARMOR"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",

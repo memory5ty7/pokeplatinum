@@ -21,7 +21,13 @@
                 "MOVE_STEALTH_ROCK"
             ],
             "power": 248,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_KADABRA",
@@ -32,7 +38,13 @@
                 "MOVE_CONFUSION"
             ],
             "power": 236,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

@@ -9,59 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_IVYSAUR",
+            "species": "SPECIES_LUVDISC",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_BLACK_SLUDGE",
+            "level": 24,
+            "item": "ITEM_IAPAPA_BERRY",
             "moves": [
-                "MOVE_LEECH_SEED",
-                "MOVE_MEGA_DRAIN",
-                "MOVE_SLUDGE",
-                "MOVE_SLEEP_POWDER"
+                "MOVE_WATER_PULSE",
+                "MOVE_SECRET_POWER",
+                "MOVE_ICY_WIND",
+                "MOVE_SOAK"
             ],
-            "power": 245,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BAYLEEF",
+            "species": "SPECIES_CHINCHOU",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_LIGHT_CLAY",
+            "level": 24,
+            "item": "ITEM_EVIOLITE",
             "moves": [
-                "MOVE_REFLECT",
-                "MOVE_LIGHT_SCREEN",
-                "MOVE_MEGA_DRAIN",
-                "MOVE_ANCIENT_POWER"
+                "MOVE_PARABOLIC_CHARGE",
+                "MOVE_ICY_WIND",
+                "MOVE_CHARGE",
+                "MOVE_SOAK"
             ],
-            "power": 245,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GROVYLE",
+            "species": "SPECIES_FLAAFFY",
             "form": 0,
             "level": 22,
-            "item": "ITEM_RAWST_BERRY",
+            "item": "ITEM_MAGNET",
             "moves": [
-                "MOVE_ROCK_TOMB",
-                "MOVE_MEGA_DRAIN",
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_CHARGE"
             ],
-            "power": 228,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GROTLE",
-            "form": 0,
-            "level": 22,
-            "item": "ITEM_LEFTOVERS",
-            "moves": [
-                "MOVE_LEECH_SEED",
-                "MOVE_PROTECT",
-                "MOVE_RAZOR_LEAF",
-                "MOVE_BULLDOZE"
-            ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 17,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

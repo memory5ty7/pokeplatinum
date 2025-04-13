@@ -18,7 +18,12 @@
                 "MOVE_WING_ATTACK",
                 "MOVE_ROOST"
             ],
-            "power": 226,
+            "abilitySlot": 0,
+            "nature": 1,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -31,7 +36,12 @@
                 "MOVE_FACADE",
                 "MOVE_WING_ATTACK"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 24,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -44,7 +54,12 @@
                 "MOVE_HEAT_WAVE",
                 "MOVE_UPROAR"
             ],
-            "power": 244,
+            "abilitySlot": 0,
+            "nature": 19,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -10,19 +10,76 @@
         {
             "species": "SPECIES_ELEKID",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 55,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_FOCUS_BLAST"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HAPPINY",
+            "species": "SPECIES_MAGBY",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 55,
+            "item": "ITEM_CHOICE_SCARF",
+            "moves": [
+                "MOVE_FIRE_BLAST",
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_POISON_JAB"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SMOOCHUM",
+            "form": 0,
+            "level": 55,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_PSYCHIC",
+                "MOVE_SHADOW_BALL",
+                "MOVE_CALM_MIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WYNAUT",
+            "form": 0,
+            "level": 55,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_MIRROR_COAT",
+                "MOVE_COUNTER",
+                "MOVE_PERISH_SONG",
+                "MOVE_DESTINY_BOND"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -10,16 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_CROBAT",
             "form": 0,
-            "level": 22,
-            "item": null,
+            "level": 32,
+            "item": "ITEM_FLYING_GEM",
             "moves": [
-                "MOVE_SPARK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_CHARM"
+                "MOVE_ACROBATICS",
+                "MOVE_POISON_FANG",
+                "MOVE_LEECH_LIFE",
+                "MOVE_U_TURN"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_FEAROW",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_PLUCK",
+                "MOVE_ASSURANCE",
+                "MOVE_DRILL_RUN",
+                "MOVE_U_TURN"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHATOT",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_WACAN_BERRY",
+            "moves": [
+                "MOVE_OMINOUS_WIND",
+                "MOVE_HURRICANE",
+                "MOVE_TORMENT",
+                "MOVE_U_TURN"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

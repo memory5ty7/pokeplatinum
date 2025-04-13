@@ -74,6 +74,10 @@
             [
                 55,
                 "MOVE_WEATHER_BALL"
+            ],
+            [
+                60,
+                "MOVE_BOOMBURST"
             ]
         ],
         "by_tm": [],

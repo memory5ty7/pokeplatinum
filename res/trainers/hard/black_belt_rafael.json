@@ -9,28 +9,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_MEDICHAM",
             "form": 0,
-            "level": 26,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_TWISTEDSPOON",
             "moves": [
-                "MOVE_SWAGGER",
-                "MOVE_REVENGE",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FAKE_OUT",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_ICE_PUNCH"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_WEAVILE",
             "form": 0,
-            "level": 26,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_NEVERMELTICE",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
+                "MOVE_FAKE_OUT",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_LOW_SWEEP",
+                "MOVE_TRIPLE_AXEL"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_INFERNAPE",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_DRAIN_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RAMPARDOS",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_ZOOM_LENS",
+            "moves": [
+                "MOVE_STONE_EDGE",
+                "MOVE_SUPERPOWER",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

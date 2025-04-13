@@ -8,31 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ANORITH",
+            "species": "SPECIES_KABUTO",
             "form": 0,
-            "level": 15,
-            "item": "ITEM_PASSHO_BERRY",
+            "level": 14,
+            "item": "ITEM_MIRACLE_SEED",
             "moves": [
                 "MOVE_ROCK_TOMB",
-                "MOVE_KNOCK_OFF",
-                "MOVE_AERIAL_ACE",
-                "MOVE_ANCIENT_POWER"
+                "MOVE_RAZOR_SHELL",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_PROTECT"
             ],
-            "power": 278,
+            "abilitySlot": 1,
+            "nature": 24,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_KABUTO",
+            "species": "SPECIES_OMANYTE",
             "form": 0,
-            "level": 15,
+            "level": 14,
             "item": "ITEM_RINDO_BERRY",
             "moves": [
-                "MOVE_ROCK_TOMB",
                 "MOVE_BUBBLE_BEAM",
-                "MOVE_AERIAL_ACE",
-                "MOVE_KNOCK_OFF"
+                "MOVE_ROCK_TOMB",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_MUD_SHOT"
             ],
-            "power": 289,
+            "abilitySlot": 0,
+            "nature": 24,
+            "status": 0,
+            "gender": 3,
+            "ivs": 15,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

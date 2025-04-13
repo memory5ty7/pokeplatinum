@@ -5,24 +5,82 @@
     "ai_flags": [
         "AI_FLAG_BASIC"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_MIME_JR",
+            "species": "SPECIES_MR_MIME",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_REFLECT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_PSYCHIC",
+                "MOVE_FOCUS_BLAST"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_CHATOT",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_HEAT_WAVE",
+                "MOVE_U_TURN",
+                "MOVE_BRAVE_BIRD",
+                "MOVE_UPROAR"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHIMECHO",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_ENERGY_BALL",
+                "MOVE_SHADOW_BALL",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KRICKETUNE",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_BUG_GEM",
+            "moves": [
+                "MOVE_FIRST_IMPRESSION",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_X_SCISSOR",
+                "MOVE_BRICK_BREAK"
+            ],
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

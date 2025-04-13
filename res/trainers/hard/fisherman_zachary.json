@@ -11,34 +11,48 @@
             "species": "SPECIES_LUMINEON",
             "form": 0,
             "level": 25,
-            "item": "ITEM_CHOICE_SCARF",
+            "item": "ITEM_CHOICE_BAND",
             "moves": [
                 "MOVE_U_TURN"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLOATZEL",
+            "species": "SPECIES_SEADRA",
             "form": 0,
             "level": 25,
             "item": "ITEM_CHOICE_SCARF",
             "moves": [
                 "MOVE_FLIP_TURN"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_LUXRAY",
             "form": 0,
-            "level": 14,
-            "item": "ITEM_CHOICE_SCARF",
+            "level": 25,
+            "item": "ITEM_CHOICE_SPECS",
             "moves": [
-                "MOVE_ICE_FANG",
                 "MOVE_VOLT_SWITCH"
             ],
-            "power": 239,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

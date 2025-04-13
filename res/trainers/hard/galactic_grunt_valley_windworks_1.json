@@ -18,7 +18,12 @@
                 "MOVE_AQUA_TAIL",
                 "MOVE_TOXIC"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_ROCK_SMASH",
                 "MOVE_PURSUIT"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

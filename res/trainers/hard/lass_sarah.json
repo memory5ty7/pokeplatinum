@@ -9,35 +9,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_LUVDISC",
             "form": 0,
-            "level": 8,
-            "item": "ITEM_FOCUS_SASH",
+            "level": 14,
+            "item": "ITEM_DAMP_ROCK",
             "moves": [
-                "MOVE_SUNNY_DAY",
-                "MOVE_SOLAR_BEAM"
+                "MOVE_WATER_PULSE",
+                "MOVE_SECRET_POWER",
+                "MOVE_ATTRACT",
+                "MOVE_RAIN_DANCE"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 1,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_JIGGLYPUFF",
             "form": 0,
-            "level": 9,
-            "item": "ITEM_CHARCOAL",
+            "level": 14,
+            "item": "ITEM_CHESTO_BERRY",
             "moves": [
-                "MOVE_WEATHER_BALL"
+                "MOVE_BODY_SLAM",
+                "MOVE_WATER_PULSE",
+                "MOVE_SLEEP_TALK",
+                "MOVE_REST"
             ],
-            "power": 240
+            "abilitySlot": 1,
+            "nature": 7,
+            "status": 0,
+            "gender": 1,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_FINNEON",
             "form": 0,
-            "level": 9,
-            "item": "ITEM_WISE_GLASSES",
+            "level": 14,
+            "item": "ITEM_BINDING_BAND",
             "moves": [
-                "MOVE_SOLAR_BEAM"
+                "MOVE_WATER_PULSE",
+                "MOVE_U_TURN",
+                "MOVE_WHIRLPOOL",
+                "MOVE_ATTRACT"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

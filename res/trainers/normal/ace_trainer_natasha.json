@@ -21,7 +21,13 @@
                 "MOVE_SHADOW_BALL"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_GARDEVOIR",
@@ -35,7 +41,13 @@
                 "MOVE_FOCUS_BLAST"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MEDICHAM",
@@ -49,7 +61,13 @@
                 "MOVE_ROCK_SLIDE"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

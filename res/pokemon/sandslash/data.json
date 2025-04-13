@@ -76,6 +76,10 @@
                 "MOVE_ROLLOUT"
             ],
             [
+                24,
+                "MOVE_SPIKY_SHIELD"
+            ],
+            [
                 30,
                 "MOVE_DIG"
             ],
@@ -102,6 +106,10 @@
             [
                 48,
                 "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_WIDE_GUARD"
             ]
         ],
         "by_tm": [],

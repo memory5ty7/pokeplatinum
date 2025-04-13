@@ -15,9 +15,14 @@
             "moves": [
                 "MOVE_BUG_BITE",
                 "MOVE_ROCK_SMASH",
-                "MOVE_ENDEAVOR"
-                ],
-            "power": 238,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -27,11 +32,16 @@
             "item": "ITEM_MAGNET",
             "moves": [
                 "MOVE_VOLT_SWITCH",
-                "MOVE_SELFDESTRUCT",
+                "MOVE_SONIC_BOOM",
                 "MOVE_SIGNAL_BEAM",
-                "MOVE_SONIC_BOOM"
-                ],
-            "power": 239,
+                "MOVE_SELFDESTRUCT"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -44,8 +54,13 @@
                 "MOVE_BITE",
                 "MOVE_PURSUIT",
                 "MOVE_WILL_O_WISP"
-                ],
-            "power": 229,
+            ],
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

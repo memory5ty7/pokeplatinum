@@ -16,7 +16,12 @@
                 "MOVE_FOLLOW_ME",
                 "MOVE_HELPING_HAND"
             ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -30,7 +35,12 @@
                 "MOVE_QUICK_ATTACK",
                 "MOVE_BRICK_BREAK"
             ],
-            "power": 229,
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

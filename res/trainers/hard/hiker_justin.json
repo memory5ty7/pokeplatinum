@@ -9,21 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_RHYDON",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 32,
+            "item": "ITEM_PASSHO_BERRY",
+            "moves": [
+                "MOVE_BULLDOZE",
+                "MOVE_ROCK_BLAST",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 1,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_NOSEPASS",
+            "species": "SPECIES_CORSOLA",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 32,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_EARTH_POWER",
+                "MOVE_POWER_GEM",
+                "MOVE_ICY_WIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ARCANINE",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_FLAME_CHARGE",
+                "MOVE_EXTREME_SPEED",
+                "MOVE_WILD_CHARGE",
+                "MOVE_PSYCHIC_FANGS"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

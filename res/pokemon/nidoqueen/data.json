@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_POISON_POINT",
         "ABILITY_SHEER_FORCE",
-        "ABILITY_SHEER_FORCE"
+        "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",

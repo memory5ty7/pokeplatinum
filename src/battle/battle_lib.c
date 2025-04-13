@@ -4601,6 +4601,7 @@ static u16 sSoundMoves[] = {
     MOVE_BUG_BUZZ,
     MOVE_CHATTER,
     MOVE_PARTING_SHOT,
+    MOVE_BOOMBURST,
 };
 
 int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, int defender)

@@ -18,7 +18,13 @@
                 "MOVE_THUNDER_WAVE"
             ],
             "power": 10,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MAGNEMITE",
@@ -31,7 +37,13 @@
                 "MOVE_THUNDER_WAVE"
             ],
             "power": 10,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MAGNEMITE",
@@ -44,7 +56,13 @@
                 "MOVE_THUNDER_WAVE"
             ],
             "power": 10,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

@@ -8,21 +8,95 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_MURKROW",
+            "species": "SPECIES_FROSLASS",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_SHADOW_BALL",
+                "MOVE_DESTINY_BOND",
+                "MOVE_SPIKES"
+            ],
+            "abilitySlot": 2,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MISDREAVUS",
+            "species": "SPECIES_DEWGONG",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_CHOICE_SCARF",
+            "moves": [
+                "MOVE_FLIP_TURN"
+            ],
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLALIE",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_WEATHER_BALL",
+                "MOVE_DARK_PULSE",
+                "MOVE_WATER_PULSE",
+                "MOVE_TAUNT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SNEASEL",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_KNOCK_OFF",
+                "MOVE_ICE_PUNCH",
+                "MOVE_BRICK_BREAK",
+                "MOVE_GRASS_KNOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLACEON",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_HYPER_VOICE",
+                "MOVE_MIRROR_COAT",
+                "MOVE_ROAR"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

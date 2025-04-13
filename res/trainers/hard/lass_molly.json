@@ -8,16 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MISDREAVUS",
+            "species": "SPECIES_SLAKING",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_LUM_BERRY",
             "moves": [
-                "MOVE_PAIN_SPLIT",
-                "MOVE_PSYBEAM",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_FAKE_OUT",
+                "MOVE_BODY_SLAM",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_DRAIN_PUNCH"
             ],
-            "power": 10,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KECLEON",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAIN_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

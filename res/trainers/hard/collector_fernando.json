@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HERACROSS",
+            "species": "SPECIES_DRAGONAIR",
             "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 47,
+            "item": "ITEM_EVIOLITE",
+            "moves": [
+                "MOVE_DRACO_METEOR",
+                "MOVE_FIRE_SPIN",
+                "MOVE_ICY_WIND",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_METANG",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_ASSAULT_VEST",
+            "moves": [
+                "MOVE_IRON_HEAD",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BULLDOZE",
+                "MOVE_BRICK_BREAK"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DUSCLOPS",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_LEECH_LIFE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

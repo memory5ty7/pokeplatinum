@@ -8,30 +8,98 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_MAROWAK",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_THICK_CLUB",
+            "moves": [
+                "MOVE_BONEMERANG",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_LUCARIO",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_BLACK_BELT",
+            "moves": [
+                "MOVE_VACUUM_WAVE",
+                "MOVE_BULLDOZE",
+                "MOVE_FLASH_CANNON",
+                "MOVE_AURA_SPHERE"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARLY",
+            "species": "SPECIES_ARCANINE",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_FLARE_BLITZ",
+                "MOVE_WILD_CHARGE",
+                "MOVE_CRUNCH",
+                "MOVE_EXTREME_SPEED"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MIGHTYENA",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_PSYCHIC_FANGS",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_TRAILBLAZE",
+                "MOVE_CRUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUXRAY",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_ICE_FANG",
+                "MOVE_FIRE_FANG",
+                "MOVE_THUNDER_FANG"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

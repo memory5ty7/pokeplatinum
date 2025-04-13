@@ -16,11 +16,17 @@
             "item": "ITEM_AIR_BALLOON",
             "moves": [
                 "MOVE_ROCK_TOMB",
-                "MOVE_SPARK",
+                "MOVE_SEISMIC_TOSS",
                 "MOVE_STEALTH_ROCK",
                 "MOVE_PROTECT"
             ],
-            "power": 233
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SANDSHREW",
@@ -33,7 +39,13 @@
                 "MOVE_LEECH_LIFE",
                 "MOVE_BODY_SLAM"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_TRAPINCH",
@@ -45,7 +57,13 @@
                 "MOVE_BUG_BITE",
                 "MOVE_ROCK_SLIDE"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_BELDUM",
@@ -58,7 +76,13 @@
                 "MOVE_SCARY_FACE",
                 "MOVE_MAGNET_RISE"
             ],
-            "power": 233
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CORSOLA",
@@ -71,7 +95,13 @@
                 "MOVE_ICY_WIND",
                 "MOVE_EXPLOSION"
             ],
-            "power": 525
+            "abilitySlot": 2,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CRANIDOS",
@@ -84,7 +114,13 @@
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 278
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 23
         }
     ]
 }

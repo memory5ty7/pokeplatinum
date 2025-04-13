@@ -16,7 +16,13 @@
                 "MOVE_QUICK_ATTACK",
                 "MOVE_WING_ATTACK"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_ELEKID",
@@ -27,7 +33,13 @@
                 "MOVE_THUNDER_SHOCK",
                 "MOVE_TACKLE"
             ],
-            "power": 236
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SHELLOS",
@@ -39,7 +51,13 @@
                 "MOVE_AQUA_RING",
                 "MOVE_WATER_GUN"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

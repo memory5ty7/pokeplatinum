@@ -9,39 +9,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_PRIMEAPE",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_MUSCLE_BAND",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_POWER_UP_PUNCH"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_CROBAT",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_BLACK_SLUDGE",
             "moves": [
-                "MOVE_CONFUSION",
-                "MOVE_FORCE_PALM"
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_POISON_FANG",
+                "MOVE_LEECH_LIFE",
+                "MOVE_CONFUSE_RAY"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_HITMONLEE",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_NORMAL_GEM",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
+                "MOVE_FAKE_OUT",
+                "MOVE_BLAZE_KICK",
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_TRIPLE_AXEL"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AGGRON",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SMART_STRIKE",
+                "MOVE_SUPERPOWER",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

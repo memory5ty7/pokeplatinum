@@ -9,12 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_BLAZIKEN",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 30,
+            "level": 36,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_BLAZE_KICK",
+                "MOVE_BRICK_BREAK",
+                "MOVE_BOUNCE",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRELOOM",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_BULLET_SEED",
+                "MOVE_ROCK_TOMB",
+                "MOVE_SPORE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_POLIWRATH",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_ICE_PUNCH",
+                "MOVE_SCALD",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

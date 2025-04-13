@@ -16,7 +16,13 @@
                 "MOVE_THUNDERBOLT",
                 "MOVE_CHARGE_BEAM"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_ZIGZAGOON",
@@ -26,7 +32,13 @@
             "moves": [
                 "MOVE_ICE_BEAM"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 2,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_AIPOM",
@@ -36,7 +48,13 @@
             "moves": [
                 "MOVE_PAYBACK"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -20,7 +20,13 @@
                 "MOVE_LEECH_SEED"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_RALTS",
@@ -34,7 +40,13 @@
                 "MOVE_DOUBLE_TEAM"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_LICKITUNG",
@@ -48,7 +60,13 @@
                 "MOVE_DEFENSE_CURL"
             ],
             "power": 50,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

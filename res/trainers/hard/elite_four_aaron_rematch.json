@@ -24,7 +24,13 @@
                 "MOVE_NONE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_SPEAROW",
@@ -38,7 +44,13 @@
                 "MOVE_NONE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_MEOWTH",
@@ -52,7 +64,13 @@
                 "MOVE_NONE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_BULBASAUR",
@@ -66,7 +84,13 @@
                 "MOVE_NONE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_DRAPION",
@@ -80,7 +104,13 @@
                 "MOVE_AERIAL_ACE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

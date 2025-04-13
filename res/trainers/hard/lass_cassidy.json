@@ -8,12 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUNEARY",
+            "species": "SPECIES_VOLBEAT",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 32,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_BUG_BUZZ",
+                "MOVE_TAILWIND",
+                "MOVE_HELPING_HAND",
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NIDOKING",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_POISON_JAB",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH"
+            ],
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -13,26 +13,36 @@
             "level": 18,
             "item": "ITEM_MUSCLE_BAND",
             "moves": [
-                "MOVE_ICE_FANG",
                 "MOVE_FLIP_TURN",
                 "MOVE_BITE",
+                "MOVE_ICE_FANG",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TOGETIC",
             "form": 0,
             "level": 18,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_BERRY_JUICE",
             "moves": [
+                "MOVE_AIR_CUTTER",
                 "MOVE_WATER_PULSE",
-                "MOVE_WISH",
-                "MOVE_THUNDER_WAVE",
+                "MOVE_ANCIENT_POWER",
                 "MOVE_RAIN_DANCE"
             ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -43,7 +53,12 @@
             "moves": [
                 "MOVE_AQUA_JET"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

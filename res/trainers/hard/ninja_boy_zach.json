@@ -18,7 +18,12 @@
                 "MOVE_VACUUM_WAVE",
                 "MOVE_BULLDOZE"
             ],
-            "power": 239,
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_BULLET_SEED",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -46,7 +56,12 @@
                 "MOVE_DIG",
                 "MOVE_X_SCISSOR"
             ],
-            "power": 229,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_LEVITATE",
-        "ABILITY_NONE",
+        "ABILITY_CURSED_BODY",
         "ABILITY_SHADOW_TAG"
     ],
     "safari_flee_rate": 0,

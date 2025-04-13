@@ -8,12 +8,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_ARMALDO",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 41,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_FIRST_IMPRESSION",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SUPERPOWER",
+                "MOVE_STEALTH_ROCK"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MIGHTYENA",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_LUM_BERRY",
+            "moves": [
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_FIRE_FANG",
+                "MOVE_YAWN",
+                "MOVE_ROAR"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SPINDA",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_SILK_SCARF",
+            "moves": [
+                "MOVE_THRASH",
+                "MOVE_HYPNOSIS",
+                "MOVE_TEETER_DANCE",
+                "MOVE_ENCORE"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_FARFETCHD",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_SLASH",
+                "MOVE_KNOCK_OFF",
+                "MOVE_LEAF_BLADE",
+                "MOVE_BRICK_BREAK"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -17,9 +17,15 @@
             "moves": [
                 "MOVE_WING_ATTACK",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_FACADE"
+                "MOVE_ENDEAVOR"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_TURTWIG",
@@ -27,11 +33,17 @@
             "level": 10,
             "item": "ITEM_KINGS_ROCK",
             "moves": [
-                "MOVE_LEECH_SEED",
+                "MOVE_MEGA_DRAIN",
                 "MOVE_BITE",
-                "MOVE_MEGA_DRAIN"
+                "MOVE_LEECH_SEED"
             ],
-            "power": 242
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_TOTODILE",
@@ -42,7 +54,13 @@
                 "MOVE_AQUA_JET",
                 "MOVE_BITE"
             ],
-            "power": 279
+            "abilitySlot": 1,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

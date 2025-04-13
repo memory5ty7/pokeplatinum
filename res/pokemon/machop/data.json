@@ -92,6 +92,14 @@
                 "MOVE_DRAIN_PUNCH"
             ],
             [
+                45,
+                "MOVE_WIDE_GUARD"
+            ],
+            [
+                45,
+                "MOVE_QUICK_GUARD"
+            ],
+            [
                 48,
                 "MOVE_CLOSE_COMBAT"
             ],

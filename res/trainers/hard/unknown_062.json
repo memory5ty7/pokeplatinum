@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_ACE_TRAINER_MALE",
+    "class": "TRAINER_CLASS_PAUL",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,57 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_ELECTIVIRE",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 40,
+            "item": "ITEM_WHITE_HERB",
+            "moves": [
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_SKY_UPPERCUT",
+                "MOVE_ICE_PUNCH",
+                "MOVE_GIGA_IMPACT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_METAGROSS",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_BLACK_BELT",
+            "moves": [
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_METEOR_MASH",
+                "MOVE_HAMMER_ARM",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TURTWIG",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_PROTECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

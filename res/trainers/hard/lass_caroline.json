@@ -18,27 +18,37 @@
                 "MOVE_BULLDOZE",
                 "MOVE_TAILWIND"
             ],
-            "power": 236,
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_OCTILLERY",
             "form": 0,
             "level": 28,
-            "item": "ITEM_SCOPE_LENS",
+            "item": "ITEM_WISE_GLASSES",
             "moves": [
                 "MOVE_FLAMETHROWER",
                 "MOVE_AURORA_BEAM",
                 "MOVE_ENERGY_BALL",
                 "MOVE_FIRE_SPIN"
             ],
-            "power": 240,
+            "abilitySlot": 1,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 29,
+            "level": 28,
             "item": "ITEM_MUSCLE_BAND",
             "moves": [
                 "MOVE_BRICK_BREAK",
@@ -46,7 +56,12 @@
                 "MOVE_BULLDOZE",
                 "MOVE_ICE_PUNCH"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

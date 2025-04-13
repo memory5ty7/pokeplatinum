@@ -10,45 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_PORYGON",
             "form": 0,
             "level": 22,
-            "item": "ITEM_OCCA_BERRY",
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
+                "MOVE_SWIFT",
+                "MOVE_ICY_WIND",
+                "MOVE_PSYBEAM",
+                "MOVE_RECOVER"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MIGHTYENA",
+            "form": 0,
+            "level": 23,
+            "item": "ITEM_LAGGING_TAIL",
+            "moves": [
+                "MOVE_ASSURANCE",
+                "MOVE_THUNDER_FANG",
+                "MOVE_ICE_FANG",
+                "MOVE_ENDEAVOR"
+            ],
+            "abilitySlot": 0,
+            "nature": 24,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NUZLEAF",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_IRON_BALL",
+            "moves": [
+                "MOVE_PAYBACK",
                 "MOVE_RAZOR_LEAF",
-                "MOVE_SLUDGE",
-                "MOVE_SLEEP_POWDER",
-                "MOVE_LEECH_SEED"
+                "MOVE_AIR_CUTTER",
+                "MOVE_FAKE_OUT"
             ],
-            "power": 235,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MANECTRIC",
-            "form": 0,
-            "level": 22,
-            "item": "ITEM_MUSCLE_BAND",
-            "moves": [
-                "MOVE_SPARK",
-                "MOVE_FIRE_FANG",
-                "MOVE_CRUNCH",
-                "MOVE_THUNDER_WAVE"
-            ],
-            "power": 238,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_PIDGEOTTO",
-            "form": 0,
-            "level": 22,
-            "item": "ITEM_WACAN_BERRY",
-            "moves": [
-                "MOVE_AERIAL_ACE",
-                "MOVE_STEEL_WING",
-                "MOVE_PURSUIT",
-                "MOVE_ROOST"
-            ],
-            "power": 278,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

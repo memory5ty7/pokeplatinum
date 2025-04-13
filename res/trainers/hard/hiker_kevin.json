@@ -9,39 +9,57 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_AERODACTYL",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_SHARP_BEAK",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_FLY",
+                "MOVE_FIRE_FANG",
+                "MOVE_BULLDOZE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_LUNATONE",
             "form": 0,
-            "level": 17,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_ROCK_GEM",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_POWER_GEM",
+                "MOVE_ICE_BEAM",
+                "MOVE_GRASS_KNOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GEODUDE",
-            "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 32,
+            "item": "ITEM_TOXIC_ORB",
+            "moves": [
+                "MOVE_DYNAMIC_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

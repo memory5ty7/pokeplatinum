@@ -15,11 +15,16 @@
             "item": "ITEM_SHUCA_BERRY",
             "moves": [
                 "MOVE_VOLT_SWITCH",
+                "MOVE_GRASS_KNOT",
                 "MOVE_THUNDER_WAVE",
-                "MOVE_HELPING_HAND",
-                "MOVE_GRASS_KNOT"
+                "MOVE_CHARM"
             ],
-            "power": 245,
+            "abilitySlot": 2,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -29,11 +34,16 @@
             "item": "ITEM_FOCUS_SASH",
             "moves": [
                 "MOVE_WATER_PULSE",
-                "MOVE_ICY_WIND",
+                "MOVE_AIR_CUTTER",
                 "MOVE_SHOCK_WAVE",
-                "MOVE_AIR_CUTTER"
+                "MOVE_ICY_WIND"
             ],
-            "power": 240,
+            "abilitySlot": 2,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -43,11 +53,16 @@
             "item": "ITEM_MAGNET",
             "moves": [
                 "MOVE_SHOCK_WAVE",
-                "MOVE_THUNDER_WAVE",
                 "MOVE_SIGNAL_BEAM",
+                "MOVE_THUNDER_WAVE",
                 "MOVE_CHARM"
             ],
-            "power": 245,
+            "abilitySlot": 2,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -57,11 +72,16 @@
             "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_WHIRLPOOL",
+                "MOVE_BOUNCE",
                 "MOVE_ICY_WIND",
-                "MOVE_AQUA_RING",
-                "MOVE_BOUNCE"
+                "MOVE_AQUA_RING"
             ],
-            "power": 247,
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

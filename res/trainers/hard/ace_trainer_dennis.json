@@ -10,45 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLIGAR",
+            "species": "SPECIES_FLOATZEL",
             "form": 0,
-            "level": 24,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_MYSTIC_WATER",
             "moves": [
-                "MOVE_SCREECH",
-                "MOVE_FAINT_ATTACK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_POISON_STING"
+                "MOVE_TRIPLE_AXEL",
+                "MOVE_LIQUIDATION",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FLIP_TURN"
             ],
-            "power": 50,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_ROSERADE",
             "form": 0,
-            "level": 24,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_MIRACLE_SEED",
             "moves": [
-                "MOVE_AQUA_JET",
-                "MOVE_SWIFT",
-                "MOVE_PURSUIT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_EXTRASENSORY",
+                "MOVE_SLEEP_POWDER"
             ],
-            "power": 50,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFBLIM",
+            "species": "SPECIES_LICKILICKY",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 47,
+            "item": "ITEM_LIFE_ORB",
             "moves": [
-                "MOVE_SWALLOW",
-                "MOVE_GUST",
-                "MOVE_STOCKPILE",
-                "MOVE_OMINOUS_WIND"
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BULLDOZE",
+                "MOVE_BODY_SLAM",
+                "MOVE_ICE_PUNCH"
             ],
-            "power": 50,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

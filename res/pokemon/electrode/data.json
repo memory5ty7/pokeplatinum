@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_SOUNDPROOF",
-        "ABILITY_NONE",
+        "ABILITY_STATIC",
         "ABILITY_GALVANIZE"
     ],
     "safari_flee_rate": 0,

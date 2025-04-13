@@ -16,7 +16,13 @@
             "item": "ITEM_RARE_CANDY",
             "moves": null,
             "power": 250,
-            "ball_seal": 26
+            "ball_seal": 26,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

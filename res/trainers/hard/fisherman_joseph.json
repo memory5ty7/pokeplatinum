@@ -8,43 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SEALEO",
+            "species": "SPECIES_PERSIAN",
             "form": 0,
             "level": 26,
-            "item": "ITEM_EVIOLITE",
+            "item": "ITEM_WIDE_LENS",
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_AURORA_BEAM",
-                "MOVE_YAWN",
-                "MOVE_WHIRLPOOL"
+                "MOVE_BODY_SLAM",
+                "MOVE_DIG",
+                "MOVE_HYPNOSIS",
+                "MOVE_FAKE_TEARS"
             ],
-            "power": 242,
+            "abilitySlot": 1,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LOUDRED",
+            "species": "SPECIES_VENOMOTH",
             "form": 0,
             "level": 26,
-            "item": "ITEM_RED_CARD",
+            "item": "ITEM_POISON_GEM",
             "moves": [
+                "MOVE_ACID_SPRAY",
+                "MOVE_STRUGGLE_BUG",
+                "MOVE_PSYBEAM",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NOCTOWL",
+            "form": 0,
+            "level": 26,
+            "item": "ITEM_SHARP_BEAK",
+            "moves": [
+                "MOVE_AIR_CUTTER",
                 "MOVE_HYPER_VOICE",
-                "MOVE_HAMMER_ARM"
+                "MOVE_EXTRASENSORY",
+                "MOVE_HYPNOSIS"
             ],
-            "power": 317,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SNOVER",
-            "form": 0,
-            "level": 26,
-            "item": "ITEM_OCCA_BERRY",
-            "moves": [
-                "MOVE_GIGA_DRAIN",
-                "MOVE_ICE_PUNCH",
-                "MOVE_WATER_PULSE",
-                "MOVE_LEECH_SEED"
-            ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

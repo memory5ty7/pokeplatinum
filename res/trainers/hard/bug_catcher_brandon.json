@@ -9,44 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MASQUERAIN",
+            "species": "SPECIES_SURSKIT",
             "form": 0,
-            "level": 17,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 19,
+            "item": "ITEM_COBA_BERRY",
             "moves": [
-                "MOVE_QUICK_ATTACK",
-                "MOVE_GUST",
-                "MOVE_STUN_SPORE",
-                "MOVE_SILVER_WIND"
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_STRUGGLE_BUG",
+                "MOVE_ICY_WIND",
+                "MOVE_STICKY_WEB"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BEAUTIFLY",
+            "species": "SPECIES_GIBLE",
             "form": 0,
-            "level": 17,
-            "item": "ITEM_CHARTI_BERRY",
+            "level": 18,
+            "item": "ITEM_ROCKY_HELMET",
             "moves": [
-                "MOVE_LEECH_LIFE",
-                "MOVE_GUST",
-                "MOVE_MEGA_DRAIN",
-                "MOVE_STUN_SPORE"
+                "MOVE_DIG",
+                "MOVE_DRAGON_BREATH",
+                "MOVE_BULLDOZE",
+                "MOVE_SAND_ATTACK"
             ],
-            "power": 244,
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_VENONAT",
+            "species": "SPECIES_DUNSPARCE",
             "form": 0,
             "level": 17,
-            "item": "ITEM_OCCA_BERRY",
+            "item": "ITEM_MUSCLE_BAND",
             "moves": [
-                "MOVE_ZEN_HEADBUTT",
-                "MOVE_SWIFT",
-                "MOVE_SLUDGE_BOMB"
+                "MOVE_HEADBUTT",
+                "MOVE_BITE",
+                "MOVE_ICE_FANG",
+                "MOVE_FIRE_FANG"
             ],
-            "power": 242,
+            "abilitySlot": 2,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

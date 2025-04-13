@@ -19,7 +19,13 @@
                 "MOVE_SWAGGER",
                 "MOVE_TAILWIND"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_MAKUHITA",
@@ -31,7 +37,13 @@
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_PAYBACK"
             ],
-            "power": 203
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -10,17 +10,57 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KADABRA",
+            "species": "SPECIES_PORYGON2",
             "form": 0,
-            "level": 26,
-            "item": null,
+            "level": 36,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_CONFUSION",
-                "MOVE_SHOCK_WAVE",
-                "MOVE_FLASH",
-                "MOVE_KINESIS"
+                "MOVE_TRI_ATTACK",
+                "MOVE_THUNDERBOLT",
+                "MOVE_ICE_BEAM",
+                "MOVE_NASTY_PLOT"
             ],
-            "power": 30,
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AMPHAROS",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_CHOICE_SPECS",
+            "moves": [
+                "MOVE_THUNDERBOLT"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JYNX",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_PSYCHIC_GEM",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_ICE_BEAM",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 16,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

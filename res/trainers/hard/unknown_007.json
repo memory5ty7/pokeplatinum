@@ -13,12 +13,17 @@
             "level": 24,
             "item": "ITEM_CHARTI_BERRY",
             "moves": [
-                "MOVE_SPIKES",
-                "MOVE_PLUCK",
                 "MOVE_ICY_WIND",
-                "MOVE_ROOST"
+                "MOVE_PLUCK",
+                "MOVE_ROOST",
+                "MOVE_SPIKES"
             ],
-            "power": 226,
+            "abilitySlot": 0,
+            "nature": 1,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_ENCORE",
                 "MOVE_DESTINY_BOND"
             ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -42,11 +52,16 @@
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_AIR_SLASH",
+                "MOVE_ANCIENT_POWER",
                 "MOVE_WISH",
-                "MOVE_BATON_PASS",
-                "MOVE_ANCIENT_POWER"
+                "MOVE_BATON_PASS"
             ],
-            "power": 247,
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -60,21 +75,31 @@
                 "MOVE_PSYBEAM",
                 "MOVE_GIGA_DRAIN"
             ],
-            "power": 225,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GROVYLE",
             "form": 0,
             "level": 24,
-            "item": "ITEM_FOCUS_SASH",
+            "item": "ITEM_RAWST_BERRY",
             "moves": [
-                "MOVE_ROCK_TOMB",
-                "MOVE_BRICK_BREAK",
                 "MOVE_LEAF_BLADE",
-                "MOVE_DETECT"
+                "MOVE_BRICK_BREAK",
+                "MOVE_ROCK_TOMB",
+                "MOVE_NIGHT_SLASH"
             ],
-            "power": 203,
+            "abilitySlot": 0,
+            "nature": 1,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -84,11 +109,16 @@
             "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_SOFTBOILED",
-                "MOVE_MIRROR_COAT",
+                "MOVE_TOXIC",
                 "MOVE_COUNTER",
-                "MOVE_TOXIC"
+                "MOVE_MIRROR_COAT"
             ],
-            "power": 230,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

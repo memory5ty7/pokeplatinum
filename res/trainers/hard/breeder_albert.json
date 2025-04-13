@@ -8,39 +8,58 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_MILTANK",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 41,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_FACADE",
+                "MOVE_WHIRLPOOL",
+                "MOVE_MILK_DRINK"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_PIDGEOT",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 41,
+            "item": "ITEM_FIRE_GEM",
+            "moves": [
+                "MOVE_HEAT_WAVE",
+                "MOVE_AIR_SLASH",
+                "MOVE_THUNDER",
+                "MOVE_ROOST"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_BIBAREL",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_EEVEE",
-            "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 41,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_AQUA_JET",
+                "MOVE_CURSE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

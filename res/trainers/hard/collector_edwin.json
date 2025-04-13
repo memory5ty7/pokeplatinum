@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MUNCHLAX",
+            "species": "SPECIES_FORRETRESS",
             "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 47,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_PIN_MISSILE",
+                "MOVE_ROCK_BLAST",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_TOXIC_SPIKES"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAWILE",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_IRON_HEAD",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_ICE_HAMMER",
+                "MOVE_SUCKER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MILOTIC",
+            "form": 0,
+            "level": 47,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_ICE_BEAM",
+                "MOVE_TOXIC",
+                "MOVE_RECOVER"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

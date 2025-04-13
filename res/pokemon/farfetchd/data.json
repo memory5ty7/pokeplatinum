@@ -102,6 +102,14 @@
             [
                 47,
                 "MOVE_HEAT_WAVE"
+            ],
+            [
+                50,
+                "MOVE_WIDE_GUARD"
+            ],
+            [
+                50,
+                "MOVE_QUICK_GUARD"
             ]
         ],
         "by_tm": [],

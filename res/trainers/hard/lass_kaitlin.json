@@ -12,13 +12,19 @@
             "species": "SPECIES_ILLUMISE",
             "form": 0,
             "level": 13,
-            "item": "ITEM_FOCUS_SASH",
+            "item": "ITEM_BERRY_JUICE",
             "moves": [
                 "MOVE_SIGNAL_BEAM",
-                "MOVE_ZEN_HEADBUTT",
-                "MOVE_ENCORE"
+                "MOVE_ENCORE",
+                "MOVE_CHARM"
             ],
-            "power": 239
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_VOLBEAT",
@@ -30,7 +36,13 @@
                 "MOVE_CONFUSE_RAY",
                 "MOVE_TAIL_GLOW"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

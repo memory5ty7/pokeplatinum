@@ -10,29 +10,39 @@
         {
             "species": "SPECIES_LILEEP",
             "form": 0,
-            "level": 15,
-            "item": "ITEM_BIG_ROOT",
+            "level": 14,
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_PROTECT",
-                "MOVE_STEALTH_ROCK",
                 "MOVE_MEGA_DRAIN",
-                "MOVE_LEECH_SEED"
+                "MOVE_ROCK_TOMB",
+                "MOVE_BRINE",
+                "MOVE_ENDURE"
             ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_OMANYTE",
+            "species": "SPECIES_ANORITH",
             "form": 0,
-            "level": 15,
-            "item": "ITEM_EXPERT_BELT",
+            "level": 14,
+            "item": "ITEM_BERRY_JUICE",
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_ICY_WIND",
-                "MOVE_BITE",
-                "MOVE_ROCK_SMASH"
+                "MOVE_BUG_BITE",
+                "MOVE_ROCK_TOMB",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SWAGGER"
             ],
-            "power": 244,
+            "abilitySlot": 1,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

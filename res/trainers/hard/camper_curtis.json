@@ -19,7 +19,13 @@
                 "MOVE_TRAILBLAZE",
                 "MOVE_SPIKES"
             ],
-            "power": 233
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_PINECO",
@@ -31,7 +37,13 @@
                 "MOVE_BUG_BITE",
                 "MOVE_ROLLOUT"
             ],
-            "power": 232
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_STUNKY",
@@ -42,7 +54,13 @@
                 "MOVE_FURY_SWIPES",
                 "MOVE_TOXIC"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

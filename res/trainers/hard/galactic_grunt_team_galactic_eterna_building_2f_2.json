@@ -8,12 +8,79 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_MAGCARGO",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 30,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_STEALTH_ROCK",
+                "MOVE_FIRE_SPIN",
+                "MOVE_WILL_O_WISP",
+                "MOVE_LAVA_PLUME"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WOBBUFFET",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_IAPAPA_BERRY",
+            "moves": [
+                "MOVE_COUNTER",
+                "MOVE_MIRROR_COAT",
+                "MOVE_DESTINY_BOND",
+                "MOVE_ENCORE"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TOXICROAK",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FAKE_OUT",
+                "MOVE_MUD_SHOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CARNIVINE",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_LEECH_LIFE",
+                "MOVE_CRUNCH",
+                "MOVE_LEECH_SEED"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

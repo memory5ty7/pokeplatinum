@@ -19,7 +19,12 @@
                 "MOVE_FIRE_PUNCH",
                 "MOVE_SELFDESTRUCT"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -33,7 +38,12 @@
                 "MOVE_ROCK_SLIDE",
                 "MOVE_BULLDOZE"
             ],
-            "power": 248,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -44,7 +54,12 @@
             "moves": [
                 "MOVE_HEAD_SMASH"
             ],
-            "power": 229,
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -58,7 +73,12 @@
                 "MOVE_ROCK_SLIDE",
                 "MOVE_SUBSTITUTE"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

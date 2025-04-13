@@ -25,7 +25,13 @@
                 "MOVE_LIGHT_SCREEN"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_ESPEON",
@@ -39,7 +45,13 @@
                 "MOVE_SIGNAL_BEAM"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_BRONZONG",
@@ -53,7 +65,13 @@
                 "MOVE_CALM_MIND"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_ALAKAZAM",
@@ -67,7 +85,13 @@
                 "MOVE_RECOVER"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_GALLADE",
@@ -81,7 +105,13 @@
                 "MOVE_STONE_EDGE"
             ],
             "power": 250,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

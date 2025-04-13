@@ -8,31 +8,79 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BUNEARY",
+            "species": "SPECIES_PELIPPER",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_ASSAULT_VEST",
             "moves": [
-                "MOVE_FORESIGHT",
-                "MOVE_JUMP_KICK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_WEATHER_BALL",
+                "MOVE_HURRICANE",
+                "MOVE_U_TURN",
+                "MOVE_ICE_BEAM"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_KABUTOPS",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
                 "MOVE_AQUA_JET",
-                "MOVE_SWIFT",
-                "MOVE_PURSUIT",
-                "MOVE_SONIC_BOOM"
+                "MOVE_LEECH_LIFE",
+                "MOVE_ROCK_BLAST",
+                "MOVE_KNOCK_OFF"
             ],
-            "power": 0,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TENTACRUEL",
+            "form": 0,
+            "level": 42,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_BRINE",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_TOXIC"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GASTRODON",
+            "form": 0,
+            "level": 42,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_EARTH_POWER",
+                "MOVE_ICE_BEAM",
+                "MOVE_RECOVER"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

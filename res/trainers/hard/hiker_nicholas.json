@@ -9,44 +9,55 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_NOSEPASS",
+            "species": "SPECIES_GRIMER",
             "form": 0,
-            "level": 21,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 23,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_THUNDER_WAVE",
-                "MOVE_STEALTH_ROCK",
-                "MOVE_SANDSTORM",
-                "MOVE_ROCK_TOMB"
+                "MOVE_MEMENTO"
             ],
-            "power": 247,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGCARGO",
+            "species": "SPECIES_MAWILE",
             "form": 0,
-            "level": 21,
-            "item": "ITEM_LEFTOVERS",
+            "level": 22,
+            "item": "ITEM_WHITE_HERB",
             "moves": [
-                "MOVE_LAVA_PLUME",
-                "MOVE_ANCIENT_POWER",
-                "MOVE_PROTECT"
+                "MOVE_METAL_CLAW",
+                "MOVE_THUNDER_FANG",
+                "MOVE_FIRE_FANG",
+                "MOVE_POWER_UP_PUNCH"
             ],
-            "power": 247,
+            "abilitySlot": 1,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_QUAGSIRE",
+            "species": "SPECIES_CHIMECHO",
             "form": 0,
-            "level": 21,
-            "item": "ITEM_RINDO_BERRY",
+            "level": 22,
+            "item": "ITEM_LUM_BERRY",
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_BULLDOZE",
-                "MOVE_YAWN",
-                "MOVE_SLUDGE_BOMB"
+                "MOVE_CONFUSION",
+                "MOVE_CHARGE_BEAM"
             ],
-            "power": 232,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -11,13 +11,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_NINETALES",
             "form": 0,
-            "level": 23,
-            "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_LIGHT_CLAY",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_SOLAR_BEAM",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 6
+        },
+        {
+            "species": "SPECIES_SHIFTRY",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_CUSTAP_BERRY",
+            "moves": [
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_SOLAR_BLADE",
+                "MOVE_EXPLOSION",
+                "MOVE_EXTRASENSORY"
+            ],
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHARIZARD",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_FLYING_GEM",
+            "moves": [
+                "MOVE_SCORCHING_SANDS",
+                "MOVE_FIRE_FANG",
+                "MOVE_ACROBATICS",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

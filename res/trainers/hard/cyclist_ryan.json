@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_MILTANK",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 34,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_EARTHQUAKE",
+                "MOVE_COUNTER"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TAUROS",
+            "form": 0,
+            "level": 34,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_WILD_CHARGE",
+                "MOVE_IRON_HEAD"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LICKILICKY",
+            "form": 0,
+            "level": 34,
+            "item": "ITEM_SALAC_BERRY",
+            "moves": [
+                "MOVE_FACADE",
+                "MOVE_ICE_PUNCH",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

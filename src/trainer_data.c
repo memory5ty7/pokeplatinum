@@ -22,7 +22,14 @@
 #include "strbuf.h"
 #include "vars_flags.h"
 
+#include "gender_ratios.h"
+
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
+
+static void AdjustHP(Pokemon *mon, u8 preDamage);
+static void AdjustIVs(Pokemon *mon, u8 IVProfile);
+static void AdjustStatus(Pokemon *mon, u8 status);
+static u32 AdjustGender(Pokemon *mon, u8 nature, u8 gender, u32 trainerGender);
 
 void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *save, int heapID)
 {
@@ -191,6 +198,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
     buf = Heap_AllocFromHeap(heapID, sizeof(TrainerMonWithMovesAndItem) * MAX_PARTY_SIZE);
     mon = Pokemon_New(heapID);
 
+    u32 trainerGender = TrainerClass_Gender(dto->trainer[battler].header.trainerType);
+
     Trainer_LoadParty(dto->trainerIDs[battler], buf);
 
     switch (dto->trainer[battler].header.monDataType) {
@@ -200,26 +209,20 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            ivs = GetIVsFromDV(trmon[i].dv);
-
-            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
-            u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
-
-            if (hiddenAbility != 0) {
-                abilitySlot = 100;
-            }
-
+            u8 abilitySlot = trmon[i].abilitySlot;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            u8 nature = trmon[i].nature;
+            u32 pid = AdjustGender(mon, nature, trmon[i].gender, trainerGender);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, pid, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
 
-            u32 status = getStatusFromDV(trmon[i].dv);
-            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-
-            AdjustHP(mon, trmon[i].dv);
-            AdjustIVs(mon, trmon[i].dv);
+            AdjustHP(mon, trmon[i].preDamage);
+            AdjustIVs(mon, trmon[i].ivs);
+            AdjustStatus(mon, trmon[i].status);
+            
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -235,18 +238,13 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            ivs = GetIVsFromDV(trmon[i].dv);
-
-            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
-            u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
-
-            if (hiddenAbility != 0) {
-                abilitySlot = 100;
-            }
-
+            u8 abilitySlot = trmon[i].abilitySlot;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            u8 nature = trmon[i].nature;
+            u32 pid = AdjustGender(mon, nature, trmon[i].gender, trainerGender);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, pid, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
 
@@ -254,11 +252,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
                 Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
             }
 
-            u32 status = getStatusFromDV(trmon[i].dv);
-            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-
-            AdjustHP(mon, trmon[i].dv);
-            AdjustIVs(mon, trmon[i].dv);
+            AdjustHP(mon, trmon[i].preDamage);
+            AdjustIVs(mon, trmon[i].ivs);
+            AdjustStatus(mon, trmon[i].status);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -274,27 +270,20 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            ivs = GetIVsFromDV(trmon[i].dv);
-
-            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
-            u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
-
-            if (hiddenAbility != 0) {
-                abilitySlot = 100;
-            }
-
+            u8 abilitySlot = trmon[i].abilitySlot;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            u8 nature = trmon[i].nature;
+            u32 pid = AdjustGender(mon, nature, trmon[i].gender, trainerGender);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, pid, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
 
-            u32 status = getStatusFromDV(trmon[i].dv);
-            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-
-            AdjustHP(mon, trmon[i].dv);
-            AdjustIVs(mon, trmon[i].dv);
+            AdjustHP(mon, trmon[i].preDamage);
+            AdjustIVs(mon, trmon[i].ivs);
+            AdjustStatus(mon, trmon[i].status);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -310,18 +299,13 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            ivs = GetIVsFromDV(trmon[i].dv);
-
-            u8 abilitySlot = (trmon[i].dv & 0x100) >> 8;
-            u8 hiddenAbility = (trmon[i].dv & 0x200) >> 9;
-
-            if (hiddenAbility != 0) {
-                abilitySlot = 100;
-            }
-
+            u8 abilitySlot = trmon[i].abilitySlot;
             u8 ability = Pokemon_LoadAbilityValue(species, form, abilitySlot);
 
-            Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, trmon[i].dv, OTID_NOT_SHINY, 0);
+            u8 nature = trmon[i].nature;
+            u32 pid = AdjustGender(mon, trmon[i].gender, nature, trainerGender);
+
+            Pokemon_InitWith(mon, species, trmon[i].level, 31, TRUE, pid, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
@@ -330,11 +314,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
                 Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
             }
 
-            u32 status = getStatusFromDV(trmon[i].dv);
-            Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &status);
-
-            AdjustHP(mon, trmon[i].dv);
-            AdjustIVs(mon, trmon[i].dv);
+            AdjustHP(mon, trmon[i].preDamage);
+            AdjustIVs(mon, trmon[i].ivs);
+            AdjustStatus(mon, trmon[i].status);
 
             Pokemon_CalcLevelAndStats(mon);
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -350,52 +332,33 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
     LCRNG_SetSeed(oldSeed);
 }
 
-u32 getStatusFromDV(u16 dv)
+static void AdjustHP(Pokemon *mon, u8 preDamage)
 {
-    u32 status;
+    u32 currentHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
 
-    switch (dv) {
-    case 178:
-    case 188:
-    case 328:
-    case 338:
-        status = MON_CONDITION_POISON;
+    switch (preDamage) {
+    case 50:
+        currentHP = currentHP / 2;
         break;
-    case 203:
-    case 213:
-    case 303:
-    case 313:
-        status = MON_CONDITION_BURN;
+    case 25:
+        currentHP = currentHP / 4;
+        break;
+    case 1:
+        currentHP = 1;
+        break;
+    case 0:
         break;
     default:
-        status = MON_CONDITION_NONE;
         break;
     }
-    return status;
+
+    Pokemon_SetValue(mon, MON_DATA_CURRENT_HP, &currentHP);
+
+    return;
 }
 
-u8 GetIVsFromDV(u16 dv)
+static void AdjustIVs(Pokemon *mon, u8 IVProfile)
 {
-    u8 ivs = 31;
-
-    switch (dv) {
-    case 0:
-        ivs = 0;
-        break;
-    }
-    return ivs;
-}
-
-void AdjustIVs(Pokemon *mon, u16 dv)
-{
-    // If Nature is -Speed, set Speed IVs to 0
-    /*
-    if(Pokemon_GetStatAffinityOf(Pokemon_GetNatureOf(dv),3) == -1)
-    {
-        Pokemon_SetValue(mon, MON_DATA_SPEED_IV, 0);
-    }
-    */
-
     int ivs;
 
     if (getVar(VAR_DIFFICULTY) & EASY_MODE_ENABLED) {
@@ -404,38 +367,69 @@ void AdjustIVs(Pokemon *mon, u16 dv)
         for (int i = 0; i < 6; i++) {
             Pokemon_SetValue(mon, MON_DATA_HP_IV + i, &ivs);
         }
-    } else {
-        switch(dv) {
-        case 202:
-        case 207:
-        case 217:
-        case 222:
-        case 302:
-        case 307:
-        case 317:
-        case 322:
-            ivs = 0;
-            Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &dv);
-        default:
-            break;
-        }
+    } else if (IVProfile == 1) {
+        ivs = 0;
+        Pokemon_SetValue(mon, MON_DATA_SPDEF_IV, &ivs);
+    } else if (IVProfile != 0) {
+
+        u8 IVSpreads[NUM_POKEMON_TYPES][6] = {
+            { 31, 31, 31, 31, 31, 31 }, // Normal
+            { 31, 31, 30, 30, 30, 30 }, // Fighting
+            { 31, 31, 31, 30, 30, 30 }, // Flying
+            { 31, 31, 30, 30, 30, 31 }, // Poison
+            { 31, 31, 31, 30, 30, 31 }, // Ground
+            { 31, 31, 30, 31, 30, 31 }, // Rock
+            { 31, 31, 31, 31, 30, 30 }, // Bug
+            { 31, 31, 30, 31, 30, 31 }, // Ghost
+            { 31, 31, 31, 31, 30, 31 }, // Steel
+            { 31, 31, 31, 31, 31, 31 }, // Mystery
+            { 31, 30, 31, 30, 31, 30 }, // Fire
+            { 31, 31, 31, 30, 31, 30 }, // Water
+            { 31, 30, 31, 30, 31, 31 }, // Grass
+            { 31, 31, 31, 30, 31, 31 }, // Electric
+            { 31, 30, 31, 31, 31, 30 }, // Psychic
+            { 31, 30, 30, 31, 31, 31 }, // Ice
+            { 31, 30, 31, 31, 31, 31 }, // Dragon
+            { 31, 31, 31, 31, 31, 31 } // Dark
+        };
+
+        IVProfile -= 2;
+
+        Pokemon_SetValue(mon, MON_DATA_HP_IV, &IVSpreads[IVProfile, 0]);
+        Pokemon_SetValue(mon, MON_DATA_ATK_IV, &IVSpreads[IVProfile, 1]);
+        Pokemon_SetValue(mon, MON_DATA_DEF_IV, &IVSpreads[IVProfile, 2]);
+        Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &IVSpreads[IVProfile, 3]);
+        Pokemon_SetValue(mon, MON_DATA_SPATK_IV, &IVSpreads[IVProfile, 4]);
+        Pokemon_SetValue(mon, MON_DATA_SPDEF_IV, &IVSpreads[IVProfile, 5]);
     }
 
     return;
 }
 
-void AdjustHP(Pokemon *mon, u16 dv)
+static void AdjustStatus(Pokemon *mon, u8 status)
 {
-    u32 currentHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+    u32 statusList[] = { MON_CONDITION_NONE, MON_CONDITION_BURN, MON_CONDITION_POISON, MON_CONDITION_PARALYSIS, MON_CONDITION_FREEZE };
 
-    switch (dv) {
-    case 153:
-    case 353:
-        currentHP = currentHP / 4;
-        break;
-    }
-
-    Pokemon_SetValue(mon, MON_DATA_CURRENT_HP, &currentHP);
+    Pokemon_SetValue(mon, MON_DATA_STATUS_CONDITION, &statusList[status]);
 
     return;
+}
+
+static u32 AdjustGender(Pokemon *mon, u8 nature, u8 gender, u32 trainerGender)
+{
+    u32 pid = nature;
+
+    /*
+    u8 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+    u8 monGenderChance = SpeciesData_GetSpeciesValue(species, SPECIES_DATA_GENDER_RATIO);
+
+    if (gender == 3) {
+        gender = trainerGender;
+    }
+
+    return pid + 25 * gender;
+
+    */
+
+    return pid;
 }

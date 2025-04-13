@@ -18,7 +18,12 @@
                 "MOVE_PAYBACK",
                 "MOVE_ROCK_TOMB"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -32,7 +37,12 @@
                 "MOVE_POISON_JAB",
                 "MOVE_DOUBLE_KICK"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

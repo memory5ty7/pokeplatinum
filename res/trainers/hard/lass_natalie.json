@@ -16,7 +16,13 @@
             "moves": [
                 "MOVE_FLAMETHROWER"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SPEAROW",
@@ -26,7 +32,13 @@
             "moves": [
                 "MOVE_U_TURN"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_NIDORAN_F",
@@ -36,7 +48,13 @@
             "moves": [
                 "MOVE_SHADOW_CLAW"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

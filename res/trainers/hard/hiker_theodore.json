@@ -9,21 +9,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_BASTIODON",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_RED_CARD",
+            "moves": [
+                "MOVE_STEALTH_ROCK",
+                "MOVE_AVALANCHE",
+                "MOVE_FLAMETHROWER",
+                "MOVE_FLASH_CANNON"
+            ],
+            "abilitySlot": 1,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_OMASTAR",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_ANCIENT_POWER",
+                "MOVE_SCALD",
+                "MOVE_MUD_SHOT",
+                "MOVE_AURORA_BEAM"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KADABRA",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_PSYBEAM",
+                "MOVE_TRI_ATTACK",
+                "MOVE_CALM_MIND",
+                "MOVE_ENERGY_BALL"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

@@ -15,12 +15,17 @@
             "level": 10,
             "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_FEATHER_DANCE",
-                "MOVE_U_TURN",
+                "MOVE_WING_ATTACK",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_WING_ATTACK"
+                "MOVE_FEATHER_DANCE"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_PIPLUP",
@@ -28,11 +33,17 @@
             "level": 10,
             "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_PLUCK",
                 "MOVE_BUBBLE_BEAM",
+                "MOVE_PLUCK",
                 "MOVE_WHIRLPOOL"
             ],
-            "power": 244
+            "abilitySlot": 0,
+            "nature": 19,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_TORCHIC",
@@ -44,7 +55,13 @@
                 "MOVE_ROCK_TOMB",
                 "MOVE_PECK"
             ],
-            "power": 228
+            "abilitySlot": 2,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -21,7 +21,13 @@
                 "MOVE_DOUBLE_TEAM"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_FLOATZEL",
@@ -35,7 +41,13 @@
                 "MOVE_SWIFT"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_HERACROSS",
@@ -49,7 +61,13 @@
                 "MOVE_HORN_ATTACK"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_RAPIDASH",
@@ -63,7 +81,13 @@
                 "MOVE_TAIL_WHIP"
             ],
             "power": 100,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_TORTERRA",
@@ -77,7 +101,13 @@
                 "MOVE_LEECH_SEED"
             ],
             "power": 100,
-            "ball_seal": 10
+            "ball_seal": 10,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

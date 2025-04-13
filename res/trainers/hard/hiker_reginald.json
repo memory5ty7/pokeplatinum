@@ -9,21 +9,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_BASTIODON",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_METAL_BURST",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_SPIKES",
+                "MOVE_ROCK_TOMB"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_GOLEM",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_HARD_STONE",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_SELFDESTRUCT",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

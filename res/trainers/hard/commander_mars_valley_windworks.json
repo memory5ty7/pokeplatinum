@@ -16,11 +16,16 @@
             "item": "ITEM_LIECHI_BERRY",
             "moves": [
                 "MOVE_HEADBUTT",
-                "MOVE_SWAGGER",
                 "MOVE_AERIAL_ACE",
-                "MOVE_FAKE_OUT"
+                "MOVE_FAKE_OUT",
+                "MOVE_SWAGGER"
             ],
-            "power": 226,
+            "abilitySlot": 0,
+            "nature": 1,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -34,7 +39,12 @@
                 "MOVE_FEATHER_DANCE",
                 "MOVE_TAILWIND"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -48,7 +58,12 @@
                 "MOVE_MEGA_DRAIN",
                 "MOVE_MEAN_LOOK"
             ],
-            "power": 228,
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -58,11 +73,16 @@
             "item": "ITEM_AIR_BALLOON",
             "moves": [
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_HYPNOSIS",
                 "MOVE_ROCK_TOMB",
+                "MOVE_HYPNOSIS",
                 "MOVE_PROTECT"
             ],
-            "power": 283,
+            "abilitySlot": 1,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

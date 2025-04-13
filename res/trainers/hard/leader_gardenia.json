@@ -20,7 +20,12 @@
                 "MOVE_EARTH_POWER",
                 "MOVE_SLUDGE_BOMB"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -34,21 +39,31 @@
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_BULLDOZE"
             ],
-            "power": 227,
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_JUMPLUFF",
             "form": 0,
             "level": 30,
-            "item": "ITEM_WIDE_LENS",
+            "item": "ITEM_EJECT_PACK",
             "moves": [
+                "MOVE_LEAF_STORM",
                 "MOVE_U_TURN",
                 "MOVE_SLEEP_POWDER",
-                "MOVE_PROTECT",
                 "MOVE_LEECH_SEED"
             ],
-            "power": 238,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -59,7 +74,12 @@
             "moves": [
                 "MOVE_FLAME_CHARGE"
             ],
-            "power": 229,
+            "abilitySlot": 2,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -73,7 +93,12 @@
                 "MOVE_EXTRASENSORY",
                 "MOVE_PROTECT"
             ],
-            "power": 240,
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         },
         {
@@ -87,7 +112,12 @@
                 "MOVE_BULLDOZE",
                 "MOVE_SLEEP_POWDER"
             ],
-            "power": 235,
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

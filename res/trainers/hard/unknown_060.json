@@ -1,6 +1,6 @@
 {
     "name": "Mickey",
-    "class": "TRAINER_CLASS_POKEFAN_MALE",
+    "class": "TRAINER_CLASS_PLAYER_MALE",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,117 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_CROBAT",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_CROSS_POISON",
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_HYPNOSIS",
+                "MOVE_TAILWIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CLAYDOL",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_EARTH_POWER",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ROTOM",
+            "form": 2,
+            "level": 36,
+            "item": "ITEM_CHESTO_BERRY",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_THUNDERBOLT",
+                "MOVE_VOLT_SWITCH",
+                "MOVE_REST"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CACTURNE",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_SEED_BOMB",
+                "MOVE_KNOCK_OFF",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SCIZOR",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_BULLET_PUNCH",
+                "MOVE_BUG_BITE",
+                "MOVE_AERIAL_ACE",
+                "MOVE_PURSUIT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_INFERNAPE",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_MACH_PUNCH",
+                "MOVE_FAKE_OUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

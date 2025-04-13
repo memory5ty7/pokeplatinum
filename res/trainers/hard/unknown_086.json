@@ -1,6 +1,6 @@
 {
     "name": "Angelica",
-    "class": "TRAINER_CLASS_BEAUTY",
+    "class": "TRAINER_CLASS_PICNICKER",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_DELCATTY",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 37,
+            "item": "ITEM_SILK_SCARF",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_ICE_BEAM",
+                "MOVE_GRASS_KNOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GRANBULL",
+            "form": 0,
+            "level": 37,
+            "item": "ITEM_CHOPLE_BERRY",
+            "moves": [
+                "MOVE_ICE_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_FACADE",
+                "MOVE_REVERSAL"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EXPLOUD",
+            "form": 0,
+            "level": 37,
+            "item": "ITEM_LIFE_ORB",
+            "moves": [
+                "MOVE_HYPER_VOICE",
+                "MOVE_FLAMETHROWER",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

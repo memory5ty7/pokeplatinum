@@ -8,42 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BULBASAUR",
+            "species": "SPECIES_VOLTORB",
             "form": 0,
             "level": 13,
-            "item": "ITEM_COBA_BERRY",
+            "item": "ITEM_ASSAULT_VEST",
             "moves": [
-                "MOVE_LEECH_SEED",
-                "MOVE_TOXIC",
-                "MOVE_PROTECT",
-                "MOVE_MEGA_DRAIN"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_SONIC_BOOM"
             ],
-            "power": 230
+            "abilitySlot": 1,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_ODDISH",
+            "species": "SPECIES_GULPIN",
             "form": 0,
             "level": 13,
-            "item": "ITEM_OCCA_BERRY",
+            "item": "ITEM_MIRACLE_SEED",
             "moves": [
+                "MOVE_ACID_SPRAY",
+                "MOVE_MUD_SHOT",
                 "MOVE_MEGA_DRAIN",
-                "MOVE_ACID",
-                "MOVE_SLEEP_POWDER",
-                "MOVE_PROTECT"
+                "MOVE_THUNDER_WAVE"
             ],
-            "power": 235
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_SUNKERN",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
-            "level": 14,
-            "item": "ITEM_FOCUS_SASH",
+            "level": 13,
+            "item": "ITEM_AIR_BALLOON",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_GROWTH",
-                "MOVE_SYNTHESIS"
+                "MOVE_ELECTRO_BALL",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_AGILITY"
             ],
-            "power": 235
+            "abilitySlot": 2,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 17,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -8,12 +8,98 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_MEGANIUM",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 45,
+            "item": "ITEM_IRON_BALL",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_LEECH_SEED"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGNEZONE",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_WILD_CHARGE",
+                "MOVE_FLASH_CANNON",
+                "MOVE_MAGNET_RISE",
+                "MOVE_SUBSTITUTE"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SLOWBRO",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_EJECT_BUTTON",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_ICE_BEAM",
+                "MOVE_FUTURE_SIGHT",
+                "MOVE_SLACK_OFF"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CAMERUPT",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_POWER_HERB",
+            "moves": [
+                "MOVE_HEAT_WAVE",
+                "MOVE_EARTH_POWER",
+                "MOVE_SOLAR_BEAM",
+                "MOVE_FLASH_CANNON"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SALAMENCE",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_MACHO_BRACE",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_DRAGON_PULSE",
+                "MOVE_AIR_SLASH",
+                "MOVE_HYDRO_PUMP"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

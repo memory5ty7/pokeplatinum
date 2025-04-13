@@ -9,16 +9,97 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HERACROSS",
+            "species": "SPECIES_HITMONCHAN",
             "form": 0,
-            "level": 28,
-            "item": null,
+            "level": 48,
+            "item": "ITEM_COBA_BERRY",
             "moves": [
-                "MOVE_BRICK_BREAK",
-                "MOVE_AERIAL_ACE",
-                "MOVE_LEER"
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_DRAIN_PUNCH"
             ],
-            "power": 40,
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HARIYAMA",
+            "form": 0,
+            "level": 48,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_HAMMER_ARM",
+                "MOVE_ICE_HAMMER",
+                "MOVE_DRAIN_PUNCH"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 1,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_STARAPTOR",
+            "form": 0,
+            "level": 48,
+            "item": "ITEM_CHOICE_SCARF",
+            "moves": [
+                "MOVE_BRAVE_BIRD",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_U_TURN"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELECTIVIRE",
+            "form": 0,
+            "level": 48,
+            "item": "ITEM_MAGNET",
+            "moves": [
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_THUNDERCLAP",
+                "MOVE_EARTHQUAKE"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ABSOL",
+            "form": 0,
+            "level": 48,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_SUPERPOWER",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_MEGAHORN"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

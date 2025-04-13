@@ -24,7 +24,13 @@
                 "MOVE_DRAGON_CLAW"
             ],
             "power": 200,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_PROBOPASS",
@@ -38,7 +44,13 @@
                 "MOVE_STONE_EDGE"
             ],
             "power": 200,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_GOLEM",
@@ -52,7 +64,13 @@
                 "MOVE_FLAMETHROWER"
             ],
             "power": 200,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_RAMPARDOS",
@@ -66,7 +84,13 @@
                 "MOVE_EARTHQUAKE"
             ],
             "power": 200,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         },
         {
             "species": "SPECIES_TYRANITAR",
@@ -80,7 +104,13 @@
                 "MOVE_FIRE_FANG"
             ],
             "power": 200,
-            "ball_seal": 0
+            "ball_seal": 0,
+            "abilitySlot": 0,
+            "nature": 0,
+            "status": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "gender": 3
         }
     ]
 }

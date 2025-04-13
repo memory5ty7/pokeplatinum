@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_WHISCASH",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_AQUA_TAIL",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAGON_DANCE"
+            ],
+            "abilitySlot": 2,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BEAUTIFLY",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_FOCUS_SASH",
+            "moves": [
+                "MOVE_PSYBEAM",
+                "MOVE_AIR_SLASH",
+                "MOVE_SILVER_WIND",
+                "MOVE_QUIVER_DANCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGMAR",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_PSYCHIC",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

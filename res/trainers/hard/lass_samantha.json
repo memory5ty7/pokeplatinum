@@ -9,37 +9,53 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_DUSTOX",
             "form": 0,
-            "level": 8,
-            "item": "ITEM_ORAN_BERRY",
+            "level": 14,
+            "item": "ITEM_SILVERPOWDER",
             "moves": [
-                "MOVE_BUG_BITE",
-                "MOVE_STRING_SHOT"
+                "MOVE_U_TURN"
             ],
-            "power": 238
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 1,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CASCOON",
             "form": 0,
-            "level": 9,
-            "item": "ITEM_ORAN_BERRY",
+            "level": 14,
+            "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_BUG_BITE",
-                "MOVE_POISON_STING"
+                "MOVE_HARDEN"
             ],
-            "power": 228
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_DUSTOX",
+            "species": "SPECIES_WURMPLE",
             "form": 0,
-            "level": 10,
-            "item": "ITEM_ORAN_BERRY",
+            "level": 14,
+            "item": "ITEM_CHOICE_BAND",
             "moves": [
-                "MOVE_GUST",
-                "MOVE_CONFUSION"
+                "MOVE_BUG_BITE"
             ],
-            "power": 240
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

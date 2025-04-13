@@ -8,12 +8,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_PIDGEOT",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 33,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_HEAT_WAVE",
+                "MOVE_AIR_SLASH",
+                "MOVE_U_TURN",
+                "MOVE_UPROAR"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_FLOATZEL",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_MYSTIC_WATER",
+            "moves": [
+                "MOVE_FLIP_TURN",
+                "MOVE_AQUA_JET",
+                "MOVE_CRUNCH",
+                "MOVE_ICE_FANG"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLISCOR",
+            "form": 0,
+            "level": 33,
+            "item": "ITEM_FLYING_GEM",
+            "moves": [
+                "MOVE_ACROBATICS",
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_U_TURN",
+                "MOVE_FIRE_FANG"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]

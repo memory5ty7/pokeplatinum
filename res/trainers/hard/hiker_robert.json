@@ -9,12 +9,73 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_NOSEPASS",
+            "species": "SPECIES_SHUCKLE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
+            "level": 36,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_ROLLOUT",
+                "MOVE_CURSE",
+                "MOVE_TOXIC",
+                "MOVE_STEALTH_ROCK"
+            ],
+            "abilitySlot": 0,
+            "nature": 7,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHEDINJA",
+            "form": 0,
+            "level": 69,
+            "item": "ITEM_SPELL_TAG",
+            "moves": [
+                "MOVE_SHADOW_SNEAK"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WOBBUFFET",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_IAPAPA_BERRY",
+            "moves": [
+                "MOVE_ENCORE",
+                "MOVE_DESTINY_BOND",
+                "MOVE_COUNTER",
+                "MOVE_MIRROR_COAT"
+            ],
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 3,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ARON",
+            "form": 0,
+            "level": 1,
+            "item": "ITEM_SHELL_BELL",
+            "moves": [
+                "MOVE_ENDEAVOR"
+            ],
+            "abilitySlot": 2,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
             "ball_seal": 0
         }
     ]
