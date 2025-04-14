@@ -88,6 +88,10 @@
                 "MOVE_MOONLIGHT"
             ],
             [
+                40,
+                "MOVE_AFTER_YOU"
+            ],
+            [
                 45,
                 "MOVE_ENCORE"
             ],

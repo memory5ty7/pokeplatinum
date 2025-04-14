@@ -55,13 +55,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            10,
-            "SPECIES_BEEDRILL"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"

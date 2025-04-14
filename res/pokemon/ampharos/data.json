@@ -102,6 +102,10 @@
             [
                 50,
                 "MOVE_THUNDERBOLT"
+            ],
+            [
+                54,
+                "MOVE_VOLT_SWITCH"
             ]
         ],
         "by_tm": [],

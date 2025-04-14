@@ -86,6 +86,10 @@
             [
                 45,
                 "MOVE_ACROBATICS"
+            ],
+            [
+                50,
+                "MOVE_SILK_TRAP"
             ]
         ],
         "by_tm": [],

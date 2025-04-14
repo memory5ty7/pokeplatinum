@@ -94,7 +94,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            18,
+            20,
             "SPECIES_VIGOROTH"
         ]
     ],

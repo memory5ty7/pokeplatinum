@@ -75,13 +75,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            16,
-            "SPECIES_NIDORINO"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

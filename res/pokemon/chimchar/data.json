@@ -74,8 +74,8 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            14,
-            "SPECIES_MONFERNO"
+            16,
+            "SPECIES_CHIMCHAR"
         ]
     ],
     "footprint": {

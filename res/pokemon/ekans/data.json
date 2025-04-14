@@ -46,13 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            22,
-            "SPECIES_ARBOK"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": false,
         "size": "FOOTPRINT_LARGE"

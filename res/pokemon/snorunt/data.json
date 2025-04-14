@@ -46,18 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            42,
-            "SPECIES_GLALIE"
-        ],
-        [
-            "EVO_USE_ITEM_FEMALE",
-            "ITEM_DAWN_STONE",
-            "SPECIES_FROSLASS"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

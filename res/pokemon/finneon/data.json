@@ -78,7 +78,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            31,
+            16,
             "SPECIES_LUMINEON"
         ]
     ],

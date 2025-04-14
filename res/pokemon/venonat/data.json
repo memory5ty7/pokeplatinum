@@ -46,13 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            31,
-            "SPECIES_VENOMOTH"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

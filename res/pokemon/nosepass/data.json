@@ -105,7 +105,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL_MAGNETIC_FIELD",
+            "EVO_LEVEL",
+            45,
             "SPECIES_PROBOPASS"
         ]
     ],

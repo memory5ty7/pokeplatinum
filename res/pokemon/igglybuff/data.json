@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_MAGIC_GUARD",
-        "ABILITY_NONE",
+        "ABILITY_CUTE_CHARM",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,
@@ -46,12 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL_HAPPINESS",
-            "SPECIES_JIGGLYPUFF"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

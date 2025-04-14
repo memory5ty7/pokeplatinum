@@ -49,7 +49,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            14,
+            16,
             "SPECIES_QUILAVA"
         ]
     ],

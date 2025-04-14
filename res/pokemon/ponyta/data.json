@@ -85,8 +85,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL",
-            40,
+            "EVO_USE_ITEM",
+            "ITEM_FIRE_STONE",
             "SPECIES_RAPIDASH"
         ]
     ],

@@ -63,18 +63,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL_PID_LOW",
-            7,
-            "SPECIES_SILCOON"
-        ],
-        [
-            "EVO_LEVEL_PID_HIGH",
-            7,
-            "SPECIES_CASCOON"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"

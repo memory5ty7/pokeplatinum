@@ -98,7 +98,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            37,
+            34,
             "SPECIES_MEDICHAM"
         ]
     ],

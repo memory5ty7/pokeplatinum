@@ -90,7 +90,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            15,
+            16,
             "SPECIES_FLAAFFY"
         ]
     ],

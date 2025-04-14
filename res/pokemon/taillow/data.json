@@ -82,7 +82,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            22,
+            25,
             "SPECIES_SWELLOW"
         ]
     ],

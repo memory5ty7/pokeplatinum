@@ -46,13 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_USE_ITEM",
-            "ITEM_THUNDERSTONE",
-            "SPECIES_RAICHU"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

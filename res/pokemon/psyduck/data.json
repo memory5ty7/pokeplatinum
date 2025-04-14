@@ -122,7 +122,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            33,
+            30,
             "SPECIES_GOLDUCK"
         ]
     ],

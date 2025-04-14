@@ -86,7 +86,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            31,
+            30,
             "SPECIES_FORRETRESS"
         ]
     ],

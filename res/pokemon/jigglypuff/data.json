@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_FLUFFY",
-        "ABILITY_NONE",
+        "ABILITY_CUTE_CHARM",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,
@@ -46,13 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_USE_ITEM",
-            "ITEM_MOON_STONE",
-            "SPECIES_WIGGLYTUFF"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

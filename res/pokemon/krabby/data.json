@@ -94,7 +94,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            28,
+            26,
             "SPECIES_KINGLER"
         ]
     ],

@@ -118,7 +118,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            21,
+            16,
             "SPECIES_WEEPINBELL"
         ]
     ],

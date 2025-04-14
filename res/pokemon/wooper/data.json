@@ -85,19 +85,13 @@
             ],
             [
                 60,
-                "MOVE_FISSURE"
+                "MOVE_RECOVER"
             ]
         ],
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            20,
-            "SPECIES_QUAGSIRE"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_SMALL"

@@ -101,7 +101,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL_MAGNETIC_FIELD",
+            "EVO_USE_ITEM",
+            "ITEM_THUNDERSTONE",
             "SPECIES_MAGNEZONE"
         ]
     ],

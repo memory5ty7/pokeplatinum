@@ -93,8 +93,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL",
-            40,
+            "EVO_USE_ITEM",
+            "ITEM_LEAF_STONE",
             "SPECIES_ABOMASNOW"
         ]
     ],

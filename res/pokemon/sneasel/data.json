@@ -46,13 +46,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
-            "ITEM_RAZOR_CLAW",
-            "SPECIES_WEAVILE"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

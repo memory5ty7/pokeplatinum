@@ -81,7 +81,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL_HAPPINESS_DAY",
+            "EVO_LEVEL",
+            32,
             "SPECIES_LUCARIO"
         ]
     ],

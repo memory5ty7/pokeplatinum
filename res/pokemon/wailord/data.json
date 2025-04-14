@@ -84,6 +84,10 @@
                 "MOVE_HYDRO_PUMP"
             ],
             [
+                50,
+                "MOVE_HEAVY_SLAM"
+            ],
+            [
                 55,
                 "MOVE_LIQUIDATION"
             ]

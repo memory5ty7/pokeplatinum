@@ -82,7 +82,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            25,
+            20,
             "SPECIES_GRAVELER"
         ]
     ],

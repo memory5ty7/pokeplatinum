@@ -86,7 +86,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            32,
+            36,
             "SPECIES_TORTERRA"
         ]
     ],

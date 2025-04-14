@@ -73,7 +73,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL_HAPPINESS",
+            "EVO_LEVEL",
+            20,
             "SPECIES_CLEFAIRY"
         ]
     ],

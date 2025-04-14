@@ -101,7 +101,8 @@
     },
     "evolutions": [
         [
-            "EVO_TRADE",
+            "EVO_LEVEL",
+            40,
             "SPECIES_ALAKAZAM"
         ]
     ],

@@ -42,7 +42,24 @@
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "learnset": {
-        "by_level": [],
+        "by_level": [
+            [
+                1,
+                "MOVE_COUNTER"
+            ],
+            [
+                1,
+                "MOVE_DESTINY_BOND"
+            ],
+            [
+                1,
+                "MOVE_MIRROR_COAT"
+            ],
+            [
+                1,
+                "MOVE_ENCORE"
+            ]
+        ],
         "by_tm": [],
         "by_tutor": []
     },

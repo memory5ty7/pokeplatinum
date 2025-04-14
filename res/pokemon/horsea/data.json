@@ -82,7 +82,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            32,
+            30,
             "SPECIES_SEADRA"
         ]
     ],

@@ -66,7 +66,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            18,
+            16,
             "SPECIES_GROTLE"
         ]
     ],

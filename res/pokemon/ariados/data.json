@@ -81,15 +81,15 @@
             ],
             [
                 30,
-                "MOVE_SPIDER_WEB"
-            ],
-            [
-                36,
                 "MOVE_PIN_MISSILE"
             ],
             [
-                40,
+                36,
                 "MOVE_FIRST_IMPRESSION"
+            ],
+            [
+                40,
+                "MOVE_STICKY_WEB"
             ],
             [
                 45,

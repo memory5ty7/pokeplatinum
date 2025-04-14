@@ -87,18 +87,7 @@
         "by_tm": [],
         "by_tutor": []
     },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            37,
-            "SPECIES_SLOWBRO"
-        ],
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_KINGS_ROCK",
-            "SPECIES_SLOWKING"
-        ]
-    ],
+    "evolutions": [],
     "footprint": {
         "has": true,
         "size": "FOOTPRINT_MEDIUM"

@@ -86,7 +86,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            45,
+            52,
             "SPECIES_METAGROSS"
         ]
     ],

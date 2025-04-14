@@ -101,7 +101,8 @@
     },
     "evolutions": [
         [
-            "EVO_LEVEL_HAPPINESS",
+            "EVO_LEVEL",
+            36,
             "SPECIES_CROBAT"
         ]
     ],
