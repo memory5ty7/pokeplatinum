@@ -34,7 +34,7 @@
         "EGG_GROUP_GRASS"
     ],
     "abilities": [
-        "ABILITY_HARVEST",
+        "ABILITY_NONE",
         "ABILITY_CHLOROPHYLL",
         "ABILITY_SOLAR_POWER"
     ],

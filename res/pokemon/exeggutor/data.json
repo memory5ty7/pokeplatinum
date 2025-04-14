@@ -5,7 +5,7 @@
         "defense": 85,
         "speed": 55,
         "special_attack": 125,
-        "special_defense": 65
+        "special_defense": 75
     },
     "types": [
         "TYPE_GRASS",
@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_CHLOROPHYLL",
         "ABILITY_NONE",
-        "ABILITY_HARVEST"
+        "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",

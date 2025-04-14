@@ -84,10 +84,6 @@
                 "MOVE_HYDRO_PUMP"
             ],
             [
-                45,
-                "MOVE_ENTRAINMENT"
-            ],
-            [
                 50,
                 "MOVE_WATER_SPOUT"
             ]

@@ -1,7 +1,7 @@
 {
     "base_stats": {
         "hp": 52,
-        "attack": 65,
+        "attack": 90,
         "defense": 55,
         "speed": 60,
         "special_attack": 58,
@@ -22,7 +22,7 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_NONE",
+        "common": "ITEM_STICK",
         "rare": "ITEM_STICK"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_50",
@@ -102,14 +102,6 @@
             [
                 47,
                 "MOVE_HEAT_WAVE"
-            ],
-            [
-                50,
-                "MOVE_WIDE_GUARD"
-            ],
-            [
-                50,
-                "MOVE_QUICK_GUARD"
             ]
         ],
         "by_tm": [],

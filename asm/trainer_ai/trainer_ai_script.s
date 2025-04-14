@@ -59,18 +59,98 @@ Basic_Main:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_HighestDamage
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_HighestDamage
 
+    GoTo Basic_CheckForImmunity
+
+Basic_CheckForImmunity:
+
+    IfMoveEffectivenessEquals TYPE_MULTI_IMMUNE, ScoreMinus10
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_NoImmunityAbility
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+
+    IfLoadedEqualTo ABILITY_VOLT_ABSORB, Basic_CheckElectricAbsorption
+    IfLoadedEqualTo ABILITY_MOTOR_DRIVE, Basic_CheckElectricAbsorption
+
+    IfLoadedEqualTo ABILITY_WATER_ABSORB, Basic_CheckWaterAbsorption
+    IfLoadedEqualTo ABILITY_DRY_SKIN, Basic_CheckWaterAbsorption
+
+    IfLoadedEqualTo ABILITY_SAP_SIPPER, Basic_CheckGrassAbsorption
+
+    IfLoadedEqualTo ABILITY_FLASH_FIRE, Basic_CheckFireAbsorption
+
+    IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_CheckWonderGuard
+
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_GROUND, Basic_CheckGroundAbsorption
+    
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckElectricAbsorption:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_ELECTRIC, ScoreMinus12
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckGrassAbsorption:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_GRASS, ScoreMinus12
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckWaterAbsorption:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_WATER, ScoreMinus12
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckFireAbsorption:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_FIRE, ScoreMinus12
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckWonderGuard:
+    IfMoveEffectivenessEquals TYPE_MULTI_DOUBLE_DAMAGE, Basic_NoImmunityAbility
+    IfMoveEffectivenessEquals TYPE_MULTI_QUADRUPLE_DAMAGE, Basic_NoImmunityAbility
+    GoTo ScoreMinus12
+
+Basic_CheckGroundAbsorption:
+    IsBattlerGrounded AI_BATTLER_DEFENDER, Basic_NoImmunityAbility
+    GoTo ScoreMinus12
+
+Basic_NoImmunityAbility:
+    FlagMoveDamageScore FALSE
+    IfLoadedEqualTo AI_NO_COMPARISON_MADE, Basic_CheckSoundproof
+
+Basic_CheckSoundproof:
+    ; Check for immunity to sound-based moves
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedNotEqualTo ABILITY_SOUNDPROOF, CheckKill
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, CheckKill
+    IfMoveEqualTo MOVE_BUG_BUZZ, ScoreMinus10
+    IfMoveEqualTo MOVE_CHATTER, ScoreMinus10
+    IfMoveEqualTo MOVE_BOOMBURST, ScoreMinus10
     GoTo CheckKill
 
 CheckKill:
-    IfCurrentMoveKills ROLL_FOR_DAMAGE, Basic_CheckSpeedKill
+    IfCurrentMoveKills ROLL_FOR_DAMAGE, Basic_KillRandom
     GoTo Basic_HighestDamage
+
+Basic_KillRandom:
+    IfRandomLessThan 205, Basic_KillRandom2
+    AddToMoveScore 8
+    GoTo Basic_CheckSpeedKill
+
+Basic_KillRandom2:
+    AddToMoveScore 6
+    GoTo Basic_CheckSpeedKill   
 
 Basic_CheckSpeedKill:
     LoadAbility AI_BATTLER_ATTACKER
-    IfLoadedEqualTo ABILITY_BEAST_BOOST, Basic_CheckSpeedKill2
-    IfLoadedEqualTo ABILITY_MOXIE, Basic_CheckSpeedKill2
-    AddToMoveScore 1
+    IfLoadedEqualTo ABILITY_BEAST_BOOST, Basic_MoxieBoost
+    IfLoadedEqualTo ABILITY_MOXIE, Basic_MoxieBoost
     GoTo Basic_CheckSpeedKill2
+
+Basic_MoxieBoost:
+    AddToMoveScore 1
+    GoTo Basic_CheckSpeedKill2    
 
 Basic_CheckSpeedKill2:
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_FastKill
@@ -79,12 +159,12 @@ Basic_CheckSpeedKill2:
 
 Basic_FastKill:
     AddToMoveScore 6
-    GoTo Basic_HighestDamage
+    GoTo Basic_Other
 
 Basic_SlowKill:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PRIORITY_1, Basic_FastKill
     AddToMoveScore 3
-    GoTo Basic_HighestDamage
+    GoTo Basic_Other
 
 Basic_HighestDamage:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PRIORITY_1, Basic_Priority
@@ -97,7 +177,7 @@ Basic_HighestDamage:
     IfLoadedEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, Basic_HighestDamageRandom
 
     GoTo Basic_AdditionalDamage
-
+ 
 Basic_Priority:
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_End
     IfSpeedCompareEqualTo COMPARE_SPEED_TIE, Basic_End

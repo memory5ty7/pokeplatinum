@@ -1,7 +1,7 @@
 {
     "base_stats": {
         "hp": 90,
-        "attack": 82,
+        "attack": 92,
         "defense": 87,
         "speed": 76,
         "special_attack": 75,
@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_POISON_POINT",
         "ABILITY_SHEER_FORCE",
-        "ABILITY_NONE"
+        "ABILITY_SHEER_FORCE"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",

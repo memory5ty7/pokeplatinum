@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_INNER_FOCUS",
-        "ABILITY_MARVEL_SCALE",
+        "ABILITY_NONE",
         "ABILITY_MULTISCALE"
     ],
     "safari_flee_rate": 0,

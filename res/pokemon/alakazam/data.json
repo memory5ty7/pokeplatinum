@@ -5,7 +5,7 @@
         "defense": 45,
         "speed": 120,
         "special_attack": 135,
-        "special_defense": 85
+        "special_defense": 95
     },
     "types": [
         "TYPE_PSYCHIC",

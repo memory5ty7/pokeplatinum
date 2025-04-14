@@ -686,6 +686,12 @@
     .long (\jump-.) / 4 - 1
     .endm
 
+    .macro IsBattlerGrounded battler, jump
+    .long 119
+    .long \battler
+    .long (\jump-.) / 4 - 1
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry

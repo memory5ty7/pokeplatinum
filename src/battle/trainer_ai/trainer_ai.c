@@ -186,6 +186,7 @@ static void AICmd_TurnsToKill(BattleSystem *battleSys, BattleContext *battleCtx)
 static void AICmd_IfSpeedCompareAfterParaEqualTo(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_ImprisonCheck(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfShouldRecover(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_IsBattlerGrounded(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -334,6 +335,7 @@ static const AICommandFunc sAICommandTable[] = {
     AICmd_IfSpeedCompareAfterParaEqualTo,
     AICmd_ImprisonCheck,
     AICmd_IfShouldRecover,
+    AICmd_IsBattlerGrounded,
 };
 
 void TrainerAI_Init(BattleSystem *battleSys, BattleContext *battleCtx, u8 battler, u8 initScore)
@@ -4375,12 +4377,12 @@ static BOOL TrainerAI_ShouldSwitch(BattleSystem *battleSys, BattleContext *battl
             return TRUE;
         }
 
-        /*
-        if (AI_CannotDamageWonderGuard(battleSys, battleCtx, battler)) {
+        if (AI_OnlyIneffectiveMoves(battleSys, battleCtx, battler)) {
             return TRUE;
         }
 
-        if (AI_OnlyIneffectiveMoves(battleSys, battleCtx, battler)) {
+        /*
+        if (AI_CannotDamageWonderGuard(battleSys, battleCtx, battler)) {
             return TRUE;
         }
 
@@ -5143,6 +5145,26 @@ static void AICmd_IfShouldRecover(BattleSystem *battleSys, BattleContext *battle
     }
 
     if (returnValue) {
+        AIScript_Iter(battleCtx, jump);
+    }
+}
+
+
+static void AICmd_IsBattlerGrounded(BattleSystem *battleSys, BattleContext *battleCtx){
+
+    AIScript_Iter(battleCtx, 1);
+    int inBattler = AIScript_Read(battleCtx);
+    int jump = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+
+    if ((Battler_Ability(battleCtx, battler) != ABILITY_LEVITATE
+    && Battler_HeldItemEffect(battleCtx, battler) != HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT
+    && battleCtx->battleMons[battler].moveEffectsData.magnetRiseTurns == 0
+    && MON_IS_NOT_TYPE(battler, TYPE_FLYING))
+    || Battler_HeldItemEffect(battleCtx, battler) == HOLD_EFFECT_SPEED_DOWN_GROUNDED
+    || (battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY)
+    )
+    {
         AIScript_Iter(battleCtx, jump);
     }
 }

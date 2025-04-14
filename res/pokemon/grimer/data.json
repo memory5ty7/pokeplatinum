@@ -34,7 +34,7 @@
         "EGG_GROUP_AMORPHOUS"
     ],
     "abilities": [
-        "ABILITY_POISON_TOUCH",
+        "ABILITY_NONE",
         "ABILITY_GLUTTONY",
         "ABILITY_NONE"
     ],

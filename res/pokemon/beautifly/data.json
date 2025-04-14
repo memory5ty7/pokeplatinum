@@ -4,7 +4,7 @@
         "attack": 70,
         "defense": 50,
         "speed": 65,
-        "special_attack": 90,
+        "special_attack": 100,
         "special_defense": 50
     },
     "types": [
@@ -86,10 +86,6 @@
             [
                 45,
                 "MOVE_ACROBATICS"
-            ],
-            [
-                50,
-                "MOVE_SILK_TRAP"
             ]
         ],
         "by_tm": [],

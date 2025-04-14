@@ -4,7 +4,7 @@
         "attack": 85,
         "defense": 60,
         "speed": 125,
-        "special_attack": 50,
+        "special_attack": 75,
         "special_defense": 50
     },
     "types": [

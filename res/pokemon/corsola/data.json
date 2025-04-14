@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 55,
+        "hp": 65,
         "attack": 55,
-        "defense": 85,
+        "defense": 95,
         "speed": 35,
         "special_attack": 65,
-        "special_defense": 85
+        "special_defense": 95
     },
     "types": [
         "TYPE_WATER",

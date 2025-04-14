@@ -3,7 +3,7 @@
         "hp": 60,
         "attack": 50,
         "defense": 70,
-        "speed": 140,
+        "speed": 150,
         "special_attack": 80,
         "special_defense": 80
     },
@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_SOUNDPROOF",
-        "ABILITY_STATIC",
+        "ABILITY_NONE",
         "ABILITY_GALVANIZE"
     ],
     "safari_flee_rate": 0,

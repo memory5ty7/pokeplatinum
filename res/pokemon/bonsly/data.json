@@ -35,7 +35,7 @@
     ],
     "abilities": [
         "ABILITY_ROCK_HEAD",
-        "ABILITY_STURDY",
+        "ABILITY_NONE",
         "ABILITY_NONE"
     ],
     "safari_flee_rate": 0,

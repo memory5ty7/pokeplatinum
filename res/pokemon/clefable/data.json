@@ -4,7 +4,7 @@
         "attack": 70,
         "defense": 73,
         "speed": 60,
-        "special_attack": 85,
+        "special_attack": 95,
         "special_defense": 90
     },
     "types": [
@@ -90,10 +90,6 @@
             [
                 36,
                 "MOVE_MOONLIGHT"
-            ],
-            [
-                40,
-                "MOVE_AFTER_YOU"
             ],
             [
                 42,
