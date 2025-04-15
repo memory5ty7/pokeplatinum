@@ -14,7 +14,7 @@
     "catch_rate": 190,
     "base_exp_reward": 68,
     "ev_yields": {
-        "hp": 1,
+        "hp": 0,
         "attack": 0,
         "defense": 0,
         "speed": 0,

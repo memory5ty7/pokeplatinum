@@ -206,7 +206,6 @@ const u16 SandgemTownSpecialties[] = {
 };
 
 const u16 *PokeMartSpecialties[] = {
-    SandgemTownSpecialties,
     JubilifeMartSpecialties,
     OreburghMartSpecialties,
     FloaromaMartSpecialties,
@@ -226,7 +225,8 @@ const u16 *PokeMartSpecialties[] = {
     CanalaveMartSpecialties,
     SunyshoreMartSpecialties,
     PokemonLeagueMartSpecialties,
-    VeilstoneDeptStoreStock_B1F_DOWN_LEFT
+    VeilstoneDeptStoreStock_B1F_DOWN_LEFT,
+    SandgemTownSpecialties
 };
 
 const u16 VeilstoneDeptStoreStock_4F_UP[] = {

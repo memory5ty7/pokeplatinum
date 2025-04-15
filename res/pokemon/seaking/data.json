@@ -15,7 +15,7 @@
     "base_exp_reward": 170,
     "ev_yields": {
         "hp": 0,
-        "attack": 2,
+        "attack": 0,
         "defense": 0,
         "speed": 0,
         "special_attack": 0,
