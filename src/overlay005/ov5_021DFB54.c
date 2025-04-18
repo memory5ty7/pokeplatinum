@@ -46,6 +46,8 @@
 #include "unk_020655F4.h"
 #include "unk_02071B10.h"
 
+#include "generated/species.h"
+
 typedef struct {
     u32 unk_00;
     int unk_04;
@@ -590,13 +592,21 @@ static void ov5_021E00B0(FieldSystem *fieldSystem, int param1, const UnkStruct_o
     FieldTask_InitCall(fieldSystem->task, ov5_021E0160, v0);
 }
 
-void ov5_021E00EC(FieldTask *taskMan, int param1, int param2)
+void ov5_021E00EC(FieldTask *taskMan, int param1, int slot)
 {
     UnkStruct_ov5_021E1050 v0;
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(taskMan);
-    Pokemon *v2 = ov5_021E1140(fieldSystem, param2);
+    Pokemon *mon = ov5_021E1140(fieldSystem, slot);
+    Pokemon *HMMon = Pokemon_New(4);
+    Pokemon_Copy(mon, HMMon);
 
-    ov5_021E1028(fieldSystem, v2, &v0);
+    int species = SPECIES_MILOTIC;  // Surf Species
+
+    // ! Potential Memory Leak
+
+    Pokemon_SetValue(HMMon, MON_DATA_SPECIES, &species);
+
+    ov5_021E1028(fieldSystem, HMMon, &v0);
     ov5_021E00B0(fieldSystem, param1, &v0);
 }
 
@@ -971,14 +981,22 @@ static void ov5_021E06F8(FieldSystem *fieldSystem, int param1, const UnkStruct_o
     FieldTask_InitCall(fieldSystem->task, ov5_021E07A0, v0);
 }
 
-void ov5_021E0734(FieldTask *param0, int param1, int param2)
+void ov5_021E0734(FieldTask *fieldTask, int param1, int slot)
 {
     UnkStruct_ov5_021E1050 v0;
-    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
-    Pokemon *v2 = ov5_021E1140(fieldSystem, param2);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(fieldTask);
+    Pokemon *mon = ov5_021E1140(fieldSystem, slot);
+    Pokemon *HMMon = Pokemon_New(4);
+    Pokemon_Copy(mon, HMMon);
 
-    ov5_021E1028(fieldSystem, v2, &v0);
+    int species = SPECIES_MAMOSWINE;  // Rock Climb Species
+    Pokemon_SetValue(HMMon, MON_DATA_SPECIES, &species);
+
+    // ! Potential Memory Leak
+
+    ov5_021E1028(fieldSystem, HMMon, &v0);
     ov5_021E06F8(fieldSystem, param1, &v0);
+
 }
 
 int ov5_021E0760(u32 param0, int param1)
@@ -1157,17 +1175,25 @@ void ov5_021E097C(FieldSystem *fieldSystem, int param1)
     FieldSystem_CreateTask(fieldSystem, ov5_021E09D4, v0);
 }
 
-void ov5_021E0998(FieldTask *param0, int param1, int param2)
+void ov5_021E0998(FieldTask *fieldTask, int param1, int slot)
 {
     UnkStruct_ov5_021E1050 v0;
-    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
-    Pokemon *v2 = ov5_021E1140(fieldSystem, param2);
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(fieldTask);
+    Pokemon *mon = ov5_021E1140(fieldSystem, slot);
+    Pokemon *HMMon = Pokemon_New(4);
+    Pokemon_Copy(mon, HMMon);
 
-    ov5_021E1028(fieldSystem, v2, &v0);
+    int species = SPECIES_MILOTIC;  // Waterfall Species
+
+    // ! Potential Memory Leak
+
+    Pokemon_SetValue(HMMon, MON_DATA_SPECIES, &species);
+
+    ov5_021E1028(fieldSystem, HMMon, &v0);
 
     {
         UnkStruct_ov5_021F9B10 *v3 = ov5_021E0948(fieldSystem, param1, &v0);
-        FieldTask_InitCall(param0, ov5_021E09D4, v3);
+        FieldTask_InitCall(fieldTask, ov5_021E09D4, v3);
     }
 }
 
@@ -1696,10 +1722,10 @@ void FieldSystem_EndVsSeekerTask(SysTask *param0)
     ov5_021E0FC0(param0);
 }
 
-static void ov5_021E1028(FieldSystem *fieldSystem, Pokemon *param1, UnkStruct_ov5_021E1050 *param2)
+static void ov5_021E1028(FieldSystem *fieldSystem, Pokemon *mon, UnkStruct_ov5_021E1050 *param2)
 {
     param2->unk_00 = 1;
-    param2->unk_08 = param1;
+    param2->unk_08 = mon;
     param2->unk_04 = PlayerAvatar_Gender(fieldSystem->playerAvatar);
 }
 
@@ -1772,8 +1798,8 @@ static void ov5_021E1134(void *param0)
     Heap_FreeToHeapExplicit(4, param0);
 }
 
-static Pokemon *ov5_021E1140(FieldSystem *fieldSystem, int param1)
+static Pokemon *ov5_021E1140(FieldSystem *fieldSystem, int slot)
 {
-    Pokemon *v0 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), param1);
-    return v0;
+    Pokemon *mon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), slot);
+    return mon;
 }

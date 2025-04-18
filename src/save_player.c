@@ -9,6 +9,8 @@
 #include "savedata.h"
 #include "trainer_info.h"
 
+#include "constants/charcode.h"
+
 int Player_SaveSize(void)
 {
     return sizeof(PlayerSave);

@@ -98,6 +98,8 @@
 #include "constdata/const_020F1E88.h"
 #include "res/text/bank/unk_0367.h"
 
+#include "generated/species.h"
+
 typedef enum FieldMenuPos {
     MENU_POS_POKEDEX,
     MENU_POS_POKEMON,
@@ -1750,7 +1752,16 @@ BOOL sub_0203C434(FieldTask *taskMan)
         void *journalEntryLocationEvent;
 
         mon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(fieldSystem->saveData), v3);
-        v5 = sub_0207064C(HEAP_ID_FIELDMAP, fieldSystem, mon, v2->unk_1C, v2->unk_14 * 32 + 16, v2->unk_18 * 32 + 16);
+
+        // ! Potential Memory Leak
+
+        Pokemon *HMMon = Pokemon_New(11);
+        Pokemon_Copy(mon, HMMon);
+
+        int species = SPECIES_STARAPTOR;
+        Pokemon_SetValue(HMMon, MON_DATA_SPECIES, &species);
+
+        v5 = sub_0207064C(HEAP_ID_FIELDMAP, fieldSystem, HMMon, v2->unk_1C, v2->unk_14 * 32 + 16, v2->unk_18 * 32 + 16);
         journalEntryLocationEvent = JournalEntry_CreateEventUsedMove(LOCATION_EVENT_FLEW_TO_LOCATION - LOCATION_EVENT_USED_CUT, v2->unk_1C, HEAP_ID_FIELDMAP);
 
         JournalEntry_SaveData(fieldSystem->journalEntry, journalEntryLocationEvent, JOURNAL_LOCATION);

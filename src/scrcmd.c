@@ -4710,14 +4710,24 @@ static BOOL ScrCmd_0C4(ScriptContext *ctx)
 
 static BOOL ScrCmd_0C5(ScriptContext *ctx)
 {
-    Pokemon *v0;
+    Pokemon *mon;
     void **v1 = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
-    u16 v2 = ScriptContext_GetVar(ctx);
+    u16 slot = ScriptContext_GetVar(ctx);
+    u16 move = ScriptContext_GetVar(ctx);
 
-    v0 = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(ctx->fieldSystem->saveData), v2);
-    *v1 = ov6_02243F88(ctx->fieldSystem, 0, v0, PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
+    mon = Party_GetPokemonBySlotIndex(Party_GetFromSavedata(ctx->fieldSystem->saveData), slot);
+    Pokemon *HMMon = Pokemon_New(32);
+    Pokemon_Copy(mon, HMMon);
+
+    int species[9] = {SPECIES_KRICKETUNE, SPECIES_STARAPTOR, SPECIES_MILOTIC, SPECIES_AGGRON, SPECIES_XATU, SPECIES_MACHOP, SPECIES_MILOTIC, SPECIES_MAMOSWINE, SPECIES_KADABRA};  // HM Species
+    Pokemon_SetValue(HMMon, MON_DATA_SPECIES, &species[move]);
+
+
+    *v1 = ov6_02243F88(ctx->fieldSystem, 0, HMMon, PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
 
     ScriptContext_Pause(ctx, sub_02042C80);
+
+    Heap_FreeToHeap(HMMon);
     return 1;
 }
 

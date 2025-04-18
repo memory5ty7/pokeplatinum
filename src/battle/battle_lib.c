@@ -1324,9 +1324,9 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         if (battleCtx->battleMons[battler1].curHP <= (battleCtx->battleMons[battler1].maxHP / battler1ItemParam)) {
             battler1QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
+            //if (ignoreQuickClaw == FALSE) {
                 battleCtx->battleMons[battler1].moveEffectsData.custapBerry = 1;
-            }
+            //}
         }
     }
 
@@ -1390,9 +1390,9 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
+            //if (ignoreQuickClaw == FALSE) {
                 battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
-            }
+            //}
         }
     }
 
@@ -1613,9 +1613,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
         if (battleCtx->speedRand[battler1] % (100 / battler1ItemParam) == 0) {
             battler1QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler1].moveEffectsData.quickClaw = 1;
-            }
         }
     }
 
@@ -1627,9 +1624,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
         if (battleCtx->battleMons[battler1].curHP <= (battleCtx->battleMons[battler1].maxHP / battler1ItemParam)) {
             battler1QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler1].moveEffectsData.custapBerry = 1;
-            }
         }
     }
 
@@ -1679,9 +1673,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
         if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
             battler2QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler2].moveEffectsData.quickClaw = 1;
-            }
         }
     }
 
@@ -1693,9 +1684,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
-            }
         }
     }
 
@@ -1965,9 +1953,6 @@ static u8 BattleSystem_PostKOCompareSpeed(BattleSystem *battleSys, BattleContext
         if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
             battler2QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler2].moveEffectsData.quickClaw = 1;
-            }
         }
     }
 
@@ -1979,9 +1964,6 @@ static u8 BattleSystem_PostKOCompareSpeed(BattleSystem *battleSys, BattleContext
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
 
-            if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
-            }
         }
     }
 

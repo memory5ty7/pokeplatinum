@@ -62,6 +62,8 @@
 
 #include "constdata/const_020F1E88.h"
 
+#include "generated/species.h"
+
 FS_EXTERN_OVERLAY(overlay118);
 
 typedef struct {
@@ -1734,12 +1736,18 @@ static u8 sub_020800B4(GameWindowLayout *param0, u8 *param1)
     u16 v1;
     u8 v2 = 0, i, v4 = 0, v5;
 
+    FieldSystem *fieldSystem;
+
+    fieldSystem = param0->unk_5A4->unk_1C;
+
+    Bag *bag = SaveData_GetBag(fieldSystem->saveData);
+
     param1[v4] = 1;
     v4++;
 
     if (sub_0206C0D0(param0->unk_5A4->unk_1C) == 0) {
         if (param0->unk_704[param0->unk_B11].unk_10 == 0) {
-            if (Pokemon_CanLearnTM(v0, Item_TMHMNumber(Item_HMFromMove(MOVE_FLY))) == TRUE) {
+            if (Bag_GetItemQuantity(bag, ITEM_TM01 + Item_TMHMNumber(MOVE_FLY), 12) > 0) {
 
                 v5 = GetElementIndex(MOVE_FLY);
 

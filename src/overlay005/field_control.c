@@ -222,8 +222,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
             playerEvent |= PLAYER_EVENT_USED_STRENGTH;
         }
 
-        if (Party_HasMonThatLearnsMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_WATERFALL) != PARTY_SLOT_NONE
-            && Bag_GetItemQuantity(SaveData_GetBag(fieldSystem->saveData), ITEM_HM07, 4) > 0
+        if (Bag_GetItemQuantity(SaveData_GetBag(fieldSystem->saveData), ITEM_HM07, 4) > 0
             && TrainerInfo_HasBadge(SaveData_GetTrainerInfo(fieldSystem->saveData), 7)) {
             playerEvent |= PLAYER_EVENT_USED_WATERFALL;
         }
@@ -708,9 +707,7 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
         if (ov5_021E0118(fieldSystem->playerAvatar, distortionBehavior, behavior)
             && TrainerInfo_HasBadge(info, 3)
             && Bag_GetItemQuantity(SaveData_GetBag(fieldSystem->saveData), ITEM_HM03, 4) > 0) {
-            if (Party_HasMonThatLearnsMove(Party_GetFromSavedata(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
-                return 10004;
-            }
+            return 10004;
         }
     }
 

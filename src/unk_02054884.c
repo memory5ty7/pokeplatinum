@@ -129,26 +129,6 @@ int Party_HasMonWithMove(Party *party, u16 moveID)
     return PARTY_SLOT_NONE;
 }
 
-int Party_HasMonThatLearnsMove(Party *party, u16 moveID)
-{
-    int i;
-    int partyCount = Party_GetCurrentCount(party);
-
-    for (i = 0; i < partyCount; i++) {
-        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
-
-        if (Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) != FALSE) {
-            continue;
-        }
-
-        if (Pokemon_CanLearnTM(mon, Item_TMHMNumber(Item_HMFromMove(moveID))) == TRUE) {
-            return i;
-        }
-    }
-
-    return PARTY_SLOT_NONE;
-}
-
 int Party_AliveMonsCount(const Party *party)
 {
     int i;

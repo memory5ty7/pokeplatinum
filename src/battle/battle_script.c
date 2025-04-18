@@ -11303,9 +11303,6 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
     if (getVar(VAR_DIFFICULTY) & GUARANTEED_CATCH)
     {
         speciesMod = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->defender].species, SPECIES_DATA_CATCH_RATE);
-        Desmume_Log("%d\n",speciesMod);
-        Desmume_Log("%d\n",getVar(VAR_DIFFICULTY));
-
 
         if ((BattleSystem_BattleType(battleSys) & BATTLE_TYPE_ALWAYS_CATCH) || (speciesMod != 0) || (battleCtx->msgItemTemp == ITEM_MASTER_BALL)) {
             return 4;

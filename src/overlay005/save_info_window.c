@@ -37,7 +37,8 @@ static const int sSaveInfoLabels[] = {
     SAVE_INFO_LABEL_PLAYER_NAME,
     SAVE_INFO_LABEL_BADGE_COUNT,
     SAVE_INFO_LABEL_POKEDEX_COUNT,
-    SAVE_INFO_LABEL_PLAY_TIME
+    SAVE_INFO_LABEL_PLAY_TIME,
+    SAVE_INFO_LABEL_GAME_VERSION
 };
 
 static const int sSaveInfoValues[] = {
@@ -101,6 +102,7 @@ static void SaveInfoWindow_SetStrings(StringTemplate *strTemplate, const SaveInf
 
     StringTemplate_SetNumber(strTemplate, 4, playTimeHours, maxDigits, padding, CHARSET_MODE_EN);
     StringTemplate_SetNumber(strTemplate, 5, PlayTime_GetMinutes(saveInfo->playTime), 2, PADDING_MODE_ZEROES, CHARSET_MODE_EN);
+    StringTemplate_SetNumber(strTemplate, 6, 2, 1, PADDING_MODE_ZEROES, CHARSET_MODE_EN);
 }
 
 static int SaveInfoWindow_Height(const SaveInfo *saveInfo)
@@ -124,21 +126,32 @@ static void SaveInfoWindow_PrintText(const SaveInfoWindow *saveInfoWin)
     int xOffset;
 
     for (int i = 1; i < NELEMS(sSaveInfoLabels); i++) {
-        if (sSaveInfoLabels[i] == SAVE_INFO_LABEL_POKEDEX_COUNT && saveInfoWin->saveInfo.pokedexCount == 0) {
-            continue;
+
+        if (i != 4) {
+            if (sSaveInfoLabels[i] == SAVE_INFO_LABEL_POKEDEX_COUNT && saveInfoWin->saveInfo.pokedexCount == 0) {
+                continue;
+            }
+
+            yOffset += fontSpacing;
+            buf = MessageLoader_GetNewStrbuf(saveInfoWin->msgLoader, sSaveInfoLabels[i]);
+
+            Text_AddPrinterWithParams(saveInfoWin->window, FONT_SYSTEM, buf, 0, yOffset, TEXT_SPEED_NO_TRANSFER, NULL);
+            Strbuf_Free(buf);
+
+            if (i != 5) {
+                buf = MessageUtil_ExpandedStrbuf(saveInfoWin->strTemplate, saveInfoWin->msgLoader, sSaveInfoValues[i - 1], saveInfoWin->heapID);
+                xOffset = SAVE_INFO_WINDOW_WIDTH * 8 - Font_CalcStrbufWidth(FONT_SYSTEM, buf, Font_GetAttribute(FONT_SYSTEM, FONTATTR_LETTER_SPACING));
+
+                Text_AddPrinterWithParams(saveInfoWin->window, FONT_SYSTEM, buf, xOffset, yOffset, TEXT_SPEED_NO_TRANSFER, NULL);
+                Strbuf_Free(buf);
+            } else {
+                buf = MessageLoader_GetNewStrbuf(saveInfoWin->msgLoader, sSaveInfoLabels[i + 1]);
+                xOffset = SAVE_INFO_WINDOW_WIDTH * 8 - Font_CalcStrbufWidth(FONT_SYSTEM, buf, Font_GetAttribute(FONT_SYSTEM, FONTATTR_LETTER_SPACING));
+    
+                Text_AddPrinterWithParams(saveInfoWin->window, FONT_SYSTEM, buf, xOffset, yOffset, TEXT_SPEED_NO_TRANSFER, NULL);
+                Strbuf_Free(buf);               
+            }
         }
-
-        yOffset += fontSpacing;
-        buf = MessageLoader_GetNewStrbuf(saveInfoWin->msgLoader, sSaveInfoLabels[i]);
-
-        Text_AddPrinterWithParams(saveInfoWin->window, FONT_SYSTEM, buf, 0, yOffset, TEXT_SPEED_NO_TRANSFER, NULL);
-        Strbuf_Free(buf);
-
-        buf = MessageUtil_ExpandedStrbuf(saveInfoWin->strTemplate, saveInfoWin->msgLoader, sSaveInfoValues[i - 1], saveInfoWin->heapID);
-        xOffset = SAVE_INFO_WINDOW_WIDTH * 8 - Font_CalcStrbufWidth(FONT_SYSTEM, buf, Font_GetAttribute(FONT_SYSTEM, FONTATTR_LETTER_SPACING));
-
-        Text_AddPrinterWithParams(saveInfoWin->window, FONT_SYSTEM, buf, xOffset, yOffset, TEXT_SPEED_NO_TRANSFER, NULL);
-        Strbuf_Free(buf);
     }
 }
 
