@@ -4928,10 +4928,10 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
             for (i = 0; i < maxBattlers; i++) {
                 battler = battleCtx->monSpeedOrder[i];
 
-                if (battleCtx->battleMons[battler].ability_activated_flag == 0
+                if (battleCtx->battleMons[battler].ability_activated_flag == FALSE
                     && battleCtx->battleMons[battler].curHP
                     && Battler_Ability(battleCtx, battler) == ABILITY_UNNERVE) {
-                    battleCtx->battleMons[battler].ability_activated_flag = 1;
+                    battleCtx->battleMons[battler].ability_activated_flag = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_unnerve_message;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
@@ -10983,6 +10983,14 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
         monSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES_EGG, NULL);
 
         Desmume_Log("\nMON NUMBER %d", i + 1);
+
+        /*
+        for (int j = 0; j < 6; j++)
+        {
+            Desmume_Log("%d ", Pokemon_GetValue(BattleSystem_PartyPokemon(battleSys, battler, i), MON_DATA_HP_IV + j, NULL));
+        }
+        Desmume_Log("\n");
+        */
 
         if (monSpecies != SPECIES_NONE
             && monSpecies != SPECIES_EGG

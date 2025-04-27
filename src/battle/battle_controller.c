@@ -5040,7 +5040,15 @@ static BOOL BattleController_CheckExtraFlinch(BattleSystem *battleSys, BattleCon
         && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
         && (BattleSystem_RandNext(battleSys) % 100) < itemPower
         && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_TRIGGERS_KINGS_ROCK)
-        && DEFENDING_MON.curHP) {
+        && DEFENDING_MON.curHP
+        && !((CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_HIT)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_BURN_HIT)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_DOUBLE_DAMAGE_FLY_OR_BOUNCE)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_FREEZE_HIT)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_MINIMIZE_DOUBLE_HIT)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_FLINCH_PARALYZE_HIT)
+        || (CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT_FLINCH)
+    )) {
         battleCtx->sideEffectMon = battleCtx->defender;
         battleCtx->sideEffectType = SIDE_EFFECT_TYPE_INDIRECT;
 

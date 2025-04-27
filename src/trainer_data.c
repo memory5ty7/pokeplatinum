@@ -369,38 +369,38 @@ static void AdjustIVs(Pokemon *mon, u8 IVProfile)
         }
     } else if (IVProfile == 1) {
         ivs = 0;
-        Pokemon_SetValue(mon, MON_DATA_SPDEF_IV, &ivs);
+        Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &ivs);
     } else if (IVProfile != 0) {
 
         u8 IVSpreads[NUM_POKEMON_TYPES][6] = {
             { 31, 31, 31, 31, 31, 31 }, // Normal
-            { 31, 31, 30, 30, 30, 30 }, // Fighting
-            { 31, 31, 31, 30, 30, 30 }, // Flying
-            { 31, 31, 30, 30, 30, 31 }, // Poison
-            { 31, 31, 31, 30, 30, 31 }, // Ground
-            { 31, 31, 30, 31, 30, 31 }, // Rock
-            { 31, 31, 31, 31, 30, 30 }, // Bug
-            { 31, 31, 30, 31, 30, 31 }, // Ghost
-            { 31, 31, 31, 31, 30, 31 }, // Steel
+            { 31, 03, 30, 30, 30, 30 }, // Fighting
+            { 30, 02, 30, 30, 30, 31 }, // Flying
+            { 31, 03, 30, 30, 30, 31 }, // Poison
+            { 31, 03, 31, 30, 30, 31 }, // Ground
+            { 31, 03, 30, 31, 30, 30 }, // Rock
+            { 31, 02, 30, 31, 30, 31 }, // Bug
+            { 31, 03, 30, 31, 30, 31 }, // Ghost
+            { 31, 03, 31, 31, 30, 31 }, // Steel
             { 31, 31, 31, 31, 31, 31 }, // Mystery
-            { 31, 30, 31, 30, 31, 30 }, // Fire
-            { 31, 31, 31, 30, 31, 30 }, // Water
-            { 31, 30, 31, 30, 31, 31 }, // Grass
-            { 31, 31, 31, 30, 31, 31 }, // Electric
-            { 31, 30, 31, 31, 31, 30 }, // Psychic
-            { 31, 30, 30, 31, 31, 31 }, // Ice
-            { 31, 30, 31, 31, 31, 31 }, // Dragon
-            { 31, 31, 31, 31, 31, 31 } // Dark
+            { 31, 02, 31, 30, 31, 30 }, // Fire
+            { 31, 02, 30, 30, 31, 31 }, // Water
+            { 31, 02, 31, 30, 31, 31 }, // Grass
+            { 31, 03, 31, 30, 31, 31 }, // Electric
+            { 31, 02, 31, 31, 31, 30 }, // Psychic
+            { 31, 02, 30, 31, 31, 31 }, // Ice
+            { 31, 02, 31, 31, 31, 31 }, // Dragon
+            { 31, 03, 31, 31, 31, 31 } // Dark
         };
 
         IVProfile -= 2;
 
-        Pokemon_SetValue(mon, MON_DATA_HP_IV, &IVSpreads[IVProfile, 0]);
-        Pokemon_SetValue(mon, MON_DATA_ATK_IV, &IVSpreads[IVProfile, 1]);
-        Pokemon_SetValue(mon, MON_DATA_DEF_IV, &IVSpreads[IVProfile, 2]);
-        Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &IVSpreads[IVProfile, 3]);
-        Pokemon_SetValue(mon, MON_DATA_SPATK_IV, &IVSpreads[IVProfile, 4]);
-        Pokemon_SetValue(mon, MON_DATA_SPDEF_IV, &IVSpreads[IVProfile, 5]);
+        Pokemon_SetValue(mon, MON_DATA_HP_IV, &IVSpreads[IVProfile][0]);
+        Pokemon_SetValue(mon, MON_DATA_ATK_IV, &IVSpreads[IVProfile][1]);
+        Pokemon_SetValue(mon, MON_DATA_DEF_IV, &IVSpreads[IVProfile][2]);
+        Pokemon_SetValue(mon, MON_DATA_SPATK_IV, &IVSpreads[IVProfile][3]);
+        Pokemon_SetValue(mon, MON_DATA_SPDEF_IV, &IVSpreads[IVProfile][4]);
+        Pokemon_SetValue(mon, MON_DATA_SPEED_IV, &IVSpreads[IVProfile][5]);
     }
 
     return;
