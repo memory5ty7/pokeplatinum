@@ -311,15 +311,15 @@ Basic_Other:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PASS_STATS_AND_STATUS, Basic_BatonPass
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_SPEED_3_TURNS, Basic_Tailwind
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_TRICK_ROOM, Basic_TrickRoom
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_REFLECT, Basic_Screens
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_LIGHT_SCREEN, Basic_Screens
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_REFLECT, Basic_Reflect
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_LIGHT_SCREEN, Basic_LightScreen
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_SUBSTITUTE, Basic_Substitute
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_FAINT_AND_ATK_SP_ATK_DOWN_2, Basic_Memento
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_PARALYZE, Basic_Paralyze
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_BURN, Basic_Burn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SWITCH_HELD_ITEMS, Basic_Trick
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_SLEEP, Basic_Sleep
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_SLEEP_NEXT_TURN, Basic_Sleep
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_SLEEP_NEXT_TURN, Basic_Yawn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_POISON, Basic_Toxic
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_BADLY_POISON, Basic_Toxic
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_UP_2, Basic_OffensiveSetup
@@ -350,7 +350,11 @@ Basic_Other:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RESTORE_HALF_HP, Basic_Recovery
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HEAL_HALF_REMOVE_FLYING_TYPE, Basic_Recovery
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SHELL_SMASH, Basic_ShellSmash
-    PopOrEnd
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_RAIN, Basic_Rain
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_SUN, Basic_Sun
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_SANDSTORM, Basic_Sand
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_HAIL, Basic_Hail
+    GoTo Basic_End
 
 Basic_OffensiveSetup:
     LoadBattlerAbility AI_BATTLER_DEFENDER
@@ -804,6 +808,14 @@ Basic_TrickRoom:
     IfSpeedCompareEqualTo COMPARE_SPEED_SLOWER, ScorePlus10
     GoTo ScorePlus5
 
+Basic_Reflect:
+    IfSideCondition AI_BATTLER_ATTACKER, SIDE_CONDITION_REFLECT, ScoreMinus20
+    GoTo Basic_Screens
+
+Basic_LightScreen:
+    IfSideCondition AI_BATTLER_ATTACKER, SIDE_CONDITION_LIGHT_SCREEN, ScoreMinus20
+    GoTo Basic_Screens
+
 Basic_Screens:
     AddToMoveScore 6
     LoadHeldItem AI_BATTLER_ATTACKER
@@ -957,6 +969,10 @@ Basic_Trick1:
     IfRandomLessThan 128, ScorePlus7 
     GoTo ScorePlus6
 
+Basic_Yawn:
+    IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_YAWN, ScoreMinus20
+    GoTo Basic_Sleep
+
 Basic_Sleep:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus20
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus20
@@ -985,6 +1001,8 @@ Basic_Sleep3:
     GoTo Basic_End
 
 Basic_Toxic:
+    IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus20
+
     LoadTypeFrom LOAD_DEFENDER_TYPE_1
     IfLoadedEqualTo TYPE_STEEL, ScoreMinus20
     IfLoadedEqualTo TYPE_POISON, ScoreMinus20
@@ -1095,6 +1113,29 @@ Basic_ShellSmash4:
 
 Basic_ShellSmash5:
     AddToMoveScore -2
+    GoTo Basic_End
+
+Basic_Rain:
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_RAINING, ScoreMinus20
+    AddToMoveScore 6
+    GoTo Basic_End
+
+Basic_Sun:
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_SUNNY, ScoreMinus20
+    AddToMoveScore 6
+    GoTo Basic_End
+
+Basic_Sand:
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_SANDSTORM, ScoreMinus20
+    AddToMoveScore 6
+    GoTo Basic_End
+Basic_Hail:
+    LoadCurrentWeather 
+    IfLoadedEqualTo AI_WEATHER_HAILING, ScoreMinus20
+    AddToMoveScore 6
     GoTo Basic_End
 
 Basic_End:

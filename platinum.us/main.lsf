@@ -369,6 +369,7 @@ Static main
 	Object main.nef.p/src_unk_0209C194.c.o
 	Object main.nef.p/src_unk_0209C370.c.o
 	Object main.nef.p/src_unk_0209C390.c.o
+	Object main.nef.p/src_debug.c.o
 	Library libspl.a
 	Library libwvr.a
 	Library libdwcbm.a

@@ -25,6 +25,8 @@
 #include "party.h"
 #include "pokemon.h"
 
+#include "debug.h"
+
 #define AI_CONTEXT (battleCtx->aiContext)
 
 static const u16 sRiskyMoves[] = {
@@ -497,6 +499,8 @@ static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCt
     u16 move;
     s8 moveSlot;
 
+    Desmume_Log("---------------\n\nMove Selection AI (Mon %d):\n", AI_CONTEXT.attacker);
+
     for (battler = 0; battler < MAX_BATTLERS; battler++) {
         if (battler == AI_CONTEXT.attacker || battleCtx->battleMons[battler].curHP == 0) {
             actionForBattler[battler] = -1;
@@ -563,6 +567,11 @@ static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCt
                 }
             }
 
+            for (i = 0; i < LEARNED_MOVES_MAX; i++) {
+                Desmume_Log("Move %d on Mon %d : %d\n", i + 1, battler, AI_CONTEXT.moveScore[i] - 100);
+            }
+            Desmume_Log("---------------\n");
+
             actionForBattler[battler] = tmpMaxScoreMoveSlots[BattleSystem_RandNext(battleSys) % numMaxScoreMoves];
             maxScoreForBattler[battler] = tmpMaxScores[0];
 
@@ -605,6 +614,8 @@ static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCt
     if (move == MOVE_CURSE && Move_IsGhostCurse(battleCtx, move, AI_CONTEXT.attacker) == FALSE) {
         AI_CONTEXT.selectedTarget[AI_CONTEXT.attacker] = AI_CONTEXT.attacker;
     }
+
+    Desmume_Log("\n---------------\n");
 
     return moveSlot;
 }

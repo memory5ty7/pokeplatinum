@@ -14,6 +14,7 @@
 #include "generated/abilities.h"
 #include "generated/game_records.h"
 #include "generated/genders.h"
+#include "generated/sdat.h"
 
 #include "struct_decls/battle_system.h"
 #include "struct_decls/struct_02098700_decl.h"
@@ -33,6 +34,7 @@
 #include "data/battle/weight_to_power.h"
 
 #include "charcode_util.h"
+#include "debug.h"
 #include "flags.h"
 #include "heap.h"
 #include "item.h"
@@ -45,6 +47,7 @@
 #include "strbuf.h"
 #include "trainer_data.h"
 #include "trainer_info.h"
+#include "unk_02005474.h"
 #include "unk_020366A0.h"
 #include "unk_0208C098.h"
 
@@ -1324,8 +1327,8 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         if (battleCtx->battleMons[battler1].curHP <= (battleCtx->battleMons[battler1].maxHP / battler1ItemParam)) {
             battler1QuickClaw = 1;
 
-            //if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler1].moveEffectsData.custapBerry = 1;
+            // if (ignoreQuickClaw == FALSE) {
+            battleCtx->battleMons[battler1].moveEffectsData.custapBerry = 1;
             //}
         }
     }
@@ -1390,8 +1393,8 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
 
-            //if (ignoreQuickClaw == FALSE) {
-                battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
+            // if (ignoreQuickClaw == FALSE) {
+            battleCtx->battleMons[battler2].moveEffectsData.custapBerry = 1;
             //}
         }
     }
@@ -1612,7 +1615,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
     if (battler1ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
         if (battleCtx->speedRand[battler1] % (100 / battler1ItemParam) == 0) {
             battler1QuickClaw = 1;
-
         }
     }
 
@@ -1623,7 +1625,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
 
         if (battleCtx->battleMons[battler1].curHP <= (battleCtx->battleMons[battler1].maxHP / battler1ItemParam)) {
             battler1QuickClaw = 1;
-
         }
     }
 
@@ -1672,7 +1673,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
     if (battler2ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
         if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
             battler2QuickClaw = 1;
-
         }
     }
 
@@ -1683,7 +1683,6 @@ u8 BattleSystem_CompareBattlerSpeedAfterPara(BattleSystem *battleSys, BattleCont
 
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
-
         }
     }
 
@@ -1952,7 +1951,6 @@ static u8 BattleSystem_PostKOCompareSpeed(BattleSystem *battleSys, BattleContext
     if (battler2ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
         if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
             battler2QuickClaw = 1;
-
         }
     }
 
@@ -1963,7 +1961,6 @@ static u8 BattleSystem_PostKOCompareSpeed(BattleSystem *battleSys, BattleContext
 
         if (battleCtx->battleMons[battler2].curHP <= (battleCtx->battleMons[battler2].maxHP / battler2ItemParam)) {
             battler2QuickClaw = 1;
-
         }
     }
 
@@ -2629,91 +2626,128 @@ BOOL BattleSystem_CheckTrainerMessage(BattleSystem *battleSys, BattleContext *ba
         return FALSE;
     }
 
+    int trainerNb = 1;
+
     if (battleType & BATTLE_TYPE_DOUBLES) {
-        return FALSE;
+        trainerNb += 1;
     }
 
-    int trID = Battler_TrainerID(battleSys, BATTLER_THEM);
-    int state = CHECK_TRMSG_START;
+    for (int i = 0; i < trainerNb; i++) {
 
-    do {
-        switch (state) {
-        case CHECK_TRMSG_FIRST_DAMAGE:
-            if (battleCtx->battleMons[BATTLER_THEM].timesDamaged == 1
-                && (battleCtx->battleStatusMask2 & SYSCTL_FIRST_DAMAGE_MSG_SHOWN) == FALSE
-                && Trainer_HasMessageType(trID, TRMSG_FIRST_DAMAGE, HEAP_ID_BATTLE)) {
-                battleCtx->battleStatusMask2 |= SYSCTL_FIRST_DAMAGE_MSG_SHOWN;
-                battleCtx->msgTemp = TRMSG_FIRST_DAMAGE;
-                return TRUE;
-            }
+        int trID = Battler_TrainerID(battleSys, 1 + 2 * i);
 
-            state++;
-            break;
+        int state = CHECK_TRMSG_START;
 
-        case CHECK_TRMSG_ACTIVE_BATTLER_HALF_HP:
-            if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG) == FALSE
-                && battleCtx->battleMons[BATTLER_THEM].curHP <= battleCtx->battleMons[BATTLER_THEM].maxHP / 2
-                && Trainer_HasMessageType(trID, TRMSG_ACTIVE_BATTLER_HALF_HP, HEAP_ID_BATTLE)) {
-                battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG;
-                battleCtx->msgTemp = TRMSG_ACTIVE_BATTLER_HALF_HP;
-                return TRUE;
-            }
-
-            state++;
-            break;
-
-        case CHECK_TRMSG_LAST_BATTLER:
-            if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_FLAG) == FALSE) {
-                Party *party = BattleSystem_Party(battleSys, BATTLER_THEM);
-                int alive = 0;
-
-                for (int i = 0; i < Party_GetCurrentCount(party); i++) {
-                    Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
-
-                    if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)) {
-                        alive++;
-                    }
-                }
-
-                if (alive == 1 && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER, HEAP_ID_BATTLE)) {
-                    battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_FLAG;
-                    battleCtx->msgTemp = TRMSG_LAST_BATTLER;
+        do {
+            switch (state) {
+            case CHECK_TRMSG_FIRST_DAMAGE:
+                if (battleCtx->battleMons[BATTLER_THEM].timesDamaged == 1
+                    && (battleCtx->battleStatusMask2 & SYSCTL_FIRST_DAMAGE_MSG_SHOWN) == FALSE
+                    && Trainer_HasMessageType(trID, TRMSG_FIRST_DAMAGE, HEAP_ID_BATTLE)) {
+                    battleCtx->battleStatusMask2 |= SYSCTL_FIRST_DAMAGE_MSG_SHOWN;
+                    battleCtx->msgTemp = TRMSG_FIRST_DAMAGE;
                     return TRUE;
                 }
-            }
 
-            state++;
-            break;
+                state++;
+                break;
 
-        case CHECK_TRMSG_LAST_BATTLER_HALF_HP:
-            if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_HALF_HP_FLAG) == FALSE) {
-                Party *party = BattleSystem_Party(battleSys, BATTLER_THEM);
-                int alive = 0;
-
-                for (int i = 0; i < Party_GetCurrentCount(party); i++) {
-                    Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
-
-                    if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)) {
-                        alive++;
-                    }
-                }
-
-                if (alive == 1
+            case CHECK_TRMSG_ACTIVE_BATTLER_HALF_HP:
+                if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG) == FALSE
                     && battleCtx->battleMons[BATTLER_THEM].curHP <= battleCtx->battleMons[BATTLER_THEM].maxHP / 2
-                    && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER_HALF_HP, HEAP_ID_BATTLE)) {
-                    battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_HALF_HP_FLAG;
-                    battleCtx->msgTemp = TRMSG_LAST_BATTLER_HALF_HP;
+                    && Trainer_HasMessageType(trID, TRMSG_ACTIVE_BATTLER_HALF_HP, HEAP_ID_BATTLE)) {
+                    battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG;
+                    battleCtx->msgTemp = TRMSG_ACTIVE_BATTLER_HALF_HP;
                     return TRUE;
                 }
+
+                state++;
+                break;
+
+            case CHECK_TRMSG_LAST_BATTLER:
+                if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_FLAG) == FALSE) {
+                    Party *party = BattleSystem_Party(battleSys, BATTLER_THEM);
+                    int alive = 0;
+
+                    for (int i = 0; i < Party_GetCurrentCount(party); i++) {
+                        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+                        if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)) {
+                            alive++;
+                        }
+                    }
+
+                    if (alive == 1 && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER, HEAP_ID_BATTLE)) {
+                        battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_FLAG;
+                        battleCtx->msgTemp = TRMSG_LAST_BATTLER;
+
+                        Trainer *trainer = BattleSystem_GetTrainer(battleSys, BATTLER_ENEMY_1);
+
+                        u8 trainerClass = trainer->header.trainerType;
+
+                        BOOL finalMonMusic = FALSE;
+
+                        switch (trainerClass) {
+                        case TRAINER_CLASS_LEADER_ROARK:
+                        case TRAINER_CLASS_LEADER_GARDENIA:
+                        case TRAINER_CLASS_LEADER_FANTINA:
+                        case TRAINER_CLASS_LEADER_MAYLENE:
+                        case TRAINER_CLASS_LEADER_WAKE:
+                        case TRAINER_CLASS_LEADER_BYRON:
+                        case TRAINER_CLASS_LEADER_CANDICE:
+                        case TRAINER_CLASS_LEADER_VOLKNER:
+                        case TRAINER_CLASS_ELITE_FOUR_AARON:
+                        case TRAINER_CLASS_ELITE_FOUR_BERTHA:
+                        case TRAINER_CLASS_ELITE_FOUR_FLINT:
+                        case TRAINER_CLASS_ELITE_FOUR_LUCIAN:
+                        case TRAINER_CLASS_CHAMPION_CYNTHIA:
+                            finalMonMusic = TRUE;
+                            break;
+                        default:
+                            break;
+                        }
+
+                        if (finalMonMusic) {
+                            Sound_PlayBGM(SEQ_Z_LAST_MON);
+                        }
+
+                        return TRUE;
+                    }
+                }
+
+                state++;
+                break;
+
+            case CHECK_TRMSG_LAST_BATTLER_HALF_HP:
+                if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_HALF_HP_FLAG) == FALSE) {
+                    Party *party = BattleSystem_Party(battleSys, BATTLER_THEM);
+                    int alive = 0;
+
+                    for (int i = 0; i < Party_GetCurrentCount(party); i++) {
+                        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+                        if (Pokemon_GetValue(mon, MON_DATA_CURRENT_HP, NULL)) {
+                            alive++;
+                        }
+                    }
+
+                    if (alive == 1
+                        && battleCtx->battleMons[BATTLER_THEM].curHP <= battleCtx->battleMons[BATTLER_THEM].maxHP / 2
+                        && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER_HALF_HP, HEAP_ID_BATTLE)) {
+                        battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_HALF_HP_FLAG;
+                        battleCtx->msgTemp = TRMSG_LAST_BATTLER_HALF_HP;
+                        return TRUE;
+                    }
+                }
+
+                state++;
+                break;
+
+            case CHECK_TRMSG_END:
+                break;
             }
-
-            state++;
-            break;
-
-        case CHECK_TRMSG_END:
-            break;
-        }
-    } while (state != CHECK_TRMSG_END);
+        } while (state != CHECK_TRMSG_END);
+    }
 
     return FALSE;
 }
@@ -7797,7 +7831,7 @@ enum PokemonCryMod Battler_CryModulation(BattleContext *battleCtx, int battler, 
         cryMod = POKECRY_NORMAL;
     }
 
-    int hpColor = HealthBar_Color(battleCtx->battleMons[battler].curHP, battleCtx->battleMons[battler].maxHP, (8 * 6));
+    int hpColor = HealthBar_Color(battleCtx->battleMons[battler].curHP, battleCtx->battleMons[battler].maxHP, 8 * 6);
 
     if ((battleCtx->battleMons[battler].status & MON_CONDITION_ANY)
         || (hpColor != BARCOLOR_MAX && hpColor != BARCOLOR_GREEN)) {
@@ -9276,7 +9310,7 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
             spDefenseStat = spDefenseStat * 15 / 10;
         }
 
-        if ((fieldConditions & FIELD_CONDITION_SUNNY)
+        if (fieldConditions & FIELD_CONDITION_SUNNY
             /*&& BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_FLOWER_GIFT)*/) {
             attackStat = attackStat * 15 / 10;
         }
@@ -9928,7 +9962,7 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
         if ((sideConditions & SIDE_CONDITION_REFLECT) != FALSE
             && criticalMul == 1
             && MOVE_DATA(move).effect != BATTLE_EFFECT_REMOVE_SCREENS) {
-            if ((battleType & BATTLE_TYPE_DOUBLES)
+            if (battleType & BATTLE_TYPE_DOUBLES
                 /*&& BattleSystem_CountAliveBattlers(battleSys, battleCtx, TRUE, defender) == 2*/) {
                 damage = damage * 2 / 3;
             } else {
@@ -9969,7 +10003,7 @@ int PostKO_CalcMoveDamage2(BattleSystem *battleSys,
         if ((sideConditions & SIDE_CONDITION_LIGHT_SCREEN) != FALSE
             && criticalMul == 1
             && MOVE_DATA(move).effect != BATTLE_EFFECT_REMOVE_SCREENS) {
-            if ((battleType & BATTLE_TYPE_DOUBLES)
+            if (battleType & BATTLE_TYPE_DOUBLES
                 /*&& BattleSystem_CountAliveBattlers(battleSys, battleCtx, TRUE, defender) == 2*/) {
                 damage = damage * 2 / 3;
             } else {
@@ -11582,27 +11616,6 @@ void DynamicSortClientExecutionOrder(BattleSystem *battleSys, BattleContext *bat
             }
         }
     }
-}
-
-static ConsoleLog(char *s)
-{
-    // 0xFC is a reserved system-interrupt code on DeSmuME which logs the
-    // contents of the string buffer in r0 to the emulator console.
-    asm("swi 0xFC");
-}
-
-int Desmume_Log(const char *fmt, ...)
-{
-    char s[1024];
-
-    va_list va;
-    va_start(va, fmt);
-    vsprintf(s, fmt, va);
-    va_end(va);
-
-    ConsoleLog(s);
-
-    return 0;
 }
 
 int Move_CalcVariablePower(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon, u16 defender, s32 *damage)

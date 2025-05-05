@@ -84,6 +84,8 @@
 #include "vars_flags.h"
 #include "constants/savedata/vars_flags.h"
 
+#include "debug.h"
+
 #include "constdata/const_020F2DAC.h"
 
 typedef BOOL (*BtlCmd)(BattleSystem *, BattleContext *);
@@ -6215,7 +6217,7 @@ static BOOL BtlCmd_TryReplaceFaintedMon(BattleSystem *battleSys, BattleContext *
 
     if (BattleSystem_AnyReplacementMons(battleSys, battleCtx, battler) == FALSE) {
         BattleScript_Iter(battleCtx, jumpOnFail);
-        Desmume_Log("TryReplaceFaintedMon\n");
+        //Desmume_Log("TryReplaceFaintedMon\n");
     } else if (openPartyList == TRUE) {
         battleCtx->battlerStatusFlags[battler] |= BATTLER_STATUS_SWITCHING;
     }
@@ -12604,7 +12606,7 @@ static BOOL BtlCmd_IsAttackerLevelLowerThanDefender(BattleSystem *battleSys, Bat
     if (BattleMon_Get(battleCtx, battleCtx->attacker, BATTLEMON_LEVEL, NULL) < BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_LEVEL, NULL))
     {
         BattleScript_Iter(battleCtx, jump);
-        Desmume_Log("IsAttackerLevelLowerThanDefender\n");
+        //Desmume_Log("IsAttackerLevelLowerThanDefender\n");
     }
 
     return FALSE;

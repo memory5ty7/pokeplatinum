@@ -12,6 +12,7 @@
 #include "battle/btlcmd.h"
 
 #include "pokemon.h"
+#include "debug.h"
 
 enum CountAbilityMode {
     COUNT_ALL_BATTLERS_OUR_SIDE = 0, //< Count all the battlers on our side with the ability
@@ -1509,7 +1510,7 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx, int
 int PostKO_ApplyTypeChart2(BattleSystem *battleSys, BattleContext *battleCtx, int move, int attacker, Pokemon *defender, int damage, u32 *moveStatusMask, u8 moveType, u8 movePower);
 int PostKO_CalcMoveDamage2(BattleSystem *battleSys, BattleContext *battleCtx, int move, u32 sideConditions, u32 fieldConditions, u16 inPower, u8 inType, u8 attacker, Pokemon *defender, u8 criticalMul);
 
-int Desmume_Log(const char *fmt, ...);
+
 
 int Move_CalcVariablePower(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, Pokemon *mon, u16 defender, s32 *damage);
 int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 mon, Pokemon *defender, s32 *damage);

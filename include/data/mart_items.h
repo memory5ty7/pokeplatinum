@@ -135,13 +135,11 @@ const u16 VeilstoneDeptStoreStock_2F_MID[] = {
 };
 
 const u16 VeilstoneDeptStoreStock_3F_UP[] = {
-    ITEM_TM83,
-    ITEM_TM17,
-    ITEM_TM54,
-    ITEM_TM20,
-    ITEM_TM33,
-    ITEM_TM16,
-    ITEM_TM70,
+    ITEM_TM31,
+    ITEM_TM14,
+    ITEM_TM25,
+    ITEM_TM38,
+    ITEM_TM46,
     0xffff
 };
 

@@ -538,5 +538,19 @@ move_script_files = files(
     'move_script_0536.s',
     'move_script_0537.s',
     'move_script_0538.s',
-    'move_script_0539.s'
+    'move_script_0539.s',
+    'move_script_0540.s',
+    'move_script_0541.s',
+    'move_script_0542.s',
+    'move_script_0543.s',
+    'move_script_0544.s',
+    'move_script_0545.s',
+    'move_script_0546.s',
+    'move_script_0547.s',
+    'move_script_0548.s',
+    'move_script_0549.s',
+    'move_script_0550.s',
+    'move_script_0551.s',
+    'move_script_0552.s',
+    'move_script_0553.s'
 )

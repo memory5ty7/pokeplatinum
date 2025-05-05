@@ -51,6 +51,8 @@
 #include "unk_02049D08.h"
 #include "vars_flags.h"
 
+#include "debug.h"
+
 enum {
     STATE_PROCESSING = 0,
     STATE_BREAK_OUT,
