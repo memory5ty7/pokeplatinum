@@ -23,7 +23,7 @@
     },
     "held_items": {
         "common": "ITEM_NONE",
-        "rare": "ITEM_SILVERPOWDER"
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_MALE_ONLY",
     "hatch_cycles": 15,

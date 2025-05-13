@@ -22,8 +22,8 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_OVAL_STONE",
-        "rare": "ITEM_LUCKY_EGG"
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_ONLY",
     "hatch_cycles": 40,

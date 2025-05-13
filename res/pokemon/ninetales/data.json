@@ -22,8 +22,8 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_RAWST_BERRY",
-        "rare": "ITEM_RAWST_BERRY"
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_75",
     "hatch_cycles": 20,

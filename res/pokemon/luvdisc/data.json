@@ -22,7 +22,7 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_HEART_SCALE",
+        "common": "ITEM_NONE",
         "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_75",

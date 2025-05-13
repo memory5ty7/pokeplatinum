@@ -22,8 +22,8 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_SACRED_ASH",
-        "rare": "ITEM_SACRED_ASH"
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_NO_GENDER",
     "hatch_cycles": 120,

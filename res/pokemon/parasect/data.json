@@ -22,8 +22,8 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_TINYMUSHROOM",
-        "rare": "ITEM_BIG_MUSHROOM"
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_50",
     "hatch_cycles": 20,

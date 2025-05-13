@@ -22,8 +22,8 @@
         "special_defense": 0
     },
     "held_items": {
-        "common": "ITEM_LEFTOVERS",
-        "rare": "ITEM_LEFTOVERS"
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
     "hatch_cycles": 40,

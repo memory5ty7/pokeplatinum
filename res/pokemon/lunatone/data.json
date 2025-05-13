@@ -23,7 +23,7 @@
     },
     "held_items": {
         "common": "ITEM_NONE",
-        "rare": "ITEM_MOON_STONE"
+        "rare": "ITEM_NONE"
     },
     "gender_ratio": "GENDER_RATIO_NO_GENDER",
     "hatch_cycles": 25,
