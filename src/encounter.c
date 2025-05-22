@@ -53,6 +53,8 @@
 #include "unk_02096420.h"
 #include "vars_flags.h"
 
+#include "generated/sdat.h"
+
 typedef struct Encounter {
     int *resultMaskPtr;
     int introEffectID;
@@ -757,7 +759,14 @@ void Encounter_NewVsTrainer(FieldTask *taskMan, int enemyTrainer1ID, int enemyTr
 
     Trainer_Encounter(dto, fieldSystem->saveData, heapID);
     GameRecords_IncrementRecordValue(SaveData_GetGameRecordsPtr(fieldSystem->saveData), RECORD_TRAINER_BATTLES_FOUGHT);
-    StartEncounter(taskMan, dto, EncEffects_CutInEffect(dto), EncEffects_BGM(dto), resultMaskPtr);
+
+    u32 BGM = EncEffects_BGM(dto);
+    if (BGM == SEQ_BATTLE_TRAINER)
+    {
+        BGM = getVar(BATTLE_THEME);
+    }
+
+    StartEncounter(taskMan, dto, EncEffects_CutInEffect(dto), BGM, resultMaskPtr);
 }
 
 void Encounter_NewVsLink(FieldTask *task, const u8 *partyOrder, int battleType)

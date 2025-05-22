@@ -114,7 +114,9 @@ static u8 sTrainerClassPrizeMul[] = {
     [TRAINER_CLASS_ROWAN]                   = 30,
     [TRAINER_CLASS_HUNTER_J]                = 25,
     [TRAINER_CLASS_TOBIAS]                  = 25,
-    [TRAINER_CLASS_GALACTIC_MANAGER_MALE]   = 18,
-    [TRAINER_CLASS_GALACTIC_MANAGER_FEMALE] = 18,
+    [TRAINER_CLASS_MANAGER_MERCURY]         = 18,
+    [TRAINER_CLASS_MANAGER_VENUS]           = 18,
+    [TRAINER_CLASS_MANAGER_URANUS]          = 18,
+    [TRAINER_CLASS_MANAGER_NEPTUNE]         = 18,
 };
 // clang-format on

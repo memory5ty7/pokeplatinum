@@ -182,6 +182,8 @@ enum FirstArrivalToZone {
 #define VAR_DIFFICULTY          (16429)
 #define CUSTOM_BATTLE_BG        (16430)
 
+#define BATTLE_THEME            (16498)
+
 #define LEVEL_CAP_ENABLED       (1 << 0)
 #define NUZLOCKE_ENABLED        (1 << 1)
 #define EASY_MODE_ENABLED       (1 << 2)
