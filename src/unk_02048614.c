@@ -312,7 +312,7 @@ BOOL ScrCmd_0EE(ScriptContext *param0)
 {
     u16 *v0 = ScriptContext_GetVarPointer(param0);
 
-    *v0 = Party_HasTwoAliveMons(Party_GetFromSavedata(param0->fieldSystem->saveData));
+    *v0 = TRUE;//Party_HasTwoAliveMons(Party_GetFromSavedata(param0->fieldSystem->saveData));
     return 0;
 }
 

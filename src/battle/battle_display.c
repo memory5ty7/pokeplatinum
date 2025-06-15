@@ -5976,7 +5976,7 @@ static void ov16_02263E7C(BattleSystem *param0, BattlerData *param1, UnkStruct_o
                 param3->params[0] = v1;
                 param3->params[1] = v1 | (param2->unk_04[v1] << 8);
                 param3->params[2] = v2 | (param2->unk_04[v2] << 8);
-            } else if (v0 & 0x2) {
+            } else if (v0 & 0x2 && BattleSystem_PartyCount(param0, param1->battler) > 1) {
                 param3->id = 978;
                 param3->tags = 9;
                 param3->params[0] = v1 | (param2->unk_04[v1] << 8);
@@ -5994,7 +5994,7 @@ static void ov16_02263E7C(BattleSystem *param0, BattlerData *param1, UnkStruct_o
                 param3->params[1] = v1;
                 param3->params[2] = v1 | (param2->unk_04[v1] << 8);
                 param3->params[3] = v2 | (param2->unk_04[v2] << 8);
-            } else if (v0 & 0x2) {
+            } else if (v0 & 0x2 && BattleSystem_PartyCount(param0, param1->battler) > 1) {
                 param3->id = 978;
                 param3->tags = 9;
                 param3->params[0] = v1 | (param2->unk_04[v1] << 8);

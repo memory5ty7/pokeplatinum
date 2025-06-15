@@ -164,5 +164,7 @@ static const int sSideEffectSubscripts[] = {
     [MOVE_SUBSCRIPT_PTR_TRICK_OR_TREAT]                   = subscript_trick_or_treat,
     [MOVE_SUBSCRIPT_PTR_MAGIC_POWDER]                     = subscript_magic_powder,
     [MOVE_SUBSCRIPT_PTR_FORESTS_CURSE]                    = subscript_forests_curse,
+    [MOVE_SUBSCRIPT_PTR_RECOVER_QUARTER_MAX_HP]           = subscript_recover_quarter_max_hp,
+    [MOVE_SUBSCRIPT_PTR_USER_SPEED_UP_AND_DEF_DOWN_1_STAGE] = subscript_user_speed_up_and_def_down_1_stage,
 };
 // clang-format on

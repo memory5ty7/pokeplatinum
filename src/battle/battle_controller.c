@@ -5346,7 +5346,7 @@ static BOOL BattleController_CheckAbilityFailures1(BattleSystem *battleSys, Batt
 
     if ((BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, defender, ABILITY_QUEENLY_MAJESTY)
             || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, defender, ABILITY_DAZZLING))
-        //|| CheckSideAbility(bsys, ctx, CHECK_ABILITY_SAME_SIDE_HP, defender, ABILITY_ARMOR_TAIL))
+            || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, defender, ABILITY_ARMOR_TAIL)
         && Battler_Ability(battleCtx, attacker) != ABILITY_MOLD_BREAKER) {
         if (attackerPriority > 0) {
             LOAD_SUBSEQ(subscript_cannot_use_move);

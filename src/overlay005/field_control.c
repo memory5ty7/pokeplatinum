@@ -190,7 +190,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
 
     // dummy5 will always be false, so this branch will always be taken, but it doesn't match without the condition
     if (input->dummy5 == FALSE) {
-        BOOL hasTwoAliveMons = Party_HasTwoAliveMons(Party_GetFromSavedata(fieldSystem->saveData));
+        BOOL hasTwoAliveMons = TRUE;//Party_HasTwoAliveMons(Party_GetFromSavedata(fieldSystem->saveData));
 
         if (SystemFlag_CheckHasPartner(SaveData_GetVarsFlags(fieldSystem->saveData)) == TRUE) {
             hasTwoAliveMons = TRUE;

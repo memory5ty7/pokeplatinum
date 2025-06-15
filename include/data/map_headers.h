@@ -6,6 +6,8 @@
 #include "script_order.h"
 #include "event_order.h"
 
+#include "generated/sdat.h"
+
 static const MapHeader sMapHeaders[] = {
     [MAP_HEADER_EVERYWHERE] = {
         .areaData = 0x0,
@@ -3908,8 +3910,8 @@ static const MapHeader sMapHeaders[] = {
         .scriptsArchiveID = scripts_pokemon_league_aaron_room,
         .initScriptsArchiveID = scripts_init_pokemon_league_aaron_room,
         .msgArchiveID = TEXT_BANK_POKEMON_LEAGUE_AARON_ROOM,
-        .dayMusicID = 1076,
-        .nightMusicID = 1076,
+        .dayMusicID = SEQ_D_02,
+        .nightMusicID = SEQ_D_02,
         .wildEncountersArchiveID = 0xFFFF,
         .eventsArchiveID = 176,
         .mapLabelTextID = (0xF),
@@ -3952,8 +3954,8 @@ static const MapHeader sMapHeaders[] = {
         .scriptsArchiveID = scripts_pokemon_league_bertha_room,
         .initScriptsArchiveID = scripts_init_pokemon_league_bertha_room,
         .msgArchiveID = TEXT_BANK_POKEMON_LEAGUE_BERTHA_ROOM,
-        .dayMusicID = 1076,
-        .nightMusicID = 1076,
+        .dayMusicID = SEQ_D_06,
+        .nightMusicID = SEQ_D_06,
         .wildEncountersArchiveID = 0xFFFF,
         .eventsArchiveID = 178,
         .mapLabelTextID = (0xF),
@@ -3996,8 +3998,8 @@ static const MapHeader sMapHeaders[] = {
         .scriptsArchiveID = scripts_pokemon_league_flint_room,
         .initScriptsArchiveID = scripts_init_pokemon_league_flint_room,
         .msgArchiveID = TEXT_BANK_POKEMON_LEAGUE_FLINT_ROOM,
-        .dayMusicID = 1076,
-        .nightMusicID = 1076,
+        .dayMusicID = SEQ_PL_BF_ROULETTE,
+        .nightMusicID = SEQ_PL_BF_ROULETTE,
         .wildEncountersArchiveID = 0xFFFF,
         .eventsArchiveID = 180,
         .mapLabelTextID = (0xF),
@@ -4040,8 +4042,8 @@ static const MapHeader sMapHeaders[] = {
         .scriptsArchiveID = scripts_pokemon_league_lucian_room,
         .initScriptsArchiveID = scripts_init_pokemon_league_lucian_room,
         .msgArchiveID = TEXT_BANK_POKEMON_LEAGUE_LUCIAN_ROOM,
-        .dayMusicID = 1076,
-        .nightMusicID = 1076,
+        .dayMusicID = SEQ_D_RYAYHY,
+        .nightMusicID = SEQ_D_RYAYHY,
         .wildEncountersArchiveID = 0xFFFF,
         .eventsArchiveID = 182,
         .mapLabelTextID = (0xF),

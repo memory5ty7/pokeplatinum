@@ -1132,6 +1132,8 @@ static void ov16_0223C2C0(BattleSystem *param0, FieldBattleDTO *param1)
         }
     }
 
+    Desmume_Log("BattleType : %d\n", param0->battleType);
+
     if (param0->battleType & 0x4) {
         sub_0207A6DC(param0);
         {
@@ -1194,7 +1196,7 @@ static void ov16_0223C2C0(BattleSystem *param0, FieldBattleDTO *param1)
                 }
 
                 BattleSystem_InitPartyOrder(param0, param0->battleCtx);
-            } else if (param0->battleType & 0x2) {
+            } else if (param0->battleType & BATTLE_TYPE_DOUBLES) {
                 for (v0 = 0; v0 < 4; v0++) {
                     v2.unk_00 = v0;
                     v2.unk_01 = Unk_ov16_0226E264[v6][v0];

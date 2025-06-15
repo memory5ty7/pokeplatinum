@@ -1517,5 +1517,7 @@ int Move_CalcVariablePower2(BattleSystem *battleSys, BattleContext *battleCtx, u
 int Move_CalcVariablePower3(BattleSystem *battleSys, BattleContext *battleCtx, u16 move, u16 mon, u16 defender, s32 *damage);
 
 BOOL isSoundMove(u16 move);
+BOOL AreAnyStatsNotAtValue(BattleContext *battleCtx, int client, int value, BOOL excludeAccuracyEvasion);
+BOOL IsBallOrBombMove(u32 moveIndex);
 
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

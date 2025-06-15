@@ -299,7 +299,17 @@
                 "BATTLE_EFFECT_TRICK_OR_TREAT",
                 "BATTLE_EFFECT_MAGIC_POWDER",
                 "BATTLE_EFFECT_FORESTS_CURSE",
-                "BATTLE_EFFECT_STORED_POWER"
+                "BATTLE_EFFECT_STORED_POWER",
+                "BATTLE_EFFECT_RESTORE_QUARTER_HP",
+                "BATTLE_EFFECT_SCALE_SHOT",
+                "BATTLE_EFFECT_PSYSHOCK",
+                "BATTLE_EFFECT_ALWAYS_CRIT",
+                "BATTLE_EFFECT_HIT_THREE_TIMES_ALWAYS_CRITICAL",
+                "BATTLE_EFFECT_DRAGON_DARTS",
+                "BATTLE_EFFECT_ELECTRO_SHOT",
+                "BATTLE_EFFECT_ELECTRO_BALL",
+                "BATTLE_EFFECT_HEAVY_SLAM",
+                "BATTLE_EFFECT_PREVENT_HEALING_HIT"
             ]
         },
         "@MessageTag": {
@@ -530,7 +540,9 @@
                 "MOVE_SUBSCRIPT_PTR_SOAK",
                 "MOVE_SUBSCRIPT_PTR_TRICK_OR_TREAT",
                 "MOVE_SUBSCRIPT_PTR_MAGIC_POWDER",
-                "MOVE_SUBSCRIPT_PTR_FORESTS_CURSE"
+                "MOVE_SUBSCRIPT_PTR_FORESTS_CURSE",
+                "MOVE_SUBSCRIPT_PTR_RECOVER_QUARTER_MAX_HP",
+                "MOVE_SUBSCRIPT_PTR_USER_SPEED_UP_AND_DEF_DOWN_1_STAGE"
             ]
         },
         "@SideEffectType": {

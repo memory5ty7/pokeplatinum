@@ -281,7 +281,11 @@ void BattleIO_ShowEncounter(BattleSystem *param0, int param1)
     }
 
     BattleMon_Get(param0->battleCtx, param1, 45, &v0.unk_30);
-    SendMessage(param0, 1, param1, &v0, sizeof(UnkStruct_ov16_0225C17C));
+
+    if (v0.unk_02 != SPECIES_NONE)
+    {
+        SendMessage(param0, 1, param1, &v0, sizeof(UnkStruct_ov16_0225C17C));
+    }
 }
 
 void BattleIO_ShowPokemon(BattleSystem *param0, int param1, int param2, int param3)
@@ -483,7 +487,10 @@ void BattleIO_SlideHealthbarIn(BattleSystem *battleSys, BattleContext *battleCtx
     healthbar.numSafariBalls = BattleSystem_NumSafariBalls(battleSys);
     healthbar.delay = delay;
 
-    SendMessage(battleSys, BTLIO_RECIPIENT_ENQUEUE, battler, &healthbar, sizeof(HealthbarData));
+    if (species != SPECIES_NONE)
+    {
+        SendMessage(battleSys, BTLIO_RECIPIENT_ENQUEUE, battler, &healthbar, sizeof(HealthbarData));
+    }
 }
 
 void BattleIO_SlideHealthbarOut(BattleSystem *battleSys, int battler)

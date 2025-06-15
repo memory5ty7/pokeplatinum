@@ -1,19 +1,19 @@
 {
-    "name": "Absorb",
-    "class": "CLASS_SPECIAL",
-    "type": "TYPE_GRASS",
-    "power": 20,
-    "accuracy": 100,
-    "pp": 25,
+    "name": "Life Dew",
+    "class": "CLASS_STATUS",
+    "type": "TYPE_WATER",
+    "power": 0,
+    "accuracy": 0,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
+        "type": "BATTLE_EFFECT_RESTORE_HALF_HP",
         "chance": 0
     },
-    "range": "RANGE_SINGLE_TARGET",
+    "range": "RANGE_USER_SIDE",
     "priority": 0,
     "flags": [
-        "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_SNATCH",
+        "MOVE_FLAG_HIDES_HP_GAUGES"
     ],
     "contest": {
         "effect": 20,

@@ -4088,6 +4088,7 @@ BOOL Move_IsMultiTurn(BattleContext *battleCtx, int move)
     case BATTLE_EFFECT_DIG:
     case BATTLE_EFFECT_BOUNCE:
     case BATTLE_EFFECT_SHADOW_FORCE:
+    //case BATTLE_EFFECT_ELECTRO_SHOT:
         return TRUE;
     }
 
@@ -4664,10 +4665,30 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         }
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_BULLETPROOF) == TRUE
+        && IsBallOrBombMove(battleCtx->moveCur))
+    {
+        subscript = subscript_doesnt_affect_ability;
+    }
+
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_EARTH_EATER) == TRUE
+        && moveType == TYPE_GROUND
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE // do not proc on first turn of Dig
+        && CURRENT_MOVE_DATA.power) {
+        battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[defender].maxHP, 4);
+        subscript = subscript_ability_restores_hp;
+    }
+
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_MOTOR_DRIVE) == TRUE
         && moveType == TYPE_ELECTRIC
         && attacker != defender) {
         subscript = subscript_absorb_and_speed_up_1_stage;
+    }
+
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SAP_SIPPER) == TRUE
+        && moveType == TYPE_GRASS
+        && attacker != defender) {
+        subscript = subscript_absorb_and_attack_up_1_stage;
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_DRY_SKIN) == TRUE
@@ -4707,6 +4728,36 @@ BOOL BattleSystem_TriggerTurnEndAbility(BattleSystem *battleSys, BattleContext *
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
             battleCtx->sideEffectMon = battler;
             subscript = subscript_update_stat_stage;
+            result = TRUE;
+        }
+        break;
+
+    case ABILITY_MOODY:
+        if (battleCtx->battleMons[battler].curHP)
+        {
+            int temp = BattleSystem_RandNext(battleSys) % 5;
+            if (AreAnyStatsNotAtValue(battleCtx, battler, 12, TRUE))  // if any stat can be lowered
+            {
+                while (battleCtx->battleMons[battler].statBoosts[temp] == 12) {
+                    temp = BattleSystem_RandNext(battleSys) % 5;
+                }
+            } else {
+                battleCtx->calcTemp = 8;  // skip the raising if this is the case
+            }
+            battleCtx->calcTemp = temp;
+            temp = BattleSystem_RandNext(battleSys) % 5;
+            if (AreAnyStatsNotAtValue(battleCtx, battler, 0, TRUE))  // if any stat can be raised
+            {
+                while (battleCtx->battleMons[battler].statBoosts[temp] == 0 || temp == battleCtx->calcTemp) {
+                    temp = BattleSystem_RandNext(battleSys) % 5;
+                }
+            } else {
+                battleCtx->msgAbilityTemp = 8;  // skip the lowering if this is the case
+            }
+            battleCtx->msgAbilityTemp = temp;  // VAR_ABILITY_TEMP2
+            battleCtx->msgBattlerTemp = battler;
+            battleCtx->sideEffectMon = battler;
+            subscript = subscript_handle_moody;
             result = TRUE;
         }
         break;
@@ -5794,7 +5845,30 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
         }
         break;
 
+    case ABILITY_BERSERK:
+        if (DEFENDING_MON.curHP
+            && DEFENDING_MON.statBoosts[BATTLE_STAT_ATTACK] < 12
+            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && !((Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE) && (ATTACKING_MON.sheer_force_flag == 1))
+            && battleCtx->multiHitCounter <= 1
+            && DEFENDING_MON.curHP <= (s32)(DEFENDING_MON.maxHP / 2)
+            && ((DEFENDING_MON.curHP - DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken) > (DEFENDING_MON.maxHP / 2) ||
+                (DEFENDING_MON.curHP - DEFENDER_SELF_TURN_FLAGS.specialDamageTaken) > (DEFENDING_MON.maxHP / 2))   
+        ) {
+            battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SP_ATTACK_UP_1_STAGE;
+            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+            battleCtx->sideEffectMon = battleCtx->defender;
+            battleCtx->msgBattlerTemp = battleCtx->defender;
+            *subscript = subscript_update_stat_stage;
+            result = TRUE;
+        }
+        break;
+
     case ABILITY_GOOEY:
+    case ABILITY_TANGLING_HAIR:
         if (ATTACKING_MON.statBoosts[BATTLE_STAT_SPEED] > 0
             && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
             && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
@@ -8201,6 +8275,7 @@ static const u16 sPunchingMoves[] = {
     MOVE_SKY_UPPERCUT,
     MOVE_SHARPEN,
     MOVE_FEINT,
+    MOVE_SURGING_STRIKES,
 };
 
 static const u16 sLauncherMoves[] = {
@@ -8238,6 +8313,30 @@ static const u16 sCuttingMoves[] = {
     MOVE_SLASH,
     MOVE_SONIC_BOOM,
     MOVE_X_SCISSOR,
+};
+
+static const u16 sBulletproofMoves[] = {
+    MOVE_ACID_SPRAY,
+    MOVE_AURA_SPHERE,
+    MOVE_BARRAGE,
+    MOVE_BULLET_SEED,
+    MOVE_EGG_BOMB,
+    MOVE_ELECTRO_BALL,
+    MOVE_ENERGY_BALL,
+    MOVE_FOCUS_BLAST,
+    MOVE_GYRO_BALL,
+    MOVE_ICE_BALL,
+    MOVE_MAGNET_BOMB,
+    MOVE_MIST_BALL,
+    MOVE_MUD_BOMB,
+    MOVE_OCTAZOOKA,
+    MOVE_ROCK_BLAST,
+    MOVE_ROCK_WRECKER,
+    MOVE_SEED_BOMB,
+    MOVE_SHADOW_BALL,
+    MOVE_SLUDGE_BOMB,
+    MOVE_WEATHER_BALL,
+    MOVE_ZAP_CANNON,
 };
 
 typedef struct DamageCalcParams {
@@ -8333,6 +8432,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         attackStage = BattleMon_Get(battleCtx, attacker, BATTLEMON_DEFENSE_STAGE, NULL) - 6;
     }
 
+    if (move == MOVE_FOUL_PLAY) {
+        attackStat = BattleMon_Get(battleCtx, defender, BATTLEMON_ATTACK, NULL);
+        attackStage = BattleMon_Get(battleCtx, defender, BATTLEMON_ATTACK_STAGE, NULL) - 6;
+    }
+
     // Assign power; prefer the input power (used by variable-power moves, e.g. Gyro Ball)
     if (inPower == 0) {
         movePower = MOVE_DATA(move).power;
@@ -8357,6 +8461,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     // GF_ASSERT(battleCtx->powerMul >= 10);
 
     moveClass = MOVE_DATA(move).class;
+
+    if (moveClass = CLASS_SPECIAL
+            && defenderParams.ability == ABILITY_ICE_SCALES) {
+        movePower = movePower * 50 / 100;
+    }
 
     if (battleCtx->battleMons[attacker].heldItem == (u16)(moveType + ITEM_NORMAL_GEM) && (moveClass != CLASS_STATUS)) {
         movePower = movePower * 15 / 10;
@@ -8557,6 +8666,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         && attackerParams.ability == ABILITY_SWARM
         && attackerParams.curHP <= (attackerParams.maxHP / 3)) {
         movePower = movePower * 150 / 100;
+    }
+
+    if (Battler_Ability(battleCtx, BATTLER_ALLY(defender)) == ABILITY_FRIEND_GUARD)
+    {
+        movePower = movePower * 75 / 100;
     }
 
     if (MoveIsAffectedByNormalizeVariants(move)) {
@@ -8768,6 +8882,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             }
         }
     } else if (moveClass == CLASS_SPECIAL) {
+
         if (criticalMul > 1) {
             if (spAttackStage > 6) {
                 damage = spAttackStat * sStatStageBoosts[spAttackStage].numerator;
@@ -8783,16 +8898,31 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         damage *= movePower;
         damage *= (attackerLevel * 2 / 5 + 2);
 
-        if (criticalMul > 1) {
-            if (spDefenseStage < 6) {
-                stageDivisor = spDefenseStat * sStatStageBoosts[spDefenseStage].numerator;
-                stageDivisor /= sStatStageBoosts[spDefenseStage].denominator;
+        if (MOVE_DATA(move).effect == BATTLE_EFFECT_PSYSHOCK) {
+            if (criticalMul > 1) {
+                if (spDefenseStage < 6) {
+                    stageDivisor = defenseStat * sStatStageBoosts[defenseStage].numerator;
+                    stageDivisor /= sStatStageBoosts[defenseStage].denominator;
+                } else {
+                    stageDivisor = defenseStat;
+                }
             } else {
-                stageDivisor = spDefenseStat;
+                stageDivisor = defenseStat * sStatStageBoosts[defenseStage].numerator;
+                stageDivisor /= sStatStageBoosts[defenseStage].denominator;
             }
         } else {
-            stageDivisor = spDefenseStat * sStatStageBoosts[spDefenseStage].numerator;
-            stageDivisor /= sStatStageBoosts[spDefenseStage].denominator;
+
+            if (criticalMul > 1) {
+                if (spDefenseStage < 6) {
+                    stageDivisor = spDefenseStat * sStatStageBoosts[spDefenseStage].numerator;
+                    stageDivisor /= sStatStageBoosts[spDefenseStage].denominator;
+                } else {
+                    stageDivisor = spDefenseStat;
+                }
+            } else {
+                stageDivisor = spDefenseStat * sStatStageBoosts[spDefenseStage].numerator;
+                stageDivisor /= sStatStageBoosts[spDefenseStage].denominator;
+            }
         }
 
         damage /= stageDivisor;
@@ -9162,6 +9292,11 @@ int PostKO_CalcMoveDamage(BattleSystem *battleSys,
         && attackerParams.ability == ABILITY_SWARM
         && attackerParams.curHP <= (attackerParams.maxHP / 3)) {
         movePower = movePower * 150 / 100;
+    }
+
+    if (Battler_Ability(battleCtx, BATTLER_ALLY(defender)) == ABILITY_FRIEND_GUARD)
+    {
+        movePower = movePower * 75 / 100;
     }
 
     if (MoveIsAffectedByNormalizeVariants(move)) {
@@ -10127,11 +10262,14 @@ int BattleSystem_CalcCriticalMulti(BattleSystem *battleSys, BattleContext *battl
     }
 
     if (BattleSystem_RandNext(battleSys) % sCriticalStageRates[effectiveCritStage] == 0
-        && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_BATTLE_ARMOR) == FALSE
-        && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SHELL_ARMOR) == FALSE
-        && (sideConditions & SIDE_CONDITION_LUCKY_CHANT) == FALSE
-        && (defenderMoveEffects & MOVE_EFFECT_NO_CRITICAL) == FALSE) {
-        criticalMul = 2;
+        || MOVE_DATA(battleCtx->moveCur).effect == BATTLE_EFFECT_ALWAYS_CRIT
+        || MOVE_DATA(battleCtx->moveCur).effect == BATTLE_EFFECT_HIT_THREE_TIMES_ALWAYS_CRITICAL) {
+        if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_BATTLE_ARMOR) == FALSE
+            && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SHELL_ARMOR) == FALSE
+            && (sideConditions & SIDE_CONDITION_LUCKY_CHANT) == FALSE
+            && (defenderMoveEffects & MOVE_EFFECT_NO_CRITICAL) == FALSE) {
+            criticalMul = 2;
+        }
     }
 
     if (criticalMul == 2 && Battler_Ability(battleCtx, attacker) == ABILITY_SNIPER) {
@@ -10635,6 +10773,7 @@ static BOOL MoveIsOnDamagingTurn(BattleContext *battleCtx, int move)
     case BATTLE_EFFECT_DIG:
     case BATTLE_EFFECT_BOUNCE:
     case BATTLE_EFFECT_SHADOW_FORCE:
+    case BATTLE_EFFECT_ELECTRO_SHOT:
         return battleCtx->battleStatusMask & SYSCTL_LAST_OF_MULTI_TURN;
         break;
     }
@@ -12064,4 +12203,28 @@ BOOL isSoundMove(u16 move)
         }
     }
     return result;
+}
+
+BOOL AreAnyStatsNotAtValue(BattleContext *battleCtx, int client, int value, BOOL excludeAccuracyEvasion)
+{
+    int counter = excludeAccuracyEvasion ? 5 : 7;
+
+    for (int i = 0; i < counter; i++)
+    {
+        if (battleCtx->battleMons[client].statBoosts[i] != value)
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+BOOL IsBallOrBombMove(u32 moveIndex) {
+    for (u16 i = 0; i < NELEMS(sBulletproofMoves); i++) {
+        if (moveIndex == sBulletproofMoves[i]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }

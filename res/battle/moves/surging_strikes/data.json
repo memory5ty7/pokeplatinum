@@ -1,0 +1,24 @@
+{
+    "name": "Surging Strikes",
+    "class": "CLASS_PHYSICAL",
+    "type": "TYPE_WATER",
+    "power": 25,
+    "accuracy": 100,
+    "pp": 5,
+    "effect": {
+        "type": "BATTLE_EFFECT_HIT_THREE_TIMES_ALWAYS_CRITICAL",
+        "chance": 0
+    },
+    "range": "RANGE_SINGLE_TARGET",
+    "priority": 0,
+    "flags": [
+        "MOVE_FLAG_MAKES_CONTACT",
+        "MOVE_FLAG_CAN_PROTECT",
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
+    ],
+    "contest": {
+        "effect": 1,
+        "type": "CONTEST_TYPE_CUTE"
+    }
+}

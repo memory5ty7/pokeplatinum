@@ -333,4 +333,11 @@ subscript_files = files(
     'subscript_supersweet_syrup.s',
     'subscript_power_trick.s',
     'subscript_cannot_use_move.s',
+    'subscript_recover_quarter_max_hp.s',
+    'subscript_user_speed_up_and_def_down_1_stage.s',
+    'subscript_absorb_and_attack_up_1_stage.s',
+    'subscript_power_herb_meteor_beam.s',
+    'subscript_sp_atk_up_rain_skip.s',
+    'subscript_handle_moody.s',
+    'subscript_doesnt_affect_ability.s',
 )
