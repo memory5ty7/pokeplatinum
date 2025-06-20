@@ -112,6 +112,7 @@ foreach gen_key : metang_generators.keys()
     )
 endforeach
 
+items_txt = files('items.txt')
 species_txt = files('species.txt')
 text_banks_txt = files('text_banks.txt')
 trainers_txt = files('trainers.txt')

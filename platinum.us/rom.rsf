@@ -366,12 +366,12 @@ RomSpec
 	File graphic/worldtimer.narc
 	File graphic/worldtrade.narc
 	File itemtool/itemdata/item_data.narc
-	File itemtool/itemdata/item_icon.narc
 
 	Root /itemtool/itemdata
 	HostRoot res/items
 	File nuts_data.narc
 	File pl_item_data.narc
+	File item_icon.narc
 
 	Root /poketool/icongra
 	HostRoot res/pokemon
