@@ -1,6 +1,6 @@
 {
     "name": "Grunt",
-    "class": "TRAINER_CLASS_GALACTIC_MANAGER_FEMALE",
+    "class": "TRAINER_CLASS_MANAGER_MERCURY",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
