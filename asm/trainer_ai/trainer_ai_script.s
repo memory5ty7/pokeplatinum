@@ -53,12 +53,81 @@ Basic_Main:
     ; Ignore this flag on partner battlers.
     IfTargetIsPartner Basic_Partner
 
+    GoTo Basic_Main2
+
+Basic_Main2:
     FlagMoveDamageScore FALSE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, Basic_Other
 
+    IfMoveEffectivenessEquals TYPE_MULTI_IMMUNE, ScoreMinus20
+
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_WonderGuard
+
+    GoTo Basic_Immunity
+
+Basic_Immunity:
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_Main2
+
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_ELECTRIC, Basic_ElecImmunity
+    IfTempEqualTo TYPE_FIRE, Basic_FireImmunity
+    IfTempEqualTo TYPE_WATER, Basic_WaterImmunity
+    IfTempEqualTo TYPE_GRASS, Basic_GrassImmunity
+    IfTempEqualTo TYPE_GROUND, Basic_GroundImmunity
+
+    ; Soundproof/Cacophony - All sound moves are rendered ineffective
+    ; Bulletproof - Ball and Bomb moves do no damage
+    ; Suction Cups - Pokemon is immune to Roar and Whirlwind
+
+    GoTo Basic_Main3
+
+Basic_ElecImmunity:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_VOLT_ABSORB, ScoreMinus20
+    IfLoadedEqualTo ABILITY_MOTOR_DRIVE, ScoreMinus20
+    IfLoadedEqualTo ABILITY_LIGHTNING_ROD, ScoreMinus20
+    GoTo Basic_Main3
+
+Basic_FireImmunity:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_FLASH_FIRE, ScoreMinus20
+    GoTo Basic_Main3
+
+Basic_WaterImmunity:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_WATER_ABSORB, ScoreMinus20
+    IfLoadedEqualTo ABILITY_DRY_SKIN, ScoreMinus20
+    IfLoadedEqualTo ABILITY_STORM_DRAIN, ScoreMinus20
+    GoTo Basic_Main3
+
+Basic_GrassImmunity:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_SAP_SIPPER, ScoreMinus20
+    GoTo Basic_Main3
+
+Basic_GroundImmunity:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_LEVITATE, ScoreMinus20
+    GoTo Basic_Main3
+
+Basic_WonderGuard:
+    IfMoveEffectivenessEquals TYPE_MULTI_DOUBLE_DAMAGE, Basic_Main3
+    IfMoveEffectivenessEquals TYPE_MULTI_QUADRUPLE_DAMAGE, Basic_Main3
+    GoTo ScoreMinus20
+
+Basic_Main3:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, Basic_HighestDamage
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_HighestDamage
 
+    IfMoveEqualTo MOVE_FAKE_OUT, Basic_FakeOutFail
+
+    GoTo CheckKill
+
+Basic_FakeOutFail:
+    LoadIsFirstTurnInBattle AI_BATTLER_ATTACKER
+    IfLoadedEqualTo FALSE, ScoreMinus20
     GoTo CheckKill
 
 CheckKill:
@@ -106,9 +175,10 @@ Basic_HighestDamage:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DOUBLE_POWER_EACH_TURN_LOCK_INTO, Basic_Rollout
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_IN_3_TURNS, Basic_FutureSight
 
-    IfLoadedEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, Basic_HighestDamageRandom
+    FlagMoveDamageScore FALSE
+    IfLoadedEqualTo AI_NOT_HIGHEST_DAMAGE, Basic_AdditionalDamage
 
-    GoTo Basic_AdditionalDamage
+    GoTo Basic_HighestDamageRandom
  
 Basic_Priority:
     IfSpeedCompareEqualTo COMPARE_SPEED_FASTER, Basic_End
@@ -200,7 +270,8 @@ Basic_AdditionalDamage:
     IfMoveEqualTo MOVE_FAKE_OUT, Basic_FakeOut
 
     ; Not Highest Damage Additional Bonuses
-    IfLoadedNotEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, Basic_NotHighestAdditional
+    FlagMoveDamageScore FALSE
+    IfLoadedEqualTo AI_NOT_HIGHEST_DAMAGE, Basic_NotHighestAdditional
 
     GoTo Basic_Other
 
@@ -406,6 +477,7 @@ Basic_CheckSetupException:
     GoTo Basic_End
 
 Basic_DefensiveSetup:
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 12, ScoreMinus20
     AddToMoveScore 6
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, Basic_DefensiveSetup001
     AddToMoveScore -1
@@ -422,6 +494,7 @@ Basic_DefensiveSetup01:
     GoTo Basic_DefensiveGlobal
 
 Basic_DefensiveSetup1:
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 12, ScoreMinus20
     AddToMoveScore 6
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, Basic_DefensiveSetup101
     AddToMoveScore -1
@@ -438,6 +511,11 @@ Basic_DefensiveSetup11:
     GoTo Basic_DefensiveGlobal
 
 Basic_DefensiveSetup2:
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 12, Basic_DefensiveSetup25
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 12, Basic_DefensiveSetup25
+    GoTo ScoreMinus20
+
+Basic_DefensiveSetup25:
     AddToMoveScore 6
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, Basic_DefensiveSetup3
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, Basic_DefensiveSetup3
@@ -518,6 +596,7 @@ Basic_SpOffensiveSetup25:
     GoTo Basic_SpOffensiveSetup2
 
 Basic_SpOffensiveSetup3:
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 12, ScoreMinus20
     IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, Basic_SpOffensiveSetup4
     AddToMoveScore -1
     GoTo Basic_SpOffensiveSetup4
@@ -1081,8 +1160,10 @@ Basic_Hydration:
     GoTo ScorePlus7
 
 Basic_ShellSmash:
+    IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 7, ScoreMinus20
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 7, ScoreMinus20
     IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 12, ScoreMinus20
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 12, ScoreMinus20
     AddToMoveScore 6
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_ShellSmash2
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_FREEZE, Basic_ShellSmash21
@@ -1142,6 +1223,8 @@ Basic_End:
     PopOrEnd
 
 Basic_Partner:
+    IfBattlerFainted AI_BATTLER_ATTACKER_PARTNER, ScoreMinus20
+    
     GoTo ScoreMinus20
 
 Golmon_Main:
