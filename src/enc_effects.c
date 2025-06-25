@@ -290,6 +290,11 @@ static u32 EncEffects_TrainerClassEffect(u32 trainerClass)
     case TRAINER_CLASS_CONWAY:
     case TRAINER_CLASS_REGGIE:
     case TRAINER_CLASS_ROWAN:
+    case TRAINER_CLASS_TRAINER_CHERYL:
+    case TRAINER_CLASS_TRAINER_MIRA:
+    case TRAINER_CLASS_TRAINER_RILEY:
+    case TRAINER_CLASS_TRAINER_MARLEY:
+    case TRAINER_CLASS_TRAINER_BUCK:
         result = ENCEFF_SPECIAL_TRAINER;
         break;
     case TRAINER_CLASS_HUNTER_J:
