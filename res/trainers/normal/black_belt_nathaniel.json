@@ -6,52 +6,43 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_DAMAGE_PRIORITY"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_HITMONCHAN",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 30,
-            "ball_seal": 0,
+            "level": 44,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_BULLET_PUNCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_HITMONLEE",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 30,
-            "ball_seal": 0,
+            "level": 44,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_MEGA_KICK"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_MACHOP",
-            "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 30,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

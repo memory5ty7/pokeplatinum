@@ -10,19 +10,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PSYDUCK",
-            "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "species": "SPECIES_WORMADAM",
+            "form": 1,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_EARTH_POWER",
+                "MOVE_RAZOR_LEAF",
+                "MOVE_CONFUSION",
+                "MOVE_PROTECT"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 20,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

@@ -45,7 +45,7 @@
         "by_level": [
             [
                 1,
-                "MOVE_SUPERPOWER"
+                "MOVE_KNOCK_OFF"
             ],
             [
                 1,
@@ -62,6 +62,10 @@
             [
                 10,
                 "MOVE_AQUA_JET"
+            ],
+            [
+                10,
+                "MOVE_PROTECT"
             ],
             [
                 14,

@@ -64,6 +64,10 @@
                 "MOVE_AQUA_JET"
             ],
             [
+                12,
+                "MOVE_PROTECT"
+            ],
+            [
                 14,
                 "MOVE_BUBBLE_BEAM"
             ],

@@ -1,9 +1,7 @@
 {
     "name": "Christine",
     "class": "TRAINER_CLASS_SCHOOL_KID_FEMALE",
-    "items": [
-        "ITEM_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"

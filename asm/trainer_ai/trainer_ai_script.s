@@ -425,6 +425,10 @@ Basic_Other:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_SUN, Basic_Sun
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_SANDSTORM, Basic_Sand
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_HAIL, Basic_Hail
+
+    LoadCurrentMoveClass
+    IfLoadedEqualTo CLASS_STATUS, ScorePlus6
+    
     GoTo Basic_End
 
 Basic_OffensiveSetup:

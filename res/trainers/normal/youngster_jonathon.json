@@ -8,22 +8,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_KABUTO",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 13,
+            "item": "ITEM_RINDO_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_ROCK_TOMB",
+                "MOVE_WATER_PULSE",
+                "MOVE_PROTECT"
             ],
-            "power": 10,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

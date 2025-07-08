@@ -8,64 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_MAGBY",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_LAVA_PLUME",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_SCARY_FACE",
+                "MOVE_SMOKE_SCREEN"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_SMOOCHUM",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_AURORA_BEAM",
+                "MOVE_EXTRASENSORY",
+                "MOVE_FAKE_OUT",
+                "MOVE_ENCORE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_ELEKID",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ELECTROWEB",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SCREECH",
+                "MOVE_THUNDER_WAVE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_EEVEE",
-            "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

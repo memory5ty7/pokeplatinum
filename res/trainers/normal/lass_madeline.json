@@ -9,19 +9,39 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PSYDUCK",
+            "species": "SPECIES_BUNEARY",
             "form": 0,
-            "level": 8,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
+            "level": 11,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "abilitySlot": 1,
             "nature": 0,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SKITTY",
+            "form": 0,
+            "level": 11,
+            "item": "ITEM_SILK_SCARF",
+            "moves": [
+                "MOVE_DOUBLE_SLAP",
+                "MOVE_FAKE_OUT",
+                "MOVE_TAIL_WHIP"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

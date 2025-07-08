@@ -50,7 +50,7 @@
             "species": "SPECIES_MACHOKE",
             "form": 0,
             "level": 32,
-            "item": "ITEM_TOXIC_ORB",
+            "item": "ITEM_LUM_BERRY",
             "moves": [
                 "MOVE_DYNAMIC_PUNCH"
             ],

@@ -8,18 +8,18 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ARBOK",
+            "species": "SPECIES_SKARMORY",
             "form": 0,
             "level": 30,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_ROCKY_HELMET",
             "moves": [
-                "MOVE_POISON_FANG",
-                "MOVE_SEED_BOMB",
-                "MOVE_ROCK_TOMB",
-                "MOVE_PSYCHIC_FANGS"
+                "MOVE_DRILL_PECK",
+                "MOVE_DRILL_RUN",
+                "MOVE_TAUNT",
+                "MOVE_SPIKES"
             ],
-            "abilitySlot": 0,
-            "nature": 3,
+            "abilitySlot": 1,
+            "nature": 8,
             "status": 0,
             "gender": 3,
             "ivs": 0,
@@ -27,37 +27,37 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUDICOLO",
+            "species": "SPECIES_PILOSWINE",
             "form": 0,
             "level": 30,
-            "item": "ITEM_LEFTOVERS",
+            "item": "ITEM_SALAC_BERRY",
             "moves": [
-                "MOVE_SCALD",
-                "MOVE_GIGA_DRAIN",
-                "MOVE_FAKE_OUT",
-                "MOVE_THUNDER_PUNCH"
-            ],
-            "abilitySlot": 0,
-            "nature": 10,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_CAMERUPT",
-            "form": 0,
-            "level": 30,
-            "item": "ITEM_PASSHO_BERRY",
-            "moves": [
-                "MOVE_YAWN",
+                "MOVE_ICICLE_CRASH",
                 "MOVE_BULLDOZE",
-                "MOVE_FLAMETHROWER",
-                "MOVE_FLAME_CHARGE"
+                "MOVE_REVERSAL",
+                "MOVE_ENDURE"
             ],
             "abilitySlot": 0,
-            "nature": 17,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_UMBREON",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_FOCUS_BAND",
+            "moves": [
+                "MOVE_NIGHT_SHADE",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_MEAN_LOOK",
+                "MOVE_MOONLIGHT"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
             "status": 0,
             "gender": 3,
             "ivs": 0,

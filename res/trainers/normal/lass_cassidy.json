@@ -8,19 +8,21 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUNEARY",
+            "species": "SPECIES_NIDORINA",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_MUD_SHOT"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

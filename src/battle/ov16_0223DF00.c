@@ -531,6 +531,8 @@ int BattleSystem_Partner(BattleSystem *battleSys, int battler)
 
     if ((battleType & BATTLE_TYPE_DOUBLES) == FALSE) {
         return battler;
+    } else if (BattleSystem_PartyCount(battleSys, battler) == 1) {
+        return battler;
     }
 
     for (i = 0; i < maxBattlers; i++) {

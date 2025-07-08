@@ -8,56 +8,56 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LAPRAS",
+            "species": "SPECIES_AMPHAROS",
             "form": 0,
             "level": 30,
-            "item": "ITEM_COVERT_CLOAK",
+            "item": "ITEM_CUSTAP_BERRY",
             "moves": [
-                "MOVE_BODY_SLAM",
-                "MOVE_AVALANCHE",
-                "MOVE_DRAGON_DANCE",
-                "MOVE_WHIRLPOOL"
-            ],
-            "abilitySlot": 0,
-            "nature": 3,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_FROSLASS",
-            "form": 0,
-            "level": 30,
-            "item": "ITEM_LUM_BERRY",
-            "moves": [
-                "MOVE_OMINOUS_WIND",
-                "MOVE_AURORA_BEAM",
-                "MOVE_WATER_PULSE",
-                "MOVE_PSYCHIC"
+                "MOVE_DISCHARGE",
+                "MOVE_POWER_GEM",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_ENDEAVOR"
             ],
             "abilitySlot": 0,
             "nature": 15,
             "status": 0,
             "gender": 3,
-            "ivs": 0,
+            "ivs": 17,
             "preDamage": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLACEON",
+            "species": "SPECIES_BELLOSSOM",
             "form": 0,
             "level": 30,
-            "item": "ITEM_POWER_HERB",
+            "item": "ITEM_BIG_ROOT",
             "moves": [
-                "MOVE_ICE_BEAM",
-                "MOVE_DIG",
-                "MOVE_ICE_SHARD",
-                "MOVE_ATTRACT"
+                "MOVE_GIGA_DRAIN",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_MOONLIGHT"
             ],
-            "abilitySlot": 0,
-            "nature": 11,
+            "abilitySlot": 1,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 12,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CAMERUPT",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_QUICK_CLAW",
+            "moves": [
+                "MOVE_EARTH_POWER",
+                "MOVE_FLAMETHROWER",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SUBSTITUTE"
+            ],
+            "abilitySlot": 1,
+            "nature": 17,
             "status": 0,
             "gender": 3,
             "ivs": 0,

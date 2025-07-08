@@ -10,84 +10,99 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_STARAPTOR",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 43,
+            "item": "ITEM_SHELL_BELL",
             "moves": [
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_ENDEAVOR",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_TAKE_DOWN",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_ROOST"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_JOLTEON",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_LEECH_SEED",
-                "MOVE_STUN_SPORE"
+                "MOVE_DISCHARGE",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_AGILITY",
+                "MOVE_BATON_PASS"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_HERACROSS",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EMBER",
-                "MOVE_TACKLE",
-                "MOVE_TAIL_WHIP",
-                "MOVE_GROWL"
+                "MOVE_X_SCISSOR",
+                "MOVE_BRICK_BREAK",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_AERIAL_ACE"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_PRINPLUP",
+            "species": "SPECIES_SNORLAX",
             "form": 0,
-            "level": 27,
-            "item": null,
+            "level": 43,
+            "item": "ITEM_CHESTO_BERRY",
             "moves": [
-                "MOVE_BUBBLE_BEAM",
-                "MOVE_PECK",
-                "MOVE_METAL_CLAW",
-                "MOVE_GROWL"
+                "MOVE_BODY_SLAM",
+                "MOVE_CRUNCH",
+                "MOVE_REST",
+                "MOVE_HIGH_HORSEPOWER"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EMPOLEON",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_MYSTIC_WATER",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_FLASH_CANNON",
+                "MOVE_ICY_WIND",
+                "MOVE_AQUA_JET"
+            ],
+            "abilitySlot": 2,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

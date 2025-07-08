@@ -8,19 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_YANMA",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SILVER_WIND",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_DETECT"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_STARMIE",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_PSYCHIC",
+                "MOVE_RECOVER",
+                "MOVE_POWER_GEM"
+            ],
+            "abilitySlot": 1,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

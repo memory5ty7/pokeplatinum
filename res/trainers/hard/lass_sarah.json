@@ -28,25 +28,6 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_JIGGLYPUFF",
-            "form": 0,
-            "level": 14,
-            "item": "ITEM_CHESTO_BERRY",
-            "moves": [
-                "MOVE_BODY_SLAM",
-                "MOVE_WATER_PULSE",
-                "MOVE_SLEEP_TALK",
-                "MOVE_REST"
-            ],
-            "abilitySlot": 1,
-            "nature": 7,
-            "status": 0,
-            "gender": 1,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
             "species": "SPECIES_FINNEON",
             "form": 0,
             "level": 14,
@@ -61,6 +42,25 @@
             "nature": 11,
             "status": 0,
             "gender": 0,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JIGGLYPUFF",
+            "form": 0,
+            "level": 14,
+            "item": "ITEM_CHESTO_BERRY",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_WATER_PULSE",
+                "MOVE_SLEEP_TALK",
+                "MOVE_REST"
+            ],
+            "abilitySlot": 1,
+            "nature": 7,
+            "status": 0,
+            "gender": 1,
             "ivs": 0,
             "preDamage": 0,
             "ball_seal": 0

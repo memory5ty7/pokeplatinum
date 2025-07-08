@@ -8,19 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_EEVEE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SWIFT",
+                "MOVE_DIG",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_YAWN"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MARILL",
+            "form": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_AQUA_TAIL",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SLAM",
+                "MOVE_BOUNCE"
+            ],
+            "abilitySlot": 0,
+            "nature": 2,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PIKACHU",
+            "form": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_IRON_TAIL"
+            ],
+            "abilitySlot": 0,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -8,19 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATTATA",
+            "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 5,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 36,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BRICK_BREAK",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 2,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_POLIWHIRL",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_BRICK_BREAK",
+                "MOVE_BODY_SLAM",
+                "MOVE_HELPING_HAND"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HARIYAMA",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_KNOCK_OFF",
+                "MOVE_FAKE_OUT",
+                "MOVE_WHIRLWIND"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

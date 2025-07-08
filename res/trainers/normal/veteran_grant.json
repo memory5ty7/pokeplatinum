@@ -10,64 +10,54 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RIOLU",
+            "species": "SPECIES_NIDORAN_M",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 13,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_FORCE_PALM",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_COUNTER",
-                "MOVE_SCREECH"
+                "MOVE_BITE",
+                "MOVE_TAIL_WHIP"
             ],
-            "power": 100,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 14,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_BARBOACH",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 13,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_AERIAL_ACE",
-                "MOVE_TAKE_DOWN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_WATER_PULSE"
             ],
-            "power": 100,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_GRAVELER",
+            "species": "SPECIES_SHIELDON",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 13,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_ROCK_SLIDE",
-                "MOVE_ROCK_POLISH",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_METAL_CLAW",
+                "MOVE_ROCK_THROW"
             ],
-            "power": 100,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

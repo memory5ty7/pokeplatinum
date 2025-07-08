@@ -12,21 +12,57 @@
         {
             "species": "SPECIES_CHANSEY",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 24,
+            "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_EGG_BOMB",
-                "MOVE_SOFTBOILED",
-                "MOVE_REFRESH"
+                "MOVE_DOUBLE_SLAP",
+                "MOVE_REFRESH",
+                "MOVE_PROTECT",
+                "MOVE_SHOCK_WAVE"
             ],
-            "power": 30,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WAILMER",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_ROLLOUT"
+            ],
+            "abilitySlot": 0,
+            "nature": 22,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WORMADAM",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_RAZOR_LEAF",
+                "MOVE_BUG_BITE",
+                "MOVE_PROTECT",
+                "MOVE_CONFUSION"
+            ],
+            "abilitySlot": 0,
+            "nature": 21,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

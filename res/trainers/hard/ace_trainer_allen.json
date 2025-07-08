@@ -10,25 +10,6 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LAPRAS",
-            "form": 0,
-            "level": 40,
-            "item": "ITEM_LEFTOVERS",
-            "moves": [
-                "MOVE_BODY_SLAM",
-                "MOVE_THUNDERBOLT",
-                "MOVE_PROTECT",
-                "MOVE_CONFUSE_RAY"
-            ],
-            "abilitySlot": 0,
-            "nature": 7,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
             "species": "SPECIES_ROTOM",
             "form": 3,
             "level": 40,

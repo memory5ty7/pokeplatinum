@@ -10,64 +10,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RIOLU",
+            "species": "SPECIES_ONIX",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 15,
+            "item": "ITEM_LIECHI_BERRY",
             "moves": [
-                "MOVE_FORCE_PALM",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_COUNTER",
-                "MOVE_SCREECH"
+                "MOVE_BULLDOZE",
+                "MOVE_ROCK_TOMB",
+                "MOVE_ROCK_SMASH",
+                "MOVE_ROLLOUT"
             ],
-            "power": 100,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 2,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 14,
+            "item": "ITEM_PETAYA_BERRY",
             "moves": [
-                "MOVE_AERIAL_ACE",
-                "MOVE_TAKE_DOWN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_MIRROR_SHOT",
+                "MOVE_HIDDEN_POWER"
             ],
-            "power": 100,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 2,
+            "nature": 15,
             "status": 0,
-            "ivs": 0,
+            "gender": 3,
+            "ivs": 13,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_GRAVELER",
+            "species": "SPECIES_BONSLY",
             "form": 0,
-            "level": 34,
-            "item": null,
+            "level": 14,
+            "item": "ITEM_SALAC_BERRY",
             "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_ROCK_SLIDE",
-                "MOVE_ROCK_POLISH",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_ROCK_TOMB",
+                "MOVE_HEADBUTT",
+                "MOVE_COUNTER"
             ],
-            "power": 100,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 1,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

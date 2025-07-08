@@ -8,34 +8,42 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_CLEFABLE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_METEOR_MASH",
+                "MOVE_MOONLIGHT",
+                "MOVE_HELPING_HAND",
+                "MOVE_ENCORE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 23,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MIME_JR",
+            "species": "SPECIES_WIGGLYTUFF",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_HYPER_VOICE",
+                "MOVE_SING",
+                "MOVE_ROLLOUT",
+                "MOVE_GYRO_BALL"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

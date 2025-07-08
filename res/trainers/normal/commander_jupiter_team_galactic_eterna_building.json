@@ -10,43 +10,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_GOLBAT",
             "form": 0,
-            "level": 21,
+            "level": 29,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GIGA_DRAIN",
-                "MOVE_WING_ATTACK",
+                "MOVE_AIR_SLASH",
+                "MOVE_LEECH_LIFE",
+                "MOVE_CONFUSE_RAY",
                 "MOVE_BITE"
             ],
-            "power": 100,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUNATONE",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_PSYBEAM",
+                "MOVE_HYPNOSIS",
+                "MOVE_MOONLIGHT",
+                "MOVE_ROCK_TOMB"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_SKUNTANK",
             "form": 0,
-            "level": 23,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 32,
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
+                "MOVE_POISON_JAB",
                 "MOVE_NIGHT_SLASH",
-                "MOVE_POISON_GAS",
-                "MOVE_SCREECH",
-                "MOVE_SMOKE_SCREEN"
+                "MOVE_TOXIC",
+                "MOVE_SLASH"
             ],
-            "power": 100,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 14,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

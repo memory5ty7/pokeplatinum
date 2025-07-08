@@ -2,52 +2,52 @@
     "land_rate": 15,
     "land_encounters": [
         {
-            "level": 40,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 41,
-            "species": "SPECIES_RHYHORN"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 42,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 41,
-            "species": "SPECIES_ONIX"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 42,
-            "species": "SPECIES_ONIX"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 41,
-            "species": "SPECIES_RHYDON"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 43,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 43,
-            "species": "SPECIES_RHYDON"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 42,
-            "species": "SPECIES_STEELIX"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 41,
-            "species": "SPECIES_GABITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 42,
-            "species": "SPECIES_STEELIX"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 41,
-            "species": "SPECIES_GABITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

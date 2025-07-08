@@ -1,9 +1,7 @@
 {
     "name": "Travon",
     "class": "TRAINER_CLASS_SCIENTIST",
-    "items": [
-        "ITEM_X_SPECIAL"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
@@ -11,21 +9,55 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KADABRA",
+            "species": "SPECIES_UNOWN",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 28,
+            "item": "ITEM_METRONOME",
             "moves": [
-                "MOVE_CONFUSION"
+                "MOVE_HIDDEN_POWER"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BELDUM",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_TAKE_DOWN"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHUCKLE",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_BERRY_JUICE",
+            "moves": [
+                "MOVE_WRAP",
+                "MOVE_ENCORE",
+                "MOVE_SAFEGUARD",
+                "MOVE_ROCK_SMASH"
+            ],
+            "abilitySlot": 1,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -1,9 +1,7 @@
 {
     "name": "Christine",
     "class": "TRAINER_CLASS_SCHOOL_KID_FEMALE",
-    "items": [
-        "ITEM_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
@@ -11,19 +9,20 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_PORYGON",
             "form": 0,
-            "level": 6,
-            "item": null,
-            "moves": null,
-            "power": 10,
-            "ball_seal": 0,
+            "level": 9,
+            "item": "ITEM_ORAN_BERRY",
+            "moves": [
+                "MOVE_HIDDEN_POWER"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

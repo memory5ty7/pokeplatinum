@@ -35,8 +35,8 @@
     ],
     "abilities": [
         "ABILITY_CLEAR_BODY",
-        "ABILITY_TORRENT",
-        "ABILITY_NONE"
+        "ABILITY_NONE",
+        "ABILITY_TORRENT"
     ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",

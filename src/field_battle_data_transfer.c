@@ -247,6 +247,8 @@ void FieldBattleDTO_InitFromGameState(FieldBattleDTO *dto, const FieldSystem *fi
         party = Party_GetLimited(fieldSystem);
     } else {
         party = Party_GetFromSavedata(save);
+        party->currentCount = Party_GetCurrentCount(party);
+        party->capacity = 6;
     }
     
     Bag *bag = SaveData_GetBag(save);

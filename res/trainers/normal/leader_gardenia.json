@@ -1,10 +1,7 @@
 {
     "name": "Gardenia",
     "class": "TRAINER_CLASS_LEADER_GARDENIA",
-    "items": [
-        "ITEM_SUPER_POTION",
-        "ITEM_SUPER_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
@@ -13,64 +10,78 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_GROTLE",
             "form": 0,
-            "level": 20,
-            "item": "ITEM_NONE",
+            "level": 28,
+            "item": "ITEM_ROCKY_HELMET",
             "moves": [
                 "MOVE_GRASS_KNOT",
-                "MOVE_RAZOR_LEAF",
-                "MOVE_SUNNY_DAY",
-                "MOVE_REFLECT"
+                "MOVE_CRUNCH",
+                "MOVE_BULLDOZE",
+                "MOVE_ROCK_TOMB"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 22,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_CHERRIM",
             "form": 0,
-            "level": 20,
+            "level": 28,
             "item": "ITEM_NONE",
             "moves": [
+                "MOVE_GIGA_DRAIN",
                 "MOVE_GRASS_KNOT",
-                "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SAFEGUARD"
+                "MOVE_WEATHER_BALL"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JUMPLUFF",
+            "form": 0,
+            "level": 28,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BULLET_SEED",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_AERIAL_ACE"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_ROSERADE",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 30,
+            "item": "ITEM_BLACK_SLUDGE",
             "moves": [
-                "MOVE_GRASS_KNOT",
                 "MOVE_MAGICAL_LEAF",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_WEATHER_BALL",
+                "MOVE_SLUDGE",
+                "MOVE_GRASS_KNOT"
             ],
-            "power": 50,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 1,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

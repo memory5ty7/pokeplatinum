@@ -8,19 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_STARYU",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_PSYBEAM",
+                "MOVE_POWER_GEM"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLOOM",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_STUN_SPORE",
+                "MOVE_INGRAIN",
+                "MOVE_SLUDGE"
+            ],
+            "abilitySlot": 1,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

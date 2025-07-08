@@ -8,19 +8,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HERACROSS",
+            "species": "SPECIES_METANG",
             "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 41,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_SMART_STRIKE",
+                "MOVE_PURSUIT",
+                "MOVE_BULLET_PUNCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

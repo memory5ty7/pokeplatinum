@@ -8,34 +8,23 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_BUTTERFREE",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 20,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BUG_BUZZ",
+                "MOVE_TAILWIND",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_PSYBEAM"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_CLEFAIRY",
-            "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 20,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 20
         }
     ]
 }

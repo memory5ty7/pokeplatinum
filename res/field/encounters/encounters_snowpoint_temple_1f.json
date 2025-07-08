@@ -2,52 +2,52 @@
     "land_rate": 5,
     "land_encounters": [
         {
-            "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 48,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 49,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 50,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 48,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 49,
-            "species": "SPECIES_SNEASEL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 47,
-            "species": "SPECIES_SMOOCHUM"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 49,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 49,
-            "species": "SPECIES_SMOOCHUM"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 49,
-            "species": "SPECIES_SMOOCHUM"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

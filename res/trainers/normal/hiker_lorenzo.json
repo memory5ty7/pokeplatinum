@@ -9,19 +9,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_TRAPINCH",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SAND_TOMB",
+                "MOVE_CRUNCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GRAVELER",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_BULLDOZE",
+                "MOVE_RAPID_SPIN"
+            ],
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -36,7 +36,7 @@
     "abilities": [
         "ABILITY_POISON_TOUCH",
         "ABILITY_RATTLED",
-        "ABILITY_NONE"
+        "ABILITY_DRY_SKIN"
     ],
     "safari_flee_rate": 150,
     "body_color": "MON_COLOR_BLUE",

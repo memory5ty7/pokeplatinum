@@ -45,6 +45,10 @@
         "by_level": [
             [
                 1,
+                "MOVE_MIRROR_COAT"
+            ],
+            [
+                1,
                 "MOVE_THUNDER_SHOCK"
             ],
             [
@@ -57,7 +61,7 @@
             ],
             [
                 15,
-                "MOVE_ROLLOUT"
+                "MOVE_THIEF"
             ],
             [
                 19,
@@ -69,7 +73,7 @@
             ],
             [
                 26,
-                "MOVE_SPARK"
+                "MOVE_PARABOLIC_CHARGE"
             ],
             [
                 30,
@@ -80,8 +84,16 @@
                 "MOVE_VOLT_SWITCH"
             ],
             [
+                32,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
                 36,
                 "MOVE_DISCHARGE"
+            ],
+            [
+                40,
+                "MOVE_ELECTROWEB"
             ],
             [
                 42,
@@ -89,14 +101,18 @@
             ],
             [
                 46,
-                "MOVE_MAGNET_RISE"
+                "MOVE_TAUNT"
             ],
             [
                 50,
-                "MOVE_THUNDER"
+                "MOVE_MAGNET_RISE"
             ],
             [
                 55,
+                "MOVE_THUNDER"
+            ],
+            [
+                60,
                 "MOVE_EXPLOSION"
             ]
         ],

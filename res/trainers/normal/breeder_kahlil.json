@@ -8,34 +8,80 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ELEKID",
+            "species": "SPECIES_PICHU",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_NUZZLE",
+                "MOVE_CHARM",
+                "MOVE_FAKE_OUT",
+                "MOVE_GRASS_KNOT"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 14,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_HAPPINY",
+            "species": "SPECIES_TYROGUE",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ROCK_SMASH",
+                "MOVE_FAKE_OUT",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_COUNTER"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHINGLING",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_WISH",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MUNCHLAX",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_LIECHI_BERRY",
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_REST",
+                "MOVE_RECYCLE",
+                "MOVE_PURSUIT"
+            ],
+            "abilitySlot": 2,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

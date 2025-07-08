@@ -11,21 +11,40 @@
         {
             "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 22,
+            "item": "ITEM_NONE",
             "moves": [
+                "MOVE_FORCE_PALM",
                 "MOVE_CONFUSION",
-                "MOVE_BIDE",
-                "MOVE_MEDITATE"
+                "MOVE_FAKE_OUT",
+                "MOVE_DETECT"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 2,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BALTOY",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ANCIENT_POWER",
+                "MOVE_PSYBEAM",
+                "MOVE_ROCK_TOMB",
+                "MOVE_MUD_SHOT"
+            ],
+            "abilitySlot": 0,
+            "nature": 5,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

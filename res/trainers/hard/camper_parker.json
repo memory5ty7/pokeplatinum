@@ -32,7 +32,7 @@
             "species": "SPECIES_TROPIUS",
             "form": 0,
             "level": 33,
-            "item": "ITEM_LIFE_ORB",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_BODY_SLAM",
                 "MOVE_AIR_SLASH",

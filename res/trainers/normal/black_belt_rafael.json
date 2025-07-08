@@ -9,41 +9,42 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_HARIYAMA",
             "form": 0,
-            "level": 26,
-            "item": null,
+            "level": 45,
+            "item": "ITEM_FLAME_ORB",
             "moves": [
-                "MOVE_SWAGGER",
-                "MOVE_REVENGE",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_BRICK_BREAK",
+                "MOVE_FLING",
+                "MOVE_POISON_JAB",
+                "MOVE_BULLET_PUNCH"
             ],
-            "power": 40,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_ZANGOOSE",
             "form": 0,
-            "level": 26,
-            "item": null,
+            "level": 45,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
+                "MOVE_CRUSH_CLAW",
+                "MOVE_X_SCISSOR",
+                "MOVE_BRICK_BREAK",
+                "MOVE_METAL_CLAW"
             ],
-            "power": 40,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

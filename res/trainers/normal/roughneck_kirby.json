@@ -8,19 +8,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CLEFFA",
+            "species": "SPECIES_LUVDISC",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BRINE",
+                "MOVE_CHARM",
+                "MOVE_ATTRACT",
+                "MOVE_ICE_BEAM"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

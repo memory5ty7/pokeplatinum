@@ -6,67 +6,43 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_IGGLYBUFF",
             "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 10,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_POUND",
+                "MOVE_DEFENSE_CURL"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_CLEFFA",
             "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 10,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_POUND",
+                "MOVE_CHARM",
+                "MOVE_SING",
+                "MOVE_ENCORE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_STARLY",
-            "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_ABRA",
-            "form": 0,
-            "level": 4,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

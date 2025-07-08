@@ -1,9 +1,7 @@
 {
     "name": "Travon",
     "class": "TRAINER_CLASS_SCIENTIST",
-    "items": [
-        "ITEM_X_SPECIAL"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
@@ -11,18 +9,18 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PORYGON2",
+            "species": "SPECIES_ARIADOS",
             "form": 0,
             "level": 31,
-            "item": "ITEM_CHOPLE_BERRY",
+            "item": "ITEM_LOADED_DICE",
             "moves": [
-                "MOVE_TRI_ATTACK",
-                "MOVE_CHARGE_BEAM",
-                "MOVE_PSYBEAM",
-                "MOVE_ICY_WIND"
+                "MOVE_CROSS_POISON",
+                "MOVE_PIN_MISSILE",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_STICKY_WEB"
             ],
             "abilitySlot": 0,
-            "nature": 17,
+            "nature": 13,
             "status": 0,
             "gender": 3,
             "ivs": 0,
@@ -33,15 +31,15 @@
             "species": "SPECIES_MURKROW",
             "form": 0,
             "level": 31,
-            "item": "ITEM_SCOPE_LENS",
+            "item": "ITEM_EVIOLITE",
             "moves": [
+                "MOVE_NIGHT_SLASH",
                 "MOVE_AIR_CUTTER",
-                "MOVE_NIGHT_SLASH",
-                "MOVE_U_TURN",
-                "MOVE_SUCKER_PUNCH"
+                "MOVE_NIGHT_SHADE",
+                "MOVE_TAUNT"
             ],
             "abilitySlot": 0,
-            "nature": 14,
+            "nature": 13,
             "status": 0,
             "gender": 3,
             "ivs": 0,
@@ -49,37 +47,37 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BANETTE",
+            "species": "SPECIES_SHELGON",
             "form": 0,
             "level": 31,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_LANSAT_BERRY",
             "moves": [
-                "MOVE_SKILL_SWAP",
-                "MOVE_WILL_O_WISP",
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_SHADOW_CLAW"
-            ],
-            "abilitySlot": 0,
-            "nature": 2,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SHEDINJA",
-            "form": 0,
-            "level": 31,
-            "item": "ITEM_BRIGHTPOWDER",
-            "moves": [
-                "MOVE_SHADOW_CLAW",
-                "MOVE_BUG_BITE",
-                "MOVE_NIGHT_SLASH",
-                "MOVE_SHADOW_SNEAK"
+                "MOVE_DRAGON_CLAW",
+                "MOVE_FIRE_FANG",
+                "MOVE_FACADE",
+                "MOVE_FOCUS_ENERGY"
             ],
             "abilitySlot": 0,
             "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PORYGON2",
+            "form": 0,
+            "level": 31,
+            "item": "ITEM_SCOPE_LENS",
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_THUNDERBOLT",
+                "MOVE_SLEEP_TALK",
+                "MOVE_REST"
+            ],
+            "abilitySlot": 2,
+            "nature": 5,
             "status": 0,
             "gender": 3,
             "ivs": 0,

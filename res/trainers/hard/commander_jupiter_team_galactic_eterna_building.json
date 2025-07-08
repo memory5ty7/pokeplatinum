@@ -10,74 +10,16 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_FORRETRESS",
+            "species": "SPECIES_BANETTE",
             "form": 0,
             "level": 32,
-            "item": "ITEM_FOCUS_SASH",
+            "item": "ITEM_SPELL_TAG",
             "moves": [
-                "MOVE_PIN_MISSILE",
-                "MOVE_ROCK_BLAST",
-                "MOVE_SPIKES",
-                "MOVE_STEALTH_ROCK"
+                "MOVE_SHADOW_CLAW",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_CURSE"
             ],
-            "abilitySlot": 0,
-            "nature": 23,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_ELECTRODE",
-            "form": 0,
-            "level": 32,
-            "item": "ITEM_MAGNET",
-            "moves": [
-                "MOVE_THUNDERBOLT",
-                "MOVE_SIGNAL_BEAM",
-                "MOVE_VOLT_SWITCH",
-                "MOVE_MAGNET_RISE"
-            ],
-            "abilitySlot": 0,
-            "nature": 15,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MAGNETON",
-            "form": 0,
-            "level": 32,
-            "item": "ITEM_SHUCA_BERRY",
-            "moves": [
-                "MOVE_THUNDERBOLT",
-                "MOVE_FLASH_CANNON",
-                "MOVE_SIGNAL_BEAM",
-                "MOVE_THUNDER_WAVE"
-            ],
-            "abilitySlot": 0,
-            "nature": 10,
-            "status": 0,
-            "gender": 3,
-            "ivs": 0,
-            "preDamage": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MUK",
-            "form": 0,
-            "level": 32,
-            "item": "ITEM_CUSTAP_BERRY",
-            "moves": [
-                "MOVE_POISON_JAB",
-                "MOVE_BULLDOZE",
-                "MOVE_TOXIC",
-                "MOVE_EXPLOSION"
-            ],
-            "abilitySlot": 0,
+            "abilitySlot": 2,
             "nature": 8,
             "status": 0,
             "gender": 3,
@@ -89,18 +31,74 @@
             "species": "SPECIES_SKUNTANK",
             "form": 0,
             "level": 32,
-            "item": "ITEM_AIR_BALLOON",
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
-                "MOVE_SLUDGE_BOMB",
-                "MOVE_DARK_PULSE",
-                "MOVE_KNOCK_OFF",
-                "MOVE_FIRE_SPIN"
+                "MOVE_VENOSHOCK",
+                "MOVE_THIEF",
+                "MOVE_TOXIC"
             ],
             "abilitySlot": 0,
-            "nature": 14,
+            "nature": 5,
             "status": 0,
             "gender": 3,
             "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WEEZING",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_CUSTAP_BERRY",
+            "moves": [
+                "MOVE_VENOSHOCK",
+                "MOVE_GYRO_BALL",
+                "MOVE_SCARY_FACE",
+                "MOVE_DESTINY_BOND"
+            ],
+            "abilitySlot": 0,
+            "nature": 17,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AZUMARILL",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_WACAN_BERRY",
+            "moves": [
+                "MOVE_CHILLING_WATER",
+                "MOVE_WHIRLPOOL",
+                "MOVE_PROTECT",
+                "MOVE_PERISH_SONG"
+            ],
+            "abilitySlot": 2,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELECTRODE",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_NORMAL_GEM",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_MIRROR_COAT",
+                "MOVE_EXPLOSION"
+            ],
+            "abilitySlot": 1,
+            "nature": 14,
+            "status": 0,
+            "gender": 3,
+            "ivs": 17,
             "preDamage": 0,
             "ball_seal": 0
         }

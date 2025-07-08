@@ -8,15 +8,14 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SWALOT",
+            "species": "SPECIES_NOCTOWL",
             "form": 0,
             "level": 30,
-            "item": "ITEM_AIR_BALLOON",
+            "item": "ITEM_SILK_SCARF",
             "moves": [
-                "MOVE_SLUDGE_BOMB",
-                "MOVE_ICE_BEAM",
-                "MOVE_SHADOW_BALL",
-                "MOVE_TOXIC_SPIKES"
+                "MOVE_HYPER_VOICE",
+                "MOVE_EXTRASENSORY",
+                "MOVE_TAILWIND"
             ],
             "abilitySlot": 0,
             "nature": 10,
@@ -27,18 +26,18 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_COMBUSKEN",
+            "species": "SPECIES_STUNKY",
             "form": 0,
             "level": 30,
-            "item": "ITEM_FOCUS_SASH",
+            "item": "ITEM_EVIOLITE",
             "moves": [
-                "MOVE_FIRE_PUNCH",
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_DOUBLE_KICK",
-                "MOVE_DETECT"
+                "MOVE_GUNK_SHOT",
+                "MOVE_KNOCK_OFF",
+                "MOVE_SCARY_FACE",
+                "MOVE_EXPLOSION"
             ],
-            "abilitySlot": 0,
-            "nature": 13,
+            "abilitySlot": 1,
+            "nature": 3,
             "status": 0,
             "gender": 3,
             "ivs": 0,
@@ -46,18 +45,18 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TANGELA",
+            "species": "SPECIES_CACTURNE",
             "form": 0,
             "level": 30,
-            "item": "ITEM_EVIOLITE",
+            "item": "ITEM_KINGS_ROCK",
             "moves": [
-                "MOVE_ANCIENT_POWER",
-                "MOVE_SLUDGE_BOMB",
-                "MOVE_GIGA_DRAIN",
-                "MOVE_SLEEP_POWDER"
+                "MOVE_BULLET_SEED",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_PIN_MISSILE",
+                "MOVE_FLING"
             ],
             "abilitySlot": 0,
-            "nature": 15,
+            "nature": 3,
             "status": 0,
             "gender": 3,
             "ivs": 0,

@@ -2,52 +2,52 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 36,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 38,
-            "species": "SPECIES_ABOMASNOW"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 38,
-            "species": "SPECIES_MEDICHAM"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 39,
-            "species": "SPECIES_ABOMASNOW"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 40,
-            "species": "SPECIES_MACHOKE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 40,
-            "species": "SPECIES_MEDICHAM"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 37,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 38,
-            "species": "SPECIES_NOSEPASS"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 38,
-            "species": "SPECIES_ABSOL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 39,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 40,
-            "species": "SPECIES_ABSOL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 39,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

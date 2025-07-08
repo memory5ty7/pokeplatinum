@@ -2,52 +2,52 @@
     "land_rate": 10,
     "land_encounters": [
         {
-            "level": 54,
-            "species": "SPECIES_MAGCARGO"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 54,
-            "species": "SPECIES_RHYDON"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 51,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 53,
-            "species": "SPECIES_WEEZING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 51,
-            "species": "SPECIES_WEEZING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 53,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_SLUGMA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_RHYHORN"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_SLUGMA"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 52,
-            "species": "SPECIES_RHYHORN"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

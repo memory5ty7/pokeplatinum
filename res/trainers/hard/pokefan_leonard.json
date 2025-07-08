@@ -1,10 +1,7 @@
 {
     "name": "Leonard",
     "class": "TRAINER_CLASS_POKEFAN_MALE",
-    "items": [
-        "ITEM_FULL_HEAL",
-        "ITEM_SUPER_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
     ],
@@ -73,7 +70,7 @@
             "level": 50,
             "item": "ITEM_CHOICE_BAND",
             "moves": [
-                "MOVE_FISSURE"
+                "MOVE_EARTHQUAKE"
             ],
             "abilitySlot": 0,
             "nature": 13,

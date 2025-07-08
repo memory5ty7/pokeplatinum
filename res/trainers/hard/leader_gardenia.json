@@ -34,8 +34,8 @@
             "level": 30,
             "item": "ITEM_CHOPLE_BERRY",
             "moves": [
+                "MOVE_ROCK_SLIDE",
                 "MOVE_WOOD_HAMMER",
-                "MOVE_ROCK_TOMB",
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_BULLDOZE"
             ],

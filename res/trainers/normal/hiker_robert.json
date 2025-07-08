@@ -9,19 +9,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_NOSEPASS",
+            "species": "SPECIES_SHUCKLE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 34,
+            "item": "ITEM_CHESTO_BERRY",
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_ROLLOUT",
+                "MOVE_REST",
+                "MOVE_WRAP"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

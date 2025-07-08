@@ -8,63 +8,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_KAKUNA",
             "form": 0,
-            "level": 11,
-            "item": null,
+            "level": 20,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING"
-            ],
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_SILCOON",
-            "form": 0,
-            "level": 13,
-            "item": null,
-            "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STRING_SHOT",
+                "MOVE_BUG_BITE",
                 "MOVE_POISON_STING",
                 "MOVE_HARDEN"
             ],
-            "power": 0,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BEAUTIFLY",
+            "species": "SPECIES_CASCOON",
             "form": 0,
-            "level": 15,
-            "item": null,
+            "level": 20,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_TACKLE",
+                "MOVE_BUG_BITE",
                 "MOVE_POISON_STING",
-                "MOVE_ABSORB",
-                "MOVE_GUST"
+                "MOVE_HARDEN"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

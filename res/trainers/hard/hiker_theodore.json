@@ -36,7 +36,7 @@
                 "MOVE_ANCIENT_POWER",
                 "MOVE_SCALD",
                 "MOVE_MUD_SHOT",
-                "MOVE_AURORA_BEAM"
+                "MOVE_SHELL_SMASH"
             ],
             "abilitySlot": 0,
             "nature": 15,

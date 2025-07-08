@@ -8,49 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MOTHIM",
+            "species": "SPECIES_RATICATE",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_ENDEAVOR",
+                "MOVE_PSYCHIC_FANGS",
+                "MOVE_SUCKER_PUNCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 4,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BARBOACH",
+            "species": "SPECIES_NIDORINO",
             "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DRILL_RUN",
+                "MOVE_POISON_JAB",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_SHADOW_CLAW"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHATOT",
+            "species": "SPECIES_DUSTOX",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SILVER_WIND",
+                "MOVE_PSYBEAM",
+                "MOVE_MOONLIGHT",
+                "MOVE_LIGHT_SCREEN"
+            ],
+            "abilitySlot": 1,
+            "nature": 20,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

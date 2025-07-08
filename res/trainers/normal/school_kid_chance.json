@@ -11,24 +11,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GASTLY",
+            "species": "SPECIES_DUSKULL",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 39,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_NIGHT_SHADE",
-                "MOVE_SUCKER_PUNCH",
+                "MOVE_HEX",
+                "MOVE_WILL_O_WISP",
                 "MOVE_CONFUSE_RAY",
-                "MOVE_HYPNOSIS"
+                "MOVE_DISABLE"
             ],
-            "power": 10,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SABLEYE",
+            "form": 0,
+            "level": 39,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SHADOW_CLAW",
+                "MOVE_FAKE_OUT",
+                "MOVE_FAINT_ATTACK"
+            ],
+            "abilitySlot": 0,
+            "nature": 11,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

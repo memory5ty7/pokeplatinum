@@ -10,19 +10,39 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHIMCHAR",
+            "species": "SPECIES_GROWLITHE",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FLAME_CHARGE",
+                "MOVE_BITE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SEEL",
+            "form": 0,
+            "level": 29,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BRINE",
+                "MOVE_AURORA_BEAM",
+                "MOVE_ICE_SHARD"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

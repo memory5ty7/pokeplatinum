@@ -37,7 +37,7 @@
                 "MOVE_WILL_O_WISP",
                 "MOVE_CONFUSE_RAY"
             ],
-            "abilitySlot": 0,
+            "abilitySlot": 2,
             "nature": 5,
             "status": 0,
             "gender": 3,

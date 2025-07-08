@@ -10,41 +10,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_SPHEAL",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 31,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_SWIFT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_ICY_WIND",
+                "MOVE_BODY_SLAM",
+                "MOVE_ENCORE"
             ],
-            "power": 0,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_VIGOROTH",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 31,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_SPARK",
-                "MOVE_BITE"
+                "MOVE_CRUSH_CLAW",
+                "MOVE_BRICK_BREAK",
+                "MOVE_SLACK_OFF"
             ],
-            "power": 0,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

@@ -11,7 +11,7 @@
             "species": "SPECIES_NIDORINO",
             "form": 0,
             "level": 16,
-            "item": "ITEM_CLEAR_AMULET",
+            "item": "ITEM_BLACK_SLUDGE",
             "moves": [
                 "MOVE_POISON_TAIL",
                 "MOVE_DIG",

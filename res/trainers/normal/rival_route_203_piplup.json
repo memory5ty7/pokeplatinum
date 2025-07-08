@@ -12,38 +12,57 @@
         {
             "species": "SPECIES_STARLY",
             "form": 0,
-            "level": 7,
-            "item": null,
+            "level": 8,
+            "item": "ITEM_NONE",
             "moves": [
+                "MOVE_AERIAL_ACE",
                 "MOVE_QUICK_ATTACK",
+                "MOVE_TACKLE",
                 "MOVE_GROWL"
             ],
-            "power": 30,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 1,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RIOLU",
+            "form": 0,
+            "level": 8,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ROCK_SMASH",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "abilitySlot": 0,
+            "nature": 3,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         },
         {
             "species": "SPECIES_TURTWIG",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 10,
+            "item": "ITEM_MIRACLE_SEED",
             "moves": [
+                "MOVE_RAZOR_LEAF",
                 "MOVE_TACKLE",
-                "MOVE_WITHDRAW"
+                "MOVE_GROWL",
+                "MOVE_BITE"
             ],
-            "power": 30,
-            "ball_seal": 0,
-            "abilitySlot": 0,
+            "abilitySlot": 2,
             "nature": 0,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

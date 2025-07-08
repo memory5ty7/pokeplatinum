@@ -10,34 +10,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
-            "form": 0,
-            "level": 19,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
-        },
-        {
             "species": "SPECIES_BRONZOR",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 32,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_SAFEGUARD",
+                "MOVE_HYPNOSIS"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 7,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

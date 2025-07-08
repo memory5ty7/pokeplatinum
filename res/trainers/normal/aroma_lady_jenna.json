@@ -6,64 +6,61 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_SHROOMISH",
             "form": 0,
-            "level": 15,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_GIGA_DRAIN",
+                "MOVE_HEADBUTT",
+                "MOVE_POISON_POWDER"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 22,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_CARNIVINE",
             "form": 0,
-            "level": 16,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_RAZOR_LEAF",
+                "MOVE_BITE",
+                "MOVE_INGRAIN"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_LOMBRE",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 25,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_ABSORB",
-                "MOVE_STUN_SPORE",
-                "MOVE_WATER_SPORT"
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_FAKE_OUT"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 16,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

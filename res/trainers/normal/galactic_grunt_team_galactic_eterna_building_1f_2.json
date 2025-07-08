@@ -8,34 +8,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_GRIMER",
             "form": 0,
-            "level": 16,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 26,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SLUDGE",
+                "MOVE_MUD_BOMB",
+                "MOVE_MINIMIZE",
+                "MOVE_DISABLE"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_DROWZEE",
             "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 26,
+            "item": "ITEM_TWISTEDSPOON",
+            "moves": [
+                "MOVE_PSYBEAM",
+                "MOVE_YAWN",
+                "MOVE_KNOCK_OFF"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 14,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

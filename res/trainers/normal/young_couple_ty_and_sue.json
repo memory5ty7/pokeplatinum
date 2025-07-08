@@ -8,44 +8,42 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BUNEARY",
+            "species": "SPECIES_STEELIX",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 39,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_FORESIGHT",
-                "MOVE_JUMP_KICK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_IRON_TAIL",
+                "MOVE_PROTECT",
+                "MOVE_HARDEN",
+                "MOVE_ENDURE"
             ],
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 1,
+            "nature": 4,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_CLOYSTER",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 39,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_AQUA_JET",
-                "MOVE_SWIFT",
-                "MOVE_PURSUIT",
-                "MOVE_SONIC_BOOM"
+                "MOVE_WHIRLPOOL",
+                "MOVE_ATTRACT",
+                "MOVE_LIFE_DEW",
+                "MOVE_HELPING_HAND"
             ],
-            "power": 0,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

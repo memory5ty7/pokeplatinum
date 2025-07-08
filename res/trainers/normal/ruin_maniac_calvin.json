@@ -10,34 +10,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BRONZOR",
+            "species": "SPECIES_LILEEP",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_RECOVER",
+                "MOVE_BLOCK"
+            ],
+            "abilitySlot": 2,
+            "nature": 20,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHIELDON",
+            "species": "SPECIES_ANORITH",
             "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_X_SCISSOR",
+                "MOVE_CRUSH_CLAW",
+                "MOVE_AQUA_JET",
+                "MOVE_CROSS_POISON"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RELICANTH",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DIVE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_YAWN",
+                "MOVE_BULLDOZE"
+            ],
+            "abilitySlot": 0,
+            "nature": 23,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

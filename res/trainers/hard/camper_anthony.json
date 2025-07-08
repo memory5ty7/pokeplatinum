@@ -20,7 +20,7 @@
                 "MOVE_BRICK_BREAK",
                 "MOVE_FIRE_PUNCH"
             ],
-            "abilitySlot": 0,
+            "abilitySlot": 2,
             "nature": 8,
             "status": 0,
             "gender": 3,

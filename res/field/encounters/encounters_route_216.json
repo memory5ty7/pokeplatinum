@@ -2,52 +2,52 @@
     "land_rate": 30,
     "land_encounters": [
         {
-            "level": 32,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 33,
-            "species": "SPECIES_SNEASEL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 32,
-            "species": "SPECIES_MEDITITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 33,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 33,
-            "species": "SPECIES_MEDITITE"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 34,
-            "species": "SPECIES_SNEASEL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 34,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 35,
-            "species": "SPECIES_SNEASEL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 35,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 35,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 35,
-            "species": "SPECIES_GRAVELER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 35,
-            "species": "SPECIES_SNOVER"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

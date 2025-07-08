@@ -10,44 +10,42 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HAUNTER",
+            "species": "SPECIES_SHEDINJA",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
-                "MOVE_NIGHT_SHADE",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_CURSE"
+                "MOVE_SHADOW_CLAW",
+                "MOVE_LEECH_LIFE",
+                "MOVE_AERIAL_ACE",
+                "MOVE_SAND_ATTACK"
             ],
-            "power": 60,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
+            "abilitySlot": 2,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MISDREAVUS",
+            "species": "SPECIES_BANETTE",
             "form": 0,
-            "level": 24,
-            "item": null,
+            "level": 40,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_PSYBEAM",
-                "MOVE_PAIN_SPLIT",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_SPITE"
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_FAINT_ATTACK",
+                "MOVE_SPITE",
+                "MOVE_SCREECH"
             ],
-            "power": 60,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

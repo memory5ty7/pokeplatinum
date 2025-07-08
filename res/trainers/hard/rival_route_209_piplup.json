@@ -20,7 +20,7 @@
                 "MOVE_CURSE",
                 "MOVE_STEALTH_ROCK"
             ],
-            "abilitySlot": 1,
+            "abilitySlot": 2,
             "nature": 2,
             "status": 0,
             "gender": 3,

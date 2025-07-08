@@ -8,18 +8,18 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WHISCASH",
+            "species": "SPECIES_MAGMAR",
             "form": 0,
             "level": 33,
-            "item": "ITEM_RINDO_BERRY",
+            "item": "ITEM_EVIOLITE",
             "moves": [
-                "MOVE_HIGH_HORSEPOWER",
-                "MOVE_AQUA_TAIL",
-                "MOVE_ZEN_HEADBUTT",
-                "MOVE_DRAGON_DANCE"
+                "MOVE_FLAMETHROWER",
+                "MOVE_PSYCHIC",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_REFLECT"
             ],
-            "abilitySlot": 2,
-            "nature": 3,
+            "abilitySlot": 0,
+            "nature": 13,
             "status": 0,
             "gender": 3,
             "ivs": 0,
@@ -46,18 +46,18 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGMAR",
+            "species": "SPECIES_WHISCASH",
             "form": 0,
             "level": 33,
-            "item": "ITEM_EXPERT_BELT",
+            "item": "ITEM_RINDO_BERRY",
             "moves": [
-                "MOVE_FLAMETHROWER",
-                "MOVE_PSYCHIC",
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_AQUA_TAIL",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAGON_DANCE"
             ],
-            "abilitySlot": 0,
-            "nature": 14,
+            "abilitySlot": 2,
+            "nature": 3,
             "status": 0,
             "gender": 3,
             "ivs": 0,

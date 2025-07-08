@@ -8,64 +8,80 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_HAPPINY",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_HEADBUTT",
+                "MOVE_COUNTER",
+                "MOVE_ATTRACT",
+                "MOVE_CHARM"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 4,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MIME_JR",
+            "species": "SPECIES_TOGEPI",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ANCIENT_POWER",
+                "MOVE_CHARM",
+                "MOVE_YAWN",
+                "MOVE_SAFEGUARD"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 5,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_CLEFFA",
+            "species": "SPECIES_BONSLY",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_FAKE_TEARS",
+                "MOVE_COUNTER"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_EEVEE",
+            "species": "SPECIES_RIOLU",
             "form": 0,
-            "level": 20,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_VACUUM_WAVE",
+                "MOVE_ENDURE",
+                "MOVE_METAL_CLAW",
+                "MOVE_QUICK_ATTACK"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

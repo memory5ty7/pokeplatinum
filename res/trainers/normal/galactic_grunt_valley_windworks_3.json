@@ -8,34 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_ZUBAT",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 16,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_WING_ATTACK",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_BITE",
+                "MOVE_ASTONISH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 3,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_STUNKY",
+            "species": "SPECIES_ELEKID",
             "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 16,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SHOCK_WAVE",
+                "MOVE_KARATE_CHOP",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_QUICK_ATTACK"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 2,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGBY",
+            "form": 0,
+            "level": 16,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_SMOKE_SCREEN",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_SMOG"
+            ],
+            "abilitySlot": 0,
+            "nature": 4,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

@@ -9,34 +9,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_HITMONTOP",
             "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 20,
-            "ball_seal": 0,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_PURSUIT"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 23,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_MEDITITE",
-            "form": 0,
-            "level": 21,
-            "item": null,
-            "moves": null,
-            "power": 20,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

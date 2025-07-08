@@ -9,21 +9,40 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ABRA",
+            "species": "SPECIES_GASTLY",
             "form": 0,
-            "level": 17,
-            "item": null,
+            "level": 21,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_HIDDEN_POWER"
+                "MOVE_OMINOUS_WIND",
+                "MOVE_HYPNOSIS",
+                "MOVE_NIGHT_SHADE"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 17,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHUPPET",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FAINT_ATTACK",
+                "MOVE_NIGHT_SHADE",
+                "MOVE_DESTINY_BOND"
+            ],
+            "abilitySlot": 0,
+            "nature": 8,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

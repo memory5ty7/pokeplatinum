@@ -8,41 +8,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_OMANYTE",
             "form": 0,
-            "level": 9,
-            "item": null,
+            "level": 13,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_ROCK_TOMB",
+                "MOVE_WATER_PULSE",
+                "MOVE_PROTECT",
+                "MOVE_MUD_SHOT"
             ],
-            "power": 10,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 22,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_ONIX",
-            "form": 0,
-            "level": 9,
-            "item": null,
-            "moves": [
-                "MOVE_ROCK_THROW",
-                "MOVE_TACKLE",
-                "MOVE_HARDEN"
-            ],
-            "power": 10,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

@@ -10,22 +10,58 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PIPLUP",
+            "species": "SPECIES_SKIPLOOM",
             "form": 0,
-            "level": 14,
-            "item": null,
+            "level": 21,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_BUBBLE",
-                "MOVE_PECK"
+                "MOVE_BULLET_SEED",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_SYNTHESIS"
             ],
-            "power": 0,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_POLIWAG",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_HYPNOSIS",
+                "MOVE_BULLDOZE"
+            ],
+            "abilitySlot": 0,
+            "nature": 13,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PIDGEOTTO",
+            "form": 0,
+            "level": 21,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_AIR_CUTTER",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_STEEL_WING"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

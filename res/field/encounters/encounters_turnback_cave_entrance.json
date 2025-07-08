@@ -2,52 +2,52 @@
     "land_rate": 15,
     "land_encounters": [
         {
-            "level": 15,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 15,
-            "species": "SPECIES_BRONZOR"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 16,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 17,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 17,
-            "species": "SPECIES_GASTLY"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 17,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GOLBAT"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 16,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_DUSKULL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_DUSKULL"
+            "level": 0,
+            "species": "SPECIES_NONE"
         },
         {
-            "level": 18,
-            "species": "SPECIES_CHINGLING"
+            "level": 0,
+            "species": "SPECIES_NONE"
         }
     ],
     "swarms": [

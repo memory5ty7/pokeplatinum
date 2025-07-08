@@ -8,34 +8,61 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_ELECTABUZZ",
             "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_VOLT_SWITCH"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_MOTHIM",
             "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_HURRICANE",
+                "MOVE_SILVER_WIND",
+                "MOVE_TOXIC",
+                "MOVE_CONFUSION"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GOLDUCK",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SCALD",
+                "MOVE_PSYCHIC",
+                "MOVE_ICE_BEAM",
+                "MOVE_AQUA_JET"
+            ],
+            "abilitySlot": 0,
+            "nature": 15,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

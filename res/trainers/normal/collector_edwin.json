@@ -8,19 +8,52 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MUNCHLAX",
+            "species": "SPECIES_FLAREON",
             "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FLAMETHROWER"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 15,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VAPOREON",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SURF"
+            ],
+            "abilitySlot": 0,
+            "nature": 20,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_JOLTEON",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_THUNDERBOLT"
+            ],
+            "abilitySlot": 0,
+            "nature": 10,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

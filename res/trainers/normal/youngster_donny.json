@@ -8,43 +8,23 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GASTLY",
+            "species": "SPECIES_HAUNTER",
             "form": 0,
-            "level": 20,
-            "item": null,
+            "level": 38,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_SUCKER_PUNCH",
+                "MOVE_SHADOW_CLAW",
+                "MOVE_ICY_WIND",
                 "MOVE_NIGHT_SHADE",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_CURSE"
+                "MOVE_MEAN_LOOK"
             ],
-            "power": 10,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 10,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
-        },
-        {
-            "species": "SPECIES_DRIFLOON",
-            "form": 0,
-            "level": 22,
-            "item": null,
-            "moves": [
-                "MOVE_SPIT_UP",
-                "MOVE_SWALLOW",
-                "MOVE_STOCKPILE"
-            ],
-            "power": 10,
-            "ball_seal": 0,
-            "abilitySlot": 0,
-            "nature": 0,
-            "status": 0,
-            "ivs": 0,
-            "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

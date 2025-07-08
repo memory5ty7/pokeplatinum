@@ -9,23 +9,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_LEAFEON",
             "form": 0,
-            "level": 19,
-            "item": null,
+            "level": 27,
+            "item": "ITEM_FLYING_GEM",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_RAZOR_LEAF",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_AERIAL_ACE"
             ],
-            "power": 20,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         }
     ]
 }

@@ -10,84 +10,99 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_STARAPTOR",
             "form": 0,
-            "level": 25,
-            "item": null,
+            "level": 43,
+            "item": "ITEM_SHELL_BELL",
             "moves": [
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_ENDEAVOR",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_TAKE_DOWN",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_ROOST"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_VAPOREON",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_PURSUIT",
-                "MOVE_GROWL"
+                "MOVE_MUDDY_WATER",
+                "MOVE_AURORA_BEAM",
+                "MOVE_CHARM",
+                "MOVE_BATON_PASS"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 20,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_HERACROSS",
             "form": 0,
-            "level": 23,
-            "item": null,
+            "level": 42,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_LEECH_SEED",
-                "MOVE_STUN_SPORE"
+                "MOVE_X_SCISSOR",
+                "MOVE_BRICK_BREAK",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_AERIAL_ACE"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 11,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_MONFERNO",
+            "species": "SPECIES_SNORLAX",
             "form": 0,
-            "level": 27,
-            "item": null,
+            "level": 43,
+            "item": "ITEM_CHESTO_BERRY",
             "moves": [
-                "MOVE_FLAME_WHEEL",
-                "MOVE_MACH_PUNCH",
-                "MOVE_FURY_SWIPES",
-                "MOVE_LEER"
+                "MOVE_BODY_SLAM",
+                "MOVE_CRUNCH",
+                "MOVE_REST",
+                "MOVE_HIGH_HORSEPOWER"
             ],
-            "power": 50,
-            "ball_seal": 0,
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 8,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_INFERNAPE",
+            "form": 0,
+            "level": 45,
+            "item": "ITEM_CHARCOAL",
+            "moves": [
+                "MOVE_FLARE_BLITZ",
+                "MOVE_AURA_SPHERE",
+                "MOVE_FAKE_OUT",
+                "MOVE_MACH_PUNCH"
+            ],
+            "abilitySlot": 2,
+            "nature": 0,
+            "status": 0,
+            "gender": 3,
+            "ivs": 0,
+            "preDamage": 0,
+            "ball_seal": 0
         }
     ]
 }

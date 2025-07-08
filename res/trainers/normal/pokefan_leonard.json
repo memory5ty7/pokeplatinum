@@ -1,59 +1,68 @@
 {
     "name": "Leonard",
     "class": "TRAINER_CLASS_POKEFAN_MALE",
-    "items": [
-        "ITEM_FULL_HEAL",
-        "ITEM_SUPER_POTION"
-    ],
+    "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_JUMPLUFF",
             "form": 0,
-            "level": 19,
-            "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_BOUNCE",
+                "MOVE_U_TURN",
+                "MOVE_LEECH_SEED"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 14,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_FARFETCHD",
             "form": 0,
-            "level": 19,
-            "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "power": 0,
-            "ball_seal": 0,
+            "level": 38,
+            "item": "ITEM_STICK",
+            "moves": [
+                "MOVE_DUAL_WINGBEAT",
+                "MOVE_LEAF_BLADE",
+                "MOVE_BRICK_BREAK",
+                "MOVE_U_TURN"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 13,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 0
         },
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_AMPHAROS",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "power": 0,
-            "ball_seal": 7,
+            "level": 38,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DISCHARGE",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_COTTON_SPORE",
+                "MOVE_BODY_SLAM"
+            ],
             "abilitySlot": 0,
-            "nature": 0,
+            "nature": 16,
             "status": 0,
+            "gender": 3,
             "ivs": 0,
             "preDamage": 0,
-            "gender": 3
+            "ball_seal": 7
         }
     ]
 }
