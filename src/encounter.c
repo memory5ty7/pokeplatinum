@@ -53,6 +53,8 @@
 #include "unk_020528D0.h"
 #include "vars_flags.h"
 
+#include "generated/trainers.h"
+
 typedef struct Encounter {
     int *resultMaskPtr;
     int introEffectID;
@@ -724,11 +726,30 @@ void Encounter_NewCatchingTutorial(FieldTask *task)
     FieldTask_InitCall(task, FieldTask_CatchingTutorialEncounter, encounter);
 }
 
+static const u16 TrainerReplacements[8][8] = {
+    {TRAINER_LEADER_ROARK, TRAINER_LEADER_ROARK_1, TRAINER_LEADER_ROARK_2, TRAINER_LEADER_ROARK_3, TRAINER_LEADER_ROARK_4, TRAINER_LEADER_ROARK_5, TRAINER_LEADER_ROARK_6, TRAINER_LEADER_ROARK_7},
+    {TRAINER_LEADER_GARDENIA, TRAINER_LEADER_GARDENIA_1, TRAINER_LEADER_GARDENIA_2, TRAINER_LEADER_GARDENIA_3, TRAINER_LEADER_GARDENIA_4, TRAINER_LEADER_GARDENIA_5, TRAINER_LEADER_GARDENIA_6, TRAINER_LEADER_GARDENIA_7},
+    {TRAINER_LEADER_FANTINA, TRAINER_LEADER_FANTINA_1, TRAINER_LEADER_FANTINA_2, TRAINER_LEADER_FANTINA_3, TRAINER_LEADER_FANTINA_4, TRAINER_LEADER_FANTINA_5, TRAINER_LEADER_FANTINA_6, TRAINER_LEADER_FANTINA_7},
+    {TRAINER_LEADER_MAYLENE, TRAINER_LEADER_MAYLENE_1, TRAINER_LEADER_MAYLENE_2, TRAINER_LEADER_MAYLENE_3, TRAINER_LEADER_MAYLENE_4, TRAINER_LEADER_MAYLENE_5, TRAINER_LEADER_MAYLENE_6, TRAINER_LEADER_MAYLENE_7},
+    {TRAINER_LEADER_WAKE, TRAINER_LEADER_WAKE_1, TRAINER_LEADER_WAKE_2, TRAINER_LEADER_WAKE_3, TRAINER_LEADER_WAKE_4, TRAINER_LEADER_WAKE_5, TRAINER_LEADER_WAKE_6, TRAINER_LEADER_WAKE_7},
+    {TRAINER_LEADER_BYRON, TRAINER_LEADER_BYRON_1, TRAINER_LEADER_BYRON_2, TRAINER_LEADER_BYRON_3, TRAINER_LEADER_BYRON_4, TRAINER_LEADER_BYRON_5, TRAINER_LEADER_BYRON_6, TRAINER_LEADER_BYRON_7},
+    {TRAINER_LEADER_CANDICE, TRAINER_LEADER_CANDICE_1, TRAINER_LEADER_CANDICE_2, TRAINER_LEADER_CANDICE_3, TRAINER_LEADER_CANDICE_4, TRAINER_LEADER_CANDICE_5, TRAINER_LEADER_CANDICE_6, TRAINER_LEADER_CANDICE_7},
+    {TRAINER_LEADER_VOLKNER, TRAINER_LEADER_VOLKNER_1, TRAINER_LEADER_VOLKNER_2, TRAINER_LEADER_VOLKNER_3, TRAINER_LEADER_VOLKNER_4, TRAINER_LEADER_VOLKNER_5, TRAINER_LEADER_VOLKNER_6, TRAINER_LEADER_VOLKNER_7},
+};
+
 void Encounter_NewVsTrainer(FieldTask *taskMan, int enemyTrainer1ID, int enemyTrainer2ID, int partnerTrainerID, int heapID, int *resultMaskPtr)
 {
     u32 battleType;
     FieldBattleDTO *dto;
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(taskMan);
+
+    u8 badges = 0;
+
+    for (int i = 0, count = 0; i < MAX_BADGES; i++) {
+        if (TrainerInfo_HasBadge(SaveData_GetTrainerInfo(taskMan->fieldSys->saveData), i) == TRUE) {
+            badges++;
+        }
+    }
 
     if (enemyTrainer2ID != 0 && enemyTrainer1ID != enemyTrainer2ID) {
         if (partnerTrainerID == 0) {
@@ -754,6 +775,15 @@ void Encounter_NewVsTrainer(FieldTask *taskMan, int enemyTrainer1ID, int enemyTr
     dto->trainerIDs[BATTLER_ENEMY_1] = enemyTrainer1ID;
     dto->trainerIDs[BATTLER_ENEMY_2] = enemyTrainer2ID;
     dto->trainerIDs[BATTLER_PLAYER_2] = partnerTrainerID;
+
+    for (int i = 0; i < MAX_BATTLERS; i++)
+    {
+        for (int j = 0; j < sizeof(TrainerReplacements[0]) / sizeof(TrainerReplacements[0][0]); j++)  {
+            if (dto->trainerIDs[i] == TrainerReplacements[j][0]) {
+                dto->trainerIDs[i] = TrainerReplacements[j][badges];
+            }
+        }
+    }
 
     Trainer_Encounter(dto, fieldSystem->saveData, heapID);
     GameRecords_IncrementRecordValue(SaveData_GetGameRecords(fieldSystem->saveData), RECORD_TRAINER_BATTLES_FOUGHT);

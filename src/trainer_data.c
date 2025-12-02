@@ -20,6 +20,9 @@
 #include "savedata_misc.h"
 #include "strbuf.h"
 
+#include "macros.h"
+#include "desmume.h"
+
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
 
 void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, int heapID)
@@ -166,6 +169,80 @@ u8 TrainerClass_Gender(int trclass)
     return sTrainerClassGender[trclass];
 }
 
+// Trainer classes not affected by level offset adjustments
+u16 specialTrainerClasses[] = {
+    TRAINER_CLASS_RIVAL,
+    TRAINER_CLASS_LEADER_ROARK,
+    TRAINER_CLASS_LEADER_GARDENIA,
+    TRAINER_CLASS_LEADER_FANTINA,
+    TRAINER_CLASS_LEADER_MAYLENE,
+    TRAINER_CLASS_LEADER_WAKE,
+    TRAINER_CLASS_LEADER_BYRON,
+    TRAINER_CLASS_LEADER_CANDICE,
+    TRAINER_CLASS_LEADER_VOLKNER,
+    TRAINER_CLASS_ELITE_FOUR_AARON,
+    TRAINER_CLASS_ELITE_FOUR_BERTHA,
+    TRAINER_CLASS_ELITE_FOUR_FLINT,
+    TRAINER_CLASS_ELITE_FOUR_LUCIAN,
+    TRAINER_CLASS_CHAMPION_CYNTHIA,
+    TRAINER_CLASS_COMMANDER_MARS,
+    TRAINER_CLASS_COMMANDER_JUPITER,
+    TRAINER_CLASS_COMMANDER_SATURN,
+    TRAINER_CLASS_GALACTIC_BOSS,
+
+};
+
+// Level offsets for trainer classes (at level 50+)
+static s8 levelOffsets[] = {
+    [TRAINER_CLASS_YOUNGSTER]           = -10,
+    [TRAINER_CLASS_LASS]                = -10,
+    [TRAINER_CLASS_CAMPER]              = -8,
+    [TRAINER_CLASS_PICNICKER]           = -8,
+    [TRAINER_CLASS_BUG_CATCHER]         = -10,
+    [TRAINER_CLASS_AROMA_LADY]          = -7,
+    [TRAINER_CLASS_TWINS]               = -8,
+    [TRAINER_CLASS_HIKER]               = -5,
+    [TRAINER_CLASS_BATTLE_GIRL]         = -5,
+    [TRAINER_CLASS_BLACK_BELT]          = -5,
+    [TRAINER_CLASS_ACE_TRAINER_MALE]   = -1,
+    [TRAINER_CLASS_ACE_TRAINER_FEMALE] = -1,
+    [TRAINER_CLASS_ACE_TRAINER_SNOW_MALE]   = -1,
+    [TRAINER_CLASS_ACE_TRAINER_SNOW_FEMALE] = -1,
+    [TRAINER_CLASS_DRAGON_TAMER] = -1,
+    [TRAINER_CLASS_VETERAN]     = -1,
+
+};
+
+static void AdjustPartyLevels(Party *party, u8 playerMinLevel, u8 playerMaxLevel, u8 playerMeanLevel, u8 playerMedianLevel, u8 enemyMinLevel, u8 enemyMaxLevel, u8 enemyMeanLevel, u8 enemyMedianLevel, u16 trainerClass, _Bool isSpecialClass)
+{
+    s8 offset = levelOffsets[trainerClass];
+
+    for (int i = 0; i < Party_GetCurrentCount(party); i++)
+    {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+        u8 initialLevel = Pokemon_GetLevel(mon);
+        u16 level = initialLevel;
+
+        if (isSpecialClass)
+        {
+            level = playerMaxLevel;
+
+            if (initialLevel != enemyMaxLevel)
+            {
+                level -= (enemyMaxLevel - initialLevel);
+            }
+        } else {
+            level = ((playerMeanLevel + MAX(playerMeanLevel, playerMedianLevel)) / 2) + (initialLevel - enemyMeanLevel);
+        }
+
+        Desmume_Log("Initial Level: %d, Adjusted Level: %d\n", initialLevel, level);
+
+        Pokemon_SetValue(mon, MON_DATA_LEVEL, &level);
+        Pokemon_CalcStats(mon);
+    }
+};
+
+
 /**
  * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
  *
@@ -195,6 +272,22 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
     genderMod = TrainerClass_Gender(dto->trainer[battler].header.trainerType) == GENDER_FEMALE
         ? 120
         : 136;
+
+    Party *playerParty = SaveData_GetParty(dto->saveData);
+    u8 partyMaxLevel = Party_GetMaxLevel(playerParty);
+    u8 partyMinLevel = Party_GetMinLevel(playerParty);
+    u8 partyMeanLevel = Party_GetMeanLevel(playerParty);
+    u8 partyMedianLevel = Party_GetMedianLevel(playerParty);
+
+    u16 trainerClass = dto->trainer[battler].header.trainerType;
+    _Bool isSpecialClass = FALSE;
+
+    for (i = 0; i < NELEMS(specialTrainerClasses); i++) {
+        if (trainerClass == specialTrainerClasses[i]) {
+            isSpecialClass = TRUE;
+            break;
+        }   
+    }
 
     switch (dto->trainer[battler].header.monDataType) {
     case TRDATATYPE_BASE: {
@@ -309,6 +402,25 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         break;
     }
     }
+
+    u8 enemyMaxLevel = Party_GetMaxLevel(dto->parties[battler]);
+    u8 enemyMinLevel = Party_GetMinLevel(dto->parties[battler]);
+    u8 enemyMeanLevel = Party_GetMeanLevel(dto->parties[battler]);
+    u8 enemyMedianLevel = Party_GetMedianLevel(dto->parties[battler]);
+
+    AdjustPartyLevels(
+        dto->parties[battler],
+        partyMinLevel,
+        partyMaxLevel,
+        partyMeanLevel,
+        partyMedianLevel,
+        enemyMinLevel,
+        enemyMaxLevel,
+        enemyMeanLevel,
+        enemyMedianLevel,
+        trainerClass,
+        isSpecialClass
+    );
 
     Heap_Free(buf);
     Heap_Free(mon);
