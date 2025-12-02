@@ -13,29 +13,26 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 12,
-            "item": "ITEM_NONE",
+            "item": null,
             "moves": [
-                "MOVE_ROCK_TOMB",
                 "MOVE_STEALTH_ROCK",
-                "MOVE_SCREECH",
-                "MOVE_BIND"
+                "MOVE_ROCK_THROW"
             ],
             "power": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LARVITAR",
+            "species": "SPECIES_ONIX",
             "form": 0,
             "level": 12,
-            "item": "ITEM_NONE",
+            "item": null,
             "moves": [
-                "MOVE_ROCK_TOMB",
-                "MOVE_SCREECH",
-                "MOVE_SANDSTORM",
-                "MOVE_BITE"
+                "MOVE_STEALTH_ROCK",
+                "MOVE_ROCK_THROW",
+                "MOVE_SCREECH"
             ],
             "power": 50,
             "ball_seal": 0
@@ -44,9 +41,8 @@
             "species": "SPECIES_CRANIDOS",
             "form": 0,
             "level": 14,
-            "item": "ITEM_ORAN_BERRY",
+            "item": null,
             "moves": [
-                "MOVE_ROCK_TOMB",
                 "MOVE_HEADBUTT",
                 "MOVE_PURSUIT",
                 "MOVE_LEER"

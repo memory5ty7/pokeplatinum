@@ -2,8 +2,8 @@
     "name": "Wake",
     "class": "TRAINER_CLASS_LEADER_WAKE",
     "items": [
-        "ITEM_POTION",
-        "ITEM_POTION"
+        "ITEM_HYPER_POTION",
+        "ITEM_HYPER_POTION"
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
@@ -13,45 +13,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WOOPER",
+            "species": "SPECIES_GYARADOS",
             "form": 0,
-            "level": 18,
+            "level": 33,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_SLAM",
+                "MOVE_WATERFALL",
+                "MOVE_BRINE",
+                "MOVE_BITE",
+                "MOVE_TWISTER"
+            ],
+            "power": 150,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_QUAGSIRE",
+            "form": 0,
+            "level": 34,
+            "item": "ITEM_NONE",
+            "moves": [
                 "MOVE_MUD_SHOT",
-                "MOVE_TAIL_WHIP"
+                "MOVE_ROCK_TOMB",
+                "MOVE_WATER_PULSE",
+                "MOVE_YAWN"
             ],
-            "power": 50,
+            "power": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUIZEL",
+            "species": "SPECIES_FLOATZEL",
             "form": 0,
-            "level": 18,
-            "item": "ITEM_DAMP_ROCK",
+            "level": 37,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_PURSUIT",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_RAIN_DANCE"
+                "MOVE_BRINE",
+                "MOVE_ICE_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_AQUA_JET"
             ],
-            "power": 50,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_LOMBRE",
-            "form": 0,
-            "level": 20,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_FAKE_OUT",
-                "MOVE_FURY_SWIPES",
-                "MOVE_MIST"
-            ],
-            "power": 50,
+            "power": 150,
             "ball_seal": 0
         }
     ],
