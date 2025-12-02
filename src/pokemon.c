@@ -4073,6 +4073,104 @@ u8 Party_GetMaxLevel(Party *party)
     return result;
 }
 
+u8 Party_GetMinLevel(Party *party)
+{
+    int currentPartyCount = Party_GetCurrentCount(party);
+
+    u8 result = 100;
+
+    for (int i = 0; i < currentPartyCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+        if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
+            u8 monLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
+
+            if (monLevel < result) {
+                result = monLevel;
+            }
+        }
+    }
+
+    return result;
+}
+
+u8 Party_GetMeanLevel(Party *party)
+{
+    u16 mean = 1;
+    int currentPartyCount = Party_GetCurrentCount(party);
+    int validMonCount = 0;
+
+    for (int i = 0; i < currentPartyCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+        if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
+            mean += Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
+            validMonCount++;
+        }
+    }
+
+    if (validMonCount > 0) {
+        mean /= validMonCount;
+    }
+
+    return mean;
+}
+
+static void SortPartyByLevel(Party* sortedParty, int validMonCount)
+{
+    for (int i = 0; i < validMonCount - 1; i++)
+    {
+        int minIndex = i;
+        int minLevel = Pokemon_GetLevel(Party_GetPokemonBySlotIndex(sortedParty, i));
+
+        for (int j = i + 1; j < validMonCount; j++)
+        {
+            int level = Pokemon_GetLevel(Party_GetPokemonBySlotIndex(sortedParty, j));
+            if (level < minLevel)
+            {
+                minLevel = level;
+                minIndex = j;
+            }
+        }
+
+        if (minIndex != i)
+        {
+            Party_SwapSlots(sortedParty, i, minIndex);
+        }
+    }
+}
+
+u8 Party_GetMedianLevel(Party *party)
+{
+    u8 median = 1;
+    int currentPartyCount = Party_GetCurrentCount(party);
+    int validMonCount = 0;
+
+    for (int i = 0; i < currentPartyCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+        if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
+            validMonCount++;
+        }
+    }
+
+    Party *sortedParty;
+    Party_Copy(party, sortedParty);
+
+    SortPartyByLevel(sortedParty, validMonCount);
+
+    if (validMonCount % 0)
+    {
+        median = Pokemon_GetValue(Party_GetPokemonBySlotIndex(sortedParty, validMonCount / 2), MON_DATA_LEVEL, NULL);
+    } else {
+        u8 level1 = Pokemon_GetValue(Party_GetPokemonBySlotIndex(sortedParty, (validMonCount / 2) - 1), MON_DATA_LEVEL, NULL);
+        u8 level2 = Pokemon_GetValue(Party_GetPokemonBySlotIndex(sortedParty, validMonCount / 2), MON_DATA_LEVEL, NULL);
+        median = (level1 + level2) / 2;
+    }
+
+    return median;
+}
+
 u16 Pokemon_SinnohDexNumber(u16 species)
 {
     u16 result;

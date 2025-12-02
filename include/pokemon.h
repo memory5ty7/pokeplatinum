@@ -605,6 +605,30 @@ void Pokemon_FromBoxPokemon(BoxPokemon *boxMon, Pokemon *mon);
 u8 Party_GetMaxLevel(Party *party);
 
 /**
+ * @brief Gets the level of the lowest level pokemon in the Party
+ *
+ * @param party
+ * @return The level of the lowest level pokemon in the Party
+ */
+u8 Party_GetMinLevel(Party *party);
+
+/**
+ * @brief Gets the mean of the levels of all pokemon in the Party
+ *
+ * @param party
+ * @return The mean of the levels of all pokemon in the Party
+ */
+u8 Party_GetMeanLevel(Party *party);
+
+/**
+ * @brief Gets the median of the levels of all pokemon in the Party
+ *
+ * @param party
+ * @return The median of the levels of all pokemon in the Party
+ */
+u8 Party_GetMedianLevel(Party *party);
+
+/**
  * @brief Gets the Sinnoh Pokedex number of a pokemon from its National Pokedex number
  *
  * @param species The National Pokedex number of a pokemon
