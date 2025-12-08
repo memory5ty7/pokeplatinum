@@ -124,3 +124,8 @@ compile_commands.json
 # Cheat files
 *.dct
 *.mch
+
+# Plat Open-World
+*.lnk
+*.xlsx
+*.py
