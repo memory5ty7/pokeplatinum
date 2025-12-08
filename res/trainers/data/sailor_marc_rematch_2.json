@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MANTINE",
+            "species": "SPECIES_MANTYKE",
             "form": 0,
             "level": 58,
             "item": null,
@@ -17,7 +17,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_MACHOP",
             "form": 0,
             "level": 58,
             "item": null,
@@ -26,7 +26,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LANTURN",
+            "species": "SPECIES_CHINCHOU",
             "form": 0,
             "level": 58,
             "item": null,

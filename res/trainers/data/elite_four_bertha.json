@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WHISCASH",
+            "species": "SPECIES_BARBOACH",
             "form": 0,
             "level": 50,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLISCOR",
+            "species": "SPECIES_GLIGAR",
             "form": 0,
             "level": 53,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HIPPOWDON",
+            "species": "SPECIES_HIPPOPOTAS",
             "form": 0,
             "level": 52,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GOLEM",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 52,
             "item": "ITEM_NONE",
@@ -69,7 +69,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RHYPERIOR",
+            "species": "SPECIES_RHYHORN",
             "form": 0,
             "level": 55,
             "item": "ITEM_SITRUS_BERRY",

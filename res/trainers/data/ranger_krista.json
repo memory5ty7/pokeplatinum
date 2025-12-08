@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LAIRON",
+            "species": "SPECIES_ARON",
             "form": 0,
             "level": 57,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAROWAK",
+            "species": "SPECIES_CUBONE",
             "form": 0,
             "level": 57,
             "item": null,

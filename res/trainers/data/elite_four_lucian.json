@@ -14,7 +14,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MR_MIME",
+            "species": "SPECIES_MIME_JR",
             "form": 0,
             "level": 53,
             "item": "ITEM_NONE",
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ESPEON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 55,
             "item": "ITEM_NONE",
@@ -42,7 +42,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRONZONG",
+            "species": "SPECIES_BRONZOR",
             "form": 0,
             "level": 54,
             "item": "ITEM_NONE",
@@ -56,7 +56,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 56,
             "item": "ITEM_NONE",
@@ -70,7 +70,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GALLADE",
+            "species": "SPECIES_RALTS",
             "form": 0,
             "level": 59,
             "item": "ITEM_SITRUS_BERRY",

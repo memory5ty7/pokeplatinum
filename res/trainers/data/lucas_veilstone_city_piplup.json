@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CLEFAIRY",
+            "species": "SPECIES_CLEFFA",
             "form": 0,
             "level": 25,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_KADABRA",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 25,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GROTLE",
+            "species": "SPECIES_TURTWIG",
             "form": 0,
             "level": 27,
             "item": null,

@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PORYGON_Z",
+            "species": "SPECIES_PORYGON",
             "form": 0,
             "level": 61,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GENGAR",
+            "species": "SPECIES_GASTLY",
             "form": 0,
             "level": 61,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGNEZONE",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
             "level": 62,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TOGEKISS",
+            "species": "SPECIES_TOGEPI",
             "form": 0,
             "level": 63,
             "item": "ITEM_NONE",
@@ -69,7 +69,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 65,
             "item": "ITEM_SITRUS_BERRY",

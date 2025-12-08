@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DUGTRIO",
+            "species": "SPECIES_DIGLETT",
             "form": 0,
             "level": 55,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAICHU",
+            "species": "SPECIES_PICHU",
             "form": 0,
             "level": 54,
             "item": null,
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_NINETALES",
+            "species": "SPECIES_VULPIX",
             "form": 0,
             "level": 54,
             "item": null,

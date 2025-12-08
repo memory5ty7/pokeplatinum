@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GOLBAT",
+            "species": "SPECIES_ZUBAT",
             "form": 0,
             "level": 38,
             "item": "ITEM_NONE",
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PURUGLY",
+            "species": "SPECIES_GLAMEOW",
             "form": 0,
             "level": 40,
             "item": "ITEM_SITRUS_BERRY",

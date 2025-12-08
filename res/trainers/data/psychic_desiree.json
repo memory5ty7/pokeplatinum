@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MR_MIME",
+            "species": "SPECIES_MIME_JR",
             "form": 0,
             "level": 54,
             "item": null,
@@ -23,7 +23,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MISMAGIUS",
+            "species": "SPECIES_MISDREAVUS",
             "form": 0,
             "level": 54,
             "item": null,

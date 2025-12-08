@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BRELOOM",
+            "species": "SPECIES_SHROOMISH",
             "form": 0,
             "level": 58,
             "item": null,
@@ -23,7 +23,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TOXICROAK",
+            "species": "SPECIES_CROAGUNK",
             "form": 0,
             "level": 58,
             "item": null,

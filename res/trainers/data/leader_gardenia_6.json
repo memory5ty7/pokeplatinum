@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERRIM",
+            "species": "SPECIES_CHERUBI",
             "form": 0,
             "level": 20,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSERADE",
+            "species": "SPECIES_BUDEW",
             "form": 0,
             "level": 22,
             "item": "ITEM_SITRUS_BERRY",

@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SLOWBRO",
+            "species": "SPECIES_SLOWPOKE",
             "form": 0,
             "level": 58,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SLOWKING",
+            "species": "SPECIES_SLOWPOKE",
             "form": 0,
             "level": 62,
             "item": null,

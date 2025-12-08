@@ -11,7 +11,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGNETON",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
             "level": 55,
             "item": null,
@@ -20,7 +20,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 51,
             "item": null,

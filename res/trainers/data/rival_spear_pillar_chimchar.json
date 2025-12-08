@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_STARLY",
             "form": 0,
             "level": 42,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSERADE",
+            "species": "SPECIES_BUDEW",
             "form": 0,
             "level": 40,
             "item": null,
@@ -66,7 +66,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_PONYTA",
             "form": 0,
             "level": 40,
             "item": null,
@@ -80,7 +80,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_EMPOLEON",
+            "species": "SPECIES_PIPLUP",
             "form": 0,
             "level": 44,
             "item": null,

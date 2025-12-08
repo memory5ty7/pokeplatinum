@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WIGGLYTUFF",
+            "species": "SPECIES_IGGLYBUFF",
             "form": 0,
             "level": 58,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GARDEVOIR",
+            "species": "SPECIES_RALTS",
             "form": 0,
             "level": 59,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDICHAM",
+            "species": "SPECIES_MEDITITE",
             "form": 0,
             "level": 58,
             "item": null,

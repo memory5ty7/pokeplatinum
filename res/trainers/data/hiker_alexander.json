@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GRAVELER",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 38,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PROBOPASS",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
             "level": 40,
             "item": null,

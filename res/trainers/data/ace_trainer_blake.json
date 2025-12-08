@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_AMBIPOM",
+            "species": "SPECIES_AIPOM",
             "form": 0,
             "level": 39,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PORYGON2",
+            "species": "SPECIES_PORYGON",
             "form": 0,
             "level": 40,
             "item": null,

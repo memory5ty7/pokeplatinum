@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GRUMPIG",
+            "species": "SPECIES_SPOINK",
             "form": 0,
             "level": 59,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 59,
             "item": null,
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DUSKNOIR",
+            "species": "SPECIES_DUSKULL",
             "form": 0,
             "level": 59,
             "item": null,

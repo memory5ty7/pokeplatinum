@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_MACHOP",
             "form": 0,
             "level": 29,
             "item": "ITEM_NONE",
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUCARIO",
+            "species": "SPECIES_RIOLU",
             "form": 0,
             "level": 32,
             "item": "ITEM_NONE",

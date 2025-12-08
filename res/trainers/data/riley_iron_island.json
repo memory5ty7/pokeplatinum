@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LUCARIO",
+            "species": "SPECIES_RIOLU",
             "form": 0,
             "level": 41,
             "item": null,

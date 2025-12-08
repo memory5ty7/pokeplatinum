@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RATICATE",
+            "species": "SPECIES_RATTATA",
             "form": 0,
             "level": 57,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFBLIM",
+            "species": "SPECIES_DRIFLOON",
             "form": 0,
             "level": 58,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHIFTRY",
+            "species": "SPECIES_SEEDOT",
             "form": 0,
             "level": 59,
             "item": null,

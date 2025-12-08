@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_STARLY",
             "form": 0,
             "level": 25,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_BUDEW",
             "form": 0,
             "level": 23,
             "item": null,
@@ -52,7 +52,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MONFERNO",
+            "species": "SPECIES_CHIMCHAR",
             "form": 0,
             "level": 27,
             "item": null,

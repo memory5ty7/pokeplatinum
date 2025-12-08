@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MUK",
+            "species": "SPECIES_GRIMER",
             "form": 0,
             "level": 53,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MIGHTYENA",
+            "species": "SPECIES_POOCHYENA",
             "form": 0,
             "level": 53,
             "item": null,

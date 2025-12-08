@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ELECTIVIRE",
+            "species": "SPECIES_ELEKID",
             "form": 0,
             "level": 54,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGMORTAR",
+            "species": "SPECIES_MAGBY",
             "form": 0,
             "level": 54,
             "item": null,

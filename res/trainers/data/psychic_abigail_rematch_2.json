@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHIMECHO",
+            "species": "SPECIES_CHINGLING",
             "form": 0,
             "level": 57,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFBLIM",
+            "species": "SPECIES_DRIFLOON",
             "form": 0,
             "level": 59,
             "item": null,
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GARDEVOIR",
+            "species": "SPECIES_RALTS",
             "form": 0,
             "level": 61,
             "item": null,

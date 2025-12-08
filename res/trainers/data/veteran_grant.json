@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_STARLY",
             "form": 0,
             "level": 34,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GRAVELER",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 34,
             "item": null,

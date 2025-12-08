@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MR_MIME",
+            "species": "SPECIES_MIME_JR",
             "form": 0,
             "level": 37,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DUSCLOPS",
+            "species": "SPECIES_DUSKULL",
             "form": 0,
             "level": 39,
             "item": null,

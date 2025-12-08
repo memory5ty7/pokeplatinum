@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHIMECHO",
+            "species": "SPECIES_CHINGLING",
             "form": 0,
             "level": 52,
             "item": null,
@@ -23,7 +23,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HAUNTER",
+            "species": "SPECIES_GASTLY",
             "form": 0,
             "level": 52,
             "item": null,
@@ -37,7 +37,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GENGAR",
+            "species": "SPECIES_GASTLY",
             "form": 0,
             "level": 55,
             "item": null,

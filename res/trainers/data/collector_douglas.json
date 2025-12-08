@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_JOLTEON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 24,
             "item": null,
@@ -17,7 +17,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_VAPOREON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 24,
             "item": null,
@@ -26,7 +26,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLAREON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 24,
             "item": null,

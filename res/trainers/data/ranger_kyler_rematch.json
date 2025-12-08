@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_EXEGGUTOR",
+            "species": "SPECIES_EXEGGCUTE",
             "form": 0,
             "level": 60,
             "item": null,
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_POLIWRATH",
+            "species": "SPECIES_POLIWAG",
             "form": 0,
             "level": 62,
             "item": null,

@@ -22,7 +22,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SEAKING",
+            "species": "SPECIES_GOLDEEN",
             "form": 0,
             "level": 31,
             "item": null,
@@ -36,7 +36,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GYARADOS",
+            "species": "SPECIES_MAGIKARP",
             "form": 0,
             "level": 31,
             "item": null,

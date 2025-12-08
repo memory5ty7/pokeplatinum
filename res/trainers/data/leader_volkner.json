@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PIKACHU",
+            "species": "SPECIES_PICHU",
             "form": 0,
             "level": 21,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_SHINX",
             "form": 0,
             "level": 23,
             "item": "ITEM_SHUCA_BERRY",

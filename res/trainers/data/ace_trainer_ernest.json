@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PROBOPASS",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
             "level": 31,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_SHINX",
             "form": 0,
             "level": 34,
             "item": null,

@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LINOONE",
+            "species": "SPECIES_ZIGZAGOON",
             "form": 0,
             "level": 55,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ARBOK",
+            "species": "SPECIES_EKANS",
             "form": 0,
             "level": 55,
             "item": null,

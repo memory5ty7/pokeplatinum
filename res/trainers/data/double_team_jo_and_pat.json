@@ -8,7 +8,7 @@
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_LUMINEON",
+            "species": "SPECIES_FINNEON",
             "form": 0,
             "level": 50,
             "item": null,
@@ -22,7 +22,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_PONYTA",
             "form": 0,
             "level": 50,
             "item": null,

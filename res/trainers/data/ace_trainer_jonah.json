@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_QUAGSIRE",
+            "species": "SPECIES_WOOPER",
             "form": 0,
             "level": 35,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_STARLY",
             "form": 0,
             "level": 36,
             "item": null,

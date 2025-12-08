@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ELECTABUZZ",
+            "species": "SPECIES_ELEKID",
             "form": 0,
             "level": 47,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGNETON",
+            "species": "SPECIES_MAGNEMITE",
             "form": 0,
             "level": 48,
             "item": null,

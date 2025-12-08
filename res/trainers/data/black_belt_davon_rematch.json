@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HITMONTOP",
+            "species": "SPECIES_TYROGUE",
             "form": 0,
             "level": 59,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HARIYAMA",
+            "species": "SPECIES_MAKUHITA",
             "form": 0,
             "level": 59,
             "item": null,
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHAMP",
+            "species": "SPECIES_MACHOP",
             "form": 0,
             "level": 59,
             "item": null,

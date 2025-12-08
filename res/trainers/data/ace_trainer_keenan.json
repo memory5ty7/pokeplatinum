@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PRIMEAPE",
+            "species": "SPECIES_MANKEY",
             "form": 0,
             "level": 58,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ELECTABUZZ",
+            "species": "SPECIES_ELEKID",
             "form": 0,
             "level": 58,
             "item": null,
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BANETTE",
+            "species": "SPECIES_SHUPPET",
             "form": 0,
             "level": 59,
             "item": null,

@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_FEAROW",
+            "species": "SPECIES_SPEAROW",
             "form": 0,
             "level": 55,
             "item": null,
@@ -17,7 +17,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_XATU",
+            "species": "SPECIES_NATU",
             "form": 0,
             "level": 57,
             "item": null,

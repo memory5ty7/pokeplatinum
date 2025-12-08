@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DELCATTY",
+            "species": "SPECIES_SKITTY",
             "form": 0,
             "level": 57,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ABOMASNOW",
+            "species": "SPECIES_SNOVER",
             "form": 0,
             "level": 58,
             "item": null,

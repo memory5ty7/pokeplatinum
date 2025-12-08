@@ -17,7 +17,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SWELLOW",
+            "species": "SPECIES_TAILLOW",
             "form": 0,
             "level": 59,
             "item": null,
@@ -26,7 +26,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PIDGEOT",
+            "species": "SPECIES_PIDGEY",
             "form": 0,
             "level": 61,
             "item": null,

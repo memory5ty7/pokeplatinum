@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HOUNDOOM",
+            "species": "SPECIES_HOUNDOUR",
             "form": 0,
             "level": 68,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLAREON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 71,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_PONYTA",
             "form": 0,
             "level": 69,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_INFERNAPE",
+            "species": "SPECIES_CHIMCHAR",
             "form": 0,
             "level": 71,
             "item": "ITEM_NONE",
@@ -69,7 +69,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGMORTAR",
+            "species": "SPECIES_MAGBY",
             "form": 0,
             "level": 73,
             "item": "ITEM_SITRUS_BERRY",

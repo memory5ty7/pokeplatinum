@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KIRLIA",
+            "species": "SPECIES_RALTS",
             "form": 0,
             "level": 38,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SEAKING",
+            "species": "SPECIES_GOLDEEN",
             "form": 0,
             "level": 39,
             "item": null,

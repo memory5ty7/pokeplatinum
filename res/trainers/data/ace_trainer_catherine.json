@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HAUNTER",
+            "species": "SPECIES_GASTLY",
             "form": 0,
             "level": 23,
             "item": null,

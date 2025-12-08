@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_JOLTEON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 46,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAICHU",
+            "species": "SPECIES_PICHU",
             "form": 0,
             "level": 46,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXRAY",
+            "species": "SPECIES_SHINX",
             "form": 0,
             "level": 48,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ELECTIVIRE",
+            "species": "SPECIES_ELEKID",
             "form": 0,
             "level": 50,
             "item": "ITEM_SITRUS_BERRY",

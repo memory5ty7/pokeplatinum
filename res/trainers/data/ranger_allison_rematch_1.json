@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_AZUMARILL",
+            "species": "SPECIES_AZURILL",
             "form": 0,
             "level": 35,
             "item": null,
@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LEAFEON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 35,
             "item": null,

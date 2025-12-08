@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PILOSWINE",
+            "species": "SPECIES_SWINUB",
             "form": 0,
             "level": 40,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ABOMASNOW",
+            "species": "SPECIES_SNOVER",
             "form": 0,
             "level": 42,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FROSLASS",
+            "species": "SPECIES_SNORUNT",
             "form": 0,
             "level": 44,
             "item": "ITEM_SITRUS_BERRY",

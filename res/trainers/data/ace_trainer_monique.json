@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LUXRAY",
+            "species": "SPECIES_SHINX",
             "form": 0,
             "level": 58,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_URSARING",
+            "species": "SPECIES_TEDDIURSA",
             "form": 0,
             "level": 59,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLISCOR",
+            "species": "SPECIES_GLIGAR",
             "form": 0,
             "level": 58,
             "item": null,

@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_MACHOP",
             "form": 0,
             "level": 53,
             "item": null,
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_INFERNAPE",
+            "species": "SPECIES_CHIMCHAR",
             "form": 0,
             "level": 55,
             "item": null,

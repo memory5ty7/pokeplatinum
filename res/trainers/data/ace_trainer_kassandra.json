@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_JUMPLUFF",
+            "species": "SPECIES_HOPPIP",
             "form": 0,
             "level": 58,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_AMPHAROS",
+            "species": "SPECIES_MAREEP",
             "form": 0,
             "level": 59,
             "item": null,

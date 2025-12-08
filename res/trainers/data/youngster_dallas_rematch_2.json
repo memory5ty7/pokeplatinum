@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_SHINX",
             "form": 0,
             "level": 32,
             "item": null,
@@ -17,7 +17,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BIBAREL",
+            "species": "SPECIES_BIDOOF",
             "form": 0,
             "level": 32,
             "item": null,
@@ -26,7 +26,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GRAVELER",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 32,
             "item": null,

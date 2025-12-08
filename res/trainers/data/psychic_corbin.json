@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_XATU",
+            "species": "SPECIES_NATU",
             "form": 0,
             "level": 56,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GALLADE",
+            "species": "SPECIES_RALTS",
             "form": 0,
             "level": 56,
             "item": null,

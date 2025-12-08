@@ -22,7 +22,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MR_MIME",
+            "species": "SPECIES_MIME_JR",
             "form": 0,
             "level": 57,
             "item": null,
@@ -36,7 +36,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SUDOWOODO",
+            "species": "SPECIES_BONSLY",
             "form": 0,
             "level": 57,
             "item": null,

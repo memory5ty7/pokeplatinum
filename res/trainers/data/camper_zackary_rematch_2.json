@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_AMBIPOM",
+            "species": "SPECIES_AIPOM",
             "form": 0,
             "level": 35,
             "item": null,

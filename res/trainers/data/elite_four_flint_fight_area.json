@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HOUNDOOM",
+            "species": "SPECIES_HOUNDOUR",
             "form": 0,
             "level": 56,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLAREON",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 56,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGMORTAR",
+            "species": "SPECIES_MAGBY",
             "form": 0,
             "level": 58,
             "item": "ITEM_SITRUS_BERRY",

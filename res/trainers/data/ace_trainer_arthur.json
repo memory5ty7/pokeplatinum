@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GASTRODON",
+            "species": "SPECIES_SHELLOS",
             "form": 0,
             "level": 54,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BEEDRILL",
+            "species": "SPECIES_WEEDLE",
             "form": 0,
             "level": 54,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ELECTRODE",
+            "species": "SPECIES_VOLTORB",
             "form": 0,
             "level": 55,
             "item": null,

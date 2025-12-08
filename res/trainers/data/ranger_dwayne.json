@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GOLDUCK",
+            "species": "SPECIES_PSYDUCK",
             "form": 0,
             "level": 54,
             "item": null,
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DONPHAN",
+            "species": "SPECIES_PHANPY",
             "form": 0,
             "level": 54,
             "item": null,

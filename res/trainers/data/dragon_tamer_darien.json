@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DRAGONITE",
+            "species": "SPECIES_DRATINI",
             "form": 0,
             "level": 60,
             "item": null,

@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DUSCLOPS",
+            "species": "SPECIES_DUSKULL",
             "form": 0,
             "level": 55,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SALAMENCE",
+            "species": "SPECIES_BAGON",
             "form": 0,
             "level": 56,
             "item": null,

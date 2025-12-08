@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LOUDRED",
+            "species": "SPECIES_WHISMUR",
             "form": 0,
             "level": 58,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAMPARDOS",
+            "species": "SPECIES_CRANIDOS",
             "form": 0,
             "level": 59,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PELIPPER",
+            "species": "SPECIES_WINGULL",
             "form": 0,
             "level": 58,
             "item": null,

@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ABOMASNOW",
+            "species": "SPECIES_SNOVER",
             "form": 0,
             "level": 45,
             "item": null,

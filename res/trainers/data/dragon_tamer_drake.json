@@ -19,7 +19,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GABITE",
+            "species": "SPECIES_GIBLE",
             "form": 0,
             "level": 57,
             "item": null,
@@ -28,7 +28,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRAGONAIR",
+            "species": "SPECIES_DRATINI",
             "form": 0,
             "level": 57,
             "item": null,

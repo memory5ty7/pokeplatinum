@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CAMERUPT",
+            "species": "SPECIES_NUMEL",
             "form": 0,
             "level": 56,
             "item": null,
@@ -18,7 +18,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STEELIX",
+            "species": "SPECIES_ONIX",
             "form": 0,
             "level": 59,
             "item": null,
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DONPHAN",
+            "species": "SPECIES_PHANPY",
             "form": 0,
             "level": 59,
             "item": null,

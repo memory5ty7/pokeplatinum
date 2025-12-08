@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAMOSWINE",
+            "species": "SPECIES_SWINUB",
             "form": 0,
             "level": 45,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MOTHIM",
+            "species": "SPECIES_BURMY",
             "form": 0,
             "level": 46,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAMPARDOS",
+            "species": "SPECIES_CRANIDOS",
             "form": 0,
             "level": 48,
             "item": null,

@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HITMONTOP",
+            "species": "SPECIES_TYROGUE",
             "form": 0,
             "level": 62,
             "item": "ITEM_NONE",
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDICHAM",
+            "species": "SPECIES_MEDITITE",
             "form": 0,
             "level": 63,
             "item": "ITEM_NONE",
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRELOOM",
+            "species": "SPECIES_SHROOMISH",
             "form": 0,
             "level": 62,
             "item": "ITEM_NONE",
@@ -52,7 +52,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHAMP",
+            "species": "SPECIES_MACHOP",
             "form": 0,
             "level": 64,
             "item": "ITEM_NONE",
@@ -66,7 +66,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUCARIO",
+            "species": "SPECIES_RIOLU",
             "form": 0,
             "level": 66,
             "item": "ITEM_NONE",

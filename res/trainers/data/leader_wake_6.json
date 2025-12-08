@@ -13,7 +13,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GYARADOS",
+            "species": "SPECIES_MAGIKARP",
             "form": 0,
             "level": 33,
             "item": "ITEM_NONE",
@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_QUAGSIRE",
+            "species": "SPECIES_WOOPER",
             "form": 0,
             "level": 34,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLOATZEL",
+            "species": "SPECIES_BUIZEL",
             "form": 0,
             "level": 37,
             "item": "ITEM_SITRUS_BERRY",

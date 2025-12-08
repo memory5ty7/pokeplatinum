@@ -27,7 +27,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PROBOPASS",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
             "level": 61,
             "item": "ITEM_NONE",
@@ -41,7 +41,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GOLEM",
+            "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 61,
             "item": "ITEM_NONE",
@@ -55,7 +55,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAMPARDOS",
+            "species": "SPECIES_CRANIDOS",
             "form": 0,
             "level": 63,
             "item": "ITEM_NONE",
@@ -69,7 +69,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TYRANITAR",
+            "species": "SPECIES_LARVITAR",
             "form": 0,
             "level": 65,
             "item": "ITEM_SITRUS_BERRY",

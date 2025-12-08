@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_NINJASK",
+            "species": "SPECIES_NINCADA",
             "form": 0,
             "level": 59,
             "item": null,
@@ -38,7 +38,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SLAKING",
+            "species": "SPECIES_SLAKOTH",
             "form": 0,
             "level": 62,
             "item": null,

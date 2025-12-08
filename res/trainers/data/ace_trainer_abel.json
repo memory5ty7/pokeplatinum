@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLALIE",
+            "species": "SPECIES_SNORUNT",
             "form": 0,
             "level": 59,
             "item": null,
@@ -24,7 +24,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CROBAT",
+            "species": "SPECIES_ZUBAT",
             "form": 0,
             "level": 60,
             "item": null,

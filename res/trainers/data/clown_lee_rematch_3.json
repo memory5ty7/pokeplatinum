@@ -8,7 +8,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MR_MIME",
+            "species": "SPECIES_MIME_JR",
             "form": 0,
             "level": 50,
             "item": null,
@@ -17,7 +17,7 @@
             "ball_seal": 3
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_ABRA",
             "form": 0,
             "level": 50,
             "item": null,
@@ -26,7 +26,7 @@
             "ball_seal": 3
         },
         {
-            "species": "SPECIES_AMBIPOM",
+            "species": "SPECIES_AIPOM",
             "form": 0,
             "level": 50,
             "item": null,

@@ -15,7 +15,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAPTOR",
+            "species": "SPECIES_STARLY",
             "form": 0,
             "level": 81,
             "item": "ITEM_NONE",
@@ -29,7 +29,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLOATZEL",
+            "species": "SPECIES_BUIZEL",
             "form": 0,
             "level": 79,
             "item": "ITEM_NONE",
@@ -57,7 +57,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_PONYTA",
             "form": 0,
             "level": 79,
             "item": "ITEM_NONE",
@@ -71,7 +71,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SNORLAX",
+            "species": "SPECIES_MUNCHLAX",
             "form": 0,
             "level": 83,
             "item": "ITEM_NONE",
@@ -85,7 +85,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TORTERRA",
+            "species": "SPECIES_TURTWIG",
             "form": 0,
             "level": 85,
             "item": "ITEM_SITRUS_BERRY",
