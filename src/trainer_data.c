@@ -22,6 +22,7 @@
 
 #include "macros.h"
 #include "desmume.h"
+#include "pokemon.h"
 
 static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
 
@@ -212,6 +213,63 @@ static s8 levelOffsets[] = {
     [TRAINER_CLASS_VETERAN]     = -1,
 
 };
+
+static void AdjustPartySpecies(Party *party)
+{
+    u16 initialSpecies, species, evoSpecies;
+    u8 monLevel;
+    Strbuf *speciesName;
+    
+    for (int i = 0; i < Party_GetCurrentCount(party); i++)
+    {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+        monLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
+        initialSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+        species = initialSpecies;
+        Desmume_Log("Initial Species : %d\n", initialSpecies);
+        
+        // Level Evolution
+        evoSpecies = Pokemon_GetEvolutionTargetSpecies(party, mon, EVO_CLASS_BY_LEVEL, monLevel, NULL);
+        Desmume_Log("Evolution Species : %d\n", evoSpecies);
+
+        if (evoSpecies != SPECIES_NONE)
+        {
+            species = evoSpecies;
+            speciesName = MessageUtil_SpeciesName(species, HEAP_ID_SYSTEM);
+            Pokemon_SetValue(mon, MON_DATA_SPECIES, &species);
+            Pokemon_SetValue(mon, MON_DATA_NICKNAME_STRING, speciesName);
+            Pokemon_CalcStats(mon);
+
+            // Second stage Evolution
+            evoSpecies = Pokemon_GetEvolutionTargetSpecies(party, mon, EVO_CLASS_BY_LEVEL, monLevel, NULL);
+            Desmume_Log("Evolution Species : %d\n", evoSpecies);
+
+            if (evoSpecies != SPECIES_NONE)
+            {
+                species = evoSpecies;
+                speciesName = MessageUtil_SpeciesName(species, HEAP_ID_SYSTEM);
+                Pokemon_SetValue(mon, MON_DATA_SPECIES, &species);
+                Pokemon_SetValue(mon, MON_DATA_NICKNAME_STRING, speciesName);
+                Pokemon_CalcStats(mon);
+            }
+        }
+
+        // Stone Evolution
+
+        // Trade Evolution
+
+        // Happiness Evolution
+
+        // Miscellaneous Evolution
+
+        if (species != initialSpecies)
+        {
+            Desmume_Log("Initial Species: %d, Adjusted Species: %d\n", initialSpecies, species);
+        }
+    }
+
+    Strbuf_Free(speciesName);
+}
 
 static void AdjustPartyLevels(Party *party, u8 playerMinLevel, u8 playerMaxLevel, u8 playerMeanLevel, u8 playerMedianLevel, u8 enemyMinLevel, u8 enemyMaxLevel, u8 enemyMeanLevel, u8 enemyMedianLevel, u16 trainerClass, _Bool isSpecialClass)
 {
@@ -421,6 +479,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
         trainerClass,
         isSpecialClass
     );
+
+    AdjustPartySpecies(dto->parties[battler]);
 
     Heap_Free(buf);
     Heap_Free(mon);
