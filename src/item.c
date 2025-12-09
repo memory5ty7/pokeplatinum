@@ -2833,6 +2833,18 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = secret_key_NCLR,
         .gen3ID = GBA_ITEM_SECRET_KEY,
     },
+    [ITEM_ICE_STONE] = {
+        .dataID = 0x1BE,
+        .iconID = ice_stone_NCGR,
+        .paletteID = ice_stone_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_PRISM_SCALE] = {
+        .dataID = 0x1BF,
+        .iconID = prism_scale_NCGR,
+        .paletteID = prism_scale_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {

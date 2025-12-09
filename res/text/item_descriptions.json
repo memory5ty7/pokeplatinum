@@ -3646,6 +3646,22 @@
         "a specific location. It emits a special\n",
         "electric signal to open a door."
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00468",
+      "en_US": [
+        "A peculiar stone that makes certain\n",
+        "species of Pokémon evolve. It has an\n",
+        "unmistakable snowflake pattern."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00469",
+      "en_US": [
+        "A mysterious scale that causes\n",
+        "a certain Pokémon to evolve.\n",
+        "It shines in rainbow colors."
+      ]
     }
   ]
 }

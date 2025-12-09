@@ -1872,6 +1872,14 @@
     {
       "id": "pl_msg_00000393_00467",
       "en_US": "a {COLOR 255}Secret Key{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00468",
+      "en_US": "an {COLOR 255}Ice Stone{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00469",
+      "en_US": "a {COLOR 255}Prism Scale{COLOR 0}"
     }
   ]
 }
