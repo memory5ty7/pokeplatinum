@@ -15,7 +15,7 @@
         },
         {
             "level": 17,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 17,
@@ -23,11 +23,11 @@
         },
         {
             "level": 17,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 18,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 16,
@@ -56,16 +56,16 @@
     ],
     "morning": [
         "SPECIES_GASTLY",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "night": [
-        "SPECIES_DUSCLOPS",
-        "SPECIES_GOLBAT"
+        "SPECIES_DUSKULL",
+        "SPECIES_ZUBAT"
     ],
     "radar": [
         "SPECIES_GASTLY",
-        "SPECIES_GOLBAT",
-        "SPECIES_DUSCLOPS",
+        "SPECIES_ZUBAT",
+        "SPECIES_DUSKULL",
         "SPECIES_CHINGLING"
     ],
     "rate_form0": 100,
@@ -83,15 +83,15 @@
         "SPECIES_LUNATONE"
     ],
     "emerald": [
-        "SPECIES_DUSCLOPS",
+        "SPECIES_DUSKULL",
         "SPECIES_CHINGLING"
     ],
     "firered": [
-        "SPECIES_DUSCLOPS",
+        "SPECIES_DUSKULL",
         "SPECIES_CHINGLING"
     ],
     "leafgreen": [
-        "SPECIES_DUSCLOPS",
+        "SPECIES_DUSKULL",
         "SPECIES_CHINGLING"
     ],
     "surf_rate": 0,

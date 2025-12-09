@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 19,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 18,
@@ -19,7 +19,7 @@
         },
         {
             "level": 20,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 19,
@@ -31,7 +31,7 @@
         },
         {
             "level": 21,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 21,
@@ -39,7 +39,7 @@
         },
         {
             "level": 19,
-            "species": "SPECIES_CHANSEY"
+            "species": "SPECIES_HAPPINY"
         },
         {
             "level": 21,
@@ -47,11 +47,11 @@
         },
         {
             "level": 21,
-            "species": "SPECIES_CHANSEY"
+            "species": "SPECIES_HAPPINY"
         }
     ],
     "swarms": [
-        "SPECIES_STARAVIA",
+        "SPECIES_STARLY",
         "SPECIES_GEODUDE"
     ],
     "morning": [
@@ -59,7 +59,7 @@
         "SPECIES_PONYTA"
     ],
     "night": [
-        "SPECIES_NOCTOWL",
+        "SPECIES_HOOTHOOT",
         "SPECIES_HOOTHOOT"
     ],
     "radar": [
@@ -76,11 +76,11 @@
     "unown_table": 0,
     "ruby": [
         "SPECIES_SEEDOT",
-        "SPECIES_NUZLEAF"
+        "SPECIES_SEEDOT"
     ],
     "sapphire": [
         "SPECIES_PONYTA",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "emerald": [
         "SPECIES_PINECO",
@@ -88,11 +88,11 @@
     ],
     "firered": [
         "SPECIES_PONYTA",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "leafgreen": [
         "SPECIES_PONYTA",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "surf_rate": 0,
     "surf_encounters": [

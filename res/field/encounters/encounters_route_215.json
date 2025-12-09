@@ -3,11 +3,11 @@
     "land_encounters": [
         {
             "level": 19,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 20,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 22,
@@ -15,7 +15,7 @@
         },
         {
             "level": 21,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 20,
@@ -31,23 +31,23 @@
         },
         {
             "level": 21,
-            "species": "SPECIES_KADABRA"
+            "species": "SPECIES_ABRA"
         },
         {
             "level": 22,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 22,
-            "species": "SPECIES_KADABRA"
+            "species": "SPECIES_ABRA"
         },
         {
             "level": 22,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 22,
-            "species": "SPECIES_KADABRA"
+            "species": "SPECIES_ABRA"
         }
     ],
     "swarms": [
@@ -55,18 +55,18 @@
         "SPECIES_DROWZEE"
     ],
     "morning": [
-        "SPECIES_STARAVIA",
-        "SPECIES_STARAVIA"
+        "SPECIES_STARLY",
+        "SPECIES_STARLY"
     ],
     "night": [
-        "SPECIES_MARILL",
-        "SPECIES_MARILL"
+        "SPECIES_AZURILL",
+        "SPECIES_AZURILL"
     ],
     "radar": [
         "SPECIES_LICKITUNG",
         "SPECIES_ABRA",
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "sapphire": [
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "emerald": [
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "firered": [
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "leafgreen": [
-        "SPECIES_MARILL",
-        "SPECIES_KADABRA"
+        "SPECIES_AZURILL",
+        "SPECIES_ABRA"
     ],
     "surf_rate": 0,
     "surf_encounters": [

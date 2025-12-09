@@ -3,27 +3,27 @@
     "land_encounters": [
         {
             "level": 31,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 32,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 30,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 32,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 32,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 33,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 31,
@@ -35,38 +35,38 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 31,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 30,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 31,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         }
     ],
     "swarms": [
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE"
     ],
     "morning": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT",
+        "SPECIES_ZUBAT"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT",
+        "SPECIES_ZUBAT"
     ],
     "radar": [
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -83,16 +83,16 @@
         "SPECIES_SABLEYE"
     ],
     "emerald": [
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE"
     ],
     "firered": [
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE"
     ],
     "leafgreen": [
-        "SPECIES_GRAVELER",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE",
+        "SPECIES_GEODUDE"
     ],
     "surf_rate": 0,
     "surf_encounters": [

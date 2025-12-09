@@ -7,7 +7,7 @@
         },
         {
             "level": 28,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 28,
@@ -23,7 +23,7 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         },
         {
             "level": 28,
@@ -52,19 +52,19 @@
     ],
     "swarms": [
         "SPECIES_WOOPER",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "morning": [
         "SPECIES_TROPIUS",
         "SPECIES_TROPIUS"
     ],
     "night": [
-        "SPECIES_NOCTOWL",
-        "SPECIES_NOCTOWL"
+        "SPECIES_HOOTHOOT",
+        "SPECIES_HOOTHOOT"
     ],
     "radar": [
         "SPECIES_WOOPER",
-        "SPECIES_QUAGSIRE",
+        "SPECIES_WOOPER",
         "SPECIES_YANMA",
         "SPECIES_TANGELA"
     ],
@@ -87,8 +87,8 @@
         "SPECIES_TANGELA"
     ],
     "firered": [
-        "SPECIES_ARBOK",
-        "SPECIES_ARBOK"
+        "SPECIES_EKANS",
+        "SPECIES_EKANS"
     ],
     "leafgreen": [
         "SPECIES_YANMA",
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         }
     ],
     "old_rod_rate": 25,
@@ -183,7 +183,7 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
@@ -193,7 +193,7 @@
         {
             "level_max": 50,
             "level_min": 20,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,

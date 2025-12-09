@@ -75,23 +75,23 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_GENGAR",
+        "SPECIES_GASTLY",
         "SPECIES_GASTLY"
     ],
     "sapphire": [
-        "SPECIES_GENGAR",
+        "SPECIES_GASTLY",
         "SPECIES_GASTLY"
     ],
     "emerald": [
-        "SPECIES_GENGAR",
+        "SPECIES_GASTLY",
         "SPECIES_GASTLY"
     ],
     "firered": [
-        "SPECIES_GENGAR",
+        "SPECIES_GASTLY",
         "SPECIES_GASTLY"
     ],
     "leafgreen": [
-        "SPECIES_GENGAR",
+        "SPECIES_GASTLY",
         "SPECIES_GASTLY"
     ],
     "surf_rate": 0,

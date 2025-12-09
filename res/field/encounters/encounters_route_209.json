@@ -3,15 +3,15 @@
     "land_encounters": [
         {
             "level": 19,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 18,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 19,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 17,
@@ -19,11 +19,11 @@
         },
         {
             "level": 18,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 19,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 18,
@@ -31,7 +31,7 @@
         },
         {
             "level": 20,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 19,
@@ -39,7 +39,7 @@
         },
         {
             "level": 17,
-            "species": "SPECIES_CHANSEY"
+            "species": "SPECIES_HAPPINY"
         },
         {
             "level": 19,
@@ -47,7 +47,7 @@
         },
         {
             "level": 19,
-            "species": "SPECIES_CHANSEY"
+            "species": "SPECIES_HAPPINY"
         }
     ],
     "swarms": [
@@ -55,7 +55,7 @@
         "SPECIES_SNUBBULL"
     ],
     "morning": [
-        "SPECIES_STARAVIA",
+        "SPECIES_STARLY",
         "SPECIES_RALTS"
     ],
     "night": [
@@ -63,10 +63,10 @@
         "SPECIES_DUSKULL"
     ],
     "radar": [
-        "SPECIES_KIRLIA",
-        "SPECIES_KIRLIA",
-        "SPECIES_KIRLIA",
-        "SPECIES_KIRLIA"
+        "SPECIES_RALTS",
+        "SPECIES_RALTS",
+        "SPECIES_RALTS",
+        "SPECIES_RALTS"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -76,19 +76,19 @@
     "unown_table": 0,
     "ruby": [
         "SPECIES_RALTS",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "sapphire": [
         "SPECIES_RALTS",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "emerald": [
         "SPECIES_RALTS",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "firered": [
         "SPECIES_RALTS",
-        "SPECIES_CHANSEY"
+        "SPECIES_HAPPINY"
     ],
     "leafgreen": [
         "SPECIES_VULPIX",
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         }
     ],
     "map_category": {

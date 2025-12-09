@@ -99,12 +99,12 @@
         {
             "level_max": 50,
             "level_min": 30,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 50,
             "level_min": 30,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level_max": 40,
@@ -170,12 +170,12 @@
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         }
     ],
     "super_rod_rate": 75,
@@ -183,7 +183,7 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
@@ -193,17 +193,17 @@
         {
             "level_max": 50,
             "level_min": 20,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WAILORD"
+            "species": "SPECIES_WAILMER"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WAILORD"
+            "species": "SPECIES_WAILMER"
         }
     ],
     "map_category": {

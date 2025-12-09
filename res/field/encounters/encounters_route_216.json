@@ -35,7 +35,7 @@
         },
         {
             "level": 35,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 35,
@@ -43,7 +43,7 @@
         },
         {
             "level": 35,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 35,
@@ -65,7 +65,7 @@
     "radar": [
         "SPECIES_MEDITITE",
         "SPECIES_SNEASEL",
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_SNOVER"
     ],
     "rate_form0": 0,
@@ -75,23 +75,23 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_SNOVER"
     ],
     "sapphire": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_SNOVER"
     ],
     "emerald": [
-        "SPECIES_URSARING",
-        "SPECIES_URSARING"
+        "SPECIES_TEDDIURSA",
+        "SPECIES_TEDDIURSA"
     ],
     "firered": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_SNOVER"
     ],
     "leafgreen": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_SNOVER"
     ],
     "surf_rate": 0,

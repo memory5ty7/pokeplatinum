@@ -7,19 +7,19 @@
         },
         {
             "level": 25,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 26,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 27,
-            "species": "SPECIES_KRICKETUNE"
+            "species": "SPECIES_KRICKETOT"
         },
         {
             "level": 27,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 28,
@@ -27,11 +27,11 @@
         },
         {
             "level": 28,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 26,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 28,
@@ -39,7 +39,7 @@
         },
         {
             "level": 27,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 28,
@@ -47,26 +47,26 @@
         },
         {
             "level": 27,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         }
     ],
     "swarms": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "morning": [
-        "SPECIES_STARAVIA",
-        "SPECIES_STARAVIA"
+        "SPECIES_STARLY",
+        "SPECIES_STARLY"
     ],
     "night": [
-        "SPECIES_KRICKETUNE",
+        "SPECIES_KRICKETOT",
         "SPECIES_HOUNDOUR"
     ],
     "radar": [
-        "SPECIES_NIDORINO",
-        "SPECIES_NIDORINA",
-        "SPECIES_NIDORINO",
-        "SPECIES_NIDORINA"
+        "SPECIES_NIDORAN_M",
+        "SPECIES_NIDORAN_F",
+        "SPECIES_NIDORAN_M",
+        "SPECIES_NIDORAN_F"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -76,23 +76,23 @@
     "unown_table": 0,
     "ruby": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "sapphire": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "emerald": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "firered": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "leafgreen": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "surf_rate": 0,
     "surf_encounters": [

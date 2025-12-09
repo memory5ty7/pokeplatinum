@@ -15,7 +15,7 @@
         },
         {
             "level": 17,
-            "species": "SPECIES_CLEFAIRY"
+            "species": "SPECIES_CLEFFA"
         },
         {
             "level": 20,
@@ -60,7 +60,7 @@
     ],
     "night": [
         "SPECIES_ZUBAT",
-        "SPECIES_CLEFAIRY"
+        "SPECIES_CLEFFA"
     ],
     "radar": [
         "SPECIES_MACHOP",
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 20,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         }
     ],
     "map_category": {

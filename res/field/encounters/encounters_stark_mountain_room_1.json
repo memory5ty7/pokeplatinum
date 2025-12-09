@@ -3,35 +3,35 @@
     "land_encounters": [
         {
             "level": 54,
-            "species": "SPECIES_MAGCARGO"
+            "species": "SPECIES_SLUGMA"
         },
         {
             "level": 54,
-            "species": "SPECIES_RHYDON"
+            "species": "SPECIES_RHYHORN"
         },
         {
             "level": 52,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 51,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 52,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 53,
-            "species": "SPECIES_WEEZING"
+            "species": "SPECIES_KOFFING"
         },
         {
             "level": 51,
-            "species": "SPECIES_WEEZING"
+            "species": "SPECIES_KOFFING"
         },
         {
             "level": 53,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 52,
@@ -51,20 +51,20 @@
         }
     ],
     "swarms": [
-        "SPECIES_MAGCARGO",
-        "SPECIES_RHYDON"
+        "SPECIES_SLUGMA",
+        "SPECIES_RHYHORN"
     ],
     "morning": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GRAVELER"
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GRAVELER"
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE"
     ],
     "radar": [
-        "SPECIES_GOLBAT",
-        "SPECIES_WEEZING",
+        "SPECIES_ZUBAT",
+        "SPECIES_KOFFING",
         "SPECIES_SLUGMA",
         "SPECIES_RHYHORN"
     ],

@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 29,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 28,
@@ -11,19 +11,19 @@
         },
         {
             "level": 28,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 29,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 31,
-            "species": "SPECIES_SUDOWOODO"
+            "species": "SPECIES_BONSLY"
         },
         {
             "level": 30,
-            "species": "SPECIES_SUDOWOODO"
+            "species": "SPECIES_BONSLY"
         },
         {
             "level": 30,
@@ -31,23 +31,23 @@
         },
         {
             "level": 29,
-            "species": "SPECIES_SUDOWOODO"
+            "species": "SPECIES_BONSLY"
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         }
     ],
     "swarms": [
@@ -55,18 +55,18 @@
         "SPECIES_FARFETCHD"
     ],
     "morning": [
-        "SPECIES_ROSELIA",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUDEW",
+        "SPECIES_BUDEW"
     ],
     "night": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "radar": [
-        "SPECIES_NIDORINO",
-        "SPECIES_NIDORINA",
-        "SPECIES_NIDORINO",
-        "SPECIES_NIDORINA"
+        "SPECIES_NIDORAN_M",
+        "SPECIES_NIDORAN_F",
+        "SPECIES_NIDORAN_M",
+        "SPECIES_NIDORAN_F"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "sapphire": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "emerald": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "firered": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "leafgreen": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUDEW"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         }
     ],
     "old_rod_rate": 25,
@@ -170,12 +170,12 @@
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         }
     ],
     "super_rod_rate": 75,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         }
     ],
     "map_category": {

@@ -3,11 +3,11 @@
     "land_encounters": [
         {
             "level": 50,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 50,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 49,
@@ -19,35 +19,35 @@
         },
         {
             "level": 51,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level": 49,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level": 51,
-            "species": "SPECIES_GLOOM"
+            "species": "SPECIES_ODDISH"
         },
         {
             "level": 51,
-            "species": "SPECIES_WEEPINBELL"
+            "species": "SPECIES_BELLSPROUT"
         },
         {
             "level": 52,
-            "species": "SPECIES_BEAUTIFLY"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 52,
-            "species": "SPECIES_DUSTOX"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 52,
-            "species": "SPECIES_BEAUTIFLY"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 52,
-            "species": "SPECIES_DUSTOX"
+            "species": "SPECIES_WURMPLE"
         }
     ],
     "swarms": [
@@ -63,10 +63,10 @@
         "SPECIES_ODDISH"
     ],
     "radar": [
-        "SPECIES_PELIPPER",
-        "SPECIES_GASTRODON",
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WINGULL",
+        "SPECIES_SHELLOS",
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -75,51 +75,51 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "sapphire": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "emerald": [
         "SPECIES_SHUCKLE",
         "SPECIES_SHUCKLE"
     ],
     "firered": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "leafgreen": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "surf_rate": 10,
     "surf_encounters": [
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         }
     ],
     "old_rod_rate": 25,
@@ -183,12 +183,12 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 30,
@@ -198,12 +198,12 @@
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         }
     ],
     "map_category": {

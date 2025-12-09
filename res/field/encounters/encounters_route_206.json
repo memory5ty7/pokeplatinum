@@ -15,7 +15,7 @@
         },
         {
             "level": 17,
-            "species": "SPECIES_KRICKETUNE"
+            "species": "SPECIES_KRICKETOT"
         },
         {
             "level": 16,
@@ -59,7 +59,7 @@
         "SPECIES_PONYTA"
     ],
     "night": [
-        "SPECIES_KRICKETUNE",
+        "SPECIES_KRICKETOT",
         "SPECIES_ZUBAT"
     ],
     "radar": [

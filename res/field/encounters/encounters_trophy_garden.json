@@ -7,27 +7,27 @@
         },
         {
             "level": 22,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 22,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 23,
-            "species": "SPECIES_KRICKETUNE"
+            "species": "SPECIES_KRICKETOT"
         },
         {
             "level": 23,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 24,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 22,
-            "species": "SPECIES_PIKACHU"
+            "species": "SPECIES_PICHU"
         },
         {
             "level": 22,
@@ -35,7 +35,7 @@
         },
         {
             "level": 24,
-            "species": "SPECIES_PIKACHU"
+            "species": "SPECIES_PICHU"
         },
         {
             "level": 22,
@@ -43,7 +43,7 @@
         },
         {
             "level": 24,
-            "species": "SPECIES_PIKACHU"
+            "species": "SPECIES_PICHU"
         },
         {
             "level": 22,
@@ -52,20 +52,20 @@
     ],
     "swarms": [
         "SPECIES_PICHU",
-        "SPECIES_ROSELIA"
+        "SPECIES_BUDEW"
     ],
     "morning": [
-        "SPECIES_STARAVIA",
-        "SPECIES_STARAVIA"
+        "SPECIES_STARLY",
+        "SPECIES_STARLY"
     ],
     "night": [
-        "SPECIES_KRICKETUNE",
-        "SPECIES_KRICKETUNE"
+        "SPECIES_KRICKETOT",
+        "SPECIES_KRICKETOT"
     ],
     "radar": [
-        "SPECIES_ROSELIA",
-        "SPECIES_STARAVIA",
-        "SPECIES_PIKACHU",
+        "SPECIES_BUDEW",
+        "SPECIES_STARLY",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "rate_form0": 100,
@@ -75,23 +75,23 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_PIKACHU",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "sapphire": [
-        "SPECIES_PIKACHU",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "emerald": [
-        "SPECIES_PIKACHU",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "firered": [
-        "SPECIES_PIKACHU",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "leafgreen": [
-        "SPECIES_PIKACHU",
+        "SPECIES_PICHU",
         "SPECIES_PICHU"
     ],
     "surf_rate": 0,
@@ -212,16 +212,16 @@
         "SPECIES_HAPPINY",
         "SPECIES_MEOWTH",
         "SPECIES_CLEFFA",
-        "SPECIES_CLEFAIRY",
+        "SPECIES_CLEFFA",
         "SPECIES_IGGLYBUFF",
         "SPECIES_PLUSLE",
-        "SPECIES_JIGGLYPUFF",
+        "SPECIES_IGGLYBUFF",
         "SPECIES_DITTO",
         "SPECIES_CASTFORM",
         "SPECIES_MINUN",
         "SPECIES_MIME_JR",
-        "SPECIES_MARILL",
-        "SPECIES_CHANSEY",
+        "SPECIES_AZURILL",
+        "SPECIES_HAPPINY",
         "SPECIES_AZURILL"
     ],
     "map_category": {

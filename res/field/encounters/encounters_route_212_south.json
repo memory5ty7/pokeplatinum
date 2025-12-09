@@ -7,7 +7,7 @@
         },
         {
             "level": 24,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         },
         {
             "level": 25,
@@ -19,7 +19,7 @@
         },
         {
             "level": 26,
-            "species": "SPECIES_QUAGSIRE"
+            "species": "SPECIES_WOOPER"
         },
         {
             "level": 25,
@@ -52,7 +52,7 @@
     ],
     "swarms": [
         "SPECIES_SHELLOS",
-        "SPECIES_QUAGSIRE"
+        "SPECIES_WOOPER"
     ],
     "morning": [
         "SPECIES_BUIZEL",
@@ -79,7 +79,7 @@
         "SPECIES_SHELLOS"
     ],
     "sapphire": [
-        "SPECIES_LOMBRE",
+        "SPECIES_LOTAD",
         "SPECIES_LOTAD"
     ],
     "emerald": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         }
     ],
     "map_category": {

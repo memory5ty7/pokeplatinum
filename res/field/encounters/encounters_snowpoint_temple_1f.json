@@ -3,23 +3,23 @@
     "land_encounters": [
         {
             "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 48,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 50,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 48,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
@@ -31,7 +31,7 @@
         },
         {
             "level": 49,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
@@ -39,7 +39,7 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
@@ -47,26 +47,26 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         }
     ],
     "swarms": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT",
+        "SPECIES_ZUBAT"
     ],
     "morning": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT",
+        "SPECIES_ZUBAT"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT",
+        "SPECIES_ZUBAT"
     ],
     "radar": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_SNEASEL",
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -76,23 +76,23 @@
     "unown_table": 0,
     "ruby": [
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "sapphire": [
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "emerald": [
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "firered": [
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "leafgreen": [
         "SPECIES_SMOOCHUM",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "surf_rate": 0,
     "surf_encounters": [

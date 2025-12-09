@@ -3,19 +3,19 @@
     "land_encounters": [
         {
             "level": 48,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 49,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 50,
-            "species": "SPECIES_LEDIAN"
+            "species": "SPECIES_LEDYBA"
         },
         {
             "level": 50,
-            "species": "SPECIES_LEDIAN"
+            "species": "SPECIES_LEDYBA"
         },
         {
             "level": 49,
@@ -31,23 +31,23 @@
         },
         {
             "level": 50,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 48,
-            "species": "SPECIES_BEAUTIFLY"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 48,
-            "species": "SPECIES_DUSTOX"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 48,
-            "species": "SPECIES_BEAUTIFLY"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 48,
-            "species": "SPECIES_DUSTOX"
+            "species": "SPECIES_WURMPLE"
         }
     ],
     "swarms": [
@@ -59,12 +59,12 @@
         "SPECIES_PIDGEY"
     ],
     "night": [
-        "SPECIES_ARIADOS",
-        "SPECIES_ARIADOS"
+        "SPECIES_SPINARAK",
+        "SPECIES_SPINARAK"
     ],
     "radar": [
-        "SPECIES_VENOMOTH",
-        "SPECIES_VENOMOTH",
+        "SPECIES_VENONAT",
+        "SPECIES_VENONAT",
         "SPECIES_VENONAT",
         "SPECIES_VENONAT"
     ],
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_NUZLEAF",
-        "SPECIES_NUZLEAF"
+        "SPECIES_SEEDOT",
+        "SPECIES_SEEDOT"
     ],
     "sapphire": [
-        "SPECIES_LOMBRE",
-        "SPECIES_LOMBRE"
+        "SPECIES_LOTAD",
+        "SPECIES_LOTAD"
     ],
     "emerald": [
         "SPECIES_PINECO",
         "SPECIES_PINECO"
     ],
     "firered": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "leafgreen": [
-        "SPECIES_BEAUTIFLY",
-        "SPECIES_DUSTOX"
+        "SPECIES_WURMPLE",
+        "SPECIES_WURMPLE"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -114,12 +114,12 @@
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_MASQUERAIN"
+            "species": "SPECIES_SURSKIT"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_MASQUERAIN"
+            "species": "SPECIES_SURSKIT"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         }
     ],
     "map_category": {

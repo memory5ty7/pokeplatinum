@@ -3,27 +3,27 @@
     "land_encounters": [
         {
             "level": 53,
-            "species": "SPECIES_CAMERUPT"
+            "species": "SPECIES_NUMEL"
         },
         {
             "level": 54,
-            "species": "SPECIES_RHYDON"
+            "species": "SPECIES_RHYHORN"
         },
         {
             "level": 51,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 51,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 53,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 52,
-            "species": "SPECIES_WEEZING"
+            "species": "SPECIES_KOFFING"
         },
         {
             "level": 53,
@@ -31,7 +31,7 @@
         },
         {
             "level": 53,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 51,
@@ -51,16 +51,16 @@
         }
     ],
     "swarms": [
-        "SPECIES_CAMERUPT",
-        "SPECIES_RHYDON"
+        "SPECIES_NUMEL",
+        "SPECIES_RHYHORN"
     ],
     "morning": [
-        "SPECIES_FEAROW",
-        "SPECIES_GRAVELER"
+        "SPECIES_SPEAROW",
+        "SPECIES_GEODUDE"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GRAVELER"
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE"
     ],
     "radar": [
         "SPECIES_TORKOAL",

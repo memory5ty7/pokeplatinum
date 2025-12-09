@@ -3,64 +3,64 @@
     "land_encounters": [
         {
             "level": 23,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 21,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 23,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 22,
-            "species": "SPECIES_KIRLIA"
+            "species": "SPECIES_RALTS"
         },
         {
             "level": 22,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 21,
-            "species": "SPECIES_STARAVIA"
+            "species": "SPECIES_STARLY"
         },
         {
             "level": 24,
-            "species": "SPECIES_KIRLIA"
+            "species": "SPECIES_RALTS"
         },
         {
             "level": 24,
-            "species": "SPECIES_KIRLIA"
+            "species": "SPECIES_RALTS"
         },
         {
             "level": 24,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 23,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 24,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 23,
-            "species": "SPECIES_MARILL"
+            "species": "SPECIES_AZURILL"
         }
     ],
     "swarms": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "morning": [
-        "SPECIES_STARAVIA",
+        "SPECIES_STARLY",
         "SPECIES_RALTS"
     ],
     "night": [
-        "SPECIES_MARILL",
-        "SPECIES_MARILL"
+        "SPECIES_AZURILL",
+        "SPECIES_AZURILL"
     ],
     "radar": [
         "SPECIES_SMEARGLE",
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "sapphire": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "emerald": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "firered": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "leafgreen": [
-        "SPECIES_ROSELIA",
-        "SPECIES_MARILL"
+        "SPECIES_BUDEW",
+        "SPECIES_AZURILL"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         }
     ],
     "map_category": {

@@ -7,7 +7,7 @@
         },
         {
             "level": 28,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 27,
@@ -31,7 +31,7 @@
         },
         {
             "level": 29,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 29,
@@ -39,7 +39,7 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 29,
@@ -47,19 +47,19 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         }
     ],
     "swarms": [
         "SPECIES_SWABLU",
-        "SPECIES_BIBAREL"
+        "SPECIES_BIDOOF"
     ],
     "morning": [
         "SPECIES_SWABLU",
         "SPECIES_MEDITITE"
     ],
     "night": [
-        "SPECIES_NOCTOWL",
+        "SPECIES_HOOTHOOT",
         "SPECIES_HOOTHOOT"
     ],
     "radar": [
@@ -84,15 +84,15 @@
     ],
     "emerald": [
         "SPECIES_MACHOP",
-        "SPECIES_MACHOKE"
+        "SPECIES_MACHOP"
     ],
     "firered": [
         "SPECIES_MACHOP",
-        "SPECIES_MACHOKE"
+        "SPECIES_MACHOP"
     ],
     "leafgreen": [
         "SPECIES_MACHOP",
-        "SPECIES_MACHOKE"
+        "SPECIES_MACHOP"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         }
     ],
     "old_rod_rate": 25,
@@ -170,12 +170,12 @@
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 35,
             "level_min": 25,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         }
     ],
     "super_rod_rate": 75,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         }
     ],
     "map_category": {

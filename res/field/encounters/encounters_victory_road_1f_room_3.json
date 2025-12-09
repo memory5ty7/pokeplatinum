@@ -3,15 +3,15 @@
     "land_encounters": [
         {
             "level": 47,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 47,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 49,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 48,
@@ -23,50 +23,50 @@
         },
         {
             "level": 48,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 49,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 50,
-            "species": "SPECIES_STEELIX"
+            "species": "SPECIES_ONIX"
         },
         {
             "level": 50,
-            "species": "SPECIES_GABITE"
+            "species": "SPECIES_GIBLE"
         },
         {
             "level": 50,
-            "species": "SPECIES_STEELIX"
+            "species": "SPECIES_ONIX"
         },
         {
             "level": 50,
-            "species": "SPECIES_GABITE"
+            "species": "SPECIES_GIBLE"
         }
     ],
     "swarms": [
-        "SPECIES_GRAVELER",
-        "SPECIES_FLOATZEL"
+        "SPECIES_GEODUDE",
+        "SPECIES_BUIZEL"
     ],
     "morning": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GEODUDE",
         "SPECIES_ONIX"
     ],
     "night": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_ONIX"
     ],
     "radar": [
         "SPECIES_ONIX",
-        "SPECIES_FLOATZEL",
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_BUIZEL",
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "sapphire": [
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "emerald": [
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "firered": [
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "leafgreen": [
-        "SPECIES_STEELIX",
-        "SPECIES_GABITE"
+        "SPECIES_ONIX",
+        "SPECIES_GIBLE"
     ],
     "surf_rate": 0,
     "surf_encounters": [

@@ -3,27 +3,27 @@
     "land_encounters": [
         {
             "level": 53,
-            "species": "SPECIES_CAMERUPT"
+            "species": "SPECIES_NUMEL"
         },
         {
             "level": 54,
-            "species": "SPECIES_RHYDON"
+            "species": "SPECIES_RHYHORN"
         },
         {
             "level": 51,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 51,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 53,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 52,
-            "species": "SPECIES_WEEZING"
+            "species": "SPECIES_KOFFING"
         },
         {
             "level": 53,
@@ -31,7 +31,7 @@
         },
         {
             "level": 53,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 51,
@@ -55,12 +55,12 @@
         "SPECIES_SPINDA"
     ],
     "morning": [
-        "SPECIES_FEAROW",
-        "SPECIES_GRAVELER"
+        "SPECIES_SPEAROW",
+        "SPECIES_GEODUDE"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_GRAVELER"
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE"
     ],
     "radar": [
         "SPECIES_TORKOAL",
@@ -99,7 +99,7 @@
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_POLIWHIRL"
+            "species": "SPECIES_POLIWAG"
         },
         {
             "level_max": 45,
@@ -109,17 +109,17 @@
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_POLIWHIRL"
+            "species": "SPECIES_POLIWAG"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_POLIWHIRL"
+            "species": "SPECIES_POLIWAG"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_POLIWHIRL"
+            "species": "SPECIES_POLIWAG"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         }
     ],
     "map_category": {

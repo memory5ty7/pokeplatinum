@@ -3,19 +3,19 @@
     "land_encounters": [
         {
             "level": 48,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 49,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 48,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 50,
-            "species": "SPECIES_FEAROW"
+            "species": "SPECIES_SPEAROW"
         },
         {
             "level": 49,
@@ -23,15 +23,15 @@
         },
         {
             "level": 50,
-            "species": "SPECIES_RATICATE"
+            "species": "SPECIES_RATTATA"
         },
         {
             "level": 50,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 49,
-            "species": "SPECIES_RATICATE"
+            "species": "SPECIES_RATTATA"
         },
         {
             "level": 47,
@@ -55,16 +55,16 @@
         "SPECIES_KRABBY"
     ],
     "morning": [
-        "SPECIES_FEAROW",
-        "SPECIES_FEAROW"
+        "SPECIES_SPEAROW",
+        "SPECIES_SPEAROW"
     ],
     "night": [
-        "SPECIES_BANETTE",
-        "SPECIES_BANETTE"
+        "SPECIES_SHUPPET",
+        "SPECIES_SHUPPET"
     ],
     "radar": [
-        "SPECIES_PRIMEAPE",
-        "SPECIES_PRIMEAPE",
+        "SPECIES_MANKEY",
+        "SPECIES_MANKEY",
         "SPECIES_MANKEY",
         "SPECIES_MANKEY"
     ],
@@ -104,22 +104,22 @@
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         }
     ],
     "old_rod_rate": 25,
@@ -183,12 +183,12 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_SEADRA"
+            "species": "SPECIES_HORSEA"
         },
         {
             "level_max": 50,
@@ -198,12 +198,12 @@
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEADRA"
+            "species": "SPECIES_HORSEA"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEADRA"
+            "species": "SPECIES_HORSEA"
         }
     ],
     "map_category": {

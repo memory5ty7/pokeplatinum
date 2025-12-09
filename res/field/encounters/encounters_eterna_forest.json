@@ -27,11 +27,11 @@
         },
         {
             "level": 12,
-            "species": "SPECIES_SILCOON"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 12,
-            "species": "SPECIES_CASCOON"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 13,
@@ -43,11 +43,11 @@
         },
         {
             "level": 14,
-            "species": "SPECIES_BEAUTIFLY"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 14,
-            "species": "SPECIES_DUSTOX"
+            "species": "SPECIES_WURMPLE"
         }
     ],
     "swarms": [
@@ -88,11 +88,11 @@
     ],
     "firered": [
         "SPECIES_CATERPIE",
-        "SPECIES_METAPOD"
+        "SPECIES_CATERPIE"
     ],
     "leafgreen": [
         "SPECIES_WEEDLE",
-        "SPECIES_KAKUNA"
+        "SPECIES_WEEDLE"
     ],
     "surf_rate": 0,
     "surf_encounters": [

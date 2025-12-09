@@ -3,70 +3,70 @@
     "land_encounters": [
         {
             "level": 48,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 47,
-            "species": "SPECIES_AZUMARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 47,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 49,
-            "species": "SPECIES_AZUMARILL"
+            "species": "SPECIES_AZURILL"
         },
         {
             "level": 48,
-            "species": "SPECIES_DEWGONG"
+            "species": "SPECIES_SEEL"
         },
         {
             "level": 50,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 50,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 49,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 50,
-            "species": "SPECIES_DEWGONG"
+            "species": "SPECIES_SEEL"
         },
         {
             "level": 49,
-            "species": "SPECIES_GABITE"
+            "species": "SPECIES_GIBLE"
         },
         {
             "level": 50,
-            "species": "SPECIES_DEWGONG"
+            "species": "SPECIES_SEEL"
         },
         {
             "level": 49,
-            "species": "SPECIES_GABITE"
+            "species": "SPECIES_GIBLE"
         }
     ],
     "swarms": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_AZUMARILL"
+        "SPECIES_BUIZEL",
+        "SPECIES_AZURILL"
     ],
     "morning": [
-        "SPECIES_GRAVELER",
-        "SPECIES_AZUMARILL"
+        "SPECIES_GEODUDE",
+        "SPECIES_AZURILL"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_AZUMARILL"
+        "SPECIES_ZUBAT",
+        "SPECIES_AZURILL"
     ],
     "radar": [
-        "SPECIES_DEWGONG",
-        "SPECIES_FLOATZEL",
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_BUIZEL",
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -75,36 +75,36 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "sapphire": [
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "emerald": [
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "firered": [
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "leafgreen": [
-        "SPECIES_DEWGONG",
-        "SPECIES_GABITE"
+        "SPECIES_SEEL",
+        "SPECIES_GIBLE"
     ],
     "surf_rate": 15,
     "surf_encounters": [
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level_max": 55,
             "level_min": 35,
-            "species": "SPECIES_DEWGONG"
+            "species": "SPECIES_SEEL"
         },
         {
             "level_max": 55,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         }
     ],
     "map_category": {

@@ -7,7 +7,7 @@
         },
         {
             "level": 28,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 28,
@@ -23,7 +23,7 @@
         },
         {
             "level": 29,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 30,
@@ -35,7 +35,7 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 29,
@@ -43,7 +43,7 @@
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 29,
@@ -52,7 +52,7 @@
     ],
     "swarms": [
         "SPECIES_MEDITITE",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE"
     ],
     "morning": [
         "SPECIES_MEDITITE",
@@ -60,12 +60,12 @@
     ],
     "night": [
         "SPECIES_ZUBAT",
-        "SPECIES_NOCTOWL"
+        "SPECIES_HOOTHOOT"
     ],
     "radar": [
         "SPECIES_CHINGLING",
-        "SPECIES_MACHOKE",
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "rate_form0": 100,
@@ -75,23 +75,23 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "sapphire": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "emerald": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "firered": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "leafgreen": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_BRONZOR"
     ],
     "surf_rate": 0,

@@ -19,11 +19,11 @@
         },
         {
             "level": 19,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 18,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 18,
@@ -31,23 +31,23 @@
         },
         {
             "level": 19,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 20,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 20,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 20,
-            "species": "SPECIES_ROSELIA"
+            "species": "SPECIES_BUDEW"
         },
         {
             "level": 20,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_BIDOOF"
         }
     ],
     "swarms": [
@@ -83,16 +83,16 @@
         "SPECIES_SEVIPER"
     ],
     "emerald": [
-        "SPECIES_ROSELIA",
-        "SPECIES_BIBAREL"
+        "SPECIES_BUDEW",
+        "SPECIES_BIDOOF"
     ],
     "firered": [
-        "SPECIES_ROSELIA",
-        "SPECIES_BIBAREL"
+        "SPECIES_BUDEW",
+        "SPECIES_BIDOOF"
     ],
     "leafgreen": [
-        "SPECIES_ROSELIA",
-        "SPECIES_BIBAREL"
+        "SPECIES_BUDEW",
+        "SPECIES_BIDOOF"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_SEAKING"
+            "species": "SPECIES_GOLDEEN"
         }
     ],
     "map_category": {

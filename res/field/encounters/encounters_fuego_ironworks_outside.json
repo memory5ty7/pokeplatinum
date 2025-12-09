@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 28,
-            "species": "SPECIES_MAGMAR"
+            "species": "SPECIES_MAGBY"
         },
         {
             "level": 29,
@@ -11,19 +11,19 @@
         },
         {
             "level": 29,
-            "species": "SPECIES_MAGMAR"
+            "species": "SPECIES_MAGBY"
         },
         {
             "level": 29,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level": 28,
@@ -35,32 +35,32 @@
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 31,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 31,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         }
     ],
     "swarms": [
-        "SPECIES_MAGMAR",
+        "SPECIES_MAGBY",
         "SPECIES_MAGNEMITE"
     ],
     "morning": [
-        "SPECIES_MAGMAR",
-        "SPECIES_FLOATZEL"
+        "SPECIES_MAGBY",
+        "SPECIES_BUIZEL"
     ],
     "night": [
-        "SPECIES_GASTRODON",
-        "SPECIES_FLOATZEL"
+        "SPECIES_SHELLOS",
+        "SPECIES_BUIZEL"
     ],
     "radar": [
         "SPECIES_ARON",
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "sapphire": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "emerald": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "firered": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "leafgreen": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         }
     ],
     "old_rod_rate": 25,
@@ -183,12 +183,12 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 50,
@@ -198,12 +198,12 @@
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         }
     ],
     "map_category": {

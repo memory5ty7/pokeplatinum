@@ -3,11 +3,11 @@
     "land_encounters": [
         {
             "level": 28,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level": 29,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 28,
@@ -19,35 +19,35 @@
         },
         {
             "level": 29,
-            "species": "SPECIES_MR_MIME"
+            "species": "SPECIES_MIME_JR"
         },
         {
             "level": 30,
-            "species": "SPECIES_MR_MIME"
+            "species": "SPECIES_MIME_JR"
         },
         {
             "level": 30,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 31,
-            "species": "SPECIES_MR_MIME"
+            "species": "SPECIES_MIME_JR"
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         },
         {
             "level": 31,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 30,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         }
     ],
     "swarms": [
@@ -59,14 +59,14 @@
         "SPECIES_CHATOT"
     ],
     "night": [
-        "SPECIES_GASTRODON",
-        "SPECIES_FLOATZEL"
+        "SPECIES_SHELLOS",
+        "SPECIES_BUIZEL"
     ],
     "radar": [
-        "SPECIES_MR_MIME",
-        "SPECIES_MR_MIME",
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_MIME_JR",
+        "SPECIES_MIME_JR",
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "sapphire": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "emerald": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "firered": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "leafgreen": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_GASTRODON"
+        "SPECIES_BUIZEL",
+        "SPECIES_SHELLOS"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GASTRODON"
+            "species": "SPECIES_SHELLOS"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_LUMINEON"
+            "species": "SPECIES_FINNEON"
         }
     ],
     "map_category": {

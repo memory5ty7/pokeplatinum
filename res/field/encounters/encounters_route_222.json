@@ -3,15 +3,15 @@
     "land_encounters": [
         {
             "level": 39,
-            "species": "SPECIES_ELECTABUZZ"
+            "species": "SPECIES_ELEKID"
         },
         {
             "level": 40,
-            "species": "SPECIES_FLOATZEL"
+            "species": "SPECIES_BUIZEL"
         },
         {
             "level": 41,
-            "species": "SPECIES_ELECTABUZZ"
+            "species": "SPECIES_ELEKID"
         },
         {
             "level": 38,
@@ -27,27 +27,27 @@
         },
         {
             "level": 38,
-            "species": "SPECIES_LUXIO"
+            "species": "SPECIES_SHINX"
         },
         {
             "level": 40,
-            "species": "SPECIES_LUXIO"
+            "species": "SPECIES_SHINX"
         },
         {
             "level": 40,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level": 41,
-            "species": "SPECIES_MAGNETON"
+            "species": "SPECIES_MAGNEMITE"
         },
         {
             "level": 40,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         },
         {
             "level": 41,
-            "species": "SPECIES_MAGNETON"
+            "species": "SPECIES_MAGNEMITE"
         }
     ],
     "swarms": [
@@ -55,18 +55,18 @@
         "SPECIES_SKITTY"
     ],
     "morning": [
-        "SPECIES_ELECTABUZZ",
+        "SPECIES_ELEKID",
         "SPECIES_CHATOT"
     ],
     "night": [
-        "SPECIES_FLOATZEL",
-        "SPECIES_FLOATZEL"
+        "SPECIES_BUIZEL",
+        "SPECIES_BUIZEL"
     ],
     "radar": [
-        "SPECIES_FLAAFFY",
-        "SPECIES_FLAAFFY",
-        "SPECIES_FLAAFFY",
-        "SPECIES_FLAAFFY"
+        "SPECIES_MAREEP",
+        "SPECIES_MAREEP",
+        "SPECIES_MAREEP",
+        "SPECIES_MAREEP"
     ],
     "rate_form0": 100,
     "rate_form1": 100,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_PELIPPER",
-        "SPECIES_MAGNETON"
+        "SPECIES_WINGULL",
+        "SPECIES_MAGNEMITE"
     ],
     "sapphire": [
-        "SPECIES_PELIPPER",
-        "SPECIES_MAGNETON"
+        "SPECIES_WINGULL",
+        "SPECIES_MAGNEMITE"
     ],
     "emerald": [
-        "SPECIES_PELIPPER",
-        "SPECIES_MAGNETON"
+        "SPECIES_WINGULL",
+        "SPECIES_MAGNEMITE"
     ],
     "firered": [
-        "SPECIES_PELIPPER",
-        "SPECIES_MAGNETON"
+        "SPECIES_WINGULL",
+        "SPECIES_MAGNEMITE"
     ],
     "leafgreen": [
-        "SPECIES_PELIPPER",
-        "SPECIES_MAGNETON"
+        "SPECIES_WINGULL",
+        "SPECIES_MAGNEMITE"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 50,
             "level_min": 30,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 50,
             "level_min": 30,
-            "species": "SPECIES_TENTACRUEL"
+            "species": "SPECIES_TENTACOOL"
         },
         {
             "level_max": 50,
             "level_min": 30,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_WINGULL"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_OCTILLERY"
+            "species": "SPECIES_REMORAID"
         }
     ],
     "map_category": {

@@ -39,7 +39,7 @@
         },
         {
             "level": 10,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 9,
@@ -47,7 +47,7 @@
         },
         {
             "level": 10,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         }
     ],
     "swarms": [
@@ -66,7 +66,7 @@
         "SPECIES_GEODUDE",
         "SPECIES_ZUBAT",
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -76,23 +76,23 @@
     "unown_table": 0,
     "ruby": [
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "sapphire": [
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "emerald": [
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "firered": [
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "leafgreen": [
         "SPECIES_ZUBAT",
-        "SPECIES_GOLBAT"
+        "SPECIES_ZUBAT"
     ],
     "surf_rate": 10,
     "surf_encounters": [
@@ -109,17 +109,17 @@
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLDUCK"
+            "species": "SPECIES_PSYDUCK"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level_max": 40,
             "level_min": 20,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         }
     ],
     "old_rod_rate": 25,
@@ -183,27 +183,27 @@
         {
             "level_max": 55,
             "level_min": 30,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 40,
             "level_min": 30,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_GYARADOS"
+            "species": "SPECIES_MAGIKARP"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         },
         {
             "level_max": 55,
             "level_min": 40,
-            "species": "SPECIES_WHISCASH"
+            "species": "SPECIES_BARBOACH"
         }
     ],
     "map_category": {

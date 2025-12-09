@@ -7,7 +7,7 @@
         },
         {
             "level": 34,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_GEODUDE"
         },
         {
             "level": 33,
@@ -15,11 +15,11 @@
         },
         {
             "level": 32,
-            "species": "SPECIES_CLEFAIRY"
+            "species": "SPECIES_CLEFFA"
         },
         {
             "level": 35,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_MACHOP"
         },
         {
             "level": 35,
@@ -35,7 +35,7 @@
         },
         {
             "level": 34,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 34,
@@ -43,7 +43,7 @@
         },
         {
             "level": 34,
-            "species": "SPECIES_GOLBAT"
+            "species": "SPECIES_ZUBAT"
         },
         {
             "level": 34,
@@ -52,20 +52,20 @@
     ],
     "swarms": [
         "SPECIES_BRONZOR",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE"
     ],
     "morning": [
         "SPECIES_MEDITITE",
-        "SPECIES_GRAVELER"
+        "SPECIES_GEODUDE"
     ],
     "night": [
-        "SPECIES_GOLBAT",
-        "SPECIES_CLEFAIRY"
+        "SPECIES_ZUBAT",
+        "SPECIES_CLEFFA"
     ],
     "radar": [
-        "SPECIES_MACHOKE",
+        "SPECIES_MACHOP",
         "SPECIES_MEDITITE",
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "rate_form0": 0,
@@ -75,23 +75,23 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "sapphire": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "emerald": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "firered": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "leafgreen": [
-        "SPECIES_GOLBAT",
+        "SPECIES_ZUBAT",
         "SPECIES_CHINGLING"
     ],
     "surf_rate": 0,
