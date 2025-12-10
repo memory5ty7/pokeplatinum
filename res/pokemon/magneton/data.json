@@ -96,7 +96,12 @@
         ]
     },
     "evolutions": [
-        [ "EVO_LEVEL_MAGNETIC_FIELD", "SPECIES_MAGNEZONE" ]
+        [ "EVO_LEVEL_MAGNETIC_FIELD", "SPECIES_MAGNEZONE" ],
+        [
+            "EVO_USE_ITEM",
+            "ITEM_THUNDERSTONE",
+            "SPECIES_MAGNEZONE"
+        ]
     ],
     "offspring": "SPECIES_MAGNEMITE",
     "footprint": {

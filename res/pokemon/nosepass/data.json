@@ -105,7 +105,12 @@
         ]
     },
     "evolutions": [
-        [ "EVO_LEVEL_MAGNETIC_FIELD", "SPECIES_PROBOPASS" ]
+        [ "EVO_LEVEL_MAGNETIC_FIELD", "SPECIES_PROBOPASS" ],
+        [
+            "EVO_USE_ITEM",
+            "ITEM_THUNDERSTONE",
+            "SPECIES_MAGNEZONE"
+        ]
     ],
     "offspring": "SPECIES_NOSEPASS",
     "footprint": {

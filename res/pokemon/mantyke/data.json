@@ -103,6 +103,11 @@
             "EVO_LEVEL_SPECIES_IN_PARTY",
             "SPECIES_REMORAID",
             "SPECIES_MANTINE"
+        ],
+        [
+            "EVO_LEVEL",
+            35,
+            "SPECIES_MANTINE"
         ]
     ],
     "offspring": "SPECIES_MANTYKE",
