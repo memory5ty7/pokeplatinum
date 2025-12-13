@@ -56,6 +56,8 @@
 #include "unk_020559DC.h"
 #include "vars_flags.h"
 
+#include "macros.h"
+
 typedef struct RadarEncounterData {
     int shakeType;
     BOOL preserveChain;
@@ -228,6 +230,50 @@ static void WildEncounters_ReplaceTrophyGardenEncounters(FieldSystem *fieldSyste
     }
 }
 
+
+static void AdjustWildLevels(FieldSystem *fieldSystem, WildEncounters *encounterData)
+{
+    u32 rnd;
+    int i;
+
+    Party *playerParty = SaveData_GetParty(fieldSystem->saveData);
+    u8 partyMaxLevel = Party_GetMaxLevel(playerParty);
+    u8 partyMinLevel = Party_GetMinLevel(playerParty);
+    u8 partyMeanLevel = Party_GetMeanLevel(playerParty);
+    u8 partyMedianLevel = Party_GetMedianLevel(playerParty);
+
+    rnd = LCRNG_GetSeed();
+
+    for (i = 0; i < MAX_GRASS_ENCOUNTERS; i++)
+    {
+        rnd = LCRNG_Next();
+        Desmume_Log("rng : %d\n", rnd);
+        encounterData->grassEncounters.encounters[i].level = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
+    }
+
+    for (i = 0; i < MAX_WATER_ENCOUNTERS; i++)
+    {
+        rnd = LCRNG_Next();     
+        encounterData->surfEncounters.encounters[i].minLevel = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->oldRodEncounters.encounters[i].minLevel = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->goodRodEncounters.encounters[i].minLevel = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->superRodEncounters.encounters[i].minLevel = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
+
+        rnd = LCRNG_Next();     
+        encounterData->surfEncounters.encounters[i].maxLevel = MAX(MIN(partyMeanLevel * 0.90 - 2 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->oldRodEncounters.encounters[i].maxLevel = MAX(MIN(partyMeanLevel * 0.90 - 2 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->goodRodEncounters.encounters[i].maxLevel = MAX(MIN(partyMeanLevel * 0.90 - 2 + rnd % 5, 100), 1);
+        rnd = LCRNG_Next();     
+        encounterData->superRodEncounters.encounters[i].maxLevel = MAX(MIN(partyMeanLevel * 0.90 - 2 + rnd % 5, 100), 1);
+    }
+}
+
+
 BOOL WildEncounters_TryWildEncounter(FieldSystem *fieldSystem)
 {
     FieldBattleDTO *battleParams;
@@ -319,6 +365,8 @@ BOOL WildEncounters_TryWildEncounter(FieldSystem *fieldSystem)
     } else {
         battleParams = FieldBattleDTO_New(HEAP_ID_FIELD2, BATTLE_TYPE_AI_PARTNER);
     }
+
+    AdjustWildLevels(fieldSystem, encounterData);
 
     FieldBattleDTO_Init(battleParams, fieldSystem);
 
