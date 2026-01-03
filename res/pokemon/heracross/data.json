@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 95
     },
-    "types": [ "TYPE_BUG", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 200,
     "ev_yields": {
@@ -26,28 +29,72 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_GUTS" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_SWARM"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_NIGHT_SLASH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_HORN_ATTACK" ],
-            [ 1, "MOVE_ENDURE" ],
-            [ 7, "MOVE_FURY_ATTACK" ],
-            [ 13, "MOVE_AERIAL_ACE" ],
-            [ 19, "MOVE_BRICK_BREAK" ],
-            [ 25, "MOVE_COUNTER" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_CLOSE_COMBAT" ],
-            [ 43, "MOVE_REVERSAL" ],
-            [ 49, "MOVE_FEINT" ],
-            [ 55, "MOVE_MEGAHORN" ]
+            [
+                1,
+                "MOVE_REVERSAL"
+            ],
+            [
+                1,
+                "MOVE_ARM_THRUST"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_HORN_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                16,
+                "MOVE_ENDURE"
+            ],
+            [
+                20,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                26,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                36,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                40,
+                "MOVE_COUNTER"
+            ],
+            [
+                45,
+                "MOVE_CLOSE_COMBAT"
+            ],
+            [
+                50,
+                "MOVE_MEGAHORN"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -106,7 +153,7 @@
             "MOVE_DOUBLE_EDGE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_HERACROSS",
     "footprint": {
         "has": true,

@@ -7,7 +7,10 @@
         "special_attack": 150,
         "special_defense": 90
     },
-    "types": [ "TYPE_DRAGON", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_DRAGON",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 220,
     "ev_yields": {
@@ -26,26 +29,72 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_AIR_LOCK", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_AIR_LOCK",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TWISTER" ],
-            [ 5, "MOVE_SCARY_FACE" ],
-            [ 15, "MOVE_ANCIENT_POWER" ],
-            [ 20, "MOVE_DRAGON_CLAW" ],
-            [ 30, "MOVE_DRAGON_DANCE" ],
-            [ 35, "MOVE_CRUNCH" ],
-            [ 45, "MOVE_FLY" ],
-            [ 50, "MOVE_REST" ],
-            [ 60, "MOVE_EXTREME_SPEED" ],
-            [ 65, "MOVE_HYPER_BEAM" ],
-            [ 75, "MOVE_DRAGON_PULSE" ],
-            [ 80, "MOVE_OUTRAGE" ]
+            [
+                1,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                1,
+                "MOVE_TAILWIND"
+            ],
+            [
+                5,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                10,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                20,
+                "MOVE_CRUNCH"
+            ],
+            [
+                30,
+                "MOVE_REST"
+            ],
+            [
+                40,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                50,
+                "MOVE_THIEF"
+            ],
+            [
+                60,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                70,
+                "MOVE_EXTREME_SPEED"
+            ],
+            [
+                80,
+                "MOVE_DRAGON_CLAW"
+            ],
+            [
+                90,
+                "MOVE_DRAGON_DANCE"
+            ],
+            [
+                100,
+                "MOVE_OUTRAGE"
+            ]
         ],
         "by_tm": [
             "TM02",
@@ -119,7 +168,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_RAYQUAZA",
     "footprint": {
         "has": false,

@@ -7,7 +7,10 @@
         "special_attack": 115,
         "special_defense": 60
     },
-    "types": [ "TYPE_GRASS", "TYPE_DARK" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_DARK"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 177,
     "ev_yields": {
@@ -26,33 +29,96 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_SAND_VEIL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_WATER_ABSORB",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_REVENGE" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 5, "MOVE_ABSORB" ],
-            [ 9, "MOVE_GROWTH" ],
-            [ 13, "MOVE_LEECH_SEED" ],
-            [ 17, "MOVE_SAND_ATTACK" ],
-            [ 21, "MOVE_PIN_MISSILE" ],
-            [ 25, "MOVE_INGRAIN" ],
-            [ 29, "MOVE_FAINT_ATTACK" ],
-            [ 35, "MOVE_SPIKES" ],
-            [ 41, "MOVE_SUCKER_PUNCH" ],
-            [ 47, "MOVE_PAYBACK" ],
-            [ 53, "MOVE_NEEDLE_ARM" ],
-            [ 59, "MOVE_COTTON_SPORE" ],
-            [ 65, "MOVE_SANDSTORM" ],
-            [ 71, "MOVE_DESTINY_BOND" ]
+            [
+                1,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_POISON_STING"
+            ],
+            [
+                8,
+                "MOVE_GROWTH"
+            ],
+            [
+                10,
+                "MOVE_NEEDLE_ARM"
+            ],
+            [
+                12,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                16,
+                "MOVE_INGRAIN"
+            ],
+            [
+                18,
+                "MOVE_LEECH_SEED"
+            ],
+            [
+                20,
+                "MOVE_PIN_MISSILE"
+            ],
+            [
+                22,
+                "MOVE_PAYBACK"
+            ],
+            [
+                24,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                28,
+                "MOVE_SPIKES"
+            ],
+            [
+                30,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                33,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                36,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                40,
+                "MOVE_DESTINY_BOND"
+            ],
+            [
+                44,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                50,
+                "MOVE_NASTY_PLOT"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -106,7 +172,7 @@
             "MOVE_SUCKER_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_CACNEA",
     "footprint": {
         "has": true,

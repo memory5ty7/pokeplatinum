@@ -7,7 +7,10 @@
         "special_attack": 90,
         "special_defense": 50
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 161,
     "ev_yields": {
@@ -26,25 +29,92 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SWARM",
+        "ABILITY_RIVALRY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 10, "MOVE_ABSORB" ],
-            [ 13, "MOVE_GUST" ],
-            [ 17, "MOVE_STUN_SPORE" ],
-            [ 20, "MOVE_MORNING_SUN" ],
-            [ 24, "MOVE_MEGA_DRAIN" ],
-            [ 27, "MOVE_WHIRLWIND" ],
-            [ 31, "MOVE_ATTRACT" ],
-            [ 34, "MOVE_SILVER_WIND" ],
-            [ 38, "MOVE_GIGA_DRAIN" ],
-            [ 41, "MOVE_BUG_BUZZ" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_STRING_SHOT"
+            ],
+            [
+                5,
+                "MOVE_POISON_STING"
+            ],
+            [
+                7,
+                "MOVE_HARDEN"
+            ],
+            [
+                10,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                12,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                14,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                16,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                18,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                20,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                24,
+                "MOVE_MORNING_SUN"
+            ],
+            [
+                27,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                30,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                34,
+                "MOVE_TAILWIND"
+            ],
+            [
+                36,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                40,
+                "MOVE_ROOST"
+            ],
+            [
+                44,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                50,
+                "MOVE_U_TURN"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -89,7 +159,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_WURMPLE",
     "footprint": {
         "has": true,

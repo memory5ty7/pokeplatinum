@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_DARK", "TYPE_DARK" ],
+    "types": [
+        "TYPE_DARK",
+        "TYPE_DARK"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 55,
     "ev_yields": {
@@ -26,28 +29,88 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_QUICK_FEET" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_QUICK_FEET",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_HOWL" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 13, "MOVE_BITE" ],
-            [ 17, "MOVE_ODOR_SLEUTH" ],
-            [ 21, "MOVE_ROAR" ],
-            [ 25, "MOVE_SWAGGER" ],
-            [ 29, "MOVE_ASSURANCE" ],
-            [ 33, "MOVE_SCARY_FACE" ],
-            [ 37, "MOVE_TAUNT" ],
-            [ 41, "MOVE_EMBARGO" ],
-            [ 45, "MOVE_TAKE_DOWN" ],
-            [ 49, "MOVE_SUCKER_PUNCH" ],
-            [ 53, "MOVE_CRUNCH" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_BITE"
+            ],
+            [
+                8,
+                "MOVE_ODOR_SLEUTH"
+            ],
+            [
+                10,
+                "MOVE_ROAR"
+            ],
+            [
+                14,
+                "MOVE_SWAGGER"
+            ],
+            [
+                16,
+                "MOVE_TAUNT"
+            ],
+            [
+                20,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                24,
+                "MOVE_CRUNCH"
+            ],
+            [
+                26,
+                "MOVE_TORMENT"
+            ],
+            [
+                30,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                30,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                30,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                34,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                44,
+                "MOVE_ASSURANCE"
+            ],
+            [
+                50,
+                "MOVE_DARK_PULSE"
+            ]
         ],
         "by_tm": [
             "TM05",

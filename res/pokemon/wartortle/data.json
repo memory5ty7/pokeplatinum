@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 80
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 143,
     "ev_yields": {
@@ -26,30 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_TORRENT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 4, "MOVE_TAIL_WHIP" ],
-            [ 7, "MOVE_BUBBLE" ],
-            [ 10, "MOVE_WITHDRAW" ],
-            [ 13, "MOVE_WATER_GUN" ],
-            [ 16, "MOVE_BITE" ],
-            [ 20, "MOVE_RAPID_SPIN" ],
-            [ 24, "MOVE_PROTECT" ],
-            [ 28, "MOVE_WATER_PULSE" ],
-            [ 32, "MOVE_AQUA_TAIL" ],
-            [ 36, "MOVE_SKULL_BASH" ],
-            [ 40, "MOVE_IRON_DEFENSE" ],
-            [ 44, "MOVE_RAIN_DANCE" ],
-            [ 48, "MOVE_HYDRO_PUMP" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                4,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                7,
+                "MOVE_BITE"
+            ],
+            [
+                12,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                14,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                16,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                20,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                25,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                29,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                32,
+                "MOVE_CAMOUFLAGE"
+            ],
+            [
+                34,
+                "MOVE_PROTECT"
+            ],
+            [
+                36,
+                "MOVE_FLASH_CANNON"
+            ],
+            [
+                40,
+                "MOVE_SKULL_BASH"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM01",

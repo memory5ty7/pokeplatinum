@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 79
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 194,
     "ev_yields": {
@@ -26,27 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RIVALRY", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_INTIMIDATE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_CHARGE" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 18, "MOVE_BITE" ],
-            [ 23, "MOVE_ROAR" ],
-            [ 28, "MOVE_SWAGGER" ],
-            [ 35, "MOVE_THUNDER_FANG" ],
-            [ 42, "MOVE_CRUNCH" ],
-            [ 49, "MOVE_SCARY_FACE" ],
-            [ 56, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_CHARGE"
+            ],
+            [
+                10,
+                "MOVE_SPARK"
+            ],
+            [
+                12,
+                "MOVE_BITE"
+            ],
+            [
+                16,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                20,
+                "MOVE_ROAR"
+            ],
+            [
+                24,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                28,
+                "MOVE_SWAGGER"
+            ],
+            [
+                30,
+                "MOVE_KINESIS"
+            ],
+            [
+                36,
+                "MOVE_CRUNCH"
+            ],
+            [
+                38,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                42,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                46,
+                "MOVE_TWINEEDLE"
+            ],
+            [
+                50,
+                "MOVE_PAY_DAY"
+            ],
+            [
+                55,
+                "MOVE_SUPERPOWER"
+            ]
         ],
         "by_tm": [
             "TM05",
@@ -90,7 +154,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SHINX",
     "footprint": {
         "has": true,

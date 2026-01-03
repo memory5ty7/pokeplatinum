@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 60
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 85,
     "ev_yields": {
@@ -26,27 +29,88 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_OWN_TEMPO", "ABILITY_TANGLED_FEET" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_OWN_TEMPO",
+        "ABILITY_TANGLED_FEET"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": true,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_UPROAR" ],
-            [ 10, "MOVE_COPYCAT" ],
-            [ 14, "MOVE_FAINT_ATTACK" ],
-            [ 19, "MOVE_PSYBEAM" ],
-            [ 23, "MOVE_HYPNOSIS" ],
-            [ 28, "MOVE_DIZZY_PUNCH" ],
-            [ 32, "MOVE_SUCKER_PUNCH" ],
-            [ 37, "MOVE_TEETER_DANCE" ],
-            [ 41, "MOVE_PSYCH_UP" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ],
-            [ 50, "MOVE_FLAIL" ],
-            [ 55, "MOVE_THRASH" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_COPYCAT"
+            ],
+            [
+                5,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                14,
+                "MOVE_DIZZY_PUNCH"
+            ],
+            [
+                16,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                18,
+                "MOVE_RAPID_SPIN"
+            ],
+            [
+                20,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                23,
+                "MOVE_ENCORE"
+            ],
+            [
+                26,
+                "MOVE_DISABLE"
+            ],
+            [
+                30,
+                "MOVE_PSYCHO_CUT"
+            ],
+            [
+                32,
+                "MOVE_TEETER_DANCE"
+            ],
+            [
+                34,
+                "MOVE_PSYCHO_SHIFT"
+            ],
+            [
+                36,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                38,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                40,
+                "MOVE_WISH"
+            ],
+            [
+                44,
+                "MOVE_BATON_PASS"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -120,7 +184,7 @@
             "MOVE_PSYCHO_CUT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SPINDA",
     "footprint": {
         "has": true,

@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 124,
     "ev_yields": {
@@ -26,27 +29,92 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_PICKUP", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_ROCK_HEAD",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 6, "MOVE_FLAIL" ],
-            [ 10, "MOVE_TAKE_DOWN" ],
-            [ 15, "MOVE_ROLLOUT" ],
-            [ 19, "MOVE_NATURAL_GIFT" ],
-            [ 24, "MOVE_SLAM" ],
-            [ 28, "MOVE_ENDURE" ],
-            [ 33, "MOVE_CHARM" ],
-            [ 37, "MOVE_LAST_RESORT" ],
-            [ 42, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_ODOR_SLEUTH"
+            ],
+            [
+                3,
+                "MOVE_DEFENSE_CURL"
+            ],
+            [
+                5,
+                "MOVE_FLAIL"
+            ],
+            [
+                8,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                10,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                14,
+                "MOVE_NATURAL_GIFT"
+            ],
+            [
+                16,
+                "MOVE_COVET"
+            ],
+            [
+                20,
+                "MOVE_SLAM"
+            ],
+            [
+                23,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                25,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                28,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_GRUDGE"
+            ],
+            [
+                36,
+                "MOVE_ENDURE"
+            ],
+            [
+                40,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                45,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_HEAD_SMASH"
+            ],
+            [
+                60,
+                "MOVE_FISSURE"
+            ]
         ],
         "by_tm": [
             "TM05",

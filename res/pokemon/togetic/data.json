@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 105
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 114,
     "ev_yields": {
@@ -26,30 +29,88 @@
     "hatch_cycles": 10,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HUSTLE", "ABILITY_SERENE_GRACE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_SERENE_GRACE",
+        "ABILITY_SUPER_LUCK"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MAGICAL_LEAF" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 1, "MOVE_METRONOME" ],
-            [ 1, "MOVE_SWEET_KISS" ],
-            [ 6, "MOVE_METRONOME" ],
-            [ 10, "MOVE_SWEET_KISS" ],
-            [ 15, "MOVE_YAWN" ],
-            [ 19, "MOVE_ENCORE" ],
-            [ 24, "MOVE_FOLLOW_ME" ],
-            [ 28, "MOVE_WISH" ],
-            [ 33, "MOVE_ANCIENT_POWER" ],
-            [ 37, "MOVE_SAFEGUARD" ],
-            [ 42, "MOVE_BATON_PASS" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ],
-            [ 51, "MOVE_LAST_RESORT" ]
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_CHARM"
+            ],
+            [
+                6,
+                "MOVE_ATTRACT"
+            ],
+            [
+                10,
+                "MOVE_YAWN"
+            ],
+            [
+                14,
+                "MOVE_SWIFT"
+            ],
+            [
+                16,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                18,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                24,
+                "MOVE_ENCORE"
+            ],
+            [
+                27,
+                "MOVE_FOLLOW_ME"
+            ],
+            [
+                30,
+                "MOVE_SWAGGER"
+            ],
+            [
+                34,
+                "MOVE_ROOST"
+            ],
+            [
+                37,
+                "MOVE_WISH"
+            ],
+            [
+                40,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                45,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                50,
+                "MOVE_SOFTBOILED"
+            ],
+            [
+                56,
+                "MOVE_NASTY_PLOT"
+            ]
         ],
         "by_tm": [
             "TM01",

@@ -7,7 +7,10 @@
         "special_attack": 76,
         "special_defense": 71
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 158,
     "ev_yields": {
@@ -26,32 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_ANTICIPATION" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_HYDRATION",
+        "ABILITY_OBLIVIOUS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ZEN_HEADBUTT" ],
-            [ 1, "MOVE_TICKLE" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 6, "MOVE_MUD_SPORT" ],
-            [ 6, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_MUD_BOMB" ],
-            [ 18, "MOVE_AMNESIA" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_MAGNITUDE" ],
-            [ 33, "MOVE_REST" ],
-            [ 33, "MOVE_SNORE" ],
-            [ 39, "MOVE_AQUA_TAIL" ],
-            [ 45, "MOVE_EARTHQUAKE" ],
-            [ 51, "MOVE_FUTURE_SIGHT" ],
-            [ 57, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_DRAGON_DANCE"
+            ],
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                5,
+                "MOVE_MUD_BOMB"
+            ],
+            [
+                10,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                14,
+                "MOVE_SPARK"
+            ],
+            [
+                16,
+                "MOVE_MAGNITUDE"
+            ],
+            [
+                20,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                24,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                27,
+                "MOVE_REST"
+            ],
+            [
+                30,
+                "MOVE_AQUA_TAIL"
+            ],
+            [
+                33,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                36,
+                "MOVE_GRUDGE"
+            ],
+            [
+                39,
+                "MOVE_DIVE"
+            ],
+            [
+                40,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                44,
+                "MOVE_FUTURE_SIGHT"
+            ],
+            [
+                50,
+                "MOVE_FISSURE"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -98,7 +157,7 @@
             "MOVE_BOUNCE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_BARBOACH",
     "footprint": {
         "has": false,

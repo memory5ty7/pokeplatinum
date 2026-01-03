@@ -7,7 +7,10 @@
         "special_attack": 10,
         "special_defense": 45
     },
-    "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,27 +29,72 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STURDY", "ABILITY_ROCK_HEAD" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_STURDY",
+        "ABILITY_ROCK_HEAD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FAKE_TEARS" ],
-            [ 1, "MOVE_COPYCAT" ],
-            [ 6, "MOVE_FLAIL" ],
-            [ 9, "MOVE_LOW_KICK" ],
-            [ 14, "MOVE_ROCK_THROW" ],
-            [ 17, "MOVE_MIMIC" ],
-            [ 22, "MOVE_BLOCK" ],
-            [ 25, "MOVE_FAINT_ATTACK" ],
-            [ 30, "MOVE_ROCK_TOMB" ],
-            [ 33, "MOVE_ROCK_SLIDE" ],
-            [ 38, "MOVE_SLAM" ],
-            [ 41, "MOVE_SUCKER_PUNCH" ],
-            [ 46, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_COPYCAT"
+            ],
+            [
+                1,
+                "MOVE_FAKE_TEARS"
+            ],
+            [
+                5,
+                "MOVE_FLAIL"
+            ],
+            [
+                8,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                12,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                16,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                20,
+                "MOVE_BLOCK"
+            ],
+            [
+                24,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                28,
+                "MOVE_COUNTER"
+            ],
+            [
+                30,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                40,
+                "MOVE_ROCK_POLISH"
+            ],
+            [
+                50,
+                "MOVE_HEAD_SMASH"
+            ]
         ],
         "by_tm": [
             "TM04",

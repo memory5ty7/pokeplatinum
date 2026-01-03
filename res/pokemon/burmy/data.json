@@ -7,7 +7,10 @@
         "special_attack": 29,
         "special_defense": 45
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 61,
     "ev_yields": {
@@ -26,8 +29,14 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHED_SKIN",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
@@ -38,13 +47,27 @@
     },
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PROTECT" ],
-            [ 10, "MOVE_TACKLE" ],
-            [ 15, "MOVE_BUG_BITE" ],
-            [ 20, "MOVE_HIDDEN_POWER" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_HIDDEN_POWER"
+            ],
+            [
+                5,
+                "MOVE_PROTECT"
+            ],
+            [
+                10,
+                "MOVE_BUG_BITE"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_SNORE" ]
+        "by_tm": [],
+        "by_tutor": [
+            "MOVE_SNORE"
+        ]
     },
     "evolutions": [
         [

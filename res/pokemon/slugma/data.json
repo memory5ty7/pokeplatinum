@@ -7,7 +7,10 @@
         "special_attack": 70,
         "special_defense": 40
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 78,
     "ev_yields": {
@@ -26,27 +29,76 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_MAGMA_ARMOR", "ABILITY_FLAME_BODY" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_FLAME_BODY",
+        "ABILITY_MAGMA_ARMOR"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_SMOG" ],
-            [ 8, "MOVE_EMBER" ],
-            [ 11, "MOVE_ROCK_THROW" ],
-            [ 16, "MOVE_HARDEN" ],
-            [ 23, "MOVE_RECOVER" ],
-            [ 26, "MOVE_ANCIENT_POWER" ],
-            [ 31, "MOVE_AMNESIA" ],
-            [ 38, "MOVE_LAVA_PLUME" ],
-            [ 41, "MOVE_ROCK_SLIDE" ],
-            [ 46, "MOVE_BODY_SLAM" ],
-            [ 53, "MOVE_FLAMETHROWER" ],
-            [ 56, "MOVE_EARTH_POWER" ]
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                5,
+                "MOVE_YAWN"
+            ],
+            [
+                10,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                14,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                16,
+                "MOVE_FIRE_SPIN"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                24,
+                "MOVE_AMNESIA"
+            ],
+            [
+                26,
+                "MOVE_RECOVER"
+            ],
+            [
+                30,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                36,
+                "MOVE_MINIMIZE"
+            ],
+            [
+                40,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                45,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                50,
+                "MOVE_OVERHEAT"
+            ]
         ],
         "by_tm": [
             "TM06",

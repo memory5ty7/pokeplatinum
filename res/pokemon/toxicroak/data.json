@@ -7,7 +7,10 @@
         "special_attack": 86,
         "special_defense": 65
     },
-    "types": [ "TYPE_POISON", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 181,
     "ev_yields": {
@@ -26,30 +29,96 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_ANTICIPATION", "ABILITY_DRY_SKIN" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_DRY_SKIN",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 3, "MOVE_MUD_SLAP" ],
-            [ 8, "MOVE_POISON_STING" ],
-            [ 10, "MOVE_TAUNT" ],
-            [ 15, "MOVE_PURSUIT" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 24, "MOVE_SWAGGER" ],
-            [ 29, "MOVE_MUD_BOMB" ],
-            [ 31, "MOVE_SUCKER_PUNCH" ],
-            [ 36, "MOVE_NASTY_PLOT" ],
-            [ 41, "MOVE_POISON_JAB" ],
-            [ 49, "MOVE_SLUDGE_BOMB" ],
-            [ 54, "MOVE_FLATTER" ]
+            [
+                1,
+                "MOVE_BULLET_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_NASTY_PLOT"
+            ],
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_TAUNT"
+            ],
+            [
+                10,
+                "MOVE_PURSUIT"
+            ],
+            [
+                14,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                16,
+                "MOVE_VACUUM_WAVE"
+            ],
+            [
+                20,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                24,
+                "MOVE_SWAGGER"
+            ],
+            [
+                28,
+                "MOVE_REVENGE"
+            ],
+            [
+                30,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                33,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                37,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                40,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                44,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                46,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                50,
+                "MOVE_GUNK_SHOT"
+            ],
+            [
+                55,
+                "MOVE_CLOSE_COMBAT"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -115,7 +184,7 @@
             "MOVE_SUCKER_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_CROAGUNK",
     "footprint": {
         "has": true,

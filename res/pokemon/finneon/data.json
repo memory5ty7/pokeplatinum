@@ -7,7 +7,10 @@
         "special_attack": 49,
         "special_defense": 61
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 90,
     "ev_yields": {
@@ -26,27 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_STORM_DRAIN" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_STORM_DRAIN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 6, "MOVE_WATER_GUN" ],
-            [ 10, "MOVE_ATTRACT" ],
-            [ 13, "MOVE_RAIN_DANCE" ],
-            [ 17, "MOVE_GUST" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 26, "MOVE_CAPTIVATE" ],
-            [ 29, "MOVE_SAFEGUARD" ],
-            [ 33, "MOVE_AQUA_RING" ],
-            [ 38, "MOVE_WHIRLPOOL" ],
-            [ 42, "MOVE_U_TURN" ],
-            [ 45, "MOVE_BOUNCE" ],
-            [ 49, "MOVE_SILVER_WIND" ]
+            [
+                1,
+                "MOVE_POUND"
+            ],
+            [
+                6,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                8,
+                "MOVE_GUST"
+            ],
+            [
+                10,
+                "MOVE_ATTRACT"
+            ],
+            [
+                14,
+                "MOVE_CHARM"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                18,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                20,
+                "MOVE_CAPTIVATE"
+            ],
+            [
+                24,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                26,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                28,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                30,
+                "MOVE_U_TURN"
+            ],
+            [
+                34,
+                "MOVE_BOUNCE"
+            ],
+            [
+                38,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                40,
+                "MOVE_BARRAGE"
+            ]
         ],
         "by_tm": [
             "TM03",

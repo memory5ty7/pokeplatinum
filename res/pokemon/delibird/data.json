@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 45
     },
-    "types": [ "TYPE_ICE", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 183,
     "ev_yields": {
@@ -26,15 +29,76 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_VITAL_SPIRIT", "ABILITY_HUSTLE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_VITAL_SPIRIT",
+        "ABILITY_INSOMNIA"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PRESENT" ]
+            [
+                1,
+                "MOVE_PRESENT"
+            ],
+            [
+                1,
+                "MOVE_ICE_BALL"
+            ],
+            [
+                5,
+                "MOVE_PECK"
+            ],
+            [
+                10,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                14,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                16,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                18,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                20,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                24,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                30,
+                "MOVE_FEATHER_DANCE"
+            ],
+            [
+                33,
+                "MOVE_ROLLING_KICK"
+            ],
+            [
+                36,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                40,
+                "MOVE_BLIZZARD"
+            ],
+            [
+                50,
+                "MOVE_SHEER_COLD"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -90,7 +154,7 @@
             "MOVE_ICE_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_DELIBIRD",
     "footprint": {
         "has": true,

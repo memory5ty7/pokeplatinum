@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 90
     },
-    "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_STEEL",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,30 +29,88 @@
     "hatch_cycles": 40,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_CLEAR_BODY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MAGNET_RISE" ],
-            [ 1, "MOVE_TAKE_DOWN" ],
-            [ 1, "MOVE_METAL_CLAW" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 20, "MOVE_METAL_CLAW" ],
-            [ 20, "MOVE_CONFUSION" ],
-            [ 24, "MOVE_SCARY_FACE" ],
-            [ 28, "MOVE_PURSUIT" ],
-            [ 32, "MOVE_BULLET_PUNCH" ],
-            [ 36, "MOVE_PSYCHIC" ],
-            [ 40, "MOVE_IRON_DEFENSE" ],
-            [ 44, "MOVE_AGILITY" ],
-            [ 45, "MOVE_HAMMER_ARM" ],
-            [ 53, "MOVE_METEOR_MASH" ],
-            [ 62, "MOVE_ZEN_HEADBUTT" ],
-            [ 71, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_MAGNET_RISE"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                20,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                24,
+                "MOVE_BULLET_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_PSYCHO_CUT"
+            ],
+            [
+                35,
+                "MOVE_FLASH_CANNON"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                44,
+                "MOVE_IRON_HEAD"
+            ],
+            [
+                48,
+                "MOVE_IRON_DEFENSE"
+            ],
+            [
+                50,
+                "MOVE_HAMMER_ARM"
+            ],
+            [
+                55,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                60,
+                "MOVE_DYNAMIC_PUNCH"
+            ],
+            [
+                65,
+                "MOVE_HYPER_BEAM"
+            ],
+            [
+                70,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                75,
+                "MOVE_EXPLOSION"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -110,7 +171,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_BELDUM",
     "footprint": {
         "has": true,

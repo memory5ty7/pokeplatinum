@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 75
     },
-    "types": [ "TYPE_FIRE", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 175,
     "ev_yields": {
@@ -26,29 +29,96 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_MAGMA_ARMOR", "ABILITY_SOLID_ROCK" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SOLID_ROCK",
+        "ABILITY_MAGMA_ARMOR"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_MAGNITUDE" ],
-            [ 5, "MOVE_EMBER" ],
-            [ 11, "MOVE_MAGNITUDE" ],
-            [ 15, "MOVE_FOCUS_ENERGY" ],
-            [ 21, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_LAVA_PLUME" ],
-            [ 33, "MOVE_ROCK_SLIDE" ],
-            [ 39, "MOVE_EARTH_POWER" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_ERUPTION" ],
-            [ 67, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_EXPLOSION"
+            ],
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                10,
+                "MOVE_COVET"
+            ],
+            [
+                14,
+                "MOVE_FIRE_SPIN"
+            ],
+            [
+                16,
+                "MOVE_YAWN"
+            ],
+            [
+                18,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                21,
+                "MOVE_AMNESIA"
+            ],
+            [
+                24,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                28,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_MINIMIZE"
+            ],
+            [
+                32,
+                "MOVE_CURSE"
+            ],
+            [
+                36,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                40,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                43,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                48,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_OVERHEAT"
+            ],
+            [
+                55,
+                "MOVE_ERUPTION"
+            ]
         ],
         "by_tm": [
             "TM05",
@@ -98,7 +168,7 @@
             "MOVE_HEAT_WAVE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_NUMEL",
     "footprint": {
         "has": true,

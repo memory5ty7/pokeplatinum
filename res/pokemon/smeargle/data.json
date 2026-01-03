@@ -7,7 +7,10 @@
         "special_attack": 20,
         "special_defense": 45
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 106,
     "ev_yields": {
@@ -26,29 +29,69 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_OWN_TEMPO", "ABILITY_TECHNICIAN" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_OWN_TEMPO",
+        "ABILITY_TECHNICIAN"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SKETCH" ],
-            [ 11, "MOVE_SKETCH" ],
-            [ 21, "MOVE_SKETCH" ],
-            [ 31, "MOVE_SKETCH" ],
-            [ 41, "MOVE_SKETCH" ],
-            [ 51, "MOVE_SKETCH" ],
-            [ 61, "MOVE_SKETCH" ],
-            [ 71, "MOVE_SKETCH" ],
-            [ 81, "MOVE_SKETCH" ],
-            [ 91, "MOVE_SKETCH" ]
+            [
+                1,
+                "MOVE_SKETCH"
+            ],
+            [
+                10,
+                "MOVE_SKETCH"
+            ],
+            [
+                20,
+                "MOVE_SKETCH"
+            ],
+            [
+                30,
+                "MOVE_SKETCH"
+            ],
+            [
+                40,
+                "MOVE_SKETCH"
+            ],
+            [
+                50,
+                "MOVE_SKETCH"
+            ],
+            [
+                60,
+                "MOVE_SKETCH"
+            ],
+            [
+                70,
+                "MOVE_SKETCH"
+            ],
+            [
+                80,
+                "MOVE_SKETCH"
+            ],
+            [
+                90,
+                "MOVE_SKETCH"
+            ],
+            [
+                100,
+                "MOVE_SKETCH"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [  ]
+        "by_tm": [],
+        "by_tutor": []
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SMEARGLE",
     "footprint": {
         "has": true,

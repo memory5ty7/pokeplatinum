@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 212,
     "ev_yields": {
@@ -26,23 +29,36 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SEED_BOMB" ],
-            [ 1, "MOVE_BARRAGE" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 17, "MOVE_STOMP" ],
-            [ 27, "MOVE_EGG_BOMB" ],
-            [ 37, "MOVE_WOOD_HAMMER" ],
-            [ 47, "MOVE_LEAF_STORM" ]
+            [
+                1,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                1,
+                "MOVE_EGG_BOMB"
+            ],
+            [
+                1,
+                "MOVE_REFLECT"
+            ],
+            [
+                1,
+                "MOVE_WOOD_HAMMER"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -92,7 +108,7 @@
             "MOVE_SEED_BOMB"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_EXEGGCUTE",
     "footprint": {
         "has": true,

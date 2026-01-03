@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 65
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 110,
     "ev_yields": {
@@ -26,27 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_2",
+        "EGG_GROUP_WATER_2"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_HYDRATION"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_CHARM" ],
-            [ 7, "MOVE_WATER_GUN" ],
-            [ 9, "MOVE_AGILITY" ],
-            [ 14, "MOVE_TAKE_DOWN" ],
-            [ 17, "MOVE_LUCKY_CHANT" ],
-            [ 22, "MOVE_ATTRACT" ],
-            [ 27, "MOVE_SWEET_KISS" ],
-            [ 31, "MOVE_WATER_PULSE" ],
-            [ 37, "MOVE_AQUA_RING" ],
-            [ 40, "MOVE_CAPTIVATE" ],
-            [ 46, "MOVE_FLAIL" ],
-            [ 51, "MOVE_SAFEGUARD" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_AGILITY"
+            ],
+            [
+                5,
+                "MOVE_CHARM"
+            ],
+            [
+                8,
+                "MOVE_LUCKY_CHANT"
+            ],
+            [
+                10,
+                "MOVE_ATTRACT"
+            ],
+            [
+                13,
+                "MOVE_FLAIL"
+            ],
+            [
+                16,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                18,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                20,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                22,
+                "MOVE_ENDURE"
+            ],
+            [
+                24,
+                "MOVE_PROTECT"
+            ],
+            [
+                26,
+                "MOVE_CAPTIVATE"
+            ],
+            [
+                28,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                30,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                36,
+                "MOVE_BARRAGE"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -92,7 +148,7 @@
             "MOVE_AQUA_RING"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_LUVDISC",
     "footprint": {
         "has": false,

@@ -7,7 +7,10 @@
         "special_attack": 20,
         "special_defense": 20
     },
-    "types": [ "TYPE_BUG", "TYPE_POISON" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 52,
     "ev_yields": {
@@ -26,20 +29,35 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHIELD_DUST", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SHIELD_DUST",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_STRING_SHOT" ],
-            [ 15, "MOVE_BUG_BITE" ]
+            [
+                1,
+                "MOVE_POISON_STING"
+            ],
+            [
+                1,
+                "MOVE_STRING_SHOT"
+            ],
+            [
+                10,
+                "MOVE_BUG_BITE"
+            ]
         ],
-        "by_tm": [  ],
-        "by_tutor": [  ]
+        "by_tm": [],
+        "by_tutor": []
     },
     "evolutions": [
         [

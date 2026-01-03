@@ -7,7 +7,10 @@
         "special_attack": 110,
         "special_defense": 154
     },
-    "types": [ "TYPE_FIRE", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 220,
     "ev_yields": {
@@ -26,29 +29,72 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_PRESSURE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WHIRLWIND" ],
-            [ 9, "MOVE_SAFEGUARD" ],
-            [ 15, "MOVE_GUST" ],
-            [ 23, "MOVE_RECOVER" ],
-            [ 29, "MOVE_FIRE_BLAST" ],
-            [ 37, "MOVE_SUNNY_DAY" ],
-            [ 43, "MOVE_SWIFT" ],
-            [ 51, "MOVE_NATURAL_GIFT" ],
-            [ 57, "MOVE_ANCIENT_POWER" ],
-            [ 65, "MOVE_EXTRASENSORY" ],
-            [ 71, "MOVE_PUNISHMENT" ],
-            [ 79, "MOVE_FUTURE_SIGHT" ],
-            [ 85, "MOVE_SACRED_FIRE" ],
-            [ 93, "MOVE_CALM_MIND" ],
-            [ 99, "MOVE_SKY_ATTACK" ]
+            [
+                1,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                1,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                5,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                10,
+                "MOVE_TAILWIND"
+            ],
+            [
+                20,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                30,
+                "MOVE_WEATHER_BALL"
+            ],
+            [
+                40,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                50,
+                "MOVE_ROOST"
+            ],
+            [
+                60,
+                "MOVE_FIRE_BLAST"
+            ],
+            [
+                70,
+                "MOVE_PUNISHMENT"
+            ],
+            [
+                80,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                90,
+                "MOVE_SACRED_FIRE"
+            ],
+            [
+                100,
+                "MOVE_BRAVE_BIRD"
+            ]
         ],
         "by_tm": [
             "TM04",
@@ -116,7 +162,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_HO_OH",
     "footprint": {
         "has": true,

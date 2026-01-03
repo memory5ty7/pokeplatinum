@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 25
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 97,
     "ev_yields": {
@@ -26,27 +29,72 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_SHELL_ARMOR", "ABILITY_SKILL_LINK" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_SKILL_LINK",
+        "ABILITY_SHELL_ARMOR"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_WITHDRAW" ],
-            [ 8, "MOVE_SUPERSONIC" ],
-            [ 13, "MOVE_ICICLE_SPEAR" ],
-            [ 16, "MOVE_PROTECT" ],
-            [ 20, "MOVE_LEER" ],
-            [ 25, "MOVE_CLAMP" ],
-            [ 28, "MOVE_ICE_SHARD" ],
-            [ 32, "MOVE_AURORA_BEAM" ],
-            [ 37, "MOVE_WHIRLPOOL" ],
-            [ 40, "MOVE_IRON_DEFENSE" ],
-            [ 44, "MOVE_BRINE" ],
-            [ 49, "MOVE_ICE_BEAM" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_WITHDRAW"
+            ],
+            [
+                5,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                8,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                10,
+                "MOVE_CLAMP"
+            ],
+            [
+                16,
+                "MOVE_ICICLE_SPEAR"
+            ],
+            [
+                20,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                24,
+                "MOVE_PROTECT"
+            ],
+            [
+                30,
+                "MOVE_FLING"
+            ],
+            [
+                33,
+                "MOVE_WHIRLPOOL"
+            ],
+            [
+                36,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                40,
+                "MOVE_IRON_DEFENSE"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM03",

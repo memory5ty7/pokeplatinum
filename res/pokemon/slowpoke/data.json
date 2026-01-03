@@ -7,7 +7,10 @@
         "special_attack": 40,
         "special_defense": 40
     },
-    "types": [ "TYPE_WATER", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 99,
     "ev_yields": {
@@ -26,29 +29,68 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_OWN_TEMPO" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_OWN_TEMPO",
+        "ABILITY_OBLIVIOUS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CURSE" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_CONFUSION" ],
-            [ 20, "MOVE_DISABLE" ],
-            [ 25, "MOVE_HEADBUTT" ],
-            [ 29, "MOVE_WATER_PULSE" ],
-            [ 34, "MOVE_ZEN_HEADBUTT" ],
-            [ 39, "MOVE_SLACK_OFF" ],
-            [ 43, "MOVE_AMNESIA" ],
-            [ 48, "MOVE_PSYCHIC" ],
-            [ 53, "MOVE_RAIN_DANCE" ],
-            [ 57, "MOVE_PSYCH_UP" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_CONFUSION"
+            ],
+            [
+                10,
+                "MOVE_DISABLE"
+            ],
+            [
+                12,
+                "MOVE_YAWN"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                24,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                30,
+                "MOVE_DIVE"
+            ],
+            [
+                36,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                40,
+                "MOVE_AMNESIA"
+            ],
+            [
+                45,
+                "MOVE_PSYCH_UP"
+            ]
         ],
         "by_tm": [
             "TM03",

@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 50
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 162,
     "ev_yields": {
@@ -26,27 +29,84 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_SCRAPPY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PLUCK" ],
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 4, "MOVE_FOCUS_ENERGY" ],
-            [ 8, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_WING_ATTACK" ],
-            [ 19, "MOVE_DOUBLE_TEAM" ],
-            [ 28, "MOVE_ENDEAVOR" ],
-            [ 38, "MOVE_AERIAL_ACE" ],
-            [ 49, "MOVE_AGILITY" ],
-            [ 61, "MOVE_AIR_SLASH" ]
+            [
+                1,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_STEEL_WING"
+            ],
+            [
+                14,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                16,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                18,
+                "MOVE_FACADE"
+            ],
+            [
+                20,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                22,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                30,
+                "MOVE_ROLLING_KICK"
+            ],
+            [
+                34,
+                "MOVE_AGILITY"
+            ],
+            [
+                40,
+                "MOVE_ROOST"
+            ],
+            [
+                45,
+                "MOVE_BRAVE_BIRD"
+            ],
+            [
+                50,
+                "MOVE_THIEF"
+            ],
+            [
+                55,
+                "MOVE_SKY_ATTACK"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -89,7 +149,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_TAILLOW",
     "footprint": {
         "has": true,

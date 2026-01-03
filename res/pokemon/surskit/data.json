@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 52
     },
-    "types": [ "TYPE_BUG", "TYPE_WATER" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_WATER"
+    ],
     "catch_rate": 200,
     "base_exp_reward": 63,
     "ev_yields": {
@@ -26,23 +29,72 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SWIFT_SWIM",
+        "ABILITY_RAIN_DISH"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BUBBLE" ],
-            [ 7, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_SWEET_SCENT" ],
-            [ 19, "MOVE_WATER_SPORT" ],
-            [ 25, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_AGILITY" ],
-            [ 37, "MOVE_MIST" ],
-            [ 37, "MOVE_HAZE" ],
-            [ 43, "MOVE_BATON_PASS" ]
+            [
+                1,
+                "MOVE_BUBBLE"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                4,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                7,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                10,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                14,
+                "MOVE_MIST"
+            ],
+            [
+                16,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                18,
+                "MOVE_HAZE"
+            ],
+            [
+                20,
+                "MOVE_AGILITY"
+            ],
+            [
+                24,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                30,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                35,
+                "MOVE_MIND_READER"
+            ],
+            [
+                40,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM03",

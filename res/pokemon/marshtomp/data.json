@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 70
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 143,
     "ev_yields": {
@@ -26,29 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_TORRENT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_WATER_1"
+    ],
+    "abilities": [
+        "ABILITY_TORRENT",
+        "ABILITY_DAMP"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_MUD_SLAP" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_BIDE" ],
-            [ 16, "MOVE_MUD_SHOT" ],
-            [ 20, "MOVE_FORESIGHT" ],
-            [ 25, "MOVE_MUD_BOMB" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_MUDDY_WATER" ],
-            [ 42, "MOVE_PROTECT" ],
-            [ 46, "MOVE_EARTHQUAKE" ],
-            [ 53, "MOVE_ENDEAVOR" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                4,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                7,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                12,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                14,
+                "MOVE_PROTECT"
+            ],
+            [
+                16,
+                "MOVE_BUBBLE_BEAM"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                25,
+                "MOVE_AMNESIA"
+            ],
+            [
+                29,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                32,
+                "MOVE_SCREECH"
+            ],
+            [
+                34,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                36,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                40,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM03",

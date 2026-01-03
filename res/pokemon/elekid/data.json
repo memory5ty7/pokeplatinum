@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 55
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 106,
     "ev_yields": {
@@ -26,26 +29,84 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_STATIC",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": true,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 7, "MOVE_THUNDER_SHOCK" ],
-            [ 10, "MOVE_LOW_KICK" ],
-            [ 16, "MOVE_SWIFT" ],
-            [ 19, "MOVE_SHOCK_WAVE" ],
-            [ 25, "MOVE_LIGHT_SCREEN" ],
-            [ 28, "MOVE_THUNDER_PUNCH" ],
-            [ 34, "MOVE_DISCHARGE" ],
-            [ 37, "MOVE_THUNDERBOLT" ],
-            [ 43, "MOVE_SCREECH" ],
-            [ 46, "MOVE_THUNDER" ]
+            [
+                1,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                8,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                10,
+                "MOVE_SWIFT"
+            ],
+            [
+                14,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                16,
+                "MOVE_KARATE_CHOP"
+            ],
+            [
+                18,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                20,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                22,
+                "MOVE_SCREECH"
+            ],
+            [
+                24,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                28,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                30,
+                "MOVE_THUNDERBOLT"
+            ],
+            [
+                40,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                45,
+                "MOVE_PAY_DAY"
+            ],
+            [
+                50,
+                "MOVE_THUNDER"
+            ]
         ],
         "by_tm": [
             "TM01",

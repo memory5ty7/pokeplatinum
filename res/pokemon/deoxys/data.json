@@ -7,7 +7,10 @@
         "special_attack": 150,
         "special_defense": 50
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,28 +29,72 @@
     "hatch_cycles": 120,
     "base_friendship": 0,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_PRESSURE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_WRAP" ],
-            [ 9, "MOVE_NIGHT_SHADE" ],
-            [ 17, "MOVE_TELEPORT" ],
-            [ 25, "MOVE_KNOCK_OFF" ],
-            [ 33, "MOVE_PURSUIT" ],
-            [ 41, "MOVE_PSYCHIC" ],
-            [ 49, "MOVE_SNATCH" ],
-            [ 57, "MOVE_PSYCHO_SHIFT" ],
-            [ 65, "MOVE_ZEN_HEADBUTT" ],
-            [ 73, "MOVE_COSMIC_POWER" ],
-            [ 81, "MOVE_RECOVER" ],
-            [ 89, "MOVE_PSYCHO_BOOST" ],
-            [ 97, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                1,
+                "MOVE_TAUNT"
+            ],
+            [
+                5,
+                "MOVE_PURSUIT"
+            ],
+            [
+                10,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                20,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                30,
+                "MOVE_RECOVER"
+            ],
+            [
+                40,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                50,
+                "MOVE_AMNESIA"
+            ],
+            [
+                60,
+                "MOVE_SKILL_SWAP"
+            ],
+            [
+                70,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                80,
+                "MOVE_COSMIC_POWER"
+            ],
+            [
+                90,
+                "MOVE_HYPER_BEAM"
+            ],
+            [
+                100,
+                "MOVE_PSYCHO_BOOST"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -123,7 +170,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_DEOXYS",
     "footprint": {
         "has": true,

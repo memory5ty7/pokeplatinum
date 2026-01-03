@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 60
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 191,
     "ev_yields": {
@@ -26,23 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_GLUTTONY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_STOCKPILE" ],
-            [ 1, "MOVE_SWALLOW" ],
-            [ 1, "MOVE_SPIT_UP" ],
-            [ 1, "MOVE_VINE_WHIP" ],
-            [ 1, "MOVE_SLEEP_POWDER" ],
-            [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_RAZOR_LEAF" ],
-            [ 47, "MOVE_LEAF_STORM" ],
-            [ 47, "MOVE_LEAF_BLADE" ]
+            [
+                1,
+                "MOVE_VINE_WHIP"
+            ],
+            [
+                1,
+                "MOVE_WRAP"
+            ],
+            [
+                5,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                8,
+                "MOVE_ACID"
+            ],
+            [
+                10,
+                "MOVE_SWEET_SCENT"
+            ],
+            [
+                14,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                16,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                20,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                24,
+                "MOVE_SLAM"
+            ],
+            [
+                28,
+                "MOVE_LEAF_BLADE"
+            ],
+            [
+                30,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                36,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                45,
+                "MOVE_POWER_WHIP"
+            ],
+            [
+                50,
+                "MOVE_LEAF_STORM"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -84,7 +144,7 @@
             "MOVE_SUCKER_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_BELLSPROUT",
     "footprint": {
         "has": false,

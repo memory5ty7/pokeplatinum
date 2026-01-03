@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 100
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 215,
     "ev_yields": {
@@ -26,27 +29,72 @@
     "hatch_cycles": 10,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HYDRATION", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_HYDRATION",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TAIL_GLOW" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 9, "MOVE_CHARM" ],
-            [ 16, "MOVE_SUPERSONIC" ],
-            [ 24, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_ACID_ARMOR" ],
-            [ 39, "MOVE_WHIRLPOOL" ],
-            [ 46, "MOVE_WATER_PULSE" ],
-            [ 54, "MOVE_AQUA_RING" ],
-            [ 61, "MOVE_DIVE" ],
-            [ 69, "MOVE_RAIN_DANCE" ],
-            [ 76, "MOVE_HEART_SWAP" ]
+            [
+                1,
+                "MOVE_BUBBLE"
+            ],
+            [
+                1,
+                "MOVE_CHARM"
+            ],
+            [
+                5,
+                "MOVE_BRINE"
+            ],
+            [
+                10,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                30,
+                "MOVE_DIVE"
+            ],
+            [
+                40,
+                "MOVE_TAIL_GLOW"
+            ],
+            [
+                50,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                60,
+                "MOVE_HEART_SWAP"
+            ],
+            [
+                70,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                80,
+                "MOVE_U_TURN"
+            ],
+            [
+                90,
+                "MOVE_BLIZZARD"
+            ],
+            [
+                100,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -102,7 +150,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_MANAPHY",
     "footprint": {
         "has": false,

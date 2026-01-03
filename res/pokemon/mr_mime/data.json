@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 120
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 136,
     "ev_yields": {
@@ -26,34 +29,84 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_SOUNDPROOF", "ABILITY_FILTER" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_FILTER",
+        "ABILITY_SOUNDPROOF"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MAGICAL_LEAF" ],
-            [ 1, "MOVE_POWER_SWAP" ],
-            [ 1, "MOVE_GUARD_SWAP" ],
-            [ 1, "MOVE_BARRIER" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 4, "MOVE_COPYCAT" ],
-            [ 8, "MOVE_MEDITATE" ],
-            [ 11, "MOVE_ENCORE" ],
-            [ 15, "MOVE_DOUBLE_SLAP" ],
-            [ 18, "MOVE_MIMIC" ],
-            [ 22, "MOVE_LIGHT_SCREEN" ],
-            [ 22, "MOVE_REFLECT" ],
-            [ 25, "MOVE_PSYBEAM" ],
-            [ 29, "MOVE_SUBSTITUTE" ],
-            [ 32, "MOVE_RECYCLE" ],
-            [ 36, "MOVE_TRICK" ],
-            [ 39, "MOVE_PSYCHIC" ],
-            [ 43, "MOVE_ROLE_PLAY" ],
-            [ 46, "MOVE_BATON_PASS" ],
-            [ 50, "MOVE_SAFEGUARD" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                5,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                8,
+                "MOVE_CHARM"
+            ],
+            [
+                11,
+                "MOVE_MIMIC"
+            ],
+            [
+                14,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                16,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                20,
+                "MOVE_PROTECT"
+            ],
+            [
+                22,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                26,
+                "MOVE_SUBSTITUTE"
+            ],
+            [
+                30,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                33,
+                "MOVE_PSYWAVE"
+            ],
+            [
+                36,
+                "MOVE_GUARD_SWAP"
+            ],
+            [
+                40,
+                "MOVE_REFLECT"
+            ],
+            [
+                40,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                42,
+                "MOVE_PSYCHIC"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -132,7 +185,7 @@
             "MOVE_TEETER_DANCE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_MIME_JR",
     "footprint": {
         "has": true,

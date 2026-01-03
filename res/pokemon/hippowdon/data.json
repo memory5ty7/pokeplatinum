@@ -7,7 +7,10 @@
         "special_attack": 68,
         "special_defense": 72
     },
-    "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 198,
     "ev_yields": {
@@ -26,29 +29,92 @@
     "hatch_cycles": 30,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SAND_STREAM", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_BATTLE_ARMOR",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ICE_FANG" ],
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_THUNDER_FANG" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 7, "MOVE_BITE" ],
-            [ 13, "MOVE_YAWN" ],
-            [ 19, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 31, "MOVE_CRUNCH" ],
-            [ 40, "MOVE_EARTHQUAKE" ],
-            [ 50, "MOVE_DOUBLE_EDGE" ],
-            [ 60, "MOVE_FISSURE" ]
+            [
+                1,
+                "MOVE_FIRE_FANG"
+            ],
+            [
+                1,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_SAND_ATTACK"
+            ],
+            [
+                5,
+                "MOVE_BITE"
+            ],
+            [
+                10,
+                "MOVE_SAND_TOMB"
+            ],
+            [
+                14,
+                "MOVE_YAWN"
+            ],
+            [
+                16,
+                "MOVE_COVET"
+            ],
+            [
+                18,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                20,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                24,
+                "MOVE_MINIMIZE"
+            ],
+            [
+                28,
+                "MOVE_FACADE"
+            ],
+            [
+                30,
+                "MOVE_CRUNCH"
+            ],
+            [
+                34,
+                "MOVE_GRUDGE"
+            ],
+            [
+                40,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                44,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                50,
+                "MOVE_EARTHQUAKE"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -90,7 +156,7 @@
             "MOVE_EARTH_POWER"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_HIPPOPOTAS",
     "footprint": {
         "has": true,

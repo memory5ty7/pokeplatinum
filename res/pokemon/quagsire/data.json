@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 65
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 137,
     "ev_yields": {
@@ -26,28 +29,92 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_DAMP", "ABILITY_WATER_ABSORB" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_WATER_ABSORB",
+        "ABILITY_UNAWARE"
+    ],
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 5, "MOVE_MUD_SPORT" ],
-            [ 9, "MOVE_MUD_SHOT" ],
-            [ 15, "MOVE_SLAM" ],
-            [ 19, "MOVE_MUD_BOMB" ],
-            [ 24, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_YAWN" ],
-            [ 36, "MOVE_EARTHQUAKE" ],
-            [ 41, "MOVE_RAIN_DANCE" ],
-            [ 48, "MOVE_MIST" ],
-            [ 48, "MOVE_HAZE" ],
-            [ 53, "MOVE_MUDDY_WATER" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                5,
+                "MOVE_MUD_SHOT"
+            ],
+            [
+                8,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                10,
+                "MOVE_HAZE"
+            ],
+            [
+                12,
+                "MOVE_SLAM"
+            ],
+            [
+                14,
+                "MOVE_YAWN"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_COVET"
+            ],
+            [
+                24,
+                "MOVE_MUD_BOMB"
+            ],
+            [
+                26,
+                "MOVE_TOXIC"
+            ],
+            [
+                30,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                33,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                36,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                40,
+                "MOVE_RECOVER"
+            ],
+            [
+                43,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                46,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_HYDRO_PUMP"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -103,7 +170,7 @@
             "MOVE_EARTH_POWER"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_WOOPER",
     "footprint": {
         "has": true,

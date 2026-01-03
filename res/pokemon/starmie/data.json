@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 85
     },
-    "types": [ "TYPE_WATER", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 207,
     "ev_yields": {
@@ -26,19 +29,36 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_3", "EGG_GROUP_WATER_3" ],
-    "abilities": [ "ABILITY_ILLUMINATE", "ABILITY_NATURAL_CURE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_3",
+        "EGG_GROUP_WATER_3"
+    ],
+    "abilities": [
+        "ABILITY_NATURAL_CURE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_RAPID_SPIN" ],
-            [ 1, "MOVE_RECOVER" ],
-            [ 1, "MOVE_SWIFT" ],
-            [ 28, "MOVE_CONFUSE_RAY" ]
+            [
+                1,
+                "MOVE_BRINE"
+            ],
+            [
+                1,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                1,
+                "MOVE_POWER_GEM"
+            ],
+            [
+                1,
+                "MOVE_RECOVER"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -93,7 +113,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_STARYU",
     "footprint": {
         "has": true,

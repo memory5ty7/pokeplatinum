@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 50
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 74,
     "ev_yields": {
@@ -26,20 +29,80 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WRAP" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 14, "MOVE_CONFUSION" ],
-            [ 17, "MOVE_UPROAR" ],
-            [ 22, "MOVE_LAST_RESORT" ]
+            [
+                1,
+                "MOVE_CONFUSION"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                3,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                6,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                10,
+                "MOVE_SCREECH"
+            ],
+            [
+                14,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                16,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                20,
+                "MOVE_REFLECT"
+            ],
+            [
+                24,
+                "MOVE_UPROAR"
+            ],
+            [
+                28,
+                "MOVE_WISH"
+            ],
+            [
+                30,
+                "MOVE_METAL_SOUND"
+            ],
+            [
+                32,
+                "MOVE_AMNESIA"
+            ],
+            [
+                36,
+                "MOVE_SUBSTITUTE"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                45,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
         "by_tm": [
             "TM04",
@@ -104,7 +167,10 @@
         ]
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_NIGHT", "SPECIES_CHIMECHO" ]
+        [
+            "EVO_LEVEL_HAPPINESS_NIGHT",
+            "SPECIES_CHIMECHO"
+        ]
     ],
     "offspring": "SPECIES_CHINGLING",
     "footprint": {

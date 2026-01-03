@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 56,
     "ev_yields": {
@@ -26,25 +29,68 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_RECKLESS",
+        "ABILITY_KEEN_EYE"
+    ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 9, "MOVE_WING_ATTACK" ],
-            [ 13, "MOVE_DOUBLE_TEAM" ],
-            [ 17, "MOVE_ENDEAVOR" ],
-            [ 21, "MOVE_WHIRLWIND" ],
-            [ 25, "MOVE_AERIAL_ACE" ],
-            [ 29, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_AGILITY" ],
-            [ 37, "MOVE_BRAVE_BIRD" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                9,
+                "MOVE_WING_ATTACK"
+            ],
+            [
+                14,
+                "MOVE_STEEL_WING"
+            ],
+            [
+                16,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                20,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                24,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                29,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                32,
+                "MOVE_AGILITY"
+            ],
+            [
+                36,
+                "MOVE_ROLLING_KICK"
+            ],
+            [
+                40,
+                "MOVE_BRAVE_BIRD"
+            ]
         ],
         "by_tm": [
             "TM06",

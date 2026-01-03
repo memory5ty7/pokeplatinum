@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 70
     },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_WATER"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 100,
     "ev_yields": {
@@ -26,30 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_THICK_FAT", "ABILITY_HYDRATION" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_HYDRATION"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 3, "MOVE_GROWL" ],
-            [ 7, "MOVE_WATER_SPORT" ],
-            [ 11, "MOVE_ICY_WIND" ],
-            [ 13, "MOVE_ENCORE" ],
-            [ 17, "MOVE_ICE_SHARD" ],
-            [ 21, "MOVE_REST" ],
-            [ 23, "MOVE_AQUA_RING" ],
-            [ 27, "MOVE_AURORA_BEAM" ],
-            [ 31, "MOVE_AQUA_JET" ],
-            [ 33, "MOVE_BRINE" ],
-            [ 37, "MOVE_TAKE_DOWN" ],
-            [ 41, "MOVE_DIVE" ],
-            [ 43, "MOVE_AQUA_TAIL" ],
-            [ 47, "MOVE_ICE_BEAM" ],
-            [ 51, "MOVE_SAFEGUARD" ]
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                5,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                10,
+                "MOVE_ENCORE"
+            ],
+            [
+                14,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                18,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                20,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                24,
+                "MOVE_AURORA_BEAM"
+            ],
+            [
+                27,
+                "MOVE_REST"
+            ],
+            [
+                30,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                32,
+                "MOVE_REST"
+            ],
+            [
+                34,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                36,
+                "MOVE_BRINE"
+            ],
+            [
+                40,
+                "MOVE_AQUA_TAIL"
+            ],
+            [
+                45,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                50,
+                "MOVE_SHEER_COLD"
+            ]
         ],
         "by_tm": [
             "TM03",

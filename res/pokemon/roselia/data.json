@@ -7,7 +7,10 @@
         "special_attack": 100,
         "special_defense": 80
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 152,
     "ev_yields": {
@@ -26,30 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_POISON_POINT" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_POISON_POINT",
+        "ABILITY_NATURAL_CURE"
+    ],
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": true,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 4, "MOVE_GROWTH" ],
-            [ 7, "MOVE_POISON_STING" ],
-            [ 10, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_MEGA_DRAIN" ],
-            [ 16, "MOVE_LEECH_SEED" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_GRASS_WHISTLE" ],
-            [ 25, "MOVE_GIGA_DRAIN" ],
-            [ 28, "MOVE_TOXIC_SPIKES" ],
-            [ 31, "MOVE_SWEET_SCENT" ],
-            [ 34, "MOVE_INGRAIN" ],
-            [ 37, "MOVE_TOXIC" ],
-            [ 40, "MOVE_PETAL_DANCE" ],
-            [ 43, "MOVE_AROMATHERAPY" ],
-            [ 46, "MOVE_SYNTHESIS" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_GROWTH"
+            ],
+            [
+                5,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                10,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                14,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                16,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_NATURAL_GIFT"
+            ],
+            [
+                24,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                28,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                30,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                34,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                36,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                40,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                42,
+                "MOVE_LEECH_SEED"
+            ],
+            [
+                44,
+                "MOVE_TOXIC"
+            ],
+            [
+                48,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                52,
+                "MOVE_LEAF_STORM"
+            ]
         ],
         "by_tm": [
             "TM06",

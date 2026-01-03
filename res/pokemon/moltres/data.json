@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 85
     },
-    "types": [ "TYPE_FIRE", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 217,
     "ev_yields": {
@@ -26,28 +29,72 @@
     "hatch_cycles": 80,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_PRESSURE",
+        "ABILITY_FLAME_BODY"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WING_ATTACK" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 8, "MOVE_FIRE_SPIN" ],
-            [ 15, "MOVE_AGILITY" ],
-            [ 22, "MOVE_ENDURE" ],
-            [ 29, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_FLAMETHROWER" ],
-            [ 43, "MOVE_SAFEGUARD" ],
-            [ 50, "MOVE_AIR_SLASH" ],
-            [ 57, "MOVE_ROOST" ],
-            [ 64, "MOVE_HEAT_WAVE" ],
-            [ 71, "MOVE_SOLAR_BEAM" ],
-            [ 78, "MOVE_SKY_ATTACK" ],
-            [ 85, "MOVE_SUNNY_DAY" ]
+            [
+                1,
+                "MOVE_FIRE_SPIN"
+            ],
+            [
+                1,
+                "MOVE_U_TURN"
+            ],
+            [
+                5,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                10,
+                "MOVE_TAILWIND"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                30,
+                "MOVE_AGILITY"
+            ],
+            [
+                40,
+                "MOVE_ROOST"
+            ],
+            [
+                50,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                60,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                70,
+                "MOVE_SKY_ATTACK"
+            ],
+            [
+                80,
+                "MOVE_FIRE_BLAST"
+            ],
+            [
+                90,
+                "MOVE_SOLAR_BEAM"
+            ],
+            [
+                100,
+                "MOVE_OVERHEAT"
+            ]
         ],
         "by_tm": [
             "TM05",
@@ -96,7 +143,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_MOLTRES",
     "footprint": {
         "has": true,

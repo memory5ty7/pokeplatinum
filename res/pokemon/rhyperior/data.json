@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 55
     },
-    "types": [ "TYPE_GROUND", "TYPE_ROCK" ],
+    "types": [
+        "TYPE_GROUND",
+        "TYPE_ROCK"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 217,
     "ev_yields": {
@@ -26,30 +29,84 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_LIGHTNING_ROD", "ABILITY_SOLID_ROCK" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SOLID_ROCK",
+        "ABILITY_LIGHTNING_ROD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_JAB" ],
-            [ 1, "MOVE_HORN_ATTACK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_STOMP" ],
-            [ 1, "MOVE_FURY_ATTACK" ],
-            [ 9, "MOVE_STOMP" ],
-            [ 13, "MOVE_FURY_ATTACK" ],
-            [ 21, "MOVE_SCARY_FACE" ],
-            [ 25, "MOVE_ROCK_BLAST" ],
-            [ 33, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_HORN_DRILL" ],
-            [ 42, "MOVE_HAMMER_ARM" ],
-            [ 45, "MOVE_STONE_EDGE" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_MEGAHORN" ],
-            [ 61, "MOVE_ROCK_WRECKER" ]
+            [
+                1,
+                "MOVE_HAMMER_ARM"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_TAIL_WHIP"
+            ],
+            [
+                5,
+                "MOVE_COVET"
+            ],
+            [
+                10,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                12,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                16,
+                "MOVE_HORN_ATTACK"
+            ],
+            [
+                20,
+                "MOVE_ROCK_BLAST"
+            ],
+            [
+                24,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_SWITCHEROO"
+            ],
+            [
+                36,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                40,
+                "MOVE_MEGAHORN"
+            ],
+            [
+                42,
+                "MOVE_STONE_EDGE"
+            ],
+            [
+                45,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                50,
+                "MOVE_HORN_DRILL"
+            ],
+            [
+                60,
+                "MOVE_ROCK_WRECKER"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -127,7 +184,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_RHYHORN",
     "footprint": {
         "has": true,

@@ -7,7 +7,10 @@
         "special_attack": 64,
         "special_defense": 59
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 183,
     "ev_yields": {
@@ -26,29 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_THICK_FAT", "ABILITY_OWN_TEMPO" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_THICK_FAT",
+        "ABILITY_OWN_TEMPO"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FAKE_OUT" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_SCRATCH" ],
-            [ 8, "MOVE_GROWL" ],
-            [ 13, "MOVE_HYPNOSIS" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
-            [ 20, "MOVE_FURY_SWIPES" ],
-            [ 25, "MOVE_CHARM" ],
-            [ 29, "MOVE_ASSIST" ],
-            [ 32, "MOVE_CAPTIVATE" ],
-            [ 37, "MOVE_SLASH" ],
-            [ 38, "MOVE_SWAGGER" ],
-            [ 45, "MOVE_BODY_SLAM" ],
-            [ 53, "MOVE_ATTRACT" ]
+            [
+                1,
+                "MOVE_SUBSTITUTE"
+            ],
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_HYPNOSIS"
+            ],
+            [
+                14,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                16,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                20,
+                "MOVE_CHARM"
+            ],
+            [
+                22,
+                "MOVE_CAPTIVATE"
+            ],
+            [
+                25,
+                "MOVE_ATTRACT"
+            ],
+            [
+                28,
+                "MOVE_SLASH"
+            ],
+            [
+                30,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                32,
+                "MOVE_SWAGGER"
+            ],
+            [
+                36,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                40,
+                "MOVE_U_TURN"
+            ],
+            [
+                45,
+                "MOVE_GIGA_IMPACT"
+            ],
+            [
+                50,
+                "MOVE_LAST_RESORT"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -103,7 +165,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_GLAMEOW",
     "footprint": {
         "has": true,

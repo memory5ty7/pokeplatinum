@@ -7,7 +7,10 @@
         "special_attack": 80,
         "special_defense": 70
     },
-    "types": [ "TYPE_ICE", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 187,
     "ev_yields": {
@@ -26,29 +29,92 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_SNOW_CLOAK", "ABILITY_SNOW_CLOAK" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_MINERAL"
+    ],
+    "abilities": [
+        "ABILITY_ICE_BODY",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_DOUBLE_TEAM" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 4, "MOVE_DOUBLE_TEAM" ],
-            [ 10, "MOVE_ASTONISH" ],
-            [ 13, "MOVE_ICY_WIND" ],
-            [ 19, "MOVE_CONFUSE_RAY" ],
-            [ 22, "MOVE_OMINOUS_WIND" ],
-            [ 28, "MOVE_WAKE_UP_SLAP" ],
-            [ 31, "MOVE_CAPTIVATE" ],
-            [ 37, "MOVE_ICE_SHARD" ],
-            [ 40, "MOVE_HAIL" ],
-            [ 51, "MOVE_BLIZZARD" ],
-            [ 59, "MOVE_DESTINY_BOND" ]
+            [
+                1,
+                "MOVE_DESTINY_BOND"
+            ],
+            [
+                1,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_LEER"
+            ],
+            [
+                8,
+                "MOVE_DISABLE"
+            ],
+            [
+                10,
+                "MOVE_TORMENT"
+            ],
+            [
+                14,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                16,
+                "MOVE_PROTECT"
+            ],
+            [
+                20,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                24,
+                "MOVE_ICE_FANG"
+            ],
+            [
+                28,
+                "MOVE_FAKE_TEARS"
+            ],
+            [
+                30,
+                "MOVE_OMINOUS_WIND"
+            ],
+            [
+                34,
+                "MOVE_CURSE"
+            ],
+            [
+                38,
+                "MOVE_WEATHER_BALL"
+            ],
+            [
+                40,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                42,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                50,
+                "MOVE_BLIZZARD"
+            ],
+            [
+                55,
+                "MOVE_SHEER_COLD"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -106,7 +172,7 @@
             "MOVE_SUCKER_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SNORUNT",
     "footprint": {
         "has": false,

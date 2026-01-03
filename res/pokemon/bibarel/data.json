@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 60
     },
-    "types": [ "TYPE_NORMAL", "TYPE_WATER" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_WATER"
+    ],
     "catch_rate": 127,
     "base_exp_reward": 116,
     "ev_yields": {
@@ -26,28 +29,96 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SIMPLE", "ABILITY_UNAWARE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_UNAWARE",
+        "ABILITY_SIMPLE"
+    ],
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_GROWL" ],
-            [ 9, "MOVE_DEFENSE_CURL" ],
-            [ 13, "MOVE_ROLLOUT" ],
-            [ 15, "MOVE_WATER_GUN" ],
-            [ 18, "MOVE_HEADBUTT" ],
-            [ 23, "MOVE_HYPER_FANG" ],
-            [ 28, "MOVE_YAWN" ],
-            [ 33, "MOVE_AMNESIA" ],
-            [ 38, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SUPER_FANG" ],
-            [ 48, "MOVE_SUPERPOWER" ],
-            [ 53, "MOVE_CURSE" ]
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                9,
+                "MOVE_DEFENSE_CURL"
+            ],
+            [
+                11,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                13,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                15,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                16,
+                "MOVE_SUPER_FANG"
+            ],
+            [
+                18,
+                "MOVE_NATURAL_GIFT"
+            ],
+            [
+                22,
+                "MOVE_AQUA_JET"
+            ],
+            [
+                24,
+                "MOVE_YAWN"
+            ],
+            [
+                28,
+                "MOVE_HYPER_FANG"
+            ],
+            [
+                33,
+                "MOVE_AMNESIA"
+            ],
+            [
+                35,
+                "MOVE_RETURN"
+            ],
+            [
+                36,
+                "MOVE_AQUA_TAIL"
+            ],
+            [
+                40,
+                "MOVE_CURSE"
+            ],
+            [
+                44,
+                "MOVE_DIVE"
+            ],
+            [
+                48,
+                "MOVE_SUPERPOWER"
+            ],
+            [
+                53,
+                "MOVE_DOUBLE_EDGE"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -108,7 +179,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_BIDOOF",
     "footprint": {
         "has": true,

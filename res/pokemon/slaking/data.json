@@ -7,7 +7,10 @@
         "special_attack": 95,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,29 +29,88 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_TRUANT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_TRUANT",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_ENCORE" ],
-            [ 1, "MOVE_SLACK_OFF" ],
-            [ 7, "MOVE_ENCORE" ],
-            [ 13, "MOVE_SLACK_OFF" ],
-            [ 19, "MOVE_FAINT_ATTACK" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_COVET" ],
-            [ 36, "MOVE_SWAGGER" ],
-            [ 37, "MOVE_COUNTER" ],
-            [ 43, "MOVE_FLAIL" ],
-            [ 49, "MOVE_FLING" ],
-            [ 55, "MOVE_PUNISHMENT" ],
-            [ 61, "MOVE_HAMMER_ARM" ]
+            [
+                1,
+                "MOVE_PUNISHMENT"
+            ],
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_SLACK_OFF"
+            ],
+            [
+                5,
+                "MOVE_YAWN"
+            ],
+            [
+                10,
+                "MOVE_ENCORE"
+            ],
+            [
+                16,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                18,
+                "MOVE_SLASH"
+            ],
+            [
+                21,
+                "MOVE_TICKLE"
+            ],
+            [
+                24,
+                "MOVE_CRUSH_CLAW"
+            ],
+            [
+                28,
+                "MOVE_SWAGGER"
+            ],
+            [
+                30,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                36,
+                "MOVE_SHADOW_CLAW"
+            ],
+            [
+                40,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                45,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                50,
+                "MOVE_FLAIL"
+            ],
+            [
+                55,
+                "MOVE_HAMMER_ARM"
+            ],
+            [
+                60,
+                "MOVE_GIGA_IMPACT"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -110,7 +172,7 @@
             "MOVE_SUCKER_PUNCH"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SLAKOTH",
     "footprint": {
         "has": true,

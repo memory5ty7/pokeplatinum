@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 30
     },
-    "types": [ "TYPE_WATER", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 64,
     "ev_yields": {
@@ -26,26 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_RAIN_DISH",
+        "ABILITY_KEEN_EYE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_SUPERSONIC" ],
-            [ 11, "MOVE_WING_ATTACK" ],
-            [ 16, "MOVE_MIST" ],
-            [ 19, "MOVE_WATER_PULSE" ],
-            [ 24, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_ROOST" ],
-            [ 34, "MOVE_PURSUIT" ],
-            [ 37, "MOVE_AGILITY" ],
-            [ 42, "MOVE_AERIAL_ACE" ],
-            [ 47, "MOVE_AIR_SLASH" ]
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                1,
+                "MOVE_WATER_GUN"
+            ],
+            [
+                6,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                8,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_WING_ATTACK"
+            ],
+            [
+                14,
+                "MOVE_MIST"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                18,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                20,
+                "MOVE_PURSUIT"
+            ],
+            [
+                24,
+                "MOVE_BRINE"
+            ],
+            [
+                28,
+                "MOVE_ROOST"
+            ],
+            [
+                32,
+                "MOVE_AQUA_RING"
+            ],
+            [
+                36,
+                "MOVE_TAILWIND"
+            ],
+            [
+                40,
+                "MOVE_AGILITY"
+            ],
+            [
+                42,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                45,
+                "MOVE_HYDRO_PUMP"
+            ],
+            [
+                50,
+                "MOVE_THIEF"
+            ]
         ],
         "by_tm": [
             "TM03",

@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 45
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 57,
     "ev_yields": {
@@ -26,28 +29,88 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_KEEN_EYE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_KEEN_EYE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 4, "MOVE_DEFENSE_CURL" ],
-            [ 7, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_FURY_SWIPES" ],
-            [ 16, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_FOLLOW_ME" ],
-            [ 25, "MOVE_SLAM" ],
-            [ 28, "MOVE_REST" ],
-            [ 31, "MOVE_SUCKER_PUNCH" ],
-            [ 36, "MOVE_AMNESIA" ],
-            [ 39, "MOVE_BATON_PASS" ],
-            [ 42, "MOVE_ME_FIRST" ],
-            [ 47, "MOVE_HYPER_VOICE" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_FORESIGHT"
+            ],
+            [
+                4,
+                "MOVE_DEFENSE_CURL"
+            ],
+            [
+                7,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_PURSUIT"
+            ],
+            [
+                14,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                16,
+                "MOVE_FURY_SWIPES"
+            ],
+            [
+                18,
+                "MOVE_FOLLOW_ME"
+            ],
+            [
+                20,
+                "MOVE_SLAM"
+            ],
+            [
+                25,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                28,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                30,
+                "MOVE_RETURN"
+            ],
+            [
+                34,
+                "MOVE_DIG"
+            ],
+            [
+                36,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                42,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                45,
+                "MOVE_ME_FIRST"
+            ],
+            [
+                47,
+                "MOVE_U_TURN"
+            ]
         ],
         "by_tm": [
             "TM01",

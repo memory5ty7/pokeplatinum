@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 52
     },
-    "types": [ "TYPE_DARK", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_DARK",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 187,
     "ev_yields": {
@@ -26,22 +29,92 @@
     "hatch_cycles": 20,
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_INSOMNIA", "ABILITY_SUPER_LUCK" ],
+    "egg_groups": [
+        "EGG_GROUP_FLYING",
+        "EGG_GROUP_FLYING"
+    ],
+    "abilities": [
+        "ABILITY_SUPER_LUCK",
+        "ABILITY_INSOMNIA"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_PURSUIT" ],
-            [ 1, "MOVE_HAZE" ],
-            [ 1, "MOVE_WING_ATTACK" ],
-            [ 25, "MOVE_SWAGGER" ],
-            [ 35, "MOVE_NASTY_PLOT" ],
-            [ 45, "MOVE_NIGHT_SLASH" ],
-            [ 55, "MOVE_DARK_PULSE" ]
+            [
+                1,
+                "MOVE_HEAT_WAVE"
+            ],
+            [
+                1,
+                "MOVE_NASTY_PLOT"
+            ],
+            [
+                1,
+                "MOVE_PECK"
+            ],
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_NIGHT_SHADE"
+            ],
+            [
+                8,
+                "MOVE_PURSUIT"
+            ],
+            [
+                10,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                14,
+                "MOVE_WING_ATTACK"
+            ],
+            [
+                16,
+                "MOVE_TAUNT"
+            ],
+            [
+                20,
+                "MOVE_MEAN_LOOK"
+            ],
+            [
+                23,
+                "MOVE_WHIRLWIND"
+            ],
+            [
+                27,
+                "MOVE_ASSURANCE"
+            ],
+            [
+                30,
+                "MOVE_DRILL_PECK"
+            ],
+            [
+                34,
+                "MOVE_SUCKER_PUNCH"
+            ],
+            [
+                36,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                40,
+                "MOVE_NIGHT_SLASH"
+            ],
+            [
+                45,
+                "MOVE_BRAVE_BIRD"
+            ],
+            [
+                50,
+                "MOVE_SKY_ATTACK"
+            ]
         ],
         "by_tm": [
             "TM04",
@@ -97,7 +170,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_MURKROW",
     "footprint": {
         "has": true,

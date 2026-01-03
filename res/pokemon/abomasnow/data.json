@@ -7,7 +7,10 @@
         "special_attack": 92,
         "special_defense": 85
     },
-    "types": [ "TYPE_GRASS", "TYPE_ICE" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_ICE"
+    ],
     "catch_rate": 60,
     "base_exp_reward": 214,
     "ev_yields": {
@@ -26,29 +29,92 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_SNOW_WARNING", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_MONSTER",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_SOUNDPROOF",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ICE_PUNCH" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_RAZOR_LEAF" ],
-            [ 1, "MOVE_ICY_WIND" ],
-            [ 5, "MOVE_RAZOR_LEAF" ],
-            [ 9, "MOVE_ICY_WIND" ],
-            [ 13, "MOVE_GRASS_WHISTLE" ],
-            [ 17, "MOVE_SWAGGER" ],
-            [ 21, "MOVE_MIST" ],
-            [ 26, "MOVE_ICE_SHARD" ],
-            [ 31, "MOVE_INGRAIN" ],
-            [ 36, "MOVE_WOOD_HAMMER" ],
-            [ 47, "MOVE_BLIZZARD" ],
-            [ 58, "MOVE_SHEER_COLD" ]
+            [
+                1,
+                "MOVE_LEAF_STORM"
+            ],
+            [
+                1,
+                "MOVE_POWDER_SNOW"
+            ],
+            [
+                1,
+                "MOVE_RAZOR_LEAF"
+            ],
+            [
+                6,
+                "MOVE_MIST"
+            ],
+            [
+                10,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                14,
+                "MOVE_INGRAIN"
+            ],
+            [
+                16,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                20,
+                "MOVE_GRASS_WHISTLE"
+            ],
+            [
+                22,
+                "MOVE_SWAGGER"
+            ],
+            [
+                24,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                26,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                30,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                34,
+                "MOVE_AVALANCHE"
+            ],
+            [
+                36,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                38,
+                "MOVE_TRICK"
+            ],
+            [
+                40,
+                "MOVE_BLIZZARD"
+            ],
+            [
+                45,
+                "MOVE_WOOD_HAMMER"
+            ],
+            [
+                50,
+                "MOVE_SHEER_COLD"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -107,7 +173,7 @@
             "MOVE_SEED_BOMB"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SNOVER",
     "footprint": {
         "has": true,

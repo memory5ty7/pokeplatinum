@@ -7,7 +7,10 @@
         "special_attack": 105,
         "special_defense": 107
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_GHOST" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_GHOST"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 132,
     "ev_yields": {
@@ -26,26 +29,64 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TRICK" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 1, "MOVE_THUNDER_WAVE" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_CONFUSE_RAY" ],
-            [ 8, "MOVE_UPROAR" ],
-            [ 15, "MOVE_DOUBLE_TEAM" ],
-            [ 22, "MOVE_SHOCK_WAVE" ],
-            [ 29, "MOVE_OMINOUS_WIND" ],
-            [ 36, "MOVE_SUBSTITUTE" ],
-            [ 43, "MOVE_CHARGE" ],
-            [ 50, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_THUNDER_SHOCK"
+            ],
+            [
+                1,
+                "MOVE_ASTONISH"
+            ],
+            [
+                5,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                10,
+                "MOVE_SHOCK_WAVE"
+            ],
+            [
+                15,
+                "MOVE_OMINOUS_WIND"
+            ],
+            [
+                20,
+                "MOVE_THUNDER_WAVE"
+            ],
+            [
+                25,
+                "MOVE_UPROAR"
+            ],
+            [
+                30,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                35,
+                "MOVE_SHADOW_BALL"
+            ],
+            [
+                40,
+                "MOVE_THUNDERBOLT"
+            ],
+            [
+                50,
+                "MOVE_THUNDER"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -92,7 +133,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "pokedex_data": {
         "height": 0,
         "weight": 0,
@@ -108,32 +149,32 @@
         "en": {
             "name": "ROTOM",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         },
         "fr": {
             "name": "",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         },
         "de": {
             "name": "",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         },
         "it": {
             "name": "",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         },
         "es": {
             "name": "",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         },
         "jp": {
             "name": "",
             "category": "",
-            "entry_text": [  ]
+            "entry_text": []
         }
     }
 }

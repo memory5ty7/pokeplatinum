@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 60
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 146,
     "ev_yields": {
@@ -26,28 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NO_GUARD" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_NO_GUARD",
+        "ABILITY_GUTS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": true,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LOW_KICK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_KARATE_CHOP" ],
-            [ 13, "MOVE_FORESIGHT" ],
-            [ 19, "MOVE_SEISMIC_TOSS" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 32, "MOVE_SUBMISSION" ],
-            [ 36, "MOVE_WAKE_UP_SLAP" ],
-            [ 40, "MOVE_CROSS_CHOP" ],
-            [ 44, "MOVE_SCARY_FACE" ],
-            [ 51, "MOVE_DYNAMIC_PUNCH" ]
+            [
+                1,
+                "MOVE_LOW_KICK"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_KARATE_CHOP"
+            ],
+            [
+                10,
+                "MOVE_FORESIGHT"
+            ],
+            [
+                13,
+                "MOVE_PAYBACK"
+            ],
+            [
+                16,
+                "MOVE_SEISMIC_TOSS"
+            ],
+            [
+                18,
+                "MOVE_BULLET_PUNCH"
+            ],
+            [
+                20,
+                "MOVE_REVENGE"
+            ],
+            [
+                24,
+                "MOVE_MEGA_PUNCH"
+            ],
+            [
+                26,
+                "MOVE_SUBMISSION"
+            ],
+            [
+                28,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                32,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                36,
+                "MOVE_POISON_JAB"
+            ],
+            [
+                40,
+                "MOVE_CROSS_CHOP"
+            ],
+            [
+                46,
+                "MOVE_DYNAMIC_PUNCH"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -98,7 +153,10 @@
         ]
     },
     "evolutions": [
-        [ "EVO_TRADE", "SPECIES_MACHAMP" ]
+        [
+            "EVO_TRADE",
+            "SPECIES_MACHAMP"
+        ]
     ],
     "offspring": "SPECIES_MACHOP",
     "footprint": {

@@ -7,7 +7,10 @@
         "special_attack": 65,
         "special_defense": 65
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 125,
     "ev_yields": {
@@ -26,28 +29,80 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_SERENE_GRACE", "ABILITY_RUN_AWAY" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_SERENE_GRACE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_RAGE" ],
-            [ 5, "MOVE_DEFENSE_CURL" ],
-            [ 9, "MOVE_YAWN" ],
-            [ 13, "MOVE_GLARE" ],
-            [ 17, "MOVE_ROLLOUT" ],
-            [ 21, "MOVE_SPITE" ],
-            [ 25, "MOVE_PURSUIT" ],
-            [ 29, "MOVE_SCREECH" ],
-            [ 33, "MOVE_ROOST" ],
-            [ 37, "MOVE_TAKE_DOWN" ],
-            [ 41, "MOVE_ANCIENT_POWER" ],
-            [ 45, "MOVE_DIG" ],
-            [ 49, "MOVE_ENDEAVOR" ],
-            [ 53, "MOVE_FLAIL" ]
+            [
+                1,
+                "MOVE_RAGE"
+            ],
+            [
+                1,
+                "MOVE_DEFENSE_CURL"
+            ],
+            [
+                5,
+                "MOVE_ROLLOUT"
+            ],
+            [
+                10,
+                "MOVE_PURSUIT"
+            ],
+            [
+                13,
+                "MOVE_YAWN"
+            ],
+            [
+                16,
+                "MOVE_HEADBUTT"
+            ],
+            [
+                18,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                20,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                24,
+                "MOVE_SCREECH"
+            ],
+            [
+                26,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                30,
+                "MOVE_ROOST"
+            ],
+            [
+                36,
+                "MOVE_SWITCHEROO"
+            ],
+            [
+                40,
+                "MOVE_ENDEAVOR"
+            ],
+            [
+                45,
+                "MOVE_FLAIL"
+            ],
+            [
+                50,
+                "MOVE_AGILITY"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -120,7 +175,7 @@
             "MOVE_SNORE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_DUNSPARCE",
     "footprint": {
         "has": false,

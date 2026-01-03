@@ -7,7 +7,10 @@
         "special_attack": 75,
         "special_defense": 130
     },
-    "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 3,
     "base_exp_reward": 210,
     "ev_yields": {
@@ -26,26 +29,72 @@
     "hatch_cycles": 80,
     "base_friendship": 140,
     "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_LEVITATE", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_LEVITATE",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_REST" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 6, "MOVE_IMPRISON" ],
-            [ 16, "MOVE_ENDURE" ],
-            [ 21, "MOVE_SWIFT" ],
-            [ 31, "MOVE_YAWN" ],
-            [ 36, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_AMNESIA" ],
-            [ 51, "MOVE_EXTRASENSORY" ],
-            [ 61, "MOVE_FLAIL" ],
-            [ 66, "MOVE_NATURAL_GIFT" ],
-            [ 76, "MOVE_MEMENTO" ]
+            [
+                1,
+                "MOVE_EXTRASENSORY"
+            ],
+            [
+                1,
+                "MOVE_IMPRISON"
+            ],
+            [
+                5,
+                "MOVE_U_TURN"
+            ],
+            [
+                10,
+                "MOVE_TAUNT"
+            ],
+            [
+                20,
+                "MOVE_YAWN"
+            ],
+            [
+                30,
+                "MOVE_CALM_MIND"
+            ],
+            [
+                40,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                50,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                60,
+                "MOVE_DREAM_EATER"
+            ],
+            [
+                70,
+                "MOVE_AMNESIA"
+            ],
+            [
+                80,
+                "MOVE_NASTY_PLOT"
+            ],
+            [
+                90,
+                "MOVE_EXPLOSION"
+            ],
+            [
+                100,
+                "MOVE_FUTURE_SIGHT"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -108,7 +157,7 @@
             "MOVE_SWIFT"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_UXIE",
     "footprint": {
         "has": true,

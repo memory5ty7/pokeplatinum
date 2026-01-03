@@ -7,7 +7,10 @@
         "special_attack": 43,
         "special_defense": 53
     },
-    "types": [ "TYPE_POISON", "TYPE_POISON" ],
+    "types": [
+        "TYPE_POISON",
+        "TYPE_POISON"
+    ],
     "catch_rate": 225,
     "base_exp_reward": 75,
     "ev_yields": {
@@ -26,28 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FLUCTUATING",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_LIQUID_OOZE", "ABILITY_STICKY_HOLD" ],
+    "egg_groups": [
+        "EGG_GROUP_AMORPHOUS",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_STICKY_HOLD",
+        "ABILITY_LIQUID_OOZE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 6, "MOVE_YAWN" ],
-            [ 9, "MOVE_POISON_GAS" ],
-            [ 14, "MOVE_SLUDGE" ],
-            [ 17, "MOVE_AMNESIA" ],
-            [ 23, "MOVE_ENCORE" ],
-            [ 28, "MOVE_TOXIC" ],
-            [ 34, "MOVE_STOCKPILE" ],
-            [ 34, "MOVE_SPIT_UP" ],
-            [ 34, "MOVE_SWALLOW" ],
-            [ 39, "MOVE_SLUDGE_BOMB" ],
-            [ 44, "MOVE_GASTRO_ACID" ],
-            [ 49, "MOVE_WRING_OUT" ],
-            [ 54, "MOVE_GUNK_SHOT" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                5,
+                "MOVE_SLUDGE"
+            ],
+            [
+                8,
+                "MOVE_POISON_GAS"
+            ],
+            [
+                10,
+                "MOVE_SMOG"
+            ],
+            [
+                13,
+                "MOVE_ENCORE"
+            ],
+            [
+                16,
+                "MOVE_YAWN"
+            ],
+            [
+                19,
+                "MOVE_AMNESIA"
+            ],
+            [
+                22,
+                "MOVE_TOXIC"
+            ],
+            [
+                28,
+                "MOVE_STOCKPILE"
+            ],
+            [
+                28,
+                "MOVE_SPIT_UP"
+            ],
+            [
+                28,
+                "MOVE_SWALLOW"
+            ],
+            [
+                30,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                36,
+                "MOVE_WRING_OUT"
+            ],
+            [
+                40,
+                "MOVE_ACID_ARMOR"
+            ],
+            [
+                45,
+                "MOVE_GUNK_SHOT"
+            ],
+            [
+                50,
+                "MOVE_DESTINY_BOND"
+            ]
         ],
         "by_tm": [
             "TM03",

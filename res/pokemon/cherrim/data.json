@@ -7,7 +7,10 @@
         "special_attack": 87,
         "special_defense": 78
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 133,
     "ev_yields": {
@@ -26,26 +29,88 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_FLOWER_GIFT", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_FAIRY",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 10, "MOVE_LEECH_SEED" ],
-            [ 13, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_SUNNY_DAY" ],
-            [ 25, "MOVE_PETAL_DANCE" ],
-            [ 30, "MOVE_WORRY_SEED" ],
-            [ 35, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SOLAR_BEAM" ],
-            [ 48, "MOVE_LUCKY_CHANT" ]
+            [
+                1,
+                "MOVE_HEALING_WISH"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWTH"
+            ],
+            [
+                8,
+                "MOVE_MAGICAL_LEAF"
+            ],
+            [
+                10,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                14,
+                "MOVE_GRASS_WHISTLE"
+            ],
+            [
+                16,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                18,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                20,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                24,
+                "MOVE_MORNING_SUN"
+            ],
+            [
+                26,
+                "MOVE_LUCKY_CHANT"
+            ],
+            [
+                28,
+                "MOVE_AROMATHERAPY"
+            ],
+            [
+                30,
+                "MOVE_ENERGY_BALL"
+            ],
+            [
+                32,
+                "MOVE_LEECH_SEED"
+            ],
+            [
+                36,
+                "MOVE_WEATHER_BALL"
+            ],
+            [
+                40,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                45,
+                "MOVE_SOLAR_BEAM"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -84,7 +149,7 @@
             "MOVE_SEED_BOMB"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_CHERUBI",
     "footprint": {
         "has": true,

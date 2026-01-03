@@ -7,7 +7,10 @@
         "special_attack": 60,
         "special_defense": 49
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [
+        "TYPE_ELECTRIC",
+        "TYPE_ELECTRIC"
+    ],
     "catch_rate": 120,
     "base_exp_reward": 117,
     "ev_yields": {
@@ -26,26 +29,76 @@
     "hatch_cycles": 20,
     "base_friendship": 100,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_RIVALRY", "ABILITY_INTIMIDATE" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_INTIMIDATE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 18, "MOVE_BITE" ],
-            [ 23, "MOVE_ROAR" ],
-            [ 28, "MOVE_SWAGGER" ],
-            [ 33, "MOVE_THUNDER_FANG" ],
-            [ 38, "MOVE_CRUNCH" ],
-            [ 43, "MOVE_SCARY_FACE" ],
-            [ 48, "MOVE_DISCHARGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                6,
+                "MOVE_CHARGE"
+            ],
+            [
+                10,
+                "MOVE_SPARK"
+            ],
+            [
+                12,
+                "MOVE_BITE"
+            ],
+            [
+                16,
+                "MOVE_THUNDER_FANG"
+            ],
+            [
+                20,
+                "MOVE_ROAR"
+            ],
+            [
+                24,
+                "MOVE_TAKE_DOWN"
+            ],
+            [
+                28,
+                "MOVE_SWAGGER"
+            ],
+            [
+                30,
+                "MOVE_KINESIS"
+            ],
+            [
+                34,
+                "MOVE_CRUNCH"
+            ],
+            [
+                36,
+                "MOVE_SCARY_FACE"
+            ],
+            [
+                40,
+                "MOVE_DISCHARGE"
+            ],
+            [
+                45,
+                "MOVE_PAY_DAY"
+            ]
         ],
         "by_tm": [
             "TM05",

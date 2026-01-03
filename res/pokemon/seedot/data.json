@@ -7,7 +7,10 @@
         "special_attack": 30,
         "special_defense": 30
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 74,
     "ev_yields": {
@@ -26,21 +29,84 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_EARLY_BIRD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BIDE" ],
-            [ 3, "MOVE_HARDEN" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 13, "MOVE_NATURE_POWER" ],
-            [ 21, "MOVE_SYNTHESIS" ],
-            [ 31, "MOVE_SUNNY_DAY" ],
-            [ 43, "MOVE_EXPLOSION" ]
+            [
+                1,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                1,
+                "MOVE_GROWTH"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                14,
+                "MOVE_TORMENT"
+            ],
+            [
+                16,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                20,
+                "MOVE_BEAT_UP"
+            ],
+            [
+                22,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                24,
+                "MOVE_LEECH_SEED"
+            ],
+            [
+                26,
+                "MOVE_PAYBACK"
+            ],
+            [
+                30,
+                "MOVE_SEED_BOMB"
+            ],
+            [
+                32,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                36,
+                "MOVE_DARK_PULSE"
+            ],
+            [
+                40,
+                "MOVE_THIEF"
+            ],
+            [
+                45,
+                "MOVE_NASTY_PLOT"
+            ],
+            [
+                50,
+                "MOVE_LEAF_STORM"
+            ]
         ],
         "by_tm": [
             "TM06",

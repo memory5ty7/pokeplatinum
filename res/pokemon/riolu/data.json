@@ -7,7 +7,10 @@
         "special_attack": 35,
         "special_defense": 40
     },
-    "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 72,
     "ev_yields": {
@@ -26,23 +29,64 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_STEADFAST", "ABILITY_INNER_FOCUS" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_STEADFAST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_ENDURE" ],
-            [ 6, "MOVE_COUNTER" ],
-            [ 11, "MOVE_FORCE_PALM" ],
-            [ 15, "MOVE_FEINT" ],
-            [ 19, "MOVE_REVERSAL" ],
-            [ 24, "MOVE_SCREECH" ],
-            [ 29, "MOVE_COPYCAT" ]
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                1,
+                "MOVE_FORESIGHT"
+            ],
+            [
+                1,
+                "MOVE_ENDURE"
+            ],
+            [
+                6,
+                "MOVE_COUNTER"
+            ],
+            [
+                10,
+                "MOVE_FORCE_PALM"
+            ],
+            [
+                14,
+                "MOVE_BITE"
+            ],
+            [
+                16,
+                "MOVE_VACUUM_WAVE"
+            ],
+            [
+                18,
+                "MOVE_SWIFT"
+            ],
+            [
+                20,
+                "MOVE_REVERSAL"
+            ],
+            [
+                24,
+                "MOVE_SCREECH"
+            ],
+            [
+                30,
+                "MOVE_COPYCAT"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -112,7 +156,10 @@
         ]
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_DAY", "SPECIES_LUCARIO" ]
+        [
+            "EVO_LEVEL_HAPPINESS_DAY",
+            "SPECIES_LUCARIO"
+        ]
     ],
     "offspring": "SPECIES_RIOLU",
     "footprint": {

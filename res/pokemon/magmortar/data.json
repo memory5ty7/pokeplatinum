@@ -7,7 +7,10 @@
         "special_attack": 125,
         "special_defense": 95
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
+    "types": [
+        "TYPE_FIRE",
+        "TYPE_FIRE"
+    ],
     "catch_rate": 30,
     "base_exp_reward": 199,
     "ev_yields": {
@@ -26,30 +29,92 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_FLAME_BODY",
+        "ABILITY_VITAL_SPIRIT"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": true,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_PUNCH" ],
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_SMOKE_SCREEN" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 16, "MOVE_FAINT_ATTACK" ],
-            [ 19, "MOVE_FIRE_SPIN" ],
-            [ 25, "MOVE_CONFUSE_RAY" ],
-            [ 28, "MOVE_FIRE_PUNCH" ],
-            [ 37, "MOVE_LAVA_PLUME" ],
-            [ 43, "MOVE_FLAMETHROWER" ],
-            [ 52, "MOVE_SUNNY_DAY" ],
-            [ 58, "MOVE_FIRE_BLAST" ],
-            [ 67, "MOVE_HYPER_BEAM" ]
+            [
+                1,
+                "MOVE_HYPER_BEAM"
+            ],
+            [
+                1,
+                "MOVE_THUNDER_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_EMBER"
+            ],
+            [
+                1,
+                "MOVE_SMOG"
+            ],
+            [
+                5,
+                "MOVE_SMOKE_SCREEN"
+            ],
+            [
+                8,
+                "MOVE_FAINT_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                14,
+                "MOVE_FIRE_SPIN"
+            ],
+            [
+                16,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                18,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                20,
+                "MOVE_FIRE_PUNCH"
+            ],
+            [
+                22,
+                "MOVE_SCREECH"
+            ],
+            [
+                24,
+                "MOVE_BARRIER"
+            ],
+            [
+                28,
+                "MOVE_LAVA_PLUME"
+            ],
+            [
+                30,
+                "MOVE_FLAMETHROWER"
+            ],
+            [
+                40,
+                "MOVE_FLARE_BLITZ"
+            ],
+            [
+                45,
+                "MOVE_OVERHEAT"
+            ],
+            [
+                50,
+                "MOVE_FIRE_BLAST"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -102,7 +167,7 @@
             "MOVE_HEAT_WAVE"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_MAGBY",
     "footprint": {
         "has": true,

@@ -7,7 +7,10 @@
         "special_attack": 50,
         "special_defense": 70
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 68,
     "ev_yields": {
@@ -26,20 +29,52 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_POISON_POINT" ],
+    "egg_groups": [
+        "EGG_GROUP_UNDISCOVERED",
+        "EGG_GROUP_UNDISCOVERED"
+    ],
+    "abilities": [
+        "ABILITY_POISON_POINT",
+        "ABILITY_NATURAL_CURE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": true,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 4, "MOVE_GROWTH" ],
-            [ 7, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_MEGA_DRAIN" ],
-            [ 16, "MOVE_WORRY_SEED" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_GROWTH"
+            ],
+            [
+                5,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                10,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                14,
+                "MOVE_WORRY_SEED"
+            ],
+            [
+                16,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                20,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                40,
+                "MOVE_SPIKES"
+            ]
         ],
         "by_tm": [
             "TM06",
@@ -93,7 +128,10 @@
         ]
     },
     "evolutions": [
-        [ "EVO_LEVEL_HAPPINESS_DAY", "SPECIES_ROSELIA" ]
+        [
+            "EVO_LEVEL_HAPPINESS_DAY",
+            "SPECIES_ROSELIA"
+        ]
     ],
     "offspring": "SPECIES_BUDEW",
     "footprint": {

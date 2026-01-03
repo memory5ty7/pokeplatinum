@@ -7,7 +7,10 @@
         "special_attack": 115,
         "special_defense": 95
     },
-    "types": [ "TYPE_ICE", "TYPE_PSYCHIC" ],
+    "types": [
+        "TYPE_ICE",
+        "TYPE_PSYCHIC"
+    ],
     "catch_rate": 45,
     "base_exp_reward": 137,
     "ev_yields": {
@@ -26,31 +29,88 @@
     "hatch_cycles": 25,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_FOREWARN" ],
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_DRY_SKIN",
+        "ABILITY_OBLIVIOUS"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_LICK" ],
-            [ 1, "MOVE_LOVELY_KISS" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 5, "MOVE_LICK" ],
-            [ 8, "MOVE_LOVELY_KISS" ],
-            [ 11, "MOVE_POWDER_SNOW" ],
-            [ 15, "MOVE_DOUBLE_SLAP" ],
-            [ 18, "MOVE_ICE_PUNCH" ],
-            [ 21, "MOVE_MEAN_LOOK" ],
-            [ 25, "MOVE_FAKE_TEARS" ],
-            [ 28, "MOVE_WAKE_UP_SLAP" ],
-            [ 33, "MOVE_AVALANCHE" ],
-            [ 39, "MOVE_BODY_SLAM" ],
-            [ 44, "MOVE_WRING_OUT" ],
-            [ 49, "MOVE_PERISH_SONG" ],
-            [ 55, "MOVE_BLIZZARD" ]
+            [
+                1,
+                "MOVE_LOVELY_KISS"
+            ],
+            [
+                1,
+                "MOVE_POWDER_SNOW"
+            ],
+            [
+                1,
+                "MOVE_LICK"
+            ],
+            [
+                5,
+                "MOVE_SWEET_KISS"
+            ],
+            [
+                8,
+                "MOVE_CONFUSION"
+            ],
+            [
+                10,
+                "MOVE_SING"
+            ],
+            [
+                14,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                16,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                18,
+                "MOVE_MEAN_LOOK"
+            ],
+            [
+                20,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                22,
+                "MOVE_ICE_PUNCH"
+            ],
+            [
+                24,
+                "MOVE_FAKE_TEARS"
+            ],
+            [
+                28,
+                "MOVE_LUCKY_CHANT"
+            ],
+            [
+                30,
+                "MOVE_ICE_BEAM"
+            ],
+            [
+                40,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                45,
+                "MOVE_PERISH_SONG"
+            ],
+            [
+                50,
+                "MOVE_BLIZZARD"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -111,7 +171,7 @@
             "MOVE_TRICK"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SMOOCHUM",
     "footprint": {
         "has": false,

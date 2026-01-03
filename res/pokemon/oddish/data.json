@@ -7,7 +7,10 @@
         "special_attack": 75,
         "special_defense": 65
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
+    "types": [
+        "TYPE_GRASS",
+        "TYPE_POISON"
+    ],
     "catch_rate": 255,
     "base_exp_reward": 78,
     "ev_yields": {
@@ -26,26 +29,76 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
+    "egg_groups": [
+        "EGG_GROUP_GRASS",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_CHLOROPHYLL",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 5, "MOVE_SWEET_SCENT" ],
-            [ 9, "MOVE_ACID" ],
-            [ 13, "MOVE_POISON_POWDER" ],
-            [ 15, "MOVE_STUN_SPORE" ],
-            [ 17, "MOVE_SLEEP_POWDER" ],
-            [ 21, "MOVE_MEGA_DRAIN" ],
-            [ 25, "MOVE_LUCKY_CHANT" ],
-            [ 29, "MOVE_NATURAL_GIFT" ],
-            [ 33, "MOVE_MOONLIGHT" ],
-            [ 37, "MOVE_GIGA_DRAIN" ],
-            [ 41, "MOVE_PETAL_DANCE" ]
+            [
+                1,
+                "MOVE_ABSORB"
+            ],
+            [
+                1,
+                "MOVE_ACID"
+            ],
+            [
+                5,
+                "MOVE_SWEET_SCENT"
+            ],
+            [
+                8,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                10,
+                "MOVE_MEGA_DRAIN"
+            ],
+            [
+                13,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                16,
+                "MOVE_SLEEP_POWDER"
+            ],
+            [
+                18,
+                "MOVE_LUCKY_CHANT"
+            ],
+            [
+                20,
+                "MOVE_GIGA_DRAIN"
+            ],
+            [
+                24,
+                "MOVE_SYNTHESIS"
+            ],
+            [
+                28,
+                "MOVE_TOXIC"
+            ],
+            [
+                30,
+                "MOVE_SLUDGE_BOMB"
+            ],
+            [
+                36,
+                "MOVE_PETAL_DANCE"
+            ],
+            [
+                40,
+                "MOVE_LEAF_STORM"
+            ]
         ],
         "by_tm": [
             "TM06",

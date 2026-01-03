@@ -7,7 +7,10 @@
         "special_attack": 45,
         "special_defense": 55
     },
-    "types": [ "TYPE_BUG", "TYPE_GRASS" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_GRASS"
+    ],
     "catch_rate": 190,
     "base_exp_reward": 70,
     "ev_yields": {
@@ -26,24 +29,68 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_EFFECT_SPORE", "ABILITY_DRY_SKIN" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_GRASS"
+    ],
+    "abilities": [
+        "ABILITY_DRY_SKIN",
+        "ABILITY_EFFECT_SPORE"
+    ],
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 6, "MOVE_STUN_SPORE" ],
-            [ 6, "MOVE_POISON_POWDER" ],
-            [ 11, "MOVE_LEECH_LIFE" ],
-            [ 17, "MOVE_SPORE" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 27, "MOVE_GROWTH" ],
-            [ 33, "MOVE_GIGA_DRAIN" ],
-            [ 38, "MOVE_AROMATHERAPY" ],
-            [ 43, "MOVE_X_SCISSOR" ]
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_FURY_CUTTER"
+            ],
+            [
+                5,
+                "MOVE_STUN_SPORE"
+            ],
+            [
+                8,
+                "MOVE_POISON_POWDER"
+            ],
+            [
+                10,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                14,
+                "MOVE_CROSS_POISON"
+            ],
+            [
+                16,
+                "MOVE_BULLET_SEED"
+            ],
+            [
+                20,
+                "MOVE_AROMATHERAPY"
+            ],
+            [
+                24,
+                "MOVE_SLASH"
+            ],
+            [
+                30,
+                "MOVE_SPORE"
+            ],
+            [
+                36,
+                "MOVE_X_SCISSOR"
+            ],
+            [
+                40,
+                "MOVE_LEECH_LIFE"
+            ]
         ],
         "by_tm": [
             "TM06",

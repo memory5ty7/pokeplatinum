@@ -7,7 +7,10 @@
         "special_attack": 92,
         "special_defense": 82
     },
-    "types": [ "TYPE_WATER", "TYPE_GROUND" ],
+    "types": [
+        "TYPE_WATER",
+        "TYPE_GROUND"
+    ],
     "catch_rate": 75,
     "base_exp_reward": 176,
     "ev_yields": {
@@ -26,8 +29,14 @@
     "hatch_cycles": 20,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_STICKY_HOLD", "ABILITY_STORM_DRAIN" ],
+    "egg_groups": [
+        "EGG_GROUP_WATER_1",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_STORM_DRAIN",
+        "ABILITY_STICKY_HOLD"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
@@ -37,19 +46,74 @@
     },
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_WATER_PULSE" ],
-            [ 2, "MOVE_MUD_SPORT" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 7, "MOVE_WATER_PULSE" ],
-            [ 11, "MOVE_MUD_BOMB" ],
-            [ 16, "MOVE_HIDDEN_POWER" ],
-            [ 22, "MOVE_RAIN_DANCE" ],
-            [ 29, "MOVE_BODY_SLAM" ],
-            [ 41, "MOVE_MUDDY_WATER" ],
-            [ 54, "MOVE_RECOVER" ]
+            [
+                1,
+                "MOVE_COUNTER"
+            ],
+            [
+                1,
+                "MOVE_MIRROR_COAT"
+            ],
+            [
+                1,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                1,
+                "MOVE_MUD_SLAP"
+            ],
+            [
+                5,
+                "MOVE_HIDDEN_POWER"
+            ],
+            [
+                10,
+                "MOVE_MUD_BOMB"
+            ],
+            [
+                14,
+                "MOVE_YAWN"
+            ],
+            [
+                16,
+                "MOVE_WATER_PULSE"
+            ],
+            [
+                20,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                24,
+                "MOVE_MIST"
+            ],
+            [
+                28,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                30,
+                "MOVE_MUDDY_WATER"
+            ],
+            [
+                34,
+                "MOVE_RECOVER"
+            ],
+            [
+                38,
+                "MOVE_EARTH_POWER"
+            ],
+            [
+                42,
+                "MOVE_ACID_ARMOR"
+            ],
+            [
+                45,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                48,
+                "MOVE_EARTHQUAKE"
+            ]
         ],
         "by_tm": [
             "TM03",
@@ -98,7 +162,7 @@
             "MOVE_EARTH_POWER"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_SHELLOS",
     "footprint": {
         "has": true,

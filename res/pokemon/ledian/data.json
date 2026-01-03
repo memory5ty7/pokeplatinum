@@ -7,7 +7,10 @@
         "special_attack": 55,
         "special_defense": 110
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_FLYING"
+    ],
     "catch_rate": 90,
     "base_exp_reward": 134,
     "ev_yields": {
@@ -26,29 +29,92 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_EARLY_BIRD" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SWARM",
+        "ABILITY_IRON_FIST"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 1, "MOVE_COMET_PUNCH" ],
-            [ 6, "MOVE_SUPERSONIC" ],
-            [ 9, "MOVE_COMET_PUNCH" ],
-            [ 14, "MOVE_LIGHT_SCREEN" ],
-            [ 14, "MOVE_REFLECT" ],
-            [ 14, "MOVE_SAFEGUARD" ],
-            [ 17, "MOVE_MACH_PUNCH" ],
-            [ 24, "MOVE_BATON_PASS" ],
-            [ 29, "MOVE_SILVER_WIND" ],
-            [ 36, "MOVE_AGILITY" ],
-            [ 41, "MOVE_SWIFT" ],
-            [ 48, "MOVE_DOUBLE_EDGE" ],
-            [ 53, "MOVE_BUG_BUZZ" ]
+            [
+                1,
+                "MOVE_DYNAMIC_PUNCH"
+            ],
+            [
+                1,
+                "MOVE_FEINT"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_SWIFT"
+            ],
+            [
+                5,
+                "MOVE_AERIAL_ACE"
+            ],
+            [
+                10,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                12,
+                "MOVE_REFLECT"
+            ],
+            [
+                12,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                16,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                18,
+                "MOVE_DIZZY_PUNCH"
+            ],
+            [
+                20,
+                "MOVE_AIR_CUTTER"
+            ],
+            [
+                24,
+                "MOVE_DRAIN_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                33,
+                "MOVE_TAILWIND"
+            ],
+            [
+                36,
+                "MOVE_ENCORE"
+            ],
+            [
+                37,
+                "MOVE_MEGA_PUNCH"
+            ],
+            [
+                40,
+                "MOVE_AIR_SLASH"
+            ],
+            [
+                43,
+                "MOVE_U_TURN"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -103,7 +169,7 @@
             "MOVE_UPROAR"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_LEDYBA",
     "footprint": {
         "has": true,

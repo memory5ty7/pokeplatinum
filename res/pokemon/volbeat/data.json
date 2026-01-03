@@ -7,7 +7,10 @@
         "special_attack": 47,
         "special_defense": 75
     },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
+    "types": [
+        "TYPE_BUG",
+        "TYPE_BUG"
+    ],
     "catch_rate": 150,
     "base_exp_reward": 146,
     "ev_yields": {
@@ -26,27 +29,80 @@
     "hatch_cycles": 15,
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_ILLUMINATE", "ABILITY_SWARM" ],
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_SWARM",
+        "ABILITY_NONE"
+    ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FLASH" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_DOUBLE_TEAM" ],
-            [ 9, "MOVE_CONFUSE_RAY" ],
-            [ 13, "MOVE_MOONLIGHT" ],
-            [ 17, "MOVE_QUICK_ATTACK" ],
-            [ 21, "MOVE_TAIL_GLOW" ],
-            [ 25, "MOVE_SIGNAL_BEAM" ],
-            [ 29, "MOVE_PROTECT" ],
-            [ 33, "MOVE_HELPING_HAND" ],
-            [ 37, "MOVE_ZEN_HEADBUTT" ],
-            [ 41, "MOVE_BUG_BUZZ" ],
-            [ 45, "MOVE_DOUBLE_EDGE" ]
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_CONFUSE_RAY"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                10,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                12,
+                "MOVE_SWIFT"
+            ],
+            [
+                14,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                16,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                20,
+                "MOVE_SIGNAL_BEAM"
+            ],
+            [
+                22,
+                "MOVE_PROTECT"
+            ],
+            [
+                24,
+                "MOVE_MOONLIGHT"
+            ],
+            [
+                27,
+                "MOVE_DIZZY_PUNCH"
+            ],
+            [
+                30,
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            [
+                32,
+                "MOVE_ROOST"
+            ],
+            [
+                36,
+                "MOVE_BUG_BUZZ"
+            ],
+            [
+                40,
+                "MOVE_TAIL_GLOW"
+            ]
         ],
         "by_tm": [
             "TM01",
@@ -108,7 +164,7 @@
             "MOVE_BUG_BUZZ"
         ]
     },
-    "evolutions": [  ],
+    "evolutions": [],
     "offspring": "SPECIES_VOLBEAT",
     "footprint": {
         "has": true,
