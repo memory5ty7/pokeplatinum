@@ -1880,6 +1880,254 @@
     {
       "id": "pl_msg_00000392_00469",
       "en_US": "Prism Scale"
+    },
+    {
+      "id": "pl_msg_00000392_00470",
+      "en_US": "Venusaurite"
+    },
+    {
+      "id": "pl_msg_00000392_00471",
+      "en_US": "Charizardite X"
+    },
+    {
+      "id": "pl_msg_00000392_00472",
+      "en_US": "Charizardite Y"
+    },
+    {
+      "id": "pl_msg_00000392_00473",
+      "en_US": "Blastoisinite"
+    },
+    {
+      "id": "pl_msg_00000392_00474",
+      "en_US": "Beedrillite"
+    },
+    {
+      "id": "pl_msg_00000392_00475",
+      "en_US": "Pidgeotite"
+    },
+    {
+      "id": "pl_msg_00000392_00476",
+      "en_US": "Raichunite X"
+    },
+    {
+      "id": "pl_msg_00000392_00477",
+      "en_US": "Raichunite Y"
+    },
+    {
+      "id": "pl_msg_00000392_00478",
+      "en_US": "Clefablite"
+    },
+    {
+      "id": "pl_msg_00000392_00479",
+      "en_US": "Alakazite"
+    },
+    {
+      "id": "pl_msg_00000392_00480",
+      "en_US": "Victreebelite"
+    },
+    {
+      "id": "pl_msg_00000392_00481",
+      "en_US": "Slowbronite"
+    },
+    {
+      "id": "pl_msg_00000392_00482",
+      "en_US": "Gengarite"
+    },
+    {
+      "id": "pl_msg_00000392_00483",
+      "en_US": "Kangaskhanite"
+    },
+    {
+      "id": "pl_msg_00000392_00484",
+      "en_US": "Starminite"
+    },
+    {
+      "id": "pl_msg_00000392_00485",
+      "en_US": "Pinsirite"
+    },
+    {
+      "id": "pl_msg_00000392_00486",
+      "en_US": "Gyaradosite"
+    },
+    {
+      "id": "pl_msg_00000392_00487",
+      "en_US": "Aerodactylite"
+    },
+    {
+      "id": "pl_msg_00000392_00488",
+      "en_US": "Dragonitite"
+    },
+    {
+      "id": "pl_msg_00000392_00489",
+      "en_US": "Mewtwonite X"
+    },
+    {
+      "id": "pl_msg_00000392_00490",
+      "en_US": "Mewtwonite Y"
+    },
+    {
+      "id": "pl_msg_00000392_00491",
+      "en_US": "Meganiumite"
+    },
+    {
+      "id": "pl_msg_00000392_00492",
+      "en_US": "Feraligite"
+    },
+    {
+      "id": "pl_msg_00000392_00493",
+      "en_US": "Ampharosite"
+    },
+    {
+      "id": "pl_msg_00000392_00494",
+      "en_US": "Steelixite"
+    },
+    {
+      "id": "pl_msg_00000392_00495",
+      "en_US": "Scizorite"
+    },
+    {
+      "id": "pl_msg_00000392_00496",
+      "en_US": "Heracronite"
+    },
+    {
+      "id": "pl_msg_00000392_00497",
+      "en_US": "Skarmorite"
+    },
+    {
+      "id": "pl_msg_00000392_00498",
+      "en_US": "Houndoominite"
+    },
+    {
+      "id": "pl_msg_00000392_00499",
+      "en_US": "Tyranitarite"
+    },
+    {
+      "id": "pl_msg_00000392_00500",
+      "en_US": "Sceptilite"
+    },
+    {
+      "id": "pl_msg_00000392_00501",
+      "en_US": "Blazikenite"
+    },
+    {
+      "id": "pl_msg_00000392_00502",
+      "en_US": "Swampertite"
+    },
+    {
+      "id": "pl_msg_00000392_00503",
+      "en_US": "Gardevoirite"
+    },
+    {
+      "id": "pl_msg_00000392_00504",
+      "en_US": "Sablenite"
+    },
+    {
+      "id": "pl_msg_00000392_00505",
+      "en_US": "Mawilite"
+    },
+    {
+      "id": "pl_msg_00000392_00506",
+      "en_US": "Aggronite"
+    },
+    {
+      "id": "pl_msg_00000392_00507",
+      "en_US": "Medichamite"
+    },
+    {
+      "id": "pl_msg_00000392_00508",
+      "en_US": "Manectite"
+    },
+    {
+      "id": "pl_msg_00000392_00509",
+      "en_US": "Sharpedonite"
+    },
+    {
+      "id": "pl_msg_00000392_00510",
+      "en_US": "Cameruptite"
+    },
+    {
+      "id": "pl_msg_00000392_00511",
+      "en_US": "Altarianite"
+    },
+    {
+      "id": "pl_msg_00000392_00512",
+      "en_US": "Banettite"
+    },
+    {
+      "id": "pl_msg_00000392_00513",
+      "en_US": "Chimechite"
+    },
+    {
+      "id": "pl_msg_00000392_00514",
+      "en_US": "Absolite"
+    },
+    {
+      "id": "pl_msg_00000392_00515",
+      "en_US": "Absolite Z"
+    },
+    {
+      "id": "pl_msg_00000392_00516",
+      "en_US": "Glalitite"
+    },
+    {
+      "id": "pl_msg_00000392_00517",
+      "en_US": "Salamencite"
+    },
+    {
+      "id": "pl_msg_00000392_00518",
+      "en_US": "Metagrossite"
+    },
+    {
+      "id": "pl_msg_00000392_00519",
+      "en_US": "Latiasite"
+    },
+    {
+      "id": "pl_msg_00000392_00520",
+      "en_US": "Latiosite"
+    },
+    {
+      "id": "pl_msg_00000392_00521",
+      "en_US": "Staraptite"
+    },
+    {
+      "id": "pl_msg_00000392_00522",
+      "en_US": "Lopunnite"
+    },
+    {
+      "id": "pl_msg_00000392_00523",
+      "en_US": "Garchompite"
+    },
+    {
+      "id": "pl_msg_00000392_00524",
+      "en_US": "Garchompite Z"
+    },
+    {
+      "id": "pl_msg_00000392_00525",
+      "en_US": "Lucarionite"
+    },
+    {
+      "id": "pl_msg_00000392_00526",
+      "en_US": "Lucarionite Z"
+    },
+    {
+      "id": "pl_msg_00000392_00527",
+      "en_US": "Abomasite"
+    },
+    {
+      "id": "pl_msg_00000392_00528",
+      "en_US": "Galladite"
+    },
+    {
+      "id": "pl_msg_00000392_00529",
+      "en_US": "Froslassite"
+    },
+    {
+      "id": "pl_msg_00000392_00530",
+      "en_US": "Heatranite"
+    },
+    {
+      "id": "pl_msg_00000392_00531",
+      "en_US": "Darkranite"
     }
   ]
 }

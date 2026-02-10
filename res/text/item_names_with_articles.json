@@ -1880,6 +1880,254 @@
     {
       "id": "pl_msg_00000393_00469",
       "en_US": "a {COLOR 255}Prism Scale{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00470",
+      "en_US": "a {COLOR 255}Venusaurite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00471",
+      "en_US": "a {COLOR 255}Charizardite X{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00472",
+      "en_US": "a {COLOR 255}Charizardite Y{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00473",
+      "en_US": "a {COLOR 255}Blastoisinite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00474",
+      "en_US": "a {COLOR 255}Beedrillite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00475",
+      "en_US": "a {COLOR 255}Pidgeotite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00476",
+      "en_US": "a {COLOR 255}Raichunite X{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00477",
+      "en_US": "a {COLOR 255}Raichunite Y{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00478",
+      "en_US": "a {COLOR 255}Clefablite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00479",
+      "en_US": "a {COLOR 255}Alakazite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00480",
+      "en_US": "a {COLOR 255}Victreebelite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00481",
+      "en_US": "a {COLOR 255}Slowbronite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00482",
+      "en_US": "a {COLOR 255}Gengarite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00483",
+      "en_US": "a {COLOR 255}Kangaskhanite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00484",
+      "en_US": "a {COLOR 255}Starminite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00485",
+      "en_US": "a {COLOR 255}Pinsirite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00486",
+      "en_US": "a {COLOR 255}Gyaradosite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00487",
+      "en_US": "a {COLOR 255}Aerodactylite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00488",
+      "en_US": "a {COLOR 255}Dragonitite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00489",
+      "en_US": "a {COLOR 255}Mewtwonite X{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00490",
+      "en_US": "a {COLOR 255}Mewtwonite Y{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00491",
+      "en_US": "a {COLOR 255}Meganiumite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00492",
+      "en_US": "a {COLOR 255}Feraligite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00493",
+      "en_US": "a {COLOR 255}Ampharosite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00494",
+      "en_US": "a {COLOR 255}Steelixite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00495",
+      "en_US": "a {COLOR 255}Scizorite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00496",
+      "en_US": "a {COLOR 255}Heracronite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00497",
+      "en_US": "a {COLOR 255}Skarmorite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00498",
+      "en_US": "a {COLOR 255}Houndoominite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00499",
+      "en_US": "a {COLOR 255}Tyranitarite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00500",
+      "en_US": "a {COLOR 255}Sceptilite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00501",
+      "en_US": "a {COLOR 255}Blazikenite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00502",
+      "en_US": "a {COLOR 255}Swampertite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00503",
+      "en_US": "a {COLOR 255}Gardevoirite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00504",
+      "en_US": "a {COLOR 255}Sablenite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00505",
+      "en_US": "a {COLOR 255}Mawilite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00506",
+      "en_US": "a {COLOR 255}Aggronite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00507",
+      "en_US": "a {COLOR 255}Medichamite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00508",
+      "en_US": "a {COLOR 255}Manectite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00509",
+      "en_US": "a {COLOR 255}Sharpedonite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00510",
+      "en_US": "a {COLOR 255}Cameruptite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00511",
+      "en_US": "a {COLOR 255}Altarianite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00512",
+      "en_US": "a {COLOR 255}Banettite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00513",
+      "en_US": "a {COLOR 255}Chimechite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00514",
+      "en_US": "a {COLOR 255}Absolite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00515",
+      "en_US": "a {COLOR 255}Absolite Z{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00516",
+      "en_US": "a {COLOR 255}Glalitite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00517",
+      "en_US": "a {COLOR 255}Salamencite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00518",
+      "en_US": "a {COLOR 255}Metagrossite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00519",
+      "en_US": "a {COLOR 255}Latiasite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00520",
+      "en_US": "a {COLOR 255}Latiosite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00521",
+      "en_US": "a {COLOR 255}Staraptite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00522",
+      "en_US": "a {COLOR 255}Lopunnite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00523",
+      "en_US": "a {COLOR 255}Garchompite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00524",
+      "en_US": "a {COLOR 255}Garchompite Z{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00525",
+      "en_US": "a {COLOR 255}Lucarionite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00526",
+      "en_US": "a {COLOR 255}Lucarionite Z{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00527",
+      "en_US": "a {COLOR 255}Abomasite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00528",
+      "en_US": "a {COLOR 255}Galladite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00529",
+      "en_US": "a {COLOR 255}Froslassite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00530",
+      "en_US": "a {COLOR 255}Heatranite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00531",
+      "en_US": "a {COLOR 255}Darkranite{COLOR 0}"
     }
   ]
 }
