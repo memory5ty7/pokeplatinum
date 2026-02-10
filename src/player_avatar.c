@@ -11,8 +11,8 @@
 #include "struct_defs/struct_0205EC34.h"
 
 #include "field/field_system.h"
-#include "overlay005/ov5_021F25C0.h"
 #include "overlay005/ov5_021F61BC.h"
+#include "overlay005/surf_mount_renderer.h"
 
 #include "heap.h"
 #include "map_object.h"
@@ -33,7 +33,7 @@ typedef struct PlayerAvatar {
     enum FaceDirection faceLeftOrRight;
     enum FaceDirection faceUpOrDown;
     MapObject *mapObject;
-    OverworldAnimManager *unk_34;
+    OverworldAnimManager *surfMountAnimMan;
     PlayerData *player;
     const PlayerData *playerConst;
 } PlayerAvatar;
@@ -85,7 +85,7 @@ PlayerAvatar *sub_0205E820(const MapObjectManager *mapObjMan, PlayerData *param1
     mapObj = sub_0205EA64(mapObjMan);
 
     MapObject_SetGraphicsID(mapObj, Player_MoveStateFromGender(v0, gender));
-    MapObject_SetStatusFlagOn(mapObj, MAP_OBJ_STATUS_10 | MAP_OBJ_STATUS_13);
+    MapObject_SetStatusFlagOn(mapObj, MAP_OBJ_STATUS_PERSISTENT | MAP_OBJ_STATUS_13);
     MapObject_SetStatusFlagOff(mapObj, MAP_OBJ_STATUS_LOCK_DIR | MAP_OBJ_STATUS_PAUSE_ANIMATION);
     MapObject_SetDynamicHeightCalculationEnabled(mapObj, TRUE);
     PlayerAvatar_SetMapObject(playerAvatar, mapObj);
@@ -106,9 +106,9 @@ void PlayerAvatar_InitDraw(PlayerAvatar *playerAvatar, int dynamicMapFeaturesID)
             int x = Player_GetXPos(playerAvatar);
             int z = Player_GetZPos(playerAvatar);
             int dir = PlayerAvatar_GetDir(playerAvatar);
-            OverworldAnimManager *v7 = ov5_021F261C(mapObj, x, z, dir, 1);
+            OverworldAnimManager *v7 = SurfMountRenderer_HandleSurfBegin(mapObj, x, z, dir, 1);
 
-            sub_0205EC00(playerAvatar, v7);
+            PlayerAvatar_SetSurfMountAnimManager(playerAvatar, v7);
         }
     }
 }
@@ -167,7 +167,7 @@ static void PlayerAvatar_AddMapObject(PlayerAvatar *playerAvatar, const MapObjec
     MapObject_SetDataAt(mapObj, 0, 2);
     MapObject_SetMovementRangeX(mapObj, -1);
     MapObject_SetMovementRangeZ(mapObj, -1);
-    MapObject_SetStatusFlagOn(mapObj, MAP_OBJ_STATUS_10 | MAP_OBJ_STATUS_13);
+    MapObject_SetStatusFlagOn(mapObj, MAP_OBJ_STATUS_PERSISTENT | MAP_OBJ_STATUS_13);
     MapObject_SetStatusFlagOff(mapObj, MAP_OBJ_STATUS_LOCK_DIR | MAP_OBJ_STATUS_PAUSE_ANIMATION);
     MapObject_SetDynamicHeightCalculationEnabled(mapObj, TRUE);
 
@@ -179,7 +179,7 @@ MapObject *sub_0205EA24(const MapObjectManager *mapObjMan)
     int v0 = 0;
     MapObject *mapObj = NULL;
 
-    while (sub_020625B0(mapObjMan, &mapObj, &v0, 1 << 0)) {
+    while (MapObjectMan_FindObjectWithStatus(mapObjMan, &mapObj, &v0, 1 << 0)) {
         if (MapObject_GetMovementType(mapObj) == 0x1) {
             break;
         }
@@ -270,11 +270,11 @@ int Player_MoveState(const PlayerAvatar *playerAvatar)
     return playerAvatar->unk_18;
 }
 
-void PlayerAvatar_SetHidden(PlayerAvatar *playerAvatar, int param1)
+void PlayerAvatar_SetVisible(PlayerAvatar *playerAvatar, BOOL visible)
 {
     MapObject *mapObj = Player_MapObject(playerAvatar);
 
-    if (param1 == 1) {
+    if (visible == TRUE) {
         MapObject_SetStatusFlagOff(mapObj, MAP_OBJ_STATUS_HIDE);
     } else {
         MapObject_SetStatusFlagOn(mapObj, MAP_OBJ_STATUS_HIDE);
@@ -406,14 +406,14 @@ void PlayerAvatar_SetFaceDirection(PlayerAvatar *playerAvatar, enum FaceDirectio
     PlayerAvatar_SetFaceUpOrDown(playerAvatar, faceUpOrDown);
 }
 
-void sub_0205EC00(PlayerAvatar *playerAvatar, OverworldAnimManager *param1)
+void PlayerAvatar_SetSurfMountAnimManager(PlayerAvatar *playerAvatar, OverworldAnimManager *surfMountAnimMan)
 {
-    playerAvatar->unk_34 = param1;
+    playerAvatar->surfMountAnimMan = surfMountAnimMan;
 }
 
-OverworldAnimManager *sub_0205EC04(PlayerAvatar *playerAvatar)
+OverworldAnimManager *PlayerAvatar_GetSurfMountAnimManager(PlayerAvatar *playerAvatar)
 {
-    return playerAvatar->unk_34;
+    return playerAvatar->surfMountAnimMan;
 }
 
 static void PlayerAvatar_SetPlayerData(PlayerAvatar *playerAvatar, PlayerData *player)
@@ -538,11 +538,11 @@ void sub_0205ECB8(PlayerAvatar *playerAvatar, const VecFx32 *param1, int param2)
     sub_0205EB10(playerAvatar, 0);
 }
 
-void sub_0205ECE0(PlayerAvatar *playerAvatar, int param1, int param2, int param3)
+void sub_0205ECE0(PlayerAvatar *playerAvatar, int x, int z, int dir)
 {
     MapObject *mapObj = Player_MapObject(playerAvatar);
 
-    MapObject_SetPosDirFromCoords(mapObj, param1, 0, param2, param3);
+    MapObject_SetPosDirFromCoords(mapObj, x, 0, z, dir);
     sub_0205EB08(playerAvatar, 0);
     sub_0205EB10(playerAvatar, 0);
 }

@@ -1,8 +1,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_defs/struct_02099F80.h"
-
 #include "main_menu/application_template.h"
 
 #include "bg_window.h"
@@ -16,19 +14,19 @@
 #include "render_window.h"
 #include "savedata.h"
 #include "screen_fade.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "text.h"
 
 FS_EXTERN_OVERLAY(main_menu);
 
 typedef struct {
-    int heapID;
+    enum HeapID heapID;
     int unk_04;
     int unk_08;
     int unk_0C;
     int unk_10;
-    Strbuf *unk_14;
+    String *unk_14;
     BgConfig *unk_18;
     MessageLoader *unk_1C;
     Window unk_20;
@@ -68,14 +66,13 @@ const ApplicationManagerTemplate Unk_020F8AB4 = {
 int sub_0209A2C4(ApplicationManager *appMan, int *param1)
 {
     UnkStruct_0209A3D0 *v0;
-    int heapID = HEAP_ID_88;
 
-    Heap_Create(HEAP_ID_APPLICATION, heapID, 0x20000);
+    Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_88, 0x20000);
 
-    v0 = ApplicationManager_NewData(appMan, sizeof(UnkStruct_0209A3D0), heapID);
+    v0 = ApplicationManager_NewData(appMan, sizeof(UnkStruct_0209A3D0), HEAP_ID_88);
     memset(v0, 0, sizeof(UnkStruct_0209A3D0));
 
-    v0->heapID = heapID;
+    v0->heapID = HEAP_ID_88;
     v0->unk_04 = 0;
     v0->saveData = ((ApplicationArgs *)ApplicationManager_Args(appMan))->saveData;
 
@@ -134,7 +131,7 @@ int sub_0209A3A4(ApplicationManager *appMan, int *param1)
 static void sub_0209A3D0(UnkStruct_0209A3D0 *param0)
 {
     {
-        UnkStruct_02099F80 v0 = {
+        GXBanks v0 = {
             GX_VRAM_BG_256_AB,
             GX_VRAM_BGEXTPLTT_NONE,
             GX_VRAM_SUB_BG_NONE,
@@ -296,12 +293,12 @@ static BOOL sub_0209A688(UnkStruct_0209A3D0 *param0, u32 param1, int param2, int
         Window_FillRectWithColor(&param0->unk_20, 15, 0, 0, 27 * 8, 4 * 8);
         Window_DrawMessageBoxWithScrollCursor(&param0->unk_20, 0, 512 - (18 + 12), 2);
 
-        param0->unk_14 = Strbuf_Init(0x400, param0->heapID);
-        MessageLoader_GetStrbuf(param0->unk_1C, param1, param0->unk_14);
+        param0->unk_14 = String_Init(0x400, param0->heapID);
+        MessageLoader_GetString(param0->unk_1C, param1, param0->unk_14);
         param0->unk_10 = Text_AddPrinterWithParams(&param0->unk_20, FONT_MESSAGE, param0->unk_14, 0, 0, param3, NULL);
 
         if (param3 == 0) {
-            Strbuf_Free(param0->unk_14);
+            String_Free(param0->unk_14);
             param0->unk_0C++;
         }
 
@@ -309,7 +306,7 @@ static BOOL sub_0209A688(UnkStruct_0209A3D0 *param0, u32 param1, int param2, int
         break;
     case 1:
         if (!(Text_IsPrinterActive(param0->unk_10))) {
-            Strbuf_Free(param0->unk_14);
+            String_Free(param0->unk_14);
             param0->unk_0C++;
         }
         break;

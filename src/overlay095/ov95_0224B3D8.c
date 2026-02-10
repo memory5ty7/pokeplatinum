@@ -4,7 +4,6 @@
 #include <string.h>
 
 #include "struct_defs/sprite_animation_frame.h"
-#include "struct_defs/struct_02099F80.h"
 
 #include "overlay095/ov95_02246C20.h"
 #include "overlay095/ov95_022476F0.h"
@@ -25,7 +24,7 @@
 #include "screen_fade.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -61,8 +60,8 @@ typedef struct {
     UnkStruct_ov95_02247568 unk_48;
     BgConfig *unk_58;
     Window unk_5C;
-    Strbuf *unk_6C;
-    Strbuf *unk_70;
+    String *unk_6C;
+    String *unk_70;
     UnkStruct_ov95_0224773C *unk_74;
     UnkStruct_ov95_02247958 *unk_78;
     SysTask *unk_7C;
@@ -129,8 +128,8 @@ void *ov95_0224B3D8(TradeSequenceData *param0)
         v0->unk_58 = ov95_02247628(param0);
         v0->unk_10 = PokemonSpriteManager_New(HEAP_ID_58);
         v0->unk_14 = NULL;
-        v0->unk_6C = Strbuf_Init(300, HEAP_ID_58);
-        v0->unk_70 = Strbuf_Init(300, HEAP_ID_58);
+        v0->unk_6C = String_Init(300, HEAP_ID_58);
+        v0->unk_70 = String_Init(300, HEAP_ID_58);
         v0->unk_7C = NULL;
         v0->unk_80 = NULL;
         v0->unk_74 = NULL;
@@ -151,8 +150,8 @@ void ov95_0224B438(void *param0)
         ov95_0224BB8C(v0);
         ov95_0224BCE8(v0->unk_80);
 
-        Strbuf_Free(v0->unk_6C);
-        Strbuf_Free(v0->unk_70);
+        String_Free(v0->unk_6C);
+        String_Free(v0->unk_70);
 
         if (v0->unk_74) {
             ov95_0224773C(v0->unk_74);
@@ -221,7 +220,7 @@ static void ov95_0224B4D4(UnkStruct_ov95_0224B4D4 *param0)
 
 static int ov95_0224B520(UnkStruct_ov95_0224B4D4 *param0, int *param1)
 {
-    static const UnkStruct_02099F80 v0 = {
+    static const GXBanks v0 = {
         GX_VRAM_BG_128_B,
         GX_VRAM_BGEXTPLTT_23_G,
         GX_VRAM_SUB_BG_128_C,
@@ -399,7 +398,7 @@ static int ov95_0224B81C(UnkStruct_ov95_0224B4D4 *param0, int *param1)
                 v3 = 3;
             }
 
-            MessageLoader_GetStrbuf(v0, v2, param0->unk_6C);
+            MessageLoader_GetString(v0, v2, param0->unk_6C);
             StringTemplate_Format(v1, param0->unk_70, param0->unk_6C);
             Text_AddPrinterWithParams(&(param0->unk_5C), FONT_MESSAGE, param0->unk_70, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
 
@@ -417,7 +416,7 @@ static int ov95_0224B81C(UnkStruct_ov95_0224B4D4 *param0, int *param1)
             MessageLoader *v4 = ov95_02247630(param0->unk_00);
             StringTemplate *v5 = ov95_0224762C(param0->unk_00);
 
-            MessageLoader_GetStrbuf(v4, pl_msg_00000350_00003, param0->unk_6C);
+            MessageLoader_GetString(v4, pl_msg_00000350_00003, param0->unk_6C);
             StringTemplate_Format(v5, param0->unk_70, param0->unk_6C);
             Window_FillTilemap(&(param0->unk_5C), 0xf);
             Text_AddPrinterWithParams(&(param0->unk_5C), FONT_MESSAGE, param0->unk_70, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);

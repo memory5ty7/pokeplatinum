@@ -13,20 +13,21 @@
 #include "heap.h"
 #include "math_util.h"
 #include "message.h"
+#include "message_util.h"
 #include "narc.h"
 #include "party.h"
 #include "pokemon.h"
 #include "savedata.h"
 #include "savedata_misc.h"
-#include "strbuf.h"
+#include "string_gf.h"
 
 #include "macros.h"
 #include "desmume.h"
 #include "pokemon.h"
 
-static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID);
+static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID heapID);
 
-void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, int heapID)
+void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, enum HeapID heapID)
 {
     Trainer trdata;
     MessageLoader *msgLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_NAMES, heapID);
@@ -43,9 +44,9 @@ void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, int heapID
         if (trdata.header.trainerType == TRAINER_CLASS_RIVAL) {
             CharCode_Copy(dto->trainer[i].name, rivalName);
         } else {
-            Strbuf *trainerName = MessageLoader_GetNewStrbuf(msgLoader, dto->trainerIDs[i]);
-            Strbuf_ToChars(trainerName, dto->trainer[i].name, TRAINER_NAME_LEN + 1);
-            Strbuf_Free(trainerName);
+            String *trainerName = MessageLoader_GetNewString(msgLoader, dto->trainerIDs[i]);
+            String_ToChars(trainerName, dto->trainer[i].name, TRAINER_NAME_LEN + 1);
+            String_Free(trainerName);
         }
 
         TrainerData_BuildParty(dto, i, heapID);
@@ -99,7 +100,7 @@ u32 Trainer_LoadParam(int trainerID, enum TrainerDataParam paramID)
     return result;
 }
 
-BOOL Trainer_HasMessageType(int trainerID, enum TrainerMessageType msgType, int heapID)
+BOOL Trainer_HasMessageType(int trainerID, enum TrainerMessageType msgType, enum HeapID heapID)
 {
     NARC *narc; // must declare up here to match
     u16 offset, data[2];
@@ -128,7 +129,7 @@ BOOL Trainer_HasMessageType(int trainerID, enum TrainerMessageType msgType, int 
     return result;
 }
 
-void Trainer_LoadMessage(int trainerID, enum TrainerMessageType msgType, Strbuf *strbuf, int heapID)
+void Trainer_LoadMessage(int trainerID, enum TrainerMessageType msgType, String *string, enum HeapID heapID)
 {
     NARC *narc; // must declare up here to match
     u16 offset, data[2];
@@ -141,7 +142,7 @@ void Trainer_LoadMessage(int trainerID, enum TrainerMessageType msgType, Strbuf 
         NARC_ReadFromMember(narc, 0, offset, 4, data);
 
         if (data[0] == trainerID && data[1] == msgType) {
-            MessageBank_GetStrbufFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_MESSAGES, offset / 4, heapID, strbuf);
+            MessageBank_GetStringFromNARC(NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_MESSAGES, offset / 4, heapID, string);
             break;
         }
 
@@ -151,7 +152,7 @@ void Trainer_LoadMessage(int trainerID, enum TrainerMessageType msgType, Strbuf 
     NARC_dtor(narc);
 
     if (offset == size) {
-        Strbuf_Clear(strbuf);
+        String_Clear(string);
     }
 }
 
@@ -216,12 +217,12 @@ static s8 levelOffsets[] = {
 
 static void SetNewSpecies(Pokemon *mon, u16 species)
 {
-    Strbuf *speciesName = MessageUtil_SpeciesName(species, HEAP_ID_SYSTEM);
+    String *speciesName = MessageUtil_SpeciesName(species, HEAP_ID_SYSTEM);
     Pokemon_SetValue(mon, MON_DATA_SPECIES, &species);
     Pokemon_SetValue(mon, MON_DATA_NICKNAME_STRING, speciesName);
     Pokemon_CalcStats(mon);
 
-    Strbuf_Free(speciesName);
+    String_Free(speciesName);
 };
 
 static u8 specialEvoLevels[] = {
@@ -419,7 +420,7 @@ static void AdjustPartyLevels(Party *party, u8 playerMinLevel, u8 playerMaxLevel
  * @param battler       Which battler's party is to be loaded.
  * @param heapID        Heap on which to perform any allocations.
  */
-static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, int heapID)
+static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID heapID)
 {
     // must make declarations C89-style to match
     void *buf;

@@ -43,10 +43,10 @@
             "level": 27,
             "item": null,
             "moves": [
-                "MOVE_FLAME_WHEEL",
-                "MOVE_MACH_PUNCH",
-                "MOVE_FURY_SWIPES",
-                "MOVE_TORMENT"
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_METAL_CLAW",
+                "MOVE_PECK",
+                "MOVE_GROWL"
             ],
             "power": 60,
             "ball_seal": 0

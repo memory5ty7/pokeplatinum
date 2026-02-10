@@ -50,7 +50,7 @@ _00AC:
 _00C2:
     SetObjectEventPos 7, 176, 0x2E3
     SetObjectEventDir 7, DIR_WEST
-    SetObjectEventMovementType 7, MOVEMENT_TYPE_LOOK_LEFT
+    SetObjectEventMovementType 7, MOVEMENT_TYPE_LOOK_WEST
     Return
 
 _00D8:
@@ -92,7 +92,7 @@ JubilifeCity_Counterpart_Init:
     WaitMovement
     ApplyMovement JUBILIFE_CITY_COUNTERPART, _044C
     WaitMovement
-    CallCommonScript 0x7F8
+    SetCounterpartBGM
     GetPlayerGender VAR_RESULT
     GoToIfEq VAR_RESULT, GENDER_MALE, JubilifeCity_Dawn
     GoToIfEq VAR_RESULT, GENDER_FEMALE, JubilifeCity_Lucas
@@ -229,7 +229,7 @@ _0348:
 _036E:
     ApplyMovement 31, _0550
     WaitMovement
-    CallCommonScript 0x807
+    SetLookerBGM
     Message 12
     Message 13
     CloseMessage
@@ -270,7 +270,7 @@ _03C0:
     WaitMovement
     SetPosition 31, 186, 0, 0x2F4, 1
     SetObjectEventPos 31, 186, 0x2F4
-    CallCommonScript 0x808
+    FadeToDefaultMusic4
     Return
 
 _041B:
@@ -958,7 +958,7 @@ _0C52:
 _0C7C:
     RemoveObject 7
     RemoveObject 16
-    ClearFlag FLAG_UNK_0x0198
+    ClearFlag FLAG_HIDE_SANDGEM_TOWN_LAB_PROF_ROWAN
     SetVar VAR_JUBILIFE_STATE, 4
     SetVar VAR_JUBILIFE_LOOKER_PALPAD, 2
     SetVar VAR_OREBURGH_STATE, 3
@@ -1541,7 +1541,7 @@ _1356:
     SetVar VAR_0x8004, ITEM_COUPON_1
     SetVar VAR_0x8005, 1
     SetFlag FLAG_OBTAINED_COUPON_1
-    CallCommonScript 0x7E0
+    GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
@@ -1580,7 +1580,7 @@ _13CD:
     SetVar VAR_0x8004, ITEM_COUPON_2
     SetVar VAR_0x8005, 1
     SetFlag FLAG_OBTAINED_COUPON_2
-    CallCommonScript 0x7E0
+    GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
@@ -1621,7 +1621,7 @@ _1451:
     SetVar VAR_0x8004, ITEM_COUPON_3
     SetVar VAR_0x8005, 1
     SetFlag FLAG_OBTAINED_COUPON_3
-    CallCommonScript 0x7E0
+    GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
@@ -1673,12 +1673,12 @@ JubilifeCity_Looker_AfterOneBadgeObtained:
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     SetObjectEventPos 31, 179, VAR_0x8005
     SetObjectEventDir 31, DIR_EAST
-    SetObjectEventMovementType 31, MOVEMENT_TYPE_LOOK_RIGHT
+    SetObjectEventMovementType 31, MOVEMENT_TYPE_LOOK_EAST
     ClearFlag FLAG_UNK_0x0181
     AddObject 31
     ApplyMovement 31, _1538
     WaitMovement
-    CallCommonScript 0x807
+    SetLookerBGM
     ApplyMovement 31, _1544
     ApplyMovement LOCALID_PLAYER, _08A0
     WaitMovement
@@ -1687,7 +1687,7 @@ JubilifeCity_Looker_AfterOneBadgeObtained:
     ApplyMovement 31, _154C
     WaitMovement
     RemoveObject 31
-    CallCommonScript 0x808
+    FadeToDefaultMusic4
     SetVar VAR_JUBILIFE_LOOKER_PALPAD, 2
     ReleaseAll
     End

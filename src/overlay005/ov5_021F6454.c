@@ -42,7 +42,7 @@
 #include "script_manager.h"
 #include "sound.h"
 #include "sound_playback.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "sys_task.h"
@@ -67,7 +67,7 @@ struct UnkStruct_ov5_021F6704_t {
     SysTask *unk_04;
     Window unk_08;
     Window *unk_18;
-    Strbuf *unk_1C[120];
+    String *unk_1C[120];
     MessageLoader *unk_1FC;
     StringTemplate *unk_200;
     u8 unk_204;
@@ -93,7 +93,7 @@ struct UnkStruct_ov5_021F6704_t {
     u16 unk_6F4;
 };
 
-static u16 *ov5_021F65FC(int param0, int param1, int *param2);
+static u16 *ov5_021F65FC(enum HeapID heapID, int fileIndex, int *pokedexLength);
 BOOL ScrCmd_2DE(ScriptContext *ctx);
 static BOOL ov5_021F65D4(ScriptContext *ctx);
 static void ov5_021F70CC(Pokemon *param0, int *param1, int *param2);
@@ -147,7 +147,7 @@ BOOL ScrCmd_2DE(ScriptContext *ctx)
 
     v6 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_FIELD3);
     v9 = ov5_021F6704(fieldSystem, 20, 1, 0, 1, FieldSystem_GetVarPointer(fieldSystem, v13), *v10, FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_WINDOW), v6, FieldSystem_GetVarPointer(fieldSystem, v14), FieldSystem_GetVarPointer(fieldSystem, v15));
-    v1 = sub_020308A0(fieldSystem->saveData, 11, &v0);
+    v1 = sub_020308A0(fieldSystem->saveData, HEAP_ID_FIELD2, &v0);
 
     if (v0 == 1) {
         v3 = ov5_021F65FC(32, Unk_ov5_0220210C[v12], &v5);
@@ -195,7 +195,7 @@ static BOOL ov5_021F65D4(ScriptContext *ctx)
     return 1;
 }
 
-static u16 *ov5_021F65FC(int heapID, int fileIndex, int *pokedexLength)
+static u16 *ov5_021F65FC(enum HeapID heapID, int fileIndex, int *pokedexLength)
 {
     u32 pokedexSize;
     u16 *pokedex = LoadMemberFromNARC_OutFileSize(NARC_INDEX_APPLICATION__ZUKANLIST__ZKN_DATA__ZUKAN_DATA, fileIndex, 0, heapID, 0, &pokedexSize);
@@ -240,7 +240,7 @@ static void ov5_021F6624(FieldSystem *fieldSystem, UnkStruct_ov5_021F6704 *param
     }
 
     for (v0 = 0; v0 < 120; v0++) {
-        param1->unk_1C[v0] = Strbuf_Init(40 * 2, HEAP_ID_FIELD1);
+        param1->unk_1C[v0] = String_Init(40 * 2, HEAP_ID_FIELD1);
     }
 
     *param1->unk_210 = 0xeeee;
@@ -294,12 +294,12 @@ static void ov5_021F6830(UnkStruct_ov5_021F6704 *param0, u32 param1, u32 param2,
     void *v1;
 
     {
-        Strbuf *v2 = Strbuf_Init(40 * 2, HEAP_ID_FIELD1);
+        String *v2 = String_Init(40 * 2, HEAP_ID_FIELD1);
 
-        MessageLoader_GetStrbuf(param0->unk_1FC, param1, v2);
+        MessageLoader_GetString(param0->unk_1FC, param1, v2);
         StringTemplate_Format(param0->unk_200, param0->unk_1C[param0->unk_20B], v2);
         param0->unk_244[param0->unk_20B].entry = (const void *)param0->unk_1C[param0->unk_20B];
-        Strbuf_Free(v2);
+        String_Free(v2);
     }
 
     if (param3 == 0xfa) {
@@ -419,7 +419,7 @@ static void ov5_021F6AD4(UnkStruct_ov5_021F6704 *param0)
     Window_Remove(&param0->unk_08);
 
     for (v0 = 0; v0 < 120; v0++) {
-        Strbuf_Free(param0->unk_1C[v0]);
+        String_Free(param0->unk_1C[v0]);
     }
 
     if (param0->unk_207_1 == 1) {
@@ -554,7 +554,7 @@ BOOL ScrCmd_31D(ScriptContext *param0)
 
 BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
 {
-    Pokemon *pokemon;
+    Pokemon *mon;
     Party *party;
     int pokemonSpecies, pokemonForm;
     u32 emptyHeldItem;
@@ -565,7 +565,7 @@ BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
     u16 *result = ScriptContext_GetVarPointer(param0);
 
     party = SaveData_GetParty(fieldSystem->saveData);
-    pokemon = Party_GetPokemonBySlotIndex(party, partySlot);
+    mon = Party_GetPokemonBySlotIndex(party, partySlot);
 
     *result = 0;
 
@@ -573,7 +573,7 @@ BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
         return 0;
     }
 
-    currentHeldItem = Pokemon_GetValue(pokemon, MON_DATA_HELD_ITEM, NULL);
+    currentHeldItem = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
 
     if (currentHeldItem == ITEM_GRISEOUS_ORB) {
         bagNotFull = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), ITEM_GRISEOUS_ORB, 1, HEAP_ID_FIELD1);
@@ -584,23 +584,23 @@ BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
         }
 
         emptyHeldItem = 0;
-        Pokemon_SetValue(pokemon, MON_DATA_HELD_ITEM, &emptyHeldItem);
+        Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &emptyHeldItem);
     }
 
-    pokemonForm = Pokemon_GetValue(pokemon, MON_DATA_FORM, NULL);
+    pokemonForm = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
 
     if (pokemonForm > 0) {
-        pokemonSpecies = Pokemon_GetValue(pokemon, MON_DATA_SPECIES, NULL);
+        pokemonSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
 
         switch (pokemonSpecies) {
         case SPECIES_GIRATINA:
-            Pokemon_SetGiratinaFormByHeldItem(pokemon);
+            Pokemon_SetGiratinaFormByHeldItem(mon);
             break;
         case SPECIES_ROTOM:
-            Pokemon_SetRotomForm(pokemon, ROTOM_FORM_BASE, 0);
+            Pokemon_SetRotomForm(mon, ROTOM_FORM_BASE, 0);
             break;
         case SPECIES_SHAYMIN:
-            Pokemon_SetShayminForm(pokemon, SHAYMIN_FORM_LAND);
+            Pokemon_SetShayminForm(mon, SHAYMIN_FORM_LAND);
             break;
         }
     }
@@ -845,7 +845,7 @@ BOOL ScrCmd_30F(ScriptContext *param0)
         }
         break;
     case 15:
-        if (GameRecords_GetRecordValue(v1, RECORD_UNK_073) < 10) {
+        if (GameRecords_GetRecordValue(v1, RECORD_TIMES_ENTERED_HALL_OF_FAME) < 10) {
             *v4 = 0;
         }
         break;
@@ -974,7 +974,7 @@ BOOL ScrCmd_32D(ScriptContext *ctx)
     MapObject_GetPosPtr(v6, &v1);
     v0 = v1.y;
 
-    while (sub_020625B0(mapObjMan, &v7, &v3, MAP_OBJ_STATUS_0) == 1) {
+    while (MapObjectMan_FindObjectWithStatus(mapObjMan, &v7, &v3, MAP_OBJ_STATUS_0) == 1) {
         if (v7 != v6) {
             MapObject_SetStatusFlagOn(v7, MAP_OBJ_STATUS_13);
 
@@ -1012,7 +1012,7 @@ BOOL ScrCmd_32E(ScriptContext *ctx)
     MapObject *v3 = Player_MapObject(fieldSystem->playerAvatar);
     MapObject *v4;
 
-    while (sub_020625B0(mapObjMan, &v4, &v0, MAP_OBJ_STATUS_0) == 1) {
+    while (MapObjectMan_FindObjectWithStatus(mapObjMan, &v4, &v0, MAP_OBJ_STATUS_0) == 1) {
         if (v4 != v3) {
             MapObject_SetStatusFlagOff(v4, MAP_OBJ_STATUS_13);
         }

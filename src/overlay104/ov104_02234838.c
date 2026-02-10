@@ -3,19 +3,17 @@
 
 #include "struct_decls/struct_0202440C_decl.h"
 
+#include "applications/frontier/battle_hall/main.h"
+#include "overlay104/frontier_script_context.h"
 #include "overlay104/ov104_0222DCE0.h"
-#include "overlay104/ov104_0222E930.h"
 #include "overlay104/ov104_0222FBE4.h"
 #include "overlay104/ov104_02231F74.h"
 #include "overlay104/ov104_02234DB4.h"
 #include "overlay104/ov104_0223AF58.h"
-#include "overlay104/struct_ov104_0222E930_decl.h"
-#include "overlay104/struct_ov104_0222E930_t.h"
 #include "overlay104/struct_ov104_02230BE4.h"
 #include "overlay104/struct_ov104_022320B4_t.h"
 #include "overlay104/struct_ov104_02235208.h"
 #include "overlay104/struct_ov104_0223B5C0.h"
-#include "overlay106/ov106_02241AE0.h"
 #include "savedata/save_table.h"
 
 #include "field_battle_data_transfer.h"
@@ -31,27 +29,14 @@
 
 #include "constdata/const_020EA358.h"
 
-FS_EXTERN_OVERLAY(overlay106);
+FS_EXTERN_OVERLAY(battle_hall_app);
 
 #include <nitro/code16.h>
 
-BOOL ov104_02234838(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_0223488C(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_022348A8(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_022348BC(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234994(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_022349B8(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234C80(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234C9C(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234CCC(UnkStruct_ov104_0222E930 *param0);
-static BOOL ov104_02234CEC(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234D18(UnkStruct_ov104_0222E930 *param0);
-BOOL ov104_02234D50(UnkStruct_ov104_0222E930 *param0);
+static BOOL ov104_02234CEC(FrontierScriptContext *param0);
 static void ov104_02234A08(void *param0);
-BOOL ov104_02234D6C(UnkStruct_ov104_0222E930 *param0);
 
-BOOL ov104_02234838(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_8B(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
     UnkStruct_ov104_02230BE4 *v1;
@@ -68,7 +53,7 @@ BOOL ov104_02234838(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_0223488C(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_8C(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
     u16 v1 = ov104_0222FC00(param0);
@@ -79,7 +64,7 @@ BOOL ov104_0223488C(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_022348A8(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_8D(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0 = sub_0209B978(param0->unk_00->unk_00);
     ov104_02235190(v0);
@@ -87,26 +72,21 @@ BOOL ov104_022348A8(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_022348BC(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_OpenBattleHallApp(FrontierScriptContext *ctx)
 {
-    int v0;
-    Party *v1;
-    Pokemon *v2;
-    UnkStruct_ov104_0223B5C0 *v3;
-    UnkStruct_ov104_02235208 *v4;
-    UnkStruct_ov104_02230BE4 *v5 = sub_0209B970(param0->unk_00->unk_00);
+    UnkStruct_ov104_02230BE4 *v5 = sub_0209B970(ctx->unk_00->unk_00);
 
-    FS_EXTERN_OVERLAY(overlay106);
+    FS_EXTERN_OVERLAY(battle_hall_app);
 
-    static const ApplicationManagerTemplate v6 = {
-        ov106_02241AE0,
-        ov106_02241B9C,
-        ov106_02241CF0,
-        FS_OVERLAY_ID(overlay106)
+    static const ApplicationManagerTemplate sBattleHallAppTemplate = {
+        BattleHallApp_Init,
+        BattleHallApp_Main,
+        BattleHallApp_Exit,
+        FS_OVERLAY_ID(battle_hall_app)
     };
 
-    v3 = sub_0209B978(param0->unk_00->unk_00);
-    v4 = Heap_Alloc(HEAP_ID_FIELD2, sizeof(UnkStruct_ov104_02235208));
+    UnkStruct_ov104_0223B5C0 *v3 = sub_0209B978(ctx->unk_00->unk_00);
+    UnkStruct_ov104_02235208 *v4 = Heap_Alloc(HEAP_ID_FIELD2, sizeof(UnkStruct_ov104_02235208));
 
     MI_CpuClear8(v4, sizeof(UnkStruct_ov104_02235208));
 
@@ -114,30 +94,30 @@ BOOL ov104_022348BC(UnkStruct_ov104_0222E930 *param0)
     v4->unk_04 = v3->unk_04;
     v4->unk_10 = v3;
     v4->unk_08 = &v3->unk_704[v3->unk_04][0];
-    v4->unk_0C = v3->unk_264;
+    v4->party = v3->unk_264;
     v4->unk_18 = v3->unk_08;
     v4->unk_05 = v3->unk_6F5;
     v4->unk_14 = &v3->unk_D84[0];
 
-    Party_Init(v4->unk_0C);
+    Party_Init(v4->party);
 
-    v1 = SaveData_GetParty(v5->saveData);
-    v2 = Party_GetPokemonBySlotIndex(v1, v3->unk_260[0]);
+    Party *party = SaveData_GetParty(v5->saveData);
+    Pokemon *mon = Party_GetPokemonBySlotIndex(party, v3->unk_260[0]);
 
-    Party_AddPokemon(v4->unk_0C, v2);
+    Party_AddPokemon(v4->party, mon);
 
     if (v4->unk_04 == 1) {
-        v2 = Party_GetPokemonBySlotIndex(v1, v3->unk_260[1]);
-        Party_AddPokemon(v4->unk_0C, v2);
+        mon = Party_GetPokemonBySlotIndex(party, v3->unk_260[1]);
+        Party_AddPokemon(v4->party, mon);
     } else if ((v4->unk_04 == 2) || (v4->unk_04 == 3)) {
-        Party_AddPokemon(v4->unk_0C, v3->unk_D8C);
+        Party_AddPokemon(v4->party, v3->unk_D8C);
     }
 
-    sub_0209B988(param0->unk_00->unk_00, &v6, v4, 0, ov104_02234A08);
-    return 1;
+    sub_0209B988(ctx->unk_00->unk_00, &sBattleHallAppTemplate, v4, 0, ov104_02234A08);
+    return TRUE;
 }
 
-BOOL ov104_02234994(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_8F(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0 = sub_0209B978(param0->unk_00->unk_00);
     FieldBattleDTO *v1 = v0->unk_700;
@@ -148,7 +128,7 @@ BOOL ov104_02234994(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_022349B8(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_90(FrontierScriptContext *param0)
 {
     FieldBattleDTO *v0;
     UnkStruct_ov104_0223B5C0 *v1;
@@ -177,7 +157,7 @@ static void ov104_02234A08(void *param0)
     return;
 }
 
-BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_91(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_02230BE4 *v0;
     Pokemon *v1;
@@ -186,9 +166,9 @@ BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
     u8 v4, v5;
     u32 v6;
     int v7;
-    u8 v8 = (*((param0)->unk_1C++));
-    u8 v9 = (*((param0)->unk_1C++));
-    u8 v10 = (*((param0)->unk_1C++));
+    u8 v8 = FrontierScriptContext_ReadByte(param0);
+    u8 v9 = FrontierScriptContext_ReadByte(param0);
+    u8 v10 = FrontierScriptContext_ReadByte(param0);
     u16 *v11 = ov104_0222FBE4(param0);
 
     v0 = sub_0209B970(param0->unk_00->unk_00);
@@ -253,7 +233,7 @@ BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
         }
         break;
     case 28:
-        v4 = sub_020301E0(v3->unk_6F5, &v3->unk_704[v3->unk_04][0]);
+        v4 = BattleHall_GetRankOfType(v3->unk_6F5, &v3->unk_704[v3->unk_04][0]);
 
         if (v4 < 10) {
             sub_02030204(v3->unk_6F5, &v3->unk_704[v3->unk_04][0], v4 + 1);
@@ -263,7 +243,7 @@ BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
         sub_0209BA80(v3);
         break;
     case 30:
-        *v11 = ov104_0223B5B0(v3->unk_04);
+        *v11 = BattleFrontier_IsMultiPlayerChallenge(v3->unk_04);
         break;
     case 17:
         *v11 = v3->unk_04;
@@ -280,7 +260,7 @@ BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
         ov104_0222E278(&(v3->unk_40[1]), v3->unk_18[v3->unk_05 * 2 + 1], HEAP_ID_FIELD2, 178);
         break;
     case 33:
-        *v11 = sub_020301E0(v3->unk_6F5, &v3->unk_704[v3->unk_04][0]);
+        *v11 = BattleHall_GetRankOfType(v3->unk_6F5, &v3->unk_704[v3->unk_04][0]);
         break;
     case 34:
         *v11 = ov104_02235578(v3);
@@ -314,7 +294,7 @@ BOOL ov104_02234A1C(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_02234C80(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_92(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
     u16 *v1 = ov104_0222FBE4(param0);
@@ -325,7 +305,7 @@ BOOL ov104_02234C80(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_02234C9C(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_93(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
     u16 v1 = ov104_0222FC00(param0);
@@ -338,20 +318,20 @@ BOOL ov104_02234C9C(UnkStruct_ov104_0222E930 *param0)
     return 1;
 }
 
-BOOL ov104_02234CCC(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_94(FrontierScriptContext *param0)
 {
-    u16 v0 = ov104_0222EA48(param0);
+    u16 v0 = FrontierScriptContext_ReadHalfWord(param0);
 
-    param0->unk_78[0] = v0;
-    ov104_0222E974(param0, ov104_02234CEC);
+    param0->data[0] = v0;
+    FrontierScriptContext_Pause(param0, ov104_02234CEC);
 
     return 1;
 }
 
-static BOOL ov104_02234CEC(UnkStruct_ov104_0222E930 *param0)
+static BOOL ov104_02234CEC(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
-    u16 v1 = ov104_0222FC8C(param0, param0->unk_78[0]);
+    u16 v1 = ov104_0222FC8C(param0, param0->data[0]);
 
     v0 = sub_0209B978(param0->unk_00->unk_00);
 
@@ -363,12 +343,12 @@ static BOOL ov104_02234CEC(UnkStruct_ov104_0222E930 *param0)
     return 0;
 }
 
-BOOL ov104_02234D18(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_95(FrontierScriptContext *param0)
 {
     u16 *v0;
     UnkStruct_ov104_0223B5C0 *v1;
     UnkStruct_ov104_02230BE4 *v2 = sub_0209B970(param0->unk_00->unk_00);
-    u16 v3 = (*((param0)->unk_1C++));
+    u16 v3 = FrontierScriptContext_ReadByte(param0);
 
     v1 = sub_0209B978(param0->unk_00->unk_00);
 
@@ -376,13 +356,13 @@ BOOL ov104_02234D18(UnkStruct_ov104_0222E930 *param0)
         return 0;
     }
 
-    v0 = v1->unk_40[v3].unk_00.unk_18;
+    v0 = v1->unk_40[v3].trDataDTO.unk_18;
 
     ov104_022330FC(param0, v0);
     return 1;
 }
 
-BOOL ov104_02234D50(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_76(FrontierScriptContext *param0)
 {
     UnkStruct_ov104_0223B5C0 *v0;
     u16 *v1 = ov104_0222FBE4(param0);
@@ -393,7 +373,7 @@ BOOL ov104_02234D50(UnkStruct_ov104_0222E930 *param0)
     return 1;
 }
 
-BOOL ov104_02234D6C(UnkStruct_ov104_0222E930 *param0)
+BOOL FrontierScrCmd_C7(FrontierScriptContext *param0)
 {
     TVBroadcast *broadcast;
     u16 v1;

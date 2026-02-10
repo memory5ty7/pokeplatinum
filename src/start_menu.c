@@ -19,6 +19,7 @@
 
 #include "applications/party_menu/defs.h"
 #include "applications/party_menu/main.h"
+#include "applications/poffin_case/main.h"
 #include "applications/pokedex/pokedex_main.h"
 #include "applications/pokemon_summary_screen/main.h"
 #include "applications/town_map/main.h"
@@ -64,7 +65,7 @@
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
 #include "system_flags.h"
@@ -87,7 +88,6 @@
 #include "unk_020972FC.h"
 #include "unk_0209747C.h"
 #include "unk_02097624.h"
-#include "unk_020989DC.h"
 #include "vars_flags.h"
 
 #include "constdata/const_020EA02C.h"
@@ -537,7 +537,7 @@ static void sub_0203ADFC(FieldTask *taskMan)
     menu = FieldTask_GetEnv(taskMan);
     optionCount = StartMenu_MakeList(menu, menu->options);
 
-    Window_Add(fieldSystem->bgConfig, &menu->unk_00, 3, 20, 1, 11, optionCount * 3, 12, ((((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)) - (11 * 22)));
+    Window_Add(fieldSystem->bgConfig, &menu->unk_00, 3, 20, 1, 11, optionCount * 3, 12, (((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)) - (11 * 22));
     LoadStandardWindowGraphics(fieldSystem->bgConfig, BG_LAYER_MAIN_3, 1024 - (18 + 12) - 9, 11, 1, HEAP_ID_FIELD2);
     Window_DrawStandardFrame(&menu->unk_00, 1, 1024 - (18 + 12) - 9, 11);
 
@@ -549,19 +549,19 @@ static void sub_0203ADFC(FieldTask *taskMan)
     for (i = 0; i < optionCount; i++) {
         if (menu->options[i] == MENU_POS_TRAINER_CARD) {
             StringTemplate *v6;
-            Strbuf *v7;
-            Strbuf *v8;
+            String *v7;
+            String *v8;
 
             v6 = StringTemplate_Default(HEAP_ID_FIELD2);
-            v7 = Strbuf_Init(8, HEAP_ID_FIELD2);
-            v8 = MessageLoader_GetNewStrbuf(v2, sStartMenuActions[menu->options[i]].text);
+            v7 = String_Init(8, HEAP_ID_FIELD2);
+            v8 = MessageLoader_GetNewString(v2, sStartMenuActions[menu->options[i]].text);
 
             StringTemplate_SetPlayerName(v6, 0, SaveData_GetTrainerInfo(fieldSystem->saveData));
             StringTemplate_Format(v6, v7, v8);
-            StringList_AddFromStrbuf(menu->unk_24, v7, menu->options[i]);
+            StringList_AddFromString(menu->unk_24, v7, menu->options[i]);
 
-            Strbuf_Free(v8);
-            Strbuf_Free(v7);
+            String_Free(v8);
+            String_Free(v7);
             StringTemplate_Free(v6);
         } else {
             StringList_AddFromMessageBank(
@@ -663,8 +663,8 @@ static void sub_0203B094(FieldTask *taskMan)
     StartMenu *menu;
     MessageLoader *v2;
     StringTemplate *v3;
-    Strbuf *v4;
-    Strbuf *v5;
+    String *v4;
+    String *v5;
     u8 v6;
 
     fieldSystem = FieldTask_GetFieldSystem(taskMan);
@@ -678,7 +678,7 @@ static void sub_0203B094(FieldTask *taskMan)
         return;
     }
 
-    Window_Add(fieldSystem->bgConfig, &menu->unk_10, 3, 1, 1, 12, 4, 13, (((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)));
+    Window_Add(fieldSystem->bgConfig, &menu->unk_10, 3, 1, 1, 12, 4, 13, ((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4));
     LoadStandardWindowGraphics(fieldSystem->bgConfig, BG_LAYER_MAIN_3, 1024 - (18 + 12) - 9, 11, 1, HEAP_ID_FIELD2);
     Window_DrawStandardFrame(&menu->unk_10, 1, 1024 - (18 + 12) - 9, 11);
     Window_FillTilemap(&menu->unk_10, 15);
@@ -686,17 +686,17 @@ static void sub_0203B094(FieldTask *taskMan)
     v2 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_START_MENU, HEAP_ID_FIELD2);
 
     if (v6 == 0) {
-        v5 = MessageLoader_GetNewStrbuf(v2, 9);
+        v5 = MessageLoader_GetNewString(v2, 9);
     } else {
-        v5 = MessageLoader_GetNewStrbuf(v2, 10);
+        v5 = MessageLoader_GetNewString(v2, 10);
     }
 
     Text_AddPrinterWithParams(&menu->unk_10, FONT_SYSTEM, v5, 0, 0, TEXT_SPEED_NO_TRANSFER, NULL);
-    Strbuf_Free(v5);
+    String_Free(v5);
 
     v3 = StringTemplate_Default(HEAP_ID_FIELD2);
-    v4 = Strbuf_Init(32, HEAP_ID_FIELD2);
-    v5 = MessageLoader_GetNewStrbuf(v2, 11);
+    v4 = String_Init(32, HEAP_ID_FIELD2);
+    v5 = MessageLoader_GetNewString(v2, 11);
 
     if (v6 == 0) {
         u16 *v7 = FieldOverworldState_GetSafariBallCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
@@ -711,8 +711,8 @@ static void sub_0203B094(FieldTask *taskMan)
     StringTemplate_Format(v3, v4, v5);
     Text_AddPrinterWithParams(&menu->unk_10, FONT_SYSTEM, v4, 0, 16, TEXT_SPEED_NO_TRANSFER, NULL);
 
-    Strbuf_Free(v4);
-    Strbuf_Free(v5);
+    String_Free(v4);
+    String_Free(v5);
     StringTemplate_Free(v3);
     MessageLoader_Free(v2);
     Window_ScheduleCopyToVRAM(&menu->unk_10);
@@ -790,7 +790,7 @@ static void sub_0203B318(StartMenu *menu, u8 *options, u32 optionCount, u8 gende
     };
     u32 i;
 
-    SpriteResourceManager_SetCapacities(&menu->spriteManager, &v0, (7 + 1), HEAP_ID_FIELD2);
+    SpriteResourceManager_SetCapacities(&menu->spriteManager, &v0, 7 + 1, HEAP_ID_FIELD2);
 
     NARC *narc = NARC_ctor(NARC_INDEX_GRAPHIC__MENU_GRA, HEAP_ID_FIELD2);
 
@@ -1025,7 +1025,7 @@ BOOL sub_0203B7C0(FieldTask *taskMan)
         summary->monMax = Party_GetCurrentCount(summary->monData);
         summary->move = 0;
         summary->mode = SUMMARY_MODE_NORMAL;
-        summary->specialRibbons = sub_0202D79C(fieldSystem->saveData);
+        summary->specialRibbons = SaveData_GetRibbons(fieldSystem->saveData);
         summary->dexMode = SaveData_GetDexMode(fieldSystem->saveData);
         summary->showContest = PokemonSummaryScreen_ShowContestData(fieldSystem->saveData);
         summary->chatotCry = NULL;
@@ -1784,7 +1784,7 @@ BOOL sub_0203C710(FieldTask *taskMan)
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(taskMan);
     StartMenu *menu = FieldTask_GetEnv(taskMan);
 
-    sub_02098AF0(menu->taskData);
+    PoffinCaseAppData_Free(menu->taskData);
 
     menu->taskData = sub_0203D20C(fieldSystem, &menu->unk_230);
     sub_0203B674(menu, sub_0203BC5C);
@@ -1858,7 +1858,7 @@ static void StartMenu_Evolve(FieldTask *taskMan)
     StartMenu *menu = FieldTask_GetEnv(taskMan);
 
     if (Evolution_IsDone(menu->taskData) == 1) {
-        sub_0207B0E0(menu->taskData);
+        Evolution_Free(menu->taskData);
         Heap_Destroy(HEAP_ID_73);
         Sound_StopBGM(SEQ_SHINKA, 0);
         Sound_SetScene(SOUND_SCENE_NONE);

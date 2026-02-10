@@ -21,7 +21,7 @@
 #include "overlay_manager.h"
 #include "save_player.h"
 #include "sound.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "system_flags.h"
 #include "unk_02030CE8.h"
@@ -29,8 +29,8 @@
 #include "unk_02038FFC.h"
 #include "unk_020393C8.h"
 #include "unk_020890F4.h"
-#include "unk_02099550.h"
 #include "vars_flags.h"
+#include "wifi_overlays.h"
 
 #include "constdata/const_020F2DBC.h"
 
@@ -105,8 +105,8 @@ int ov98_02246C20(ApplicationManager *appMan, int *param1)
     MI_CpuClear8(v0, sizeof(UnkStruct_ov98_02246E88));
     v0->saveData = ((ApplicationArgs *)ApplicationManager_Args(appMan))->saveData;
     v0->options = SaveData_GetOptions(v0->saveData);
-    v0->unk_114 = Strbuf_Init(100, HEAP_ID_108);
-    v0->unk_118 = Strbuf_Init(100, HEAP_ID_108);
+    v0->unk_114 = String_Init(100, HEAP_ID_108);
+    v0->unk_118 = String_Init(100, HEAP_ID_108);
     Sound_SetSceneAndPlayBGM(SOUND_SCENE_17, SEQ_WIFILOBBY, 1);
     v0->unk_8C = 0;
 
@@ -175,8 +175,8 @@ int ov98_02246DC0(ApplicationManager *appMan, int *param1)
 
     ov98_02246E54(v0);
 
-    Strbuf_Free(v0->unk_118);
-    Strbuf_Free(v0->unk_114);
+    String_Free(v0->unk_118);
+    String_Free(v0->unk_114);
     ApplicationManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_108);
     Heap_Destroy(HEAP_ID_91);
@@ -193,7 +193,7 @@ static void ov98_02246E08(UnkStruct_ov98_02246E88 *param0)
         param0->unk_0C = Heap_Alloc(HEAP_ID_108, 0x20000 + 32);
         param0->unk_10 = NNS_FndCreateExpHeap((void *)(((u32)param0->unk_0C + 31) / 32 * 32), 0x20000);
 
-        sub_02099550();
+        Overlay_LoadWFCOverlay();
         Overlay_LoadHttpOverlay();
         WirelessDriver_Init();
         SleepUnlock(4);
@@ -207,7 +207,7 @@ static void ov98_02246E54(UnkStruct_ov98_02246E88 *param0)
 
         Heap_Free(param0->unk_0C);
         Overlay_UnloadHttpOverlay();
-        sub_02099560();
+        Overlay_UnloadWFCOverlay();
         WirelessDriver_Shutdown();
         Overlay_UnloadByID(FS_OVERLAY_ID(overlay94));
 
@@ -358,13 +358,13 @@ void ov98_02246FFC(UnkStruct_ov98_02246E88 *param0)
     if (ov98_02249A80(v0->unk_1C, HEAP_ID_108)) {
         ov98_02246FAC(param0, 1);
     } else if (ov98_02246FB4(param0) == 2) {
-        if (Strbuf_Compare(param0->unk_114, v0->unk_1C) != 0) {
+        if (String_Compare(param0->unk_114, v0->unk_1C) != 0) {
             ov98_02246FAC(param0, 3);
         } else {
             ov98_02246FAC(param0, 0);
         }
     } else {
-        Strbuf_Copy(param0->unk_114, v0->unk_1C);
+        String_Copy(param0->unk_114, v0->unk_1C);
         ov98_02246FAC(param0, 2);
     }
 
@@ -389,7 +389,7 @@ void ov98_022470B8(UnkStruct_ov98_02246E88 *param0)
 {
     UnkStruct_02089438 *v0 = param0->unk_98;
     BOOL v1;
-    param0->unk_10C = Strbuf_AtoI(v0->unk_1C, &v1) % 10000;
+    param0->unk_10C = String_AtoI(v0->unk_1C, &v1) % 10000;
     GF_ASSERT(v1);
     sub_02089438(v0);
     ov98_02246E88(param0, 0, 0);
@@ -412,7 +412,7 @@ void ov98_02247134(UnkStruct_ov98_02246E88 *param0)
 {
     UnkStruct_02089438 *v0 = param0->unk_98;
     BOOL v1;
-    param0->unk_108 = Strbuf_AtoI(v0->unk_1C, &v1);
+    param0->unk_108 = String_AtoI(v0->unk_1C, &v1);
     GF_ASSERT(v1);
     sub_02089438(v0);
     ov98_02246E88(param0, 0, 0);

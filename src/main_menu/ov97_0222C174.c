@@ -2,7 +2,6 @@
 #include <string.h>
 
 #include "struct_decls/pokedexdata_decl.h"
-#include "struct_defs/struct_02099F80.h"
 
 #include "game_opening/const_ov77_021D742C.h"
 #include "main_menu/main_menu_util.h"
@@ -32,7 +31,7 @@
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
@@ -344,7 +343,7 @@ UnkStruct_ov97_0223E0B0 Unk_ov97_0223E0B0[] = {
 };
 
 typedef struct {
-    int heapID;
+    enum HeapID heapID;
     BgConfig *unk_04;
     SaveData *saveData;
     Pokedex *unk_0C;
@@ -508,7 +507,7 @@ static void ov97_0222C210(UnkStruct_ov97_0222C388 *param0)
 static void ov97_0222C254(UnkStruct_ov97_0222C388 *param0)
 {
     int v0;
-    UnkStruct_02099F80 v1 = {
+    GXBanks v1 = {
         GX_VRAM_BG_128_A,
         GX_VRAM_BGEXTPLTT_NONE,
         GX_VRAM_SUB_BG_128_C,
@@ -785,7 +784,7 @@ static int ov97_0222C948(ApplicationManager *appMan, int *param1)
 static void ov97_0222C974(UnkStruct_ov97_0222C388 *param0)
 {
     RTCDate v0;
-    Strbuf *v1;
+    String *v1;
     StringTemplate *v2;
     MessageLoader *v3;
     WonderCard *v4 = &param0->unk_3180;
@@ -796,10 +795,10 @@ static void ov97_0222C974(UnkStruct_ov97_0222C388 *param0)
     v2 = StringTemplate_Default(param0->heapID);
 
     v4->pgt.type = 7;
-    v1 = MessageUtil_ExpandedStrbuf(v2, v3, 76, param0->heapID);
+    v1 = MessageUtil_ExpandedString(v2, v3, 76, param0->heapID);
 
-    Strbuf_ToChars((const Strbuf *)v1, v4->eventHeader.title, 36);
-    Strbuf_Free(v1);
+    String_ToChars((const String *)v1, v4->eventHeader.title, 36);
+    String_Free(v1);
 
     v4->eventHeader.validGames = (MainMenuUtil_CalcMysteryGiftVersionBit(10) | MainMenuUtil_CalcMysteryGiftVersionBit(11) | MainMenuUtil_CalcMysteryGiftVersionBit(12));
     v4->eventHeader.id = 1;
@@ -809,10 +808,10 @@ static void ov97_0222C974(UnkStruct_ov97_0222C388 *param0)
     v4->eventHeader.savePgt = 1;
     v4->eventHeader.fromSharing = 0;
 
-    v1 = MessageUtil_ExpandedStrbuf(v2, v3, 75, param0->heapID);
+    v1 = MessageUtil_ExpandedString(v2, v3, 75, param0->heapID);
 
-    Strbuf_ToChars((const Strbuf *)v1, v4->description, 250);
-    Strbuf_Free(v1);
+    String_ToChars((const String *)v1, v4->description, 250);
+    String_Free(v1);
 
     v4->sharesLeft = 0;
     v4->spritesSpecies[0] = 490;

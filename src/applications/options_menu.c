@@ -6,8 +6,6 @@
 #include "constants/heap.h"
 #include "constants/narc.h"
 
-#include "struct_defs/struct_02099F80.h"
-
 #include "bg_window.h"
 #include "font.h"
 #include "game_options.h"
@@ -25,7 +23,7 @@
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "text.h"
 #include "unk_020393C8.h"
@@ -73,7 +71,7 @@ enum OptionsMenuEntryID {
 typedef struct OptionsMenuEntry {
     u16 numChoices;
     u16 selected;
-    Strbuf *choices[20];
+    String *choices[20];
 } OptionsMenuEntry;
 
 typedef struct OptionsMenuData {
@@ -309,7 +307,7 @@ BOOL OptionsMenu_Main(ApplicationManager *appMan, int *state)
 
 static void SetVRAMBanks()
 {
-    UnkStruct_02099F80 banks = {
+    GXBanks banks = {
         GX_VRAM_BG_128_A,
         GX_VRAM_BGEXTPLTT_NONE,
         GX_VRAM_SUB_BG_128_C,
@@ -398,7 +396,7 @@ static int TeardownMenuData(OptionsMenuData *menuData)
 
         for (v0 = 0; v0 < MAX_ENTRIES; v0++) {
             for (v1 = 0; v1 < menuData->entries.asArray[v0].numChoices; v1++) {
-                Strbuf_Free(menuData->entries.asArray[v0].choices[v1]);
+                String_Free(menuData->entries.asArray[v0].choices[v1]);
             }
         }
 
@@ -694,11 +692,11 @@ static void PrintTitleAndEntries(OptionsMenuData *menuData)
     TextColor transparentBg = TEXT_COLOR(1, 2, 0);
     TextColor whiteBg = TEXT_COLOR(1, 2, 15);
 
-    Strbuf *strbuf = Strbuf_Init(256, menuData->heapID);
-    MessageLoader_GetStrbuf(menuData->msgLoader, OptionsMenu_Text_Title, strbuf);
+    String *string = String_Init(256, menuData->heapID);
+    MessageLoader_GetString(menuData->msgLoader, OptionsMenu_Text_Title, string);
     Text_AddPrinterWithParamsAndColor(&menuData->windows.title,
         FONT_SYSTEM,
-        strbuf,
+        string,
         2,
         2,
         TEXT_SPEED_INSTANT,
@@ -706,11 +704,11 @@ static void PrintTitleAndEntries(OptionsMenuData *menuData)
         NULL);
 
     for (i = 0; i < MAX_ENTRIES; i++) {
-        Strbuf_Clear(strbuf);
-        MessageLoader_GetStrbuf(menuData->msgLoader, sEntryLabels[i], strbuf);
+        String_Clear(string);
+        MessageLoader_GetString(menuData->msgLoader, sEntryLabels[i], string);
         Text_AddPrinterWithParamsAndColor(&menuData->windows.entries,
             FONT_SYSTEM,
-            strbuf,
+            string,
             4,
             16 * i,
             TEXT_SPEED_NO_TRANSFER,
@@ -725,7 +723,7 @@ static void PrintTitleAndEntries(OptionsMenuData *menuData)
     PrintEntryDescription(menuData, ENTRY_TEXT_SPEED, TRUE);
     Window_CopyToVRAM(&menuData->windows.title);
     Window_CopyToVRAM(&menuData->windows.entries);
-    Strbuf_Free(strbuf);
+    String_Free(string);
 }
 
 static const int sNumChoicesPerEntry[MAX_ENTRIES] = {
@@ -754,7 +752,7 @@ static void LoadAllEntryChoices(OptionsMenuData *menuData)
     for (i = 0; i < MAX_ENTRIES; i++) {
         menuData->entries.asArray[i].numChoices = sNumChoicesPerEntry[i];
         for (j = 0; j < sNumChoicesPerEntry[i]; j++) {
-            menuData->entries.asArray[i].choices[j] = MessageLoader_GetNewStrbuf(menuData->msgLoader, sFirstChoicePerEntry[i] + j);
+            menuData->entries.asArray[i].choices[j] = MessageLoader_GetNewString(menuData->msgLoader, sFirstChoicePerEntry[i] + j);
         }
     }
 
@@ -825,7 +823,7 @@ static void PrintEntryChoices(OptionsMenuData *menuData, u16 entry)
                 textSpeed,
                 color,
                 NULL);
-            xOffset += Font_CalcStrbufWidth(FONT_SYSTEM, menuData->entries.asArray[entry].choices[i], 0) + 12;
+            xOffset += Font_CalcStringWidth(FONT_SYSTEM, menuData->entries.asArray[entry].choices[i], 0) + 12;
         } else {
             Text_AddPrinterWithParamsAndColor(&menuData->windows.entries,
                 FONT_SYSTEM,
@@ -853,13 +851,13 @@ static void PrintBankEntryAsDescription(OptionsMenuData *menuData, u16 entry, BO
     Window_FillTilemap(&menuData->windows.description, 15);
 
     TextColor color = TEXT_COLOR(1, 2, 15);
-    Strbuf *strbuf = Strbuf_Init(256, menuData->heapID);
-    MessageLoader_GetStrbuf(menuData->msgLoader, entry, strbuf);
+    String *string = String_Init(256, menuData->heapID);
+    MessageLoader_GetString(menuData->msgLoader, entry, string);
 
     if (scheduleVRAMCopy == FALSE) {
         menuData->textPrinter = Text_AddPrinterWithParamsAndColor(&menuData->windows.description,
             FONT_MESSAGE,
-            strbuf,
+            string,
             4,
             0,
             renderDelay,
@@ -868,7 +866,7 @@ static void PrintBankEntryAsDescription(OptionsMenuData *menuData, u16 entry, BO
     } else {
         Text_AddPrinterWithParamsAndColor(&menuData->windows.description,
             FONT_MESSAGE,
-            strbuf,
+            string,
             4,
             0,
             TEXT_SPEED_NO_TRANSFER,
@@ -877,7 +875,7 @@ static void PrintBankEntryAsDescription(OptionsMenuData *menuData, u16 entry, BO
         Window_ScheduleCopyToVRAM(&menuData->windows.description);
     }
 
-    Strbuf_Free(strbuf);
+    String_Free(string);
 }
 
 static BOOL IsTextPrinterDone(const OptionsMenuData *menuData)

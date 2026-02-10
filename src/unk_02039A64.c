@@ -3,8 +3,6 @@
 
 #include "constants/graphics.h"
 
-#include "struct_defs/struct_02099F80.h"
-
 #include "bg_window.h"
 #include "brightness_controller.h"
 #include "font.h"
@@ -14,11 +12,11 @@
 #include "message.h"
 #include "render_window.h"
 #include "screen_fade.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "text.h"
 
-static const UnkStruct_02099F80 Unk_020E5F7C = {
+static const GXBanks Unk_020E5F7C = {
     GX_VRAM_BG_256_AB,
     GX_VRAM_BGEXTPLTT_NONE,
     GX_VRAM_SUB_BG_NONE,
@@ -63,12 +61,12 @@ static const WindowTemplate Unk_020E5F48 = {
     0x23
 };
 
-void sub_02039A64(int heapID, int unused)
+void sub_02039A64(enum HeapID heapID, int unused)
 {
     BgConfig *v0;
     Window v1;
     MessageLoader *v2;
-    Strbuf *v3;
+    String *v3;
     int v4 = 16;
 
     SetScreenColorBrightness(DS_SCREEN_MAIN, COLOR_BLACK);
@@ -102,15 +100,15 @@ void sub_02039A64(int heapID, int unused)
     Bg_MaskPalette(BG_LAYER_SUB_0, 0x6c21);
 
     v2 = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0695, heapID);
-    v3 = Strbuf_Init(0x180, heapID);
+    v3 = String_Init(0x180, heapID);
 
     Text_ResetAllPrinters();
     Window_AddFromTemplate(v0, &v1, &Unk_020E5F48);
     Window_FillRectWithColor(&v1, 15, 0, 0, 26 * 8, 18 * 8);
     Window_DrawStandardFrame(&v1, 0, 512 - 9, 2);
-    MessageLoader_GetStrbuf(v2, v4, v3);
+    MessageLoader_GetString(v2, v4, v3);
     Text_AddPrinterWithParams(&v1, FONT_SYSTEM, v3, 0, 0, TEXT_SPEED_INSTANT, NULL);
-    Strbuf_Free(v3);
+    String_Free(v3);
     GXLayers_TurnBothDispOn();
     ResetScreenMasterBrightness(DS_SCREEN_MAIN);
     ResetScreenMasterBrightness(DS_SCREEN_SUB);

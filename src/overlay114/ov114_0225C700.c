@@ -8,9 +8,8 @@
 #include "struct_decls/struct_02015920_decl.h"
 #include "struct_decls/struct_0202B370_decl.h"
 #include "struct_defs/struct_02015958.h"
-#include "struct_defs/struct_02099F80.h"
 
-#include "overlay004/ov4_021D0D80.h"
+#include "nintendo_wfc/main.h"
 #include "overlay066/ov66_0222DDF0.h"
 #include "overlay066/struct_ov66_02230DBC.h"
 #include "overlay114/ov114_02260044.h"
@@ -43,7 +42,7 @@
 #include "sprite_resource.h"
 #include "sprite_transfer.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
@@ -98,14 +97,14 @@ typedef struct {
 typedef struct {
     MessageLoader *unk_00;
     StringTemplate *unk_04;
-    Strbuf *unk_08;
-    Strbuf *unk_0C;
+    String *unk_08;
+    String *unk_0C;
 } UnkStruct_ov114_0225D084;
 
 typedef struct {
     Window unk_00[2];
     u16 unk_20[2];
-    Strbuf *unk_24[2];
+    String *unk_24[2];
     void *unk_2C[2];
     BOOL unk_34;
 } UnkStruct_ov114_0225D338;
@@ -138,7 +137,7 @@ typedef struct {
 typedef struct {
     Window unk_00;
     u32 unk_10;
-    Strbuf *unk_14;
+    String *unk_14;
     UnkStruct_ov114_0225CBF0 unk_18;
     s16 unk_2C;
     s16 unk_2E;
@@ -272,7 +271,6 @@ static UnkStruct_ov114_0225CDB4 *ov114_0225CD54(UnkStruct_ov114_0225CCD0 *param0
 static Sprite *ov114_0225CDB4(UnkStruct_ov114_0225CDB4 *param0, SpriteList *param1, s16 param2, s16 param3, u16 param4, u32 param5);
 static void ov114_0225CDE0(UnkStruct_ov114_0225CCD0 *param0, UnkStruct_ov114_0225CDB4 *param1, NARC *param2, u32 param3, u32 param4, u32 param5, u32 param6, u32 param7, u32 param8, u32 param9);
 static void ov114_0225CEB8(UnkStruct_ov114_0225CCD0 *param0, UnkStruct_ov114_0225CDB4 *param1);
-static void ov114_0225CEF0(UnkStruct_ov114_0225CEF0 *param0, const GraphicsModes *param1, const UnkStruct_ov114_02260284 *param2, u32 param3, u32 heapID);
 static void ov114_0225CF84(UnkStruct_ov114_0225CEF0 *param0);
 static void ov114_0225CFC0(UnkStruct_ov114_0225CEF0 *param0);
 static void ov114_0225CFCC(UnkStruct_ov114_0225CFCC *param0, u32 param1, u32 param2, u32 param3, u32 param4);
@@ -289,12 +287,12 @@ static void ov114_0225D138(UnkStruct_ov114_0225D084 *param0, u32 param1, u32 par
 static void ov114_0225D154(UnkStruct_ov114_0225D084 *param0, u32 param1);
 static void ov114_0225D170(UnkStruct_ov114_0225D084 *param0, u32 param1);
 static void ov114_0225D180(UnkStruct_ov114_0225D084 *param0, u32 param1);
-static void ov114_0225D190(UnkStruct_ov114_0225D084 *param0, Strbuf *param1, u32 param2);
+static void ov114_0225D190(UnkStruct_ov114_0225D084 *param0, String *param1, u32 param2);
 static void ov114_0225D1AC(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, u8 param3, u8 param4);
 static void ov114_0225D1C8(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, u8 param3, u8 param4);
-static u32 ov114_0225D218(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, Strbuf *param3, u32 param4);
+static u32 ov114_0225D218(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, String *param3, u32 param4);
 static void ov114_0225D254(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, u8 param3, u8 param4, TextColor param5);
-static void ov114_0225D290(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_0225CEF0 *param1, SaveData *saveData, BOOL param3, u32 param4);
+static void ov114_0225D290(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_0225CEF0 *param1, SaveData *saveData, BOOL param3, u32 heapID);
 static void ov114_0225D338(UnkStruct_ov114_0225D338 *param0);
 static void ov114_0225D368(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_0225D084 *param1, u32 param2, u32 param3);
 static void ov114_0225D400(UnkStruct_ov114_0225D338 *param0, u32 param1);
@@ -322,7 +320,7 @@ static void ov114_0225E0AC(void *param0);
 static void ov114_0225E0F8(UnkStruct_ov114_0225E0F8 *param0, const UnkStruct_ov114_0225C76C *param1);
 static BOOL ov114_0225E14C(const UnkStruct_ov114_0225C76C *param0, const UnkStruct_ov114_0225E0F8 *param1);
 u32 ov114_0225E180(u32 param0);
-static void ov114_0225E1A4(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1, UnkStruct_ov114_0225D084 *param2, u32 param3, NARC *param4, u32 param5);
+static void ov114_0225E1A4(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1, UnkStruct_ov114_0225D084 *param2, u32 param3, NARC *param4, u32 heapID);
 static void ov114_0225E234(UnkStruct_ov114_0225E1A4 *param0);
 static void ov114_0225E244(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1, u32 heapID);
 static void ov114_0225E2D4(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1);
@@ -332,14 +330,14 @@ static void ov114_0225E4B0(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_022
 static void ov114_0225E500(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1, s32 param2);
 static void ov114_0225E550(NARC *param0, u32 param1, u32 param2);
 static UnkStruct_ov114_0225D678 *ov114_0225D48C(const UnkStruct_ov114_0225C76C *param0, u32 param1, u32 heapID);
-static void ov114_0225D5BC(UnkStruct_ov114_0225D678 *param0, u32 param1);
+static void ov114_0225D5BC(UnkStruct_ov114_0225D678 *param0, u32 heapID);
 static void ov114_0225D678(UnkStruct_ov114_0225D678 *param0);
 static void ov114_0225D688(SysTask *param0, void *param1);
 static void ov114_0225DA0C(SysTask *param0, void *param1);
 static int ov114_0225DA2C(const u8 *param0, u32 param1);
 static BOOL ov114_0225DA5C(UnkStruct_ov114_0225D678 *param0);
 static UnkStruct_ov114_0225E854 *ov114_0225E5A8(const UnkStruct_ov114_0225C76C *param0, const UnkStruct_ov114_0225C9A8 *param1, u32 param2, u32 heapID);
-static void ov114_0225E744(UnkStruct_ov114_0225E854 *param0, u32 param1);
+static void ov114_0225E744(UnkStruct_ov114_0225E854 *param0, u32 heapID);
 static void ov114_0225E854(UnkStruct_ov114_0225E854 *param0);
 static void ov114_0225E874(SysTask *param0, void *param1);
 static void ov114_0225ED40(SysTask *param0, void *param1);
@@ -479,7 +477,7 @@ static const CharTransferTemplate Unk_ov114_0226017C = {
     0x0
 };
 
-static const UnkStruct_02099F80 Unk_ov114_022601B4 = {
+static const GXBanks Unk_ov114_022601B4 = {
     GX_VRAM_BG_256_AB,
     GX_VRAM_BGEXTPLTT_NONE,
     GX_VRAM_SUB_BG_32_H,
@@ -617,7 +615,7 @@ static const u8 Unk_ov114_0226016C[4][4] = {
     { 0x0, 0x3, 0x1, 0x2 }
 };
 
-static const UnkStruct_02099F80 Unk_ov114_022601DC = {
+static const GXBanks Unk_ov114_022601DC = {
     GX_VRAM_BG_256_AB,
     GX_VRAM_BGEXTPLTT_NONE,
     GX_VRAM_SUB_BG_32_H,
@@ -1308,7 +1306,7 @@ static void ov114_0225CEB8(UnkStruct_ov114_0225CCD0 *param0, UnkStruct_ov114_022
     }
 }
 
-static void ov114_0225CEF0(UnkStruct_ov114_0225CEF0 *param0, const GraphicsModes *param1, const UnkStruct_ov114_02260284 *param2, u32 param3, u32 heapID)
+static void ov114_0225CEF0(UnkStruct_ov114_0225CEF0 *param0, const GraphicsModes *param1, const UnkStruct_ov114_02260284 *param2, u32 param3, enum HeapID heapID)
 {
     SetAllGraphicsModes(param1);
 
@@ -1403,8 +1401,8 @@ static void ov114_0225D084(UnkStruct_ov114_0225D084 *param0, u32 heapID)
 {
     param0->unk_00 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0411, heapID);
     param0->unk_04 = StringTemplate_New(8, 64, heapID);
-    param0->unk_08 = Strbuf_Init(128, heapID);
-    param0->unk_0C = Strbuf_Init(128, heapID);
+    param0->unk_08 = String_Init(128, heapID);
+    param0->unk_0C = String_Init(128, heapID);
 
     Font_LoadScreenIndicatorsPalette(0, 12 * 0x20, heapID);
     Font_LoadScreenIndicatorsPalette(4, 12 * 0x20, heapID);
@@ -1412,8 +1410,8 @@ static void ov114_0225D084(UnkStruct_ov114_0225D084 *param0, u32 heapID)
 
 static void ov114_0225D0D8(UnkStruct_ov114_0225D084 *param0)
 {
-    Strbuf_Free(param0->unk_0C);
-    Strbuf_Free(param0->unk_08);
+    String_Free(param0->unk_0C);
+    String_Free(param0->unk_08);
     StringTemplate_Free(param0->unk_04);
     MessageLoader_Free(param0->unk_00);
 }
@@ -1458,9 +1456,9 @@ static void ov114_0225D180(UnkStruct_ov114_0225D084 *param0, u32 param1)
     StringTemplate_SetPlazaMinigameName(param0->unk_04, 0, param1);
 }
 
-static void ov114_0225D190(UnkStruct_ov114_0225D084 *param0, Strbuf *param1, u32 param2)
+static void ov114_0225D190(UnkStruct_ov114_0225D084 *param0, String *param1, u32 param2)
 {
-    MessageLoader_GetStrbuf(param0->unk_00, param2, param0->unk_0C);
+    MessageLoader_GetString(param0->unk_00, param2, param0->unk_0C);
     StringTemplate_Format(param0->unk_04, param1, param0->unk_0C);
 }
 
@@ -1474,10 +1472,10 @@ static void ov114_0225D1C8(UnkStruct_ov114_0225D084 *param0, u32 param1, Window 
     u32 v0;
     s32 v1;
 
-    MessageLoader_GetStrbuf(param0->unk_00, param1, param0->unk_0C);
+    MessageLoader_GetString(param0->unk_00, param1, param0->unk_0C);
     StringTemplate_Format(param0->unk_04, param0->unk_08, param0->unk_0C);
 
-    v0 = Font_CalcStrbufWidth(FONT_SYSTEM, param0->unk_08, 0);
+    v0 = Font_CalcStringWidth(FONT_SYSTEM, param0->unk_08, 0);
     v1 = param3 - v0;
 
     if (v1 < 0) {
@@ -1487,9 +1485,9 @@ static void ov114_0225D1C8(UnkStruct_ov114_0225D084 *param0, u32 param1, Window 
     Text_AddPrinterWithParamsAndColor(param2, FONT_SYSTEM, param0->unk_08, v1, param4, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(15, 14, 0), NULL);
 }
 
-static u32 ov114_0225D218(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, Strbuf *param3, u32 param4)
+static u32 ov114_0225D218(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, String *param3, u32 param4)
 {
-    MessageLoader_GetStrbuf(param0->unk_00, param1, param0->unk_0C);
+    MessageLoader_GetString(param0->unk_00, param1, param0->unk_0C);
     StringTemplate_Format(param0->unk_04, param3, param0->unk_0C);
 
     return Text_AddPrinterWithParamsAndColor(param2, FONT_MESSAGE, param3, 0, 0, param4, TEXT_COLOR(1, 2, 15), NULL);
@@ -1497,7 +1495,7 @@ static u32 ov114_0225D218(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *
 
 static void ov114_0225D254(UnkStruct_ov114_0225D084 *param0, u32 param1, Window *param2, u8 param3, u8 param4, TextColor param5)
 {
-    MessageLoader_GetStrbuf(param0->unk_00, param1, param0->unk_0C);
+    MessageLoader_GetString(param0->unk_00, param1, param0->unk_0C);
     StringTemplate_Format(param0->unk_04, param0->unk_08, param0->unk_0C);
     Text_AddPrinterWithParamsAndColor(param2, FONT_SYSTEM, param0->unk_08, param3, param4, TEXT_SPEED_NO_TRANSFER, param5, NULL);
 }
@@ -1509,7 +1507,7 @@ static void ov114_0225D290(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_022
     int v2;
     u8 v3;
 
-    sub_020959F4(1);
+    SetLockTextWithAutoScroll(TRUE);
     LoadMessageBoxGraphics(param1->unk_00, BG_LAYER_MAIN_2, 1, 13, v0, heapID);
     LoadMessageBoxGraphics(param1->unk_00, BG_LAYER_SUB_0, 1, 13, v0, heapID);
 
@@ -1525,7 +1523,7 @@ static void ov114_0225D290(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_022
         Window_Add(param1->unk_00, &param0->unk_00[v2], v1, 2, v3, 27, 4, 12, 1 + (18 + 12));
         Window_FillTilemap(&param0->unk_00[v2], 0);
 
-        param0->unk_24[v2] = Strbuf_Init(128, heapID);
+        param0->unk_24[v2] = String_Init(128, heapID);
     }
 
     param0->unk_34 = param3;
@@ -1537,11 +1535,11 @@ static void ov114_0225D338(UnkStruct_ov114_0225D338 *param0)
 
     for (v0 = 0; v0 < 2; v0++) {
         ov114_0225D400(param0, v0);
-        Strbuf_Free(param0->unk_24[v0]);
+        String_Free(param0->unk_24[v0]);
         Window_Remove(&param0->unk_00[v0]);
     }
 
-    sub_02095A24();
+    LockTextSpeed();
 }
 
 static void ov114_0225D368(UnkStruct_ov114_0225D338 *param0, UnkStruct_ov114_0225D084 *param1, u32 param2, u32 param3)
@@ -1649,7 +1647,7 @@ static UnkStruct_ov114_0225D678 *ov114_0225D48C(const UnkStruct_ov114_0225C76C *
     v0->unk_654 = SysTask_ExecuteAfterVBlank(ov114_0225DA0C, v0, 0);
 
     if (v0->unk_08.unk_0A) {
-        ov4_021D1E74(heapID);
+        NintendoWFC_StartVoiceChat(heapID);
     }
 
     return v0;
@@ -1781,7 +1779,7 @@ static void ov114_0225D688(SysTask *param0, void *param1)
             CommTiming_StartSync(129);
 
             if (v0->unk_08.unk_0A) {
-                ov4_021D1F18();
+                NintendoWFC_TerminateVoiceChat();
             }
         }
         break;
@@ -2269,7 +2267,7 @@ static void ov114_0225E1A4(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_022
     Window_Add(param1->unk_00, &param0->unk_00, 1, 6, 11, 20, 10, 8, 513);
     Window_FillTilemap(&param0->unk_00, 0);
 
-    param0->unk_14 = Strbuf_Init(128, heapID);
+    param0->unk_14 = String_Init(128, heapID);
     ov114_0225D180(param2, param3);
     ov114_0225D190(param2, param0->unk_14, 16);
     param0->unk_10 = param3;
@@ -2282,7 +2280,7 @@ static void ov114_0225E1A4(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_022
 static void ov114_0225E234(UnkStruct_ov114_0225E1A4 *param0)
 {
     Window_Remove(&param0->unk_00);
-    Strbuf_Free(param0->unk_14);
+    String_Free(param0->unk_14);
 }
 
 static void ov114_0225E244(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_0225CEF0 *param1, u32 heapID)
@@ -2297,7 +2295,7 @@ static void ov114_0225E244(UnkStruct_ov114_0225E1A4 *param0, UnkStruct_ov114_022
     ov114_0225E4B0(param0, param1, param0->unk_18.unk_00 >> FX32_SHIFT);
     Font_InitManager(FONT_SUBSCREEN, heapID);
 
-    v0 = Font_CalcStrbufWidth(FONT_SUBSCREEN, param0->unk_14, 0);
+    v0 = Font_CalcStringWidth(FONT_SUBSCREEN, param0->unk_14, 0);
     v1 = ((20 * 8) / 2) - (v0 / 2);
 
     Text_AddPrinterWithParamsAndColor(&param0->unk_00, FONT_SUBSCREEN, param0->unk_14, v1, 0, TEXT_SPEED_INSTANT, Unk_ov114_022600F8[param0->unk_10], NULL);
@@ -2513,7 +2511,7 @@ static UnkStruct_ov114_0225E854 *ov114_0225E5A8(const UnkStruct_ov114_0225C76C *
     v0->unk_6AC = SysTask_ExecuteAfterVBlank(ov114_0225F124, v0, 0);
 
     if (v0->unk_0C.unk_0A) {
-        ov4_021D1E74(heapID);
+        NintendoWFC_StartVoiceChat(heapID);
     }
 
     return v0;
@@ -2814,7 +2812,7 @@ static void ov114_0225E874(SysTask *param0, void *param1)
             CommTiming_StartSync(130);
 
             if (v0->unk_0C.unk_0A) {
-                ov4_021D1F18();
+                NintendoWFC_TerminateVoiceChat();
             }
 
             v0->unk_04++;
@@ -3054,7 +3052,7 @@ static void ov114_0225ED40(SysTask *param0, void *param1)
         break;
     case 14:
         if (v0->unk_0C.unk_0A) {
-            ov4_021D1F18();
+            NintendoWFC_TerminateVoiceChat();
         }
 
         CommTiming_StartSync(130);
@@ -3204,7 +3202,7 @@ static BOOL ov114_0225F27C(UnkStruct_ov114_0225F270 *param0, UnkStruct_ov114_022
         sub_020397C8(0, heapID);
 
         if (param0->unk_01) {
-            ov4_021D1E74(heapID);
+            NintendoWFC_StartVoiceChat(heapID);
         }
 
         param0->unk_00++;
@@ -3284,7 +3282,7 @@ static BOOL ov114_0225F27C(UnkStruct_ov114_0225F270 *param0, UnkStruct_ov114_022
             NetworkIcon_Destroy();
 
             if (param0->unk_01) {
-                ov4_021D1F18();
+                NintendoWFC_TerminateVoiceChat();
             }
 
             param0->unk_00++;

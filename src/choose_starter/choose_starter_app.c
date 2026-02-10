@@ -10,7 +10,6 @@
 #include "constants/species.h"
 
 #include "struct_defs/choose_starter_data.h"
-#include "struct_defs/struct_02099F80.h"
 
 #include "bg_window.h"
 #include "camera.h"
@@ -38,7 +37,7 @@
 #include "sprite_resource.h"
 #include "sprite_transfer.h"
 #include "sprite_util.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "sys_task.h"
 #include "sys_task_manager.h"
 #include "system.h"
@@ -187,7 +186,7 @@ typedef struct ChooseStarterApp {
     Window *messageWindow;
     Window *unk_9C[3];
     int unk_A8;
-    Strbuf *unk_AC;
+    String *unk_AC;
     WindowTemplate unk_B0;
     Menu *unk_B8;
     G2dRenderer unk_BC;
@@ -216,7 +215,7 @@ static void StartFadeOut(ChooseStarterApp *param0);
 static BOOL IsFadeDone(ChooseStarterApp *param0);
 static u16 GetSelectedSpecies(u16 cursorPosition);
 static BOOL IsSelectionMade(ChooseStarterApp *param0, int param1);
-static void UpdateGraphics(ChooseStarterApp *param0, int heapID);
+static void UpdateGraphics(ChooseStarterApp *param0, enum HeapID heapID);
 static void DrawScene(ChooseStarterApp *param0);
 static void SetupDrawing(ChooseStarterApp *app, enum HeapID heapID);
 static void ov78_021D10DC(void);
@@ -228,19 +227,19 @@ static void SetupBGL(BgConfig *bgl, enum HeapID heapID);
 static void ov78_021D12EC(BgConfig *param0);
 static void MakeMessageWindow(ChooseStarterApp *app, enum HeapID heapID);
 static void ov78_021D13A0(ChooseStarterApp *param0);
-static u8 ov78_021D1FB4(Window *param0, int heapID, int param2, int param3, TextColor param4, u32 param5);
-static u8 ov78_021D201C(Window *param0, int heapID, int param2, int param3, u32 param4, u32 param5, Strbuf **param6);
+static u8 ov78_021D1FB4(Window *param0, enum HeapID heapID, int param2, int param3, TextColor param4, u32 param5);
+static u8 ov78_021D201C(Window *param0, enum HeapID heapID, int param2, int param3, u32 param4, u32 param5, String **param6);
 static void ov78_021D2090(ChooseStarterApp *param0);
-static void MakeSubplaneWindow(ChooseStarterApp *param0, int heapID);
+static void MakeSubplaneWindow(ChooseStarterApp *param0, enum HeapID heapID);
 static void ov78_021D2884(ChooseStarterApp *param0);
-static void ov78_021D28A8(Window *param0, int heapID, int param2, int param3, TextColor param4);
+static void ov78_021D28A8(Window *param0, enum HeapID heapID, int param2, int param3, TextColor param4);
 static void ov78_021D2904(ChooseStarterApp *param0);
 static void MakeConfirmationWindow(ChooseStarterApp *param0, int param1);
 static void MakeSprite(ChooseStarterApp *app, enum HeapID heapID);
 static void ov78_021D14BC(ChooseStarterApp *param0);
 static void MakeSpriteDisplay(ChooseStarterApp *app, enum HeapID heapID);
 static void ov78_021D1518(ChooseStarterApp *param0);
-static void MakeCellActors(ChooseStarterApp *param0, int heapID);
+static void MakeCellActors(ChooseStarterApp *param0, enum HeapID heapID);
 static void ov78_021D1594(ChooseStarterApp *param0);
 static void MakeCamera(ChooseStarterApp *param0, int param1);
 static void ov78_021D1B3C(Camera *camera, VecFx32 *param1);
@@ -256,10 +255,10 @@ static void ov78_021D2430(ChooseStarterCursor *param0, BOOL param1);
 static void ov78_021D243C(ChooseStarterCursor *param0, int param1, int param2);
 static void MakeSelectionMatrix(ChooseStarterApp *param0);
 static void SetSelectionMatrixObjects(ChooseStarterApp *param0);
-static void ov78_021D1CA8(ChooseStarterApp *param0, int heapID);
+static void ov78_021D1CA8(ChooseStarterApp *param0, enum HeapID heapID);
 static void ov78_021D1DF0(ChooseStarterApp *param0);
 static void ov78_021D1E28(ChooseStarterApp *param0);
-static void ov78_021D1E44(ChooseStarterApp *param0, int heapID);
+static void ov78_021D1E44(ChooseStarterApp *param0, enum HeapID heapID);
 static void MakePokemonSprite(PokemonSprite **sprite, ChooseStarterApp *app, int species);
 static void ov78_021D16D8(ChooseStarter3DGraphics *param0, NNSFndAllocator *param1);
 static void ov78_021D1708(ChooseStarter3DGraphics *param0);
@@ -496,7 +495,7 @@ static void ov78_021D10DC(void)
 
 static void SetupVRAMBank(void)
 {
-    UnkStruct_02099F80 banks = {
+    GXBanks banks = {
         GX_VRAM_BG_128_B,
         GX_VRAM_BGEXTPLTT_NONE,
         GX_VRAM_SUB_BG_128_C,
@@ -723,7 +722,7 @@ static void ov78_021D1518(ChooseStarterApp *param0)
     SoftwareSpriteManager_Free(param0->spriteDisplay);
 }
 
-static void MakeCellActors(ChooseStarterApp *param0, int heapID)
+static void MakeCellActors(ChooseStarterApp *param0, enum HeapID heapID)
 {
     param0->unk_248 = SpriteList_InitRendering(2, &param0->unk_BC, heapID);
     param0->unk_24C[0] = SpriteResourceCollection_New(2, 0, heapID);
@@ -953,7 +952,7 @@ static BOOL IsSelectionMade(ChooseStarterApp *param0, int param1)
     return 0;
 }
 
-static void UpdateGraphics(ChooseStarterApp *param0, int heapID)
+static void UpdateGraphics(ChooseStarterApp *param0, enum HeapID heapID)
 {
     switch (ov78_021D1CA4(param0)) {
     case 0:
@@ -1136,7 +1135,7 @@ static int ov78_021D1CA4(ChooseStarterApp *param0)
     return param0->unk_00;
 }
 
-static void ov78_021D1CA8(ChooseStarterApp *param0, int heapID)
+static void ov78_021D1CA8(ChooseStarterApp *param0, enum HeapID heapID)
 {
     switch (param0->unk_04) {
     case 0:
@@ -1208,7 +1207,7 @@ static void ov78_021D1E28(ChooseStarterApp *param0)
     ov78_021D243C(&param0->unk_658, param0->unk_7C[param0->cursorPosition][0], param0->unk_7C[param0->cursorPosition][1]);
 }
 
-static void ov78_021D1E44(ChooseStarterApp *param0, int heapID)
+static void ov78_021D1E44(ChooseStarterApp *param0, enum HeapID heapID)
 {
     u32 v0;
 
@@ -1264,27 +1263,27 @@ static void ov78_021D1E44(ChooseStarterApp *param0, int heapID)
     }
 }
 
-static u8 ov78_021D1FB4(Window *param0, int heapID, int param2, int param3, TextColor param4, u32 param5)
+static u8 ov78_021D1FB4(Window *param0, enum HeapID heapID, int param2, int param3, TextColor param4, u32 param5)
 {
     MessageLoader *v0;
-    Strbuf *v1;
+    String *v1;
     u8 v2;
 
     v0 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, param2, heapID);
     GF_ASSERT(v0);
-    v1 = MessageLoader_GetNewStrbuf(v0, param3);
+    v1 = MessageLoader_GetNewString(v0, param3);
 
     Window_FillTilemap(param0, 15);
     v2 = Text_AddPrinterWithParamsAndColor(param0, FONT_MESSAGE, v1, 0, 0, param5, param4, NULL);
     Window_DrawMessageBoxWithScrollCursor(param0, 0, 512, 0);
 
-    Strbuf_Free(v1);
+    String_Free(v1);
     MessageLoader_Free(v0);
 
     return v2;
 }
 
-static u8 ov78_021D201C(Window *param0, int heapID, int param2, int param3, u32 param4, u32 param5, Strbuf **param6)
+static u8 ov78_021D201C(Window *param0, enum HeapID heapID, int param2, int param3, u32 param4, u32 param5, String **param6)
 {
     MessageLoader *v0;
     u8 v1;
@@ -1294,7 +1293,7 @@ static u8 ov78_021D201C(Window *param0, int heapID, int param2, int param3, u32 
     v0 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, param2, heapID);
     GF_ASSERT(v0);
 
-    *param6 = MessageLoader_GetNewStrbuf(v0, param3);
+    *param6 = MessageLoader_GetNewString(v0, param3);
     Window_FillTilemap(param0, 15);
     v1 = Text_AddPrinterWithParamsAndColor(param0, FONT_MESSAGE, *param6, 0, 0, param5, param4, NULL);
 
@@ -1306,7 +1305,7 @@ static u8 ov78_021D201C(Window *param0, int heapID, int param2, int param3, u32 
 
 static void ov78_021D2090(ChooseStarterApp *param0)
 {
-    Strbuf_Free(param0->unk_AC);
+    String_Free(param0->unk_AC);
     param0->unk_AC = NULL;
 }
 
@@ -1702,7 +1701,7 @@ static void ov78_021D2740(SysTask *param0, void *param1)
     v0->unk_04.unk_30 += v0->unk_04.unk_34;
 }
 
-static void MakeSubplaneWindow(ChooseStarterApp *param0, int heapID)
+static void MakeSubplaneWindow(ChooseStarterApp *param0, enum HeapID heapID)
 {
     int v0;
     int v1, v2;
@@ -1743,18 +1742,18 @@ static void ov78_021D2884(ChooseStarterApp *param0)
     }
 }
 
-static void ov78_021D28A8(Window *param0, int heapID, int param2, int param3, TextColor param4)
+static void ov78_021D28A8(Window *param0, enum HeapID heapID, int param2, int param3, TextColor param4)
 {
     MessageLoader *v0;
-    Strbuf *v1;
+    String *v1;
 
     v0 = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, param2, heapID);
     GF_ASSERT(v0);
-    v1 = MessageLoader_GetNewStrbuf(v0, param3);
+    v1 = MessageLoader_GetNewString(v0, param3);
 
     Window_FillTilemap(param0, ((param4) >> 0) & 0xff);
     Text_AddPrinterWithParamsAndColor(param0, FONT_SYSTEM, v1, 1, 0, TEXT_SPEED_NO_TRANSFER, param4, NULL);
-    Strbuf_Free(v1);
+    String_Free(v1);
     MessageLoader_Free(v0);
 }
 

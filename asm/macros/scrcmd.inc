@@ -1,4 +1,4 @@
-#include "generated/accessories.h"
+#include "constants/accessories.h"
 #include "generated/badges.h"
 #include "generated/battle_tower_modes.h"
 #include "generated/battle_tower_functions.h"
@@ -21,6 +21,8 @@
 #include "generated/moves.h"
 #include "generated/mystery_gift_delivery_stages.h"
 #include "generated/npc_trades.h"
+#include "generated/object_events_gfx.h"
+#include "generated/player_transitions.h"
 #include "generated/poketch_apps.h"
 #include "generated/roaming_slots.h"
 #include "generated/save_types.h"
@@ -28,9 +30,11 @@
 #include "generated/signpost_commands.h"
 #include "generated/signpost_types.h"
 #include "generated/string_padding_mode.h"
+#include "generated/time_of_day.h"
 #include "generated/trainer_score_events.h"
 #include "generated/trainers.h"
 #include "constants/animation_tags.h"
+#include "constants/battle_tower.h"
 #include "constants/boat_cutscene.h"
 #include "constants/colors.h"
 #include "constants/elevator_dirs.h"
@@ -40,6 +44,7 @@
 #include "constants/init_script_types.h"
 #include "constants/items.h"
 #include "constants/map_object.h"
+#include "constants/roamer_states.h"
 #include "constants/savedata/vars_flags.h"
 #include "constants/scrcmd.h"
 #include "constants/tv_broadcast.h"
@@ -146,14 +151,24 @@
     .long \arg1
     .endm
 
-    .macro CompareVar varID, valueOrVarID
-    .if \valueOrVarID < VARS_START
-        .short 17 /* CompareVarToValue */
-    .else
-        .short 18 /* CompareVarToVar */
-    .endif
+    .macro CompareVarToValue varID, value
+    .short 17
     .short \varID
-    .short \valueOrVarID
+    .short \value
+    .endm
+
+    .macro CompareVarToVar varID1, varID2
+    .short 18
+    .short \varID1
+    .short \varID2
+    .endm
+
+    .macro CompareVar varID, valueOrVarID
+    .if ((\valueOrVarID >= VARS_START && \valueOrVarID <= VARS_END) || (\valueOrVarID >= SCRIPT_LOCAL_VARS_START && \valueOrVarID <= SCRIPT_LOCAL_VARS_END))
+        CompareVarToVar \varID, \valueOrVarID
+    .else
+        CompareVarToValue \varID, \valueOrVarID
+    .endif
     .endm
 
     .macro ScrCmd_Unused_013 arg0
@@ -267,14 +282,24 @@
     .short \valueOrVarID
     .endm
 
-    .macro SetVar destVarID, valueOrVarID
-    .if \valueOrVarID < VARS_START
-        .short 40 /* SetVarFromValue */
-    .else
-        .short 41 /* SetVarFromVar */
-    .endif
+    .macro SetVarFromValue destVarID, value
+    .short 40
     .short \destVarID
-    .short \valueOrVarID
+    .short \value
+    .endm
+
+    .macro SetVarFromVar destVarID, srcVarID
+    .short 41
+    .short \destVarID
+    .short \srcVarID
+    .endm
+
+    .macro SetVar destVarID, valueOrVarID
+    .if ((\valueOrVarID >= VARS_START && \valueOrVarID <= VARS_END) || (\valueOrVarID >= SCRIPT_LOCAL_VARS_START && \valueOrVarID <= SCRIPT_LOCAL_VARS_END))
+        SetVarFromVar \destVarID, \valueOrVarID
+    .else
+        SetVarFromValue \destVarID, \valueOrVarID
+    .endif
     .endm
 
     .macro ScrCmd_Unused_02A arg0, arg1
@@ -345,7 +370,7 @@
     SetSignpostCommand SIGNPOST_CMD_SCROLL_IN
     WaitForSignpostDone
     GetSignpostInput VAR_RESULT
-    CallCommonScript 0x7D0
+    HandleSignpostInput
     .endm
 
     .macro ShowArrowSign messageID
@@ -353,7 +378,7 @@
     SetSignpostCommand SIGNPOST_CMD_SCROLL_IN
     WaitForSignpostDone
     GetSignpostInput VAR_RESULT
-    CallCommonScript 0x7D0
+    HandleSignpostInput
     .endm
 
     .macro ShowLandmarkSign messageID
@@ -361,7 +386,7 @@
     SetSignpostCommand SIGNPOST_CMD_SCROLL_IN
     WaitForSignpostDone
     GetSignpostInput VAR_RESULT
-    CallCommonScript 0x7D0
+    HandleSignpostInput
     .endm
 
     .macro ShowScrollingSign messageID
@@ -369,7 +394,7 @@
     SetSignpostCommand SIGNPOST_CMD_SCROLL_IN
     WaitForSignpostDone
     DrawSignpostScrollingMessage \messageID, VAR_RESULT
-    CallCommonScript 0x7D0
+    HandleSignpostInput
     .endm
 
     .macro DrawSignpostInstantMessage messageID, signpostType, signpostNARCMemberIdx=0, unused=VAR_RESULT
@@ -666,7 +691,7 @@
     .endm
 
     .macro ApplyFreeCameraMovement movementOffset
-    ApplyMovement 241, \movementOffset
+    ApplyMovement LOCALID_CAMERA, \movementOffset
     .endm
 
     .macro RestoreCamera
@@ -690,23 +715,23 @@
     .short \arg2
     .endm
 
-    .macro ScrCmd_06B arg0, arg1, arg2
+    .macro MoveCamera x, y, z
     .short 107
-    .short \arg0
-    .short \arg1
-    .short \arg2
+    .short \x
+    .short \y
+    .short \z
     .endm
 
-    .macro ScrCmd_06C arg0, arg1
+    .macro SetObjectFlagIsPersistent localID, flag
     .short 108
-    .short \arg0
-    .byte \arg1
+    .short \localID
+    .byte \flag
     .endm
 
-    .macro ScrCmd_06D arg0, arg1
+    .macro SetMovementType localID, movementType
     .short 109
-    .short \arg0
-    .short \arg1
+    .short \localID
+    .short \movementType
     .endm
 
     .macro ScrCmd_Unused_06E
@@ -772,7 +797,10 @@
     .short \coins
     .endm
 
-    /* See SubtractCoins for 122 */
+    .macro SubtractCoinsFromValue value
+    .short 122
+    .short \value
+    .endm
 
     // If the player has no space left in the bag, destVarID will be set to FALSE
     .macro AddItem item, count, destVarID
@@ -971,7 +999,7 @@
     .short \eggGiverTextId
     .endm
 
-    .macro ResetPartyMonMoveSlot_Unused partySlot, moveSlot, moveID 
+    .macro ResetPartyMonMoveSlot_Unused partySlot, moveSlot, moveID
     .short 152
     .short \partySlot
     .short \moveSlot
@@ -1086,7 +1114,7 @@
     .short 175
     .endm
 
-    .macro ScrCmd_0B0
+    .macro ClearGame
     .short 176
     .endm
 
@@ -1140,10 +1168,10 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_0BB arg0, arg1
+    .macro OpenPokemonNamingScreen slot, destVar
     .short 187
-    .short \arg0
-    .short \arg1
+    .short \slot
+    .short \destVar
     .endm
 
     .macro FadeScreen transition, frames, type, color
@@ -1641,11 +1669,11 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_116
+    .macro ShowLinkContestRecords
     .short 278
     .endm
 
-    .macro ScrCmd_117
+    .macro LockAutoScrollForLinkContests
     .short 279
     .endm
 
@@ -1787,9 +1815,9 @@
     .short \arg1
     .endm
 
-    .macro ScrCmd_130 arg0
+    .macro SetDressUpPhotoTitle word
     .short 304
-    .short \arg0
+    .short \word
     .endm
 
     .macro ScrCmd_131
@@ -2671,22 +2699,6 @@
     .short \destVarID
     .endm
 
-    .macro GivePoketchApp
-    CallCommonScript 0x7D9
-    .endm
-
-    .macro GiveAccessoryWaitForConfirm
-    CallCommonScript 0x7DF
-    .endm
-
-    .macro MessageBagIsFull
-    CallCommonScript 0x7E1
-    .endm
-
-    .macro GiveItemQuantity
-    CallCommonScript 0x7FC
-    .endm
-
     .macro ScrCmd_Unused_1D4 arg0, arg1, arg2
     .short 468
     .short \arg0
@@ -2743,12 +2755,12 @@
     .short \destVar
     .endm
 
-    .macro ScrCmd_1DE arg0, arg1, arg2, arg3
+    .macro GetBattleTowerPartnerSpeciesAndMove partnerID, monID, destVar1, destVar2
     .short 478
-    .short \arg0
-    .short \arg1
-    .short \arg2
-    .short \arg3
+    .short \partnerID
+    .short \monID
+    .short \destVar1
+    .short \destVar2
     .endm
 
     .macro ScrCmd_1DF arg0
@@ -2886,7 +2898,7 @@
     .short \partySlot
     .endm
 
-    .macro ScrCmd_1F8
+    .macro WaitForTransition
     .short 504
     .endm
 
@@ -2924,9 +2936,9 @@
     .short \word2
     .endm
 
-    .macro ScrCmd_1FE arg0
+    .macro PrintBattleTowerIntroMessage opponentID
     .short 510
-    .byte \arg0
+    .byte \opponentID
     .endm
 
     .macro MessageSeenBanlistSpecies banlistMsgStartIdx, numPokemonRequired
@@ -3344,15 +3356,6 @@
     .short \pokeballCount
     .endm
 
-    .macro CallPokecenterNurse nurseLocalID
-    SetVar VAR_0x8007, \nurseLocalID
-    CallCommonScript 0x7D2
-    .endm
-
-    .macro VendorGreeting
-    CallCommonScript 0x7E3
-    .endm
-
     .macro PlayElevatorAnimation elevatorDir, loopCount
     .short 572
     .short \elevatorDir
@@ -3568,9 +3571,13 @@
     SetClearInCatchingShowFlag 1
     .endm
 
+    .macro CheckHasEnoughMonForCatchingShow destVar
+    .short 596
+    .short \destVar
+    .endm
+
     .macro GoToIfNotEnoughMonForCatchingShow offset
-    .short 596 /* CheckHasEnoughMonForCatchingShow */
-    .short VAR_RESULT
+    CheckHasEnoughMonForCatchingShow VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, \offset
     .endm
 
@@ -3709,18 +3716,20 @@
     .short 623
     .endm
 
+    .macro SetHiddenLocation hiddenLocation, enable
+    .short 624
+    .short \hiddenLocation
+    .byte \enable
+    .endm
+
     /* Enable a given hidden location */
     .macro EnableHiddenLocation hiddenLocation
-    .short 624 /* SetHiddenLocation */
-    .short \hiddenLocation /* Refer to generated/hidden_locations.txt */
-    .byte TRUE /* Enable */
+    SetHiddenLocation \hiddenLocation, TRUE
     .endm
 
     /* Disable a given hidden location */
     .macro DisableHiddenLocation hiddenLocation
-    .short 624 /* SetHiddenLocation */
-    .short \hiddenLocation /* Refer to generated/hidden_locations.txt */
-    .byte FALSE /* Disable */
+    SetHiddenLocation \hiddenLocation, FALSE
     .endm
 
     .macro ScrCmd_271 arg0
@@ -3739,7 +3748,11 @@
     .short \arg1
     .endm
 
-    /* See HasCoins for 628 */
+    .macro HasCoinsFromValue varID, value
+    .short 628
+    .short \varID
+    .long \value
+    .endm
 
     /* Returns TRUE in destVarID if the player has won at least 10 consecutive bonus rounds */
     .macro CheckBonusRoundStreak destVarID
@@ -3747,10 +3760,14 @@
     .short \destVarID
     .endm
 
-    .macro GoToIfCannotAddCoins amount, offset
+    .macro CheckCanAddCoins destVar, value
     .short 630
-    .short VAR_RESULT
-    .short \amount
+    .short \destVar
+    .short \value
+    .endm
+
+    .macro GoToIfCannotAddCoins amount, offset
+    CheckCanAddCoins VAR_RESULT, \amount
     Noop
     GoToIfEq VAR_RESULT, FALSE, \offset
     .endm
@@ -3766,10 +3783,11 @@
     .short \slot
     .endm
 
-    .macro ScrCmd_Unused_279 arg0, arg1
+    /* Unused */
+    .macro ScrCmd_RemoveAccessory accessoryID, amount
     .short 633
-    .short \arg0
-    .short \arg1
+    .short \accessoryID
+    .short \amount
     .endm
 
     .macro ScrCmd_27A
@@ -3892,7 +3910,7 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_28F arg0
+    .macro GetLeagueVictories arg0
     .short 655
     .short \arg0
     .endm
@@ -4037,25 +4055,30 @@
     .short \destVar
     .endm
 
+    .macro SubtractCoinsFromVar valueVar
+    .short 680
+    .short \valueVar
+    .endm
+
     .macro SubtractCoins valueOrVarID
-    .if \valueOrVarID < VARS_START
-        .short 122 /* SubstractCoinsFromValue */
-        .short \valueOrVarID
+    .if ((\valueOrVarID >= VARS_START && \valueOrVarID <= VARS_END) || (\valueOrVarID >= SCRIPT_LOCAL_VARS_START && \valueOrVarID <= SCRIPT_LOCAL_VARS_END))
+        SubtractCoinsFromVar \valueOrVarID
     .else
-        .short 680 /* SubstractCoinsFromVar */
-        .short \valueOrVarID
+        SubtractCoinsFromValue \valueOrVarID
     .endif
     .endm
 
+    .macro HasCoinsFromVar varID, valueVar
+    .short 681
+    .short \varID
+    .short \valueVar
+    .endm
+
     .macro HasCoins varID, valueOrVarID
-    .if \valueOrVarID < VARS_START
-        .short 628 /* HasCoinsFromValue */
-        .short \varID
-        .long \valueOrVarID
+    .if ((\valueOrVarID >= VARS_START && \valueOrVarID <= VARS_END) || (\valueOrVarID >= SCRIPT_LOCAL_VARS_START && \valueOrVarID <= SCRIPT_LOCAL_VARS_END))
+        HasCoinsFromVar \varID, \valueOrVarID
     .else
-        .short 681 /* HasCoinsFromVar */
-        .short \varID
-        .short \valueOrVarID
+        HasCoinsFromValue \varID, \valueOrVarID
     .endif
     .endm
 
@@ -4350,10 +4373,14 @@
     .short \destBerryAndAccessoryManOptionID
     .endm
 
-    .macro GoToIfAmitySquareManGiftIsNotAccesory giftID, offset
-    .short 736 /* CheckAmitySquareManGiftIsAccesory */
+    .macro CheckAmitySquareManGiftIsAccessory giftID, destVar
+    .short 736
     .short \giftID
-    .short VAR_RESULT
+    .short \destVar
+    .endm
+
+    .macro GoToIfAmitySquareManGiftIsNotAccessory giftID, offset
+    CheckAmitySquareManGiftIsAccessory \giftID, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, \offset
     .endm
 
@@ -4723,12 +4750,12 @@
     .short 800
     .endm
 
-    .macro ScrCmd_321 arg0
+    .macro StartDistortionWorldGiratinaShadowEvent eventIndex
     .short 801
-    .short \arg0
+    .short \eventIndex
     .endm
 
-    .macro ScrCmd_322
+    .macro FinishDistortionWorldGiratinaShadowEvent
     .short 802
     .endm
 
@@ -4870,7 +4897,7 @@
     .endm
 
     .macro SetMenuYOriginSide bottomSide
-    .short 826
+    .short 827
     .byte \bottomSide
     .endm
 
@@ -4986,6 +5013,14 @@
     GoToIf 5, \offset
     .endm
 
+   .macro GoToIfInRange varID, lower, upper, offset
+    CompareVar \varID, \lower
+    GoToIf 1, \offset
+    .if \lower < \upper
+        GoToIfInRange \varID, \lower + 1, \upper, \offset
+    .endif
+    .endm
+
     .macro GoToIfUnset flagID, offset
     CheckFlag \flagID
     GoToIf 0, \offset
@@ -5065,7 +5100,7 @@
     .set F_ACCEPT_SCRIPT_ENTRIES, FALSE
     .short 0xFD13
     .endm
-    
+
     .set F_INIT_SCRIPT_FRAME_TABLE_OPENED, FALSE
     .set F_INIT_SCRIPT_FRAME_TABLE_CLOSED, FALSE
 
@@ -5137,6 +5172,121 @@
     .macro GoToIfCannotFitItem item, count, destVarID, offset
     CanFitItem \item, \count, \destVarID
     GoToIfEq \destVarID, FALSE, \offset
+    .endm
+
+    /* CallCommonScript aliases below */
+
+    .macro HandleSignpostInput
+    CallCommonScript 0x7D0
+    .endm
+
+    .macro CheckBagPocketForItem
+    CallCommonScript 0x7D1
+    .endm
+
+    .macro CallPokecenterNurse nurseLocalID
+    SetVar VAR_0x8007, \nurseLocalID
+    CallCommonScript 0x7D2
+    .endm
+
+    .macro SaveGame
+    CallCommonScript 0x7D6
+    .endm
+
+    .macro GivePoketchApp
+    CallCommonScript 0x7D9
+    .endm
+
+    .macro SendToUndergroundPC
+    CallCommonScript 0x7DC
+    .endm
+
+    .macro ObtainUndergroundTrap
+    CallCommonScript 0x7DD
+    .endm
+
+    .macro ObtainUndergroundSphere
+    CallCommonScript 0x7DE
+    .endm
+
+    .macro GiveAccessoryWaitForConfirm
+    CallCommonScript 0x7DF
+    .endm
+
+    .macro GiveItemQuantityNoLineFeed
+    CallCommonScript 0x7E0
+    .endm
+
+    .macro MessageBagIsFull
+    CallCommonScript 0x7E1
+    .endm
+
+    .macro VendorGreeting
+    CallCommonScript 0x7E3
+    .endm
+
+    .macro ObtainContestBackdropWaitForConfirm
+    CallCommonScript 0x7F4
+    .endm
+
+    .macro PrintPlateObtainedMessage
+    CallCommonScript 0x7F6
+    .endm
+
+    .macro SetCounterpartBGM
+    CallCommonScript 0x7F8
+    .endm
+
+    .macro FadeToDefaultMusic
+    CallCommonScript 0x7F9
+    .endm
+
+    .macro SetRivalBGM
+    CallCommonScript 0x7FA
+    .endm
+
+    .macro FadeToDefaultMusic2
+    CallCommonScript 0x7FB
+    .endm
+
+    .macro GiveItemQuantity
+    CallCommonScript 0x7FC
+    .endm
+
+    .macro ObtainContestBackdrop
+    CallCommonScript 0x7FD
+    .endm
+
+    .macro SendToUndergroundPCWithLinefeed
+    CallCommonScript 0x7FE
+    .endm
+
+    .macro GiveAccessory
+    CallCommonScript 0x7FF
+    .endm
+
+    .macro SetFollowMeBGM
+    CallCommonScript 0x800
+    .endm
+
+    .macro FadeToDefaultMusic3
+    CallCommonScript 0x801
+    .endm
+
+    .macro CheckAllFrontierGoldPrintsObtained
+    CallCommonScript 0x806
+    .endm
+
+    .macro SetLookerBGM
+    CallCommonScript 0x807
+    .endm
+
+    .macro FadeToDefaultMusic4
+    CallCommonScript 0x808
+    .endm
+
+    .macro GriseousOrbCouldNotBeRemoved
+    CallCommonScript 0x809
     .endm
 
     .text

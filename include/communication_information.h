@@ -3,15 +3,14 @@
 
 #include <dwc.h>
 
-#include "struct_defs/struct_0202610C.h"
-
+#include "battle_regulation.h"
 #include "savedata.h"
 #include "trainer_info.h"
 
 void CommInfo_Init(SaveData *saveData, const BattleRegulation *regulation);
 void CommInfo_Delete(void);
 BOOL CommInfo_IsInitialized(void);
-void CommInfo_SendBattleRegulation(void);
+void CommInfo_SendPlayerInfo(void);
 int CommPlayerInfo_Size(void);
 void CommunicatitonInformaion_FinishReading(int unused0, int unused1, void *unused2, void *unused3);
 BOOL CommInfo_IsDataFinishedReading(void);

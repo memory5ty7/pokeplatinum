@@ -1,10 +1,9 @@
 #ifndef POKEPLATINUM_UNK_020366A0_H
 #define POKEPLATINUM_UNK_020366A0_H
 
-#include "struct_defs/struct_0202610C.h"
-
 #include "overlay065/struct_ov65_0222F6EC.h"
 
+#include "battle_regulation.h"
 #include "bg_window.h"
 #include "enums.h"
 #include "savedata.h"
@@ -16,9 +15,9 @@ void sub_020367F0(void);
 void sub_02036814(BOOL param0);
 void sub_02036824(void);
 BOOL sub_02036834(void);
-void sub_02036884(void);
+void CommMan_CloseSecretBase(void);
 void sub_02036894(void);
-void sub_020368A4(void);
+void CommMan_ReopenSecretBase(void);
 void CommMan_StartBattleServer(SaveData *saveData, int param1, int param2, const BattleRegulation *param3, BOOL param4);
 void CommMan_StartBattleClient(SaveData *saveData, int param1, int param2, const BattleRegulation *param3, BOOL param4);
 void sub_02036948(int param0);

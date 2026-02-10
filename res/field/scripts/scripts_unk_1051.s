@@ -10,12 +10,12 @@ _0006:
     LockAll
     FacePlayer
     GetPlayerGender VAR_0x8004
-    GoToIfEq VAR_UNK_0x40A6, 3, _0027
+    GoToIfEq VAR_SANDGEM_TOWN_LAB_STATE, 3, _0027
     GoTo _006C
     End
 
 _0027:
-    GoToIfUnset FLAG_UNK_0x09BE, _003A
+    GoToIfUnset FLAG_FIRST_ARRIVAL_SUNYSHORE_CITY, _003A
     GoTo _006C
     End
 
@@ -50,7 +50,7 @@ _006C:
 _00B2:
     GetNationalDexEnabled VAR_RESULT
     GoToIfEq VAR_RESULT, 0, _030D
-    GoToIfUnset FLAG_UNK_0x00F0, _02E8
+    GoToIfUnset FLAG_TALKED_TO_COUNTERPART_SISTER_WITH_NATIONAL_DEX, _02E8
     GoToIfUnset FLAG_UNK_0x0131, _02C3
     CheckNationalDexCompleted VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _0158
@@ -341,8 +341,8 @@ _0494:
     EndMovement
 
 _04A4:
-    GoToIfEq VAR_UNK_0x40C4, 1, _04C6
-    GoToIfEq VAR_UNK_0x40C5, 1, _04C6
+    GoToIfEq VAR_SPEAR_PILLAR_DIALGA_STATE, 1, _04C6
+    GoToIfEq VAR_SPEAR_PILLAR_PALKIA_STATE, 1, _04C6
     SetVar VAR_RESULT, 1
     Return
 

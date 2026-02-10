@@ -10,7 +10,7 @@
 #include "struct_defs/struct_020322F8.h"
 #include "struct_defs/struct_0203233C.h"
 
-#include "overlay004/ov4_021D0D80.h"
+#include "nintendo_wfc/main.h"
 
 #include "comm_ring.h"
 #include "communication_information.h"
@@ -61,7 +61,7 @@ typedef struct {
 typedef struct {
     u8 sendBuffer[2][64];
     u8 sendBufferServer[2][192];
-    u8 sendBufferCommRing[264];
+    u8 sendBufferCommRing[COMM_RING_BUFFER_SIZE];
     u8 sendBufferCommRingServer[384];
     u8 *unk_488;
     u8 *recvBufferRingServer;
@@ -441,7 +441,7 @@ void CommSys_Delete(void)
 
     if (sCommunicationSystem) {
         if (CommLocal_IsWifiGroup(sub_0203895C())) {
-            ov4_021D2184();
+            NintendoWFC_Stop();
             v0 = 1;
         } else {
             if (sub_02033768()) {
@@ -620,7 +620,7 @@ static void sub_02034B50(void)
                 return;
             }
 
-            if (ov4_021D1590(sCommunicationSystem->sendBuffer[0], 38)) {
+            if (NintendoWFC_SendData(sCommunicationSystem->sendBuffer[0], 38)) {
                 int i;
                 int v1 = CommLocal_MaxMachines(sub_0203895C()) + 1;
 
@@ -658,7 +658,7 @@ static void sub_02034B50(void)
                 return;
             }
 
-            if (ov4_021D142C(sCommunicationSystem->sendBuffer[0], 38)) {
+            if (NintendoWFC_SendData_Server(sCommunicationSystem->sendBuffer[0], 38)) {
                 Unk_02100A1D = 4;
                 sCommunicationSystem->unk_660++;
             }
@@ -809,7 +809,7 @@ static void sub_02034F68(void)
                 Unk_02100A1C = 2;
             }
 
-            if (ov4_021D14D4(sCommunicationSystem->sendBufferServer[0], 192)) {
+            if (NintendoWFC_SendData_Client(sCommunicationSystem->sendBufferServer[0], 192)) {
                 Unk_02100A1C = 4;
 
                 for (i = 0; i < v1; i++) {
@@ -1178,7 +1178,7 @@ static BOOL sub_020356A0(u8 *param0, int param1)
     return TRUE;
 }
 
-void sub_0203572C(void)
+void CommSys_Dummy(void)
 {
     return;
 }
@@ -1305,13 +1305,13 @@ static BOOL sub_0203594C(void)
     return FALSE;
 }
 
-BOOL CommSys_SendDataHuge(int cmd, const void *data, int param2)
+BOOL CommSys_SendDataHuge(int cmd, const void *data, int size)
 {
     if (!CommSys_IsPlayerConnected(CommSys_CurNetId()) && !CommSys_IsAlone()) {
         return FALSE;
     }
 
-    if (CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, param2, 1, 0)) {
+    if (CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, size, 1, 0)) {
         return TRUE;
     }
 
@@ -1322,13 +1322,13 @@ BOOL CommSys_SendDataHuge(int cmd, const void *data, int param2)
     return FALSE;
 }
 
-BOOL CommSys_SendData(int cmd, const void *data, int param2)
+BOOL CommSys_SendData(int cmd, const void *data, int size)
 {
     if (!CommSys_IsPlayerConnected(CommSys_CurNetId()) && !CommSys_IsAlone()) {
         return FALSE;
     }
 
-    if (CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, param2, 1, 1)) {
+    if (CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, size, 1, 1)) {
         return TRUE;
     }
 
@@ -1339,7 +1339,7 @@ BOOL CommSys_SendData(int cmd, const void *data, int param2)
     return FALSE;
 }
 
-BOOL sub_02035A3C(int cmd, const void *data, int param2)
+BOOL CommSys_SendDataHugeServer(int cmd, const void *data, int size)
 {
     if (CommSys_CurNetId() != 0) {
         GF_ASSERT(FALSE);
@@ -1351,10 +1351,10 @@ BOOL sub_02035A3C(int cmd, const void *data, int param2)
     }
 
     if (CommSys_TransmissionType() == 1) {
-        return CommSys_SendDataHuge(cmd, data, param2);
+        return CommSys_SendDataHuge(cmd, data, size);
     }
 
-    if (CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, param2, 1, 0)) {
+    if (CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, size, 1, 0)) {
         return TRUE;
     }
 
@@ -1365,7 +1365,7 @@ BOOL sub_02035A3C(int cmd, const void *data, int param2)
     return FALSE;
 }
 
-BOOL CommSys_SendDataServer(int cmd, const void *data, int param2)
+BOOL CommSys_SendDataServer(int cmd, const void *data, int size)
 {
     if (CommSys_CurNetId() != 0) {
         sub_020363BC();
@@ -1378,10 +1378,10 @@ BOOL CommSys_SendDataServer(int cmd, const void *data, int param2)
     }
 
     if (CommSys_TransmissionType() == 1) {
-        return CommSys_SendData(cmd, data, param2);
+        return CommSys_SendData(cmd, data, size);
     }
 
-    if (CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, param2, 1, 1)) {
+    if (CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, size, 1, 1)) {
         return TRUE;
     }
 
@@ -1392,7 +1392,7 @@ BOOL CommSys_SendDataServer(int cmd, const void *data, int param2)
     return FALSE;
 }
 
-BOOL sub_02035B48(int cmd, const void *data)
+BOOL CommSys_SendDataFixedSizeServer(int cmd, const void *data)
 {
     return CommSys_SendDataServer(cmd, data, 0);
 }
@@ -1443,7 +1443,7 @@ static void CommSys_RecvDataSingle(CommRing *ring, int netId, u8 *buffer, CommRe
                 return;
             }
 
-            if (0xffff == size) {
+            if (size == PACKET_SIZE_VARIABLE) {
                 if (CommRing_DataSize(ring) < 1) {
                     ring->startIndex = v2;
                     break;
@@ -1647,12 +1647,12 @@ BOOL CommSys_IsSendingMovementData(void)
     return TRUE;
 }
 
-BOOL CommSys_WriteToQueueServer(int cmd, const void *data, int param2)
+BOOL CommSys_WriteToQueueServer(int cmd, const void *data, int size)
 {
     if (CommSys_TransmissionType() == 1) {
-        return CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, param2, 1, 0);
+        return CommQueue_Write(&sCommunicationSystem->commQueueManSend, cmd, (u8 *)data, size, 1, 0);
     } else {
-        return CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, param2, 1, 0);
+        return CommQueue_Write(&sCommunicationSystem->commQueueManSendServer, cmd, (u8 *)data, size, 1, 0);
     }
 }
 
@@ -1732,7 +1732,7 @@ u16 CommSys_CurNetId(void)
 {
     if (sCommunicationSystem) {
         if (CommLocal_IsWifiGroup(sub_0203895C())) {
-            int netId = ov4_021D1E30();
+            int netId = NintendoWFC_GetNetID();
 
             if (netId != -1) {
                 return netId;
@@ -1752,12 +1752,12 @@ BOOL CommSys_SendDataFixedSize(int cmd, const void *data)
     return CommSys_SendData(cmd, data, 0);
 }
 
-BOOL Link_Message(int cmd)
+BOOL CommSys_SendMessage(int cmd)
 {
     return CommSys_SendData(cmd, NULL, 0);
 }
 
-BOOL sub_020360E8(void)
+BOOL CommSys_IsClientConnecting(void)
 {
     return CommServerClient_IsClientConnecting();
 }
@@ -1820,7 +1820,7 @@ void sub_0203619C(int param0, int param1, void *param2, void *param3)
     u8 v0;
 
     if (!sub_0203406C() && CommSys_CurNetId() == 0) {
-        sub_02035B48(2, &v0);
+        CommSys_SendDataFixedSizeServer(2, &v0);
     }
 
     sub_0203408C();
@@ -1837,14 +1837,14 @@ void CommSys_Seed(MATHRandContext32 *rand)
     MATH_InitRand32(rand, seed);
 }
 
-BOOL sub_02036254(int param0)
+BOOL CommSys_IsCmdQueuedServer(int cmd)
 {
-    return CommQueue_CompareCmd(&sCommunicationSystem->commQueueManSendServer, param0);
+    return CommQueueMan_IsCmdInQueue(&sCommunicationSystem->commQueueManSendServer, cmd);
 }
 
-BOOL sub_0203626C(int param0)
+BOOL CommSys_IsCmdQueued(int cmd)
 {
-    return CommQueue_CompareCmd(&sCommunicationSystem->commQueueManSend, param0);
+    return CommQueueMan_IsCmdInQueue(&sCommunicationSystem->commQueueManSend, cmd);
 }
 
 BOOL sub_02036284(void)
@@ -1889,7 +1889,7 @@ BOOL sub_02036314(void)
         return FALSE;
     }
 
-    return ov4_021D254C();
+    return NintendoWFC_GetVoiceChatEnabled();
 }
 
 void sub_0203632C(BOOL param0)
@@ -1919,9 +1919,9 @@ void sub_02036378(BOOL param0)
 
     if (CommLocal_IsWifiGroup(sub_0203895C())) {
         if (param0) {
-            ov4_021D2598(0);
+            NintendoWFC_SetVoiceChatEnabled_Battle(0);
         } else {
-            ov4_021D2598(1);
+            NintendoWFC_SetVoiceChatEnabled_Battle(1);
         }
     }
 }

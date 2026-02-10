@@ -20,11 +20,9 @@
 #include "generated/natures.h"
 #include "generated/species_data_params.h"
 
-#include "struct_decls/pokemon_animation_sys_decl.h"
 #include "struct_decls/struct_02023790_decl.h"
 #include "struct_defs/chatot_cry.h"
 #include "struct_defs/mail.h"
-#include "struct_defs/poke_animation_settings.h"
 #include "struct_defs/seal_case.h"
 #include "struct_defs/species_sprite_data.h"
 #include "struct_defs/sprite_animation_frame.h"
@@ -45,16 +43,16 @@
 #include "narc.h"
 #include "palette.h"
 #include "party.h"
+#include "pokemon_anim.h"
 #include "pokemon_sprite.h"
 #include "rtc.h"
 #include "sound_chatot.h"
 #include "sound_playback.h"
 #include "sprite.h"
 #include "sprite_system.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "trainer_data.h"
 #include "trainer_info.h"
-#include "unk_02015F84.h"
 #include "unk_02017038.h"
 #include "unk_0202C9F4.h"
 #include "unk_02092494.h"
@@ -300,7 +298,7 @@ int Pokemon_StructSize(void)
     return sizeof(Pokemon);
 }
 
-Pokemon *Pokemon_New(u32 heapID)
+Pokemon *Pokemon_New(enum HeapID heapID)
 {
     Pokemon *mon = Heap_Alloc(heapID, sizeof(Pokemon));
     Pokemon_Init(mon);
@@ -1071,12 +1069,12 @@ static u32 BoxPokemon_GetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam 
         // fall-through
     case MON_DATA_NICKNAME_STRING:
         if (boxMon->checksumFailed) {
-            Strbuf *strbuf = MessageUtil_SpeciesName(SPECIES_BAD_EGG, HEAP_ID_SYSTEM);
+            String *string = MessageUtil_SpeciesName(SPECIES_BAD_EGG, HEAP_ID_SYSTEM);
 
-            Strbuf_Copy(dest, strbuf);
-            Strbuf_Free(strbuf);
+            String_Copy(dest, string);
+            String_Free(string);
         } else {
-            Strbuf_CopyChars(dest, monDataBlockC->nickname);
+            String_CopyChars(dest, monDataBlockC->nickname);
         }
         break;
 
@@ -1123,7 +1121,7 @@ static u32 BoxPokemon_GetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam 
         break;
 
     case MON_DATA_OT_NAME_STRING:
-        Strbuf_CopyChars(dest, monDataBlockD->otName);
+        String_CopyChars(dest, monDataBlockD->otName);
         break;
 
     case MON_DATA_EGG_YEAR:
@@ -1629,13 +1627,13 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
         charcode_t nickname[MON_NAME_LEN + 1];
 
         MessageLoader_GetSpeciesName(monDataBlockA->species, HEAP_ID_SYSTEM, baseName);
-        Strbuf_ToChars(value, nickname, NELEMS(nickname));
+        String_ToChars(value, nickname, NELEMS(nickname));
 
         monDataBlockB->hasNickname = CharCode_Compare(baseName, nickname);
     }
         // fall-through
     case MON_DATA_NICKNAME_STRING:
-        Strbuf_ToChars(value, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
+        String_ToChars(value, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
         break;
 
     case MON_DATA_UNUSED_121:
@@ -1685,7 +1683,7 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
         break;
 
     case MON_DATA_OT_NAME_STRING:
-        Strbuf_ToChars(value, monDataBlockD->otName, NELEMS(monDataBlockD->otName));
+        String_ToChars(value, monDataBlockD->otName, NELEMS(monDataBlockD->otName));
         break;
 
     case MON_DATA_EGG_YEAR:
@@ -1773,10 +1771,10 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
         break;
 
     case MON_DATA_SPECIES_NAME: {
-        Strbuf *strbuf = MessageUtil_SpeciesName(monDataBlockA->species, HEAP_ID_SYSTEM);
+        String *string = MessageUtil_SpeciesName(monDataBlockA->species, HEAP_ID_SYSTEM);
 
-        Strbuf_ToChars(strbuf, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
-        Strbuf_Free(strbuf);
+        String_ToChars(string, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
+        String_Free(string);
 
         break;
     }
@@ -2129,7 +2127,7 @@ static void BoxPokemon_IncreaseDataInternal(BoxPokemon *boxMon, enum PokemonData
     }
 }
 
-SpeciesData *SpeciesData_FromMonForm(int monSpecies, int monForm, int heapID)
+SpeciesData *SpeciesData_FromMonForm(int monSpecies, int monForm, enum HeapID heapID)
 {
     SpeciesData *speciesData = Heap_Alloc(heapID, sizeof(SpeciesData));
     SpeciesData_LoadForm(monSpecies, monForm, speciesData);
@@ -2137,7 +2135,7 @@ SpeciesData *SpeciesData_FromMonForm(int monSpecies, int monForm, int heapID)
     return speciesData;
 }
 
-SpeciesData *SpeciesData_FromMonSpecies(int monSpecies, int heapID)
+SpeciesData *SpeciesData_FromMonSpecies(int monSpecies, enum HeapID heapID)
 {
     SpeciesData *speciesData = Heap_Alloc(heapID, sizeof(SpeciesData));
     SpeciesData_LoadSpecies(monSpecies, speciesData);
@@ -2613,23 +2611,22 @@ s8 Pokemon_GetStatAffinityOf(u8 monNature, u8 statType)
     return sNatureStatAffinities[monNature][statType - 1];
 }
 
-static const s8 Unk_020F05A0[][3] = {
-    { 5, 3, 2 }, // ??? in battle overlay
-    { 5, 3, 2 }, // unused?
-    { 1, 1, 0 }, // unused?
-    { 3, 2, 1 }, // ??? in battle overlay
-    { 1, 1, 0 }, // ??? in unk_02084B70.c
-    { 1, 1, 1 }, // walking 128 steps
-    { -1, -1, -1 }, // fainting (opponent level difference < 30)
-    { -5, -5, -10 }, // letting poison tick mon to 1HP
-    { -5, -5, -10 }, // fainting (opponent level difference >= 30)
-    { 3, 2, 1 } // ??? in unk_020933F8.c
+static const s8 sFriendshipChangeTable[FRIENDSHIP_EVENT_MAX][3] = {
+    [FRIENDSHIP_EVENT_LEVEL_UP] = { 5, 3, 2 },
+    [FRIENDSHIP_EVENT_UNK_1] = { 5, 3, 2 },
+    [FRIENDSHIP_EVENT_UNK_2] = { 1, 1, 0 },
+    [FRIENDSHIP_EVENT_BEAT_GYM_LEADER_E4_OR_CHAMPION] = { 3, 2, 1 },
+    [FRIENDSHIP_EVENT_LEARN_TMHM] = { 1, 1, 0 },
+    [FRIENDSHIP_EVENT_WALK_CYCLE] = { 1, 1, 1 },
+    [FRIENDSHIP_EVENT_BATTLE_FAINT] = { -1, -1, -1 },
+    [FRIENDSHIP_EVENT_POISON_SURVIVE] = { -5, -5, -10 },
+    [FRIENDSHIP_EVENT_BATTLE_FAINT_HIGH_LVL_DIFF] = { -5, -5, -10 },
+    [FRIENDSHIP_EVENT_CONTEST_WIN] = { 3, 2, 1 }
 };
 
-void Pokemon_UpdateFriendship(Pokemon *mon, u8 param1, u16 param2)
+void Pokemon_UpdateFriendship(Pokemon *mon, u8 friendshipEvent, u16 mapID)
 {
-    // TODO enum value (param 1 is method of gaining/losing friendship)
-    if (param1 == 5) {
+    if (friendshipEvent == FRIENDSHIP_EVENT_WALK_CYCLE) {
         if (LCRNG_Next() & 1) {
             return;
         }
@@ -2643,34 +2640,34 @@ void Pokemon_UpdateFriendship(Pokemon *mon, u8 param1, u16 param2)
 
     u16 monHeldItem = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
     u8 itemHoldEffect = Item_LoadParam(monHeldItem, ITEM_PARAM_HOLD_EFFECT, HEAP_ID_SYSTEM);
-    u8 v4 = 0;
+    u8 friendshipTier = 0;
     s16 monFriendship = Pokemon_GetValue(mon, MON_DATA_FRIENDSHIP, NULL);
 
     if (monFriendship >= LOW_FRIENDSHIP_LIMIT) {
-        v4++;
+        friendshipTier++;
     }
 
     if (monFriendship >= MED_FRIENDSHIP_LIMIT) {
-        v4++;
+        friendshipTier++;
     }
 
-    s8 v3 = Unk_020F05A0[param1][v4];
+    s8 friendshipChange = sFriendshipChangeTable[friendshipEvent][friendshipTier];
 
-    if (v3 > 0 && Pokemon_GetValue(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_BALL) {
-        v3++;
+    if (friendshipChange > 0 && Pokemon_GetValue(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_BALL) {
+        friendshipChange++;
     }
 
-    if (v3 > 0 && Pokemon_GetValue(mon, MON_DATA_EGG_LOCATION, NULL) == param2) {
-        v3++;
+    if (friendshipChange > 0 && Pokemon_GetValue(mon, MON_DATA_EGG_LOCATION, NULL) == mapID) {
+        friendshipChange++;
     }
 
-    if (v3 > 0) {
+    if (friendshipChange > 0) {
         if (itemHoldEffect == HOLD_EFFECT_FRIENDSHIP_UP) {
-            v3 = v3 * 150 / 100;
+            friendshipChange = friendshipChange * 150 / 100;
         }
     }
 
-    monFriendship += v3;
+    monFriendship += friendshipChange;
 
     if (monFriendship < 0) {
         monFriendship = 0;
@@ -3407,7 +3404,7 @@ static const int Unk_020F0588[] = {
     0x1
 };
 
-ManagedSprite *sub_02076994(SpriteSystem *param0, SpriteManager *param1, PaletteData *param2, int param3, int param4, int param5, int param6, int param7, int heapID)
+ManagedSprite *sub_02076994(SpriteSystem *param0, SpriteManager *param1, PaletteData *param2, int param3, int param4, int param5, int param6, int param7, enum HeapID heapID)
 {
     SpriteTemplate v0;
     ManagedSprite *v1;
@@ -3779,24 +3776,24 @@ u16 Pokemon_GetEvolutionTargetSpecies(Party *party, Pokemon *mon, u8 evoClass, u
     return targetSpecies;
 }
 
-u16 sub_02076F84(const u16 monSpecies)
+u16 Pokemon_GetBaseSpeciesFromPersonalData(const u16 species)
 {
     u16 result = 0;
-    GF_ASSERT(NATIONAL_DEX_COUNT + 1 > monSpecies);
+    GF_ASSERT(NATIONAL_DEX_COUNT + 1 > species);
 
     FSFile file;
     FS_InitFile(&file);
     FS_OpenFile(&file, "poketool/personal/pms.narc");
-    FS_SeekFile(&file, monSpecies * 2, FS_SEEK_SET);
+    FS_SeekFile(&file, species * 2, FS_SEEK_SET);
     FS_ReadFile(&file, &result, 2);
     FS_CloseFile(&file);
 
     return result;
 }
 
-u16 sub_02076FD4(const u16 monSpecies)
+u16 Pokemon_GetBaseSpeciesForBattle(const u16 species)
 {
-    switch (monSpecies) {
+    switch (species) {
     case SPECIES_WOBBUFFET:
     case SPECIES_MARILL:
     case SPECIES_MR_MIME:
@@ -3806,11 +3803,11 @@ u16 sub_02076FD4(const u16 monSpecies)
     case SPECIES_ROSELIA:
     case SPECIES_CHANSEY:
     case SPECIES_CHIMECHO:
-        return monSpecies;
+        return species;
         break;
     }
 
-    return sub_02076F84(monSpecies);
+    return Pokemon_GetBaseSpeciesFromPersonalData(species);
 }
 
 static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
@@ -4686,7 +4683,7 @@ void Pokemon_LoadLevelUpMovesOf(int monSpecies, int monForm, u16 *monLevelUpMove
     NARC_ReadWholeMemberByIndexPair(monLevelUpMoves, NARC_INDEX_POKETOOL__PERSONAL__WOTBL, monSpecies);
 }
 
-void PlayCryWithParams(ChatotCry *chatotCry, enum PokemonCryMod cryMod, u16 species, int form, int pan, int volume, int forceDefaultChatot, int heapID)
+void PlayCryWithParams(ChatotCry *chatotCry, enum PokemonCryMod cryMod, u16 species, int form, int pan, int volume, int forceDefaultChatot, enum HeapID heapID)
 {
     if (species == SPECIES_CHATOT) {
         if (Sound_CanPlayChatotCry(cryMod) == FALSE) {
@@ -4706,7 +4703,7 @@ void PlayCryWithParams(ChatotCry *chatotCry, enum PokemonCryMod cryMod, u16 spec
     Sound_PlayPokemonCryEx(cryMod, species, pan, volume, heapID, form);
 }
 
-void Species_PlayDelayedCry(ChatotCry *chatotCry, enum PokemonCryMod cryMod, u16 species, int form, int pan, int volume, int forceDefaultChatot, int heapID, u8 delay)
+void Species_PlayDelayedCry(ChatotCry *chatotCry, enum PokemonCryMod cryMod, u16 species, int form, int pan, int volume, int forceDefaultChatot, enum HeapID heapID, u8 delay)
 {
     if (species == SPECIES_CHATOT) {
         if (Sound_CanPlayChatotCry(cryMod) == FALSE) {
@@ -5131,31 +5128,31 @@ u16 Pokemon_GetBattleFrontierBanlistEntry(u8 index)
     return sBattleFrontierBanlist[index];
 }
 
-BOOL sub_02078838(Pokemon *mon)
+BOOL Pokemon_IsBannedFromBattleFrontier(Pokemon *mon)
 {
-    u16 monSpecies = (u16)Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
-    return Pokemon_IsOnBattleFrontierBanlist(monSpecies);
+    u16 species = (u16)Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+    return Pokemon_IsOnBattleFrontierBanlist(species);
 }
 
-BOOL sub_0207884C(BoxPokemon *boxMon, TrainerInfo *param1, int heapID)
+BOOL sub_0207884C(BoxPokemon *boxMon, TrainerInfo *param1, enum HeapID heapID)
 {
     u32 v0 = TrainerInfo_ID(param1);
     u32 monOTID = BoxPokemon_GetValue(boxMon, MON_DATA_OT_ID, NULL);
     u32 v2 = TrainerInfo_Gender(param1);
     u32 monOtGender = BoxPokemon_GetValue(boxMon, MON_DATA_OT_GENDER, NULL);
-    Strbuf *v4 = TrainerInfo_NameNewStrbuf(param1, heapID);
+    String *v4 = TrainerInfo_NameNewString(param1, heapID);
     // TODO enum/const value?
-    Strbuf *v5 = Strbuf_Init(8, heapID);
+    String *v5 = String_Init(8, heapID);
     BOOL v6 = FALSE;
 
     BoxPokemon_GetValue(boxMon, MON_DATA_OT_NAME_STRING, v5);
 
-    if (v0 == monOTID && v2 == monOtGender && Strbuf_Compare(v4, v5) == 0) {
+    if (v0 == monOTID && v2 == monOtGender && String_Compare(v4, v5) == 0) {
         v6 = TRUE;
     }
 
-    Strbuf_Free(v5);
-    Strbuf_Free(v4);
+    String_Free(v5);
+    String_Free(v4);
 
     return v6;
 }
@@ -5233,19 +5230,19 @@ void PokemonSprite_LoadAnimFrames(NARC *narc, SpriteAnimFrame *frames, u16 speci
     MI_CpuCopy8(data.faceAnims[face].frames, frames, sizeof(SpriteAnimFrame) * MAX_ANIMATION_FRAMES);
 }
 
-void PokemonSprite_LoadAnim(NARC *narc, PokemonAnimationSys *animationSys, PokemonSprite *sprite, u16 species, int face, int reverse, int frame)
+void PokemonSprite_LoadAnim(NARC *narc, PokemonAnimManager *monAnimMan, PokemonSprite *sprite, u16 species, int face, int flipSprite, int frame)
 {
     int faceType = (face == FACE_FRONT) ? 0 : 1;
 
     SpeciesSpriteData spriteData;
     NARC_ReadFromMember(narc, 0, species * sizeof(SpeciesSpriteData), sizeof(SpeciesSpriteData), &spriteData);
 
-    PokeAnimationSettings settings;
-    settings.animation = spriteData.faceAnims[faceType].animation;
-    settings.startDelay = spriteData.faceAnims[faceType].startDelay;
-    settings.reverse = reverse;
+    PokemonAnimTemplate animTemplate;
+    animTemplate.animation = spriteData.faceAnims[faceType].animation;
+    animTemplate.startDelay = spriteData.faceAnims[faceType].startDelay;
+    animTemplate.flipSprite = flipSprite;
 
-    PokeAnimation_Init(animationSys, sprite, &settings, frame);
+    PokemonAnimManager_InitAnim(monAnimMan, sprite, &animTemplate, frame);
 }
 
 void PokemonSprite_LoadCryDelay(NARC *narc, u8 *cryDelay, u16 species, u16 clientType)
@@ -5282,7 +5279,7 @@ void PokemonSprite_LoadShadowSize(NARC *narc, u8 *shadowSize, u16 species)
     *shadowSize = data.shadowSize;
 }
 
-BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, int heapID)
+BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, enum HeapID heapID)
 {
     int v0 = param0;
 

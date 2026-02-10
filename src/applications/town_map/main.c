@@ -5,8 +5,6 @@
 
 #include "constants/field/map.h"
 
-#include "struct_defs/struct_02099F80.h"
-
 #include "applications/town_map/graphics.h"
 #include "applications/town_map/map_blocks.h"
 #include "applications/town_map/sprites.h"
@@ -21,7 +19,7 @@
 #include "overlay_manager.h"
 #include "screen_fade.h"
 #include "sound.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "system.h"
 #include "touch_pad.h"
 #include "unk_0208C098.h"
@@ -189,7 +187,7 @@ static void TownMapAppVBlankCB(void *_appData)
 
 static void SetVRAMBanks(void)
 {
-    UnkStruct_02099F80 vramBanks = {
+    GXBanks vramBanks = {
         GX_VRAM_BG_128_A,
         GX_VRAM_BGEXTPLTT_NONE,
         GX_VRAM_SUB_BG_128_C,
@@ -229,7 +227,7 @@ static BOOL InitDefaultAppResources(TownMapAppData *appData)
         appData->initialCursorZ = appData->playerZ;
         appData->locationNames = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_LOCATION_NAMES, appData->heapID);
         appData->townMapStrings = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_TOWN_MAP, appData->heapID);
-        appData->hoveredMapName = Strbuf_Init(22, appData->heapID);
+        appData->hoveredMapName = String_Init(22, appData->heapID);
         appData->mainMapMatrixData = MainMapMatrixData_Load(appData->heapID);
         appData->mapBlockList = TownMap_ReadBlocks("data/tmap_block.dat", appData->heapID);
         break;
@@ -271,7 +269,7 @@ static void FreeDefaultAppResources(TownMapAppData *appData)
     Heap_Free(appData->bgConfig);
     TownMap_FreeBlocks(appData->mapBlockList);
     MainMapMatrixData_Free(appData->mainMapMatrixData);
-    Strbuf_Free(appData->hoveredMapName);
+    String_Free(appData->hoveredMapName);
     MessageLoader_Free(appData->townMapStrings);
     MessageLoader_Free(appData->locationNames);
 }

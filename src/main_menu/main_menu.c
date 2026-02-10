@@ -8,7 +8,6 @@
 #include "generated/text_banks.h"
 
 #include "struct_decls/pokedexdata_decl.h"
-#include "struct_defs/struct_02099F80.h"
 
 #include "game_opening/const_ov77_021D742C.h"
 #include "main_menu/application_template.h"
@@ -40,7 +39,7 @@
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite.h"
-#include "strbuf.h"
+#include "string_gf.h"
 #include "string_template.h"
 #include "system.h"
 #include "system_data.h"
@@ -579,7 +578,7 @@ static void DoScrollStep(MainMenuAppData *appData)
 
 static void InitMainMenuGraphics(MainMenuAppData *appData)
 {
-    UnkStruct_02099F80 vramBanks = {
+    GXBanks vramBanks = {
         GX_VRAM_BG_128_A,
         GX_VRAM_BGEXTPLTT_NONE,
         GX_VRAM_SUB_BG_128_C,
@@ -689,12 +688,12 @@ static void ClearWirelessIcon(MainMenuAppData *appData, int column, int row)
 
 static void PrintRightAlignedWithMargin(Window *window, MessageLoader *msgLoader, StringTemplate *strTemplate, TextColor textColor, u32 entryID, u32 yOffset)
 {
-    Strbuf *strBuf = MessageUtil_ExpandedStrbuf(strTemplate, msgLoader, entryID, HEAP_ID_MAIN_MENU);
-    u32 textWidth = Font_CalcStrbufWidth(FONT_SYSTEM, strBuf, Font_GetAttribute(FONT_SYSTEM, FONTATTR_LETTER_SPACING));
+    String *string = MessageUtil_ExpandedString(strTemplate, msgLoader, entryID, HEAP_ID_MAIN_MENU);
+    u32 textWidth = Font_CalcStringWidth(FONT_SYSTEM, string, Font_GetAttribute(FONT_SYSTEM, FONTATTR_LETTER_SPACING));
     u32 xOffset = Window_GetWidth(window) * TILE_WIDTH_PIXELS - (textWidth + CONTINUE_WINDOW_MARGIN);
 
-    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, strBuf, xOffset, yOffset, TEXT_SPEED_NO_TRANSFER, textColor, NULL);
-    Strbuf_Free(strBuf);
+    Text_AddPrinterWithParamsAndColor(window, FONT_SYSTEM, string, xOffset, yOffset, TEXT_SPEED_NO_TRANSFER, textColor, NULL);
+    String_Free(string);
 }
 
 static void SetTemplateNumberCustomFormatting(StringTemplate *strTemplate, int number)
@@ -738,9 +737,9 @@ static BOOL RenderContinueOption(MainMenuAppData *appData, enum MainMenuOption o
             continue;
         }
 
-        Strbuf *strBuf = MessageUtil_ExpandedStrbuf(strTemplate, msgLoader, sContinueOptionStringsIDs[i], HEAP_ID_MAIN_MENU);
-        Text_AddPrinterWithParamsAndColor(window->window, FONT_SYSTEM, strBuf, CONTINUE_WINDOW_MARGIN, TEXT_LINES(i), TEXT_SPEED_NO_TRANSFER, textColor, NULL);
-        Strbuf_Free(strBuf);
+        String *string = MessageUtil_ExpandedString(strTemplate, msgLoader, sContinueOptionStringsIDs[i], HEAP_ID_MAIN_MENU);
+        Text_AddPrinterWithParamsAndColor(window->window, FONT_SYSTEM, string, CONTINUE_WINDOW_MARGIN, TEXT_LINES(i), TEXT_SPEED_NO_TRANSFER, textColor, NULL);
+        String_Free(string);
     }
 
     StringTemplate_SetPlayerName(strTemplate, 0, appData->trainerInfo);
