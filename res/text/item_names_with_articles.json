@@ -2128,6 +2128,10 @@
     {
       "id": "pl_msg_00000393_00531",
       "en_US": "a {COLOR 255}Darkranite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00532",
+      "en_US": "a {COLOR 255}Mega Bracelets{COLOR 0}"
     }
   ]
 }

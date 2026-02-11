@@ -358,6 +358,7 @@ item_icon_pngs = files(
     'froslassite.png',
     'heatranite.png',
     'darkranite.png',
+    'mega_bracelet.png',
 )
 
 item_icon_pals = files(
@@ -776,6 +777,7 @@ item_icon_pals = files(
     'froslassite.pal',
     'heatranite.pal',
     'darkranite.pal',
+    'mega_bracelet.pal',
 )
 
 item_icon_anim_jsons = files('generic_anim.json')

@@ -3217,6 +3217,12 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = darkranite_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
+    [ITEM_MEGA_BRACELET] = {
+        .dataID = 0x1FE,
+        .iconID = mega_bracelet_NCGR,
+        .paletteID = mega_bracelet_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {
