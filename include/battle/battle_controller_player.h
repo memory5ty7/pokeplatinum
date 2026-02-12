@@ -75,6 +75,7 @@ enum BattleControllerPlayerInput {
     PLAYER_INPUT_MOVE_2,
     PLAYER_INPUT_MOVE_3,
     PLAYER_INPUT_MOVE_4,
+    PLAYER_INPUT_MEGA_EVOLUTION,
 
     PLAYER_INPUT_PARTY_SLOT_1 = 1,
     PLAYER_INPUT_PARTY_SLOT_2,
@@ -140,5 +141,7 @@ void BattleContext_Free(BattleContext *battleCtx);
  * @param move
  */
 void BattleControllerPlayer_CheckMoveHit(BattleSystem *battleSys, BattleContext *battleCtx, int attacker, int defender, int move);
+
+
 
 #endif // POKEPLATINUM_BATTLE_CONTROLLER_H

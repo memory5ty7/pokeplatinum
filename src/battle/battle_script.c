@@ -11512,6 +11512,7 @@ static void BattleMessageParams_Make(BattleContext *battleCtx, BattleMessagePara
     case TAG_TRNAME_NICKNAME_NICKNAME:
     case TAG_TRCLASS_TRNAME_NICKNAME:
     case TAG_TRCLASS_TRNAME_ITEM:
+    case TAG_NICKNAME_ITEM_TRNAME:
         tagCount = 3;
         break;
 
@@ -11885,6 +11886,12 @@ static void BattleMessage_Make(BattleSystem *battleSys, BattleContext *battleCtx
         msg->params[3] = BattleMessage_TrainerClassTag(battleSys, battleCtx, msgParams->params[3]);
         msg->params[4] = BattleMessage_TrainerNameTag(battleSys, battleCtx, msgParams->params[4]);
         msg->params[5] = BattleMessage_NameTag(battleSys, battleCtx, msgParams->params[5]);
+        break;
+
+    case TAG_NICKNAME_ITEM_TRNAME:
+        msg->params[0] = BattleMessage_NameTag(battleSys, battleCtx, msgParams->params[0]);
+        msg->params[1] = BattleMessage_ItemTag(battleCtx, msgParams->params[1]);
+        msg->params[2] = BattleMessage_TrainerNameTag(battleSys, battleCtx, msgParams->params[2]);
         break;
 
     default:

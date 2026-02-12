@@ -25,6 +25,7 @@
 #include "battle/battle_lib.h"
 #include "battle/battle_message.h"
 #include "battle/battle_script.h"
+#include "battle/mega_evolution.h"
 #include "battle/common.h"
 #include "battle/ov16_0223B140.h"
 #include "battle/ov16_0223DF00.h"
@@ -41,9 +42,12 @@
 #include "pokemon.h"
 #include "screen_fade.h"
 #include "sound_playback.h"
+#include "system.h"
 #include "trainer_info.h"
 
 #include "res/battle/scripts/sub_seq.naix.h"
+
+#include "desmume.h"
 
 enum BattleControllerState {
     STATE_PROCESSING = 0,
@@ -124,6 +128,8 @@ static BOOL BattleControllerPlayer_CheckExtraFlinch(BattleSystem *battleSys, Bat
 static BOOL BattleControllerPlayer_ToggleSemiInvulnMons(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleControllerPlayer_InitAI(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *battleCtx);
+
+static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx);
 
 extern u32 gTrainerAITable[];
 
@@ -786,6 +792,8 @@ static void BattleControllerPlayer_CalcTurnOrder(BattleSystem *battleSys, Battle
             }
         }
     }
+
+    // Mega evolution trigger is now handled in command selection screen
 
     battleCtx->command = BATTLE_CONTROL_CHECK_PRE_MOVE_ACTIONS;
 }
@@ -2402,6 +2410,24 @@ enum CheckStatusAction {
     CHECK_STATUS_DONE,
 };
 
+static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    if (BattleMon_CanMegaEvolve(battleCtx, battleCtx->attacker) == TRUE) {
+        battleCtx->msgBattlerTemp = battleCtx->attacker;
+        battleCtx->battleMons[battleCtx->msgBattlerTemp].formNum = GetMegaEvolutionData(battleCtx, battleCtx->attacker);
+        LOAD_SUBSEQ(subscript_mega_evolution);
+        
+        battleCtx->megaEvolutionUsed[battleCtx->msgBattlerTemp] = TRUE;
+
+        battleCtx->commandNext = battleCtx->command;
+        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 /**
  * @brief Determine if status should disrupt the attacker's current turn.
  *
@@ -3125,6 +3151,7 @@ enum BeforeMoveState {
     BEFORE_MOVE_START = 0,
 
     BEFORE_MOVE_STATE_QUICK_CLAW = BEFORE_MOVE_START,
+    BEFORE_MOVE_STATE_MEGA_EVOLUTION,
     BEFORE_MOVE_STATE_STATUS_DISRUPTION,
     BEFORE_MOVE_STATE_CHECK_OBEDIENCE,
     BEFORE_MOVE_STATE_DECREMENT_PP,
@@ -3137,11 +3164,17 @@ enum BeforeMoveState {
 
 static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    switch (battleCtx->beforeMoveCheckState) {
+    switch (battleCtx->beforeMoveCheckState) {   
     case BEFORE_MOVE_STATE_QUICK_CLAW:
         BattleControllerPlayer_LoadQuickClawCheck(battleSys, battleCtx);
         battleCtx->beforeMoveCheckState++;
         return;
+
+    case BEFORE_MOVE_STATE_MEGA_EVOLUTION:
+        if (BattleControllerPlayer_HandleMegaEvolution(battleSys, battleCtx) == TRUE) {
+            return;
+        }
+        battleCtx->beforeMoveCheckState++;
 
     case BEFORE_MOVE_STATE_STATUS_DISRUPTION:
         if ((battleCtx->multiHitCheckFlags & SYSCTL_SKIP_STATUS_CHECK) == FALSE
@@ -4042,6 +4075,10 @@ static void BattleControllerPlayer_ScreenWipe(BattleSystem *battleSys, BattleCon
 static void BattleControllerPlayer_EndFight(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     u32 battleType = BattleSystem_BattleType(battleSys);
+
+    // Mega evolution reversion not needed - we only modify battleMons, not party Pokemon
+    // The battleMons array is discarded after battle ends anyway
+    // TODO: When we implement proper party Pokemon modification, add reversion here
 
     if ((battleType & BATTLE_TYPE_LINK) == FALSE) {
         Party *playerParty = BattleSystem_Party(battleSys, BATTLER_US);

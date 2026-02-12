@@ -690,6 +690,7 @@ Overlay battle
 	Object main.nef.p/src_battle_ov16_0223DF00.c.o
 	Object main.nef.p/src_battle_battle_script.c.o
 	Object main.nef.p/src_battle_battle_controller_player.c.o
+	Object main.nef.p/src_battle_mega_evolution.c.o
 	Object main.nef.p/src_battle_battle_lib.c.o
 	Object main.nef.p/src_battle_battle_io_command.c.o
 	Object main.nef.p/src_battle_battle_display.c.o

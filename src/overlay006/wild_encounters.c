@@ -247,7 +247,6 @@ static void AdjustWildLevels(FieldSystem *fieldSystem, WildEncounters *encounter
     for (i = 0; i < MAX_GRASS_ENCOUNTERS; i++)
     {
         rnd = LCRNG_Next();
-        Desmume_Log("rng : %d\n", rnd);
         encounterData->grassEncounters.encounters[i].level = MAX(MIN(partyMeanLevel * 0.90 - 4 + rnd % 5, 100), 1);
     }
 

@@ -1978,7 +1978,7 @@ static void MakeItemActionsMenu(BagController *controller)
             itemActions[itemActionsIdx] = ITEM_ACTION_GIVE;
             itemActionsIdx++;
 
-            if (currentPocketType != POCKET_TMHMS) {
+            if (currentPocketType != POCKET_TMHMS && Item_Get(itemData, ITEM_PARAM_HOLD_EFFECT) != HOLD_EFFECT_MEGA_STONE) {
                 itemActions[itemActionsIdx] = ITEM_ACTION_TRASH;
                 itemActionsIdx++;
             }

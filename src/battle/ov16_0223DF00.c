@@ -1768,6 +1768,7 @@ static void BattleMessage_CheckSide(BattleSystem *battleSys, BattleMessage *batt
     case TAG_NICKNAME_ITEM_STAT:
     case TAG_NICKNAME_ITEM_STATUS:
     case TAG_NICKNAME_BOX_BOX:
+    case TAG_NICKNAME_ITEM_TRNAME:
         if (Battler_Side(battleSys, battleMsg->params[0] & 0xFF)) {
             battleMsg->id++;
 
@@ -2186,6 +2187,12 @@ static void BattleMessage_FillFormatBuffers(BattleSystem *battleSys, BattleMessa
         BattleMessage_TrainerClassName(battleSys, 3, battleMsg->params[3]);
         BattleMessage_TrainerName(battleSys, 4, battleMsg->params[4]);
         BattleMessage_Nickname(battleSys, 5, battleMsg->params[5]);
+        break;
+
+    case TAG_NICKNAME_ITEM_TRNAME:
+        BattleMessage_Nickname(battleSys, 0, battleMsg->params[0]);
+        BattleMessage_ItemName(battleSys, 1, battleMsg->params[1]);
+        BattleMessage_TrainerName(battleSys, 2, battleMsg->params[2]);
         break;
 
     default:

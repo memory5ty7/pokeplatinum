@@ -8488,6 +8488,27 @@
         "The Distortion World’s {STRVAR_1 1, 0, 0}\n",
         "appeared!\r"
       ]
+    },
+    {
+      "id": "pl_msg_00000368_01269",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0} is\n",
+        "reacting to {STRVAR_1 3, 2, 0}’s Mega Bracelet!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000368_01270",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s\n",
+        "{STRVAR_1 8, 1, 0} is reacting!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000368_01271",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0} is\n",
+        "reacting to {STRVAR_1 3, 2, 0}’s Mega Bracelet!"
+      ]
     }
   ]
 }

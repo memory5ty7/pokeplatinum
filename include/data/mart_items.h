@@ -194,6 +194,9 @@ const u16 CanalaveMartSpecialties[] = {
 const u16 SunyshoreMartSpecialties[] = {
     ITEM_STEEL_MAIL,
     ITEM_LUXURY_BALL,
+    ITEM_GARCHOMPITE,
+    ITEM_VENUSAURITE,
+    ITEM_MEGA_BRACELET,
     SHOP_ITEM_END
 };
 

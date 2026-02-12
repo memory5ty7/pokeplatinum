@@ -100,5 +100,179 @@
         "frost": "data",
         "fan": "data",
         "mow": "data"
+    },
+    "venusaur": {
+        "mega": "data"
+    },
+    "charizard": {
+        "mega_x": "data",
+        "mega_y": "data"
+    },
+    "blastoise": {
+        "mega": "data"
+    },
+    "beedrill": {
+        "mega": "data"
+    },
+    "pidgeot": {
+        "mega": "data"
+    },
+    "raichu": {
+        "mega_x": "data",
+        "mega_y": "data"
+    },
+    "clefable": {
+        "mega": "data"
+    },
+    "alakazam": {
+        "mega": "data"
+    },
+    "victreebel": {
+        "mega": "data"
+    },
+    "slowbro": {
+        "mega": "data"
+    },
+    "gengar": {
+        "mega": "data"
+    },
+    "kangaskhan": {
+        "mega": "data"
+    },
+    "starmie": {
+        "mega": "data"
+    },
+    "pinsir": {
+        "mega": "data"
+    },
+    "gyarados": {
+        "mega": "data"
+    },
+    "aerodactyl": {
+        "mega": "data"
+    },
+    "dragonite": {
+        "mega": "data"
+    },
+    "mewtwo": {
+        "mega_x": "data",
+        "mega_y": "data"
+    },
+    "meganium": {
+        "mega": "data"
+    },
+    "feraligatr": {
+        "mega": "data"
+    },
+    "ampharos": {
+        "mega": "data"
+    },
+    "steelix": {
+        "mega": "data"
+    },
+    "scizor": {
+        "mega": "data"
+    },
+    "heracross": {
+        "mega": "data"
+    },
+    "skarmory": {
+        "mega": "data"
+    },
+    "houndoom": {
+        "mega": "data"
+    },
+    "tyranitar": {
+        "mega": "data"
+    },
+    "sceptile": {
+        "mega": "data"
+    },
+    "blaziken": {
+        "mega": "data"
+    },
+    "swampert": {
+        "mega": "data"
+    },
+    "gardevoir": {
+        "mega": "data"
+    },
+    "sableye": {
+        "mega": "data"
+    },
+    "mawile": {
+        "mega": "data"
+    },
+    "aggron": {
+        "mega": "data"
+    },
+    "medicham": {
+        "mega": "data"
+    },
+    "manectric": {
+        "mega": "data"
+    },
+    "sharpedo": {
+        "mega": "data"
+    },
+    "camerupt": {
+        "mega": "data"
+    },
+    "altaria": {
+        "mega": "data"
+    },
+    "banette": {
+        "mega": "data"
+    },
+    "chimecho": {
+        "mega": "data"
+    },
+    "absol": {
+        "mega": "data",
+        "mega_z": "data"
+    },
+    "glalie": {
+        "mega": "data"
+    },
+    "salamence": {
+        "mega": "data"
+    },
+    "metagross": {
+        "mega": "data"
+    },
+    "latias": {
+        "mega": "data"
+    },
+    "latios": {
+        "mega": "data"
+    },
+    "staraptor": {
+        "mega": "data"
+    },
+    "lopunny": {
+        "mega": "data"
+    },
+    "garchomp": {
+        "mega": "data",
+        "mega_z": "data"
+    },
+    "lucario": {
+        "mega": "data",
+        "mega_z": "data"
+    },
+    "abomasnow": {
+        "mega": "data"
+    },
+    "gallade": {
+        "mega": "data"
+    },
+    "froslass": {
+        "mega": "data"
+    },
+    "heatran": {
+        "mega": "data"
+    },
+    "darkrai": {
+        "mega": "data"
     }
 }

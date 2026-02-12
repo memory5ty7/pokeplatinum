@@ -2022,6 +2022,8 @@ void BattleContext_InitCounters(BattleSystem *battleSys, BattleContext *battleCt
         battleCtx->moveHitBattler[i] = BATTLER_NONE;
         battleCtx->switchedPartySlot[i] = 6;
         battleCtx->speedRand[i] = BattleSystem_RandNext(battleSys);
+        battleCtx->megaEvolutionUsed[i] = FALSE;
+        battleCtx->megaEvolutionTriggered[i] = FALSE;
     }
 
     battleCtx->prizeMoneyMul = 1;
@@ -2035,6 +2037,9 @@ void BattleContext_InitCounters(BattleSystem *battleSys, BattleContext *battleCt
 
     battleCtx->safariCatchStage = 6;
     battleCtx->safariEscapeCount = 6;
+
+    battleCtx->hasMegaRing[0] = Bag_GetItemQuantity(BattleSystem_Bag(battleSys), ITEM_MEGA_BRACELET, HEAP_ID_BATTLE);  // Player
+    battleCtx->hasMegaRing[1] = TRUE; // Opponent
 }
 
 void BattleSystem_UpdateAfterSwitch(BattleSystem *battleSys, BattleContext *battleCtx, int battler)
