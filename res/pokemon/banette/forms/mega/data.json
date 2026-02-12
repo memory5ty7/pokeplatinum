@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 64,
-        "attack": 115,
-        "defense": 65,
-        "speed": 65,
-        "special_attack": 83,
-        "special_defense": 63
+        "attack": 165,
+        "defense": 75,
+        "speed": 75,
+        "special_attack": 93,
+        "special_defense": 83
     },
     "types": [ "TYPE_GHOST", "TYPE_GHOST" ],
     "catch_rate": 45,

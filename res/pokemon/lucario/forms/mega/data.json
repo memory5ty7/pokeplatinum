@@ -1,10 +1,10 @@
 {
     "base_stats": {
         "hp": 70,
-        "attack": 110,
-        "defense": 70,
-        "speed": 90,
-        "special_attack": 115,
+        "attack": 145,
+        "defense": 88,
+        "speed": 112,
+        "special_attack": 140,
         "special_defense": 70
     },
     "types": [ "TYPE_FIGHTING", "TYPE_STEEL" ],
@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_HUMAN_LIKE" ],
-    "abilities": [ "ABILITY_STEADFAST", "ABILITY_INNER_FOCUS" ],
+    "abilities": [ "ABILITY_ADAPTABILITY", "ABILITY_ADAPTABILITY" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,

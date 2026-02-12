@@ -2,10 +2,10 @@
     "base_stats": {
         "hp": 75,
         "attack": 90,
-        "defense": 50,
-        "speed": 95,
-        "special_attack": 110,
-        "special_defense": 80
+        "defense": 90,
+        "speed": 115,
+        "special_attack": 140,
+        "special_defense": 90
     },
     "types": [ "TYPE_DARK", "TYPE_FIRE" ],
     "catch_rate": 45,
@@ -27,7 +27,7 @@
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_EARLY_BIRD", "ABILITY_FLASH_FIRE" ],
+    "abilities": [ "ABILITY_SOLAR_POWER", "ABILITY_SOLAR_POWER" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,

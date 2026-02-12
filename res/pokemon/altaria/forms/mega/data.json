@@ -1,10 +1,10 @@
 {
     "base_stats": {
         "hp": 75,
-        "attack": 70,
-        "defense": 90,
+        "attack": 110,
+        "defense": 110,
         "speed": 80,
-        "special_attack": 70,
+        "special_attack": 110,
         "special_defense": 105
     },
     "types": [ "TYPE_DRAGON", "TYPE_FLYING" ],

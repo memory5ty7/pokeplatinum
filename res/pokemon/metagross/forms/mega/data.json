@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 80,
-        "attack": 135,
-        "defense": 130,
-        "speed": 70,
-        "special_attack": 95,
-        "special_defense": 90
+        "attack": 145,
+        "defense": 150,
+        "speed": 110,
+        "special_attack": 105,
+        "special_defense": 110
     },
     "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
     "catch_rate": 3,

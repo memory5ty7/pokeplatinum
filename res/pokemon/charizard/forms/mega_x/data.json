@@ -1,13 +1,13 @@
 {
     "base_stats": {
         "hp": 78,
-        "attack": 84,
-        "defense": 78,
+        "attack": 130,
+        "defense": 111,
         "speed": 100,
-        "special_attack": 109,
+        "special_attack": 130,
         "special_defense": 85
     },
-    "types": [ "TYPE_FIRE", "TYPE_FLYING" ],
+    "types": [ "TYPE_FIRE", "TYPE_DRAGON" ],
     "catch_rate": 45,
     "base_exp_reward": 209,
     "ev_yields": {

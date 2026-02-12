@@ -3,9 +3,9 @@
         "hp": 70,
         "attack": 80,
         "defense": 70,
-        "speed": 110,
-        "special_attack": 80,
-        "special_defense": 70
+        "speed": 120,
+        "special_attack": 140,
+        "special_defense": 100
     },
     "types": [ "TYPE_ICE", "TYPE_GHOST" ],
     "catch_rate": 75,

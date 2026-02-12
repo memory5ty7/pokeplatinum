@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 75,
-        "attack": 85,
-        "defense": 200,
+        "attack": 125,
+        "defense": 230,
         "speed": 30,
         "special_attack": 55,
-        "special_defense": 65
+        "special_defense": 95
     },
     "types": [ "TYPE_STEEL", "TYPE_GROUND" ],
     "catch_rate": 25,

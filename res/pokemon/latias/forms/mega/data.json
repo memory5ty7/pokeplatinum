@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 80,
-        "attack": 80,
-        "defense": 90,
+        "attack": 100,
+        "defense": 120,
         "speed": 110,
-        "special_attack": 110,
-        "special_defense": 130
+        "special_attack": 140,
+        "special_defense": 150
     },
     "types": [ "TYPE_DRAGON", "TYPE_PSYCHIC" ],
     "catch_rate": 3,

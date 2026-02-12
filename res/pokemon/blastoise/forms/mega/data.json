@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 79,
-        "attack": 83,
-        "defense": 100,
+        "attack": 103,
+        "defense": 120,
         "speed": 78,
-        "special_attack": 85,
-        "special_defense": 105
+        "special_attack": 135,
+        "special_defense": 115
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 45,

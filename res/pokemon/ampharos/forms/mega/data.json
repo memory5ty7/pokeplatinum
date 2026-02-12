@@ -1,13 +1,13 @@
 {
     "base_stats": {
         "hp": 90,
-        "attack": 75,
-        "defense": 75,
-        "speed": 55,
-        "special_attack": 115,
-        "special_defense": 90
+        "attack": 95,
+        "defense": 105,
+        "speed": 45,
+        "special_attack": 165,
+        "special_defense": 110
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
+    "types": [ "TYPE_ELECTRIC", "TYPE_DRAGON" ],
     "catch_rate": 45,
     "base_exp_reward": 194,
     "ev_yields": {
@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_MOLD_BREAKER", "ABILITY_NONE" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,

@@ -2,12 +2,12 @@
     "base_stats": {
         "hp": 108,
         "attack": 130,
-        "defense": 95,
-        "speed": 102,
-        "special_attack": 80,
+        "defense": 85,
+        "speed": 151,
+        "special_attack": 141,
         "special_defense": 85
     },
-    "types": [ "TYPE_DRAGON", "TYPE_GROUND" ],
+    "types": [ "TYPE_DRAGON", "TYPE_DRAGON" ],
     "catch_rate": 45,
     "base_exp_reward": 218,
     "ev_yields": {

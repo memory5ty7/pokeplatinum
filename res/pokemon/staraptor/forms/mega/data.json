@@ -1,13 +1,13 @@
 {
     "base_stats": {
         "hp": 85,
-        "attack": 120,
-        "defense": 70,
-        "speed": 100,
-        "special_attack": 50,
-        "special_defense": 50
+        "attack": 140,
+        "defense": 100,
+        "speed": 110,
+        "special_attack": 60,
+        "special_defense": 90
     },
-    "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
+    "types": [ "TYPE_FIGHTING", "TYPE_FLYING" ],
     "catch_rate": 45,
     "base_exp_reward": 172,
     "ev_yields": {
