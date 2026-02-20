@@ -22,14 +22,4 @@ otherpoke_index += {
     '235': files('forms/mega/shiny.pal'),
 }
 
-otherpoke_index += {
-    '244': files('forms/base/back.png'),
-    '245': files('forms/base/front.png'),
-    '246': files('forms/mega/back.png'),
-    '247': files('forms/mega/front.png'),
-    '248': files('forms/base/normal.pal'),
-    '249': files('forms/base/shiny.pal'),
-    '250': files('forms/mega/normal.pal'),
-    '251': files('forms/mega/shiny.pal'),
-}
 pokefoot_files += files('footprint.png')
