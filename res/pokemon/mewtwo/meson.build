@@ -18,12 +18,8 @@ otherpoke_index += {
     '401': files('forms/base/shiny.pal'),
     '402': files('forms/mega_x/normal.pal'),
     '403': files('forms/mega_x/shiny.pal'),
-    '404': files('forms/base/back.png'),
-    '405': files('forms/base/front.png'),
     '406': files('forms/mega_y/back.png'),
     '407': files('forms/mega_y/front.png'),
-    '408': files('forms/base/normal.pal'),
-    '409': files('forms/base/shiny.pal'),
     '410': files('forms/mega_y/normal.pal'),
     '411': files('forms/mega_y/shiny.pal'),
 }

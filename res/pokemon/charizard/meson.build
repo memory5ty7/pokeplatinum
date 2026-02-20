@@ -20,12 +20,8 @@ otherpoke_index += {
     '257': files('forms/base/shiny.pal'),
     '258': files('forms/mega_x/normal.pal'),
     '259': files('forms/mega_x/shiny.pal'),
-    '260': files('forms/base/back.png'),
-    '261': files('forms/base/front.png'),
     '262': files('forms/mega_y/back.png'),
     '263': files('forms/mega_y/front.png'),
-    '264': files('forms/base/normal.pal'),
-    '265': files('forms/base/shiny.pal'),
     '266': files('forms/mega_y/normal.pal'),
     '267': files('forms/mega_y/shiny.pal'),
 }
