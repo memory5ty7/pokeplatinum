@@ -57,6 +57,8 @@
 
 #include "res/text/bank/battle_tower.h"
 
+#include "battle/mega_evolution.h"
+
 typedef struct {
     s16 unk_00;
     s16 unk_02;
@@ -602,6 +604,11 @@ BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
         case SPECIES_SHAYMIN:
             Pokemon_SetShayminForm(mon, SHAYMIN_FORM_LAND);
             break;
+        }
+
+        if (MonIsMega(mon))
+        {
+            RevertMegaEvolution(mon);
         }
     }
 

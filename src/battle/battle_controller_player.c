@@ -2412,12 +2412,15 @@ enum CheckStatusAction {
 
 static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    if (BattleMon_CanMegaEvolve(battleCtx, battleCtx->attacker) == TRUE) {
+    if (BattleMon_CanMegaEvolve(battleCtx, battleCtx->attacker) == TRUE) {;
+        int formNum = GetMegaEvolutionData(battleCtx, battleCtx->attacker);
+        BattleFormChange(battleSys, battleCtx, battleCtx->attacker, formNum);
+
+        ATTACKING_MON.status &= ~VOLATILE_CONDITION_DESTINY_BOND;
+        battleCtx->megaEvolutionUsed[battleCtx->attacker] = TRUE;
+
         battleCtx->msgBattlerTemp = battleCtx->attacker;
-        battleCtx->battleMons[battleCtx->msgBattlerTemp].formNum = GetMegaEvolutionData(battleCtx, battleCtx->attacker);
         LOAD_SUBSEQ(subscript_mega_evolution);
-        
-        battleCtx->megaEvolutionUsed[battleCtx->msgBattlerTemp] = TRUE;
 
         battleCtx->commandNext = battleCtx->command;
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
@@ -2427,6 +2430,7 @@ static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, 
 
     return FALSE;
 }
+
 
 /**
  * @brief Determine if status should disrupt the attacker's current turn.

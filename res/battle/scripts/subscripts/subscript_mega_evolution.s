@@ -1,6 +1,5 @@
 #include "macros/btlcmd.inc"
 
-
 _000:
     CompareMonDataToValue OPCODE_FLAG_NOT, BTLSCR_MSG_TEMP, BATTLEMON_VOLATILE_STATUS, VOLATILE_CONDITION_SUBSTITUTE, _016
     PlayBattleAnimation BTLSCR_MSG_TEMP, BATTLE_ANIMATION_SUB_OUT
@@ -21,6 +20,10 @@ _016:
     PlaySound BTLSCR_MSG_TEMP, 1984
     SetMosaic BTLSCR_MSG_TEMP, 0, 1
     Wait 
+    WaitButtonABTime 30
+    // {0} mega evolved!
+    PrintMessage pl_msg_00000368_01272, TAG_NICKNAME, BTLSCR_ATTACKER
+    Wait  
     WaitButtonABTime 30
     CompareMonDataToValue OPCODE_FLAG_NOT, BTLSCR_MSG_TEMP, BATTLEMON_VOLATILE_STATUS, VOLATILE_CONDITION_SUBSTITUTE, _058
     PlayBattleAnimation BTLSCR_MSG_TEMP, BATTLE_ANIMATION_SUB_OUT

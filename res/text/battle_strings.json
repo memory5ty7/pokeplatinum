@@ -8509,6 +8509,26 @@
         "{STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0} is\n",
         "reacting to {STRVAR_1 3, 2, 0}’s Mega Bracelet!"
       ]
+    },
+    {
+      "id": "pl_msg_00000368_01272",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} mega evolved!\n"
+      ]
+    },
+    {
+      "id": "pl_msg_00000368_01273",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}\n",
+        "mega evolved!\n"
+      ]
+    },
+    {
+      "id": "pl_msg_00000368_01274",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}\n",
+        "mega evolved!\n"
+      ]
     }
   ]
 }

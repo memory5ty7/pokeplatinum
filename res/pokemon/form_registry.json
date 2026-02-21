@@ -88,8 +88,7 @@
         "__front_only": true
     },
     "giratina": {
-        "origin": "data",
-        "__last_sprite": true
+        "origin": "data"
     },
     "shaymin": {
         "sky": "data"
@@ -273,6 +272,7 @@
         "mega": "data"
     },
     "darkrai": {
-        "mega": "data"
+        "mega": "data",
+        "__last_sprite": true
     }
 }
