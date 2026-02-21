@@ -10,13 +10,13 @@ pokegra_files += files('female_front.png')
 pokegra_files += files('male_front.png')
 
 otherpoke_index += {
-    '412': files('forms/base/back.png'),
-    '413': files('forms/base/front.png'),
-    '414': files('forms/mega/back.png'),
-    '415': files('forms/mega/front.png'),
-    '416': files('forms/base/normal.pal'),
-    '417': files('forms/base/shiny.pal'),
-    '418': files('forms/mega/normal.pal'),
-    '419': files('forms/mega/shiny.pal'),
+        '232': files('forms/base/back.png'),
+        '233': files('forms/base/front.png'),
+        '234': files('forms/mega/back.png'),
+        '235': files('forms/mega/front.png'),
+        '562': files('forms/base/normal.pal'),
+        '563': files('forms/base/shiny.pal'),
+        '564': files('forms/mega/normal.pal'),
+        '565': files('forms/mega/shiny.pal'),
 }
 pokefoot_files += files('footprint.png')
