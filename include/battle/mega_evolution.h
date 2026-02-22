@@ -36,4 +36,6 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
 
 u8 GetSpeciesMegaNumber(int species);
 
+BOOL BattleSystem_CheckMegaMessage(BattleSystem *battleSys, BattleContext *battleCtx);
+
 #endif // POKEPLATINUM_BATTLE_MEGA_EVOLUTION_H

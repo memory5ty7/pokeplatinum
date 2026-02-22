@@ -7,6 +7,7 @@
 #include "res/battle/scripts/sub_seq.naix.h"
 #include "battle/battle_lib.h"
 #include "battle/ov16_0223DF00.h"
+#include "battle/common.h"
 #include "desmume.h"
 
 const MegaEvolutionData sMegaEvolutionTable[] = {
@@ -242,4 +243,35 @@ u8 GetSpeciesMegaNumber(int species)
     }
 
     return megaNb;
+}
+
+
+BOOL BattleSystem_CheckMegaMessage(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    int battleType = BattleSystem_BattleType(battleSys);
+
+    if (battleType & BATTLE_TYPE_NO_TRAINER_MESSAGES) {
+        return FALSE;
+    }
+
+    if ((battleType & BATTLE_TYPE_TRAINER) == FALSE) {
+        return FALSE;
+    }
+
+    if (battleType & BATTLE_TYPE_DOUBLES) {
+        return FALSE;
+    }
+
+    int trID = Battler_TrainerID(battleSys, BATTLER_THEM);
+
+    if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_MEGA_FLAG) == FALSE) {
+        if (BattleMon_CanMegaEvolve(battleCtx, BATTLER_THEM)
+            && Trainer_HasMessageType(trID, TRMSG_MEGA, HEAP_ID_BATTLE)) {
+            battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_MEGA_FLAG;
+            battleCtx->msgTemp = TRMSG_MEGA;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
 }

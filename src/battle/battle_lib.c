@@ -47,9 +47,6 @@
 #include "res/battle/scripts/sub_seq.naix.h"
 #include "res/text/bank/battle_strings.h"
 
-#define TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG 2
-#define TRMSG_LAST_BATTLER_FLAG           3
-#define TRMSG_LAST_BATTLER_HALF_HP_FLAG   4
 
 static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defender, int chartEntry);
 static int MapSideEffectToSubscript(BattleContext *battleCtx, enum BattleSideEffectType type, u32 effect);

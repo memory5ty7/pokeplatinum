@@ -2413,6 +2413,15 @@ enum CheckStatusAction {
 static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     if (BattleMon_CanMegaEvolve(battleCtx, battleCtx->attacker) == TRUE) {;
+
+        if (BattleSystem_CheckMegaMessage(battleSys, battleCtx)) {
+            LOAD_SUBSEQ(subscript_trainer_message);
+            battleCtx->commandNext = battleCtx->command;
+            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+            return TRUE;
+        }
+
         int formNum = GetMegaEvolutionData(battleCtx, battleCtx->attacker);
         BattleFormChange(battleSys, battleCtx, battleCtx->attacker, formNum);
 
