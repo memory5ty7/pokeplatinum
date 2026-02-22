@@ -4166,6 +4166,22 @@
         "that somehow enables Pokémon carrying\n",
         "a Mega Stone to Mega Evolve in battle.\n"
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00533",
+      "en_US": [
+        "An item to be held by a Pokémon.\n",
+        "It is a stone tablet that boosts the\n",
+        "power of Fairy-type moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00534",
+      "en_US": [
+        "An item to be held by a Pokémon.\n",
+        "A feather, which gleams faintly, that\n",
+        "boosts the power of Fairy-type moves."
+      ]
     }
   ]
 }

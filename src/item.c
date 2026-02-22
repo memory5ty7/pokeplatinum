@@ -3223,6 +3223,18 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = mega_bracelet_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
+    [ITEM_PIXIE_PLATE] = {
+        .dataID = 0x1FF,
+        .iconID = pixie_plate_NCGR,
+        .paletteID = pixie_plate_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_FAIRY_FEATHER] = {
+        .dataID = 0x200,
+        .iconID = fairy_feather_NCGR,
+        .paletteID = fairy_feather_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {

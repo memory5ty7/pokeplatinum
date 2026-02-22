@@ -2131,7 +2131,15 @@
     },
     {
       "id": "pl_msg_00000393_00532",
-      "en_US": "a {COLOR 255}Mega Bracelets{COLOR 0}"
+      "en_US": "a {COLOR 255}Mega Bracelet{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00533",
+      "en_US": "a {COLOR 255}Pixie Plate{COLOR 0}"
+    },
+      {
+      "id": "pl_msg_00000393_00534",
+      "en_US": "a {COLOR 255}Fairy Feather{COLOR 0}"
     }
   ]
 }
