@@ -1,7 +1,7 @@
 {
     "name": "Curse",
     "class": "CLASS_STATUS",
-    "type": "TYPE_MYSTERY",
+    "type": "TYPE_GHOST",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
