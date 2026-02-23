@@ -4708,6 +4708,9 @@ u8 Pokemon_GetArceusTypeOf(u16 itemHoldEffect)
     case HOLD_EFFECT_ARCEUS_STEEL:
         type = TYPE_STEEL;
         break;
+    case HOLD_EFFECT_ARCEUS_FAIRY:
+        type = TYPE_FAIRY;
+        break;
     default:
         type = TYPE_NORMAL;
         break;

@@ -440,7 +440,7 @@ static BOOL State_SelectNextBattle(BattleHallApp *app)
                 app->subState = SELECT_STATE_OPEN_MON_SUMMARY;
             } else {
                 if (IsHallMatronBattleAvailable(app) == TRUE) {
-                    if (BattleHall_CursorPosToType(app->cursorPos) != TYPE_MYSTERY) {
+                    if (BattleHall_CursorPosToType(app->cursorPos) != TYPE_FAIRY) {
                         Sound_PlayEffect(SEQ_SE_DP_BOX03);
                         return FALSE;
                     }
@@ -451,7 +451,7 @@ static BOOL State_SelectNextBattle(BattleHallApp *app)
                         return FALSE;
                     }
 
-                    if (BattleHall_CursorPosToType(app->cursorPos) == TYPE_MYSTERY) {
+                    if (BattleHall_CursorPosToType(app->cursorPos) == TYPE_FAIRY) {
                         Sound_PlayEffect(SEQ_SE_DP_BOX03);
                         return FALSE;
                     }
@@ -1135,7 +1135,7 @@ static void PrintTypesRanks(BattleHallApp *app, Window *window)
         for (int c = 0; c < GRID_WIDTH; c++) {
             u8 type = BattleHall_CursorPosToType(r * GRID_WIDTH + c);
 
-            if (type != BATTLE_HALL_MON_SUMMARY && type != TYPE_MYSTERY) {
+            if (type != BATTLE_HALL_MON_SUMMARY && type != TYPE_FAIRY) {
                 u8 v3 = r * GRID_WIDTH + c;
                 u8 rank = BattleHall_GetRankOfType(GetCursorPos(v3), app->typeRanks) + 1;
 
