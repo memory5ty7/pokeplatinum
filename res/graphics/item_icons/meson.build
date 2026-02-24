@@ -361,6 +361,7 @@ item_icon_pngs = files(
     'mega_bracelet.png',
     'pixie_plate.png',
     'fairy_feather.png',
+    'roseli_berry.png',
 )
 
 item_icon_pals = files(
@@ -782,6 +783,7 @@ item_icon_pals = files(
     'mega_bracelet.pal',
     'pixie_plate.pal',
     'fairy_feather.pal',
+    'roseli_berry.pal',
 )
 
 item_icon_anim_jsons = files('generic_anim.json')

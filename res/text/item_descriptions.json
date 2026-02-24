@@ -4182,6 +4182,14 @@
         "A feather, which gleams faintly, that\n",
         "boosts the power of Fairy-type moves."
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00535",
+      "en_US": [
+        "A Poffin ingredient. If held by a\n",
+        "Pokémon, it weakens a foe’s\n",
+        "supereffective Fairy-type attack."
+      ]
     }
   ]
 }

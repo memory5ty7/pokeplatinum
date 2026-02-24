@@ -36,6 +36,7 @@ _033:
     CompareVarToValue OPCODE_EQU, BTLVAR_SCRIPT_TEMP, 32, _226
     CompareVarToValue OPCODE_EQU, BTLVAR_SCRIPT_TEMP, 33, _233
     CompareVarToValue OPCODE_EQU, BTLVAR_SCRIPT_TEMP, 34, _240
+    CompareVarToValue OPCODE_EQU, BTLVAR_SCRIPT_TEMP, 148, _roseliBerry
     GoTo _262
 
 _128:
@@ -103,7 +104,11 @@ _233:
     GoTo _262
 
 _240:
-    CompareVarToValue OPCODE_NEQ, BTLVAR_CALC_TEMP, 0x00000008, _262
+    CompareVarToValue OPCODE_EQU, BTLVAR_CALC_TEMP, 0x00000008, _262
+    GoTo _262
+
+_roseliBerry:
+    CompareVarToValue OPCODE_NEQ, BTLVAR_CALC_TEMP, 0x00000009, _262
 
 _245:
     PlayBattleAnimation BTLSCR_MSG_TEMP, BATTLE_ANIMATION_HELD_ITEM

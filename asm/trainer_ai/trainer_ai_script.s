@@ -1123,6 +1123,7 @@ Basic_NaturalGiftBerries:
     TableEntry ITEM_CUSTAP_BERRY
     TableEntry ITEM_JABOCA_BERRY
     TableEntry ITEM_ROWAP_BERRY
+    TableEntry ITEM_ROSELI_BERRY
     TableEntry TABLE_END
 
 Basic_CheckTailwind:
@@ -3444,6 +3445,7 @@ Expert_Thief_EncouragedItemEffects:
     TableEntry HOLD_EFFECT_WEAKEN_SE_STEEL
     TableEntry HOLD_EFFECT_WEAKEN_NORMAL
     TableEntry HOLD_EFFECT_HP_RESTORE_PSN_TYPE
+    TableEntry HOLD_EFFECT_WEAKEN_SE_FAIRY
     TableEntry TABLE_END
 
 Expert_Curse:

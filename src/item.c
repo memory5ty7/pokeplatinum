@@ -3235,6 +3235,12 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = fairy_feather_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
+    [ITEM_ROSELI_BERRY] = {
+        .dataID = 0x201,
+        .iconID = roseli_berry_NCGR,
+        .paletteID = roseli_berry_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {
@@ -3420,6 +3426,7 @@ const u16 sBerryItemIDs[] = {
     [BERRY_ID(CUSTAP)] = ITEM_CUSTAP_BERRY,
     [BERRY_ID(JABOCA)] = ITEM_JABOCA_BERRY,
     [BERRY_ID(ROWAP)] = ITEM_ROWAP_BERRY,
+    [BERRY_ID(ROSELI)] = ITEM_ROSELI_BERRY,
 };
 // clang-format on
 
@@ -3776,11 +3783,20 @@ u8 Item_BerryNumber(u16 item)
         return BERRY_ID_NONE;
     }
 
+    if (item == ITEM_ROSELI_BERRY) {
+        return NUM_BERRIES + 1;
+    }
+
     return item - ITEM_CHERI_BERRY;
 }
 
 u16 Item_ForBerryNumber(u8 berry)
 {
+    if (berry == (NUM_BERRIES + 1))
+    {
+        return ITEM_ROSELI_BERRY;
+    }
+
     if (berry >= NUM_BERRIES) {
         return ITEM_RETURN_ID;
     }

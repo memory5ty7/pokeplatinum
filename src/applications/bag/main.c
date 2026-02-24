@@ -1946,7 +1946,7 @@ static void MakeItemActionsMenu(BagController *controller)
     currentPocketType = controller->bagCtx->accessiblePockets[controller->bagCtx->currPocketIdx].pocketType;
 
     if (controller->bagCtx->mode == BAG_MODE_NORMAL) {
-        if (currentPocketType == POCKET_BERRIES) {
+        if (currentPocketType == POCKET_BERRIES && controller->bagCtx->selectedItem != ITEM_ROSELI_BERRY) {
             itemActions[itemActionsIdx] = ITEM_ACTION_CHECK_TAG;
             itemActionsIdx++;
         }
@@ -1996,8 +1996,11 @@ static void MakeItemActionsMenu(BagController *controller)
         || controller->bagCtx->mode == BAG_MODE_POFFIN_MULTIPLAYER) {
         itemActions[itemActionsIdx] = ITEM_ACTION_CONFIRM;
         itemActionsIdx++;
-        itemActions[itemActionsIdx] = ITEM_ACTION_CHECK_TAG;
-        itemActionsIdx++;
+        if (controller->bagCtx->selectedItem != ITEM_ROSELI_BERRY)
+        {
+            itemActions[itemActionsIdx] = ITEM_ACTION_CHECK_TAG;
+            itemActionsIdx++;
+        }
     }
 
     itemActions[itemActionsIdx] = ITEM_ACTION_CANCEL;
