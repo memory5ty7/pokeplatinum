@@ -30,6 +30,8 @@ u16 GetMegaEvolutionData(BattleContext *battleCtx, u8 battler);
 
 BOOL MonIsMega(Pokemon *mon);
 
+void Party_RevertMega(Party *party);
+
 void RevertMegaEvolution(Pokemon *mon);
 
 void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int battler, int form);

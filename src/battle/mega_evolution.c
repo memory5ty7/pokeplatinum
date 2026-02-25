@@ -133,11 +133,39 @@ BOOL MonIsMega(Pokemon *mon)
     return FALSE;
 }
 
+void Party_RevertMega(Party *party)
+{
+    int currentPartyCount = Party_GetCurrentCount(party);
+
+    for (int i = 0; i < currentPartyCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+        int form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
+
+        if (form) {
+            RevertMegaEvolution(mon);
+        }
+    }
+}
+
 void RevertMegaEvolution(Pokemon *mon)
 {
-    Pokemon_SetValue(mon, MON_DATA_FORM, 0);
+    Desmume_Log("Reverting Mega Evolution\n");
+
+    int result;
+
+    int species = BoxPokemon_GetValue(&mon->box, MON_DATA_SPECIES, NULL);
+    int item = BoxPokemon_GetValue(&mon->box, MON_DATA_HELD_ITEM, NULL);
+
+    int form = 0;
+
+    BoxPokemon_SetValue(&mon->box, MON_DATA_FORM, &form);
     Pokemon_CalcAbility(mon);
-    Pokemon_CalcLevelAndStats(mon);
+
+    result = form;
+
+    if (result != -1) {
+        Pokemon_CalcLevelAndStats(mon);
+    }
 }
 
 void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int battler, int form)
@@ -146,15 +174,17 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
     Pokemon *mon = Pokemon_New(HEAP_ID_BATTLE);
 
     Pokemon_Copy(BattleSystem_PartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]), mon);
+    Pokemon *curMon = BattleSystem_PartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]);
 
     Pokemon_SetValue(mon, MON_DATA_FORM, &form);
     BattleMon_Set(battleCtx, battler, BATTLEMON_FORM_NUM, &form);
+    Pokemon_SetValue(curMon, MON_DATA_FORM, &form);
 
     Pokemon_CalcLevelAndStats(mon);
 
     Pokemon_CalcAbility(mon);
     u16 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
-    BattleMon_Set(battleCtx, battler, BATTLEMON_ABILITY, &ability);
+    Pokemon_SetValue(curMon, MON_DATA_ABILITY, &ability);
 
     u32 stats[6];
     u32 types[2];
@@ -163,13 +193,13 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
     {
         stats[i] = Pokemon_GetValue(mon, MON_DATA_ATK + i, NULL);
         Desmume_Log("Old Stat : %d | New Stat : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_ATTACK + i, NULL), stats[i]);
-        BattleMon_Set(battleCtx, battler, BATTLEMON_ATTACK + i, &stats[i]);
+        Pokemon_SetValue(curMon, MON_DATA_ATK + i, &stats[i]);
     }
 
     for (int i = 0; i < 2; i++)
     {
         types[i] = Pokemon_GetValue(mon, MON_DATA_TYPE_1 + i, NULL);
-        BattleMon_Set(battleCtx, battler, BATTLEMON_TYPE_1 + i, &types[i]);
+        Pokemon_SetValue(curMon, MON_DATA_TYPE_1 + i, &types[i]);
     }
 
     Heap_Free(mon);

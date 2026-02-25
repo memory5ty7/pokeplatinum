@@ -47,6 +47,7 @@
 
 #include "res/battle/scripts/sub_seq.naix.h"
 
+#include "battle/mega_evolution.h"
 #include "desmume.h"
 
 enum BattleControllerState {
@@ -4092,7 +4093,9 @@ static void BattleControllerPlayer_EndFight(BattleSystem *battleSys, BattleConte
     // Mega evolution reversion not needed - we only modify battleMons, not party Pokemon
     // The battleMons array is discarded after battle ends anyway
     // TODO: When we implement proper party Pokemon modification, add reversion here
-
+    
+    Party_RevertMega(BattleSystem_Party(battleSys, BATTLER_US));
+    
     if ((battleType & BATTLE_TYPE_LINK) == FALSE) {
         Party *playerParty = BattleSystem_Party(battleSys, BATTLER_US);
         Pokemon_ApplyPokerus(playerParty);

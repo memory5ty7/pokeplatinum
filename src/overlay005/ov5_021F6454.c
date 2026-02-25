@@ -605,11 +605,6 @@ BOOL ScrCmd_TryRevertPokemonForm(ScriptContext *param0)
             Pokemon_SetShayminForm(mon, SHAYMIN_FORM_LAND);
             break;
         }
-
-        if (MonIsMega(mon))
-        {
-            RevertMegaEvolution(mon);
-        }
     }
 
     return 0;

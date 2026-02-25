@@ -206,6 +206,8 @@ BOOL FieldTask_BlackOutFromBattle(FieldTask *task)
     case 0: {
         if ((fieldSystem != NULL) && (fieldSystem->saveData != NULL)) {
             Party_SetGiratinaForm(SaveData_GetParty(fieldSystem->saveData), GIRATINA_FORM_ALTERED);
+
+            Party_RevertMega(SaveData_GetParty(fieldSystem->saveData));
         }
 
         Location location;
