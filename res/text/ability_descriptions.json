@@ -865,6 +865,159 @@
         "Reduces a sleeping foe’s\n",
         "HP."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00124",
+      "en_US": [
+        "Contact moves become more\n",
+        "powerful."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00125",
+      "en_US": [
+        "Pulse moves become more\n",
+        "powerful."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00126",
+      "en_US": [
+        "Kangaskhan and its young\n",
+        "will fight together."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00127",
+      "en_US": [
+        "Normal-type moves become\n",
+        "Flying type."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00128",
+      "en_US": [
+        "Boosts certain moves’\n",
+        "power in a sandstorm."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00129",
+      "en_US": [
+        "Normal-type moves become\n",
+        "Fairy type."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00130",
+      "en_US": [
+        "Reflects status moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00131",
+      "en_US": [
+        "Biting moves become more\n",
+        "powerful."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00132",
+      "en_US": [
+        "Removes added effects\n",
+        "to increase move damage."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00133",
+      "en_US": [
+        "Gives priority to\n",
+        "a status move."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00134",
+      "en_US": [
+        "Normal-type moves become\n",
+        "Ice type."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00135",
+      "en_US": [
+        "Cutting moves become\n",
+        "more powerful."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00136",
+      "en_US": [
+        "Boosts Attack when hit\n",
+        "by a Grass-type move."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00137",
+      "en_US": [
+        "Boosts the Pokémon’s\n",
+        "Speed in a hailstorm."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00138",
+      "en_US": [
+        "Boosts the Pokémon’s\n",
+        "Speed in a sandstorm."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00139",
+      "en_US": [
+        "Ignores accuracy. Can\n",
+        "hit Ghost-type Pokémon."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00140",
+      "en_US": [
+        "Restores HP if hit by a\n",
+        "Ground-type move."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00141",
+      "en_US": [
+        "Powers up physical\n",
+        "attacks when poisoned."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00142",
+      "en_US": [
+        "Powers up special\n",
+        "attacks when burned."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00143",
+      "en_US": [
+        "Gives priority to\n",
+        "a healing move."
+      ]
+    },
+    { 
+      "id": "pl_msg_00000612_00144",
+      "en_US": [
+        "Powers up\n",
+        "Dragon-type moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00145",
+      "en_US": [
+        "Powers up\n",
+        "Electric-type moves."
+      ]
     }
   ]
 }

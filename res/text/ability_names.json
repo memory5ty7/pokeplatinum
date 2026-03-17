@@ -496,6 +496,94 @@
     {
       "id": "pl_msg_00000610_00123",
       "en_US": "Bad Dreams"
+    },
+    {
+      "id": "pl_msg_00000610_00124",
+      "en_US": "Tough Claws"
+    }, 
+    {
+      "id": "pl_msg_00000610_00125",
+      "en_US": "Mega Launcher"
+    }, 
+    {
+      "id": "pl_msg_00000610_00126",
+      "en_US": "Parental Bond"
+    }, 
+    {
+      "id": "pl_msg_00000610_00127",
+      "en_US": "Aerilate"
+    }, 
+    {
+      "id": "pl_msg_00000610_00128",
+      "en_US": "Sand Force"
+    }, 
+    {
+      "id": "pl_msg_00000610_00129",
+      "en_US": "Pixilate"
+    }, 
+    {
+      "id": "pl_msg_00000610_00130",
+      "en_US": "Magic Bounce"
+    }, 
+    {
+      "id": "pl_msg_00000610_00131",
+      "en_US": "Strong Jaw"
+    }, 
+    {
+      "id": "pl_msg_00000610_00132",
+      "en_US": "Sheer Force"
+    }, 
+    {
+      "id": "pl_msg_00000610_00133",
+      "en_US": "Prankster"
+    }, 
+    {
+      "id": "pl_msg_00000610_00134",
+      "en_US": "Refrigerate"
+    }, 
+    {
+      "id": "pl_msg_00000610_00135",
+      "en_US": "Sharpness"
+    }, 
+    {
+      "id": "pl_msg_00000610_00136",
+      "en_US": "Sap Sipper"
+    }, 
+    {
+      "id": "pl_msg_00000610_00137",
+      "en_US": "Slush Rush"
+    }, 
+    {
+      "id": "pl_msg_00000610_00138",
+      "en_US": "Sand Rush"
+    }, 
+    {
+      "id": "pl_msg_00000610_00139",
+      "en_US": "Mind’s Eye"
+    }, 
+    {
+      "id": "pl_msg_00000610_00140",
+      "en_US": "Earth Eater"
+    }, 
+    {
+      "id": "pl_msg_00000610_00141",
+      "en_US": "Toxic Boost"
+    }, 
+    {
+      "id": "pl_msg_00000610_00142",
+      "en_US": "Flare Boost"
+    }, 
+    {
+      "id": "pl_msg_00000610_00143",
+      "en_US": "Triage"
+    }, 
+    {
+      "id": "pl_msg_00000610_00144",
+      "en_US": "Dragon’s Maw"
+    }, 
+    {
+      "id": "pl_msg_00000610_00145",
+      "en_US": "Transistor"
     }
   ]
 }

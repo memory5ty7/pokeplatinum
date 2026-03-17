@@ -496,6 +496,94 @@
     {
       "id": "pl_msg_00000611_00123",
       "en_US": "BAD DREAMS"
+    },
+    {
+      "id": "pl_msg_00000611_00124",
+      "en_US": "TOUGH CLAWS"
+    }, 
+    {
+      "id": "pl_msg_00000611_00125",
+      "en_US": "MEGA LAUNCHER"
+    }, 
+    {
+      "id": "pl_msg_00000611_00126",
+      "en_US": "PARENTAL BOND"
+    }, 
+    {
+      "id": "pl_msg_00000611_00127",
+      "en_US": "AERILATE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00128",
+      "en_US": "SAND FORCE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00129",
+      "en_US": "PIXILATE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00130",
+      "en_US": "MAGIC BOUNCE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00131",
+      "en_US": "STRONG JAW"
+    }, 
+    {
+      "id": "pl_msg_00000611_00132",
+      "en_US": "SHEER FORCE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00133",
+      "en_US": "PRANKSTER"
+    }, 
+    {
+      "id": "pl_msg_00000611_00134",
+      "en_US": "REFRIGERATE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00135",
+      "en_US": "SHARPNESS"
+    }, 
+    {
+      "id": "pl_msg_00000611_00136",
+      "en_US": "SAP SIPPER"
+    }, 
+    {
+      "id": "pl_msg_00000611_00137",
+      "en_US": "SLUSH RUSH"
+    }, 
+    {
+      "id": "pl_msg_00000611_00138",
+      "en_US": "SAND RUSH"
+    }, 
+    {
+      "id": "pl_msg_00000611_00139",
+      "en_US": "MIND’S EYE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00140",
+      "en_US": "EARTH EATER"
+    }, 
+    {
+      "id": "pl_msg_00000611_00141",
+      "en_US": "TOXIC BOOST"
+    }, 
+    {
+      "id": "pl_msg_00000611_00142",
+      "en_US": "FLARE BOOST"
+    }, 
+    {
+      "id": "pl_msg_00000611_00143",
+      "en_US": "TRIAGE"
+    }, 
+    {
+      "id": "pl_msg_00000611_00144",
+      "en_US": "DRAGON’S MAW"
+    }, 
+    {
+      "id": "pl_msg_00000611_00145",
+      "en_US": "TRANSISTOR"
     }
   ]
 }
