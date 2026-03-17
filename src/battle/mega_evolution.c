@@ -184,7 +184,7 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
 
     Pokemon_CalcAbility(mon);
     u16 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
-    Pokemon_SetValue(curMon, MON_DATA_ABILITY, &ability);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_ABILITY, &ability);
 
     u32 stats[6];
     u32 types[2];
