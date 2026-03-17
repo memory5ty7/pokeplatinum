@@ -9819,6 +9819,132 @@
         "The foe’s {STRVAR_1 1, 0, 0} used\n",
         "Shadow Force!"
       ]
+    },
+    {
+      "id": "pl_msg_00000000_01404",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Moonblast!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01405",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+        "Moonblast!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01406",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Moonblast!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01407",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Play Rough!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01408",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+		    "Play Rough!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01409",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Play Rough!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01410",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Dazzling Gleam!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01411",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+		    "Dazzling Gleam!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01412",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Dazzling Gleam!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01413",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Baby-Doll Eyes!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01414",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+		    "Baby-Doll Eyes!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01415",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Baby-Doll Eyes!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01416",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Draining Kiss!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01417",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+		    "Draining Kiss!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01418",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Draining Kiss!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01419",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} used\n",
+		    "Disarming Voice!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01420",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} used\n",
+		    "Disarming Voice!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000000_01421",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} used\n",
+		    "Disarming Voice!"
+      ]
     }
   ]
 }
