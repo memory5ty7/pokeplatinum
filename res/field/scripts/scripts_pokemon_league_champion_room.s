@@ -60,8 +60,26 @@ PokemonLeagueChampionRoom_CynthiaGameCompletedIntro:
     Return
 
 PokemonLeagueChampionRoom_StartCynthiaBattle:
+    GoToIfLt VAR_DISTURBANCE, 1, PokemonLeagueChampionRoom_StartCynthiaBattleLowDisturbance
+    GoToIfLt VAR_DISTURBANCE, 16, PokemonLeagueChampionRoom_StartCynthiaBattleMediumDisturbance
+    GoToIfLt VAR_DISTURBANCE, 32, PokemonLeagueChampionRoom_StartCynthiaBattleHighDisturbance
+    GoTo PokemonLeagueChampionRoom_StartCynthiaBattleMaximumDisturbance
+
+PokemonLeagueChampionRoom_StartCynthiaBattleLowDisturbance:
     StartTrainerBattle TRAINER_CHAMPION_CYNTHIA
-    Return
+    Return  
+
+PokemonLeagueChampionRoom_StartCynthiaBattleMediumDisturbance:
+    StartTrainerBattle TRAINER_CHAMPION_CYNTHIA_1
+    Return  
+
+PokemonLeagueChampionRoom_StartCynthiaBattleHighDisturbance:
+    StartTrainerBattle TRAINER_CHAMPION_CYNTHIA_2
+    Return  
+
+PokemonLeagueChampionRoom_StartCynthiaBattleMaximumDisturbance:
+    StartTrainerBattle TRAINER_CHAMPION_CYNTHIA_3
+    Return  
 
 PokemonLeagueChampionRoom_StartCynthiaRematchBattle:
     StartTrainerBattle TRAINER_CHAMPION_CYNTHIA_REMATCH
