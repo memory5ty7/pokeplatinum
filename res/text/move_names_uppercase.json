@@ -1872,6 +1872,30 @@
     {
       "id": "pl_msg_00000648_00467",
       "en_US": "SHADOW FORCE"
+    },
+    {
+      "id": "pl_msg_00000648_00468",
+      "en_US": "MOONBLAST"
+    },
+    {
+      "id": "pl_msg_00000648_00469",
+      "en_US": "PLAY ROUGH"
+    },
+    {
+      "id": "pl_msg_00000648_00470",
+      "en_US": "DAZZLING GLEAM"
+    },
+    {
+      "id": "pl_msg_00000648_00471",
+      "en_US": "BABY-DOLL EYES"
+    },
+    {
+      "id": "pl_msg_00000648_00472",
+      "en_US": "DISARMING VOICE"
+    },
+    {
+      "id": "pl_msg_00000648_00473",
+      "en_US": "DRAINING KISS"
     }
   ]
 }
