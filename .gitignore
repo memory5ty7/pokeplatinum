@@ -129,3 +129,4 @@ compile_commands.json
 *.lnk
 *.xlsx
 *.py
+*.txt
