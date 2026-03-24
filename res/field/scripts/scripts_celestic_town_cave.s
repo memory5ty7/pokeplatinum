@@ -8,7 +8,7 @@
     ScriptEntryEnd
 
 _000E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, _0596
     GoTo _0027
@@ -18,7 +18,7 @@ _0027:
     GoToIfUnset FLAG_UNK_0x00A7, _0040
     BufferPlayerName 0
     Message 15
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -127,7 +127,7 @@ _01C3:
     Message 13
     SetVar VAR_0x8004, ITEM_HM03
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x01AC
     ClearFlag FLAG_UNK_0x01C3
     SetFlag FLAG_DUMMY_2445
@@ -412,7 +412,7 @@ _0520:
     EndMovement
 
 _0538:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 7
@@ -429,18 +429,13 @@ _0538:
 
 _057A:
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0585:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 12
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 12
     End
 
 _0596:

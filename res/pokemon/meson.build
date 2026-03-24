@@ -244,7 +244,7 @@ species_orders = custom_target('species_orders',
 pokefoot_order = species_orders[0]
 
 
-datagen_species_out = custom_target('datagen_species_out',
+species_data = custom_target('species_data',
     output: [
         'pl_personal.narc',
         'evo.narc',
@@ -260,31 +260,33 @@ datagen_species_out = custom_target('datagen_species_out',
         'species_egg_moves.h',
         'species_icon_palettes.h',
     ],
+
     command: [
-        datagen_species_exe,
-        meson.current_build_dir(),
+        speciesproc_exe,
+        '-M', '@DEPFILE@',
+        '-t', files('move_tutors.json'),
+        '-o', meson.current_build_dir(),
         pokemon_data_root,
-        form_registry_json,
-        files('move_tutors.json'),
     ],
+
     env: species_env,
-    depend_files: [
-        species_data_files,
-    ],
+    depend_files: species_data_files,
+    depfile: 'species_data.d',
 )
-h_headers += datagen_species_out[7]
-h_headers += datagen_species_out[8]
-h_headers += datagen_species_out[9]
-h_headers += datagen_species_out[10]
-h_headers += datagen_species_out[11]
-h_headers += datagen_species_out[12]
+
+h_headers += species_data[7]
+h_headers += species_data[8]
+h_headers += species_data[9]
+h_headers += species_data[10]
+h_headers += species_data[11]
+h_headers += species_data[12]
 
 
 # OLD NARCs
 pl_poke_icon_narc = custom_target('pl_poke_icon.narc',
     output: [
         'pl_poke_icon.narc',
-        'pl_poke_icon.naix.h',
+        'pl_poke_icon.naix',
     ],
     input: [
         icons_shared,
@@ -294,7 +296,7 @@ pl_poke_icon_narc = custom_target('pl_poke_icon.narc',
     command: [
         make_pl_poke_icon_py,
         '--nitrogfx', nitrogfx_exe,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--order-file', files('species_icons.order'),
         '--shared-dir', '@CURRENT_SOURCE_DIR@/.shared',
         '--private-dir', '@PRIVATE_DIR@',
@@ -312,7 +314,7 @@ pl_pokegra_narc = custom_target('pl_pokegra.narc',
     command: [
         make_pl_pokegra_py,
         '--nitrogfx', nitrogfx_exe,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -322,7 +324,7 @@ pl_pokegra_narc = custom_target('pl_pokegra.narc',
 pl_otherpoke_narc = custom_target('pl_otherpoke.narc',
     output: [
         'pl_otherpoke.narc',
-        'pl_otherpoke.naix.h',
+        'pl_otherpoke.naix',
     ],
     input: [
         otherpoke_files,
@@ -332,7 +334,7 @@ pl_otherpoke_narc = custom_target('pl_otherpoke.narc',
     command: [
         make_pl_otherpoke_py,
         '--nitrogfx', nitrogfx_exe,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
         '--sprite-entries', '390',
@@ -349,7 +351,7 @@ pl_pokezukan_narc = custom_target('pl_pokezukan.narc',
     depends: [ py_consts_generators ],
     command: [
         make_pl_pokezukan_py,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -366,7 +368,7 @@ shinzukan_narc = custom_target('shinzukan.narc',
     depends: [ py_consts_generators ],
     command: [
         make_shinzukan_py,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -380,7 +382,7 @@ pl_growtbl_narc = custom_target('pl_growtbl.narc',
     input: pl_growtbl_files,
     command: [
         make_pl_growtbl_py,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -393,7 +395,7 @@ pokedex_data_narc = custom_target('zukan_data.narc',
     output: 'zukan_data.narc',
     command: [
         make_pokedex_data_py,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -409,7 +411,7 @@ pokedex_data_giratina_altered_narc = custom_target('zukan_data_gira.narc',
     output: 'zukan_data_gira.narc',
     command: [
         make_pokedex_data_py,
-        '--narc', narc_exe,
+        '--narc', nitroarc_exe,
         '--source-dir', '@CURRENT_SOURCE_DIR@',
         '--private-dir', '@PRIVATE_DIR@',
         '--output-dir', '@OUTDIR@',
@@ -453,7 +455,7 @@ pokefoot_ncgr_lz = ncgr_lz_gen.process(
 pokefoot_narc = custom_target('pokefoot.narc',
     output: [
         'pokefoot.narc',
-        'pokefoot.naix.h',
+        'pokefoot.naix',
     ],
     input: [
         pokefoot_nclr,
@@ -462,16 +464,17 @@ pokefoot_narc = custom_target('pokefoot.narc',
         pokefoot_ncgr_lz,
     ],
     command: [
-        narc_exe, 'create',
-        '--naix',
-        '--order', pokefoot_order,
-        '--output', '@OUTPUT0@',
+        nitroarc_exe,
+        '--create',
+        '--index',
+        '--files-from', pokefoot_order,
+        '--file', '@OUTPUT0@',
         '@PRIVATE_DIR@',
     ],
 )
 naix_headers += pokefoot_narc[1]
 
-nitrofs_files += datagen_species_out
+nitrofs_files += species_data
 
 nitrofs_files += pl_poke_icon_narc
 nitrofs_files += pl_pokegra_narc

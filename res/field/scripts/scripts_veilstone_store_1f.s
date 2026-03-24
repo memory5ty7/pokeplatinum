@@ -15,75 +15,35 @@
     ScriptEntryEnd
 
 VeilstoneStore1F_Attendant:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore1F_Text_Welcome
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore1F_Text_Welcome
     End
 
 VeilstoneStore1F_MiddleAgedMan:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore1F_Text_EnsureCustomerSatisfaction
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore1F_Text_EnsureCustomerSatisfaction
     End
 
 VeilstoneStore1F_Lady:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore1F_Text_FormalAirOfLuxury
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore1F_Text_FormalAirOfLuxury
     End
 
 VeilstoneStore1F_RightVendor:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartSpecialties MART_SPECIALTIES_ID_VEILSTONE_1F_RIGHT
-    ReleaseAll
+    PokeMartSpecialtiesWithGreeting MART_SPECIALTIES_ID_VEILSTONE_1F_RIGHT
     End
 
 VeilstoneStore1F_LeftVendor:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartSpecialties MART_SPECIALTIES_ID_VEILSTONE_1F_LEFT
-    ReleaseAll
+    PokeMartSpecialtiesWithGreeting MART_SPECIALTIES_ID_VEILSTONE_1F_LEFT
     End
 
 VeilstoneStore1F_Sign:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message VeilstoneStore1F_Text_DiscoverANewYou
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage VeilstoneStore1F_Text_DiscoverANewYou
     End
 
 VeilstoneStore1F_Directory:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message VeilstoneStore1F_Text_Directory
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage VeilstoneStore1F_Text_Directory
     End
 
 VeilstoneStore1F_Socialite:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_VEILSTONE_STORE_1F_RECEIVED_MASK, VeilstoneStore1F_Socialite_AfterMaskGiven
@@ -95,7 +55,7 @@ VeilstoneStore1F_Socialite:
     BufferAccessoryNameWithArticle 0, LOCALID_ACCESSORY_ID
     Message VeilstoneStore1F_Text_IMadeAnAccessory
     SetVar LOCALID_COUNT, 1
-    GiveAccessoryWaitForConfirm
+    Common_GiveAccessoryWaitForConfirm
     SetFlag FLAG_VEILSTONE_STORE_1F_RECEIVED_MASK
     CloseMessage
     ReleaseAll
@@ -104,7 +64,7 @@ VeilstoneStore1F_Socialite:
 VeilstoneStore1F_Socialite_AfterMaskGiven:
     BufferAccessoryName 0, VAR_VEILSTONE_STORE_MASK
     Message VeilstoneStore1F_Text_GiveADifferentLookForContests
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

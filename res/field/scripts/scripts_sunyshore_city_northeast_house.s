@@ -7,7 +7,7 @@
     ScriptEntryEnd
 
 _0006:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0AA4, _006A
@@ -22,14 +22,14 @@ _004C:
     SetFlag FLAG_UNK_0x00F7
     SetFlag FLAG_UNK_0x0AA7
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _005F:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -79,15 +79,15 @@ _010E:
     BufferPartyMonSpecies 1, VAR_0x8002
     BufferPlayerName 2
     Message 4
-    PlaySound SEQ_FANFA1
+    PlayFanfare SEQ_FANFA1
     Message 5
-    WaitSound
+    WaitFanfare
     Message 6
     GoTo _012B
 
 _012B:
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -95,7 +95,7 @@ _012B:
 _0136:
     BufferPartyMonSpecies 1, VAR_0x8002
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -116,12 +116,12 @@ _019E:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 21
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_SMILE
@@ -134,12 +134,12 @@ _01F2:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 3
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_ALERT
@@ -152,12 +152,12 @@ _0246:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 11
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_SHOCK
@@ -170,12 +170,12 @@ _029A:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 13
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_DOWNCAST
@@ -188,12 +188,12 @@ _02EE:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 15
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_CARELESS
@@ -206,12 +206,12 @@ _0342:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 17
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_RELAX
@@ -224,12 +224,12 @@ _0396:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_243 0, VAR_RESULT, VAR_0x8000
+    ChooseCustomMessageWord 0, VAR_RESULT, VAR_0x8000
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0, _03EA
-    ScrCmd_245 0, VAR_0x8000
+    BufferCustomMessageWord 0, VAR_0x8000
     Message 19
     SetFlag FLAG_UNK_0x0AA4
     SetPartyMonRibbon VAR_0x8002, RIBBON_SNOOZE
@@ -238,7 +238,7 @@ _0396:
 
 _03EA:
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

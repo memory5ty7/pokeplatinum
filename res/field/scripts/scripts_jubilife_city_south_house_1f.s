@@ -2,42 +2,21 @@
 #include "res/text/bank/jubilife_city_south_house_1f.h"
 
 
-    ScriptEntry _000E
-    ScriptEntry _0021
-    ScriptEntry _0034
+    ScriptEntry JubilifeCitySouthHouse1F_AceTrainerM
+    ScriptEntry JubilifeCitySouthHouse1F_Lass
+    ScriptEntry JubilifeCitySouthHouse1F_Pachirisu
     ScriptEntryEnd
 
-_000E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse1F_AceTrainerM:
+    NPCMessage JubilifeCitySouthHouse1F_PokemonAreWonderfulDeeplyMysteriousCreatures
     End
 
-_0021:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse1F_Lass:
+    NPCMessage JubilifeCitySouthHouse1F_TalkToEveryoneYouSee
     End
 
-_0034:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PACHIRISU
-    Message 2
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse1F_Pachirisu:
+    PokemonCryAndMessage SPECIES_PACHIRISU, JubilifeCitySouthHouse1F_PachirisuKukkuuh
     End
 
     .balign 4, 0

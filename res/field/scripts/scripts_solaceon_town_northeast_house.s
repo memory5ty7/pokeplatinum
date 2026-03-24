@@ -7,26 +7,20 @@
     ScriptEntryEnd
 
 _000A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetFirstNonEggInParty VAR_RESULT
     GetPartyMonNature VAR_0x8004, VAR_RESULT
     BufferNatureName 0, VAR_0x8004
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _002C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 1
     End
 
     .balign 4, 0

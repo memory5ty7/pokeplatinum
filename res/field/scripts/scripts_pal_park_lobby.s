@@ -46,7 +46,7 @@ PalParkLobby_BufferRivalRecord:
     Return
 
 PalParkLobby_Receptionist:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerGender VAR_RESULT
@@ -117,7 +117,7 @@ PalParkLobby_Receptionist_CheckIfCanParticipate:
 
 PalParkLobby_Receptionist_DontParticipate:
     Message PalParkLobby_Text_AwwThatsTooBad
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -162,7 +162,7 @@ PalParkLobby_WalkInAndWarp:
     WaitMovement
     ApplyMovement LOCALID_PLAYER, _02CC
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_PAL_PARK, 0, 24, 47, 0
@@ -173,7 +173,7 @@ PalParkLobby_WalkInAndWarp:
 
 PalParkLobby_Receptionist_NotEnoughMonForCatchingShow:
     Message PalParkLobby_Text_YouDontHaveEnoughPokemonForACatchingShow
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -184,7 +184,7 @@ PalParkLobby_Manual:
 
 PalParkLobby_Receptionist_NotEnoughSpaceInPCBoxes:
     Message PalParkLobby_Text_YouHaveNoRoomForSixMorePokemon
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -293,17 +293,11 @@ _03F8:
     EndMovement
 
 PalParkLobby_RecordUnused:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message PalParkLobby_Text_TheCurrentRecordHolderIsXWithYPoints
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage PalParkLobby_Text_TheCurrentRecordHolderIsXWithYPoints
     End
 
 PalParkLobby_Daughter:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     BufferPlayerName 0
@@ -314,65 +308,41 @@ PalParkLobby_Daughter:
 
 PalParkLobby_Daughter_ICameToSeePlayersCatchingShow:
     Message PalParkLobby_Text_ICameToSeePlayersCatchingShowWithDaddy
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_Daughter_YourCatchingShowWasFantastic:
     Message PalParkLobby_Text_EekPlayerYourCatchingShowWasFantastic
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_Daughter_IHopeYouDoBetterNextTime:
     Message PalParkLobby_Text_OhPlayerIHopeYouDoBetterNextTime
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_Dad:
     BufferPlayerName 0
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message PalParkLobby_Text_PlayerMyDaughterIsABigFanOfYours
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage PalParkLobby_Text_PlayerMyDaughterIsABigFanOfYours
     End
 
 PalParkLobby_ShowWatcherBoy:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message PalParkLobby_Text_WeGetToSeeRareAndExoticPokemon
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage PalParkLobby_Text_WeGetToSeeRareAndExoticPokemon
     End
 
 PalParkLobby_ComplaintsLady:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message PalParkLobby_Text_RarePokemonTakeLongerToAppear
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage PalParkLobby_Text_RarePokemonTakeLongerToAppear
     End
 
 PalParkLobby_RecordGuy:
     Call PalParkLobby_BufferRecord
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message PalParkLobby_Text_TheCurrentRecordHolderIsXWithYPoints
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage PalParkLobby_Text_TheCurrentRecordHolderIsXWithYPoints
     End
 
 PalParkLobby_Oak:
@@ -401,7 +371,7 @@ PalParkLobby_Oak_PokemonFromAroundTheCountryCanBeBroughtHere:
     WaitMovement
     Message PalParkLobby_Text_Oak_LetMeMakeAGiftOfThisTrainerCounterApp
     SetVar VAR_0x8004, POKETCH_APPID_TRAINERCOUNTER
-    GivePoketchApp
+    Common_GivePoketchApp
     Message PalParkLobby_Text_Oak_IPlanToBeInEternaCityForSomeTime
     CloseMessage
     WaitTime 15, VAR_RESULT
@@ -409,9 +379,9 @@ PalParkLobby_Oak_PokemonFromAroundTheCountryCanBeBroughtHere:
     WaitMovement
     ApplyMovement LOCALID_OAK, _0564
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 1
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     SetVar VAR_UNK_0x40C6, 1
     ReleaseAll
     End
@@ -442,7 +412,7 @@ _0570:
     EndMovement
 
 PalParkLobby_PoketchAppLady:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfEq VAR_MAP_LOCAL_A, 1, PalParkLobby_PoketchAppLady_JustReceivedKitchenTimer
@@ -458,8 +428,8 @@ PalParkLobby_PoketchAppLady:
     GoToIfEq VAR_RESULT, 0, PalParkLobby_PoketchAppLady_DoesntHaveSpecies
     Message PalParkLobby_Text_OhASnorlaxItSureLooksLikeItCanEat
     SetVar VAR_0x8004, POKETCH_APPID_KITCHENTIMER
-    GivePoketchApp
-    WaitABXPadPress
+    Common_GivePoketchApp
+    WaitButton
     SetVar VAR_MAP_LOCAL_A, 1
     CloseMessage
     ReleaseAll
@@ -471,8 +441,8 @@ PalParkLobby_PoketchAppLady_CheckKecleon:
     GoToIfEq VAR_RESULT, 0, PalParkLobby_PoketchAppLady_DoesntHaveSpecies
     Message PalParkLobby_Text_OhAKecleonHowColorful
     SetVar VAR_0x8004, POKETCH_APPID_COLORCHANGER
-    GivePoketchApp
-    WaitABXPadPress
+    Common_GivePoketchApp
+    WaitButton
     SetVar VAR_MAP_LOCAL_A, 2
     CloseMessage
     ReleaseAll
@@ -481,7 +451,7 @@ PalParkLobby_PoketchAppLady_CheckKecleon:
 PalParkLobby_PoketchAppLady_JustReceivedKitchenTimer:
     BufferPoketchAppName 0, POKETCH_APPID_KITCHENTIMER
     Message PalParkLobby_Text_DoesntThatKitchenTimerMakeYouWantToCookSomething
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -489,27 +459,27 @@ PalParkLobby_PoketchAppLady_JustReceivedKitchenTimer:
 PalParkLobby_PoketchAppLady_JustReceivedColorChanger:
     BufferPoketchAppName 0, POKETCH_APPID_COLORCHANGER
     Message PalParkLobby_Text_ChangingColorsCanChangeYourMoodToo
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_PoketchAppLady_DoesntHaveSpecies:
     Message PalParkLobby_Text_WhatWasThatPokemonNameNow
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_PoketchAppLady_ReceivedAllPoketchApps:
     Message PalParkLobby_Text_PalParkIsSoScintillatingAreYouTakingTheChallengeToo
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_GBASlotGiftLady:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfEq VAR_MAP_LOCAL_9, 1, PalParkLobby_GBASlotGiftLady_JustReceivedGift
@@ -524,14 +494,14 @@ PalParkLobby_GBASlotGiftLady:
 
 PalParkLobby_GBASlotGiftLady_NoGBAGame:
     Message PalParkLobby_Text_IEspeciallyLookForwardToSeeingPokemonFromKantoAndHoenn
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_GBASlotGiftLady_JustReceivedGift:
     Message PalParkLobby_Text_NotOnlyAreThereCatchingShowsThereAreAlsoPokemonContests
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -579,14 +549,14 @@ PalParkLobby_GBASlotGiftLady_Emerald:
     End
 
 PalParkLobby_GBASlotGiftLady_GiveAccessory:
-    GiveAccessoryWaitForConfirm
+    Common_GiveAccessoryWaitForConfirm
     SetVar VAR_MAP_LOCAL_9, 1
     CloseMessage
     ReleaseAll
     End
 
 PalParkLobby_GBASlotGiftLady_GiveBackdrop:
-    ObtainContestBackdropWaitForConfirm
+    Common_ObtainContestBackdropWaitForConfirm
     SetVar VAR_MAP_LOCAL_9, 1
     CloseMessage
     ReleaseAll
@@ -656,7 +626,7 @@ PalParkLobby_Receptionist_GivePrize:
     Message PalParkLobby_Text_ItsTimeForYourPrize
     SetVar VAR_0x8004, VAR_0x8006
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     Return
 
 PalParkLobby_SetPrize_CheriBerry:

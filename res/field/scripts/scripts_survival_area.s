@@ -32,49 +32,31 @@ _0052:
     End
 
 _005C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
 _006F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _0082:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _0095:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00D7, _00B3
     Message 10
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00B3:
     Message 11
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -84,7 +66,7 @@ _00BE:
     End
 
 _00D5:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     BufferPlayerName 0
@@ -116,16 +98,11 @@ _0124:
     EndMovement
 
 _0130:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 1
     End
 
 _0141:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetDayOfWeek VAR_MAP_LOCAL_0
@@ -155,7 +132,7 @@ _01AB:
     End
 
 _01B6:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -231,7 +208,7 @@ _02CB:
     BufferRivalName 0
     BufferPlayerName 1
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

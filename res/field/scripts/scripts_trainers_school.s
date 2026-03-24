@@ -17,23 +17,23 @@
     ScriptEntryEnd
 
 _0032:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     BufferPlayerName 0
     BufferRivalName 1
     Message 0
-    PlaySound SEQ_FANFA4
+    PlayFanfare SEQ_FANFA4
     BufferPlayerName 0
     Message 1
-    WaitSound
+    WaitFanfare
     RemoveItem ITEM_PARCEL, 1, VAR_RESULT
     BufferPlayerName 0
     BufferRivalName 1
     Message 2
     SetVar VAR_0x8004, ITEM_TOWN_MAP
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     BufferRivalName 1
     Message 3
     CloseMessage
@@ -66,13 +66,13 @@ _00D8:
     End
 
 _00F2:
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 1
-    WaitFanfare SEQ_SE_DP_KAIDAN2
-    SetVar VAR_UNK_0x40E7, 1
-    SetFlag FLAG_UNK_0x00F1
-    ClearFlag FLAG_UNK_0x01F6
-    ClearFlag FLAG_UNK_0x01F5
+    WaitSE SEQ_SE_DP_KAIDAN2
+    SetVar VAR_POKETCH_CAMPAIGN_STATE, 1
+    SetFlag FLAG_TALKED_TO_TRAINERS_SCHOOL_RIVAL
+    ClearFlag FLAG_HIDE_JUBILIFE_CITY_POKETCH_CO_PRESIDENT
+    ClearFlag FLAG_HIDE_JUBILIFE_CITY_CLOWNS_1_AND_2
     ReleaseAll
     End
 
@@ -105,46 +105,22 @@ _0148:
     EndMovement
 
 _0154:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 4
     End
 
 _0167:
     End
 
 _0169:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _017C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _018F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
 _01A2:
@@ -154,7 +130,7 @@ _01A4:
     End
 
 _01A6:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0112, _02A8
@@ -199,7 +175,7 @@ _023C:
 
 _0269:
     Message 12
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -209,20 +185,20 @@ _0274:
     SetVar VAR_0x8004, ITEM_POTION
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _02B3
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0112
     GoTo _02A8
     End
 
 _02A8:
     Message 14
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02B3:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
@@ -230,14 +206,14 @@ _02B3:
 _02BD:
     GoToIfSet FLAG_UNK_0x010D, _0274
     Message 12
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02D3:
     Message 11
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -248,7 +224,7 @@ _02DE:
     End
 
 _02E4:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x010D, _039C
@@ -292,21 +268,21 @@ _036F:
 
 _039C:
     Message 18
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _03A7:
     Message 17
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _03B2:
     Message 18
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -314,7 +290,7 @@ _03B2:
 _03BD:
     GoToIfSet FLAG_UNK_0x0112, _03B2
     Message 19
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -325,7 +301,7 @@ _03D3:
     End
 
 _03D9:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 20
     GoTo _03EA
@@ -381,12 +357,7 @@ _0496:
     End
 
 _049C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 27
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 27
     End
 
     .balign 4, 0

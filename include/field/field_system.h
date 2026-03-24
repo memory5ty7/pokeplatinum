@@ -3,7 +3,6 @@
 
 #include "struct_decls/struct_0205B43C_decl.h"
 #include "struct_decls/struct_0205C22C_decl.h"
-#include "struct_decls/struct_0205E884_decl.h"
 #include "struct_decls/struct_02061830_decl.h"
 #include "struct_decls/struct_02095E80_decl.h"
 #include "struct_defs/battle_tower.h"
@@ -22,9 +21,9 @@
 #include "overlay005/signpost.h"
 #include "overlay005/struct_ov5_021D1A68_decl.h"
 #include "overlay005/struct_ov5_021D57D8_decl.h"
-#include "overlay023/struct_underground_top_screen_context_decl.h"
 #include "overlay056/struct_ov56_02256468_decl.h"
 #include "overlay066/struct_ov66_0222DCE0_sub1.h"
+#include "underground/struct_underground_top_screen_context_decl.h"
 
 #include "bag.h"
 #include "battle_regulation.h"
@@ -36,6 +35,7 @@
 #include "map_header_data.h"
 #include "map_matrix.h"
 #include "overlay_manager.h"
+#include "player_avatar.h"
 #include "pokedex_memory.h"
 #include "pokeradar.h"
 #include "savedata.h"

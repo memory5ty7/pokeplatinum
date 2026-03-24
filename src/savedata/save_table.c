@@ -5,6 +5,7 @@
 
 #include "bag.h"
 #include "battle_regulation.h"
+#include "chatot_cry.h"
 #include "daycare_save.h"
 #include "field_overworld_state.h"
 #include "game_records.h"
@@ -20,6 +21,7 @@
 #include "poffin.h"
 #include "pokedex.h"
 #include "poketch.h"
+#include "rankings.h"
 #include "record_mixed_rng.h"
 #include "save_player.h"
 #include "savedata.h"
@@ -27,16 +29,14 @@
 #include "special_encounter.h"
 #include "system_data.h"
 #include "trainer_card_save_data.h"
+#include "underground.h"
 #include "unk_02014D38.h"
-#include "unk_0202854C.h"
 #include "unk_020298BC.h"
 #include "unk_0202ACE0.h"
 #include "unk_0202C858.h"
 #include "unk_0202C9F4.h"
-#include "unk_0202CC64.h"
 #include "unk_0202D778.h"
 #include "unk_0202E2CC.h"
-#include "unk_0202E840.h"
 #include "unk_0202EEC0.h"
 #include "unk_0202F1D4.h"
 #include "unk_0203061C.h"
@@ -131,7 +131,7 @@ int SaveData_SaveHallOfFame(SaveData *saveData, HallOfFame *hof)
     return SaveDataExtra_Save(saveData, EXTRA_SAVE_TABLE_ENTRY_HALL_OF_FAME, hof);
 }
 
-BattleRecording *SaveData_BattleRecording(SaveData *saveData, enum HeapID heapID, int *resultCode, int recNum)
+BattleRecording *SaveData_GetBattleRecording(SaveData *saveData, enum HeapID heapID, int *resultCode, int recNum)
 {
     BOOL tmp;
     return SaveDataExtra_Mirror(saveData, heapID, EXTRA_SAVE_TABLE_ENTRY_MY_RECORDINGS + recNum, resultCode, &tmp);

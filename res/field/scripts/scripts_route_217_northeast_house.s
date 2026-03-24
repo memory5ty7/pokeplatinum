@@ -6,7 +6,7 @@
     ScriptEntryEnd
 
 _0006:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x013B, _0059
@@ -16,20 +16,20 @@ _0006:
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _004F
     SetFlag FLAG_UNK_0x013B
     SetFlag FLAG_UNK_0x025F
-    GiveItemQuantityNoLineFeed
+    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
 
 _004F:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 _0059:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

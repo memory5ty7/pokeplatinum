@@ -10,7 +10,6 @@
 #include "generated/species.h"
 #include "generated/trainer_score_events.h"
 
-#include "struct_decls/pokedexdata_decl.h"
 #include "struct_defs/mail.h"
 #include "struct_defs/seal_case.h"
 #include "struct_defs/sprite_animation_frame.h"
@@ -31,6 +30,7 @@
 #include "menu.h"
 #include "message.h"
 #include "narc.h"
+#include "network_icon.h"
 #include "overlay_manager.h"
 #include "palette.h"
 #include "party.h"
@@ -50,12 +50,11 @@
 #include "system.h"
 #include "text.h"
 #include "unk_0202419C.h"
-#include "unk_020393C8.h"
 #include "unk_0207C63C.h"
 #include "vram_transfer.h"
 
 #include "constdata/const_020F410C.h"
-#include "res/graphics/diploma/diploma.naix.h"
+#include "res/graphics/diploma/diploma.naix"
 #include "res/text/bank/battle_strings.h"
 
 static void SysTask_Evolution(SysTask *task, void *data);
@@ -155,7 +154,7 @@ EvolutionData *Evolution_Begin(Party *party, Pokemon *mon, int targetSpecies, Op
     sub_02015738(evolutionData->unk_58, 1);
     SysTask_Start(SysTask_Evolution, evolutionData, 0);
     RenderControlFlags_SetCanABSpeedUpPrint(TRUE);
-    sub_02039734();
+    NetworkIcon_Init();
 
     return evolutionData;
 }
@@ -306,7 +305,7 @@ static void Evolution_Main(EvolutionData *evolutionData)
         break;
     case EVOLUTION_STATE_PRINT_WHAT:
         if (PaletteData_GetSelectedBuffersMask(evolutionData->paletteData) == 0) {
-            evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolutionWhat);
+            evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_What);
             evolutionData->state++;
         }
         break;
@@ -485,13 +484,13 @@ static void Evolution_Main(EvolutionData *evolutionData)
     case EVOLUTION_STATE_PRINT_WANTS_TO_LEARN_MOVE:
         StringTemplate_SetNickname(evolutionData->strTemplate, 0, Pokemon_GetBoxPokemon(evolutionData->mon));
         StringTemplate_SetMoveName(evolutionData->strTemplate, 1, evolutionData->moveID);
-        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolvedPokemonWantsToLearnMove);
+        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_PokemonWantsToLearnTheMove);
         evolutionData->delay = 30;
         evolutionData->state++;
         break;
     case EVOLUTION_STATE_PRINT_ALREADY_KNOWS_FOUR_MOVES:
         StringTemplate_SetNickname(evolutionData->strTemplate, 0, Pokemon_GetBoxPokemon(evolutionData->mon));
-        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolvedPokemonAlreadyKnowsFourMoves);
+        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_HoweverPokemonAlreadyKnowsFourMoves);
         evolutionData->delay = 30;
         evolutionData->state++;
         break;
@@ -519,12 +518,12 @@ static void Evolution_Main(EvolutionData *evolutionData)
         break;
     case EVOLUTION_STATE_PROCESS_INPUT_SHOULD_A_MOVE_BE_DELETED:
         switch (Menu_ProcessInputAndHandleExit(evolutionData->menu, evolutionData->heapID)) {
-        case 0:
+        case MENU_YES:
             evolutionData->state = EVOLUTION_STATE_SET_SUMMARY_DATA;
             PaletteData_StartFade(evolutionData->paletteData, PLTTBUF_MAIN_BG_F | PLTTBUF_SUB_BG_F | PLTTBUF_MAIN_OBJ_F | PLTTBUF_SUB_OBJ_F, 0xFFFF, 1, 0, 16, 0);
             PokemonSpriteManager_StartFadeAll(evolutionData->monSpriteMan, 0, 16, 0, 0);
             break;
-        case MENU_CANCELED:
+        case MENU_CANCEL:
             evolutionData->state = EVOLUTION_STATE_PRINT_STOP_TRYING_TO_TEACH_MOVE;
             break;
         }
@@ -560,7 +559,7 @@ static void Evolution_Main(EvolutionData *evolutionData)
             PokemonSprite_ScheduleReloadFromNARC(evolutionData->monSprites[1]);
             PaletteData_StartFade(evolutionData->paletteData, PLTTBUF_MAIN_BG_F | PLTTBUF_SUB_BG_F | PLTTBUF_MAIN_OBJ_F | PLTTBUF_SUB_OBJ_F, 0xFFFF, 1, 16, 0, 0);
             PokemonSpriteManager_StartFadeAll(evolutionData->monSpriteMan, 16, 0, 0, 0);
-            sub_02039734();
+            NetworkIcon_Init();
             evolutionData->state++;
         }
         break;
@@ -589,14 +588,14 @@ static void Evolution_Main(EvolutionData *evolutionData)
         break;
     case EVOLUTION_STATE_PROCESS_INPUT_STOP_TRYING_TO_TEACH_MOVE:
         switch (Menu_ProcessInputAndHandleExit(evolutionData->menu, evolutionData->heapID)) {
-        case 0:
+        case MENU_YES:
             StringTemplate_SetNickname(evolutionData->strTemplate, 0, Pokemon_GetBoxPokemon(evolutionData->mon));
             StringTemplate_SetMoveName(evolutionData->strTemplate, 1, evolutionData->moveID);
-            evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolvedPokemonDidNotLearnMove);
+            evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_PokemonDidNotLearnTheMove);
             evolutionData->delay = 30;
             evolutionData->state = EVOLUTION_STATE_WAIT_PRINT_DID_NOT_LEARN_MOVE;
             break;
-        case MENU_CANCELED:
+        case MENU_CANCEL:
             evolutionData->state = EVOLUTION_STATE_PRINT_WANTS_TO_LEARN_MOVE;
             break;
         }
@@ -610,19 +609,19 @@ static void Evolution_Main(EvolutionData *evolutionData)
         }
         break;
     case EVOLUTION_STATE_PRINT_ONE_TWO_THREE_POOF:
-        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_OneTwoThreePoof);
+        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolutionOneTwoAndPoof);
         evolutionData->delay = 30;
         evolutionData->state++;
         break;
     case EVOLUTION_STATE_PRINT_FORGOT_HOW_TO_USE_MOVE:
         StringTemplate_SetNickname(evolutionData->strTemplate, 0, Pokemon_GetBoxPokemon(evolutionData->mon));
         StringTemplate_SetMoveName(evolutionData->strTemplate, 1, Pokemon_GetValue(evolutionData->mon, MON_DATA_MOVE1 + evolutionData->moveSlot, NULL));
-        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolvedPokemonForgotHowToUseMove);
+        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_PokemonForgotHowToUseMove);
         evolutionData->delay = 30;
         evolutionData->state++;
         break;
     case EVOLUTION_STATE_PRINT_AND_DOT_DOT_DOT:
-        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_AndDotDotDot);
+        evolutionData->printerID = Evolution_PrintString(evolutionData, BattleStrings_Text_EvolutionAndDotDotDot);
         evolutionData->delay = 30;
         evolutionData->state++;
         break;

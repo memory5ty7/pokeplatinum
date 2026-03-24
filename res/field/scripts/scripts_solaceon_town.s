@@ -29,65 +29,41 @@ _0047:
     End
 
 _004F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 3
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 3
     End
 
 _0062:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_RELIC, _0088
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0088:
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0093:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _00A6:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
 _00B9:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _00CC:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckPoketchAppRegistered POKETCH_APPID_POKEMONHISTORY, VAR_RESULT
@@ -96,22 +72,22 @@ _00CC:
     GoToIfLt VAR_RESULT, 50, _010D
     Message 10
     SetVar VAR_0x8004, POKETCH_APPID_POKEMONHISTORY
-    GivePoketchApp
-    WaitABXPadPress
+    Common_GivePoketchApp
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _010D:
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0118:
     Message 11
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -132,7 +108,7 @@ _0168:
     LockAll
     ApplyMovement LOCALID_PLAYER, _0218
     WaitMovement
-    SetRivalBGM
+    Common_SetRivalBGM
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     SetObjectEventPos 18, VAR_0x8004, 0x295
     ClearFlag FLAG_UNK_0x021E
@@ -155,7 +131,7 @@ _0168:
     ApplyMovement 18, _0210
     WaitMovement
     RemoveObject 18
-    FadeToDefaultMusic2
+    Common_FadeToDefaultMusic2
     SetVar VAR_UNK_0x4073, 1
     ReleaseAll
     End

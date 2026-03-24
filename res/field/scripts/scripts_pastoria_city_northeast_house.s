@@ -9,7 +9,7 @@
     ScriptEntryEnd
 
 _000E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetFirstNonEggInParty VAR_0x8000
@@ -19,7 +19,7 @@ _000E:
     GoToIfUnset FLAG_UNK_0x0143, _005C
     GoToIfUnset FLAG_UNK_0x0144, _005C
     Message 10
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -38,14 +38,14 @@ _005C:
     Call _02DC
     GoToIfEq VAR_RESULT, 1, _01DB
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00CC:
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -57,10 +57,10 @@ _00D7:
     BufferPartyMonSpecies 0, VAR_0x8000
     BufferItemName 1, ITEM_RED_SCARF
     Message 4
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0140
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -72,10 +72,10 @@ _0118:
     BufferPartyMonSpecies 0, VAR_0x8000
     BufferItemName 1, ITEM_BLUE_SCARF
     Message 4
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0141
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -87,10 +87,10 @@ _0159:
     BufferPartyMonSpecies 0, VAR_0x8000
     BufferItemName 1, ITEM_PINK_SCARF
     Message 4
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0142
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -102,10 +102,10 @@ _019A:
     BufferPartyMonSpecies 0, VAR_0x8000
     BufferItemName 1, ITEM_GREEN_SCARF
     Message 4
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0143
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -117,10 +117,10 @@ _01DB:
     BufferPartyMonSpecies 0, VAR_0x8000
     BufferItemName 1, ITEM_YELLOW_SCARF
     Message 4
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0144
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -181,27 +181,11 @@ _0304:
     Return
 
 _030C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _031F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PACHIRISU
-    Message 12
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    PokemonCryAndMessage SPECIES_PACHIRISU, 12
     End
 
     .balign 4, 0
-

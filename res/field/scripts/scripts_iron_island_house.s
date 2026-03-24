@@ -21,14 +21,14 @@ _002F:
     Return
 
 _0035:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 0
     SetVar VAR_0x8004, ITEM_METAL_COAT
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _00A8
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x011D
     Message 1
     CloseMessage
@@ -40,7 +40,7 @@ _0035:
     End
 
 _00A8:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
@@ -48,20 +48,20 @@ _00A8:
 _00B2:
     ApplyMovement 0, _00F0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 0
-    WaitFanfare SEQ_SE_DP_KAIDAN2
-    StopFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
+    StopSE SEQ_SE_DP_KAIDAN2
     ReleaseAll
     End
 
 _00D0:
     ApplyMovement 0, _00FC
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 0
-    WaitFanfare SEQ_SE_DP_KAIDAN2
-    StopFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
+    StopSE SEQ_SE_DP_KAIDAN2
     ReleaseAll
     End
 

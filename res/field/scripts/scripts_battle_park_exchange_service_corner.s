@@ -19,7 +19,7 @@ _002A:
     GoTo _0030
 
 _0030:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 15
@@ -29,7 +29,7 @@ _0030:
     End
 
 _0044:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 15
@@ -39,7 +39,7 @@ _0044:
     End
 
 BattleParkExchangeServiceCorner_Unused:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     ShowBattlePoints 21, 1
@@ -67,7 +67,7 @@ BattleParkExchangeServiceCorner_Unused2:
 
 BattleParkExchangeServiceCorner_Unused3:
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     HideBattlePoints
     ReleaseAll
@@ -109,61 +109,31 @@ BattleParkExchangeServiceCorner_Unused9:
     Return
 
 _0192:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _01A5:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _01B8:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 10
     End
 
 _01CB:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 13
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 13
     End
 
 _01DE:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 14
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 14
     End
 
 _01F1:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 11
     Message 12
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

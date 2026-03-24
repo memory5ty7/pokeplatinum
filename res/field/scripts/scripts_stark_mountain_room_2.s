@@ -24,13 +24,13 @@ _0031:
     CallIfUnset FLAG_UNK_0x00DD, _007D
     CallIfSet FLAG_UNK_0x00DD, _00B7
     BufferPlayerName 0
-    PlaySound SEQ_GONIN
+    PlayFanfare SEQ_GONIN
     Message 1
-    WaitSound
+    WaitFanfare
     SetFlag FLAG_UNK_0x00DD
     SetVar VAR_UNK_0x4094, 1
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     SetVar VAR_PARTNER_TRAINER_ID, TRAINER_BUCK_STARK_MOUNTAIN
     SetHasPartner
@@ -149,10 +149,10 @@ _01AB:
     CloseMessage
     ApplyMovement 14, _0214
     WaitMovement
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 14
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     SetVar VAR_UNK_0x4094, 2
     ReleaseAll
     End
@@ -187,23 +187,11 @@ _0214:
     EndMovement
 
 _021C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _022F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
     .balign 4, 0

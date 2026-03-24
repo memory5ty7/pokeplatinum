@@ -10,7 +10,7 @@ _000A:
     End
 
 _000C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     DrawPokemonPreview SPECIES_CRESSELIA, GENDER_FEMALE
@@ -26,11 +26,11 @@ _000C:
     RemoveObject 0
     ActivateRoamingPokemon ROAMING_SLOT_CRESSELIA
     GoToIfEq VAR_ROAMING_CRESSELIA_STATE, ROAMER_STATE_RESET, _0074
-    ClearFlag FLAG_UNK_0x0452
+    ClearFlag FLAG_OBTAINED_FULLMOON_ISLAND_FOREST
     AddObject 1
     SetFlag FLAG_UNK_0x011F
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

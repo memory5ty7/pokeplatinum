@@ -7,7 +7,7 @@
     ScriptEntryEnd
 
 _000A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     BufferItemNameWithArticle 4, ITEM_HEART_SCALE
@@ -25,7 +25,7 @@ _003D:
 
 _005F:
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -59,31 +59,25 @@ _006A:
     RemoveItem ITEM_HEART_SCALE, 1, VAR_RESULT
     BufferPlayerName 3
     Message 16
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _010F:
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _011A:
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0125:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 17
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 17
     End

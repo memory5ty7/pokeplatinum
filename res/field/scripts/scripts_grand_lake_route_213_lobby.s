@@ -12,42 +12,36 @@ _0012:
     End
 
 _0014:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 0
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    PlaySound SEQ_ASA
-    WaitSound
+    PlayFanfare SEQ_ASA
+    WaitFanfare
     HealParty
     FadeScreenIn
     WaitFadeScreen
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _004C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
 _005F:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfSet FLAG_UNK_0x00FD, _0081
     SetFlag FLAG_UNK_0x00FD
     FacePlayer
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -58,7 +52,7 @@ _0081:
     Message 4
     FacePlayer
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

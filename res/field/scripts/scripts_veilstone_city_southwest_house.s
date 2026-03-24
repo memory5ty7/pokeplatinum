@@ -8,7 +8,7 @@
     ScriptEntryEnd
 
 _000E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0AAC, _00D5
@@ -31,8 +31,8 @@ _000E:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    PlayFanfare SEQ_SE_DP_FW367
-    WaitFanfare SEQ_SE_DP_FW367
+    PlaySE SEQ_SE_DP_FW367
+    WaitSE SEQ_SE_DP_FW367
     FadeScreenIn
     WaitFadeScreen
     BufferPartyMonNickname 0, VAR_MAP_LOCAL_0
@@ -43,58 +43,43 @@ _000E:
     GoToIfEq VAR_0x8004, -1, _00F6
     Message 7
     SetVar VAR_0x8005, 1
-    GiveAccessory
+    Common_GiveAccessory
     GoTo _00F6
 
 _00D5:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00E0:
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00EB:
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00F6:
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0101:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _0114:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PACHIRISU
-    Message 10
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    PokemonCryAndMessage SPECIES_PACHIRISU, 10
     End
 
     .balign 4, 0

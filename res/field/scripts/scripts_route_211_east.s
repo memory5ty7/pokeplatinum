@@ -9,7 +9,7 @@
     ScriptEntryEnd
 
 _0012:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfSet FLAG_UNK_0x00C6, _0066
     Message 0
@@ -21,20 +21,20 @@ _0012:
     SetVar VAR_0x8004, ITEM_TM77
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0073
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x00C6
     GoTo _0066
 
 _0066:
     FacePlayer
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0073:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End

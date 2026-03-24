@@ -1,7 +1,6 @@
 #include "encounter.h"
 
 #include <nitro.h>
-#include <string.h>
 
 #include "constants/battle.h"
 #include "constants/heap.h"
@@ -10,7 +9,6 @@
 #include "generated/map_headers.h"
 #include "generated/trainer_score_events.h"
 
-#include "struct_decls/pc_boxes_decl.h"
 #include "struct_decls/struct_0202440C_decl.h"
 
 #include "field/field_system.h"
@@ -313,7 +311,7 @@ static BOOL FieldTask_WiFiEncounter(FieldTask *task)
 
     case 2:
         FreeEncounter(encounter);
-        sub_0202F22C();
+        BattleRecording_Free();
         return TRUE;
     }
 
@@ -508,16 +506,16 @@ static BOOL FieldTask_SafariEncounter(FieldTask *task)
     case 6:
         if (*ballCount == 0) {
             if (encounter->dto->resultMask == BATTLE_RESULT_CAPTURED_MON) {
-                ScriptManager_Start(task, 8802, NULL, NULL);
+                ScriptManager_Start(task, SCRIPT_ID(SAFARI_GAME, 2), NULL, NULL);
             } else {
-                ScriptManager_Start(task, 8809, NULL, NULL);
+                ScriptManager_Start(task, SCRIPT_ID(SAFARI_GAME, 9), NULL, NULL);
             }
         } else {
             PCBoxes *pcBoxes = SaveData_GetPCBoxes(fieldSystem->saveData);
             Party *party = SaveData_GetParty(fieldSystem->saveData);
 
             if (PCBoxes_FirstEmptyBox(pcBoxes) == MAX_PC_BOXES && Party_GetCurrentCount(party) == MAX_PARTY_SIZE) {
-                ScriptManager_Start(task, 8822, NULL, NULL);
+                ScriptManager_Start(task, SCRIPT_ID(SAFARI_GAME, 22), NULL, NULL);
             }
         }
 
@@ -848,7 +846,7 @@ void Encounter_NewVsWiFi(FieldTask *task, int param1, int normalizedLevel, int w
     }
 
     FieldBattleDTO_InitWithNormalizedMonLevels(dto, fieldSystem, normalizedLevel);
-    sub_0202F1F8(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
+    BattleRecording_New(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
     dto->unk_18A = v5;
 
     encounter = NewEncounter(dto, EncEffects_CutInEffect(dto), EncEffects_BGM(dto), NULL);
@@ -870,8 +868,8 @@ static BOOL FieldTask_LinkEncounterWithRecording(FieldTask *task)
         break;
 
     case 1:
-        if (sub_0202F250() == 1) {
-            sub_0202F22C();
+        if (BattleRecording_Exists() == 1) {
+            BattleRecording_Free();
         }
 
         FieldCommMan_EnterBattleRoom(fieldSystem);
@@ -887,7 +885,7 @@ void Encounter_NewVsLinkWithRecording(FieldSystem *fieldSystem, const u8 *partyO
     FieldBattleDTO_InitWithPartyOrderFromSave(dto, fieldSystem, partyOrder);
 
     int recordingResultCode;
-    sub_0202F1F8(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
+    BattleRecording_New(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
     dto->unk_18A = sub_020516C8(fieldSystem->unk_B0, battleType);
 
     Encounter *encounter = NewEncounter(dto, EncEffects_CutInEffect(dto), EncEffects_BGM(dto), NULL);
@@ -900,7 +898,7 @@ void Encounter_NewVsLinkWithRecordingAndParty(FieldSystem *fieldSystem, const Pa
     FieldBattleDTO_InitWithPartyOrder(dto, fieldSystem, party, NULL);
 
     int recordingResultCode;
-    sub_0202F1F8(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
+    BattleRecording_New(fieldSystem->saveData, HEAP_ID_FIELD2, &recordingResultCode);
     dto->unk_18A = sub_020516C8(fieldSystem->unk_B0, battleType);
 
     Encounter *encounter = NewEncounter(dto, EncEffects_CutInEffect(dto), EncEffects_BGM(dto), NULL);

@@ -7,7 +7,7 @@
     ScriptEntryEnd
 
 _000A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00C9, _0051
@@ -15,32 +15,26 @@ _000A:
     SetVar VAR_0x8004, ITEM_TM48
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _005C
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x00C9
     GoTo _0051
     End
 
 _0051:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _005C:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 _0066:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
     .balign 4, 0

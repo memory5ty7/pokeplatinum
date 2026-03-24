@@ -20,55 +20,45 @@ _0035:
     End
 
 _004C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 0
     End
 
 _005D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 4
     End
 
 _006E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
-    WaitFanfare SEQ_SE_CONFIRM
+    WaitSE SEQ_SE_CONFIRM
     PlayCry SPECIES_CLEFAIRY
     Message 1
     WaitCry
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _008B:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
-    WaitFanfare SEQ_SE_CONFIRM
+    WaitSE SEQ_SE_CONFIRM
     PlayCry SPECIES_CLEFAIRY
     Message 2
     WaitCry
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00A8:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
-    WaitFanfare SEQ_SE_CONFIRM
+    WaitSE SEQ_SE_CONFIRM
     PlayCry SPECIES_PIKACHU
     Message 3
     WaitCry
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

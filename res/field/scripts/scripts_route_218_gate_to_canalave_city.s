@@ -31,7 +31,7 @@ _0047:
     CloseMessage
     ScrCmd_22C
     Call _00E8
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     SetFlag FLAG_UNK_0x021C
     RemoveObject 1
     SetVar VAR_UNK_0x4105, 1
@@ -177,13 +177,7 @@ _01FC:
     EndMovement
 
 _0208:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 0
     End
 
     .balign 4, 0

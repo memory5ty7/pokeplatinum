@@ -66,19 +66,13 @@ StarkMountainRoom3_UnusedMovement3:
 
 _00D0:
     BufferPlayerName 1
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 18
     End
 
 _00E6:
     LockAll
-    PlayFanfare SEQ_SE_CONFIRM
-    WaitFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
+    WaitSE SEQ_SE_CONFIRM
     CallIfUnset FLAG_UNK_0x00D7, _0174
     SetVar VAR_UNK_0x409E, 2
     PlayCry SPECIES_HEATRAN
@@ -103,7 +97,7 @@ _0155:
 
 _015D:
     Message 16
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -139,10 +133,10 @@ _019C:
     LockAll
     Message 0
     CloseMessage
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayFanfare SEQ_SE_DP_FW089
+    WaitSE SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_DP_FW089
     ScrCmd_29F 0
-    StopFanfare SEQ_SE_DP_FW089
+    StopSE SEQ_SE_DP_FW089
     ApplyMovement 2, _03A4
     ApplyMovement LOCALID_PLAYER, _0388
     WaitMovement
@@ -175,7 +169,7 @@ _019C:
     RemoveObject 6
     ClearFlag FLAG_UNK_0x0231
     AddObject 4
-    SetLookerBGM
+    Common_SetLookerBGM
     Message 6
     CloseMessage
     ApplyMovement 4, _04A8

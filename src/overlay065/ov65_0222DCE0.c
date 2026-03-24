@@ -6,7 +6,6 @@
 
 #include "generated/journal_online_events.h"
 
-#include "struct_decls/pokedexdata_decl.h"
 #include "struct_decls/struct_02012B20_decl.h"
 #include "struct_decls/struct_0202B370_decl.h"
 #include "struct_defs/battle_frontier.h"
@@ -46,6 +45,7 @@
 #include "message.h"
 #include "message_util.h"
 #include "narc.h"
+#include "network_icon.h"
 #include "overlay_manager.h"
 #include "party.h"
 #include "pltt_transfer.h"
@@ -84,7 +84,6 @@
 #include "unk_020363E8.h"
 #include "unk_020366A0.h"
 #include "unk_0203909C.h"
-#include "unk_020393C8.h"
 #include "unk_0207DFAC.h"
 #include "unk_0209C390.h"
 #include "vars_flags.h"
@@ -775,7 +774,7 @@ int ov65_0222E2A8(ApplicationManager *appMan, int *param1)
         StartScreenFade(FADE_BOTH_SCREENS, FADE_TYPE_BRIGHTNESS_IN, FADE_TYPE_BRIGHTNESS_IN, COLOR_BLACK, 6, 1, HEAP_ID_54);
 
         if (CommMan_IsConnectedToWifi()) {
-            sub_02039734();
+            NetworkIcon_Init();
         } else {
             Overlay_LoadWFCOverlay();
         }
@@ -2707,7 +2706,7 @@ static int ov65_02230634(UnkStruct_ov65_0222EBE0 *param0, int param1)
         ov65_02232DFC(param0);
         ov65_02232E58(param0, 1);
         param0->unk_3A8 = 24;
-        sub_0202B13C(param0->unk_00, param0->unk_3E2 - 1);
+        WiFiList_SetHostFriendCurrentDate(param0->unk_00, param0->unk_3E2 - 1);
     }
 
     return param1;
@@ -2721,7 +2720,7 @@ static int ov65_02230774(UnkStruct_ov65_0222EBE0 *param0, int param1)
 
     param0->unk_3A8 = 23;
 
-    sub_0202B13C(param0->unk_00, NintendoWFC_GetHostFriendIdx());
+    WiFiList_SetHostFriendCurrentDate(param0->unk_00, NintendoWFC_GetHostFriendIdx());
 
     return param1;
 }
@@ -2822,7 +2821,7 @@ static int ov65_022309D0(UnkStruct_ov65_0222EBE0 *param0, int param1)
     }
 
     if (Text_IsPrinterActive(param0->unk_180) == 0) {
-        sub_0202B13C(param0->unk_00, NintendoWFC_GetHostFriendIdx());
+        WiFiList_SetHostFriendCurrentDate(param0->unk_00, NintendoWFC_GetHostFriendIdx());
 
         param0->unk_184 = Menu_MakeYesNoChoice(param0->unk_15C, &Unk_ov65_0223894C, (512 - (18 + 12)) - 9, 11, 54);
         param0->unk_3A8 = 26;

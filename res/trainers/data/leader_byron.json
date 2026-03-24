@@ -23,7 +23,7 @@
                 "MOVE_GYRO_BALL",
                 "MOVE_TACKLE"
             ],
-            "power": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_GYRO_BALL",
                 "MOVE_THUNDER_WAVE"
             ],
-            "power": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_PROTECT",
                 "MOVE_TACKLE"
             ],
-            "power": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

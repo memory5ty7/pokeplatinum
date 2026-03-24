@@ -208,7 +208,7 @@ Route201_WeStillLovePokemon:
     ClearFlag FLAG_HIDE_ROUTE_201_COUNTERPART
     AddObject LOCALID_COUNTERPART
     LockObject LOCALID_COUNTERPART
-    SetCounterpartBGM
+    Common_SetCounterpartBGM
     ApplyMovement LOCALID_COUNTERPART, Route201_Movement_CounterpartEnter
     WaitMovement
     GetPlayerGender VAR_RESULT
@@ -263,9 +263,9 @@ Route201_GoOnChoosePokemon:
     WaitMovement
     BufferPlayerName 1
     Message Route201_Text_YouCanChooseFirst
-    WaitABXPadPress
+    WaitButton
     CloseMessage
-    FadeToDefaultMusic
+    Common_FadeToDefaultMusic
     SetObjectEventMovementType LOCALID_RIVAL, MOVEMENT_TYPE_LOOK_WEST
     SetVar VAR_FOLLOWER_RIVAL_STATE, 1
     ReleaseAll
@@ -1133,45 +1133,33 @@ _0DDC:
     EndMovement
 
 Route201_BreederM:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message Route201_Text_WildPokemonLurkInTallGrass
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage Route201_Text_WildPokemonLurkInTallGrass
     End
 
 Route201_SchoolKidM:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message Route201_Text_ThatLedgeIsOneWay
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage Route201_Text_ThatLedgeIsOneWay
     End
 
 Route201_Lass:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_HAS_POKEDEX, Route201_IfYourPokemonsHPIsLowGoToAPokemonCenter»
+    GoToIfSet FLAG_HAS_POKEDEX, Route201_IfYourPokemonsHPIsLowGoToAPokemonCenter
     Message Route201_Text_IfYourPokemonsHPIsLowGoHome
     GoTo Route201_LassCloseMessage
 
 Route201_LassCloseMessage:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
-Route201_IfYourPokemonsHPIsLowGoToAPokemonCenter»:
+Route201_IfYourPokemonsHPIsLowGoToAPokemonCenter:
     Message Route201_Text_IfYourPokemonsHPIsLowGoToAPokemonCenter
     GoTo Route201_LassCloseMessage
 
 Route201_Cashier:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_GOT_POTION_FROM_ROUTE_201_CASHIER, Route201_YouCanFindMartsInCitiesAndMajorTowns
@@ -1180,32 +1168,26 @@ Route201_Cashier:
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, Route201_BagIsFull
     SetFlag FLAG_GOT_POTION_FROM_ROUTE_201_CASHIER
-    GiveItemQuantityNoLineFeed
+    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
 
 Route201_YouCanFindMartsInCitiesAndMajorTowns:
     Message Route201_Text_YouCanFindMartsInCitiesAndMajorTowns
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 Route201_BagIsFull:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 Route201_ProfRowan:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message Route201_Text_RowanGoOnChooseAPokemon
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage Route201_Text_RowanGoOnChooseAPokemon
     End
 
 Route201_TriggerLetsCatchThatLegendaryPokemon:
@@ -1250,7 +1232,7 @@ Route201_RivalRunToPlayerX113:
 Route201_SetRivalPartner:
     BufferRivalName 0
     Message Route201_Text_TogetherWeveGotNothingToFear
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     SetVar VAR_FOLLOWER_RIVAL_STATE, 3
     SetStepFlag

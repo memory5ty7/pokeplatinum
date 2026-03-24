@@ -7,7 +7,7 @@
     ScriptEntryEnd
 
 _000A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0108, _003B
@@ -129,46 +129,41 @@ _0285:
 
 _028F:
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _029A:
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02A5:
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02B0:
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02BB:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _02C6:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 18
     End
 
     .balign 4, 0

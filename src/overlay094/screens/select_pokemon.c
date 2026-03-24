@@ -2,12 +2,9 @@
 
 #include <dwc.h>
 #include <nitro.h>
-#include <string.h>
 
 #include "generated/items.h"
 #include "generated/species.h"
-
-#include "struct_decls/pc_boxes_decl.h"
 
 #include "global/utility.h"
 #include "overlay094/application.h"
@@ -25,6 +22,7 @@
 #include "menu.h"
 #include "message.h"
 #include "narc.h"
+#include "network_icon.h"
 #include "party.h"
 #include "pc_boxes.h"
 #include "pokemon.h"
@@ -38,7 +36,6 @@
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
-#include "unk_020393C8.h"
 
 #include "res/text/bank/gts.h"
 

@@ -118,7 +118,7 @@ install to a more recent version of `Ubuntu`:
 registry:
 
     ```bash
-    sudo apt install bison flex g++ gcc-arm-none-eabi git lib32zl make ninja-build pkg-config python3 p7zip
+    sudo apt install bison flex g++ gcc-arm-none-eabi git lib32z1 make ninja-build pkg-config python3 p7zip
     ```
 
 2. [Download the repository](#2-downloading-the-repository).
@@ -202,7 +202,7 @@ the repository](#2-downloading-the-repository).
 1. Enable 32-bit installations using `dpkg`:
 
     ```bash
-    sudo dpkg --add-architecture i386
+    sudo dpkg --add-architecture i386 && sudo apt update
     ```
 
 2. Install the following packages via `apt`:

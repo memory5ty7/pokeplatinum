@@ -33,7 +33,7 @@ TwinleafTown_SetPlayerHouseState5:
     Return
 
 TwinleafTown_Guitarist:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_HAS_POKEDEX, TwinleafTown_EveryoneGoesOnAdventures
@@ -42,14 +42,14 @@ TwinleafTown_Guitarist:
     BufferPlayerName 0
     BufferRivalName 1
     Message TwinleafTown_Text_RivalWasLookingForYou2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 TwinleafTown_EveryoneGoesOnAdventures:
     Message TwinleafTown_Text_EveryoneGoesOnAdventures
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -57,7 +57,7 @@ TwinleafTown_EveryoneGoesOnAdventures:
 TwinleafTown_RivalWentTearingOffOuch:
     BufferRivalName 0
     Message TwinleafTown_Text_RivalWentTearingOffOuch
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -66,7 +66,7 @@ TwinleafTown_RivalWentTearingOff:
     BufferPlayerName 0
     BufferRivalName 1
     Message TwinleafTown_Text_RivalWentTearingOff
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -396,10 +396,10 @@ TwinleafTown_RivalThudTrigger:
     ApplyMovement LOCALID_RIVAL, TwinleafTown_Movement_RivalExitHouse
     ApplyMovement LOCALID_PLAYER, TwinleafTown_Movement_PlayerGetPushedBackByRival
     WaitMovement
-    PlayFanfare SEQ_SE_DP_WALL_HIT2
+    PlaySE SEQ_SE_DP_WALL_HIT2
     Message TwinleafTown_Text_BigThud
     WaitTime 30, VAR_RESULT
-    SetRivalBGM
+    Common_SetRivalBGM
     ApplyMovement LOCALID_RIVAL, TwinleafTown_Movement_RivalNoticePlayer
     WaitMovement
     BufferRivalName 0
@@ -419,7 +419,7 @@ TwinleafTown_RivalThudTrigger:
     WaitForAnimation ANIMATION_TAG_DOOR_1
     UnloadAnimation ANIMATION_TAG_DOOR_1
     RemoveObject LOCALID_RIVAL
-    FadeToDefaultMusic2
+    Common_FadeToDefaultMusic2
     SetVar VAR_TWINLEAF_TOWN_GUITARIST_TRIGGER_STATE, 1
     SetVar VAR_TWINLEAF_TOWN_RIVAL_TRIGGER_STATE, 1
     ReleaseAll
@@ -469,37 +469,31 @@ TwinleafTown_Movement_RivalEnterHouse:
     EndMovement
 
 TwinleafTown_Collector:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message TwinleafTown_Text_TechnologyBlowsMeAway
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage TwinleafTown_Text_TechnologyBlowsMeAway
     End
 
 TwinleafTown_BreederF:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_HAS_POKEDEX, TwinleafTown_HelpingPutTogetherPokedex
     GoToIfGe VAR_VISITED_LAKE_VERITY_WITH_RIVAL, 1, TwinleafTown_PokemonYouLookGoodTogether
     Message TwinleafTown_Text_WildPokemonAttack
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 TwinleafTown_HelpingPutTogetherPokedex:
     Message TwinleafTown_Text_HelpingPutTogetherPokedex
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 TwinleafTown_PokemonYouLookGoodTogether:
     Message TwinleafTown_Text_PokemonYouLookGoodTogether
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

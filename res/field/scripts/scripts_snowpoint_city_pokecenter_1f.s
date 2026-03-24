@@ -10,44 +10,23 @@
     ScriptEntryEnd
 
 _0016:
-    CallPokecenterNurse 0
+    Common_CallPokecenterNurse 0
     End
 
 _0022:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
 _0035:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 3
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 3
     End
 
 _0048:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PSYDUCK
-    Message 4
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    PokemonCryAndMessage SPECIES_PSYDUCK, 4
     End
 
 _0067:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_ICICLE, _00EC
@@ -58,7 +37,7 @@ _0067:
     CallIfEq VAR_0x8000, 3, _00E0
     BufferPlayerName 0
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -81,7 +60,7 @@ _00E0:
 _00EC:
     BufferPlayerName 0
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

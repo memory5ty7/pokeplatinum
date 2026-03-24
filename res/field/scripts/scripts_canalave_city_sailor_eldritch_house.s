@@ -45,56 +45,26 @@ _00A5:
     GoToIfEq VAR_0x8008, 1, _00E5
     GoToIfEq VAR_0x8008, 2, _00E5
     GoToIfEq VAR_0x8008, 3, _00F8
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _00E5:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _00F8:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 10
     End
 
 _010B:
     GoToIfEq VAR_UNK_0x4106, 1, _0158
     GoToIfEq VAR_UNK_0x4106, 2, _0158
     GoToIfEq VAR_UNK_0x4106, 3, _0145
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 0
     End
 
 _0145:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 4
     End
 
 _0158:
@@ -102,7 +72,7 @@ _0158:
     GoToIfUnset FLAG_UNK_0x011F, _01D9
     CheckItem ITEM_LUNAR_WING, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, 0, _01D9
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     SetFlag FLAG_UNK_0x012C
     SetVar VAR_UNK_0x4106, 3
@@ -110,8 +80,8 @@ _0158:
     BufferPlayerName 0
     Message 2
     Message 3
-    PlaySound SEQ_ASA
-    WaitSound
+    PlayFanfare SEQ_ASA
+    WaitFanfare
     CloseMessage
     WaitTime 15, VAR_RESULT
     Call _01FC
@@ -126,12 +96,7 @@ _0158:
     End
 
 _01D9:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 1
     End
 
 _01EA:
@@ -141,8 +106,8 @@ _01EA:
     End
 
 _01FC:
-    PlayFanfare SEQ_SE_DP_KAIDAN2
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     ClearFlag FLAG_UNK_0x025B
     AddObject 2
     WaitTime 5, VAR_RESULT
@@ -176,8 +141,8 @@ _026E:
     WaitMovement
     SetFlag FLAG_UNK_0x025B
     RemoveObject 2
-    PlayFanfare SEQ_SE_DP_KAIDAN2
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     Return
 
     .balign 4, 0

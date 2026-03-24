@@ -32,7 +32,7 @@ _0073:
     End
 
 _007D:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00CE, _00C2
@@ -40,31 +40,25 @@ _007D:
     SetVar VAR_0x8004, ITEM_TM56
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _00CD
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x00CE
     GoTo _00C2
 
 _00C2:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00CD:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 _00D7:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
 _00EA:
@@ -84,13 +78,7 @@ _012F:
     End
 
 _0146:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 3
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 3
     End
 
     .balign 4, 0

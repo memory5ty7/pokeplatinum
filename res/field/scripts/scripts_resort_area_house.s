@@ -8,11 +8,11 @@
     ScriptEntryEnd
 
 _000E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ApplyMovement 0, _002C
     WaitMovement
@@ -25,17 +25,11 @@ _002C:
     EndMovement
 
 _0034:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
 _0047:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerGender VAR_RESULT
@@ -54,7 +48,7 @@ _007A:
     End
 
 _0085:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

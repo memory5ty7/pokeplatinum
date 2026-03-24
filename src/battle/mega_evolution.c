@@ -1,12 +1,14 @@
 #include "battle/mega_evolution.h"
+#include "battle/battle_system.h"
 #include "constants/forms.h"
 #include "pokemon.h"
 #include "generated/items.h"
 #include "generated/species.h"
+#include "generated/trainer_message_types.h"
 #include "struct_defs/pokemon_mega_data.h"
-#include "res/battle/scripts/sub_seq.naix.h"
+#include "res/battle/scripts/sub_seq.naix"
 #include "battle/battle_lib.h"
-#include "battle/ov16_0223DF00.h"
+#include "battle/battle_display.h"
 #include "battle/common.h"
 #include "desmume.h"
 
@@ -173,8 +175,8 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
     Desmume_Log("Form Num : %d\n", form);
     Pokemon *mon = Pokemon_New(HEAP_ID_BATTLE);
 
-    Pokemon_Copy(BattleSystem_PartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]), mon);
-    Pokemon *curMon = BattleSystem_PartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]);
+    Pokemon_Copy(BattleSystem_GetPartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]), mon);
+    Pokemon *curMon = BattleSystem_GetPartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]);
 
     Pokemon_SetValue(mon, MON_DATA_FORM, &form);
     BattleMon_Set(battleCtx, battler, BATTLEMON_FORM_NUM, &form);
@@ -278,7 +280,7 @@ u8 GetSpeciesMegaNumber(int species)
 
 BOOL BattleSystem_CheckMegaMessage(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    int battleType = BattleSystem_BattleType(battleSys);
+    int battleType = BattleSystem_GetBattleType(battleSys);
 
     if (battleType & BATTLE_TYPE_NO_TRAINER_MESSAGES) {
         return FALSE;
@@ -292,7 +294,7 @@ BOOL BattleSystem_CheckMegaMessage(BattleSystem *battleSys, BattleContext *battl
         return FALSE;
     }
 
-    int trID = Battler_TrainerID(battleSys, BATTLER_THEM);
+    int trID = Battler_GetTrainerID(battleSys, BATTLER_THEM);
 
     if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_MEGA_FLAG) == FALSE) {
         if (BattleMon_CanMegaEvolve(battleCtx, BATTLER_THEM)

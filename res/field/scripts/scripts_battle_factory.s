@@ -1,5 +1,6 @@
 #include "macros/scrcmd.inc"
 #include "res/text/bank/battle_factory.h"
+#include "constants/battle_frontier.h"
 
 
     ScriptEntry _0059
@@ -29,7 +30,7 @@ _0053:
     End
 
 _0059:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     SetVar VAR_MAP_LOCAL_3, 0
@@ -38,7 +39,7 @@ _0059:
     End
 
 _0075:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     SetVar VAR_MAP_LOCAL_3, 0
@@ -79,23 +80,23 @@ _0139:
 _0141:
     SetVar VAR_UNK_0x40B7, 0
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0152:
-    SetVar VAR_UNK_0x40B8, 0
+    SetVar VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE
     GoTo _017C
     End
 
 _0160:
-    SetVar VAR_UNK_0x40B8, 1
+    SetVar VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE
     GoTo _017C
     End
 
 _016E:
-    SetVar VAR_UNK_0x40B8, 2
+    SetVar VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI
     GoTo _017C
     End
 
@@ -127,14 +128,14 @@ _01D6:
     End
 
 _01DE:
-    CallIfEq VAR_UNK_0x40B8, 0, _0386
-    CallIfEq VAR_UNK_0x40B8, 1, _0386
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _0386
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _0386
     SetVar VAR_MAP_LOCAL_0, 0
     HealParty
-    SaveGame
+    Common_SaveGame
     SetVar VAR_RESULT, VAR_MAP_LOCAL_0
     GoToIfEq VAR_RESULT, 0, _0139
-    GoToIfEq VAR_UNK_0x40B8, 2, _022C
+    GoToIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _022C
     GoTo _038E
     End
 
@@ -212,7 +213,7 @@ _035E:
 
 _0368:
     Message 26
-    CallIfEq VAR_UNK_0x40B8, 2, _0386
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _0386
     Call _05D7
     GoTo _038E
     End
@@ -222,24 +223,24 @@ _0386:
     Return
 
 _038E:
-    CallIfEq VAR_UNK_0x40B8, 0, _042E
-    CallIfEq VAR_UNK_0x40B8, 1, _0449
-    CallIfEq VAR_UNK_0x40B8, 2, _0464
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _042E
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _0449
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _0464
+    PlaySE SEQ_SE_DP_KAIDAN2
     GoTo _03C1
     End
 
 _03C1:
     FadeScreenOut
     WaitFadeScreen
-    CallIfEq VAR_UNK_0x40B8, 0, _048A
-    CallIfEq VAR_UNK_0x40B8, 1, _049E
-    CallIfEq VAR_UNK_0x40B8, 2, _04B2
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _048A
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _049E
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _04B2
     IncrementGameRecord RECORD_UNK_058
     CreateJournalEvent LOCATION_EVENT_BATTLE_FACTORY, 0, 0, 0, 0
     WaitForTransition
     ScrCmd_2C4 3
-    CallIfEq VAR_UNK_0x40B8, 2, _042A
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _042A
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
@@ -408,19 +409,19 @@ _05D7:
     ShowSavingIcon
     TrySaveGame VAR_RESULT
     HideSavingIcon
-    PlayFanfare SEQ_SE_DP_SAVE
-    WaitFanfare SEQ_SE_DP_SAVE
+    PlaySE SEQ_SE_DP_SAVE
+    WaitSE SEQ_SE_DP_SAVE
     Return
 
 _05E9:
     Message 12
-    ScrCmd_2C5 VAR_UNK_0x40B8, VAR_UNK_0x40B9
+    ScrCmd_2C5 VAR_BATTLE_FACTORY_CHALLENGE_TYPE, VAR_UNK_0x40B9
     GoTo _0139
     End
 
 _05FA:
-    CallIfEq VAR_UNK_0x40B8, 0, _0636
-    CallIfEq VAR_UNK_0x40B8, 1, _0636
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _0636
+    CallIfEq VAR_BATTLE_FACTORY_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _0636
     CallIfEq VAR_BATTLE_FACTORY_PRINT_STATE, 1, _063C
     CallIfEq VAR_BATTLE_FACTORY_PRINT_STATE, 3, _0653
     GoTo _0139
@@ -434,8 +435,8 @@ _063C:
     Message 13
     BufferPlayerName 0
     Message 15
-    PlaySound SEQ_FANFA4
-    WaitSound
+    PlayFanfare SEQ_FANFA4
+    WaitFanfare
     SetVar VAR_BATTLE_FACTORY_PRINT_STATE, 2
     Return
 
@@ -443,16 +444,16 @@ _0653:
     Message 13
     BufferPlayerName 0
     Message 14
-    PlaySound SEQ_FANFA4
-    WaitSound
+    PlayFanfare SEQ_FANFA4
+    WaitFanfare
     SetVar VAR_BATTLE_FACTORY_PRINT_STATE, 4
-    CheckAllFrontierGoldPrintsObtained
+    Common_CheckAllFrontierGoldPrintsObtained
     Return
 
 _066E:
     GoTo _0139
     End
-    
+
     .balign 4, 0
 BattleFactory_UnusedMovement:
     WalkNormalNorth 2
@@ -467,73 +468,31 @@ BattleFactory_UnusedMovement2:
     EndMovement
 
 _0698:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 27
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 27
     End
 
 _06AB:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 28
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 28
     End
 
 _06BE:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 29
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 29
     End
 
 _06D1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 30
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 30
     End
 
 _06E4:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 31
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 31
     End
 
 _06F7:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 32
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 32
     End
 
 _070A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 33
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 33
     End
 
     .balign 4, 0

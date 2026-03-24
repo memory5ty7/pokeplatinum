@@ -2,26 +2,14 @@
 #include "res/text/bank/jubilife_city_condominiums_3f.h"
 
 
-    ScriptEntry _000A
-    ScriptEntry _001D
+    ScriptEntry JubilifeCityCondominiums3F_Collector
+    ScriptEntry JubilifeCityCondominiums3F_Lass
     ScriptEntryEnd
 
-_000A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCityCondominiums3F_Collector:
+    NPCMessage JubilifeCityCondominiums3F_Text_ICanTradePokemonAroundTheWorldUsingNintendoWFC
     End
 
-_001D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCityCondominiums3F_Lass:
+    NPCMessage JubilifeCityCondominiums3F_Text_TheWorldYouCanReachWithNintendoWFC
     End

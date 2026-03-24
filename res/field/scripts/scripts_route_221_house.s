@@ -7,7 +7,7 @@
     ScriptEntryEnd
 
 _000A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0137, _0114
@@ -36,7 +36,7 @@ _006D:
     GoTo _00C2
 
 _00C2:
-    GiveItemQuantityNoLineFeed
+    Common_GiveItemQuantityNoLineFeed
     ClearFlag FLAG_UNK_0x0137
     SetFlag FLAG_UNK_0x0AAE
     AddVar VAR_UNK_0x4108, 1
@@ -62,7 +62,7 @@ _00FD:
 _0105:
     SetFlag FLAG_UNK_0x0137
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -79,25 +79,20 @@ _0114:
 
 _0164:
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _016F:
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _017A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 5
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 5
     End
 
     .balign 4, 0

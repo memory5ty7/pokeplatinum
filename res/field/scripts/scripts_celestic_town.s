@@ -21,7 +21,7 @@ _0032:
     End
 
 _0038:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 1
@@ -32,7 +32,7 @@ _0038:
 
 _0063:
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -94,13 +94,13 @@ _0166:
     Message 5
     BufferPlayerName 0
     BufferItemName 1, 0x1B7
-    PlaySound SEQ_FANFA4
+    PlayFanfare SEQ_FANFA4
     Message 6
-    WaitSound
+    WaitFanfare
     RemoveItem ITEM_OLD_CHARM, 1, VAR_RESULT
     SetFlag FLAG_UNK_0x00A6
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -190,7 +190,7 @@ _022C:
 _024A:
     SetVar VAR_UNK_0x40F1, 1
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     Return
 
@@ -205,7 +205,7 @@ _0264:
     EndMovement
 
 _026C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A6, _0289
@@ -215,7 +215,7 @@ _026C:
 
 _0289:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -236,7 +236,7 @@ _0294:
     SetFlag FLAG_UNK_0x0299
     WaitTime 12, VAR_RESULT
     Message 11
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -263,43 +263,19 @@ _02FC:
     EndMovement
 
 _0304:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _0317:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 12
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 12
     End
 
 _032A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 14
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 14
     End
 
 _033D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 13
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 13
     End
 
 _0350:
@@ -307,21 +283,11 @@ _0350:
     End
 
 _0367:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 16
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 16
     End
 
 _0378:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 17
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 17
     End
 
     .balign 4, 0

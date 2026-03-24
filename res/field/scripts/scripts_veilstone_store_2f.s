@@ -14,7 +14,7 @@
     ScriptEntryEnd
 
 VeilstoneStore2F_Attendant:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckIsDepartmentStoreRegular VAR_RESULT
@@ -43,71 +43,53 @@ VeilstoneStore2F_AttendantPersonalized:
 
 VeilstoneStore2F_AttendantPleaseEnjoyYourself:
     Message VeilstoneStore2F_Text_PleaseEnjoyYourself
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_AttendantProtein:
     Message VeilstoneStore2F_Text_CareForAProtein
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_AttendantCarbos:
     Message VeilstoneStore2F_Text_SuggestACarbos
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_AttendantDireHit:
     Message VeilstoneStore2F_Text_DireHitIsForYou
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_AttendantXAccuracy:
     Message VeilstoneStore2F_Text_TreatItToXAccuracy
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_Lady:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore2F_Text_MatchingDressesForMeAndMyPokemon
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore2F_Text_MatchingDressesForMeAndMyPokemon
     End
 
 VeilstoneStore2F_BugCatcher1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore2F_Text_GivingHPUpToKricketot
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore2F_Text_GivingHPUpToKricketot
     End
 
 VeilstoneStore2F_BugCatcher2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore2F_Text_GettingTheCarbos
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore2F_Text_GettingTheCarbos
     End
 
 VeilstoneStore2F_PoketchVendor:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckPoketchAppRegistered POKETCH_APPID_COUNTER, VAR_RESULT
@@ -117,63 +99,40 @@ VeilstoneStore2F_PoketchVendor:
     GoToIfEq VAR_RESULT, MENU_NO, VeilstoneStore2F_PoketchVendorDeclined
     Message VeilstoneStore2F_Text_HereYouGo
     SetVar VAR_0x8004, POKETCH_APPID_COUNTER
-    GivePoketchApp
-    WaitABXPadPress
+    Common_GivePoketchApp
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_PoketchVendorAfterAppGiven:
     Message VeilstoneStore2F_Text_IHopeCounterAppIsUseful
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_PoketchVendorDeclined:
     Message VeilstoneStore2F_Text_WaitingIfYouChangeYourMind
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore2F_Unused:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore2F_Text_GivingCounterAppAsPromotion
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore2F_Text_GivingCounterAppAsPromotion
     End
 
 VeilstoneStore2F_TopVendor:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartSpecialties MART_SPECIALTIES_ID_VEILSTONE_2F_UP
-    ReleaseAll
+    PokeMartSpecialtiesWithGreeting MART_SPECIALTIES_ID_VEILSTONE_2F_UP
     End
 
 VeilstoneStore2F_MiddleVendor:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartSpecialties MART_SPECIALTIES_ID_VEILSTONE_2F_MID
-    ReleaseAll
+    PokeMartSpecialtiesWithGreeting MART_SPECIALTIES_ID_VEILSTONE_2F_MID
     End
 
 VeilstoneStore2F_Directory:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message VeilstoneStore2F_Text_Directory
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage VeilstoneStore2F_Text_Directory
     End
 
     .balign 4, 0

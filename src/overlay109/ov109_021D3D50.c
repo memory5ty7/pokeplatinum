@@ -13,6 +13,7 @@
 #include "overlay109/struct_ov109_021D5140_sub1.h"
 #include "overlay109/struct_ov109_021D5140_sub2.h"
 
+#include "appearance.h"
 #include "bg_window.h"
 #include "char_transfer.h"
 #include "communication_information.h"
@@ -29,6 +30,7 @@
 #include "message.h"
 #include "message_util.h"
 #include "narc.h"
+#include "network_icon.h"
 #include "overlay_manager.h"
 #include "pltt_transfer.h"
 #include "render_oam.h"
@@ -52,9 +54,7 @@
 #include "unk_020363E8.h"
 #include "unk_020366A0.h"
 #include "unk_02038ED4.h"
-#include "unk_020393C8.h"
 #include "unk_0205B33C.h"
-#include "unk_0205C980.h"
 #include "unk_0209BDF8.h"
 #include "vram_transfer.h"
 
@@ -212,7 +212,7 @@ int ov109_021D3D50(ApplicationManager *appMan, int *param1)
             sub_0205BEA8(13);
         }
 
-        sub_02039734();
+        NetworkIcon_Init();
         v0->unk_30 = SysTask_ExecuteOnVBlank(ov109_021D4044, v0, 5);
         NARC_dtor(v1);
         (*param1)++;
@@ -1659,7 +1659,7 @@ static void ov109_021D57E0(NNSG2dCharacterData *param0[2], NNSG2dPaletteData *pa
     int v0;
     u8 *v1, *v2;
 
-    v0 = sub_0205CA0C(param4, param3);
+    v0 = Appearance_GetIndex(param4, param3);
     v1 = (u8 *)param0[1]->pRawData;
     v2 = (u8 *)param1[1]->pRawData;
 

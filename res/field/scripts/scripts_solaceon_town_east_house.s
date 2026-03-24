@@ -8,7 +8,7 @@
     End
 
 _000C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfUnset FLAG_UNK_0x0117, _00FE
@@ -16,7 +16,7 @@ _000C:
     CheckPartyHasSpecies VAR_RESULT, SPECIES_UNOWN
     GoToIfEq VAR_RESULT, 1, _0048
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -51,14 +51,14 @@ _00DB:
     BufferBallSealName 0, VAR_0x8007
 _00E0:
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _00EB:
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -69,31 +69,31 @@ _00F6:
 
 _00FE:
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0109:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0117, _0144
     Message 5
     SetVar VAR_0x8004, ITEM_SEAL_CASE
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0117
     Call _014F
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0144:
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

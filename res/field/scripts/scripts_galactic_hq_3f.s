@@ -8,23 +8,17 @@
     ScriptEntryEnd
 
 _000E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 0
     End
 
 _0021:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckItem ITEM_GALACTIC_KEY, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _0049
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -39,9 +33,9 @@ _0049:
 _006C:
     BufferPlayerName 0
     Message 3
-    WaitABXPadPress
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayFanfare SEQ_SE_DP_DOOR10
+    WaitButton
+    WaitSE SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_DP_DOOR10
     ApplyMovement 5, _00A8
     ApplyMovement 6, _00B0
     WaitMovement
@@ -68,12 +62,7 @@ _00B0:
     EndMovement
 
 _00B8:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 4
     End
 
     .balign 4, 0

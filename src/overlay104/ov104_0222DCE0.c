@@ -24,6 +24,7 @@
 #include "narc.h"
 #include "party.h"
 #include "pokemon.h"
+#include "pokemon_icon.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "sprite.h"
@@ -34,6 +35,7 @@
 #include "unk_02038F8C.h"
 #include "unk_0208C098.h"
 #include "unk_02092494.h"
+#include "versions.h"
 
 static const u16 sTrainerClassToObjectID[][2] = {
     { TRAINER_CLASS_TRAINER_CHERYL, OBJ_EVENT_GFX_CHERYL },
@@ -313,7 +315,7 @@ void ov104_0222DF40(const FrontierPokemonDataDTO *param0, Pokemon *param1, u8 pa
     Pokemon_CalcLevelAndStats(param1);
 }
 
-u16 ov104_0222E10C(u8 trainerClass)
+u16 BattleTower_GetObjectIDFromTrainerClass(u8 trainerClass)
 {
     for (int i = 0; i < (NELEMS(sTrainerClassToObjectID)); i++) {
         if (sTrainerClassToObjectID[i][0] == trainerClass) {
@@ -358,52 +360,50 @@ void ov104_0222E1C0(SaveData *saveData, Party *party, Pokemon *param2)
     return;
 }
 
-void ov104_0222E1D8(Sprite *param0, u8 param1)
+void BattleCastle_UpdateMonSpriteAnimID(Sprite *sprite, u8 animID)
 {
-    if (Sprite_GetActiveAnim(param0) == param1) {
+    if (Sprite_GetActiveAnim(sprite) == animID) {
         return;
     }
 
-    Sprite_SetAnimFrame(param0, 0);
-    Sprite_SetAnim(param0, param1);
-    Sprite_UpdateAnim(param0, FX32_ONE);
-    return;
+    Sprite_SetAnimFrame(sprite, 0);
+    Sprite_SetAnim(sprite, animID);
+    Sprite_UpdateAnim(sprite, FX32_ONE);
 }
 
-void ov104_0222E204(Sprite *param0, s16 param1, s16 param2, u8 param3)
+void BattleCastle_UpdateMonSpritePosition(Sprite *sprite, s16 x, s16 y, u8 isSelected)
 {
-    VecFx32 v0;
+    VecFx32 position;
 
-    v0.x = param1 * FX32_ONE;
-    v0.y = param2 * FX32_ONE;
-    v0.z = 0;
+    position.x = x * FX32_ONE;
+    position.y = y * FX32_ONE;
+    position.z = 0;
 
-    if (param3 == 1) {
-        if (Sprite_GetAnimFrame(param0) == 0) {
-            v0.y = (param2 - 3) * FX32_ONE;
+    if (isSelected == 1) {
+        if (Sprite_GetAnimFrame(sprite) == 0) {
+            position.y = (y - 3) * FX32_ONE;
         } else {
-            v0.y = (param2 + 1) * FX32_ONE;
+            position.y = (y + 1) * FX32_ONE;
         }
     }
 
-    Sprite_SetPosition(param0, &v0);
-    return;
+    Sprite_SetPosition(sprite, &position);
 }
 
-u8 ov104_0222E240(u16 param0, u16 param1)
+u8 BattleCastle_GetPokeIconAnimID(u16 hp, u16 maxHp)
 {
-    switch (HealthBar_Color(param0, param1, 48)) {
-    case 4:
-        return 1;
-    case 3:
-        return 2;
-    case 2:
-        return 3;
-    case 1:
-        return 4;
+    switch (HealthBar_Color(hp, maxHp, 48)) {
+    case BARCOLOR_MAX:
+        return POKEICON_ANIM_HP_MAX;
+    case BARCOLOR_GREEN:
+        return POKEICON_ANIM_HP_GREEN;
+    case BARCOLOR_YELLOW:
+        return POKEICON_ANIM_HP_YELLOW;
+    case BARCOLOR_RED:
+        return POKEICON_ANIM_HP_RED;
     }
 
-    return 1;
+    return POKEICON_ANIM_HP_MAX;
 }
 
 void ov104_0222E278(FrontierDataDTO *param0, u16 param1, enum HeapID heapID, int param3)
@@ -586,27 +586,19 @@ void BattleFrontier_SetPartnerInStrTemplate(StringTemplate *template, u32 idx)
     return;
 }
 
-int ov104_0222E5F0(const TrainerInfo *param0)
+enum ObjectEventGfx BattleFrontier_GetPlayerObjEventGfx(const TrainerInfo *playerInfo)
 {
-    u32 v0;
-    int v1, v2;
+    u32 gender = TrainerInfo_Gender(playerInfo);
 
-    v0 = TrainerInfo_Gender(param0);
-    v2 = TrainerInfo_GameCode(param0);
-
-    switch (v2) {
-    case 12:
-    case 7:
-    case 8:
+    switch (TrainerInfo_GameCode(playerInfo)) {
+    case VERSION_PLATINUM:
+    case VERSION_HEARTGOLD:
+    case VERSION_SOULSILVER:
     default:
-        v1 = (v0 == 0) ? 0x0 : 0x61;
-        break;
-    case 0:
-        v1 = (v0 == 0) ? 0xfc : 0xfd;
-        break;
+        return gender == GENDER_MALE ? OBJ_EVENT_GFX_PLAYER_M : OBJ_EVENT_GFX_PLAYER_F;
+    case VERSION_NONE:
+        return gender == GENDER_MALE ? OBJ_EVENT_GFX_DP_PLAYER_M : OBJ_EVENT_GFX_DP_PLAYER_F;
     }
-
-    return v1;
 }
 
 void ov104_0222E630(SaveData *saveData)

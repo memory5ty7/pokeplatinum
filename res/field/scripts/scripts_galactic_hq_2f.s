@@ -12,7 +12,7 @@
     ScriptEntryEnd
 
 _001E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 0
     ShowYesNoMenu VAR_RESULT
@@ -25,14 +25,14 @@ _003E:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    PlaySound SEQ_ASA
-    WaitSound
+    PlayFanfare SEQ_ASA
+    WaitFanfare
     HealParty
     FadeScreenIn
     WaitFadeScreen
     BufferPlayerName 0
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -43,52 +43,27 @@ _0074:
     End
 
 _007A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 7
     End
 
 _008B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 8
     End
 
 _009C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 9
     End
 
 _00AD:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 10
     End
 
 _00BE:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 11
     End
 
 _00CF:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 3
@@ -108,7 +83,7 @@ _010A:
     End
 
 _0118:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

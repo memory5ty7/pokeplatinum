@@ -56,7 +56,7 @@ _0074:
     End
 
 _00DB:
-    GiveItemQuantity
+    Common_GiveItemQuantity
     Return
 
 _00E1:
@@ -100,13 +100,13 @@ _0124:
     EndMovement
 
 _012C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckItem ITEM_GALACTIC_KEY, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _0154
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -121,9 +121,9 @@ _0154:
 _0177:
     BufferPlayerName 0
     Message 7
-    WaitABXPadPress
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayFanfare SEQ_SE_DP_DOOR10
+    WaitButton
+    WaitSE SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_DP_DOOR10
     ApplyMovement 1, _01B4
     ApplyMovement 2, _01BC
     WaitMovement
@@ -150,16 +150,11 @@ _01BC:
     EndMovement
 
 _01C4:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 8
     End
 
 _01D5:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 9
     GoTo _01E6

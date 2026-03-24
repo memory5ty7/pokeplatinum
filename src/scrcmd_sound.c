@@ -3,13 +3,13 @@
 
 #include "field/field_system.h"
 
+#include "chatot_cry.h"
 #include "field_script_context.h"
 #include "inlines.h"
 #include "sound.h"
 #include "sound_chatot.h"
 #include "sound_playback.h"
 #include "system.h"
-#include "unk_0202CC64.h"
 #include "unk_020553DC.h"
 
 static BOOL ScriptContext_IsSoundFadeFinished(ScriptContext *ctx);
@@ -98,19 +98,19 @@ BOOL ScrCmd_SetBGMFixed(ScriptContext *ctx)
     return FALSE;
 }
 
-BOOL ScrCmd_PlayFanfare(ScriptContext *ctx)
+BOOL ScrCmd_PlaySE(ScriptContext *ctx)
 {
     Sound_PlayEffect(ScriptContext_GetVar(ctx));
     return FALSE;
 }
 
-BOOL ScrCmd_StopFanfare(ScriptContext *ctx)
+BOOL ScrCmd_StopSE(ScriptContext *ctx)
 {
     Sound_StopEffect(ScriptContext_GetVar(ctx), 0);
     return FALSE;
 }
 
-BOOL ScrCmd_WaitFanfare(ScriptContext *ctx)
+BOOL ScrCmd_WaitSE(ScriptContext *ctx)
 {
     ctx->data[0] = ScriptContext_GetVar(ctx);
 
@@ -144,13 +144,13 @@ static BOOL ScrCmd_IsPokemonCryPlaying(ScriptContext *ctx)
     return Sound_IsPokemonCryPlaying() == FALSE;
 }
 
-BOOL ScrCmd_PlaySound(ScriptContext *ctx)
+BOOL ScrCmd_PlayFanfare(ScriptContext *ctx)
 {
     Sound_PlayFanfare(ScriptContext_ReadHalfWord(ctx));
     return FALSE;
 }
 
-BOOL ScrCmd_WaitSound(ScriptContext *ctx)
+BOOL ScrCmd_WaitFanfare(ScriptContext *ctx)
 {
     ScriptContext_Pause(ctx, ScriptContext_IsSoundFinished);
     return TRUE;

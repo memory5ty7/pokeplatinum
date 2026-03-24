@@ -18,12 +18,27 @@
             "level": 15,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_NIGHT_SHADE",
+                "MOVE_WILL_O_WISP",
+                "MOVE_PURSUIT",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_FUTURE_SIGHT"
+            ],
+            "iv_scale": 100,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HAUNTER",
+            "form": 0,
+            "level": 24,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SHADOW_CLAW",
+                "MOVE_SUCKER_PUNCH",
                 "MOVE_HYPNOSIS",
                 "MOVE_SPITE",
                 "MOVE_LICK"
             ],
-            "power": 50,
+            "iv_scale": 100,
             "ball_seal": 0
         },
         {
@@ -37,21 +52,7 @@
                 "MOVE_MINIMIZE",
                 "MOVE_CONSTRICT"
             ],
-            "power": 50,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MISDREAVUS",
-            "form": 0,
-            "level": 17,
-            "item": "ITEM_COLBUR_BERRY",
-            "moves": [
-                "MOVE_OMINOUS_WIND",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_PSYWAVE",
-                "MOVE_SPITE"
-            ],
-            "power": 50,
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

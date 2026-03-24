@@ -9,7 +9,6 @@
 #include "generated/game_records.h"
 #include "generated/trainer_score_events.h"
 
-#include "struct_decls/struct_0203A790_decl.h"
 #include "struct_decls/struct_02061AB4_decl.h"
 #include "struct_defs/daycare.h"
 
@@ -27,7 +26,7 @@
 #include "overlay006/wild_encounters.h"
 #include "overlay008/ov8_02249960.h"
 #include "overlay009/ov9_02249960.h"
-#include "overlay023/underground_manager.h"
+#include "underground/manager.h"
 
 #include "catching_show.h"
 #include "comm_player_manager.h"
@@ -298,7 +297,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
         }
 
         int distortionDir = PlayerAvatar_GetDistortionDir(fieldSystem->playerAvatar);
-        u32 distortionBehavior = PlayerAvatar_GetDistortionTileBehaviour(fieldSystem->playerAvatar, distortionDir);
+        u32 distortionBehavior = PlayerAvatar_GetDistortionFacingTileBehaviour(fieldSystem->playerAvatar, distortionDir);
         int distortionScript = Field_TileBehaviorToScript(fieldSystem, distortionBehavior);
 
         if (distortionScript != 0xffff) {
@@ -329,9 +328,9 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
         return TRUE;
     }
 
-    if (input->menu && sub_0203A9C8(fieldSystem) == TRUE) {
+    if (input->menu && FieldSystem_IsInValidLocation(fieldSystem) == TRUE) {
         Sound_PlayEffect(SEQ_SE_DP_WIN_OPEN);
-        StartMenu_Init(fieldSystem);
+        StartMenu_Open(fieldSystem);
         return TRUE;
     }
 
@@ -392,7 +391,7 @@ BOOL FieldInput_Process_Colosseum(FieldInput *input, FieldSystem *fieldSystem)
         && input->transitionDir == DIR_SOUTH
         && TileBehavior_IsWarpEntranceSouth(Field_CurrentTileBehavior(fieldSystem))) {
 
-        ScriptManager_Set(fieldSystem, 9101, NULL);
+        ScriptManager_Set(fieldSystem, SCRIPT_ID(COMMUNICATION_CLUB, 1), NULL);
         return TRUE;
     }
 
@@ -420,7 +419,7 @@ BOOL FieldInput_Process_Colosseum(FieldInput *input, FieldSystem *fieldSystem)
 
     if (input->menu) {
         Sound_PlayEffect(SEQ_SE_DP_WIN_OPEN);
-        sub_0203AABC(fieldSystem);
+        StartMenu_OpenColosseum(fieldSystem);
         return TRUE;
     }
 
@@ -477,7 +476,7 @@ BOOL FieldInput_Process_UnionRoom(const FieldInput *input, FieldSystem *fieldSys
 
     if (input->menu && CommSys_ConnectedCount() <= 1) {
         Sound_PlayEffect(SEQ_SE_DP_WIN_OPEN);
-        sub_0203AA78(fieldSystem);
+        StartMenu_OpenUnionRoom(fieldSystem);
         sub_0205BEA8(4);
         sub_02036BA0();
         return TRUE;
@@ -534,7 +533,7 @@ int FieldInput_Process_BattleTower(const FieldInput *input, FieldSystem *fieldSy
 
     if (input->menu) {
         Sound_PlayEffect(SEQ_SE_DP_WIN_OPEN);
-        StartMenu_Init(fieldSystem);
+        StartMenu_Open(fieldSystem);
         return TRUE;
     }
 
@@ -653,35 +652,35 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
     int playerDir = PlayerAvatar_GetDir(fieldSystem->playerAvatar);
 
     if (TileBehavior_IsPC(behavior) && playerDir == DIR_NORTH) {
-        return 2018;
+        return SCRIPT_ID(COMMON_SCRIPTS, 18);
     } else if (TileBehavior_IsSmallBookshelf1(behavior)) {
-        return 2500;
+        return SCRIPT_ID(BG_EVENTS, 0);
     } else if (TileBehavior_IsSmallBookshelf2(behavior)) {
-        return 2501;
+        return SCRIPT_ID(BG_EVENTS, 1);
     } else if (TileBehavior_IsBookshelf1(behavior)) {
-        return 2502;
+        return SCRIPT_ID(BG_EVENTS, 2);
     } else if (TileBehavior_IsBookshelf2(behavior)) {
-        return 2503;
+        return SCRIPT_ID(BG_EVENTS, 3);
     } else if (TileBehavior_IsTrashCan(behavior)) {
-        return 2504;
+        return SCRIPT_ID(BG_EVENTS, 4);
     } else if (TileBehavior_IsMartShelf1(behavior)) {
-        return 2505;
+        return SCRIPT_ID(BG_EVENTS, 5);
     } else if (TileBehavior_IsMartShelf2(behavior)) {
-        return 2506;
+        return SCRIPT_ID(BG_EVENTS, 6);
     } else if (TileBehavior_IsMartShelf3(behavior)) {
-        return 2507;
+        return SCRIPT_ID(BG_EVENTS, 7);
     } else if (TileBehavior_IsWaterfall(behavior)) {
-        return 10006;
+        return SCRIPT_ID(FIELD_MOVES, 6);
     } else if (TileBehavior_IsTownMap(behavior)) {
-        return 2508;
+        return SCRIPT_ID(BG_EVENTS, 8);
     } else if (TileBehavior_IsBikeParking(behavior)) {
-        return 2030;
+        return SCRIPT_ID(COMMON_SCRIPTS, 30);
     } else if (TileBehavior_IsTV(behavior) && playerDir == DIR_NORTH) {
-        return 10100;
+        return SCRIPT_ID(TV_BROADCAST, 0);
     }
 
     if (PlayerAvatar_CanUseRockClimb(behavior, playerDir)) {
-        return 10003;
+        return SCRIPT_ID(FIELD_MOVES, 3);
     }
 
     if (PlayerAvatar_GetPlayerState(fieldSystem->playerAvatar) != PLAYER_STATE_SURFING) {
@@ -690,7 +689,7 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
 
         if (PlayerAvatar_CanUseSurf(fieldSystem->playerAvatar, distortionBehavior, behavior) && TrainerInfo_HasBadge(info, 3)) {
             if (Party_HasMonWithMove(SaveData_GetParty(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
-                return 10004;
+                return SCRIPT_ID(FIELD_MOVES, 4);
             }
         }
     }
@@ -834,7 +833,7 @@ static BOOL Field_UpdateDaycare(FieldSystem *fieldSystem)
 
         GameRecords_IncrementRecordValue(records, RECORD_EGGS_HATCHED);
         GameRecords_IncrementTrainerScore(records, TRAINER_SCORE_EVENT_UNK_15);
-        ScriptManager_Set(fieldSystem, 2031, NULL);
+        ScriptManager_Set(fieldSystem, SCRIPT_ID(COMMON_SCRIPTS, 31), NULL);
 
         return TRUE;
     }
@@ -914,7 +913,7 @@ static BOOL Field_UpdatePoison(FieldSystem *fieldSystem)
         return FALSE;
     case FLDPSN_FAINTED:
         Field_DoPoisonEffect(fieldSystem->unk_04->unk_20);
-        ScriptManager_Set(fieldSystem, 2003, NULL);
+        ScriptManager_Set(fieldSystem, SCRIPT_ID(COMMON_SCRIPTS, 3), NULL);
         return TRUE;
     }
 
@@ -930,7 +929,7 @@ static BOOL Field_UpdateSafari(FieldSystem *fieldSystem)
     u16 *balls = FieldOverworldState_GetSafariBallCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
 
     if (*balls == 0) {
-        ScriptManager_Set(fieldSystem, 8802, NULL);
+        ScriptManager_Set(fieldSystem, SCRIPT_ID(SAFARI_GAME, 2), NULL);
         return TRUE;
     }
 
@@ -938,7 +937,7 @@ static BOOL Field_UpdateSafari(FieldSystem *fieldSystem)
     (*steps)++;
 
     if (*steps >= 500) {
-        ScriptManager_Set(fieldSystem, 8801, NULL);
+        ScriptManager_Set(fieldSystem, SCRIPT_ID(SAFARI_GAME, 1), NULL);
         return TRUE;
     }
 

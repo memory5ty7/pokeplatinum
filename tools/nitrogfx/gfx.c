@@ -149,7 +149,7 @@ static void ConvertFromTiles4Bpp(unsigned char *src, unsigned char *dest, int nu
     }
 }
 
-static void ConvertFromTiles4BppCell(unsigned char *src, unsigned char *dest, int oamWidth, int oamHeight, int imageWidth, int startX, int startY, bool hFlip, bool vFlip, bool hvFlip, bool toPNG)
+static void ConvertFromTiles4BppCell(unsigned char *src, unsigned char *dest, int oamWidth, int oamHeight, int imageWidth, int startX, int startY, bool hFlip, bool vFlip, bool toPNG)
 {
     int tilesSoFar = 0;
     int rowsSoFar = 0;
@@ -162,19 +162,15 @@ static void ConvertFromTiles4BppCell(unsigned char *src, unsigned char *dest, in
             int idxComponentY = (chunkStartY + rowsSoFar) * 8 + j + startY;
             if (vFlip)
             {
-                idxComponentY = (rowsSoFar + oamHeight - chunkStartY) * 8 + j + startY;
-            }
-            if (hvFlip)
-            {
-                idxComponentY += 8 - j * 2;
+                idxComponentY = (rowsSoFar + oamHeight - chunkStartY) * 8 - j + startY - 1;
             }
 
             for (int k = 0; k < 4; k++) {
-                int idxComponentX = (chunkStartX + tilesSoFar) * 4 + k + startX/2;
+                int idxComponentX = (chunkStartX + tilesSoFar) * 4 + k + startX / 2;
 
                 if (hFlip)
                 {
-                    idxComponentX = (tilesSoFar + oamWidth - chunkStartX) * 4 + - k + startX/2 - 1;
+                    idxComponentX = (tilesSoFar + oamWidth - chunkStartX) * 4 - k + startX / 2 - 1;
 
                     unsigned char srcPixelPair = *src;
                     unsigned char leftPixel = srcPixelPair & 0xF;
@@ -267,7 +263,7 @@ static void ConvertFromTiles8Bpp(unsigned char *src, unsigned char *dest, int nu
     }
 }
 
-static void ConvertFromTiles8BppCell(unsigned char *src, unsigned char *dest, int oamWidth, int oamHeight, int imageWidth, int startX, int startY, bool hFlip, bool vFlip, bool hvFlip, int palette, bool toPNG)
+static void ConvertFromTiles8BppCell(unsigned char *src, unsigned char *dest, int oamWidth, int oamHeight, int imageWidth, int startX, int startY, bool hFlip, bool vFlip, int palette, bool toPNG)
 {
     int tilesSoFar = 0;
     int rowsSoFar = 0;
@@ -280,18 +276,14 @@ static void ConvertFromTiles8BppCell(unsigned char *src, unsigned char *dest, in
             int idxComponentY = (chunkStartY + rowsSoFar) * 8 + j + startY;
             if (vFlip)
             {
-                idxComponentY = (rowsSoFar + oamHeight - chunkStartY) * 8 + j + startY;
-            }
-            if (hvFlip)
-            {
-                idxComponentY += 8 - j * 2;
+                idxComponentY = (rowsSoFar + oamHeight - chunkStartY) * 8 - j + startY - 1;
             }
 
             for (int k = 0; k < 8; k++) {
                 int idxComponentX = (chunkStartX + tilesSoFar) * 8 + k + startX;
                 if (hFlip)
                 {
-                    idxComponentX = (tilesSoFar + oamWidth - chunkStartX) * 8 + - k + startX;
+                    idxComponentX = (tilesSoFar + oamWidth - chunkStartX) * 8 - k + startX;
                 }
 
                 if (toPNG)
@@ -937,10 +929,9 @@ void ApplyCellsToImage(char *cellFilePath, struct Image *image, bool toPNG, bool
             }
             tileMask[pixelOffset] = 1;
 
-            bool rotationScaling = options->cells[i]->oam[j].attr1.RotationScaling;
-            bool hFlip = options->cells[i]->attributes.hFlip && rotationScaling;
-            bool vFlip = options->cells[i]->attributes.vFlip && rotationScaling;
-            bool hvFlip = options->cells[i]->attributes.hvFlip && rotationScaling;
+            int rotationScaling = options->cells[i]->oam[j].attr1.RotationScaling;
+            bool hFlip = options->cells[i]->attributes.hFlip && (rotationScaling & (1 << 3));
+            bool vFlip = options->cells[i]->attributes.vFlip && (rotationScaling & (1 << 4));
 
             int paletteChange = -1;
             if (convertBpp)
@@ -953,22 +944,22 @@ void ApplyCellsToImage(char *cellFilePath, struct Image *image, bool toPNG, bool
                 case 4:
                     if (toPNG)
                     {
-                        ConvertFromTiles4BppCell(image->pixels + pixelOffset, newPixels, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, hvFlip, true);
+                        ConvertFromTiles4BppCell(image->pixels + pixelOffset, newPixels, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, true);
                     }
                     else
                     {
-                        ConvertFromTiles4BppCell(image->pixels, newPixels + pixelOffset, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, hvFlip, false);
+                        ConvertFromTiles4BppCell(image->pixels, newPixels + pixelOffset, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, false);
                     }
                     break;
                 case 8:
                     pixelOffset *= 2;
                     if (toPNG)
                     {
-                        ConvertFromTiles8BppCell(image->pixels + pixelOffset, newPixels, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, hvFlip, paletteChange, true);
+                        ConvertFromTiles8BppCell(image->pixels + pixelOffset, newPixels, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, paletteChange, true);
                     }
                     else
                     {
-                        ConvertFromTiles8BppCell(image->pixels, newPixels + pixelOffset, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, hvFlip, paletteChange, false);
+                        ConvertFromTiles8BppCell(image->pixels, newPixels + pixelOffset, oamdim.width, oamdim.height, outputWidth, x, y + scanHeight, hFlip, vFlip, paletteChange, false);
                     }
                     break;
             }
@@ -1325,9 +1316,12 @@ void ReadGbaPalette(char *path, struct Palette *palette)
     free(data);
 }
 
-void ReadNtrPalette(char *path, struct Palette *palette, int bitdepth, int palIndex, bool inverted, bool convertTo8Bpp)
+#define PLTT_HEADER_SIZE 0x18
+
+void ReadNtrPalette(char *path, struct Palette *palette, int bitdepth, int palIndex, bool convertTo8Bpp, bool verbose)
 {
     int fileSize;
+    bool inverted = false;
     unsigned char *data = ReadWholeFile(path, &fileSize);
 
     if (memcmp(data, "RLCN", 4) != 0 && memcmp(data, "RPCN", 4) != 0) //NCLR / NCPR
@@ -1349,8 +1343,16 @@ void ReadNtrPalette(char *path, struct Palette *palette, int bitdepth, int palIn
 
     bitdepth = bitdepth ? bitdepth : palette->bitDepth;
 
+    // Some NCLRs are known to exist which have an "inverted" palette size, which is represented as
+    // 0x200 minus the true size in bytes. So, we must verify the palette size stored in the header
+    // with the section size (which is authoritative and never inverted in this way).
+    size_t sectionSize = (paletteHeader[0x04]) | (paletteHeader[0x05] << 8) | (paletteHeader[0x06] << 16) | (paletteHeader[0x07] << 24);
     size_t paletteSize = (paletteHeader[0x10]) | (paletteHeader[0x11] << 8) | (paletteHeader[0x12] << 16) | (paletteHeader[0x13] << 24);
-    if (inverted) paletteSize = 0x200 - paletteSize;
+    if (sectionSize - PLTT_HEADER_SIZE != paletteSize) {
+        paletteSize = 0x200 - paletteSize;
+        inverted = true;
+    }
+
     if (palIndex == 0) {
         palette->numColors = paletteSize / 2;
     } else {
@@ -1358,7 +1360,7 @@ void ReadNtrPalette(char *path, struct Palette *palette, int bitdepth, int palIn
         --palIndex;
     }
 
-    unsigned char *paletteData = paletteHeader + 0x18;
+    unsigned char *paletteData = paletteHeader + PLTT_HEADER_SIZE;
 
     for (int i = 0; i < 256; i++)
     {
@@ -1375,6 +1377,36 @@ void ReadNtrPalette(char *path, struct Palette *palette, int bitdepth, int palIn
             palette->colors[i].green = 0;
             palette->colors[i].blue = 0;
         }
+    }
+
+    if (verbose) {
+        printf("Suggested NCLR options: ");
+
+        if (paletteHeader[0x0A]) {
+            printf("-comp %d ", paletteHeader[0x0A]);
+        }
+
+        if (data[0x01] == 'P') {
+            printf("-ncpr ");
+        }
+
+        if (palette->numColors < 256) {
+            printf("-nopad ");
+        }
+
+        size_t truePaletteSize = paletteSize;
+        if (inverted) {
+            printf("-invertsize ");
+            truePaletteSize = 0x200 - truePaletteSize;
+        }
+
+        uint16_t sectionCount = (data[0x0F] << 8) | data[0x0E];
+        if (sectionCount == 2) {
+            printf("-pcmp ");
+        }
+
+        printf("-bitdepth %d ", bitdepth);
+        puts("");
     }
 
     free(data);

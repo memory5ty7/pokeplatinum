@@ -25,8 +25,8 @@ _0029:
 
 _0037:
     LockAll
-    PlayFanfare SEQ_SE_CONFIRM
-    WaitFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
+    WaitSE SEQ_SE_CONFIRM
     PlayCry SPECIES_GIRATINA
     Message 0
     CloseMessage
@@ -48,7 +48,7 @@ _0084:
 
 _0090:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -60,7 +60,7 @@ _009B:
     End
 
 _00A5:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfEq VAR_TURNBACK_CAVE_ROOMS_VISITED, 3, _00F4
     GoToIfLt VAR_TURNBACK_CAVE_ROOMS_VISITED, 15, _0100
@@ -68,7 +68,7 @@ _00A5:
 _00CB:
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _010C
-    GiveItemQuantityNoLineFeed
+    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     RemoveObject 1
     ReleaseAll
@@ -83,22 +83,17 @@ _0100:
     GoTo _00CB
 
 _010C:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 _0116:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 4
     End
 
 _0127:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 2
     ShowYesNoMenu VAR_RESULT
@@ -110,7 +105,7 @@ _0149:
     BufferPlayerName 0
     Message 3
     CloseMessage
-    PlayFanfare SEQ_SE_PL_SYUWA
+    PlaySE SEQ_SE_PL_SYUWA
     SetPartyGiratinaForm GIRATINA_FORM_ORIGIN
     FadeScreenOut
     WaitFadeScreen

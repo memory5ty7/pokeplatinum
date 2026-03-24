@@ -2,73 +2,49 @@
 #include "res/text/bank/jubilife_city_condominiums_1f.h"
 
 
-    ScriptEntry _0012
-    ScriptEntry _0025
-    ScriptEntry _0044
-    ScriptEntry _0063
+    ScriptEntry JubilifeCityCondominiums1F_ExpertF
+    ScriptEntry JubilifeCityCondominiums1F_Pikachu
+    ScriptEntry JubilifeCityCondominiums1F_Pachirisu
+    ScriptEntry JubilifeCityCondominiums1F_Beauty
     ScriptEntryEnd
 
-_0012:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCityCondominiums1F_ExpertF:
+    NPCMessage JubilifeCityCondominiums1F_Text_IsntMyPoketchQuiteFetching
     End
 
-_0025:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PIKACHU
-    Message 1
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCityCondominiums1F_Pikachu:
+    PokemonCryAndMessage SPECIES_PIKACHU, JubilifeCityCondominiums1F_Text_PiikaPi
     End
 
-_0044:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PACHIRISU
-    Message 2
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCityCondominiums1F_Pachirisu:
+    PokemonCryAndMessage SPECIES_PACHIRISU, JubilifeCityCondominiums1F_Text_Pachipachii
     End
 
-_0063:
-    PlayFanfare SEQ_SE_CONFIRM
+JubilifeCityCondominiums1F_Beauty:
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_UNK_0x00BF, _00B7
+    GoToIfSet FLAG_OBTAINED_QUICK_CLAW, JubilifeCityCondominiums1F_ObtainedQuickClaw
     BufferItemName 0, ITEM_QUICK_CLAW
-    Message 3
+    Message JubilifeCityCondominiums1F_Text_YourPokemonIsQuiteAdorableTryMakingItHoldThis
     SetVar VAR_0x8004, ITEM_QUICK_CLAW
     SetVar VAR_0x8005, 1
-    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _00AD
-    SetFlag FLAG_UNK_0x00BF
-    GiveItemQuantityNoLineFeed
+    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, JubilifeCityCondominiums1F_BagIsFull
+    SetFlag FLAG_OBTAINED_QUICK_CLAW
+    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
 
-_00AD:
-    MessageBagIsFull
+JubilifeCityCondominiums1F_BagIsFull:
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
-_00B7:
-    Message 4
-    WaitABXPadPress
+JubilifeCityCondominiums1F_ObtainedQuickClaw:
+    Message JubilifeCityCondominiums1F_Text_APokemonHoldingThatQuickClawCanSometimesAttackFirst
+    WaitButton
     CloseMessage
     ReleaseAll
     End

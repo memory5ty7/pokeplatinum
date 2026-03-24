@@ -16,33 +16,28 @@ _001B:
     Return
 
 _0021:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckPoketchAppRegistered POKETCH_APPID_DAYCARECHECKER, VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _0051
     Message 0
     SetVar VAR_0x8004, POKETCH_APPID_DAYCARECHECKER
-    GivePoketchApp
-    WaitABXPadPress
+    Common_GivePoketchApp
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0051:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _005C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 2
     End
 
     .balign 4, 0

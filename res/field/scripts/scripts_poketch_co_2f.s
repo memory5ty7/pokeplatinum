@@ -2,56 +2,26 @@
 #include "res/text/bank/poketch_co_2f.h"
 
 
-    ScriptEntry _0012
-    ScriptEntry _0025
-    ScriptEntry _0038
-    ScriptEntry _0057
+    ScriptEntry PoketchCo2F_PokefanM
+    ScriptEntry PoketchCo2F_OldMan
+    ScriptEntry PoketchCo2F_Clefairy
+    ScriptEntry PoketchCo2F_Pachirisu
     ScriptEntryEnd
 
-_0012:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+PoketchCo2F_PokefanM:
+    NPCMessage PoketchCo2F_Text_WellTryToThinkLikeATrainerAndFindWhatPoketchAppsWouldBeGood
     End
 
-_0025:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+PoketchCo2F_OldMan:
+    NPCMessage PoketchCo2F_Text_PokemonWatchThatsPoketchForShort
     End
 
-_0038:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_CLEFAIRY
-    Message 2
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+PoketchCo2F_Clefairy:
+    PokemonCryAndMessage SPECIES_CLEFAIRY, PoketchCo2F_Text_ClefairyCleffy
     End
 
-_0057:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PACHIRISU
-    Message 3
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+PoketchCo2F_Pachirisu:
+    PokemonCryAndMessage SPECIES_PACHIRISU, PoketchCo2F_Text_PachirisuPatchii
     End
 
     .balign 4, 0

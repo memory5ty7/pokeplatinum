@@ -412,7 +412,7 @@ _0528:
     EndMovement
 
 _0530:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x009A, _056C
@@ -424,14 +424,14 @@ _0530:
 
 _0561:
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _056C:
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -440,7 +440,7 @@ _0577:
     Message 6
     SetVar VAR_0x8004, ITEM_HM07
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x009A
     Message 7
     Return
@@ -519,63 +519,27 @@ _0678:
     EndMovement
 
 _0680:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 14
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 14
     End
 
 _0693:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 20
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 20
     End
 
 _06A6:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 15
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 15
     End
 
 _06B9:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 17
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 17
     End
 
 _06CC:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 18
     End
 
 _06DF:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 19
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 19
     End
 
 _06F2:
@@ -607,10 +571,10 @@ _077A:
     End
 
 _0791:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    VendorGreeting
+    Common_VendorGreeting
     CloseMessageWithoutErasing
     GetDayOfWeek VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
@@ -656,12 +620,12 @@ _084C:
     End
 
 _0850:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0162, _086E
     Message 2
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

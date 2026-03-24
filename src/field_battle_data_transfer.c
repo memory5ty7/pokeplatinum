@@ -12,8 +12,6 @@
 #include "generated/items.h"
 #include "generated/species.h"
 
-#include "struct_decls/pokedexdata_decl.h"
-#include "struct_decls/struct_0203A790_decl.h"
 #include "struct_defs/chatot_cry.h"
 #include "struct_defs/struct_0205EC34.h"
 #include "struct_defs/trainer.h"
@@ -22,9 +20,11 @@
 #include "field/field_system.h"
 #include "savedata/save_table.h"
 
+#include "appearance.h"
 #include "bag.h"
 #include "battle_regulation.h"
 #include "charcode_util.h"
+#include "chatot_cry.h"
 #include "communication_system.h"
 #include "field_overworld_state.h"
 #include "game_options.h"
@@ -51,11 +51,9 @@
 #include "terrain_collision_manager.h"
 #include "trainer_info.h"
 #include "tv_episode_segment.h"
-#include "unk_0202CC64.h"
 #include "unk_0203266C.h"
 #include "unk_020366A0.h"
 #include "unk_020559DC.h"
-#include "unk_0205C980.h"
 #include "vars_flags.h"
 
 #include "res/text/bank/location_names.h"
@@ -230,7 +228,7 @@ void FieldBattleDTO_CopyTrainerInfoToBattler(FieldBattleDTO *dto, const TrainerI
 
 void FieldBattleDTO_CopyChatotCryToBattler(FieldBattleDTO *dto, const ChatotCry *src, int battler)
 {
-    CopyChatotCryData(dto->chatotCries[battler], src);
+    ChatotCry_Copy(dto->chatotCries[battler], src);
 }
 
 void FieldBattleDTO_InitFromGameState(FieldBattleDTO *dto, const FieldSystem *fieldSystem, SaveData *saveData, enum MapHeader mapHeaderID, JournalEntry *journalEntry, BagCursor *bagCursor, u8 *subscreenCursorOn)
@@ -401,7 +399,7 @@ void FieldBattleDTO_InitWithPartyOrder(FieldBattleDTO *dto, const FieldSystem *f
         int unionAppearance = TrainerInfo_Appearance(trainerInfo);
         int unionGender = TrainerInfo_Gender(trainerInfo);
 
-        dto->trainer[BATTLER_PLAYER_1].header.trainerType = sub_0205CA14(unionGender, unionAppearance, 1);
+        dto->trainer[BATTLER_PLAYER_1].header.trainerType = Appearance_GetData(unionGender, unionAppearance, APPEARANCE_DATA_TRAINER_CLASS_2);
         CharCode_Copy(dto->trainer[BATTLER_PLAYER_1].name, TrainerInfo_Name(dto->trainerInfo[BATTLER_PLAYER_1]));
         dto->trainer[BATTLER_PLAYER_2] = dto->trainer[BATTLER_PLAYER_1];
     } else {

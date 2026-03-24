@@ -9,7 +9,7 @@
     ScriptEntry _01DC
 
 _0014:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerDir VAR_RESULT
@@ -50,8 +50,8 @@ _0096:
     Message 1
     BufferPlayerName 0
     Message 2
-    PlaySound SEQ_BADGE
-    WaitSound
+    PlayFanfare SEQ_BADGE
+    WaitFanfare
     GiveBadge BADGE_ID_RELIC
     IncrementTrainerScore2 TRAINER_SCORE_EVENT_BADGE_EARNED
     SetTrainerFlag TRAINER_CAMPER_DREW
@@ -73,18 +73,18 @@ _012B:
     SetVar VAR_0x8004, ITEM_TM65
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0169
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_OBTAINED_FANTINA_TM65
     BufferItemName 0, VAR_0x8004
     BufferTMHMMoveName 1, VAR_0x8004
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0169:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
@@ -92,7 +92,7 @@ _0169:
 _0173:
     GoToIfUnset FLAG_OBTAINED_FANTINA_TM65, _012B
     Message 5
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

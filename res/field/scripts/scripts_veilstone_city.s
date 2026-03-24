@@ -69,7 +69,7 @@ _00F6:
     LockAll
     ApplyMovement 6, _0444
     WaitMovement
-    SetCounterpartBGM
+    Common_SetCounterpartBGM
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     CallIfEq VAR_0x8004, 0x2A9, _02E1
     CallIfEq VAR_0x8004, 0x2AA, _02ED
@@ -79,7 +79,7 @@ _00F6:
     CallIfEq VAR_0x8004, GENDER_MALE, _0297
     CallIfEq VAR_0x8004, GENDER_FEMALE, _029F
     CloseMessage
-    FadeToDefaultMusic
+    Common_FadeToDefaultMusic
     LoadDoorAnimation 21, 19, 12, 3, ANIMATION_TAG_DOOR_1
     PlayDoorOpenAnimation ANIMATION_TAG_DOOR_1
     WaitForAnimation ANIMATION_TAG_DOOR_1
@@ -449,7 +449,7 @@ _05C4:
     EndMovement
 
 VeilstoneCity_Counterpart:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerGender VAR_0x8004
@@ -470,7 +470,7 @@ VeilstoneCity_DawnAcceptTeamUp:
 
 VeilstoneCity_DawnDeclineTeamUp:
     Message VeilstoneCity_Text_DawnIllBeWaiting
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -488,7 +488,7 @@ VeilstoneCity_LucasAcceptTeamUp:
 
 VeilstoneCity_LucasDeclineTeamUp:
     Message VeilstoneCity_Text_LucasIllBeWaiting
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -537,7 +537,7 @@ _0656:
     ClearFlag FLAG_UNK_0x028A
     SetObjectEventPos 26, 0x2B4, 0x25E
     AddObject 26
-    SetLookerBGM
+    Common_SetLookerBGM
     ApplyMovement 26, _0A7C
     WaitMovement
     Message 29
@@ -611,7 +611,7 @@ _08DD:
     SetFlag FLAG_UNK_0x028A
     ClearFlag FLAG_UNK_0x020D
     SetVar VAR_UNK_0x411F, 1
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_VEILSTONE_CITY_GALACTIC_WAREHOUSE, 0, 8, 11, 0
@@ -938,57 +938,27 @@ _0C08:
     EndMovement
 
 _0C18:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 43
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 43
     End
 
 _0C2B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 49
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 49
     End
 
 _0C3E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 44
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 44
     End
 
 _0C51:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 45
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 45
     End
 
 _0C64:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 46
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 46
     End
 
 _0C77:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00CC, _0CBC
@@ -996,41 +966,29 @@ _0C77:
     SetVar VAR_0x8004, ITEM_TM63
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0CC7
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x00CC
     GoTo _0CBC
 
 _0CBC:
     Message 51
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0CC7:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 _0CD1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 47
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 47
     End
 
 _0CE4:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 48
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 48
     End
 
 VeilstoneCity_GalacticGruntWarehouseGuard:
@@ -1072,43 +1030,43 @@ VeilstoneCity_Player_GetPushed:
     EndMovement
 
 _0D5C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COBBLE, _0D82
     Message VeilstoneCity_Text_ThisIsGalacticWarehouse1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0D82:
     Message 14
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0D8D:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COBBLE, _0DB3
     Message 13
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0DB3:
     Message 15
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0DBE:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message 36
     CloseMessage
@@ -1134,7 +1092,7 @@ _0E34:
     ApplyMovement LOCALID_PLAYER, _0F48
     ApplyMovement 23, _0F24
     WaitMovement
-    SetLookerBGM
+    Common_SetLookerBGM
     ApplyMovement 26, _0F80
     WaitMovement
     GoTo _0ECC
@@ -1143,7 +1101,7 @@ _0E34:
 _0E5C:
     ApplyMovement 23, _0F24
     WaitMovement
-    SetLookerBGM
+    Common_SetLookerBGM
     ApplyMovement 26, _0F70
     WaitMovement
     GoTo _0ECC
@@ -1153,7 +1111,7 @@ _0E7C:
     ApplyMovement LOCALID_PLAYER, _0F58
     ApplyMovement 23, _0F24
     WaitMovement
-    SetLookerBGM
+    Common_SetLookerBGM
     ApplyMovement 26, _0F90
     WaitMovement
     GoTo _0ECC
@@ -1163,7 +1121,7 @@ _0EA4:
     ApplyMovement LOCALID_PLAYER, _0F64
     ApplyMovement 23, _0F38
     WaitMovement
-    SetLookerBGM
+    Common_SetLookerBGM
     ApplyMovement 26, _0FA0
     WaitMovement
     GoTo _0ECC
@@ -1186,15 +1144,15 @@ _0EF4:
     SetFlag FLAG_UNK_0x009B
     Message 39
     CloseMessage
-    FadeToDefaultMusic4
+    Common_FadeToDefaultMusic4
     ReleaseAll
     End
 
 _0F0B:
     Message 40
-    WaitABXPadPress
+    WaitButton
     CloseMessage
-    FadeToDefaultMusic4
+    Common_FadeToDefaultMusic4
     ReleaseAll
     End
 
@@ -1266,14 +1224,14 @@ _0FA0:
     EndMovement
 
 _0FB0:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     ApplyMovement 26, _0FE0
     WaitMovement
     BufferPlayerName 0
     Message 41
-    SetLookerBGM
+    Common_SetLookerBGM
     GoToIfSet FLAG_UNK_0x009B, _0EF4
     GoTo _0ED8
     End
@@ -1286,13 +1244,7 @@ _0FE0:
     EndMovement
 
 _0FF0:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 42
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 42
     End
 
 _1003:
@@ -1328,56 +1280,56 @@ _10A2:
     End
 
 VeilstoneCity_DeoxysMeteoriteSpeed:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckPartyHasSpecies2 SPECIES_DEOXYS, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, VeilstoneCity_MeteoriteFromTheStars
     ChangeDeoxysForm DEOXYS_FORM_SPEED
     PlayCry SPECIES_DEOXYS
     Message VeilstoneCity_Text_MeteoriteSpeed
-    WaitABXPadPress
+    WaitButton
     WaitCry
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneCity_DeoxysMeteoriteDefense:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckPartyHasSpecies2 SPECIES_DEOXYS, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, VeilstoneCity_MeteoriteFromTheStars
     ChangeDeoxysForm DEOXYS_FORM_DEFENSE
     PlayCry SPECIES_DEOXYS
     Message VeilstoneCity_Text_MeteoriteDefense
-    WaitABXPadPress
+    WaitButton
     WaitCry
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneCity_DeoxysMeteoriteAttack:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckPartyHasSpecies2 SPECIES_DEOXYS, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, VeilstoneCity_MeteoriteFromTheStars
     ChangeDeoxysForm DEOXYS_FORM_ATTACK
     PlayCry SPECIES_DEOXYS
     Message VeilstoneCity_Text_MeteoriteAttack
-    WaitABXPadPress
+    WaitButton
     WaitCry
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneCity_DeoxysMeteoriteNormal:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckPartyHasSpecies2 SPECIES_DEOXYS, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, VeilstoneCity_MeteoriteFromTheStars
     ChangeDeoxysForm DEOXYS_FORM_NORMAL
     PlayCry SPECIES_DEOXYS
     Message VeilstoneCity_Text_MeteoriteNormal
-    WaitABXPadPress
+    WaitButton
     WaitCry
     CloseMessage
     ReleaseAll
@@ -1385,7 +1337,7 @@ VeilstoneCity_DeoxysMeteoriteNormal:
 
 VeilstoneCity_MeteoriteFromTheStars:
     Message VeilstoneCity_Text_MeteoriteFromTheStars
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -1432,7 +1384,7 @@ _11FC:
     EndMovement
 
 _1204:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 52
@@ -1448,19 +1400,13 @@ _122B:
     End
 
 _1236:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _123E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 55
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 55
     End
 
     .balign 4, 0

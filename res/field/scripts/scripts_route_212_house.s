@@ -15,36 +15,19 @@ _0016:
     End
 
 _001C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 17
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 17
     End
 
 _002F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 18
     End
 
 _0042:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 19
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 19
     End
 
 _0053:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 0
@@ -105,15 +88,15 @@ _012F:
     GetPartyMonMove VAR_RESULT, VAR_0x8000, VAR_0x8002
     BufferMoveName 1, VAR_RESULT
     Message 13
-    PlayFanfare SEQ_SE_DP_KON
-    WaitFanfare SEQ_SE_DP_KON
+    PlaySE SEQ_SE_DP_KON
+    WaitSE SEQ_SE_DP_KON
     WaitTime 30, VAR_RESULT
     Message 14
     WaitTime 32, VAR_RESULT
-    PlaySound SEQ_FANFA1
+    PlayFanfare SEQ_FANFA1
     BufferMoveName 1, VAR_0x8003
     Message 15
-    WaitSound
+    WaitFanfare
     WaitTime 16, VAR_RESULT
     GoTo _0245
     End
@@ -138,42 +121,42 @@ _0224:
     BufferPartyMonNickname 0, VAR_0x8000
     BufferMoveName 1, VAR_0x8003
     Message 8
-    PlaySound SEQ_FANFA1
-    WaitSound
+    PlayFanfare SEQ_FANFA1
+    WaitFanfare
     WaitTime 16, VAR_RESULT
     GoTo _0245
     End
 
 _0245:
-    PayShardsCost VAR_0x8003
+    PayShardCost VAR_0x8003
     ResetMoveSlot VAR_0x8000, VAR_0x8002, VAR_0x8003
     GoTo _0264
     End
 
 _0259:
     Message 16
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0264:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _026F:
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _027A:
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

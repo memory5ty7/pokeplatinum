@@ -49,7 +49,7 @@
 
 typedef struct {
     PokemonSummary *unk_00;
-    PartyMenu *unk_04;
+    PartyMenu *partyMenu;
     UnkFuncPtr_0205AB10 *unk_08;
     String *unk_0C;
     String *unk_10;
@@ -175,7 +175,7 @@ static void sub_0205A164(UnkStruct_0205A0D8 *param0, enum HeapID heapID)
     }
 
     FieldSystem_StartChildProcess(param0->fieldSystem, &gPokemonPartyAppTemplate, partyMenu);
-    param0->unk_04 = partyMenu;
+    param0->partyMenu = partyMenu;
 }
 
 static BOOL sub_0205A258(UnkStruct_0205A0D8 *param0, FieldSystem *fieldSystem)
@@ -186,9 +186,9 @@ static BOOL sub_0205A258(UnkStruct_0205A0D8 *param0, FieldSystem *fieldSystem)
         return 0;
     }
 
-    MI_CpuCopy8(param0->unk_04->selectionOrder, param0->unk_3D, 6);
+    MI_CpuCopy8(param0->partyMenu->selectionOrder, param0->unk_3D, 6);
 
-    switch (param0->unk_04->selectedMonSlot) {
+    switch (param0->partyMenu->selectedMonSlot) {
     case 7:
         param0->unk_38 = 0;
         break;
@@ -200,9 +200,9 @@ static BOOL sub_0205A258(UnkStruct_0205A0D8 *param0, FieldSystem *fieldSystem)
         break;
     }
 
-    param0->unk_3C = param0->unk_04->selectedMonSlot;
-    Heap_Free(param0->unk_04);
-    param0->unk_04 = NULL;
+    param0->unk_3C = param0->partyMenu->selectedMonSlot;
+    Heap_Free(param0->partyMenu);
+    param0->partyMenu = NULL;
 
     return 1;
 }
@@ -240,7 +240,7 @@ static BOOL sub_0205A2FC(void)
     v1 = CommSys_ConnectedCount();
 
     for (v0 = 0; v0 < v1; v0++) {
-        if (sub_02036564(v0) == 94) {
+        if (CommTool_GetSyncNo(v0) == 94) {
             return 1;
         }
     }
@@ -664,7 +664,7 @@ void sub_0205AB10(FieldSystem *fieldSystem, UnkFuncPtr_0205AB10 *param1)
     v0->fieldSystem = fieldSystem;
     v0->unk_08 = param1;
     v0->unk_28 = StringTemplate_Default(HEAP_ID_FIELD2);
-    v0->unk_2C = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0011, HEAP_ID_FIELD2);
+    v0->unk_2C = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_COMMUNICATION_CLUB, HEAP_ID_FIELD2);
     v0->unk_0C = String_Init(100 * 2, HEAP_ID_FIELD2);
     v0->unk_10 = String_Init(100 * 2, HEAP_ID_FIELD2);
 
@@ -1007,7 +1007,7 @@ static BOOL sub_0205B140(FieldTask *param0)
     switch (v1->unk_28) {
     case 0:
         v1->unk_18 = StringTemplate_Default(HEAP_ID_FIELD1);
-        v1->unk_1C = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0011, HEAP_ID_FIELD1);
+        v1->unk_1C = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_COMMUNICATION_CLUB, HEAP_ID_FIELD1);
         v1->unk_00 = String_Init(100 * 2, HEAP_ID_FIELD1);
         v1->unk_04 = String_Init(100 * 2, HEAP_ID_FIELD1);
 

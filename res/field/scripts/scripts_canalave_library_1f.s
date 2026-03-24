@@ -10,25 +10,25 @@
     ScriptEntryEnd
 
 _0016:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _0034
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0034:
     Message 1
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _003F:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfSet FLAG_UNK_0x00A8, _0068
     Message 2
@@ -43,7 +43,7 @@ _003F:
 _0068:
     FacePlayer
     Message 4
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -54,25 +54,15 @@ _0078:
     EndMovement
 
 _0080:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 5
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 5
     End
 
 _0091:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 6
     End
 
 _00A2:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 7
@@ -112,9 +102,9 @@ _0115:
     CallIfEq VAR_0x8000, 0, _0155
     CallIfEq VAR_0x8000, 2, _0169
     CallIfEq VAR_0x8000, 3, _0175
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 2
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     ReleaseAll
     End
 

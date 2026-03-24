@@ -9,38 +9,26 @@
     ScriptEntryEnd
 
 _0012:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 0
-    VendorGreeting
+    Common_VendorGreeting
     CloseMessageWithoutErasing
     PokeMartCommon
     ReleaseAll
     End
 
 _002B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartCommon
-    ReleaseAll
+    PokeMartCommonWithGreeting
     End
 
 _0041:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    VendorGreeting
-    CloseMessageWithoutErasing
-    PokeMartSpecialties MART_SPECIALTIES_ID_CELESTIC
-    ReleaseAll
+    PokeMartSpecialtiesWithGreeting MART_SPECIALTIES_ID_CELESTIC
     End
 
 _0057:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 1
@@ -56,7 +44,7 @@ _0093:
     SetVar VAR_0x8004, ITEM_CHOICE_SPECS
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0174
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0134
     Message 3
     GoTo _0153
@@ -67,7 +55,7 @@ _00D3:
     SetVar VAR_0x8004, ITEM_BLACKGLASSES
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0174
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0135
     Message 4
     GoTo _015E
@@ -78,35 +66,35 @@ _0113:
     SetVar VAR_0x8004, ITEM_WISE_GLASSES
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0174
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x0136
     Message 5
     GoTo _0169
 
 _0153:
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _015E:
     Message 7
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0169:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0174:
     Message 9
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

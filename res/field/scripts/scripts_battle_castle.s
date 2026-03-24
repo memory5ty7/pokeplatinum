@@ -1,5 +1,6 @@
 #include "macros/scrcmd.inc"
 #include "res/text/bank/battle_castle.h"
+#include "constants/battle_frontier.h"
 
 
     ScriptEntry _0059
@@ -29,7 +30,7 @@ _0053:
     End
 
 _0059:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     SetVar VAR_MAP_LOCAL_3, 0
@@ -38,7 +39,7 @@ _0059:
     End
 
 _0075:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     SetVar VAR_MAP_LOCAL_3, 0
@@ -79,13 +80,13 @@ _0139:
 _0141:
     SetVar VAR_UNK_0x40BC, 0
     Message 6
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0152:
-    SetVar VAR_UNK_0x40BD, 0
+    SetVar VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE
     ScrCmd_2D2 0, 3, VAR_RESULT
     BufferNumber 0, 3
     BufferNumber 1, 3
@@ -94,7 +95,7 @@ _0152:
     End
 
 _017F:
-    SetVar VAR_UNK_0x40BD, 1
+    SetVar VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE
     ScrCmd_2D2 0, 3, VAR_RESULT
     BufferNumber 0, 3
     BufferNumber 1, 3
@@ -103,7 +104,7 @@ _017F:
     End
 
 _01AC:
-    SetVar VAR_UNK_0x40BD, 2
+    SetVar VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI
     ScrCmd_2D2 0, 2, VAR_RESULT
     BufferNumber 0, 2
     BufferNumber 1, 2
@@ -128,7 +129,7 @@ _01FF:
     CloseMessage
     FadeScreenOut
     WaitFadeScreen
-    ScrCmd_2D2 4, VAR_UNK_0x40BD, VAR_RESULT
+    ScrCmd_2D2 4, VAR_BATTLE_CASTLE_CHALLENGE_TYPE, VAR_RESULT
     ScrCmd_2D4 VAR_MAP_LOCAL_2, VAR_MAP_LOCAL_5, VAR_MAP_LOCAL_6
     ReturnToField
     FadeScreenIn
@@ -150,14 +151,14 @@ _028F:
     End
 
 _0297:
-    CallIfEq VAR_UNK_0x40BD, 0, _043C
-    CallIfEq VAR_UNK_0x40BD, 1, _043C
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _043C
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _043C
     SetVar VAR_MAP_LOCAL_0, 0
     HealParty
-    SaveGame
+    Common_SaveGame
     SetVar VAR_RESULT, VAR_MAP_LOCAL_0
     GoToIfEq VAR_RESULT, 0, _0139
-    GoToIfEq VAR_UNK_0x40BD, 2, _02E5
+    GoToIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _02E5
     GoTo _049D
     End
 
@@ -228,7 +229,7 @@ _03D1:
     ClearReceivedTempDataAllPlayers
     ScrCmd_135 138
     Message 45
-    CallIfEq VAR_UNK_0x40BD, 2, _043C
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _043C
     Call _06CB
     GoTo _049D
     End
@@ -270,24 +271,24 @@ _0493:
     Return
 
 _049D:
-    CallIfEq VAR_UNK_0x40BD, 0, _053D
-    CallIfEq VAR_UNK_0x40BD, 1, _0558
-    CallIfEq VAR_UNK_0x40BD, 2, _0573
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _053D
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _0558
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _0573
+    PlaySE SEQ_SE_DP_KAIDAN2
     GoTo _04D0
     End
 
 _04D0:
     FadeScreenOut
     WaitFadeScreen
-    CallIfEq VAR_UNK_0x40BD, 0, _0599
-    CallIfEq VAR_UNK_0x40BD, 1, _05AD
-    CallIfEq VAR_UNK_0x40BD, 2, _05C1
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _0599
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _05AD
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _05C1
     IncrementGameRecord RECORD_UNK_058
     CreateJournalEvent LOCATION_EVENT_BATTLE_CASTLE, 0, 0, 0, 0
     WaitForTransition
     ScrCmd_2C4 11
-    CallIfEq VAR_UNK_0x40BD, 2, _0539
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_MULTI, _0539
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
@@ -347,7 +348,7 @@ _05C1:
 
 _05D5:
     SetVar VAR_UNK_0x40BC, 0
-    GriseousOrbCouldNotBeRemoved
+    Common_GriseousOrbCouldNotBeRemoved
     End
 
     .balign 4, 0
@@ -451,19 +452,19 @@ _06CB:
     ShowSavingIcon
     TrySaveGame VAR_RESULT
     HideSavingIcon
-    PlayFanfare SEQ_SE_DP_SAVE
-    WaitFanfare SEQ_SE_DP_SAVE
+    PlaySE SEQ_SE_DP_SAVE
+    WaitSE SEQ_SE_DP_SAVE
     Return
 
 _06DD:
     Message 34
-    ScrCmd_2D5 VAR_UNK_0x40BD
+    ScrCmd_2D5 VAR_BATTLE_CASTLE_CHALLENGE_TYPE
     GoTo _0139
     End
 
 _06EC:
-    CallIfEq VAR_UNK_0x40BD, 0, _0728
-    CallIfEq VAR_UNK_0x40BD, 1, _0728
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE, _0728
+    CallIfEq VAR_BATTLE_CASTLE_CHALLENGE_TYPE, FRONTIER_CHALLENGE_DOUBLE, _0728
     CallIfEq VAR_BATTLE_CASTLE_PRINT_STATE, 1, _072E
     CallIfEq VAR_BATTLE_CASTLE_PRINT_STATE, 3, _0745
     GoTo _0139
@@ -477,8 +478,8 @@ _072E:
     Message 35
     BufferPlayerName 0
     Message 37
-    PlaySound SEQ_FANFA4
-    WaitSound
+    PlayFanfare SEQ_FANFA4
+    WaitFanfare
     SetVar VAR_BATTLE_CASTLE_PRINT_STATE, 2
     Return
 
@@ -486,10 +487,10 @@ _0745:
     Message 35
     BufferPlayerName 0
     Message 36
-    PlaySound SEQ_FANFA4
-    WaitSound
+    PlayFanfare SEQ_FANFA4
+    WaitFanfare
     SetVar VAR_BATTLE_CASTLE_PRINT_STATE, 4
-    CheckAllFrontierGoldPrintsObtained
+    Common_CheckAllFrontierGoldPrintsObtained
     Return
 
 _0760:
@@ -509,73 +510,31 @@ BattleCastle_UnusedMovement2:
     EndMovement
 
 _0788:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 46
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 46
     End
 
 _079B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 47
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 47
     End
 
 _07AE:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 48
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 48
     End
 
 _07C1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 49
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 49
     End
 
 _07D4:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 50
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 50
     End
 
 _07E7:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 51
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 51
     End
 
 _07FA:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 52
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 52
     End
 
     .balign 4, 0

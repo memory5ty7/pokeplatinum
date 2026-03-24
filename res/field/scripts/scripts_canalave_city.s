@@ -110,7 +110,7 @@ _01D2:
     End
 
 _01E7:
-    ScrCmd_18B 0, 58, 0x2C9
+    SetBgEventPos 0, 58, 0x2C9
     SetWarpEventPos 5, 59, 0x2C8
     Return
 
@@ -150,7 +150,7 @@ _028A:
     AddObject CANALAVE_CITY_RIVAL_BRIDGE
     ApplyMovement CANALAVE_CITY_RIVAL_BRIDGE, _0340
     WaitMovement
-    SetRivalBGM
+    Common_SetRivalBGM
     ApplyMovement CANALAVE_CITY_RIVAL_BRIDGE, _0354
     WaitMovement
     BufferRivalName 0
@@ -212,13 +212,7 @@ _035C:
     EndMovement
 
 _0364:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 1
     End
 
 _0377:
@@ -296,7 +290,7 @@ _046A:
     GoTo _0473
 
 _0473:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     SetVar VAR_CANALAVE_STATE, 5
     ClearFlag FLAG_HIDE_LAKE_VERITY_LOW_WATER_COUNTERPART
@@ -344,17 +338,11 @@ _04C8:
     EndMovement
 
 _04D4:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 13
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 13
     End
 
 _04E7:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerGender VAR_RESULT
@@ -370,13 +358,13 @@ _050F:
     GoTo _0518
 
 _0518:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0520:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _053C
@@ -388,13 +376,13 @@ _053C:
     GoTo _0545
 
 _0545:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _054D:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _0586
@@ -419,7 +407,7 @@ _0591:
     End
 
 _05A9:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _05C5
@@ -431,7 +419,7 @@ _05C5:
     GoTo _0545
 
 _05CE:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _05EA
@@ -443,7 +431,7 @@ _05EA:
     GoTo _0545
 
 _05F3:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _0615
@@ -457,7 +445,7 @@ _0615:
     GoTo _0545
 
 _0624:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00A8, _0640
@@ -499,16 +487,11 @@ _06E2:
     End
 
 _06F7:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 43
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 43
     End
 
 _0708:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GetPlayerDir VAR_0x8004
@@ -565,7 +548,7 @@ _080C:
 
 _0847:
     Message 29
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -575,7 +558,7 @@ _0852:
     CloseMessage
     ApplyMovement 16, _08C0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement 16, _08CC
     WaitMovement
     Return
@@ -583,7 +566,7 @@ _0852:
 _0871:
     ApplyMovement LOCALID_PLAYER, _08D4
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _08CC
     WaitMovement
     Return
@@ -591,7 +574,7 @@ _0871:
 _088B:
     ApplyMovement LOCALID_PLAYER, _08E4
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _08CC
     WaitMovement
     Return
@@ -599,7 +582,7 @@ _088B:
 _08A5:
     ApplyMovement LOCALID_PLAYER, _08F0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _08CC
     WaitMovement
     Return
@@ -651,14 +634,14 @@ _0938:
 
 _0943:
     Message 33
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _094E:
     Message 34
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -695,7 +678,7 @@ _09AC:
     EndMovement
 
 _09BC:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckItem ITEM_HM04, 1, VAR_RESULT
@@ -704,7 +687,7 @@ _09BC:
     GoToIfNe VAR_RESULT, 6, CanalaveCity_RIVAL_EnterLibrary
     BufferRivalName 0
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

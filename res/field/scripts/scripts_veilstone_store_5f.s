@@ -18,27 +18,15 @@
     ScriptEntryEnd
 
 VeilstoneStore5F_BugCatcher:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore5F_Text_GrabADrinkAndUnwind
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore5F_Text_GrabADrinkAndUnwind
     End
 
 VeilstoneStore5F_MiddleAgedWoman:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore5F_Text_TheyConsiderMeARegular
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore5F_Text_TheyConsiderMeARegular
     End
 
 VeilstoneStore5F_Collector1:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_VEILSTONE_STORE_5F_RECEIVED_STICKY_BARB, VeilstoneStore5F_Collector1AfterItemGiven
@@ -46,45 +34,34 @@ VeilstoneStore5F_Collector1:
     SetVar LOCALID_ITEM_ID, ITEM_STICKY_BARB
     SetVar LOCALID_COUNT, 1
     GoToIfCannotFitItem LOCALID_ITEM_ID, LOCALID_COUNT, VAR_RESULT, VeilstoneStore5F_Collector1BagIsFull
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_VEILSTONE_STORE_5F_RECEIVED_STICKY_BARB
     GoTo VeilstoneStore5F_Collector1AfterItemGiven
     End
 
 VeilstoneStore5F_Collector1AfterItemGiven:
     Message VeilstoneStore5F_Text_SticksToTheFoeAndInflictsDamage
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore5F_Collector1BagIsFull:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore5F_Collector2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore5F_Text_TwoBuffGuysSideBySide
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore5F_Text_TwoBuffGuysSideBySide
     End
 
 VeilstoneStore5F_Directory:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message VeilstoneStore5F_Text_Directory
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage VeilstoneStore5F_Text_Directory
     End
 
 VeilstoneStore5F_VendingMachine:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     Message VeilstoneStore5F_Text_WhichDrinkWouldYouLike
     ShowMoney 20, 2
@@ -154,22 +131,22 @@ VeilstoneStore5F_VendingMachineDispenseDrink:
     CallIfEq LOCALID_DRINK_CHOICE, 2, VeilstoneStore5F_VendingMachineBuyLemonade
     UpdateMoneyDisplay
     BufferItemName 0, LOCALID_DRINK_ID
-    PlayFanfare SEQ_SE_DP_JIHANKI
+    PlaySE SEQ_SE_DP_JIHANKI
     BufferItemName 0, LOCALID_DRINK_ID
     Message VeilstoneStore5F_Text_ACanDroppedDown
     SetVar LOCALID_ITEM_ID, LOCALID_DRINK_ID
     SetVar LOCALID_COUNT, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     // 1 in 64 chance for a bonus can
     GetRandom VAR_RESULT, 64
     GoToIfNe VAR_RESULT, 0, VeilstoneStore5F_VendingMachineBuyAnotherDrink
     GoToIfCannotFitItem LOCALID_DRINK_ID, 1, VAR_RESULT, VeilstoneStore5F_VendingMachineBagIsFull
-    PlayFanfare SEQ_SE_DP_JIHANKI
+    PlaySE SEQ_SE_DP_JIHANKI
     BufferItemName 0, LOCALID_DRINK_ID
     Message VeilstoneStore5F_Text_ABonusCanDroppedDown
     SetVar LOCALID_ITEM_ID, LOCALID_DRINK_ID
     SetVar LOCALID_COUNT, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     GoTo VeilstoneStore5F_VendingMachineBuyAnotherDrink
 
 VeilstoneStore5F_VendingMachineBuyAnotherDrink:
@@ -181,14 +158,14 @@ VeilstoneStore5F_VendingMachineNotEnoughMoney:
     GoTo VeilstoneStore5F_VendingMachineClose
 
 VeilstoneStore5F_VendingMachineBagIsFull:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     HideMoney
     ReleaseAll
     End
 
 VeilstoneStore5F_VendingMachineClose:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     HideMoney
     ReleaseAll

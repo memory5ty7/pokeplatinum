@@ -40,15 +40,15 @@
 #include "sprite_util.h"
 #include "string_gf.h"
 #include "string_template.h"
+#include "sys_task_extensions.h"
 #include "sys_task_manager.h"
 #include "system.h"
 #include "text.h"
-#include "unk_0200679C.h"
 #include "unk_02012744.h"
 #include "unk_0201567C.h"
 #include "vram_transfer.h"
 
-#include "res/graphics/naming_screen/namein.naix.h"
+#include "res/graphics/naming_screen/namein.naix"
 #include "res/text/bank/generic_names.h"
 #include "res/text/bank/naming_screen.h"
 

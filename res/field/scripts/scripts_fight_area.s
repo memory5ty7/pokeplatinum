@@ -68,11 +68,11 @@ _00D8:
     BufferPlayerName 1
     Message 0
     CloseMessage
-    SetFollowMeBGM
+    Common_SetFollowMeBGM
     ApplyMovement LOCALID_PLAYER, _03E4
     ApplyMovement 7, _0354
     WaitMovement
-    FadeToDefaultMusic3
+    Common_FadeToDefaultMusic3
     SetVar VAR_UNK_0x4081, 1
     ScrCmd_32E
     Message 1
@@ -130,8 +130,8 @@ _0198:
     Message 12
     ClearFlag FLAG_UNK_0x01E3
     AddObject 26
-    StopFanfare SEQ_SE_CONFIRM
-    PlayFanfare SEQ_SE_DP_WALL_HIT2
+    StopSE SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_DP_WALL_HIT2
     MessageInstant 13
     ApplyMovement 26, _03B4
     ApplyMovement 7, _0380
@@ -153,9 +153,9 @@ _0198:
     CloseMessage
     ApplyMovement 26, _03D4
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject 26
-    WaitFanfare SEQ_SE_DP_KAIDAN2
+    WaitSE SEQ_SE_DP_KAIDAN2
     BufferRivalName 0
     Message 18
     Message 19
@@ -190,7 +190,7 @@ _02EE:
     WaitMovement
     BufferRivalName 0
     Message 3
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -391,77 +391,35 @@ FightArea_UnusedMovement5:
     EndMovement
 
 _049C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 31
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 31
     End
 
 _04AF:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 33
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 33
     End
 
 _04C2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 34
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 34
     End
 
 _04D5:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 35
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 35
     End
 
 _04E8:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 36
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 36
     End
 
 _04FB:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 37
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 37
     End
 
 _050E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 41
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 41
     End
 
 _0521:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     BufferItemName 0, ITEM_SUPER_ROD
@@ -472,24 +430,24 @@ _0521:
     Message 43
     SetVar VAR_0x8004, ITEM_SUPER_ROD
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_SUPER_ROD_OBTAINED
     Message 44
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _056F:
     Message 45
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _057A:
     Message 46
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -507,7 +465,7 @@ _05B3:
     End
 
 _05CA:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     FacePlayer
@@ -520,7 +478,7 @@ _05CA:
 
 _05FB:
     Message 40
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -539,7 +497,7 @@ _0606:
 _0646:
     ApplyMovement 18, _06B0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement 18, _06BC
     WaitMovement
     Return
@@ -547,7 +505,7 @@ _0646:
 _0660:
     ApplyMovement LOCALID_PLAYER, _06C4
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _06BC
     WaitMovement
     Return
@@ -555,7 +513,7 @@ _0660:
 _067A:
     ApplyMovement LOCALID_PLAYER, _06D0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _06BC
     WaitMovement
     Return
@@ -563,7 +521,7 @@ _067A:
 _0694:
     ApplyMovement LOCALID_PLAYER, _06E0
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     ApplyMovement LOCALID_PLAYER, _06BC
     WaitMovement
     Return
@@ -600,7 +558,7 @@ _06E0:
     EndMovement
 
 _06F0:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     ApplyMovement 7, _07A0
@@ -671,31 +629,19 @@ _07D0:
     EndMovement
 
 _07DC:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 29
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 29
     End
 
 _07EF:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 30
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 30
     End
 
 _0802:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 5
-    WaitABXPadPress
+    WaitButton
     ApplyMovement 25, _0450
     WaitMovement
     CloseMessage
@@ -703,11 +649,11 @@ _0802:
     End
 
 _081F:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 6
-    WaitABXPadPress
+    WaitButton
     ApplyMovement 24, _0470
     WaitMovement
     CloseMessage
@@ -715,11 +661,11 @@ _081F:
     End
 
 _083C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 21
-    WaitABXPadPress
+    WaitButton
     ApplyMovement 8, _085C
     WaitMovement
     CloseMessage
@@ -732,53 +678,23 @@ _085C:
     EndMovement
 
 _0864:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 24
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 24
     End
 
 _0877:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 25
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 25
     End
 
 _088A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 26
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 26
     End
 
 _089D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 27
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 27
     End
 
 _08B0:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 28
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 28
     End
 
     .balign 0

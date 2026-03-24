@@ -13,7 +13,7 @@
     ScriptEntryEnd
 
 VeilstoneStore4F_Attendant:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckIsDepartmentStoreRegular VAR_RESULT
@@ -42,94 +42,71 @@ VeilstoneStore4F_AttendantPersonalized:
 
 VeilstoneStore4F_AttendantPleaseEnjoyYourself:
     Message VeilstoneStore4F_Text_PleaseEnjoyYourself
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore4F_AttendantYellowCushion:
     Message VeilstoneStore4F_Text_YellowCushionIsSoftAndFirm
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore4F_AttendantCupboards:
     Message VeilstoneStore4F_Text_SurprisedHowManyBuyCupboards
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore4F_AttendantBuizelDoll:
     Message VeilstoneStore4F_Text_BuizelDollIsVeryPopular
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore4F_AttendantMantykeDoll:
     Message VeilstoneStore4F_Text_MantykeDollHasBeenHotSeller
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 VeilstoneStore4F_NinjaBoy:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore4F_Text_ChuckAQuickBallOrTimerBall
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore4F_Text_ChuckAQuickBallOrTimerBall
     End
 
 VeilstoneStore4F_Pokefan:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore4F_Text_ThatBoySaysHeIsTrainingHisImage
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore4F_Text_ThatBoySaysHeIsTrainingHisImage
     End
 
 VeilstoneStore4F_SchoolBoy:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message VeilstoneStore4F_Text_NeedAnotherCopyOfGameToChallengePapa
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage VeilstoneStore4F_Text_NeedAnotherCopyOfGameToChallengePapa
     End
 
 VeilstoneStore4F_TopDecorVendor:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    VendorGreeting
+    Common_VendorGreeting
     CloseMessageWithoutErasing
     PokeMartDecor MART_DECOR_ID_VEILSTONE_4F_UP
     ReleaseAll
     End
 
 VeilstoneStore4F_BottomDecorVendor:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    VendorGreeting
+    Common_VendorGreeting
     CloseMessageWithoutErasing
     PokeMartDecor MART_DECOR_ID_VEILSTONE_4F_DOWN
     ReleaseAll
     End
 
 VeilstoneStore4F_Directory:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message VeilstoneStore4F_Text_Directory
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage VeilstoneStore4F_Text_Directory
     End

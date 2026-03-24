@@ -13,7 +13,7 @@
 #include "narc.h"
 #include "string_gf.h"
 
-#include "res/graphics/item_icons/item_icon.naix.h"
+#include "res/graphics/item_icons/item_icon.naix"
 
 typedef struct ItemArchiveIDs {
     u16 dataID; // Member file index in pl_item_data.narc; TODO: Use NAIX generated from pl_item_data
@@ -2572,7 +2572,7 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
     [ITEM_HM05] = {
         .dataID = 0x192,
         .iconID = hm_NCGR,
-        .paletteID = tm_water_NCLR,
+        .paletteID = tm_water_NCLR, // BUG: Defog is a flying type move, and thus this should be tm_flying_NCLR.
         .gen3ID = GBA_ITEM_HM05,
     },
     [ITEM_HM06] = {

@@ -172,11 +172,11 @@ SandgemTown_RivalExitLab:
     WaitMovement
     ApplyMovement LOCALID_RIVAL, SandgemTown_Movement_RivalWalkOnSpotFastSouth
     WaitMovement
-    PlayFanfare SEQ_SE_DP_WALL_HIT2
+    PlaySE SEQ_SE_DP_WALL_HIT2
     Message SandgemTown_Text_BigThud
     ApplyMovement LOCALID_RIVAL, SandgemTown_Movement_RivalNoticePlayer
     WaitMovement
-    SetRivalBGM
+    Common_SetRivalBGM
     BufferRivalName 0
     BufferPlayerName 1
     Message SandgemTown_Text_OhItsYouPlayer
@@ -186,7 +186,7 @@ SandgemTown_RivalExitLab:
     ApplyMovement LOCALID_RIVAL, SandgemTown_Movement_RivalLeave
     WaitMovement
     RemoveObject LOCALID_RIVAL
-    FadeToDefaultMusic2
+    Common_FadeToDefaultMusic2
     GetPlayerGender VAR_RESULT
     GoToIfEq VAR_RESULT, GENDER_MALE, SandgemTown_DawnLetsGoInside
     GoToIfEq VAR_RESULT, GENDER_FEMALE, SandgemTown_LucasLetsGoIn
@@ -451,7 +451,7 @@ SandgemTown_OnFrameExitLab:
     Message SandgemTown_Text_YouShouldTakeThisAsWell
     SetVar VAR_0x8004, ITEM_TM27
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     Message SandgemTown_Text_ThatContainsTheMoveReturn
     CloseMessage
     ApplyMovement LOCALID_PROF_ROWAN, SandgemTown_Movement_ProfRowanEnterLab
@@ -501,7 +501,7 @@ SandgemTown_LucasIWantToShowYouAFewThings:
 
 SandgemTown_WalkToPokemonCenter:
     CloseMessage
-    SetFollowMeBGM
+    Common_SetFollowMeBGM
     ApplyMovement LOCALID_COUNTERPART, SandgemTown_Movement_CounterpartWalkToPokemonCenter
     ApplyMovement LOCALID_PLAYER, SandgemTown_Movement_PlayerWalkToPokemonCenter
     WaitMovement
@@ -569,7 +569,7 @@ SandgemTown_CounterpartLeave:
     ApplyMovement LOCALID_COUNTERPART, SandgemTown_Movement_CounterpartLeave
     ApplyMovement LOCALID_PLAYER, SandgemTown_Movement_PlayerWatchCounterpartLeave
     WaitMovement
-    FadeToDefaultMusic3
+    Common_FadeToDefaultMusic3
     RemoveObject LOCALID_COUNTERPART
     SetVar VAR_SANDGEM_TOWN_STATE, 2
     ReleaseAll
@@ -663,43 +663,19 @@ SandgemTown_Movement_CounterpartLeave:
     EndMovement
 
 SandgemTown_Youngster:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message SandgemTown_Text_PokemonAreSoCool
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage SandgemTown_Text_PokemonAreSoCool
     End
 
 SandgemTown_PokemonBreederM:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message SandgemTown_Text_TheThingYouHaveItsAPokedexIsntIt
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage SandgemTown_Text_TheThingYouHaveItsAPokedexIsntIt
     End
 
 SandgemTown_PokemonBreederF:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message SandgemTown_Text_IdBetterSaveThis
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage SandgemTown_Text_IdBetterSaveThis
     End
 
 SandgemTown_Unused:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message SandgemTown_Text_ProfessorRowansComeBackToTown
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage SandgemTown_Text_ProfessorRowansComeBackToTown
     End
 
 SandgemTown_MapSign:

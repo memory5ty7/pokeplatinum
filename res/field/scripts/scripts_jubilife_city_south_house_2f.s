@@ -2,39 +2,21 @@
 #include "res/text/bank/jubilife_city_south_house_2f.h"
 
 
-    ScriptEntry _000E
-    ScriptEntry _0021
-    ScriptEntry _0034
+    ScriptEntry JubilifeCitySouthHouse2F_Youngster
+    ScriptEntry JubilifeCitySouthHouse2F_PokefanF
+    ScriptEntry JubilifeCitySouthHouse2F_PokemonBreederF
     ScriptEntryEnd
 
-_000E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse2F_Youngster:
+    NPCMessage JubilifeCitySouthHouse2F_SomeKindsOfPokemonEvolveWhenTheyGetStrongerFromBattling
     End
 
-_0021:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse2F_PokefanF:
+    NPCMessage JubilifeCitySouthHouse2F_EvolutionMakesPokemonJustThatMuchMoreFascinating
     End
 
-_0034:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+JubilifeCitySouthHouse2F_PokemonBreederF:
+    NPCMessage JubilifeCitySouthHouse2F_DidntProfRowanConductResearchWithProfOak
     End
 
     .balign 4, 0

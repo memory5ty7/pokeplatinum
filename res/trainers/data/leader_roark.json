@@ -23,7 +23,7 @@
                 "MOVE_SCREECH",
                 "MOVE_BIND"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_SANDSTORM",
                 "MOVE_BITE"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_PURSUIT",
                 "MOVE_LEER"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

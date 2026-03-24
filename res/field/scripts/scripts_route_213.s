@@ -37,7 +37,7 @@ _0062:
     Return
 
 _0078:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfSet FLAG_UNK_0x0118, _0133
     Message 0
@@ -117,7 +117,7 @@ _019A:
     SetFlag FLAG_UNK_0x0104
     ClearFlag FLAG_UNK_0x01E8
     AddObject 33
-    SetLookerBGM
+    Common_SetLookerBGM
     ScrCmd_315 VAR_RESULT
     CallIfEq VAR_RESULT, 2, _0261
     CallIfEq VAR_0x8004, 2, _0267
@@ -135,7 +135,7 @@ _019A:
     CallIfEq VAR_0x8004, 0, _02DF
     CallIfEq VAR_0x8004, 1, _02F3
     RemoveObject 33
-    FadeToDefaultMusic4
+    Common_FadeToDefaultMusic4
     ScrCmd_315 VAR_RESULT
     CallIfEq VAR_RESULT, 2, _0261
     ClearFlag FLAG_UNK_0x0211
@@ -144,7 +144,7 @@ _019A:
     End
 
 _0261:
-    PlayFanfare SEQ_SE_DP_T_AME
+    PlaySE SEQ_SE_DP_T_AME
     Return
 
 _0267:
@@ -314,33 +314,15 @@ _03F0:
     EndMovement
 
 _03FC:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _040F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _0422:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
 _0435:

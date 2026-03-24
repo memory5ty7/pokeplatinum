@@ -22,6 +22,7 @@
 #include "char_transfer.h"
 #include "character_sprite.h"
 #include "charcode_util.h"
+#include "chatot_cry.h"
 #include "communication_information.h"
 #include "communication_system.h"
 #include "font.h"
@@ -39,6 +40,7 @@
 #include "message.h"
 #include "message_util.h"
 #include "narc.h"
+#include "network_icon.h"
 #include "overlay_manager.h"
 #include "pal_pad.h"
 #include "party.h"
@@ -66,7 +68,6 @@
 #include "touch_screen.h"
 #include "trainer_info.h"
 #include "unk_0202ACE0.h"
-#include "unk_0202CC64.h"
 #include "unk_0202D778.h"
 #include "unk_0202F180.h"
 #include "unk_0203061C.h"
@@ -75,7 +76,6 @@
 #include "unk_02038ED4.h"
 #include "unk_02038F8C.h"
 #include "unk_0203909C.h"
-#include "unk_020393C8.h"
 #include "unk_02092494.h"
 #include "unk_02095CD4.h"
 #include "vars_flags.h"
@@ -314,7 +314,7 @@ int ov88_0223B140(ApplicationManager *appMan, int *param1)
     Bg_ToggleLayer(BG_LAYER_MAIN_0, 1);
     GXLayers_EngineAToggleLayers(GX_PLANEMASK_OBJ, 1);
     sub_02038A1C(26, v0->unk_174);
-    sub_02039734();
+    NetworkIcon_Init();
 
     if (IsNight() == FALSE) {
         Sound_SetSceneAndPlayBGM(SOUND_SCENE_FIELD, SEQ_PC_01, 1);
@@ -456,7 +456,7 @@ int ov88_0223B57C(ApplicationManager *appMan, int *param1)
 
                 ov88_0223BE28(v0);
                 ov88_0223CF68(v0->unk_88[0], v0->unk_39C[0], 0);
-                sub_02039734();
+                NetworkIcon_Init();
 
                 v0->unk_48 = 6;
             }
@@ -2490,7 +2490,7 @@ static void ov88_0223E694(Party *param0, Party *param1, int param2, int param3, 
 
     if (Party_HasSpecies(param0, SPECIES_CHATOT) == 0) {
         ChatotCry *v4 = SaveData_GetChatotCry(param4->saveData);
-        ResetChatotCryDataStatus(v4);
+        ChatotCry_ResetStatus(v4);
     }
 
     SaveData_UpdateCatchRecords(param4->saveData, v1);

@@ -21,17 +21,11 @@
     ScriptEntryEnd
 
 MiningMuseum_Welcome:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_Welcome
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_Welcome
     End
 
 MiningMuseum_FossilResearcher:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0001, MiningMuseum_ExtractingPokemon
@@ -208,14 +202,14 @@ MiningMuseum_SingleFossilRevival:
 MiningMuseum_ExtractingPokemon:
     SetFlag FLAG_UNK_0x0001
     Message MiningMuseum_Text_ExtractingPokemonLeave
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 MiningMuseum_DeclinedRevival:
     Message MiningMuseum_Text_DeclinedFossilRevival
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -227,9 +221,9 @@ MiningMuseum_PokemonRevival:
     GoToIfEq VAR_RESULT, 6, MiningMuseum_PartyFull
     BufferSpeciesNameFromVar 1, VAR_REVIVED_POKEMON_SPECIES, 0, 0
     BufferPlayerName 0
-    PlaySound SEQ_FANFA4
+    PlayFanfare SEQ_FANFA4
     Message MiningMuseum_Text_PokemonReceived
-    WaitSound
+    WaitFanfare
     GivePokemon VAR_REVIVED_POKEMON_SPECIES, 20, ITEM_NONE, VAR_RESULT
     IncrementGameRecord RECORD_POKEMON_RECEIVED_FROM_FOSSIL_REVIVAL
     SetVar VAR_REVIVED_POKEMON_SPECIES, 0
@@ -263,155 +257,79 @@ MiningMuseum_NoNickname:
 
 MiningMuseum_PartyFull:
     Message MiningMuseum_Text_PartyFull
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 MiningMuseum_NoFossils:
     Message MiningMuseum_Text_BringFossilsToMe
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 MiningMuseum_NotYetReady:
     Message MiningMuseum_Text_NotYetReady
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 MiningMuseum_CoalExhibit1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_CoalExhibit1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_CoalExhibit1
     End
 
 MiningMuseum_CoalExhibit2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_CoalExhibit2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_CoalExhibit2
     End
 
 MiningMuseum_MineUnderSea:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_MineExtendsUnderSea
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_MineExtendsUnderSea
     End
 
 MiningMuseum_HowCoalIsMade1:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_HowCoalIsMade1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_HowCoalIsMade1
     End
 
 MiningMuseum_HowCoalIsMade2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_HowCoalIsMade2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_HowCoalIsMade2
     End
 
 MiningMuseum_HowCoalIsMade3:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_HowCoalIsMade3
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_HowCoalIsMade3
     End
 
 MiningMuseum_CoalSamplesDisplay:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_CoalSamplesDisplay
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_CoalSamplesDisplay
     End
 
 MiningMuseum_CoalSamplesBox:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_CoalSamplesBox
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_CoalSamplesBox
     End
 
 MiningMuseum_MiningLamps:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_MiningLamps
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_MiningLamps
     End
 
 MiningMuseum_MiningTools:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_MiningTools
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_MiningTools
     End
 
 MiningMuseum_MineWorkerItems:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message MiningMuseum_Text_MineWorkerItems
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage MiningMuseum_Text_MineWorkerItems
     End
 
 MiningMuseum_UndergroundManInfo:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_UndergroundManInfo
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_UndergroundManInfo
     End
 
 MiningMuseum_MiningRequiresStrongMind:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_MiningRequiresStrongMind
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_MiningRequiresStrongMind
     End
 
 MiningMuseum_MineHistory:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message MiningMuseum_Text_MineHistory
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage MiningMuseum_Text_MineHistory
     End
 
     .balign 4, 0

@@ -8,7 +8,7 @@
     ScriptEntryEnd
 
 OreburghGym_Roark:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COAL, OreburghGym_AlreadyHaveCoalBadge
@@ -21,8 +21,8 @@ OreburghGym_Roark:
     Message OreburghGym_Text_BeatRoark
     BufferPlayerName 0
     Message OreburghGym_Text_RoarkReceiveCoalBadge
-    PlaySound SEQ_BADGE
-    WaitSound
+    PlayFanfare SEQ_BADGE
+    WaitFanfare
     SetTrainerFlag TRAINER_YOUNGSTER_JONATHON
     SetTrainerFlag TRAINER_YOUNGSTER_DARIUS
     GiveBadge BADGE_ID_COAL
@@ -30,12 +30,12 @@ OreburghGym_Roark:
     SetTrainerFlag TRAINER_YOUNGSTER_JONATHON
     SetTrainerFlag TRAINER_YOUNGSTER_DARIUS
     SetFlag FLAG_HIDE_BLOCK_POKECENTER_BASEMENT
-    SetVar VAR_GTS_HAS_BADGES_CHECK_TEST, TRUE
-    SetVar VAR_JUBILIFE_LOOKER_PALPAD, 1
+    SetVar VAR_GTS_ACCESS_STATE, 1
+    SetVar VAR_JUBILIFE_LOOKER_PAL_PAD_STATE, 1
     SetVar VAR_OREBURGH_STATE, 2
     CreateJournalEvent LOCATION_EVENT_BEAT_GYM_LEADER, 47, TRAINER_LEADER_ROARK, 0, 0
-    SetVar VAR_JUBILIFE_STATE, 3
-    ClearFlag FLAG_HIDE_JUBILIFE_COUNTERPART
+    SetVar VAR_JUBILIFE_CITY_STATE, 3
+    ClearFlag FLAG_HIDE_JUBILIFE_CITY_COUNTERPART
     ClearFlag FLAG_HIDE_JUBILIFE_ROWAN
     ClearFlag FLAG_HIDE_JUBILIFE_GALACTIC_GRUNTS
     SetFlag FLAG_HIDE_SANDGEM_TOWN_LAB_PROF_ROWAN
@@ -47,18 +47,18 @@ OreburghGym_RoarkGiveTM76:
     SetVar VAR_0x8004, ITEM_TM76
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, OreburghGym_RoarkGiveTM76BagFull
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_OBTAINED_ROARK_TM76
     BufferItemName 0, VAR_0x8004
     BufferTMHMMoveName 1, VAR_0x8004
     Message OreburghGym_Text_RoarkExplainStealthRock
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 OreburghGym_RoarkGiveTM76BagFull:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
@@ -66,7 +66,7 @@ OreburghGym_RoarkGiveTM76BagFull:
 OreburghGym_AlreadyHaveCoalBadge:
     GoToIfUnset FLAG_OBTAINED_ROARK_TM76, OreburghGym_RoarkGiveTM76
     Message OreburghGym_Text_RoarkGymBeaten
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -77,12 +77,12 @@ OreburghGym_LostBattle:
     End
 
 OreburghGym_GymGuide:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COAL, OreburghGym_GymGuideAfterBadge
     Message OreburghGym_Text_GymGuideBeforeBadge
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -90,19 +90,19 @@ OreburghGym_GymGuide:
 OreburghGym_GymGuideAfterBadge:
     BufferPlayerName 0
     Message OreburghGym_Text_GymGuideAfterBadge
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 OreburghGym_GymStatue:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     GoToIfBadgeAcquired BADGE_ID_COAL, OreburghGym_GymStatueAfterBadge
     BufferRivalName 0
     BufferRivalName 1
     Message OreburghGym_Text_GymStatueBeforeBadge
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -112,7 +112,7 @@ OreburghGym_GymStatueAfterBadge:
     BufferPlayerName 1
     BufferRivalName 2
     Message OreburghGym_Text_GymStatueAfterBadge
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End

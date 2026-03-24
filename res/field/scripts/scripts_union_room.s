@@ -23,7 +23,7 @@ _0026:
     End
 
 _002A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     ScrCmd_140 VAR_RESULT
@@ -475,7 +475,7 @@ _07AE:
 
 _07BA:
     LockAll
-    PlayFanfare SEQ_SE_DP_BUTTON9
+    PlaySE SEQ_SE_DP_BUTTON9
     ScrCmd_13C 1
     MessageAutoScroll 7
     WaitABPressTime 30
@@ -720,24 +720,18 @@ _0BB2:
     Return
 
 _0BC0:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 207
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 207
     End
 
 _0BD3:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoTo _0497
     End
 
 _0BE3:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoTo _0BF3

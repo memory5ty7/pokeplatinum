@@ -23,7 +23,7 @@
                 "MOVE_WITHDRAW",
                 "MOVE_TACKLE"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_SUNNY_DAY",
                 "MOVE_LEECH_SEED"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_GROWTH",
                 "MOVE_LEECH_SEED"
             ],
-            "power": 50,
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

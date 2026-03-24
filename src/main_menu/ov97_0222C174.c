@@ -1,8 +1,6 @@
 #include <nitro.h>
 #include <string.h>
 
-#include "struct_decls/pokedexdata_decl.h"
-
 #include "game_opening/const_ov77_021D742C.h"
 #include "main_menu/main_menu_util.h"
 #include "main_menu/ov97_02232DC8.h"
@@ -22,6 +20,7 @@
 #include "message.h"
 #include "message_util.h"
 #include "mystery_gift.h"
+#include "network_icon.h"
 #include "overlay_manager.h"
 #include "pokedex.h"
 #include "render_window.h"
@@ -37,9 +36,8 @@
 #include "text.h"
 #include "trainer_info.h"
 #include "unk_02033200.h"
-#include "unk_020393C8.h"
 
-#include "res/graphics/main_menu/main_menu_graphics.naix.h"
+#include "res/graphics/main_menu/main_menu_graphics.naix"
 
 FS_EXTERN_OVERLAY(game_opening);
 
@@ -601,7 +599,7 @@ static void ov97_0222C47C(UnkStruct_ov97_0222C388 *param0)
     MainMenuUtil_InitSpriteLoader();
     MainMenuUtil_LoadSprite(NARC_INDEX_GRAPHIC__MYSTERY, download_arrow_NCGR_lz, download_arrow_NCLR, download_arrow_cell_NCER_lz, download_arrow_anim_NANR_lz, DS_SCREEN_MAIN);
 
-    param0->unk_3170 = MainMenuUtil_InitSprite(0, param0->unk_3170, HW_LCD_WIDTH / 2, 76, 1);
+    param0->unk_3170 = MainMenuUtil_InitSprite(DS_SCREEN_MAIN, param0->unk_3170, HW_LCD_WIDTH / 2, 76, 1);
 
     ov97_0222C578(param0);
 }
@@ -883,7 +881,7 @@ int ov97_0222CB10(UnkStruct_ov97_0222C388 *param0)
         if (WirelessDriver_IsReady()) {
             ov97_02232E38(&Unk_ov97_0223E0A4, param0->unk_16C);
             param0->unk_158 = 1;
-            sub_02039734();
+            NetworkIcon_Init();
             *v3 = UnkEnum_ov97_0222C6F8_02;
         }
         break;

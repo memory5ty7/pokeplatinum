@@ -75,7 +75,7 @@ _00FD:
 
 _0130:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -117,7 +117,7 @@ _0178:
     EndMovement
 
 _0184:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 6
@@ -128,65 +128,31 @@ _0184:
 
 _01AF:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _01BA:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 10
     End
 
 _01CD:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _01E0:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _01F3:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _0206:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 18
     End
 
 _0217:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 19
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 19
     End

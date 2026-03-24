@@ -88,7 +88,7 @@ _00F2:
     End
 
 GlobalTerminal1f_GTS_Clerk_Talk:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckPartyHasBadEgg VAR_RESULT
@@ -153,13 +153,13 @@ GlobalTerminal1f_CheckPartyCount:
 
 GlobalTerminal1f_GTS_Exit_NotEnoughPokemon:
     Message pl_msg_00000046_00009
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 GlobalTerminal1f_BeginTrade:
-    SaveGame
+    Common_SaveGame
     SetVar VAR_RESULT, VAR_MAP_LOCAL_0
     GoToIfEq VAR_RESULT, 0, GlobalTerminal1f_GTS_Clerk_EndTalk
     HealParty
@@ -206,7 +206,7 @@ GlobalTerminal1f_GTS_Exit:
 GlobalTerminal1f_GTS_Clerk_EndTalk:
     SetVar VAR_UNK_0x40D5, 0
     Message pl_msg_00000046_00006
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -230,7 +230,7 @@ GlobalTerminal1f_CheckFreeBoxSlot:
 
 GlobalTerminal1f_GTS_Exit_NoSpace:
     Message pl_msg_00000046_00008
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -258,93 +258,45 @@ _0360:
 
 GlobalTerminal1f_GTS_Exit_BadEgg:
     CallCommonScript 0x2338 @ CommonScript_HasBadEgg; outputs pl_msg_00000221_00127
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0374:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00010
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00010
     End
 
 _0387:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00011
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00011
     End
 
 _039A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00012
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00012
     End
 
 _03AD:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00013
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00013
     End
 
 _03C0:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00014
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00014
     End
 
 _03D3:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00015
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00015
     End
 
 _03E6:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00016
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00016
     End
 
 _03F9:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00017
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00017
     End
 
 _040C:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     SetVar VAR_0x8005, 3
     GoTo _0420
@@ -370,7 +322,7 @@ _0464:
     End
 
 _046A:
-    SaveGame
+    Common_SaveGame
     SetVar VAR_RESULT, VAR_MAP_LOCAL_0
     GoToIfEq VAR_RESULT, 0, _0464
     CloseMessage
@@ -384,7 +336,7 @@ _048B:
     End
 
 _0496:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     SetVar VAR_0x8005, 4
     GoTo _04AA
@@ -410,7 +362,7 @@ _04EE:
     End
 
 _04F4:
-    SaveGame
+    Common_SaveGame
     SetVar VAR_RESULT, VAR_MAP_LOCAL_0
     GoToIfEq VAR_RESULT, 0, _04EE
     CloseMessage
@@ -424,27 +376,15 @@ _0515:
     End
 
 _0520:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00032
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00032
     End
 
 _0533:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message pl_msg_00000046_00033
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage pl_msg_00000046_00033
     End
 
 _0546:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckPartyHasBadEgg VAR_RESULT
@@ -491,13 +431,13 @@ _05EE:
     End
 
 _05F9:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0601:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message pl_msg_00000046_00029
@@ -509,20 +449,20 @@ _0601:
     ScrCmd_30E VAR_0x8004
     GoToIfEq VAR_0x8004, 0, _0647
     Message pl_msg_00000046_00030
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0647:
     Message pl_msg_00000046_00031
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _0652:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckItem ITEM_FASHION_CASE, 1, VAR_RESULT
@@ -550,7 +490,7 @@ _06A1:
 
 _06D3:
     SetVar VAR_0x8005, 1
-    ObtainContestBackdrop
+    Common_ObtainContestBackdrop
     Message pl_msg_00000046_00028
     Call _0710
     SetFlag FLAG_UNK_0x0AC3
@@ -568,7 +508,7 @@ _06FD:
     End
 
 _0708:
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -590,12 +530,7 @@ _074A:
     Return
 
 _074C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message pl_msg_00000046_00041
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage pl_msg_00000046_00041
     End
 
     .balign 4, 0

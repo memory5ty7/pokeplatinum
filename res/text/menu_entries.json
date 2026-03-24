@@ -50,7 +50,7 @@
       "en_US": "EXIT"
     },
     {
-      "id": "pl_msg_00000361_00012",
+      "id": "MenuEntries_Text_ListMenu_Exit",
       "en_US": "EXIT"
     },
     {
@@ -166,15 +166,15 @@
       "en_US": "RULES"
     },
     {
-      "id": "pl_msg_00000361_00041",
+      "id": "MenuEntries_Text_Yes",
       "en_US": "YES"
     },
     {
-      "id": "pl_msg_00000361_00042",
+      "id": "MenuEntries_Text_No",
       "en_US": "NO"
     },
     {
-      "id": "pl_msg_00000361_00043",
+      "id": "MenuEntries_Text_TrainerAppearancesExit",
       "en_US": "EXIT"
     },
     {
@@ -182,15 +182,15 @@
       "en_US": "CANCEL"
     },
     {
-      "id": "pl_msg_00000361_00045",
+      "id": "MenuEntries_Text_TypePreferenceFire",
       "en_US": "FIRE"
     },
     {
-      "id": "pl_msg_00000361_00046",
+      "id": "MenuEntries_Text_TypePreferenceWater",
       "en_US": "WATER"
     },
     {
-      "id": "pl_msg_00000361_00047",
+      "id": "MenuEntries_Text_TypePreferenceGrass",
       "en_US": "GRASS"
     },
     {
@@ -202,19 +202,19 @@
       "en_US": "BATTLE"
     },
     {
-      "id": "pl_msg_00000361_00050",
+      "id": "MenuEntries_Text_TrainerAppearanceVariant1",
       "en_US": "{STRVAR_1 3, 0, 0}"
     },
     {
-      "id": "pl_msg_00000361_00051",
+      "id": "MenuEntries_Text_TrainerAppearanceVariant2",
       "en_US": "{STRVAR_1 3, 1, 0}"
     },
     {
-      "id": "pl_msg_00000361_00052",
+      "id": "MenuEntries_Text_TrainerAppearanceVariant3",
       "en_US": "{STRVAR_1 3, 2, 0}"
     },
     {
-      "id": "pl_msg_00000361_00053",
+      "id": "MenuEntries_Text_TrainerAppearanceVariant4",
       "en_US": "{STRVAR_1 3, 3, 0}"
     },
     {
@@ -410,19 +410,19 @@
       "garbage": 17
     },
     {
-      "id": "pl_msg_00000361_00096",
+      "id": "MenuEntries_Text_ContestRegistration_ContestBasics",
       "en_US": "CONTEST BASICS"
     },
     {
-      "id": "pl_msg_00000361_00097",
+      "id": "MenuEntries_Text_ContestRegistration_TypesOfContests",
       "en_US": "TYPES OF CONTESTS"
     },
     {
-      "id": "pl_msg_00000361_00098",
+      "id": "MenuEntries_Text_ContestRegistration_ContestRanks",
       "en_US": "CONTEST RANKS"
     },
     {
-      "id": "pl_msg_00000361_00099",
+      "id": "MenuEntries_Text_ContestRegistration_Cancel",
       "en_US": "CANCEL"
     },
     {
@@ -446,47 +446,47 @@
       "garbage": 3
     },
     {
-      "id": "pl_msg_00000361_00105",
+      "id": "MenuEntries_Text_ContestRegistration_NormalRank",
       "en_US": "NORMAL RANK"
     },
     {
-      "id": "pl_msg_00000361_00106",
+      "id": "MenuEntries_Text_ContestRegistration_GreatRank",
       "en_US": "GREAT RANK"
     },
     {
-      "id": "pl_msg_00000361_00107",
+      "id": "MenuEntries_Text_ContestRegistration_UltraRank",
       "en_US": "ULTRA RANK"
     },
     {
-      "id": "pl_msg_00000361_00108",
+      "id": "MenuEntries_Text_ContestRegistration_MasterRank",
       "en_US": "MASTER RANK"
     },
     {
-      "id": "pl_msg_00000361_00109",
+      "id": "MenuEntries_Text_ContestRegistration_ContestRankExit",
       "en_US": "EXIT"
     },
     {
-      "id": "pl_msg_00000361_00110",
+      "id": "MenuEntries_Text_ContestRegistration_CoolContest",
       "en_US": "COOL CONTEST"
     },
     {
-      "id": "pl_msg_00000361_00111",
+      "id": "MenuEntries_Text_ContestRegistration_BeautyContest",
       "en_US": "BEAUTY CONTEST"
     },
     {
-      "id": "pl_msg_00000361_00112",
+      "id": "MenuEntries_Text_ContestRegistration_CuteContest",
       "en_US": "CUTE CONTEST"
     },
     {
-      "id": "pl_msg_00000361_00113",
+      "id": "MenuEntries_Text_ContestRegistration_SmartContest",
       "en_US": "SMART CONTEST"
     },
     {
-      "id": "pl_msg_00000361_00114",
+      "id": "MenuEntries_Text_ContestRegistration_ToughContest",
       "en_US": "TOUGH CONTEST"
     },
     {
-      "id": "pl_msg_00000361_00115",
+      "id": "MenuEntries_Text_ContestRegistration_ContestTypeExit",
       "en_US": "EXIT"
     },
     {
@@ -574,11 +574,11 @@
       "en_US": "CANCEL"
     },
     {
-      "id": "pl_msg_00000361_00137",
+      "id": "MenuEntries_Text_CounterpartHand_Right",
       "en_US": "RIGHT"
     },
     {
-      "id": "pl_msg_00000361_00138",
+      "id": "MenuEntries_Text_CounterpartHand_Left",
       "en_US": "LEFT"
     },
     {
@@ -746,23 +746,23 @@
       "en_US": "PRACTICE"
     },
     {
-      "id": "pl_msg_00000361_00180",
+      "id": "MenuEntries_Text_UndergroundManHousePCHeading_Flags",
       "en_US": "FLAGS"
     },
     {
-      "id": "pl_msg_00000361_00181",
+      "id": "MenuEntries_Text_UndergroundManHousePCHeading_Spheres",
       "en_US": "SPHERES"
     },
     {
-      "id": "pl_msg_00000361_00182",
+      "id": "MenuEntries_Text_UndergroundManHousePCHeading_Traps",
       "en_US": "TRAPS"
     },
     {
-      "id": "pl_msg_00000361_00183",
+      "id": "MenuEntries_Text_UndergroundManHousePCHeading_Goods",
       "en_US": "GOODS"
     },
     {
-      "id": "pl_msg_00000361_00184",
+      "id": "MenuEntries_Text_UndergroundManHousePCHeading_Treasures",
       "en_US": "TREASURES"
     },
     {
@@ -918,23 +918,23 @@
       "en_US": "NO THANKS"
     },
     {
-      "id": "pl_msg_00000361_00223",
+      "id": "MenuEntries_Text_MulchShop_GrowthMulch",
       "en_US": "GROWTH MULCH{CURSOR_X 90}$200"
     },
     {
-      "id": "pl_msg_00000361_00224",
+      "id": "MenuEntries_Text_MulchShop_DampMulch",
       "en_US": "DAMP MULCH{CURSOR_X 90}$200"
     },
     {
-      "id": "pl_msg_00000361_00225",
+      "id": "MenuEntries_Text_MulchShop_StableMulch",
       "en_US": "STABLE MULCH{CURSOR_X 90}$200"
     },
     {
-      "id": "pl_msg_00000361_00226",
+      "id": "MenuEntries_Text_MulchShop_GooeyMulch",
       "en_US": "GOOEY MULCH{CURSOR_X 90}$200"
     },
     {
-      "id": "pl_msg_00000361_00227",
+      "id": "MenuEntries_Text_MulchShop_Exit",
       "en_US": "EXIT"
     },
     {
@@ -958,107 +958,107 @@
       "en_US": "NO THANKS"
     },
     {
-      "id": "pl_msg_00000361_00233",
+      "id": "MenuEntries_Text_DigitalWatch",
       "en_US": "DIGITAL WATCH"
     },
     {
-      "id": "pl_msg_00000361_00234",
+      "id": "MenuEntries_Text_Stopwatch",
       "en_US": "STOPWATCH"
     },
     {
-      "id": "pl_msg_00000361_00235",
+      "id": "MenuEntries_Text_Calculator",
       "en_US": "CALCULATOR"
     },
     {
-      "id": "pl_msg_00000361_00236",
+      "id": "MenuEntries_Text_MemoPad",
       "en_US": "MEMO PAD"
     },
     {
-      "id": "pl_msg_00000361_00237",
+      "id": "MenuEntries_Text_AnalogWatch",
       "en_US": "ANALOG WATCH"
     },
     {
-      "id": "pl_msg_00000361_00238",
+      "id": "MenuEntries_Text_DotArtist",
       "en_US": "DOT ARTIST"
     },
     {
-      "id": "pl_msg_00000361_00239",
+      "id": "MenuEntries_Text_PokemonList",
       "en_US": "POKéMON LIST"
     },
     {
-      "id": "pl_msg_00000361_00240",
+      "id": "MenuEntries_Text_FriendshipChecker",
       "en_US": "FRIENDSHIP CHECKER"
     },
     {
-      "id": "pl_msg_00000361_00241",
+      "id": "MenuEntries_Text_DowsingMachine",
       "en_US": "DOWSING MACHINE"
     },
     {
-      "id": "pl_msg_00000361_00242",
+      "id": "MenuEntries_Text_Counter",
       "en_US": "COUNTER"
     },
     {
-      "id": "pl_msg_00000361_00243",
+      "id": "MenuEntries_Text_Pedometer",
       "en_US": "PEDOMETER"
     },
     {
-      "id": "pl_msg_00000361_00244",
+      "id": "MenuEntries_Text_DayCareChecker",
       "en_US": "DAY-CARE CHECKER"
     },
     {
-      "id": "pl_msg_00000361_00245",
+      "id": "MenuEntries_Text_Roulette",
       "en_US": "ROULETTE"
     },
     {
-      "id": "pl_msg_00000361_00246",
+      "id": "MenuEntries_Text_CoinToss",
       "en_US": "COIN TOSS"
     },
     {
-      "id": "pl_msg_00000361_00247",
+      "id": "MenuEntries_Text_MoveTester",
       "en_US": "MOVE TESTER"
     },
     {
-      "id": "pl_msg_00000361_00248",
+      "id": "MenuEntries_Text_MatchupChecker",
       "en_US": "MATCHUP CHECKER"
     },
     {
-      "id": "pl_msg_00000361_00249",
+      "id": "MenuEntries_Text_AlarmClock",
       "en_US": "ALARM CLOCK"
     },
     {
-      "id": "pl_msg_00000361_00250",
+      "id": "MenuEntries_Text_KitchenTimer",
       "en_US": "KITCHEN TIMER"
     },
     {
-      "id": "pl_msg_00000361_00251",
+      "id": "MenuEntries_Text_MarkingMap",
       "en_US": "MARKING MAP"
     },
     {
-      "id": "pl_msg_00000361_00252",
+      "id": "MenuEntries_Text_BerrySearcher",
       "en_US": "BERRY SEARCHER"
     },
     {
-      "id": "pl_msg_00000361_00253",
+      "id": "MenuEntries_Text_ColorChanger",
       "en_US": "COLOR CHANGER"
     },
     {
-      "id": "pl_msg_00000361_00254",
+      "id": "MenuEntries_Text_Calendar",
       "en_US": "CALENDAR"
     },
     {
-      "id": "pl_msg_00000361_00255",
+      "id": "MenuEntries_Text_LinkSearcher",
       "en_US": "LINK SEARCHER"
     },
     {
-      "id": "pl_msg_00000361_00256",
+      "id": "MenuEntries_Text_TrainerCounter",
       "en_US": "TRAINER COUNTER"
     },
     {
-      "id": "pl_msg_00000361_00257",
+      "id": "MenuEntries_Text_PokemonHistory",
       "en_US": "POKéMON HISTORY"
     },
     {
-      "id": "pl_msg_00000361_00258",
+      "id": "MenuEntries_Text_PoketchDescriptionsExit",
       "en_US": "EXIT"
     },
     {
@@ -1114,7 +1114,7 @@
       "en_US": "EXIT"
     },
     {
-      "id": "pl_msg_00000361_00272",
+      "id": "MenuEntries_Text_Record",
       "en_US": "RECORD"
     },
     {

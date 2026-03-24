@@ -29,7 +29,7 @@ _0032:
     ApplyMovement 11, _02C8
     ApplyMovement LOCALID_PLAYER, _0290
     WaitMovement
-    PlayFanfare SEQ_SE_DP_WALL_HIT2
+    PlaySE SEQ_SE_DP_WALL_HIT2
     BufferPlayerName 1
     Message 0
     CloseMessage
@@ -57,7 +57,7 @@ _0032:
     ApplyMovement 12, _02C8
     ApplyMovement LOCALID_PLAYER, _0290
     WaitMovement
-    PlayFanfare SEQ_SE_DP_WALL_HIT2
+    PlaySE SEQ_SE_DP_WALL_HIT2
     BufferRivalName 0
     BufferPlayerName 1
     Message 4
@@ -210,90 +210,39 @@ _02FC:
     EndMovement
 
 _0308:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _031B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 9
     End
 
 _032C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 10
     End
 
 _033D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _0350:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 12
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 12
     End
 
 _0361:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 13
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 13
     End
 
 _0374:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 14
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 14
     End
 
 _0387:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 15
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 15
     End
 
 _039A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 16
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 16
     End
 
 _03AD:

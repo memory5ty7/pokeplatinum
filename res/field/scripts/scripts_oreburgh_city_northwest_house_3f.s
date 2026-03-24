@@ -2,51 +2,42 @@
 #include "res/text/bank/oreburgh_city_northwest_house_3f.h"
 
 
-    ScriptEntry _000A
-    ScriptEntry _006E
+    ScriptEntry OreburghCityNorthwestHouse3F_Lass
+    ScriptEntry OreburghCityNorthwestHouse3F_Psyduck
     ScriptEntryEnd
 
-_000A:
-    PlayFanfare SEQ_SE_CONFIRM
+OreburghCityNorthwestHouse3F_Lass:
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_UNK_0x007C, _0054
+    GoToIfSet FLAG_RECEIVED_OREBURGH_CITY_NORTHWEST_HOUSE_3F_HARD_STONE, OreburghCityNorthwestHouse3F_ThatItemIntensifiesThePowerOfRockTypeMoves
     BufferItemName 0, ITEM_HARD_STONE
-    Message 0
+    Message OreburghCityNorthwestHouse3F_Text_IfYoudLikeLetOneHoldThisItem
     SetVar VAR_0x8004, ITEM_HARD_STONE
     SetVar VAR_0x8005, 1
-    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _0064
-    SetFlag FLAG_UNK_0x007C
-    GiveItemQuantityNoLineFeed
+    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, OreburghCityNorthwestHouse3F_BagIsFull
+    SetFlag FLAG_RECEIVED_OREBURGH_CITY_NORTHWEST_HOUSE_3F_HARD_STONE
+    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
 
-_0054:
+OreburghCityNorthwestHouse3F_ThatItemIntensifiesThePowerOfRockTypeMoves:
     BufferItemName 0, ITEM_HARD_STONE
-    Message 1
-    WaitABXPadPress
+    Message OreburghCityNorthwestHouse3F_Text_ThatItemIntensifiesThePowerOfRockTypeMoves
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
-_0064:
-    MessageBagIsFull
+OreburghCityNorthwestHouse3F_BagIsFull:
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
 
-_006E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    WaitFanfare SEQ_SE_CONFIRM
-    PlayCry SPECIES_PSYDUCK
-    Message 2
-    WaitCry
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+OreburghCityNorthwestHouse3F_Psyduck:
+    PokemonCryAndMessage SPECIES_PSYDUCK, OreburghCityNorthwestHouse3F_Text_PsyduckDuuuck
     End
 
     .balign 4, 0

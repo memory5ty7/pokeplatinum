@@ -31,13 +31,13 @@ _006F:
     End
 
 _0079:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     CheckItem ITEM_SECRETPOTION, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _00A1
     Message 0
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
@@ -115,7 +115,7 @@ _01C6:
 _01E9:
     SetVar VAR_0x8004, ITEM_OLD_CHARM
     SetVar VAR_0x8005, 1
-    GiveItemQuantity
+    Common_GiveItemQuantity
     Message 4
     CloseMessage
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
@@ -219,17 +219,11 @@ Route210South_UnusedMovement2:
     EndMovement
 
 _030C:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _031F:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x00C7, _0364
@@ -237,19 +231,19 @@ _031F:
     SetVar VAR_0x8004, ITEM_TM51
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, _036F
-    GiveItemQuantity
+    Common_GiveItemQuantity
     SetFlag FLAG_UNK_0x00C7
     GoTo _0364
 
 _0364:
     Message 8
-    WaitABXPadPress
+    WaitButton
     CloseMessage
     ReleaseAll
     End
 
 _036F:
-    MessageBagIsFull
+    Common_MessageBagIsFull
     CloseMessage
     ReleaseAll
     End
@@ -263,13 +257,7 @@ _0390:
     End
 
 _03A7:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
     .balign 4, 0

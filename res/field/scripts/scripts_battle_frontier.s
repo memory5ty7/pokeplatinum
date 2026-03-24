@@ -43,7 +43,7 @@
     ScriptEntryEnd
 
 _009A:
-    SetFlag FLAG_UNK_0x02CB
+    SetFlag FLAG_HIDE_BATTLE_HALL_MAJOR_NPC
     CheckTVInterviewEligible TV_PROGRAM_SEGMENT_BATTLE_FRONTIER_FRONTLINE_NEWS_MULTI, VAR_MAP_LOCAL_0
     GoToIfEq VAR_MAP_LOCAL_0, 0, _00D5
     ScrCmd_329 VAR_MAP_LOCAL_1, VAR_MAP_LOCAL_2, VAR_MAP_LOCAL_3, VAR_MAP_LOCAL_4
@@ -58,217 +58,91 @@ _00D5:
     End
 
 _00DB:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 0
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 0
     End
 
 _00EE:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 1
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 1
     End
 
 _0101:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 2
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 2
     End
 
 _0114:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 3
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 3
     End
 
 _0127:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 4
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 4
     End
 
 _013A:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 5
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 5
     End
 
 _014D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 6
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 6
     End
 
 _0160:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 7
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 7
     End
 
 _0173:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 8
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 8
     End
 
 _0186:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 9
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 9
     End
 
 _0199:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 10
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 10
     End
 
 _01AC:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 11
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 11
     End
 
 _01BF:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 12
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 12
     End
 
 _01D2:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 13
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 13
     End
 
 _01E5:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 14
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 14
     End
 
 _01F8:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 15
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 15
     End
 
 _020B:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 16
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 16
     End
 
 _021E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 17
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 17
     End
 
 _0231:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 18
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 18
     End
 
 _0244:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 19
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 19
     End
 
 _0257:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    Message 20
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    NPCMessage 20
     End
 
 _026A:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 21
@@ -278,7 +152,7 @@ _026A:
     End
 
 _027E:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     FadeScreenOut
@@ -291,7 +165,7 @@ _027E:
     End
 
 _02A6:
-    PlayFanfare SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
     Message 23
@@ -321,37 +195,22 @@ _0316:
     End
 
 _032D:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 29
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 29
     End
 
 _033E:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 30
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 30
     End
 
 _034F:
-    PlayFanfare SEQ_SE_CONFIRM
-    LockAll
-    Message 31
-    WaitABXPadPress
-    CloseMessage
-    ReleaseAll
+    EventMessage 31
     End
 
 _0360:
     LockAll
     ApplyMovement LOCALID_PLAYER, _0398
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_BATTLE_HALL, 0, 25, 9, 2
@@ -368,7 +227,7 @@ _03A0:
     LockAll
     ApplyMovement LOCALID_PLAYER, _03D8
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_BATTLE_CASTLE, 0, 21, 9, 2
@@ -385,7 +244,7 @@ _03E0:
     LockAll
     ApplyMovement LOCALID_PLAYER, _0418
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_BATTLE_ARCADE, 0, 1, 6, 3
@@ -402,7 +261,7 @@ _0420:
     LockAll
     ApplyMovement LOCALID_PLAYER, _0458
     WaitMovement
-    PlayFanfare SEQ_SE_DP_KAIDAN2
+    PlaySE SEQ_SE_DP_KAIDAN2
     FadeScreenOut
     WaitFadeScreen
     Warp MAP_HEADER_BATTLE_FACTORY, 0, 1, 7, 3
