@@ -23,7 +23,7 @@
                 "MOVE_ROCK_SLIDE",
                 "MOVE_THUNDER_FANG"
             ],
-            "ability": "ABILITY_LEVITATE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_THUNDER_WAVE",
                 "MOVE_METAL_SOUND"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_COUNTER",
                 "MOVE_TAUNT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
                 {
@@ -65,7 +65,7 @@
                 "MOVE_DOUBLE_EDGE",
                 "MOVE_PROTECT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         }
     ],

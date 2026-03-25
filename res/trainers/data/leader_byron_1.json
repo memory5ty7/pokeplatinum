@@ -23,7 +23,7 @@
                 "MOVE_SAFEGUARD",
                 "MOVE_FAINT_ATTACK"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_LEVITATE",
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_PROTECT",
                 "MOVE_TAUNT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_HEADBUTT",
                 "MOVE_ROAR"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         }
     ],

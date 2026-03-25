@@ -23,7 +23,7 @@
                 "MOVE_HYPNOSIS",
                 "MOVE_ANCIENT_POWER"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_LEVITATE",
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_TAKE_DOWN",
                 "MOVE_PROTECT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_BREAKING_SWIPE",
                 "MOVE_THUNDER_FANG"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -65,7 +65,7 @@
                 "MOVE_PROTECT",
                 "MOVE_TAUNT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         }
     ],

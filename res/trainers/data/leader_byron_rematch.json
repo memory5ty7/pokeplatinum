@@ -23,7 +23,7 @@
                 "MOVE_STEALTH_ROCK",
                 "MOVE_SANDSTORM"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_LEVITATE",
             "ball_seal": 0
         },
         {
@@ -37,7 +37,7 @@
                 "MOVE_DRILL_RUN",
                 "MOVE_PROTECT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -51,7 +51,7 @@
                 "MOVE_BREAKING_SWIPE",
                 "MOVE_AQUA_TAIL"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -65,7 +65,7 @@
                 "MOVE_FLASH_CANNON",
                 "MOVE_TRI_ATTACK"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
@@ -79,7 +79,7 @@
                 "MOVE_IRON_DEFENSE",
                 "MOVE_TOXIC"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
                 {
@@ -93,7 +93,7 @@
                 "MOVE_REST",
                 "MOVE_SLEEP_TALK"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         }
     ],
