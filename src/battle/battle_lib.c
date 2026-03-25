@@ -14,6 +14,7 @@
 #include "generated/abilities.h"
 #include "generated/game_records.h"
 #include "generated/genders.h"
+#include "generated/sdat.h"
 
 #include "struct_decls/battle_system.h"
 #include "struct_defs/battler_data.h"
@@ -38,6 +39,7 @@
 #include "pokedex_data_index.h"
 #include "pokedex_heightweight.h"
 #include "pokemon.h"
+#include "sound_playback.h"
 #include "string_gf.h"
 #include "trainer_data.h"
 #include "trainer_info.h"
@@ -1928,6 +1930,7 @@ BOOL BattleSystem_CheckTrainerMessage(BattleSystem *battleSys, BattleContext *ba
                 if (alive == 1 && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER, HEAP_ID_BATTLE)) {
                     battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_FLAG;
                     battleCtx->msgTemp = TRMSG_LAST_BATTLER;
+                    Sound_PlayBGM(SEQ_BA_LASTMON);
                     return TRUE;
                 }
             }
