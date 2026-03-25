@@ -16,7 +16,7 @@
                 "MOVE_TACKLE",
                 "MOVE_DEFENSE_CURL"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

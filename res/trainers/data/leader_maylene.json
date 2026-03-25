@@ -20,7 +20,7 @@
                 "MOVE_ROCK_TOMB",
                 "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
@@ -34,7 +34,7 @@
                 "MOVE_STRENGTH",
                 "MOVE_FOCUS_ENERGY"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
@@ -49,7 +49,7 @@
                 "MOVE_DETECT",
                 "MOVE_FORESIGHT"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

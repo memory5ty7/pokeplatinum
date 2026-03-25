@@ -18,7 +18,7 @@
                 "MOVE_WATER_GUN",
                 "MOVE_SCRATCH"
             ],
-            "iv_scale": 20,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

@@ -20,7 +20,7 @@
                 "MOVE_FURY_ATTACK",
                 "MOVE_GROWL"
             ],
-            "iv_scale": 0,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

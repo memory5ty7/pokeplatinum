@@ -13,73 +13,87 @@
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_BRONZONG",
+            "form": 0,
+            "level": 63,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_GYRO_BALL",
+                "MOVE_EXTRASENSORY",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_SANDSTORM"
+            ],
+            "ability": "ABILITY_NONE",
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_SKARMORY",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_NIGHT_SLASH",
-                "MOVE_DRILL_PECK",
-                "MOVE_ROCK_TOMB",
-                "MOVE_STEALTH_ROCK"
+                "MOVE_BRAVE_BIRD",
+                "MOVE_ROOST",
+                "MOVE_DRILL_RUN",
+                "MOVE_PROTECT"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_STEELIX",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_IRON_BALL",
             "moves": [
                 "MOVE_GYRO_BALL",
-                "MOVE_ICE_FANG",
-                "MOVE_DRAGON_BREATH",
-                "MOVE_SANDSTORM"
+                "MOVE_EARTHQUAKE",
+                "MOVE_BREAKING_SWIPE",
+                "MOVE_AQUA_TAIL"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGNEMITE",
+            "species": "SPECIES_MAGNEZONE",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_MAGNET",
             "moves": [
+                "MOVE_ZAP_CANNON",
+                "MOVE_LOCK_ON",
                 "MOVE_FLASH_CANNON",
-                "MOVE_THUNDERBOLT",
-                "MOVE_SUPERSONIC",
-                "MOVE_THUNDER_WAVE"
+                "MOVE_TRI_ATTACK"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHIELDON",
+            "species": "SPECIES_BASTIODON",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_CUSTAP_BERRY",
             "moves": [
-                "MOVE_METAL_BURST",
-                "MOVE_ANCIENT_POWER",
+                "MOVE_BODY_PRESS",
+                "MOVE_GYRO_BALL",
                 "MOVE_IRON_DEFENSE",
-                "MOVE_REST"
+                "MOVE_TOXIC"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
-        {
-            "species": "SPECIES_ARON",
+                {
+            "species": "SPECIES_AGGRON",
             "form": 0,
             "level": 65,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_AGGRONITE",
             "moves": [
-                "MOVE_METAL_BURST",
-                "MOVE_STONE_EDGE",
-                "MOVE_EARTHQUAKE",
-                "MOVE_AVALANCHE"
+                "MOVE_HEAVY_SLAM",
+                "MOVE_CURSE",
+                "MOVE_REST",
+                "MOVE_SLEEP_TALK"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],
@@ -96,6 +110,13 @@
             "en_US": [
                 "Hmm!\n",
                 "My sturdy Pokémon--defeated!\n"
+            ]
+        },
+        {
+            "type": "TRMSG_MEGA",
+            "en_US": [
+                "Fell the wrath of\n",
+                "my Mega Pokémon!\n"
             ]
         }
     ]

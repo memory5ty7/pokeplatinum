@@ -23,7 +23,7 @@
                 "MOVE_SHADOW_SNEAK",
                 "MOVE_FUTURE_SIGHT"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
@@ -38,7 +38,7 @@
                 "MOVE_SPITE",
                 "MOVE_LICK"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         },
         {
@@ -52,7 +52,7 @@
                 "MOVE_MINIMIZE",
                 "MOVE_CONSTRICT"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

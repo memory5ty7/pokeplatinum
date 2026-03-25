@@ -37,6 +37,7 @@
 #define POKEPLATINUM_GENERATED_ENUM
 
 #include "constants/battle.h"
+#include "generated/abilities.h"
 #include "generated/items.h"
 #include "generated/moves.h"
 #include "generated/species.h"
@@ -192,7 +193,7 @@ static void ParseAndPackParty(const rapidjson::Document &doc, TrainerDataType mo
     std::memset(partyBuf, 0, bufSize);
     for (const auto &member : doc["party"].GetArray()) {
         TrainerMonBase base = {};
-        base.ivScale = member["iv_scale"].GetUint();
+        base.ivScale = LookupConst(member["ability"].GetString(), Ability);
         base.level = member["level"].GetUint();
         base.species = LookupConst(member["species"].GetString(), Species);
         base.species |= (member["form"].GetUint() << TRAINER_MON_FORM_SHIFT);

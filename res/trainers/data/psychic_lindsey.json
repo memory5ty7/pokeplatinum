@@ -16,7 +16,7 @@
             "moves": [
                 "MOVE_HIDDEN_POWER"
             ],
-            "iv_scale": 20,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],

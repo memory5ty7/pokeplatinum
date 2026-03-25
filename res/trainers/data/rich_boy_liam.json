@@ -15,7 +15,7 @@
             "level": 35,
             "item": "ITEM_RARE_CANDY",
             "moves": null,
-            "iv_scale": 250,
+            "ability": "ABILITY_NONE",
             "ball_seal": 26
         }
     ],

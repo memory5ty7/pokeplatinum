@@ -15,7 +15,7 @@
             "moves": [
                 "MOVE_TACKLE"
             ],
-            "iv_scale": 0,
+            "ability": "ABILITY_NONE",
             "ball_seal": 0
         }
     ],
