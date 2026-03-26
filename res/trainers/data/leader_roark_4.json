@@ -13,41 +13,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_PROBOPASS",
             "form": 0,
-            "level": 12,
-            "item": null,
+            "level": 34,
+            "item": "ITEM_NONE",
             "moves": [
+                "MOVE_ROCK_SLIDE",
                 "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW"
+                "MOVE_THUNDER_WAVE",
+                "MOVE_EARTH_POWER"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_GRAVELER",
             "form": 0,
-            "level": 12,
-            "item": null,
+            "level": 33,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW",
-                "MOVE_SCREECH"
+                "MOVE_ROCK_BLAST",
+                "MOVE_HIGH_HORSEPOWER",
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_FIRE_PUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_STURDY",
             "ball_seal": 0
         },
-        {
-            "species": "SPECIES_CRANIDOS",
+                {
+            "species": "SPECIES_PUPITAR",
             "form": 0,
-            "level": 14,
-            "item": null,
+            "level": 34,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_HEADBUTT",
+                "MOVE_ROCK_BLAST",
+                "MOVE_SCORCHING_SANDS",
                 "MOVE_PURSUIT",
-                "MOVE_LEER"
+                "MOVE_CRUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_SHED_SKIN",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RAMPARDOS",
+            "form": 0,
+            "level": 37,
+            "item": "ITEM_MUSCLE_BAND",
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BREAKING_SWIPE",
+                "MOVE_TAKE_DOWN"
+            ],
+            "ability": "ABILITY_MOLD_BREAKER",
             "ball_seal": 0
         }
     ],
