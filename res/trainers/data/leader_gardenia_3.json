@@ -13,45 +13,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_GROTLE",
             "form": 0,
-            "level": 20,
+            "level": 30,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_RAZOR_LEAF",
-                "MOVE_SUNNY_DAY",
-                "MOVE_REFLECT"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_CHERUBI",
-            "form": 0,
-            "level": 20,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_GRASS_KNOT",
+                "MOVE_BULLET_SEED",
                 "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SAFEGUARD"
+                "MOVE_PROTECT",
+                "MOVE_SUNNY_DAY"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_OVERGROW",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_TANGELA",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 29,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_GIGA_DRAIN",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_KNOCK_OFF",
+                "MOVE_GRASS_KNOT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_CHLOROPHYLL",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CHERRIM",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ENERGY_BALL",
+                "MOVE_GRASS_WHISTLE",
+                "MOVE_GROWTH",
+                "MOVE_MORNING_SUN"
+            ],
+            "ability": "ABILITY_FLOWER_GIFT",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ROSERADE",
+            "form": 0,
+            "level": 32,
+            "item": "ITEM_BLACK_SLUDGE",
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_GROWTH",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_VENOSHOCK"
+            ],
+            "ability": "ABILITY_NATURAL_CURE",
             "ball_seal": 0
         }
     ],

@@ -23,7 +23,7 @@
                 "MOVE_WITHDRAW",
                 "MOVE_TACKLE"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_OVERGROW",
             "ball_seal": 0
         },
         {
@@ -32,26 +32,26 @@
             "level": 16,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
+                "MOVE_BULLET_SEED",
+                "MOVE_GRASS_WHISTLE",
                 "MOVE_GROWTH",
-                "MOVE_SUNNY_DAY",
-                "MOVE_LEECH_SEED"
+                "MOVE_TACKLE"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_CHLOROPHYLL",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_ROSELIA",
             "form": 0,
             "level": 18,
-            "item": "ITEM_BIG_ROOT",
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_MEGA_DRAIN",
+                "MOVE_GIGA_DRAIN",
                 "MOVE_STUN_SPORE",
                 "MOVE_GROWTH",
-                "MOVE_LEECH_SEED"
+                "MOVE_WORRY_SEED"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_NATURAL_CURE",
             "ball_seal": 0
         }
     ],

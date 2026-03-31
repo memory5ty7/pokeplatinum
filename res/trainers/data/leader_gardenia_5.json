@@ -13,45 +13,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_TORTERRA",
             "form": 0,
-            "level": 20,
+            "level": 38,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_RAZOR_LEAF",
-                "MOVE_SUNNY_DAY",
-                "MOVE_REFLECT"
+                "MOVE_BULLET_SEED",
+                "MOVE_EARTHQUAKE",
+                "MOVE_CRUNCH",
+                "MOVE_SUNNY_DAY"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_OVERGROW",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_CHERRIM",
             "form": 0,
-            "level": 20,
+            "level": 37,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SAFEGUARD"
+                "MOVE_ENERGY_BALL",
+                "MOVE_GRASS_WHISTLE",
+                "MOVE_GROWTH",
+                "MOVE_MORNING_SUN"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_FLOWER_GIFT",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_ROSERADE",
             "form": 0,
-            "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "level": 41,
+            "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_ENERGY_BALL",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_SYNTHESIS"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_NATURAL_CURE",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_VICTREEBEL",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_VICTREEBELITE",
+            "moves": [
+                "MOVE_LEAF_BLADE",
+                "MOVE_POISON_JAB",
+                "MOVE_CLEAR_SMOG",
+                "MOVE_SLAM"
+            ],
+            "ability": "ABILITY_CHLOROPHYLL",
             "ball_seal": 0
         }
     ],
@@ -72,6 +86,13 @@
             "en_US": [
                 "Amazing!\n",
                 "You’re very good, aren’t you?\n"
+            ]
+        },
+        {
+            "type": "TRMSG_MEGA",
+            "en_US": [
+                "You’re good! But I still\n",
+                "have a trick up my sleeve!\n"
             ]
         }
     ]
