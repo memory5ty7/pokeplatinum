@@ -18,27 +18,12 @@
             "level": 15,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WILL_O_WISP",
-                "MOVE_PURSUIT",
-                "MOVE_SHADOW_SNEAK",
-                "MOVE_FUTURE_SIGHT"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_HAUNTER",
-            "form": 0,
-            "level": 24,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_SHADOW_CLAW",
-                "MOVE_SUCKER_PUNCH",
+                "MOVE_NIGHT_SHADE",
                 "MOVE_HYPNOSIS",
-                "MOVE_SPITE",
-                "MOVE_LICK"
+                "MOVE_CONFUSE_RAY",
+                "MOVE_POISON_GAS"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_LEVITATE",
             "ball_seal": 0
         },
         {
@@ -47,12 +32,26 @@
             "level": 15,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GUST",
-                "MOVE_ASTONISH",
-                "MOVE_MINIMIZE",
-                "MOVE_CONSTRICT"
+                "MOVE_AIR_CUTTER",
+                "MOVE_HYPNOSIS",
+                "MOVE_CONSTRICT",
+                "MOVE_HAZE"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_UNBURDEN",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MISDREAVUS",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_PSYBEAM",
+                "MOVE_NIGHT_SHADE",
+                "MOVE_MEAN_LOOK"
+            ],
+            "ability": "ABILITY_LEVITATE",
             "ball_seal": 0
         }
     ],
