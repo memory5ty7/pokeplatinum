@@ -173,19 +173,33 @@ void RevertMegaEvolution(Pokemon *mon)
 void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int battler, int form)
 {
     Desmume_Log("Form Num : %d\n", form);
-    Pokemon *mon = Pokemon_New(HEAP_ID_BATTLE);
-
-    Pokemon_Copy(BattleSystem_GetPartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]), mon);
-    Pokemon *curMon = BattleSystem_GetPartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]);
+    Pokemon *mon;
+    mon = BattleSystem_GetPartyPokemon(battleSys, battler, battleCtx->selectedPartySlot[battler]);
 
     Pokemon_SetValue(mon, MON_DATA_FORM, &form);
     BattleMon_Set(battleCtx, battler, BATTLEMON_FORM_NUM, &form);
-    Pokemon_SetValue(curMon, MON_DATA_FORM, &form);
 
-    Pokemon_CalcLevelAndStats(mon);
-
+    Pokemon_CalcStats(mon);
     Pokemon_CalcAbility(mon);
-    u16 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+
+    u32 attack = Pokemon_GetValue(mon, MON_DATA_ATK, NULL);
+    u32 defense = Pokemon_GetValue(mon, MON_DATA_DEF, NULL);
+    u32 speed = Pokemon_GetValue(mon, MON_DATA_SPEED, NULL);
+    u32 spAttack = Pokemon_GetValue(mon, MON_DATA_SP_ATK, NULL);
+    u32 spDefense = Pokemon_GetValue(mon, MON_DATA_SP_DEF, NULL);
+    u32 type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
+    u32 type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
+    u32 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+
+    BattleMon_Set(battleCtx, battler, BATTLEMON_ATTACK, &attack);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_DEFENSE, &defense);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_SPEED, &speed);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_SP_ATTACK, &spAttack);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_SP_DEFENSE, &spDefense);
+
+    BattleMon_Set(battleCtx, battler, BATTLEMON_TYPE_1, &type1);
+    BattleMon_Set(battleCtx, battler, BATTLEMON_TYPE_2, &type2);
+
     BattleMon_Set(battleCtx, battler, BATTLEMON_ABILITY, &ability);
 
     u32 stats[6];
@@ -193,16 +207,15 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
 
     for (int i = 0; i < 5; i++)
     {
-        stats[i] = Pokemon_GetValue(mon, MON_DATA_ATK + i, NULL);
-        Desmume_Log("Old Stat : %d | New Stat : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_ATTACK + i, NULL), stats[i]);
-        Pokemon_SetValue(curMon, MON_DATA_ATK + i, &stats[i]);
+        Desmume_Log("New Stat : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_ATTACK + i, NULL));
     }
 
     for (int i = 0; i < 2; i++)
     {
-        types[i] = Pokemon_GetValue(mon, MON_DATA_TYPE_1 + i, NULL);
-        Pokemon_SetValue(curMon, MON_DATA_TYPE_1 + i, &types[i]);
+        Desmume_Log("New Type : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_TYPE_1 + i, NULL));
     }
+
+    Desmume_Log("New Ability : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_ABILITY, NULL));
 
     Heap_Free(mon);
 }
