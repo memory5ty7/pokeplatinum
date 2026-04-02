@@ -55,17 +55,17 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GENGAR",
+            "species": "SPECIES_BANETTE",
             "form": 0,
             "level": 41,
-            "item": "ITEM_GENGARITE",
+            "item": "ITEM_BANETTITE",
             "moves": [
-                "MOVE_HEX",
-                "MOVE_SLUDGE_BOMB",
-                "MOVE_HYPNOSIS",
-                "MOVE_SUCKER_PUNCH"
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_WILL_O_WISP",
+                "MOVE_SCREECH"
             ],
-            "ability": "ABILITY_LEVITATE",
+            "ability": "ABILITY_INSOMNIA",
             "ball_seal": 0
         }
     ],
