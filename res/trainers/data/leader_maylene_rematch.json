@@ -10,73 +10,87 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TYROGUE",
-            "form": 0,
-            "level": 62,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_TRIPLE_KICK",
-                "MOVE_AERIAL_ACE",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_FAKE_OUT"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_MEDICHAM",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_FIRE_PUNCH",
-                "MOVE_ICE_PUNCH",
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_HI_JUMP_KICK"
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_FAKE_OUT",
+                "MOVE_THUNDER_PUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_PURE_POWER",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHROOMISH",
+            "species": "SPECIES_HERACROSS",
+            "form": 0,
+            "level": 61,
+            "item": "ITEM_OCCA_BERRY",
+            "moves": [
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_MEGAHORN",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "ability": "ABILITY_GUTS",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HITMONTOP",
+            "form": 0,
+            "level": 61,
+            "item": "ITEM_PAYAPA_BERRY",
+            "moves": [
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_FAKE_OUT",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_PAYBACK"
+            ],
+            "ability": "ABILITY_INTIMIDATE",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRELOOM",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_TOXIC_ORB",
             "moves": [
-                "MOVE_STONE_EDGE",
+                "MOVE_BULLET_SEED",
                 "MOVE_SPORE",
-                "MOVE_MACH_PUNCH",
-                "MOVE_SEED_BOMB"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOP",
-            "form": 0,
-            "level": 64,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_CROSS_CHOP",
-                "MOVE_ROCK_CLIMB",
-                "MOVE_EARTHQUAKE",
+                "MOVE_SUBSTITUTE",
                 "MOVE_STONE_EDGE"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_POISON_HEAL",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RIOLU",
+            "species": "SPECIES_MACHAMP",
             "form": 0,
-            "level": 66,
-            "item": "ITEM_NONE",
+            "level": 63,
+            "item": "ITEM_LUM_BERRY",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_CLOSE_COMBAT",
-                "MOVE_EXTREME_SPEED",
-                "MOVE_BONE_RUSH"
+                "MOVE_CROSS_CHOP",
+                "MOVE_STONE_EDGE",
+                "MOVE_EARTHQUAKE",
+                "MOVE_PAYBACK"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_NO_GUARD",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUCARIO",
+            "form": 0,
+            "level": 65,
+            "item": "ITEM_LUCARIONITE",
+            "moves": [
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_IRON_HEAD",
+                "MOVE_CRUNCH",
+                "MOVE_EXTREME_SPEED"
+            ],
+            "ability": "ABILITY_INNER_FOCUS",
             "ball_seal": 0
         }
     ],
@@ -93,6 +107,13 @@
             "en_US": [
                 "I’m forced to admit defeat again...\n",
                 "You are much too strong.\n"
+            ]
+        },
+        {
+            "type": "TRMSG_MEGA",
+            "en_US": [
+                "The bond between me and my Pokémon is\n",
+                "unbreakable! It’s time to Mega Evolve!\n"
             ]
         }
     ]

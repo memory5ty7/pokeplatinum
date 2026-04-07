@@ -10,45 +10,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MEDITITE",
+            "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 28,
+            "level": 37,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_CONFUSION",
-                "MOVE_ROCK_TOMB",
-                "MOVE_FAKE_OUT"
+                "MOVE_BRICK_BREAK",
+                "MOVE_POISON_JAB",
+                "MOVE_SCARY_FACE",
+                "MOVE_BULLET_PUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_NO_GUARD",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_HITMONTOP",
             "form": 0,
-            "level": 29,
+            "level": 38,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_ROCK_TOMB",
-                "MOVE_STRENGTH",
-                "MOVE_FOCUS_ENERGY"
+                "MOVE_BRICK_BREAK",
+                "MOVE_PURSUIT",
+                "MOVE_FAKE_OUT",
+                "MOVE_COUNTER"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_INTIMIDATE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RIOLU",
+            "species": "SPECIES_MEDICHAM",
             "form": 0,
-            "level": 32,
+            "level": 38,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_FORCE_PALM",
-                "MOVE_METAL_CLAW",
+                "MOVE_PSYCHO_CUT",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "ability": "ABILITY_PURE_POWER",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUCARIO",
+            "form": 0,
+            "level": 41,
+            "item": "ITEM_LUCARIONITE",
+            "moves": [
+                "MOVE_AURA_SPHERE",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_CRUNCH",
                 "MOVE_BONE_RUSH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_INNER_FOCUS",
             "ball_seal": 0
         }
     ],
@@ -69,6 +83,13 @@
             "en_US": [
                 "I shall admit defeat...\n",
                 "You are much too strong.\n"
+            ]
+        },
+        {
+            "type": "TRMSG_MEGA",
+            "en_US": [
+                "The bond between me and my Pokémon is\n",
+                "unbreakable! It’s time to Mega Evolve!\n"
             ]
         }
     ]

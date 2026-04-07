@@ -12,43 +12,43 @@
         {
             "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 28,
+            "level": 29,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_CONFUSION",
-                "MOVE_ROCK_TOMB",
-                "MOVE_FAKE_OUT"
+                "MOVE_PSYBEAM",
+                "MOVE_FORCE_PALM",
+                "MOVE_FAKE_OUT",
+                "MOVE_THUNDER_PUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_PURE_POWER",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MACHOKE",
             "form": 0,
             "level": 29,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_ROCK_TOMB",
-                "MOVE_STRENGTH",
-                "MOVE_FOCUS_ENERGY"
+                "MOVE_BRICK_BREAK",
+                "MOVE_MEGA_PUNCH",
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_BULLET_PUNCH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_NO_GUARD",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RIOLU",
+            "species": "SPECIES_LUCARIO",
             "form": 0,
             "level": 32,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_FORCE_PALM",
-                "MOVE_METAL_CLAW",
+                "MOVE_BRICK_BREAK",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_SWIFT",
                 "MOVE_BONE_RUSH"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_INNER_FOCUS",
             "ball_seal": 0
         }
     ],
