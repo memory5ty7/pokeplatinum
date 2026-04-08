@@ -67,3 +67,23 @@ u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID)
     GF_ASSERT(varID - VARS_START < NUM_VARS);
     return &varsFlags->vars[varID - VARS_START];
 }
+
+void SetScriptVar(u16 varID, u16 value)
+{
+    VarsFlags *varsFlags = SaveData_GetVarsFlags(SaveData_Ptr());
+    u16 *varAddr = VarsFlags_GetVarAddress(varsFlags, varID);
+    if (varAddr) {
+        *varAddr = value;
+    }
+}
+
+u16 GetScriptVar(u16 varID)
+{
+    VarsFlags *varsFlags = SaveData_GetVarsFlags(SaveData_Ptr());
+    u16 *varAddr = VarsFlags_GetVarAddress(varsFlags, varID);
+    if (varAddr) {
+        return *varAddr;
+    }
+
+    return 0;
+}

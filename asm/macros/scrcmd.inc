@@ -4987,6 +4987,10 @@
     .byte \floor
     .endm
 
+    .macro ChangeBattleBackground battleBackground
+    .short SCRCMD_CHANGEBATTLEBACKGROUND
+    .byte \battleBackground
+    .endm
 
 
     .macro GoToIfLt varID, valueOrVarID, offset

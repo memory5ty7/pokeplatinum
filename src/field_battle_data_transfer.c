@@ -497,6 +497,12 @@ static void SetBackgroundAndTerrain(FieldBattleDTO *dto, const FieldSystem *fiel
 {
     PlayerData *player = FieldOverworldState_GetPlayerData(SaveData_GetFieldOverworldState(fieldSystem->saveData));
     dto->background = MapHeader_GetBattleBG(fieldSystem->location->mapId);
+
+    if (GetScriptVar(VAR_BATTLE_BACKGROUND) != 0) {
+        dto->background = GetScriptVar(VAR_BATTLE_BACKGROUND);
+        SetScriptVar(VAR_BATTLE_BACKGROUND, 0);
+    }
+
     if (player->form == PLAYER_AVATAR_SURFING) {
         dto->background = BACKGROUND_WATER;
     }
