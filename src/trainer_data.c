@@ -412,6 +412,60 @@ static void AdjustPartyLevels(Party *party, u8 playerMinLevel, u8 playerMaxLevel
     }
 };
 
+static const u16 trainerClassBalls[] = {
+    [TRAINER_CLASS_BREEDER_MALE]           = ITEM_REPEAT_BALL,
+    [TRAINER_CLASS_BREEDER_FEMALE]           = ITEM_REPEAT_BALL,
+    [TRAINER_CLASS_TUBER_MALE]           = ITEM_DIVE_BALL,
+    [TRAINER_CLASS_TUBER_FEMALE]           = ITEM_DIVE_BALL,
+    [TRAINER_CLASS_ACE_TRAINER_MALE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_ACE_TRAINER_FEMALE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_ACE_TRAINER_SNOW_MALE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_ACE_TRAINER_SNOW_FEMALE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_RUIN_MANIAC]           = ITEM_DUSK_BALL,
+    [TRAINER_CLASS_RICH_BOY]           = ITEM_LUXURY_BALL,
+    [TRAINER_CLASS_LADY]           = ITEM_LUXURY_BALL,
+    [TRAINER_CLASS_GENTLEMAN]           = ITEM_LUXURY_BALL,
+    [TRAINER_CLASS_SOCIALITE]           = ITEM_LUXURY_BALL,
+    [TRAINER_CLASS_BUG_CATCHER]           = ITEM_NEST_BALL,
+    [TRAINER_CLASS_SAILOR]           = ITEM_DIVE_BALL,
+    [TRAINER_CLASS_BLACK_BELT]           = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_BATTLE_GIRL]           = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_HIKER]           = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_PSYCHIC_MALE]           = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_PSYCHIC_FEMALE]           = ITEM_GREAT_BALL,
+
+    [TRAINER_CLASS_LEADER_ROARK]           = ITEM_DUSK_BALL,
+    [TRAINER_CLASS_LEADER_GARDENIA]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_LEADER_FANTINA]           = ITEM_LUXURY_BALL,
+    [TRAINER_CLASS_LEADER_MAYLENE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_LEADER_WAKE]           = ITEM_NET_BALL,
+    [TRAINER_CLASS_LEADER_BYRON]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_LEADER_CANDICE]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_LEADER_VOLKNER]           = ITEM_QUICK_BALL,
+
+    [TRAINER_CLASS_ELITE_FOUR_AARON]           = ITEM_NET_BALL,
+    [TRAINER_CLASS_ELITE_FOUR_BERTHA]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_ELITE_FOUR_FLINT]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_ELITE_FOUR_LUCIAN]           = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_CHAMPION_CYNTHIA]           = ITEM_LUXURY_BALL
+};
+
+static void AdjustPartyPokeballs(Party *party, u16 trainerClass)
+{
+    u16 pokeBall = trainerClassBalls[trainerClass];
+
+    if (pokeBall == ITEM_NONE)
+    {
+        return;
+    }
+
+    for (int i = 0; i < Party_GetCurrentCount(party); i++)
+    {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+        Pokemon_SetValue(mon, MON_DATA_POKEBALL, &pokeBall);
+    }
+};
+
 
 /**
  * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
@@ -604,6 +658,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     //{
         AdjustPartySpecies(dto->parties[battler]);
     //}
+
+    AdjustPartyPokeballs(dto->parties[battler], trainerClass);
 
     Heap_Free(buf);
     Heap_Free(mon);
