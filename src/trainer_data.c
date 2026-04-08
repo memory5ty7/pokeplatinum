@@ -3,6 +3,7 @@
 #include "constants/battle.h"
 #include "constants/pokemon.h"
 #include "generated/trainer_message_types.h"
+#include "generated/trainers.h"
 
 #include "struct_defs/trainer.h"
 
@@ -447,7 +448,7 @@ static const u16 trainerClassBalls[] = {
     [TRAINER_CLASS_ELITE_FOUR_BERTHA]           = ITEM_ULTRA_BALL,
     [TRAINER_CLASS_ELITE_FOUR_FLINT]           = ITEM_ULTRA_BALL,
     [TRAINER_CLASS_ELITE_FOUR_LUCIAN]           = ITEM_ULTRA_BALL,
-    [TRAINER_CLASS_CHAMPION_CYNTHIA]           = ITEM_LUXURY_BALL
+    [TRAINER_CLASS_CHAMPION_CYNTHIA]           = ITEM_LUXURY_BALL,
 
     [TRAINER_CLASS_COMMANDER_SATURN] = ITEM_GREAT_BALL,
     [TRAINER_CLASS_COMMANDER_JUPITER] = ITEM_GREAT_BALL,
@@ -664,10 +665,10 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         isSpecialClass
     );
 
-    //(!isSpecialClass)
-    //{
+    if (!isSpecialClass)
+    {
         AdjustPartySpecies(dto->parties[battler]);
-    //}
+    }
 
     AdjustPartyPokeballs(dto->parties[battler], trainerClass, dto->trainerIDs[battler]);
 
