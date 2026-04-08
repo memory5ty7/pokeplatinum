@@ -13,47 +13,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WOOPER",
+            "species": "SPECIES_BUIZEL",
             "form": 0,
             "level": 18,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_WATERFALL",
-                "MOVE_BRINE",
-                "MOVE_BITE",
-                "MOVE_TWISTER"
+                "MOVE_RAZOR_SHELL",
+                "MOVE_SWIFT",
+                "MOVE_PURSUIT",
+                "MOVE_QUICK_ATTACK"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_SWIFT_SWIM",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_QUAGSIRE",
             "form": 0,
-            "level": 34,
+            "level": 20,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_MUD_SHOT",
-                "MOVE_ROCK_TOMB",
                 "MOVE_WATER_PULSE",
-                "MOVE_SLAM",
-                "MOVE_MUD_SHOT",
-                "MOVE_TAIL_WHIP"
+                "MOVE_BULLDOZE",
+                "MOVE_YAWN",
+                "MOVE_SLAM"
             ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_BUIZEL",
-            "form": 0,
-            "level": 18,
-            "item": "ITEM_DAMP_ROCK",
-            "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_PURSUIT",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_RAIN_DANCE"
-            ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_WATER_ABSORB",
             "ball_seal": 0
         }
     ],
