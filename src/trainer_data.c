@@ -448,11 +448,21 @@ static const u16 trainerClassBalls[] = {
     [TRAINER_CLASS_ELITE_FOUR_FLINT]           = ITEM_ULTRA_BALL,
     [TRAINER_CLASS_ELITE_FOUR_LUCIAN]           = ITEM_ULTRA_BALL,
     [TRAINER_CLASS_CHAMPION_CYNTHIA]           = ITEM_LUXURY_BALL
+
+    [TRAINER_CLASS_COMMANDER_SATURN] = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_COMMANDER_JUPITER] = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_COMMANDER_MARS] = ITEM_GREAT_BALL,
+    [TRAINER_CLASS_GALACTIC_BOSS] = ITEM_ULTRA_BALL,
 };
 
-static void AdjustPartyPokeballs(Party *party, u16 trainerClass)
+static void AdjustPartyPokeballs(Party *party, u16 trainerClass, u16 trainerId)
 {
     u16 pokeBall = trainerClassBalls[trainerClass];
+
+    if (trainerId == TRAINER_GALACTIC_BOSS_CYRUS_SPEAR_PILLAR)
+    {
+        pokeBall = ITEM_MASTER_BALL;
+    }
 
     if (pokeBall == ITEM_NONE)
     {
@@ -659,7 +669,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         AdjustPartySpecies(dto->parties[battler]);
     //}
 
-    AdjustPartyPokeballs(dto->parties[battler], trainerClass);
+    AdjustPartyPokeballs(dto->parties[battler], trainerClass, dto->trainerIDs[battler]);
 
     Heap_Free(buf);
     Heap_Free(mon);
