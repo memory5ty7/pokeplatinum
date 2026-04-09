@@ -10,77 +10,91 @@
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
-    "double_battle": false,
+    "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_EEVEE",
+            "species": "SPECIES_RAICHU",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_LIFE_ORB",
             "moves": [
-                "MOVE_PIN_MISSILE",
-                "MOVE_CHARGE_BEAM",
-                "MOVE_DOUBLE_KICK",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_THUNDER",
+                "MOVE_FAKE_OUT",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_GRASS_KNOT"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_LIGHTNING_ROD",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_PELIPPER",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_DAMP_ROCK",
             "moves": [
-                "MOVE_CHARGE_BEAM",
-                "MOVE_BRICK_BREAK",
-                "MOVE_THUNDER_WAVE",
-                "MOVE_LIGHT_SCREEN"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SHINX",
-            "form": 0,
-            "level": 62,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_ICE_FANG",
-                "MOVE_THUNDER_FANG",
-                "MOVE_CRUNCH",
-                "MOVE_FIRE_FANG"
-            ],
-            "ability": "ABILITY_NONE",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_CHINCHOU",
-            "form": 0,
-            "level": 63,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_DISCHARGE",
-                "MOVE_SIGNAL_BEAM",
-                "MOVE_SURF",
+                "MOVE_HURRICANE",
+                "MOVE_SCALD",
+                "MOVE_TAILWIND",
                 "MOVE_ICE_BEAM"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_DRIZZLE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ELEKID",
+            "species": "SPECIES_ROTOM",
+            "form": 2,
+            "level": 63,
+            "item": "ITEM_RINDO_BERRY",
+            "moves": [
+                "MOVE_THUNDER",
+                "MOVE_HYDRO_PUMP",
+                "MOVE_WILL_O_WISP",
+                "MOVE_SHADOW_BALL"
+            ],
+            "ability": "ABILITY_LEVITATE",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_LUXRAY",
+            "form": 0,
+            "level": 63,
+            "item": "ITEM_SHUCA_BERRY",
+            "moves": [
+                "MOVE_SUPERCELL_SLAM",
+                "MOVE_ICE_FANG",
+                "MOVE_SUPERPOWER",
+                "MOVE_PSYCHIC_FANGS"
+            ],
+            "ability": "ABILITY_INTIMIDATE",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELECTIVIRE",
             "form": 0,
             "level": 65,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_SHELL_BELL",
             "moves": [
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_FIRE_PUNCH",
-                "MOVE_BRICK_BREAK",
-                "MOVE_GIGA_IMPACT"
+                "MOVE_SUPERCELL_SLAM",
+                "MOVE_CROSS_CHOP",
+                "MOVE_ICE_PUNCH",
+                "MOVE_FLAMETHROWER"
             ],
-            "ability": "ABILITY_NONE",
+            "ability": "ABILITY_MOTOR_DRIVE",
             "ball_seal": 14
+        },
+        {
+            "species": "SPECIES_MANECTRIC",
+            "form": 0,
+            "level": 65,
+            "item": "ITEM_MANECTITE",
+            "moves": [
+                "MOVE_THUNDER",
+                "MOVE_FLAMETHROWER",
+                "MOVE_SUBSTITUTE",
+                "MOVE_RAIN_DANCE"
+            ],
+            "ability": "ABILITY_LIGHTNING_ROD",
+            "ball_seal": 0
         }
     ],
     "messages": [
@@ -92,11 +106,18 @@
             ]
         },
         {
-            "type": "TRMSG_DEFEAT",
+            "type": "TRMSG_DOUBLE_BATTLE_DEFEAT_1",
             "en_US": [
                 "I even felt thrilled during our\n",
                 "match.\r",
                 "That was a very good battle.\n"
+            ]
+        },
+        {
+            "type": "TRMSG_MEGA",
+            "en_US": [
+                "I will not go down without using\n",
+                "my full strength! Mega Evolution!\n"
             ]
         }
     ]
