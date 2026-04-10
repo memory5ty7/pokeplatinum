@@ -131,7 +131,7 @@ static BOOL BattleControllerPlayer_ToggleSemiInvulnMons(BattleSystem *battleSys,
 static void BattleControllerPlayer_InitAI(BattleSystem *battleSys, BattleContext *battleCtx);
 static void BattleSystem_RecordCommand(BattleSystem *battleSys, BattleContext *battleCtx);
 
-static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 
 extern u32 gTrainerAITable[];
 
@@ -802,8 +802,8 @@ static void BattleControllerPlayer_CalcTurnOrder(BattleSystem *battleSys, Battle
 
 enum PreMoveActionState {
     PRE_MOVE_ACTION_START = 0,
-
-    PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS = PRE_MOVE_ACTION_START,
+    PRE_MOVE_ACTION_MEGA_EVOLUTION = PRE_MOVE_ACTION_START,
+    PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS,
     PRE_MOVE_ACTION_STATE_CHECK_RAGE_FLAG,
     PRE_MOVE_ACTION_STATE_SPEED_RNG,
 
@@ -818,6 +818,52 @@ static void BattleControllerPlayer_CheckPreMoveActions(BattleSystem *battleSys, 
 
     do {
         switch (battleCtx->turnStartCheckState) {
+        case PRE_MOVE_ACTION_MEGA_EVOLUTION:
+            while (battleCtx->turnStartCheckTemp < maxBattlers) {
+                Desmume_Log("%d\n", battler);
+                battler = battleCtx->battlerActionOrder[battleCtx->turnStartCheckTemp];
+
+                if (BattleMon_CanMegaEvolve(battleCtx, battler) == TRUE) {
+
+                    if (BattleSystem_CheckMegaMessage(battleSys, battleCtx)) {
+                        LOAD_SUBSEQ(subscript_trainer_message);
+                        battleCtx->commandNext = battleCtx->command;
+                        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                        return;
+                    }
+
+                    int formNum = GetMegaEvolutionData(battleCtx, battler);
+                    BattleFormChange(battleSys, battleCtx, battler, formNum);
+
+                    ATTACKING_MON.status &= ~VOLATILE_CONDITION_DESTINY_BOND;
+                    battleCtx->megaEvolutionUsed[battler] = TRUE;
+
+                    battleCtx->msgBattlerTemp = battler;
+                    battleCtx->msgItemTemp = battleCtx->battleMons[battler].heldItem;
+                    LOAD_SUBSEQ(subscript_mega_evolution);
+
+                    battleCtx->commandNext = battleCtx->command;
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+                    return;
+
+                }
+
+                int switchinSeq = BattleSystem_TriggerEffectOnSwitch(battleSys, battleCtx);
+                if (switchinSeq) {
+                    LOAD_SUBSEQ(switchinSeq);
+                    battleCtx->commandNext = battleCtx->command;
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                    return;
+                }
+
+                battleCtx->turnStartCheckTemp++;
+            }
+
+            battleCtx->turnStartCheckTemp = 0;
+            battleCtx->turnStartCheckState++;
+            break;
+
         case PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS:
             while (battleCtx->turnStartCheckTemp < maxBattlers) {
                 battler = battleCtx->battlerActionOrder[battleCtx->turnStartCheckTemp];
@@ -2412,36 +2458,6 @@ enum CheckStatusAction {
     CHECK_STATUS_DONE,
 };
 
-static BOOL BattleControllerPlayer_HandleMegaEvolution(BattleSystem *battleSys, BattleContext *battleCtx)
-{
-    if (BattleMon_CanMegaEvolve(battleCtx, battleCtx->attacker) == TRUE) {;
-
-        if (BattleSystem_CheckMegaMessage(battleSys, battleCtx)) {
-            LOAD_SUBSEQ(subscript_trainer_message);
-            battleCtx->commandNext = battleCtx->command;
-            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-
-            return TRUE;
-        }
-
-        int formNum = GetMegaEvolutionData(battleCtx, battleCtx->attacker);
-        BattleFormChange(battleSys, battleCtx, battleCtx->attacker, formNum);
-
-        ATTACKING_MON.status &= ~VOLATILE_CONDITION_DESTINY_BOND;
-        battleCtx->megaEvolutionUsed[battleCtx->attacker] = TRUE;
-
-        battleCtx->msgBattlerTemp = battleCtx->attacker;
-        LOAD_SUBSEQ(subscript_mega_evolution);
-
-        battleCtx->commandNext = battleCtx->command;
-        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
 
 /**
  * @brief Determine if status should disrupt the attacker's current turn.
@@ -3166,7 +3182,6 @@ enum BeforeMoveState {
     BEFORE_MOVE_START = 0,
 
     BEFORE_MOVE_STATE_QUICK_CLAW = BEFORE_MOVE_START,
-    BEFORE_MOVE_STATE_MEGA_EVOLUTION,
     BEFORE_MOVE_STATE_STATUS_DISRUPTION,
     BEFORE_MOVE_STATE_CHECK_OBEDIENCE,
     BEFORE_MOVE_STATE_DECREMENT_PP,
@@ -3184,12 +3199,6 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
         BattleControllerPlayer_LoadQuickClawCheck(battleSys, battleCtx);
         battleCtx->beforeMoveCheckState++;
         return;
-
-    case BEFORE_MOVE_STATE_MEGA_EVOLUTION:
-        if (BattleControllerPlayer_HandleMegaEvolution(battleSys, battleCtx) == TRUE) {
-            return;
-        }
-        battleCtx->beforeMoveCheckState++;
 
     case BEFORE_MOVE_STATE_STATUS_DISRUPTION:
         if ((battleCtx->multiHitCheckFlags & SYSCTL_SKIP_STATUS_CHECK) == FALSE

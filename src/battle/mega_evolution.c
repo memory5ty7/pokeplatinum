@@ -303,10 +303,6 @@ BOOL BattleSystem_CheckMegaMessage(BattleSystem *battleSys, BattleContext *battl
         return FALSE;
     }
 
-    if (battleType & BATTLE_TYPE_DOUBLES) {
-        return FALSE;
-    }
-
     int trID = Battler_GetTrainerID(battleSys, BATTLER_THEM);
 
     if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_MEGA_FLAG) == FALSE) {

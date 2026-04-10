@@ -1881,15 +1881,39 @@ BOOL BattleSystem_CheckTrainerMessage(BattleSystem *battleSys, BattleContext *ba
         return FALSE;
     }
 
-    if (battleType & BATTLE_TYPE_DOUBLES) {
-        return FALSE;
-    }
+    //if (battleType & BATTLE_TYPE_DOUBLES) {
+    //    return FALSE;
+    //}
 
     int trID = Battler_GetTrainerID(battleSys, BATTLER_THEM);
     int state = CHECK_TRMSG_START;
 
     do {
         switch (state) {
+        case CHECK_TRMSG_LAST_BATTLER:
+            if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_FLAG) == FALSE) {
+                Party *party = BattleSystem_GetParty(battleSys, BATTLER_THEM);
+                int alive = 0;
+
+                for (int i = 0; i < Party_GetCurrentCount(party); i++) {
+                    Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+
+                    if (Pokemon_GetValue(mon, MON_DATA_HP, NULL)) {
+                        alive++;
+                    }
+                }
+
+                if ((alive == 1 || (alive <= 2 && battleType & BATTLE_TYPE_DOUBLES)) && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER, HEAP_ID_BATTLE)) {
+                    battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_FLAG;
+                    battleCtx->msgTemp = TRMSG_LAST_BATTLER;
+                    Sound_PlayBGM(SEQ_BA_LASTMON);
+                    return TRUE;
+                }
+            }
+
+            state++;
+            break;
+            
         case CHECK_TRMSG_FIRST_DAMAGE:
             if (battleCtx->battleMons[BATTLER_THEM].timesDamaged == 1
                 && (battleCtx->battleStatusMask2 & SYSCTL_FIRST_DAMAGE_MSG_SHOWN) == FALSE
@@ -1909,30 +1933,6 @@ BOOL BattleSystem_CheckTrainerMessage(BattleSystem *battleSys, BattleContext *ba
                 battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG;
                 battleCtx->msgTemp = TRMSG_ACTIVE_BATTLER_HALF_HP;
                 return TRUE;
-            }
-
-            state++;
-            break;
-
-        case CHECK_TRMSG_LAST_BATTLER:
-            if ((battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags & TRMSG_LAST_BATTLER_FLAG) == FALSE) {
-                Party *party = BattleSystem_GetParty(battleSys, BATTLER_THEM);
-                int alive = 0;
-
-                for (int i = 0; i < Party_GetCurrentCount(party); i++) {
-                    Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
-
-                    if (Pokemon_GetValue(mon, MON_DATA_HP, NULL)) {
-                        alive++;
-                    }
-                }
-
-                if (alive == 1 && Trainer_HasMessageType(trID, TRMSG_LAST_BATTLER, HEAP_ID_BATTLE)) {
-                    battleCtx->battleMons[BATTLER_THEM].trainerMessageFlags |= TRMSG_LAST_BATTLER_FLAG;
-                    battleCtx->msgTemp = TRMSG_LAST_BATTLER;
-                    Sound_PlayBGM(SEQ_BA_LASTMON);
-                    return TRUE;
-                }
             }
 
             state++;
