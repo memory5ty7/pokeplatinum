@@ -59,6 +59,7 @@ HearthomeGym_FantinaMain:
     Message HearthomeGym_Text_FantinaIntro
     CloseMessage
     SetFlag FLAG_MAP_LOCAL
+    ChangeBattleBackground BACKGROUND_BATTLE_ARCADE
     StartTrainerBattle TRAINER_LEADER_FANTINA
     ClearFlag FLAG_MAP_LOCAL
     CheckWonBattle VAR_RESULT

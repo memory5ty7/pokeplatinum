@@ -20,6 +20,7 @@ CanalaveGym_Byron:
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, 35, 0, 0, 0
     Message CanalaveGym_Text_ByronIntro
     CloseMessage
+    ChangeBattleBackground BACKGROUND_BATTLE_TOWER
     StartTrainerBattle TRAINER_LEADER_BYRON
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, CanalaveGym_Lostbattle

@@ -29,6 +29,7 @@ SunyshoreGymRoom3_Volkner:
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, 156, 0, 0, 0
     Message SunyshoreGymRoom3_Text_VolknerIntro
     CloseMessage
+    ChangeBattleBackground BACKGROUND_BATTLE_TOWER
     StartTrainerBattle TRAINER_LEADER_VOLKNER
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, SunyshoreGymRoom3_LostBattle

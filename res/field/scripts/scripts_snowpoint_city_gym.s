@@ -1,5 +1,6 @@
 #include "macros/scrcmd.inc"
 #include "res/text/bank/snowpoint_city_gym.h"
+#include "generated/battle_backgrounds.h"
 
 
     ScriptEntry SnowpointGym_Init
@@ -24,6 +25,7 @@ SnowpointGym_Candice:
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, 167, 0, 0, 0
     Message SnowpointGym_Text_CandiceIntro
     CloseMessage
+    ChangeBattleBackground BACKGROUND_BATTLE_HALL
     StartTrainerBattle TRAINER_LEADER_CANDICE
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, SnowpointGym_LostBattle
