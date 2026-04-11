@@ -10,8 +10,8 @@
 #define MAX_LEARNSET_ENTRIES        20
 #define LEARNSET_NO_MOVE_TO_LEARN   0
 #define LEARNSET_MOVE_ALREADY_KNOWN 0xFFFE
-#define LEARNSET_ALL_SLOTS_FILLED   0xFFFF
-#define LEARNSET_SENTINEL_ENTRY     0xFFFF
+#define LEARNSET_ALL_SLOTS_FILLED   0xFFFFFFFF
+#define LEARNSET_SENTINEL_ENTRY     0xFFFFFFFF
 
 typedef struct SpeciesBaseStats {
     u8 hp;
@@ -64,8 +64,8 @@ typedef struct SpeciesEvolution {
 } SpeciesEvolution;
 
 typedef struct SpeciesLearnsetEntry {
-    u16 move : 9;
-    u16 level : 7;
+    u16 move : 16;
+    u16 level : 16;
 } SpeciesLearnsetEntry;
 
 // This struct is not explicitly used; it is provided to document and enforce the size of

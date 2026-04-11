@@ -693,10 +693,10 @@ s8 Pokemon_GetFlavorAffinityOf(u32 monPersonality, enum Flavor flavor);
  *
  * @param monSpecies
  * @param monForm
- * @param[out] monLevelUpMoveIDs Pointer to a u16 array for storing the level up moves
+ * @param[out] monLevelUpMoveIDs Pointer to a u32 array for storing the level up moves
  * @return int
  */
-int Pokemon_LoadLevelUpMoveIdsOf(int monSpecies, int monForm, u16 *monLevelUpMoveIDs);
+int Pokemon_LoadLevelUpMoveIdsOf(int monSpecies, int monForm, u32 *monLevelUpMoveIDs);
 
 void Pokemon_ApplyPokerus(Party *party);
 u8 Pokemon_HasPokerus(Party *party, u8 param1);
@@ -818,9 +818,9 @@ BOOL Pokemon_SetRotomForm(Pokemon *mon, int form, int moveSlot);
  *
  * @param monSpecies
  * @param monForm
- * @param[out] monLevelUpMoves Pointer to a u16 array to store the move table
+ * @param[out] monLevelUpMoves Pointer to a u32 array to store the move table
  */
-void Pokemon_LoadLevelUpMovesOf(int monSpecies, int monForm, u16 *monLevelUpMoves);
+void Pokemon_LoadLevelUpMovesOf(int monSpecies, int monForm, u32 *monLevelUpMoves);
 
 /**
  * @brief Play a Pokemon's cry, according to the given species and form number.

@@ -47,10 +47,10 @@ u16 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID)
         if (levelUpMoves[i] == LEVEL_UP_MOVESET_TERMINATOR) {
             reminderMoves[j] = LEVEL_UP_MOVESET_TERMINATOR;
             break;
-        } else if (GET_LEVEL(levelUpMoves[i]) > level) {
+        } else if (((levelUpMoves[i] & 0xffff0000) >> 16) > level) {
             continue;
         } else {
-            levelUpMoves[i] = GET_MOVE(levelUpMoves[i]);
+            levelUpMoves[i] &= 0xffff;
 
             for (h = 0; h < LEARNED_MOVES_MAX; h++) {
                 if (levelUpMoves[i] == currentMoves[h]) {
