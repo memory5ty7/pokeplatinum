@@ -11,7 +11,6 @@
 #include "generated/items.h"
 #include "generated/species.h"
 
-#include "struct_decls/struct_020308A0_decl.h"
 #include "struct_decls/struct_02061830_decl.h"
 #include "struct_decls/struct_02061AB4_decl.h"
 #include "struct_defs/wi_fi_history.h"
@@ -21,6 +20,7 @@
 #include "overlay005/ov5_021ECE40.h"
 
 #include "bag.h"
+#include "battle_hall_win_records.h"
 #include "berry_patch_graphics.h"
 #include "bg_window.h"
 #include "billboard.h"
@@ -53,7 +53,6 @@
 #include "sys_task_manager.h"
 #include "system_vars.h"
 #include "unk_0202C858.h"
-#include "unk_02030880.h"
 #include "unk_02038F8C.h"
 #include "unk_0205DFC4.h"
 #include "vars_flags.h"
@@ -111,7 +110,7 @@ static void BattleHallRecordSelector_InitListMenuTemplate(BattleHallRecordSelect
 static void UpdateItemColor(ListMenu *menu, u32 item, u8 yOffset);
 static void UpdateListPosition(ListMenu *listMenu, u32 item, u8 onInit);
 
-static void ov5_021F70CC(Pokemon *param0, int *param1, int *param2);
+static void CalcHiddenPowerTypeAndPower(Pokemon *mon, int *outPower, int *outType);
 
 // TODO Create zukan_data.naix and populate constants here
 static u16 sAlphabeticalSpeciesLists[] = {
@@ -129,7 +128,7 @@ static u16 sAlphabeticalSpeciesLists[] = {
 BOOL ScrCmd_ShowBattleHallRecordMonSelectionMenu(ScriptContext *ctx)
 {
     int resultCode;
-    BattleFrontierStage *frontierStage;
+    BattleHallWinRecords *records;
     u16 *speciesList;
     FieldSystem *fieldSystem = ctx->fieldSystem;
     StringTemplate **strTemplate = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
@@ -143,14 +142,14 @@ BOOL ScrCmd_ShowBattleHallRecordMonSelectionMenu(ScriptContext *ctx)
 
     MessageLoader *monMsgLoader = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_SPECIES_NAME, HEAP_ID_FIELD3);
     BattleHallRecordSelector *selector = BattleHallRecordSelecter_New(fieldSystem, 20, 1, 0, TRUE, FieldSystem_GetVarPointer(fieldSystem, resultVar), *strTemplate, FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_WINDOW), monMsgLoader, FieldSystem_GetVarPointer(fieldSystem, listPosVar), FieldSystem_GetVarPointer(fieldSystem, cursorPosVar));
-    frontierStage = sub_020308A0(fieldSystem->saveData, HEAP_ID_FIELD2, &resultCode);
+    records = BattleHallWinRecords_Get(fieldSystem->saveData, HEAP_ID_FIELD2, &resultCode);
 
     if (resultCode == LOAD_RESULT_OK) {
         int speciesListSize;
         speciesList = BattleHallRecordSelector_GetSpeciesList(HEAP_ID_FIELD3, sAlphabeticalSpeciesLists[letterGroup], &speciesListSize);
 
         for (int i = 0; i < speciesListSize; i++) {
-            u16 streak = sub_020308BC(fieldSystem->saveData, frontierStage, sub_0205E584(challengeType), speciesList[i]);
+            u16 streak = BattleHallWinRecords_GetRecordForSpecies(fieldSystem->saveData, records, BattleFrontierStats_GetHallRecordStreakIndex(challengeType), speciesList[i]);
 
             if (streak != 0) {
                 BattleHallRecordSelector_AddOption(selector, speciesList[i], 0xff, speciesList[i]);
@@ -160,8 +159,8 @@ BOOL ScrCmd_ShowBattleHallRecordMonSelectionMenu(ScriptContext *ctx)
         Heap_Free(speciesList);
     }
 
-    if (frontierStage != NULL) {
-        Heap_Free(frontierStage);
+    if (records != NULL) {
+        Heap_Free(records);
     }
 
     MessageLoader *menuMsgLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MENU_ENTRIES, HEAP_ID_FIELD3);
@@ -638,20 +637,18 @@ BOOL ScrCmd_SetRotomForm(ScriptContext *ctx)
     return FALSE;
 }
 
-BOOL ScrCmd_2FF(ScriptContext *param0)
+BOOL ScrCmd_CalcHiddenPowerType(ScriptContext *ctx)
 {
-    u16 v0;
-    int v1, v2;
-    Pokemon *v3;
-    FieldSystem *fieldSystem = param0->fieldSystem;
-    u16 v5 = ScriptContext_GetVar(param0);
-    u16 *v6 = ScriptContext_GetVarPointer(param0);
+    int power, type;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
-    v3 = Party_GetPokemonBySlotIndex(SaveData_GetParty(fieldSystem->saveData), v5);
-    v0 = Pokemon_GetValue(v3, MON_DATA_SPECIES, NULL);
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(fieldSystem->saveData), partySlot);
+    u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
 
-    if (Pokemon_GetValue(v3, MON_DATA_IS_EGG, NULL) == 0) {
-        switch (v0) {
+    if (Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
+        switch (species) {
         case SPECIES_CATERPIE:
         case SPECIES_METAPOD:
         case SPECIES_WEEDLE:
@@ -668,44 +665,37 @@ BOOL ScrCmd_2FF(ScriptContext *param0)
         case SPECIES_BURMY:
         case SPECIES_COMBEE:
         case SPECIES_KRICKETOT:
-            *v6 = 0xffff;
-            return 0;
+            *destVar = 0xFFFF;
+            return FALSE;
         }
     }
 
-    ov5_021F70CC(v3, &v1, &v2);
-    *v6 = v2;
+    CalcHiddenPowerTypeAndPower(mon, &power, &type);
+    *destVar = type;
 
-    return 0;
+    return FALSE;
 }
 
-static void ov5_021F70CC(Pokemon *param0, int *param1, int *param2)
+static void CalcHiddenPowerTypeAndPower(Pokemon *mon, int *outPower, int *outType)
 {
-    int v0;
-    int v1;
-    int v2;
-    int v3;
-    int v4;
-    int v5;
+    int hpIV = Pokemon_GetValue(mon, MON_DATA_HP_IV, NULL);
+    int atkIV = Pokemon_GetValue(mon, MON_DATA_ATK_IV, NULL);
+    int defIV = Pokemon_GetValue(mon, MON_DATA_DEF_IV, NULL);
+    int speedIV = Pokemon_GetValue(mon, MON_DATA_SPEED_IV, NULL);
+    int spatkIV = Pokemon_GetValue(mon, MON_DATA_SPATK_IV, NULL);
+    int spdefIV = Pokemon_GetValue(mon, MON_DATA_SPDEF_IV, NULL);
 
-    v0 = Pokemon_GetValue(param0, MON_DATA_HP_IV, NULL);
-    v1 = Pokemon_GetValue(param0, MON_DATA_ATK_IV, NULL);
-    v2 = Pokemon_GetValue(param0, MON_DATA_DEF_IV, NULL);
-    v3 = Pokemon_GetValue(param0, MON_DATA_SPEED_IV, NULL);
-    v4 = Pokemon_GetValue(param0, MON_DATA_SPATK_IV, NULL);
-    v5 = Pokemon_GetValue(param0, MON_DATA_SPDEF_IV, NULL);
-
-    if (param1 != NULL) {
-        *param1 = ((v0 & 2) >> 1) | ((v1 & 2) >> 0) | ((v2 & 2) << 1) | ((v3 & 2) << 2) | ((v4 & 2) << 3) | ((v5 & 2) << 4);
-        *param1 = ((*param1) * 40 / 63) + 30;
+    if (outPower != NULL) {
+        *outPower = (hpIV & 2) >> 1 | atkIV & 2 | (defIV & 2) << 1 | (speedIV & 2) << 2 | (spatkIV & 2) << 3 | (spdefIV & 2) << 4;
+        *outPower = *outPower * 40 / 63 + 30;
     }
 
-    if (param2 != NULL) {
-        *param2 = ((v0 & 1) >> 0) | ((v1 & 1) << 1) | ((v2 & 1) << 2) | ((v3 & 1) << 3) | ((v4 & 1) << 4) | ((v5 & 1) << 5);
-        *param2 = ((*param2) * 15 / 63) + 1;
+    if (outType != NULL) {
+        *outType = hpIV & 1 | (atkIV & 1) << 1 | (defIV & 1) << 2 | (speedIV & 1) << 3 | (spatkIV & 1) << 4 | (spdefIV & 1) << 5;
+        *outType = *outType * 15 / 63 + 1;
 
-        if (*param2 >= 9) {
-            *param2 = (*param2) + 1;
+        if (*outType >= TYPE_FAIRY) {
+            *outType = *outType + 1;
         }
     }
 }

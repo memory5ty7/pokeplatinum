@@ -25,13 +25,13 @@ OreburghCityNorthHouse1F_TryTrade:
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0xFF, OreburghCityNorthHouse1F_IfYouChangeYourMindIllBeRightHereWaiting
-    StartNpcTrade NPC_TRADE_KAZZA_ABRA
+    InitNPCTrade NPC_TRADE_KAZZA_ABRA
     SetVar VAR_0x8004, VAR_RESULT
     GetPartyMonSpecies VAR_0x8004, VAR_0x8005
-    GetNpcTradeRequestedSpecies VAR_RESULT
+    GetNPCTradeRequestedSpecies VAR_RESULT
     GoToIfNe VAR_0x8005, VAR_RESULT, OreburghCityNorthHouse1F_WhatIAskedForWasAMachop
-    ScrCmd_229 VAR_0x8004
-    FinishNpcTrade
+    StartNPCTrade VAR_0x8004
+    FinishNPCTrade
     SetFlag FLAG_TRADED_FOR_KAZZA_ABRA
     Message OreburghCityNorthHouse1F_Text_BeNiceToMyAbra
     WaitButton
@@ -40,7 +40,7 @@ OreburghCityNorthHouse1F_TryTrade:
     End
 
 OreburghCityNorthHouse1F_WhatIAskedForWasAMachop:
-    FinishNpcTrade
+    FinishNPCTrade
     Message OreburghCityNorthHouse1F_Text_WhatIAskedForWasAMachop
     WaitButton
     CloseMessage

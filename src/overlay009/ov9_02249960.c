@@ -3,10 +3,12 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "constants/colors.h"
 #include "constants/field/dynamic_map_features.h"
 #include "constants/field/map.h"
 #include "constants/graphics.h"
 #include "constants/map_object.h"
+#include "constants/scrcmd.h"
 #include "constants/species.h"
 #include "constants/types.h"
 #include "generated/map_headers.h"
@@ -107,6 +109,7 @@
 
 #define MOVING_PLATFORM_MAP_COUNT              8
 #define MOVING_PLATFORM_MANAGER_ANIMATOR_COUNT 32
+#define MOVING_PLATFORM_VIBRATION_Y_DELTA      (FX32_ONE * 3)
 
 #define ELEVATOR_PLATFORM_PATH_COUNT        22
 #define ELEVATOR_PLATFORM_PATH_INVALID      ELEVATOR_PLATFORM_PATH_COUNT
@@ -116,6 +119,52 @@
 
 #define MAP_OBJECT_MANAGER_OBJECT_COUNT 19
 #define MAP_OBJECT_BASE_LOCAL_ID        128
+
+#define UXIE_BOULDER_TUTO_ASCEND_Y_DELTA            (FX32_ONE * 2)
+#define UXIE_BOULDER_TUTO_ASCEND_Y_TARGET           17
+#define UXIE_BOULDER_TUTO_MOVE_TO_BOULDER_Z_DELTA   (FX32_ONE * 1)
+#define UXIE_BOULDER_TUTO_MOVE_TO_BOULDER_Z_TARGET  -2
+#define UXIE_BOULDER_TUTO_HOVER_STEP_COUNT          8
+#define UXIE_BOULDER_TUTO_HOVER_REPEAT_COUNT        3
+#define UXIE_BOULDER_TUTO_MOVE_AWAY_Z_DELTA         (FX32_ONE * 1)
+#define UXIE_BOULDER_TUTO_MOVE_AWAY_Z_TARGET        1
+#define UXIE_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT 0x200
+#define UXIE_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET    (FX32_ONE * 2)
+
+#define AZELF_BOULDER_TUTO_ASCEND_Y_DELTA            (FX32_ONE * 2)
+#define AZELF_BOULDER_TUTO_ASCEND_Y_TARGET           13
+#define AZELF_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT 0x200
+#define AZELF_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET    (FX32_ONE * 2)
+
+#define MESPRIT_BOULDER_TUTO_ASCEND_Y_DELTA            (FX32_ONE * 2)
+#define MESPRIT_BOULDER_TUTO_ASCEND_Y_TARGET           9
+#define MESPRIT_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT 0x200
+#define MESPRIT_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET    (FX32_ONE * 2)
+
+#define GIRATINA_ROOM_PLATFORMS_FIRST_GHOST_PROP_GROUP 1
+#define GIRATINA_ROOM_PLATFORMS_LAST_GHOST_PROP_GROUP  3
+
+#define GIRATINA_ROOM_SHOW_PLATFORMS_INITIAL_DELAY 36
+#define GIRATINA_ROOM_SHOW_PLATFORMS_DELAY         48
+
+#define GIRATINA_ROOM_HIDE_PLATFORMS_INITIAL_DELAY 16
+#define GIRATINA_ROOM_HIDE_PLATFORMS_DELAY         48
+#define GIRATINA_ROOM_HIDE_PLATFORMS_WAIT_DELAY    8
+
+#define SKY_MIN_DARKNESS 0
+#define SKY_MAX_DARKNESS 12
+
+#define SPRITE_PALETTE_MAX_TINT_LEVEL 16
+
+#define GIRATINA_ROOM_PLAY_ARRIVAL_INITIAL_Y_OFFSET          ((10 << 4) * FX32_ONE)
+#define GIRATINA_ROOM_PLAY_ARRIVAL_INITIAL_SPRITE_DARKNESS   (FX32_ONE * SPRITE_PALETTE_MAX_TINT_LEVEL)
+#define GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_DELTA        ((FX32_ONE * 8) / (3 * 30))
+#define GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_TARGET       (FX32_ONE * SKY_MAX_DARKNESS)
+#define GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_SLOW_THRESHOLD  ((1 << 4) * FX32_ONE)
+#define GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_SLOW_DECREMENT  0x800
+#define GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_FAST_DECREMENT  0x1000
+#define GIRATINA_ROOM_PLAY_ARRIVAL_SPRITE_DARKNESS_DECREMENT ((FX32_ONE * 16) / (3 * 30))
+#define GIRATINA_ROOM_PLAY_ARRIVAL_WAIT_DELAY                30
 
 enum FloatingPlatformKind {
     FLOATING_PLATFORM_KIND_FLOOR = 0,
@@ -196,8 +245,8 @@ enum GiratinaShadowPropSoundEffectKind {
 
 enum FlagCondition {
     FLAG_COND_NONE = 0,
-    FLAG_COND_1,
-    FLAG_COND_2,
+    FLAG_COND_BOULDER_PUZZLE_FALSE,
+    FLAG_COND_BOULDER_PUZZLE_TRUE,
     FLAG_COND_WORLD_PROGRESS_EQ,
     FLAG_COND_WORLD_PROGRESS_LEQ,
     FLAG_COND_WORLD_PROGRESS_GEQ,
@@ -237,24 +286,24 @@ enum ElevatorPlatformHandlerResult {
 };
 
 enum EventCmdKind {
-    EVENT_CMD_KIND_00 = 0,
-    EVENT_CMD_KIND_01,
+    EVENT_CMD_SET_MAP_OBJECT_ANIMATION = 0,
+    EVENT_CMD_MOVE_PLATFORM,
     EVENT_CMD_ADD_MAP_OBJECT_WITH_LOCAL_ID,
     EVENT_CMD_DELETE_MAP_OBJECT_WITH_LOCAL_ID,
     EVENT_CMD_KIND_04,
     EVENT_CMD_START_SCRIPT,
     EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-    EVENT_CMD_KIND_07,
-    EVENT_CMD_KIND_08,
-    EVENT_CMD_KIND_09,
+    EVENT_CMD_SHOW_GIRATINA_SHADOW,
+    EVENT_CMD_SET_GIRATINA_ANIMATION_FLAG,
+    EVENT_CMD_SET_PUZZLE_FLAG,
     EVENT_CMD_KIND_0A,
-    EVENT_CMD_KIND_0B,
-    EVENT_CMD_KIND_0C,
-    EVENT_CMD_KIND_0D,
-    EVENT_CMD_KIND_0E,
-    EVENT_CMD_KIND_0F,
-    EVENT_CMD_KIND_10,
-    EVENT_CMD_KIND_11,
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO,
+    EVENT_CMD_SHOW_AZELF_BOULDER_TUTO,
+    EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO,
+    EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS,
+    EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS,
+    EVENT_CMD_CLEAR_PUZZLE_FLAG,
     EVENT_CMD_KIND_COUNT,
     EVENT_CMD_END = EVENT_CMD_KIND_COUNT,
 };
@@ -341,6 +390,66 @@ enum MapObjectEventTurnbackCaveLocalID {
     MAP_OBJECT_TURNBACK_CAVE_GRISEOUS_ORB_ITEM,
 };
 
+enum EventCmdSetMapObjectAnimationState {
+    EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_INIT = 0,
+    EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_START,
+    EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_FINISH,
+};
+
+enum EventCmdMovePlatformState {
+    EVENT_CMD_MOVE_PLATFORM_STATE_INIT = 0,
+    EVENT_CMD_MOVE_PLATFORM_STATE_VIBRATE,
+    EVENT_CMD_MOVE_PLATFORM_STATE_MOVE,
+    EVENT_CMD_MOVE_PLATFORM_STATE_END,
+};
+
+enum EventCmdShowGiratinaShadowState {
+    EVENT_CMD_SHOW_GIRATINA_SHADOW_STATE_LOAD = 0,
+    EVENT_CMD_SHOW_GIRATINA_SHADOW_STATE_FINISH,
+};
+
+enum EventCmdShowUxieBoulderTutoState {
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_INIT = 0,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_ASCEND,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_TO_BOULDER,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_HOVER,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_AWAY,
+    EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_DESCEND,
+};
+
+enum EventCmdShowAzelfBoulderTutoState {
+    EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_INIT = 0,
+    EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_ASCEND,
+    EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION,
+    EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_DESCEND,
+};
+
+enum EventCmdShowMespritBoulderTutoState {
+    EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_INIT = 0,
+    EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_ASCEND,
+    EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION,
+    EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_DESCEND,
+};
+
+enum EventCmdShowGiratinaRoomPlatformsState {
+    EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS_STATE_DO_CAMERA_TRANSITION = 0,
+    EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS_STATE_SHOW_PLATFORMS,
+};
+
+enum EventCmdHideGiratinaRoomPlatformsState {
+    EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_INIT = 0,
+    EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_HIDE_PLATFORMS,
+    EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_WAIT,
+};
+
+enum EventCmdPlayGiratinaArrivalState {
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_INIT_MAP_OBJECT = 0,
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_INIT_SPRITE_AND_SKY,
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_DESCEND,
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_BRIGHTEN_SPRITE,
+    EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_WAIT,
+};
+
 typedef struct DistWorldSystem DistWorldSystem;
 
 typedef struct DistWorldBounds {
@@ -374,17 +483,10 @@ typedef struct {
 } UnkStruct_ov9_0224B064;
 
 typedef struct {
-    u16 unk_00_0 : 5;
-    u16 unk_00_5 : 5;
-    u16 unk_00_10 : 5;
-    u16 unk_00_15 : 1;
-} UnkStruct_ov9_0224F86C;
-
-typedef struct {
-    s16 unk_00;
+    s16 darknessLevel;
     s16 unk_02;
     u16 unk_04;
-    u16 unk_06;
+    u16 darknessCalculationDisabled;
     u16 unk_08[16];
     u16 unk_28[16];
     u16 unk_48[80];
@@ -774,20 +876,20 @@ typedef struct DistWorldMapObjectManager {
     MapObject *mapObjs[MAP_OBJECT_MANAGER_OBJECT_COUNT];
 } DistWorldMapObjectManager;
 
-typedef struct {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    VecFx32 unk_0C;
-} UnkStruct_ov9_0224E550;
+typedef struct CmdParamsMovePlatform {
+    u16 platformIndex;
+    u16 movePlayer;
+    u16 dummy04;
+    s16 finalTileXOffset;
+    s16 finalTileYOffset;
+    s16 finalTileZOffset;
+    VecFx32 posDelta;
+} CmdParamsMovePlatform;
 
-typedef struct {
-    u32 unk_00;
-    u32 unk_04;
-} UnkStruct_ov9_0224E4E8;
+typedef struct CmdParamsSetMapObjectAnimation {
+    u32 mapObjLocalID;
+    enum MovementAction movementAction;
+} CmdParamsSetMapObjectAnimation;
 
 typedef struct DistWorldEventCmd {
     enum EventCmdKind kind;
@@ -885,7 +987,7 @@ struct DistWorldSystem {
     UnkStruct_ov9_0224C8E8 unk_1E88;
     DistWorldGiratinaShadowPropRenderer giratinaShadowPropRenderer;
     GXRgb unk_1EB0[8];
-    u16 unk_1EC0;
+    u16 playingGiratinaArrival;
     u16 unk_1EC2;
     SysTask *unk_1EC4;
 };
@@ -942,20 +1044,20 @@ typedef struct DistWorldElevatorPlatform {
     SysTask *passengerAnimTask;
 } DistWorldElevatorPlatform;
 
-typedef struct {
-    int unk_00;
-} UnkStruct_ov9_0224E4D8;
+typedef struct CmdRunDataSetMapObjectAnimation {
+    int dummy00;
+} CmdRunDataSetMapObjectAnimation;
 
-typedef struct {
-    VecFx32 unk_00;
-    VecFx32 unk_0C;
-    VecFx32 unk_18;
-    DistWorldMovingPlatformPropAnimator *unk_24;
-    fx32 unk_28;
-    fx32 unk_2C;
-    fx32 unk_30;
-    u32 unk_34;
-} UnkStruct_ov9_0224E5EC;
+typedef struct CmdRunDataMovePlatform {
+    VecFx32 currPosOffset;
+    VecFx32 finalPosOffset;
+    VecFx32 posDelta;
+    DistWorldMovingPlatformPropAnimator *animator;
+    fx32 initialPlayerY;
+    fx32 initialPlatformY;
+    fx32 vibrationYDelta;
+    u32 vibrationAnimStep;
+} CmdRunDataMovePlatform;
 
 typedef struct CmdParamsAddMapObjWithLocalID {
     u16 mapHeaderID;
@@ -1088,57 +1190,52 @@ typedef struct CmdParamsSetDistortionWorldProgress {
     u32 progress;
 } CmdParamsSetDistortionWorldProgress;
 
-typedef struct {
-    u32 unk_00;
-} UnkStruct_ov9_022506EC;
+typedef struct CmdParamsSetGiratinaAnimationFlag {
+    enum GiratinaShadowAnimation anim;
+} CmdParamsSetGiratinaAnimationFlag;
 
-typedef struct {
-    u32 unk_00;
-} UnkStruct_ov9_02250704;
+typedef struct CmdParamsPuzzleFlag {
+    u32 flagIndex;
+} CmdParamsPuzzleFlag;
 
-typedef struct {
-    fx32 unk_00;
-    fx32 unk_04;
-    VecFx32 unk_08;
-    int unk_14;
-    MapObject *unk_18;
-    u16 unk_1C[16];
-} UnkStruct_ov9_0225074C;
+typedef struct CmdRunDataPlayGiratinaArrival {
+    fx32 spriteDarkness;
+    fx32 skyDarkness;
+    VecFx32 giratinaSpritePosOffset;
+    int delay;
+    MapObject *giratinaMapObj;
+    GXRgb giratinaSpritePalette[PALETTE_SIZE];
+} CmdRunDataPlayGiratinaArrival;
 
-typedef struct {
-    int unk_00;
-    int unk_04;
-    int unk_08;
-    fx32 unk_0C;
-    fx32 unk_10;
-    VecFx32 unk_14;
-    MapObject *unk_20;
-} UnkStruct_ov9_02250918;
+typedef struct CmdRunDataShowUxieBoulderTuto {
+    int hoverStep;
+    int hoverStepDelta;
+    int hoverRepeat;
+    fx32 finalUxieY;
+    fx32 descendYDelta;
+    VecFx32 uxieSpritePosOffset;
+    MapObject *uxieMapObj;
+} CmdRunDataShowUxieBoulderTuto;
 
-typedef struct {
-    fx32 unk_00;
-    VecFx32 unk_04;
-    SysTask *unk_10;
-    MapObject *unk_14;
-} UnkStruct_ov9_02250AFC;
+typedef struct CmdRunDataShowAzelfBoulderTuto {
+    fx32 descendYDelta;
+    VecFx32 azelfSpritePosOffset;
+    SysTask *azelfAnimTask;
+    MapObject *azelfMapObj;
+} CmdRunDataShowAzelfBoulderTuto;
 
-typedef struct {
-    fx32 unk_00;
-    VecFx32 unk_04;
-    SysTask *unk_10;
-    SysTask *unk_14;
-    MapObject *unk_18;
-} UnkStruct_ov9_02250C14;
+typedef struct CmdRunDataShowMespritBoulderTuto {
+    fx32 descendYDelta;
+    VecFx32 mespritSpritePosOffset;
+    SysTask *mespritAnimTask;
+    SysTask *playerAnimTask;
+    MapObject *mespritMapObj;
+} CmdRunDataShowMespritBoulderTuto;
 
-typedef struct {
-    s16 unk_00;
-    s16 unk_02;
-} UnkStruct_ov9_02250D78;
-
-typedef struct {
-    s16 unk_00;
-    s16 unk_02;
-} UnkStruct_ov9_02250DE8;
+typedef struct CmdRunDataGiratinaRoomPlatforms {
+    s16 ghostPropGroup;
+    s16 delay;
+} CmdRunDataGiratinaRoomPlatforms;
 
 typedef void (*FloatingPlatformJumpPointHandler)(DistWorldSystem *, const DistWorldFloatingPlatformJumpPointTemplate *);
 typedef int (*ElevatorPlatformHandler)(DistWorldSystem *, DistWorldElevatorPlatform *);
@@ -1157,9 +1254,9 @@ static void SetPersistedMovingPlatformFlags(DistWorldSystem *system, u32 movingP
 static void SetPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index);
 static void ClearPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index);
 static BOOL CheckPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index);
-static void ov9_02249DC8(DistWorldSystem *param0, u32 param1);
-static void ov9_02249DE4(DistWorldSystem *param0, u32 param1);
-static BOOL ov9_02249E00(DistWorldSystem *param0, u32 param1);
+static void SetPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index);
+static void ClearPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index);
+static BOOL CheckPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index);
 static void SetPersistedCurrentFloatingPlatformIndex(DistWorldSystem *system, u32 floatingPlatformIndex);
 static u32 GetPersistedCurrentFloatingPlatformIndex(DistWorldSystem *system);
 static void ov9_02249E94(DistWorldSystem *param0);
@@ -1402,9 +1499,9 @@ static void ov9_0224F724(DistWorldSystem *param0);
 static void ov9_0224F760(DistWorldSystem *param0);
 static void ov9_0224F764(DistWorldSystem *param0);
 static void ov9_0224F804(DistWorldSystem *param0);
-static void ov9_0224F854(DistWorldSystem *param0, u32 param1);
-static void ov9_0224F860(DistWorldSystem *param0, s16 param1);
-static void ov9_0224F86C(u16 param0, u16 param1, u16 param2, u16 *param3);
+static void SetSkyDarknessCalculationDisabled(DistWorldSystem *system, BOOL disabled);
+static void SetSkyDarknessLevel(DistWorldSystem *system, s16 level);
+static void CalculateTintedColor(GXRgb baseRawColor, GXRgb tintRawColor, u16 tintLevel, GXRgb *outColor);
 static BOOL DistWorldBounds_AreCoordinatesInBounds(int tileX, int tileY, int tileZ, const DistWorldBounds *bounds);
 static int CalculateCameraAngleDelta(u16 currentAngleComponent, u16 targetAngleComponent);
 static void ov9_02250EE8(s16 *param0, s16 param1);
@@ -1619,30 +1716,37 @@ static void ov9_02249CC4(DistWorldSystem *param0)
     DistWorldPersistedData *v0 = param0->persistedData;
     VarsFlags *v1 = SaveData_GetVarsFlags(param0->fieldSystem->saveData);
 
-    v0->unk_0C = 0;
+    v0->boulderPuzzleFlags = 0;
 
     {
-        u32 v2 = 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1
-            | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1;
+        u32 v2 = 1 << DIST_WORLD_PLATFORM_FLAG_B4F_1
+            | 1 << DIST_WORLD_PLATFORM_FLAG_B5F_1;
 
         if (DistWorldSystem_GetMapHeaderID(param0) == 581) {
-            v2 = 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B1F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B2F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_2
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B6F_1
-                | 1 << DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B7F_1;
+            v2 = 1 << DIST_WORLD_PLATFORM_FLAG_B1F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B2F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B3F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B4F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B4F_2
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B5F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B6F_1
+                | 1 << DIST_WORLD_PLATFORM_FLAG_B7F_1;
         }
 
         SetPersistedMovingPlatformFlags(param0, v2);
     }
 
     if (!SystemFlag_HandleDistortionWorldPuzzleFinished(v1, HANDLE_FLAG_CHECK)) {
-        v0->unk_0C |= ((1 << 0) | (1 << 1) | (1 << 2));
+        v0->boulderPuzzleFlags |= 1 << DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B5F
+            | 1 << DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B5F
+            | 1 << DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B5F;
     } else {
-        v0->unk_0C |= ((1 << 10) | (1 << 11) | (1 << 12) | (1 << 6) | (1 << 7) | (1 << 8));
+        v0->boulderPuzzleFlags |= 1 << DIST_WORLD_PUZZLE_FLAG_UXIE_TUTO_SEEN
+            | 1 << DIST_WORLD_PUZZLE_FLAG_AZELF_TUTO_SEEN
+            | 1 << DIST_WORLD_PUZZLE_FLAG_MESPRIT_TUTO_SEEN
+            | 1 << DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B6F_PIT
+            | 1 << DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B6F_PIT
+            | 1 << DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B6F_PIT;
     }
 }
 
@@ -1689,7 +1793,7 @@ static void SetPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index)
 {
     DistWorldPersistedData *persistedData = system->persistedData;
 
-    GF_ASSERT(index < DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_COUNT);
+    GF_ASSERT(index < DIST_WORLD_PLATFORM_FLAG_COUNT);
     persistedData->movingPlatformFlags |= (1 << index);
 }
 
@@ -1697,7 +1801,7 @@ static void ClearPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index)
 {
     DistWorldPersistedData *persistedData = system->persistedData;
 
-    GF_ASSERT(index < DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_COUNT);
+    GF_ASSERT(index < DIST_WORLD_PLATFORM_FLAG_COUNT);
     persistedData->movingPlatformFlags &= ~(1 << index);
 }
 
@@ -1705,32 +1809,32 @@ static BOOL CheckPersistedMovingPlatformFlag(DistWorldSystem *system, u32 index)
 {
     DistWorldPersistedData *persistedData = system->persistedData;
 
-    GF_ASSERT(index < DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_COUNT);
+    GF_ASSERT(index < DIST_WORLD_PLATFORM_FLAG_COUNT);
     return persistedData->movingPlatformFlags & (1 << index) ? TRUE : FALSE;
 }
 
-static void ov9_02249DC8(DistWorldSystem *param0, u32 param1)
-{
-    DistWorldPersistedData *v0 = param0->persistedData;
-
-    GF_ASSERT(param1 < 17);
-    v0->unk_0C |= (1 << param1);
-}
-
-static void ov9_02249DE4(DistWorldSystem *param0, u32 param1)
-{
-    DistWorldPersistedData *v0 = param0->persistedData;
-
-    GF_ASSERT(param1 < 17);
-    v0->unk_0C &= ~(1 << param1);
-}
-
-static BOOL ov9_02249E00(DistWorldSystem *system, u32 val)
+static void SetPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index)
 {
     DistWorldPersistedData *persistedData = system->persistedData;
 
-    GF_ASSERT(val < 17);
-    return persistedData->unk_0C & (1 << val) ? TRUE : FALSE;
+    GF_ASSERT(index < DIST_WORLD_PUZZLE_FLAG_COUNT);
+    persistedData->boulderPuzzleFlags |= (1 << index);
+}
+
+static void ClearPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index)
+{
+    DistWorldPersistedData *persistedData = system->persistedData;
+
+    GF_ASSERT(index < DIST_WORLD_PUZZLE_FLAG_COUNT);
+    persistedData->boulderPuzzleFlags &= ~(1 << index);
+}
+
+static BOOL CheckPersistedBoulderPuzzleFlag(DistWorldSystem *system, u32 index)
+{
+    DistWorldPersistedData *persistedData = system->persistedData;
+
+    GF_ASSERT(index < DIST_WORLD_PUZZLE_FLAG_COUNT);
+    return persistedData->boulderPuzzleFlags & (1 << index) ? TRUE : FALSE;
 }
 
 static void SetPersistedCurrentFloatingPlatformIndex(DistWorldSystem *system, u32 floatingPlatformIndex)
@@ -5107,18 +5211,18 @@ static int DistWorldElevatorPlatform_BeginMovement(DistWorldSystem *system, Dist
 
         switch (elevatorPlatform->pathIndex) {
         case 13:
-            SetPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1);
-            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_2);
+            SetPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B4F_1);
+            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B4F_2);
             break;
 
         case 10:
-            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_3);
+            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B5F_3);
             break;
 
         case 11:
-            SetPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_2);
-            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1);
-            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_3);
+            SetPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B3F_2);
+            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B4F_1);
+            ClearPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B5F_3);
             break;
         }
     }
@@ -5284,11 +5388,11 @@ static int DistWorldElevatorPlatform_ChangeMaps(DistWorldSystem *system, DistWor
     ov9_0224E0DC(elevatorPlatform->animator, TRUE);
 
     if (elevatorPlatform->nextPathIndex == ELEVATOR_PLATFORM_PATH_INVALID) {
-        if (elevatorPlatform->persistedFlagToSet != DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID) {
+        if (elevatorPlatform->persistedFlagToSet != DIST_WORLD_PLATFORM_FLAG_INVALID) {
             SetPersistedMovingPlatformFlag(system, elevatorPlatform->persistedFlagToSet);
         }
 
-        if (elevatorPlatform->persistedFlagToClear != DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID) {
+        if (elevatorPlatform->persistedFlagToClear != DIST_WORLD_PLATFORM_FLAG_INVALID) {
             ClearPersistedMovingPlatformFlag(system, elevatorPlatform->persistedFlagToClear);
         }
 
@@ -5401,7 +5505,7 @@ static int DistWorldElevatorPlatform_EndMovement(DistWorldSystem *system, DistWo
         if (elevatorPlatform->dir == MOVING_PLATFORM_ELEVATOR_DIR_DOWN) {
             switch (elevatorPlatform->pathIndex) {
             case 9:
-                SetPersistedMovingPlatformFlag(system, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1);
+                SetPersistedMovingPlatformFlag(system, DIST_WORLD_PLATFORM_FLAG_B5F_1);
                 InitSpecificMovingPlatformPropForMap(system, MAP_HEADER_DISTORTION_WORLD_B5F, 0);
                 break;
             }
@@ -5821,7 +5925,7 @@ static void InitMovingPlatformPropsForMapEx(DistWorldSystem *system, const DistW
     while (mapTemplates->templates[i] != NULL) {
         u32 persistedFlag = mapTemplates->templates[i]->persistedFlag;
 
-        if ((persistedFlag == DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID || CheckPersistedMovingPlatformFlag(system, persistedFlag) == TRUE) && GetAnimatorForMovingPlatform(system, mapTemplates->templates[i]->index, mapHeaderID) == NULL) {
+        if ((persistedFlag == DIST_WORLD_PLATFORM_FLAG_INVALID || CheckPersistedMovingPlatformFlag(system, persistedFlag) == TRUE) && GetAnimatorForMovingPlatform(system, mapTemplates->templates[i]->index, mapHeaderID) == NULL) {
             DistWorldMovingPlatformPropAnimator *animator = FindUnusedMovingPlatformPropAnimator(system);
             DistWorldMovingPlatformPropAnimator_InitFromTemplate(system, animator, mapTemplates->templates[i], mapHeaderID);
         }
@@ -6320,244 +6424,235 @@ static BOOL FieldTask_CallLoadedEventHandler(FieldTask *task)
     return CallLoadedEventHandler(system, task) == TRUE;
 }
 
-static int ov9_0224E4D8(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdSetMapObjectAnimation_Init(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_0224E4D8 *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_0224E4D8));
+    CmdRunDataSetMapObjectAnimation *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataSetMapObjectAnimation));
 
-    *param2 = 1;
-    return 1;
+    *cmdState = EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_START;
+    return EVENT_CMD_HANDLER_RES_LOOP;
 }
 
-static int ov9_0224E4E8(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdSetMapObjectAnimation_Start(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    MapObject *v0;
-    const UnkStruct_ov9_0224E4E8 *v1 = param3;
-    UnkStruct_ov9_0224E4D8 *v2 = GetLoadedEventDataBuffer(param0);
+    const CmdParamsSetMapObjectAnimation *cmdParams = params;
+    CmdRunDataSetMapObjectAnimation *runData = GetLoadedEventDataBuffer(system);
 
-    v0 = MapObjMan_LocalMapObjByIndex(param0->fieldSystem->mapObjMan, v1->unk_00);
-    GF_ASSERT(v0 != NULL);
+    MapObject *mapObj = MapObjMan_LocalMapObjByIndex(system->fieldSystem->mapObjMan, cmdParams->mapObjLocalID);
+    GF_ASSERT(mapObj != NULL);
 
-    if (LocalMapObj_IsAnimationSet(v0) == 1) {
-        LocalMapObj_SetAnimationCode(v0, v1->unk_04);
-        *param2 = 2;
+    if (LocalMapObj_IsAnimationSet(mapObj) == TRUE) {
+        LocalMapObj_SetAnimationCode(mapObj, cmdParams->movementAction);
+        *cmdState = EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_0224E520(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdSetMapObjectAnimation_Finish(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    MapObject *v0;
-    const UnkStruct_ov9_0224E4E8 *v1 = param3;
-    UnkStruct_ov9_0224E4D8 *v2 = GetLoadedEventDataBuffer(param0);
+    const CmdParamsSetMapObjectAnimation *cmdParams = params;
+    CmdRunDataSetMapObjectAnimation *runData = GetLoadedEventDataBuffer(system);
 
-    v0 = MapObjMan_LocalMapObjByIndex(param0->fieldSystem->mapObjMan, v1->unk_00);
-    GF_ASSERT(v0 != NULL);
+    MapObject *mapObj = MapObjMan_LocalMapObjByIndex(system->fieldSystem->mapObjMan, cmdParams->mapObjLocalID);
+    GF_ASSERT(mapObj != NULL);
 
-    if (sub_020656AC(v0) == 1) {
-        return 2;
+    if (sub_020656AC(mapObj) == TRUE) {
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251360[3] = {
-    ov9_0224E4D8,
-    ov9_0224E4E8,
-    ov9_0224E520
+static const DistWorldEventCmdHandler sSetMapObjectAnimationHandlers[] = {
+    [EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_INIT] = EventCmdSetMapObjectAnimation_Init,
+    [EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_START] = EventCmdSetMapObjectAnimation_Start,
+    [EVENT_CMD_SET_MAP_OBJECT_ANIMATION_STATE_FINISH] = EventCmdSetMapObjectAnimation_Finish
 };
 
-static int ov9_0224E550(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdMovePlatform_BeginMovement(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const UnkStruct_ov9_0224E550 *v0 = param3;
-    UnkStruct_ov9_0224E5EC *v1 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_0224E5EC));
+    const CmdParamsMovePlatform *cmdParams = params;
+    CmdRunDataMovePlatform *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataMovePlatform));
 
-    v1->unk_24 = GetAnimatorForMovingPlatform(param0, v0->unk_00, DistWorldSystem_GetMapHeaderID(param0));
-    GF_ASSERT(v1->unk_24 != NULL);
+    runData->animator = GetAnimatorForMovingPlatform(system, cmdParams->platformIndex, DistWorldSystem_GetMapHeaderID(system));
+    GF_ASSERT(runData->animator != NULL);
 
-    v1->unk_0C.x = (((v0->unk_06) << 4) * FX32_ONE);
-    v1->unk_0C.y = (((v0->unk_08) << 4) * FX32_ONE);
-    v1->unk_0C.z = (((v0->unk_0A) << 4) * FX32_ONE);
+    runData->finalPosOffset.x = (cmdParams->finalTileXOffset << 4) * FX32_ONE;
+    runData->finalPosOffset.y = (cmdParams->finalTileYOffset << 4) * FX32_ONE;
+    runData->finalPosOffset.z = (cmdParams->finalTileZOffset << 4) * FX32_ONE;
+    runData->posDelta = cmdParams->posDelta;
+    runData->vibrationYDelta = MOVING_PLATFORM_VIBRATION_Y_DELTA;
 
-    v1->unk_18 = v0->unk_0C;
-    v1->unk_30 = (FX32_ONE * 3);
+    VecFx32 *movingPlatformPos = GetMovingPlatformPropPos(runData->animator->animMan);
+    runData->initialPlatformY = movingPlatformPos->y;
 
-    {
-        VecFx32 *v2 = GetMovingPlatformPropPos(v1->unk_24->animMan);
+    if (cmdParams->movePlayer == TRUE) {
+        VecFx32 spritePosOffset;
+        MapObject *playerMapObj = Player_MapObject(system->fieldSystem->playerAvatar);
 
-        v1->unk_2C = v2->y;
-    }
+        MapObject_SetHeightCalculationDisabled(playerMapObj, TRUE);
+        MapObject_GetSpritePosOffset(playerMapObj, &spritePosOffset);
 
-    if (v0->unk_02 == 1) {
-        VecFx32 v3;
-        MapObject *v4 = Player_MapObject(param0->fieldSystem->playerAvatar);
-
-        MapObject_SetHeightCalculationDisabled(v4, TRUE);
-        MapObject_GetSpritePosOffset(v4, &v3);
-
-        v1->unk_28 = v3.y;
+        runData->initialPlayerY = spritePosOffset.y;
     }
 
     Sound_PlayEffect(SEQ_SE_PL_FW089B);
 
-    *param2 = 1;
-    return 0;
+    *cmdState = EVENT_CMD_MOVE_PLATFORM_STATE_VIBRATE;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_0224E5EC(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdMovePlatform_Vibrate(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    MapObject *v0 = NULL;
-    const UnkStruct_ov9_0224E550 *v1 = param3;
-    UnkStruct_ov9_0224E5EC *v2 = GetLoadedEventDataBuffer(param0);
-    VecFx32 *v3 = GetMovingPlatformPropPos(v2->unk_24->animMan);
+    MapObject *playerMapObj = NULL;
+    const CmdParamsMovePlatform *cmdParams = params;
+    CmdRunDataMovePlatform *runData = GetLoadedEventDataBuffer(system);
+    VecFx32 *movingPlatformPos = GetMovingPlatformPropPos(runData->animator->animMan);
 
-    if (v1->unk_02 == 1) {
-        v0 = Player_MapObject(param0->fieldSystem->playerAvatar);
+    if (cmdParams->movePlayer == TRUE) {
+        playerMapObj = Player_MapObject(system->fieldSystem->playerAvatar);
     }
 
-    v3->y = v2->unk_2C + v2->unk_30;
+    movingPlatformPos->y = runData->initialPlatformY + runData->vibrationYDelta;
 
-    if (v0 != NULL) {
-        VecFx32 v4;
+    if (playerMapObj != NULL) {
+        VecFx32 spritePosOffset;
 
-        MapObject_GetSpritePosOffset(v0, &v4);
-        v4.y = v2->unk_28 + v2->unk_30;
+        MapObject_GetSpritePosOffset(playerMapObj, &spritePosOffset);
+        spritePosOffset.y = runData->initialPlayerY + runData->vibrationYDelta;
 
-        MapObject_SetSpritePosOffset(v0, &v4);
-        MapObject_GetPosPtr(v0, &v4);
-        ov9_022511F4(v0, &v4);
+        MapObject_SetSpritePosOffset(playerMapObj, &spritePosOffset);
+        MapObject_GetPosPtr(playerMapObj, &spritePosOffset);
+        ov9_022511F4(playerMapObj, &spritePosOffset);
     }
 
-    v2->unk_30 = -v2->unk_30;
+    runData->vibrationYDelta = -runData->vibrationYDelta;
 
-    if (v2->unk_30 >= 0) {
-        if (v2->unk_30 > (FX32_ONE * 1)) {
-            v2->unk_30 -= (FX32_ONE * 1);
+    if (runData->vibrationYDelta >= 0) {
+        if (runData->vibrationYDelta > FX32_ONE) {
+            runData->vibrationYDelta -= FX32_ONE;
         } else {
-            v2->unk_34++;
+            runData->vibrationAnimStep++;
 
-            if (v2->unk_34 >= 4) {
-                v2->unk_30 = 0;
+            if (runData->vibrationAnimStep >= 4) {
+                runData->vibrationYDelta = 0;
             }
         }
 
-        if (v2->unk_30 == 0) {
-            v3->y = v2->unk_2C;
+        if (runData->vibrationYDelta == 0) {
+            movingPlatformPos->y = runData->initialPlatformY;
 
-            if (v0 != NULL) {
-                VecFx32 v5;
+            if (playerMapObj != NULL) {
+                VecFx32 spritePosOffset;
 
-                MapObject_GetSpritePosOffset(v0, &v5);
-                v5.y = v2->unk_28;
-                MapObject_SetSpritePosOffset(v0, &v5);
+                MapObject_GetSpritePosOffset(playerMapObj, &spritePosOffset);
+                spritePosOffset.y = runData->initialPlayerY;
+                MapObject_SetSpritePosOffset(playerMapObj, &spritePosOffset);
 
-                MapObject_GetPosPtr(v0, &v5);
-                ov9_022511F4(v0, &v5);
+                MapObject_GetPosPtr(playerMapObj, &spritePosOffset);
+                ov9_022511F4(playerMapObj, &spritePosOffset);
             }
 
-            *param2 = 2;
+            *cmdState = EVENT_CMD_MOVE_PLATFORM_STATE_MOVE;
         }
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_0224E6B0(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdMovePlatform_Move(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    VecFx32 v0 = { 0, 0, 0 };
-    const UnkStruct_ov9_0224E550 *v1 = param3;
-    UnkStruct_ov9_0224E5EC *v2 = GetLoadedEventDataBuffer(param0);
-    VecFx32 *v3 = GetMovingPlatformPropPos(v2->unk_24->animMan);
+    VecFx32 posDelta = { 0, 0, 0 };
+    const CmdParamsMovePlatform *cmdParams = params;
+    CmdRunDataMovePlatform *runData = GetLoadedEventDataBuffer(system);
+    VecFx32 *movingPlatformPos = GetMovingPlatformPropPos(runData->animator->animMan);
 
-    if (v2->unk_00.x != v2->unk_0C.x) {
-        v2->unk_00.x += v2->unk_18.x;
-        v3->x += v2->unk_18.x;
+    if (runData->currPosOffset.x != runData->finalPosOffset.x) {
+        runData->currPosOffset.x += runData->posDelta.x;
+        movingPlatformPos->x += runData->posDelta.x;
 
-        if (v1->unk_02 == 1) {
-            v0.x += v2->unk_18.x;
+        if (cmdParams->movePlayer == TRUE) {
+            posDelta.x += runData->posDelta.x;
         }
     }
 
-    if (v2->unk_00.y != v2->unk_0C.y) {
-        v2->unk_00.y += v2->unk_18.y;
-        v3->y += v2->unk_18.y;
+    if (runData->currPosOffset.y != runData->finalPosOffset.y) {
+        runData->currPosOffset.y += runData->posDelta.y;
+        movingPlatformPos->y += runData->posDelta.y;
 
-        if (v1->unk_02 == 1) {
-            v0.y += v2->unk_18.y;
+        if (cmdParams->movePlayer == TRUE) {
+            posDelta.y += runData->posDelta.y;
         }
     }
 
-    if (v2->unk_00.z != v2->unk_0C.z) {
-        v2->unk_00.z += v2->unk_18.z;
-        v3->z += v2->unk_18.z;
+    if (runData->currPosOffset.z != runData->finalPosOffset.z) {
+        runData->currPosOffset.z += runData->posDelta.z;
+        movingPlatformPos->z += runData->posDelta.z;
 
-        if (v1->unk_02 == 1) {
-            v0.z += v2->unk_18.z;
+        if (cmdParams->movePlayer == TRUE) {
+            posDelta.z += runData->posDelta.z;
         }
     }
 
-    if (v1->unk_02 == 1) {
-        VecFx32 v4;
-        MapObject *v5 = Player_MapObject(param0->fieldSystem->playerAvatar);
+    if (cmdParams->movePlayer == TRUE) {
+        VecFx32 playerPos;
+        MapObject *playerMapObj = Player_MapObject(system->fieldSystem->playerAvatar);
 
-        MapObject_GetPosPtr(v5, &v4);
+        MapObject_GetPosPtr(playerMapObj, &playerPos);
 
-        v4.x += v0.x;
-        v4.y += v0.y;
-        v4.z += v0.z;
+        playerPos.x += posDelta.x;
+        playerPos.y += posDelta.y;
+        playerPos.z += posDelta.z;
 
-        ov9_022511F4(v5, &v4);
+        ov9_022511F4(playerMapObj, &playerPos);
     }
 
-    if ((v2->unk_00.x == v2->unk_0C.x) && (v2->unk_00.y == v2->unk_0C.y) && (v2->unk_00.z == v2->unk_0C.z)) {
-        *param2 = 3;
+    if (runData->currPosOffset.x == runData->finalPosOffset.x && runData->currPosOffset.y == runData->finalPosOffset.y && runData->currPosOffset.z == runData->finalPosOffset.z) {
+        *cmdState = EVENT_CMD_MOVE_PLATFORM_STATE_END;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_0224E798(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdMovePlatform_EndMovement(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const UnkStruct_ov9_0224E550 *v0 = param3;
+    const CmdParamsMovePlatform *cmdParams = params;
 
-    if (v0->unk_02 == 1) {
-        MapObject *v1 = Player_MapObject(param0->fieldSystem->playerAvatar);
-        int v2 = MapObject_GetX(v1) + v0->unk_06;
-        int v3 = MapObject_GetY(v1) + ((v0->unk_08) * 2);
-        int v4 = MapObject_GetZ(v1) + v0->unk_0A;
+    if (cmdParams->movePlayer == TRUE) {
+        MapObject *playerMapObj = Player_MapObject(system->fieldSystem->playerAvatar);
+        int finalPlayerTileX = MapObject_GetX(playerMapObj) + cmdParams->finalTileXOffset;
+        int finalPlayerTileY = MapObject_GetY(playerMapObj) + cmdParams->finalTileYOffset * 2;
+        int finalPlayerTileZ = MapObject_GetZ(playerMapObj) + cmdParams->finalTileZOffset;
 
-        MapObject_SetX(v1, v2);
-        MapObject_SetY(v1, v3);
-        MapObject_SetZ(v1, v4);
-        MapObject_UpdateCoords(v1);
+        MapObject_SetX(playerMapObj, finalPlayerTileX);
+        MapObject_SetY(playerMapObj, finalPlayerTileY);
+        MapObject_SetZ(playerMapObj, finalPlayerTileZ);
+        MapObject_UpdateCoords(playerMapObj);
 
-        {
-            u32 v5;
-            PlayerAvatar *playerAvatar = param0->fieldSystem->playerAvatar;
+        PlayerAvatar *playerAvatar = system->fieldSystem->playerAvatar;
+        finalPlayerTileY = finalPlayerTileY / 2;
 
-            v3 = ((v3) / 2);
-            FindAndPrepareNewCurrentFloatingPlatform(param0, v2, v3, v4, 4);
-            v5 = GetCurrentFloatingPlatformKindSafely(param0, v2, v3, v4);
-            v5 = GetAvatarDistortionStateForFloatingPlatformKind(v5);
-            PlayerAvatar_SetDistortionState(playerAvatar, v5);
+        FindAndPrepareNewCurrentFloatingPlatform(system, finalPlayerTileX, finalPlayerTileY, finalPlayerTileZ, FLOATING_PLATFORM_KIND_INVALID);
+        u32 currentFloatingPlatformKind = GetCurrentFloatingPlatformKindSafely(system, finalPlayerTileX, finalPlayerTileY, finalPlayerTileZ);
+        enum AvatarDistortionState avatarDistortionState = GetAvatarDistortionStateForFloatingPlatformKind(currentFloatingPlatformKind);
+        PlayerAvatar_SetDistortionState(playerAvatar, avatarDistortionState);
 
-            if (v5 == 1) {
-                MapObject_SetHeightCalculationDisabled(v1, FALSE);
-            } else {
-                MapObject_SetHeightCalculationDisabled(v1, TRUE);
-            }
+        if (avatarDistortionState == AVATAR_DISTORTION_STATE_ACTIVE) {
+            MapObject_SetHeightCalculationDisabled(playerMapObj, FALSE);
+        } else {
+            MapObject_SetHeightCalculationDisabled(playerMapObj, TRUE);
         }
     }
 
     Sound_StopEffect(SEQ_SE_PL_FW089B, 0);
-    return 2;
+    return EVENT_CMD_HANDLER_RES_FINISH;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_022513E8[4] = {
-    ov9_0224E550,
-    ov9_0224E5EC,
-    ov9_0224E6B0,
-    ov9_0224E798
+static const DistWorldEventCmdHandler sMovePlatformHandlers[] = {
+    [EVENT_CMD_MOVE_PLATFORM_STATE_INIT] = EventCmdMovePlatform_BeginMovement,
+    [EVENT_CMD_MOVE_PLATFORM_STATE_VIBRATE] = EventCmdMovePlatform_Vibrate,
+    [EVENT_CMD_MOVE_PLATFORM_STATE_MOVE] = EventCmdMovePlatform_Move,
+    [EVENT_CMD_MOVE_PLATFORM_STATE_END] = EventCmdMovePlatform_EndMovement
 };
 
 static int EventCmdAddMapObjWithLocalID_Handle(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
@@ -7383,7 +7478,7 @@ UnkStruct_ov9_0224F6EC *ov9_0224F2BC(FieldSystem *fieldSystem, FieldTask *param1
     case 6:
     case 7:
     case 8:
-        if (ov9_02249E00(v0->unk_00, v0->unk_14) == 0) {
+        if (CheckPersistedBoulderPuzzleFlag(v0->unk_00, v0->unk_14) == 0) {
             v0->unk_12 = 1;
             break;
         }
@@ -7433,8 +7528,8 @@ static BOOL ov9_0224F324(UnkStruct_ov9_0224F6EC *param0)
             break;
         }
 
-        ov9_02249DC8(param0->unk_00, v3);
-        ov9_02249DE4(param0->unk_00, v4);
+        SetPersistedBoulderPuzzleFlag(param0->unk_00, v3);
+        ClearPersistedBoulderPuzzleFlag(param0->unk_00, v4);
     }
 
     return 1;
@@ -7483,7 +7578,7 @@ static BOOL ov9_0224F3BC(UnkStruct_ov9_0224F6EC *param0)
             u32 v4 = 0, v5 = 0;
             MapObject *v6 = param0->unk_0C;
 
-            ov9_02249DC8(param0->unk_00, param0->unk_14);
+            SetPersistedBoulderPuzzleFlag(param0->unk_00, param0->unk_14);
 
             switch (MapObject_GetLocalID(v6)) {
             case MAP_OBJECT_B6F_MESPRIT_BOULDER_OUTSIDE:
@@ -7502,7 +7597,7 @@ static BOOL ov9_0224F3BC(UnkStruct_ov9_0224F6EC *param0)
                 GF_ASSERT(0);
             }
 
-            ov9_02249DE4(param0->unk_00, v5);
+            ClearPersistedBoulderPuzzleFlag(param0->unk_00, v5);
             MapObject_SetLocalID(v6, v4);
 
             {
@@ -7577,7 +7672,7 @@ static BOOL ov9_0224F3BC(UnkStruct_ov9_0224F6EC *param0)
                 GF_ASSERT(0);
             }
 
-            ov9_02249DE4(param0->unk_00, v15);
+            ClearPersistedBoulderPuzzleFlag(param0->unk_00, v15);
             ScriptManager_Start(param0->unk_08, v14, NULL, NULL);
             param0->unk_10++;
             break;
@@ -7585,12 +7680,12 @@ static BOOL ov9_0224F3BC(UnkStruct_ov9_0224F6EC *param0)
     case 3: {
         int v17 = 0;
 
-        v17 += ov9_02249E00(
-            param0->unk_00, 6);
-        v17 += ov9_02249E00(
-            param0->unk_00, 7);
-        v17 += ov9_02249E00(
-            param0->unk_00, 8);
+        v17 += CheckPersistedBoulderPuzzleFlag(
+            param0->unk_00, DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B6F_PIT);
+        v17 += CheckPersistedBoulderPuzzleFlag(
+            param0->unk_00, DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B6F_PIT);
+        v17 += CheckPersistedBoulderPuzzleFlag(
+            param0->unk_00, DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B6F_PIT);
 
         if (v17 >= 3) {
             VarsFlags *v18 = SaveData_GetVarsFlags(param0->fieldSystem->saveData);
@@ -7681,8 +7776,8 @@ static BOOL ov9_0224F5D8(UnkStruct_ov9_0224F6EC *param0)
                 GF_ASSERT(0);
             }
 
-            ov9_02249DC8(param0->unk_00, v6);
-            ov9_02249DE4(param0->unk_00, v7);
+            SetPersistedBoulderPuzzleFlag(param0->unk_00, v6);
+            ClearPersistedBoulderPuzzleFlag(param0->unk_00, v7);
             DeleteMapObject(param0->unk_00, param0->unk_0C);
 
             return 1;
@@ -7724,8 +7819,8 @@ static void ov9_0224F724(DistWorldSystem *param0)
         VarsFlags *v2 = SaveData_GetVarsFlags(param0->fieldSystem->saveData);
 
         if (SystemVars_GetDistortionWorldProgress(v2) == 13) {
-            v0->unk_06 = 1;
-            v0->unk_00 = 12;
+            v0->darknessCalculationDisabled = TRUE;
+            v0->darknessLevel = 12;
         }
     }
 
@@ -7743,35 +7838,35 @@ static void ov9_0224F764(DistWorldSystem *param0)
     PlayerAvatar *playerAvatar = param0->fieldSystem->playerAvatar;
     const VecFx32 *v2 = PlayerAvatar_PosVector(playerAvatar);
 
-    if (v0->unk_06 == 0) {
-        v0->unk_00 = (v2->y - ((65 << 4) * FX32_ONE)) / ((((289 - 65) << 4) * FX32_ONE) / 12);
+    if (v0->darknessCalculationDisabled == FALSE) {
+        v0->darknessLevel = (v2->y - ((65 << 4) * FX32_ONE)) / ((((289 - 65) << 4) * FX32_ONE) / 12);
     }
 
-    if (v0->unk_00 < 0) {
-        v0->unk_00 = 0;
-    } else if (v0->unk_00 > 12) {
-        v0->unk_00 = 12;
+    if (v0->darknessLevel < 0) {
+        v0->darknessLevel = 0;
+    } else if (v0->darknessLevel > 12) {
+        v0->darknessLevel = 12;
     }
 
-    if (v0->unk_00 != v0->unk_02) {
+    if (v0->darknessLevel != v0->unk_02) {
         int v3 = 0;
 
         do {
-            ov9_0224F86C(
-                v0->unk_08[v3], (4 | (4 << 5) | (8 << 10)), v0->unk_00, &v0->unk_28[v3]);
+            CalculateTintedColor(
+                v0->unk_08[v3], (4 | (4 << 5) | (8 << 10)), v0->darknessLevel, &v0->unk_28[v3]);
             v3++;
         } while (v3 < 16);
 
         v3 = 0;
 
         do {
-            ov9_0224F86C(
-                v0->unk_48[v3], (6 | (6 << 5) | (8 << 10)), v0->unk_00, &v0->unk_E8[v3]);
+            CalculateTintedColor(
+                v0->unk_48[v3], (6 | (6 << 5) | (8 << 10)), v0->darknessLevel, &v0->unk_E8[v3]);
             v3++;
         } while (v3 < (16 * 5));
 
         v0->unk_04 = 1;
-        v0->unk_02 = v0->unk_00;
+        v0->unk_02 = v0->darknessLevel;
     }
 }
 
@@ -7804,28 +7899,37 @@ static void ov9_0224F804(DistWorldSystem *param0)
     }
 }
 
-static void ov9_0224F854(DistWorldSystem *param0, u32 param1)
+static void SetSkyDarknessCalculationDisabled(DistWorldSystem *system, BOOL disabled)
 {
-    UnkStruct_ov9_0224ADC0 *v0 = &param0->unk_1D00;
-    v0->unk_06 = param1;
+    UnkStruct_ov9_0224ADC0 *v0 = &system->unk_1D00;
+    v0->darknessCalculationDisabled = disabled;
 }
 
-static void ov9_0224F860(DistWorldSystem *param0, s16 param1)
+static void SetSkyDarknessLevel(DistWorldSystem *system, s16 level)
 {
-    UnkStruct_ov9_0224ADC0 *v0 = &param0->unk_1D00;
-    v0->unk_00 = param1;
+    UnkStruct_ov9_0224ADC0 *v0 = &system->unk_1D00;
+    v0->darknessLevel = level;
 }
 
-static void ov9_0224F86C(u16 param0, u16 param1, u16 param2, u16 *param3)
+static void CalculateTintedColor(GXRgb baseRawColor, GXRgb tintRawColor, u16 tintLevel, GXRgb *outColor)
 {
-    const UnkStruct_ov9_0224F86C *v0 = (UnkStruct_ov9_0224F86C *)&param0;
-    const UnkStruct_ov9_0224F86C *v1 = (UnkStruct_ov9_0224F86C *)&param1;
+    typedef struct RGB555 {
+        u16 r : 5;
+        u16 g : 5;
+        u16 b : 5;
+    } RGB555;
 
-    if (param2 > 16) {
-        param2 = 16;
+    const RGB555 *base = (RGB555 *)&baseRawColor;
+    const RGB555 *tint = (RGB555 *)&tintRawColor;
+
+    if (tintLevel > SPRITE_PALETTE_MAX_TINT_LEVEL) {
+        tintLevel = SPRITE_PALETTE_MAX_TINT_LEVEL;
     }
 
-    (*param3) = (v0->unk_00_0 + ((v1->unk_00_0 - v0->unk_00_0) * param2 >> 4)) | ((v0->unk_00_5 + ((v1->unk_00_5 - v0->unk_00_5) * param2 >> 4)) << 5) | ((v0->unk_00_10 + ((v1->unk_00_10 - v0->unk_00_10) * param2 >> 4)) << 10);
+    *outColor = GX_RGB(
+        base->r + ((tint->r - base->r) * tintLevel >> 4),
+        base->g + ((tint->g - base->g) * tintLevel >> 4),
+        base->b + ((tint->b - base->b) * tintLevel >> 4));
 }
 
 static void ov9_0224F8C4(DistWorldSystem *param0, UnkStruct_ov9_0224F930 *param1, const UnkStruct_ov9_0224F8C4 *param2, const VecFx32 *param3)
@@ -8268,7 +8372,7 @@ static int ov9_0224FEDC(DistWorldSystem *param0, FieldTask *param1, u16 *param2,
         *param2 = 4;
 
         {
-            SetPersistedMovingPlatformFlag(param0, DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1);
+            SetPersistedMovingPlatformFlag(param0, DIST_WORLD_PLATFORM_FLAG_B5F_1);
             InitSpecificMovingPlatformPropForMap(param0, 579, 0);
         }
     }
@@ -8646,690 +8750,701 @@ static const DistWorldEventCmdHandler sSetDistortionWorldProgressHandlers[] = {
     EventCmdSetDistortionWorldProgress_Handle
 };
 
-static int ov9_022506EC(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdSetGiratinaAnimationFlag_Handle(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const UnkStruct_ov9_022506EC *v0 = param3;
-    VarsFlags *v1 = SaveData_GetVarsFlags(param0->fieldSystem->saveData);
+    const CmdParamsSetGiratinaAnimationFlag *cmdParams = params;
+    VarsFlags *varsFlags = SaveData_GetVarsFlags(system->fieldSystem->saveData);
+    SystemFlag_HandleGiratinaAnimation(varsFlags, HANDLE_FLAG_SET, cmdParams->anim);
 
-    SystemFlag_HandleGiratinaAnimation(v1, HANDLE_FLAG_SET, v0->unk_00);
-    return 2;
+    return EVENT_CMD_HANDLER_RES_FINISH;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_0225121C[1] = {
-    ov9_022506EC
+static const DistWorldEventCmdHandler sSetGiratinaAnimationFlagHandlers[] = {
+    EventCmdSetGiratinaAnimationFlag_Handle
 };
 
-static int ov9_02250704(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdSetPuzzleFlag_Handle(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const UnkStruct_ov9_02250704 *v0 = param3;
+    const CmdParamsPuzzleFlag *cmdParams = params;
+    SetPersistedBoulderPuzzleFlag(system, cmdParams->flagIndex);
 
-    ov9_02249DC8(param0, v0->unk_00);
-    return 2;
+    return EVENT_CMD_HANDLER_RES_FINISH;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251270[1] = {
-    ov9_02250704
+static const DistWorldEventCmdHandler sSetPuzzleFlagHandlers[] = {
+    EventCmdSetPuzzleFlag_Handle
 };
 
-static int ov9_02250710(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdClearPuzzleFlag_Handle(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const UnkStruct_ov9_02250704 *v0 = param3;
+    const CmdParamsPuzzleFlag *cmdParams = params;
+    ClearPersistedBoulderPuzzleFlag(system, cmdParams->flagIndex);
 
-    ov9_02249DE4(param0, v0->unk_00);
-    return 2;
+    return EVENT_CMD_HANDLER_RES_FINISH;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251254[1] = {
-    ov9_02250710
+static const DistWorldEventCmdHandler sClearPuzzleFlagHandlers[] = {
+    EventCmdClearPuzzleFlag_Handle
 };
 
-static int ov9_0225071C(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowGiratinaShadow_Load(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    const DistWorldGiratinaShadowTemplate *v0 = param3;
+    const DistWorldGiratinaShadowTemplate *giratinaTemplate = params;
+    LoadGiratinaShadowPropAnimation(system, giratinaTemplate);
 
-    LoadGiratinaShadowPropAnimation(param0, v0);
-    *param2 = 1;
-    return 0;
+    *cmdState = EVENT_CMD_SHOW_GIRATINA_SHADOW_STATE_FINISH;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250730(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowGiratinaShadow_Finish(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    if (IsGiratinaShadowAnimationFinished(param0) == TRUE) {
-        FinishGiratinaShadowPropRenderer(param0);
-        return 2;
+    if (IsGiratinaShadowAnimationFinished(system) == TRUE) {
+        FinishGiratinaShadowPropRenderer(system);
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251328[2] = {
-    ov9_0225071C,
-    ov9_02250730
+static const DistWorldEventCmdHandler sEventCmdShowGiratinaShadow[] = {
+    [EVENT_CMD_SHOW_GIRATINA_SHADOW_STATE_LOAD] = EventCmdShowGiratinaShadow_Load,
+    [EVENT_CMD_SHOW_GIRATINA_SHADOW_STATE_FINISH] = EventCmdShowGiratinaShadow_Finish
 };
 
-static const u16 Unk_ov9_02252284[16] = {
-    0x32C9,
-    0x20D5,
-    0x104f,
-    0x3DAD,
-    0x4A10,
-    0x2929,
-    0x5672,
-    0x62D5,
-    0x6bff,
-    0xf5d,
-    0x92A,
-    0xA55,
-    0x215E,
-    0x18C6,
-    0x0,
-    0x7fff
+static const GXRgb sGiratinaSpriteBasePalette[PALETTE_SIZE] = {
+    GX_RGB(9, 22, 12),
+    GX_RGB(21, 6, 8),
+    GX_RGB(15, 2, 4),
+    GX_RGB(13, 13, 15),
+    GX_RGB(16, 16, 18),
+    GX_RGB(9, 9, 10),
+    GX_RGB(18, 19, 21),
+    GX_RGB(21, 22, 24),
+    GX_RGB(31, 31, 26),
+    GX_RGB(29, 26, 3),
+    GX_RGB(10, 9, 2),
+    GX_RGB(21, 18, 2),
+    GX_RGB(30, 10, 8),
+    GX_RGB(6, 6, 6),
+    GX_RGB(0, 0, 0),
+    GX_RGB(31, 31, 31)
 };
 
-static void ov9_0225074C(UnkStruct_ov9_0225074C *param0)
+static void CmdRunDataPlayGiratinaArrival_UpdateSpritePalette(CmdRunDataPlayGiratinaArrival *runData)
 {
-    u32 v0, v1 = ((param0->unk_00) / FX32_ONE);
+    u32 spriteDarkness = runData->spriteDarkness / FX32_ONE;
 
-    for (v0 = 0; v0 < 16; v0++) {
-        ov9_0224F86C(Unk_ov9_02252284[v0], 0, v1, &param0->unk_1C[v0]);
-    }
-}
-
-void ov9_02250780(FieldSystem *fieldSystem)
-{
-    DistWorldSystem *v0 = fieldSystem->unk_04->dynamicMapFeaturesData;
-
-    if (v0->unk_1EC0 == 1) {
-        UnkStruct_ov9_0225074C *v1 = GetLoadedEventDataBuffer(v0);
-        UnkStruct_ov5_021ED0A4 *v2 = sub_0206285C(v0->fieldSystem->mapObjMan);
-        TextureResourceManager *v3 = ov5_021EDCB0(v2);
-        TextureResource *v4 = TextureResourceManager_FindTextureResource(v3, 0xe6);
-        NNSGfdPlttKey v5 = TextureResource_GetPaletteKey(v4);
-        u32 v6 = NNS_GfdGetPlttKeyAddr(v5);
-
-        VramTransfer_Request(NNS_GFD_DST_3D_TEX_PLTT, v6, v1->unk_1C, 32);
+    for (u32 i = 0; i < PALETTE_SIZE; i++) {
+        CalculateTintedColor(sGiratinaSpriteBasePalette[i], COLOR_BLACK, spriteDarkness, &runData->giratinaSpritePalette[i]);
     }
 }
 
-static int ov9_022507C4(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+void DistWorld_ApplyGiratinaSpritePalette(FieldSystem *fieldSystem)
 {
-    UnkStruct_ov9_0225074C *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_0225074C));
-    v0->unk_18 = AddMapObjectWithLocalID(param0, 582, MAP_OBJECT_GIRATINA_ROOM_GIRATINA);
-    v0->unk_08.y = ((10 << 4) * FX32_ONE);
+    DistWorldSystem *dwSystem = fieldSystem->unk_04->dynamicMapFeaturesData;
 
-    MapObject_SetSpritePosOffset(v0->unk_18, &v0->unk_08);
+    if (dwSystem->playingGiratinaArrival == TRUE) {
+        CmdRunDataPlayGiratinaArrival *runData = GetLoadedEventDataBuffer(dwSystem);
+        UnkStruct_ov5_021ED0A4 *v2 = sub_0206285C(dwSystem->fieldSystem->mapObjMan);
+        TextureResourceManager *texMgr = ov5_021EDCB0(v2);
+        TextureResource *texResource = TextureResourceManager_FindTextureResource(texMgr, 0xe6);
+        NNSGfdPlttKey paletteKey = TextureResource_GetPaletteKey(texResource);
+        u32 paletteKeyAddr = NNS_GfdGetPlttKeyAddr(paletteKey);
 
-    *param2 = 1;
-    return 0;
+        VramTransfer_Request(NNS_GFD_DST_3D_TEX_PLTT, paletteKeyAddr, runData->giratinaSpritePalette, PALETTE_SIZE_BYTES);
+    }
 }
 
-static int ov9_022507FC(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdPlayGiratinaArrival_InitMapObject(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_0225074C *v1 = GetLoadedEventDataBuffer(param0);
-    Billboard *v0 = ov5_021EB1A0(v1->unk_18);
+    CmdRunDataPlayGiratinaArrival *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataPlayGiratinaArrival));
+    runData->giratinaMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_GIRATINA_ROOM, MAP_OBJECT_GIRATINA_ROOM_GIRATINA);
+    runData->giratinaSpritePosOffset.y = GIRATINA_ROOM_PLAY_ARRIVAL_INITIAL_Y_OFFSET;
 
-    if (v0 != NULL) {
-        v1->unk_00 = (FX32_ONE * 16);
-        ov9_0225074C(v1);
-        param0->unk_1EC0 = 1;
+    MapObject_SetSpritePosOffset(runData->giratinaMapObj, &runData->giratinaSpritePosOffset);
 
-        v1->unk_04 = (FX32_ONE * 0);
-        ov9_0224F854(param0, 1);
+    *cmdState = EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_INIT_SPRITE_AND_SKY;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
+}
 
-        param0->unk_1EC2 = 2;
+static int EventCmdPlayGiratinaArrival_InitSpriteAndSky(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
+{
+    CmdRunDataPlayGiratinaArrival *runData = GetLoadedEventDataBuffer(system);
+    Billboard *billboard = ov5_021EB1A0(runData->giratinaMapObj);
+
+    if (billboard != NULL) {
+        runData->spriteDarkness = GIRATINA_ROOM_PLAY_ARRIVAL_INITIAL_SPRITE_DARKNESS;
+        CmdRunDataPlayGiratinaArrival_UpdateSpritePalette(runData);
+        system->playingGiratinaArrival = TRUE;
+
+        runData->skyDarkness = SKY_MIN_DARKNESS;
+        SetSkyDarknessCalculationDisabled(system, TRUE);
+
+        system->unk_1EC2 = 2;
         Sound_PlayEffect(SEQ_SE_PL_GIRA);
-        *param2 = 2;
-        return 1;
+
+        *cmdState = EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_DESCEND;
+        return EVENT_CMD_HANDLER_RES_LOOP;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250854(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdPlayGiratinaArrival_Descend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_0225074C *v0 = GetLoadedEventDataBuffer(param0);
-    v0->unk_04 += (FX32_ONE * 8) / (3 * 30);
+    CmdRunDataPlayGiratinaArrival *runData = GetLoadedEventDataBuffer(system);
+    runData->skyDarkness += GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_DELTA;
 
-    if (v0->unk_04 >= (FX32_ONE * 12)) {
-        v0->unk_04 = (FX32_ONE * 12);
+    if (runData->skyDarkness >= GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_TARGET) {
+        runData->skyDarkness = GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_TARGET;
     }
 
-    ov9_0224F860(param0, ((v0->unk_04) / FX32_ONE));
+    SetSkyDarknessLevel(system, runData->skyDarkness / FX32_ONE);
 
-    if (v0->unk_08.y >= ((1 << 4) * FX32_ONE)) {
-        v0->unk_08.y -= 0x1000;
+    if (runData->giratinaSpritePosOffset.y >= GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_SLOW_THRESHOLD) {
+        runData->giratinaSpritePosOffset.y -= GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_FAST_DECREMENT;
     } else {
-        v0->unk_08.y -= 0x800;
+        runData->giratinaSpritePosOffset.y -= GIRATINA_ROOM_PLAY_ARRIVAL_DESCEND_Y_SLOW_DECREMENT;
     }
 
-    if ((v0->unk_08.y < 0) && (v0->unk_04 >= (FX32_ONE * 12))) {
-        v0->unk_08.y = 0;
-        *param2 = 3;
+    if (runData->giratinaSpritePosOffset.y < 0 && runData->skyDarkness >= GIRATINA_ROOM_PLAY_ARRIVAL_SKY_DARKNESS_TARGET) {
+        runData->giratinaSpritePosOffset.y = 0;
+        *cmdState = EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_BRIGHTEN_SPRITE;
     }
 
-    MapObject_SetSpritePosOffset(v0->unk_18, &v0->unk_08);
-    return 0;
+    MapObject_SetSpritePosOffset(runData->giratinaMapObj, &runData->giratinaSpritePosOffset);
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_022508C0(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdPlayGiratinaArrival_BrightenSprite(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    Billboard *v0;
-    NNSG3dResMdl *v1;
-    UnkStruct_ov9_0225074C *v2 = GetLoadedEventDataBuffer(param0);
-    v0 = ov5_021EB1A0(v2->unk_18);
-    v1 = Billboard_GetModel2(v0);
+    CmdRunDataPlayGiratinaArrival *runData = GetLoadedEventDataBuffer(system);
+    Billboard *billboard = ov5_021EB1A0(runData->giratinaMapObj);
+    NNSG3dResMdl *model = Billboard_GetModel2(billboard);
 
-    v2->unk_00 -= (FX32_ONE * 16) / (3 * 30);
+    runData->spriteDarkness -= GIRATINA_ROOM_PLAY_ARRIVAL_SPRITE_DARKNESS_DECREMENT;
 
-    if (v2->unk_00 < 0) {
-        v2->unk_00 = 0;
-        *param2 = 4;
+    if (runData->spriteDarkness < 0) {
+        runData->spriteDarkness = 0;
+        *cmdState = EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_WAIT;
     }
 
-    ov9_0225074C(v2);
-    return 0;
+    CmdRunDataPlayGiratinaArrival_UpdateSpritePalette(runData);
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_022508F4(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdPlayGiratinaArrival_Wait(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_0225074C *v0 = GetLoadedEventDataBuffer(param0);
-    v0->unk_14++;
+    CmdRunDataPlayGiratinaArrival *runData = GetLoadedEventDataBuffer(system);
+    runData->delay++;
 
-    if (v0->unk_14 >= 30) {
-        param0->unk_1EC0 = 0;
-        return 2;
+    if (runData->delay >= GIRATINA_ROOM_PLAY_ARRIVAL_WAIT_DELAY) {
+        system->playingGiratinaArrival = FALSE;
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251490[5] = {
-    ov9_022507C4,
-    ov9_022507FC,
-    ov9_02250854,
-    ov9_022508C0,
-    ov9_022508F4
+static const DistWorldEventCmdHandler sPlayGiratinaArrivalHandlers[] = {
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_INIT_MAP_OBJECT] = EventCmdPlayGiratinaArrival_InitMapObject,
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_INIT_SPRITE_AND_SKY] = EventCmdPlayGiratinaArrival_InitSpriteAndSky,
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_DESCEND] = EventCmdPlayGiratinaArrival_Descend,
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_BRIGHTEN_SPRITE] = EventCmdPlayGiratinaArrival_BrightenSprite,
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL_STATE_WAIT] = EventCmdPlayGiratinaArrival_Wait
 };
 
-static int ov9_02250918(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_Init(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_02250918));
-    v0->unk_20 = AddMapObjectWithLocalID(param0, 579, MAP_OBJECT_B5F_UXIE);
+    CmdRunDataShowUxieBoulderTuto *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataShowUxieBoulderTuto));
+    runData->uxieMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B5F, MAP_OBJECT_B5F_UXIE);
 
     Sound_PlayPokemonCry(SPECIES_UXIE, 0);
 
-    v0->unk_04 = 1;
-    *param2 = 1;
-    return 0;
+    runData->hoverStepDelta = 1;
+    *cmdState = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_ASCEND;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_0225094C(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_Ascend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0;
-    fx32 v1 = (FX32_ONE * 2);
+    CmdRunDataShowUxieBoulderTuto *runData;
+    fx32 ascendYDelta = UXIE_BOULDER_TUTO_ASCEND_Y_DELTA;
 
-    v0 = GetLoadedEventDataBuffer(param0);
+    runData = GetLoadedEventDataBuffer(system);
 
-    if ((((v0->unk_14.y) >> 4) / FX32_ONE) < 16) {
-        v1 <<= 1;
+    if ((runData->uxieSpritePosOffset.y >> 4) / FX32_ONE < UXIE_BOULDER_TUTO_ASCEND_Y_TARGET - 1) {
+        ascendYDelta <<= 1;
     }
 
-    v0->unk_14.y += v1;
-    MapObject_SetSpritePosOffset(v0->unk_20, &v0->unk_14);
+    runData->uxieSpritePosOffset.y += ascendYDelta;
+    MapObject_SetSpritePosOffset(runData->uxieMapObj, &runData->uxieSpritePosOffset);
 
-    if ((((v0->unk_14.y) >> 4) / FX32_ONE) >= 17) {
-        *param2 = 2;
+    if ((runData->uxieSpritePosOffset.y >> 4) / FX32_ONE >= UXIE_BOULDER_TUTO_ASCEND_Y_TARGET) {
+        *cmdState = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_TO_BOULDER;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250994(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_MoveToBoulder(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0 = GetLoadedEventDataBuffer(param0);
-    v0->unk_14.z -= (FX32_ONE * 1);
-    MapObject_SetSpritePosOffset(v0->unk_20, &v0->unk_14);
+    CmdRunDataShowUxieBoulderTuto *runData = GetLoadedEventDataBuffer(system);
+    runData->uxieSpritePosOffset.z -= UXIE_BOULDER_TUTO_MOVE_TO_BOULDER_Z_DELTA;
+    MapObject_SetSpritePosOffset(runData->uxieMapObj, &runData->uxieSpritePosOffset);
 
-    if ((((v0->unk_14.z) >> 4) / FX32_ONE) <= -2) {
-        v0->unk_0C = v0->unk_14.y;
-        *param2 = 3;
+    if ((runData->uxieSpritePosOffset.z >> 4) / FX32_ONE <= UXIE_BOULDER_TUTO_MOVE_TO_BOULDER_Z_TARGET) {
+        runData->finalUxieY = runData->uxieSpritePosOffset.y;
+        *cmdState = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_HOVER;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_022509D4(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_Hover(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0;
-    fx32 v1[8] = { 0x0, 0x800, 0x1000, 0x2000, 0x4000, 0x6000, 0x7000, 0x8000 };
+    CmdRunDataShowUxieBoulderTuto *runData;
+    fx32 yOffsets[UXIE_BOULDER_TUTO_HOVER_STEP_COUNT] = { 0, 2048, 4096, 8192, 16384, 24576, 28672, 32768 };
 
-    v0 = GetLoadedEventDataBuffer(param0);
-    v0->unk_14.y = v0->unk_0C + v1[v0->unk_00 >> 1];
-    MapObject_SetSpritePosOffset(v0->unk_20, &v0->unk_14);
+    runData = GetLoadedEventDataBuffer(system);
+    runData->uxieSpritePosOffset.y = runData->finalUxieY + yOffsets[runData->hoverStep >> 1];
+    MapObject_SetSpritePosOffset(runData->uxieMapObj, &runData->uxieSpritePosOffset);
 
-    v0->unk_00 += v0->unk_04;
+    runData->hoverStep += runData->hoverStepDelta;
 
-    if ((v0->unk_00 >= 15) || (v0->unk_00 <= 0)) {
-        v0->unk_04 = -v0->unk_04;
+    if (runData->hoverStep >= UXIE_BOULDER_TUTO_HOVER_STEP_COUNT * 2 - 1 || runData->hoverStep <= 0) {
+        runData->hoverStepDelta = -runData->hoverStepDelta;
 
-        if (v0->unk_00 == 0) {
-            v0->unk_08++;
+        if (runData->hoverStep == 0) {
+            runData->hoverRepeat++;
 
-            if (v0->unk_08 >= 3) {
-                v0->unk_14.y = v0->unk_0C + v1[v0->unk_00 >> 1];
-                *param2 = 4;
+            if (runData->hoverRepeat >= UXIE_BOULDER_TUTO_HOVER_REPEAT_COUNT) {
+                runData->uxieSpritePosOffset.y = runData->finalUxieY + yOffsets[runData->hoverStep >> 1];
+                *cmdState = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_AWAY;
             }
         }
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250A58(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_MoveAway(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0 = GetLoadedEventDataBuffer(param0);
-    v0->unk_14.z += (FX32_ONE * 1);
+    CmdRunDataShowUxieBoulderTuto *runData = GetLoadedEventDataBuffer(system);
+    runData->uxieSpritePosOffset.z += UXIE_BOULDER_TUTO_MOVE_AWAY_Z_DELTA;
 
-    MapObject_SetSpritePosOffset(v0->unk_20, &v0->unk_14);
+    MapObject_SetSpritePosOffset(runData->uxieMapObj, &runData->uxieSpritePosOffset);
 
-    if ((((v0->unk_14.z) >> 4) / FX32_ONE) == 1) {
-        *param2 = 5;
+    if ((runData->uxieSpritePosOffset.z >> 4) / FX32_ONE == UXIE_BOULDER_TUTO_MOVE_AWAY_Z_TARGET) {
+        *cmdState = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_DESCEND;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250A90(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowUxieBoulderTuto_Descend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250918 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataShowUxieBoulderTuto *runData = GetLoadedEventDataBuffer(system);
 
-    if (v0->unk_10 < (FX32_ONE * 2)) {
-        v0->unk_10 += 0x200;
+    if (runData->descendYDelta < UXIE_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET) {
+        runData->descendYDelta += UXIE_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT;
     }
 
-    v0->unk_14.y -= v0->unk_10;
-    MapObject_SetSpritePosOffset(v0->unk_20, &v0->unk_14);
+    runData->uxieSpritePosOffset.y -= runData->descendYDelta;
+    MapObject_SetSpritePosOffset(runData->uxieMapObj, &runData->uxieSpritePosOffset);
 
-    if ((((v0->unk_14.y) >> 4) / FX32_ONE) <= 0) {
-        DeleteMapObject(param0, v0->unk_20);
-        ov9_02249DC8(param0, 10);
-        ov9_02249DC8(param0, 13);
-        v0->unk_20 = AddMapObjectWithLocalID(param0, 580, MAP_OBJECT_B6F_UXIE);
-        return 2;
+    if ((runData->uxieSpritePosOffset.y >> 4) / FX32_ONE <= 0) {
+        DeleteMapObject(system, runData->uxieMapObj);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_UXIE_TUTO_SEEN);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_UXIE_IN_B6F);
+        runData->uxieMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B6F, MAP_OBJECT_B6F_UXIE);
+
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251CC0[6] = {
-    ov9_02250918,
-    ov9_0225094C,
-    ov9_02250994,
-    ov9_022509D4,
-    ov9_02250A58,
-    ov9_02250A90
+static const DistWorldEventCmdHandler sShowUxieBoulderTutoHandlers[] = {
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_INIT] = EventCmdShowUxieBoulderTuto_Init,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_ASCEND] = EventCmdShowUxieBoulderTuto_Ascend,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_TO_BOULDER] = EventCmdShowUxieBoulderTuto_MoveToBoulder,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_HOVER] = EventCmdShowUxieBoulderTuto_Hover,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_MOVE_AWAY] = EventCmdShowUxieBoulderTuto_MoveAway,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO_STATE_DESCEND] = EventCmdShowUxieBoulderTuto_Descend
 };
 
-static const MapObjectAnimCmd Unk_ov9_02251E74[] = {
-    { 0x42, 0x1 },
-    { 0x7, 0x1 },
-    { 0x7, 0x1 },
-    { 0xA, 0x1 },
-    { 0x6, 0x1 },
-    { 0x41, 0x1 },
-    { 0xfe, 0x0 }
+static const MapObjectAnimCmd sAzelfBoulderTutoAnimation[] = {
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOWER_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOWER_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOW_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOWER_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_16, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_END, .count = 0 }
 };
 
-static int ov9_02250AFC(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowAzelfBoulderTuto_Init(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250AFC *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_02250AFC));
-    v0->unk_14 = AddMapObjectWithLocalID(param0, 579, MAP_OBJECT_B5F_AZELF);
+    CmdRunDataShowAzelfBoulderTuto *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataShowAzelfBoulderTuto));
+    runData->azelfMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B5F, MAP_OBJECT_B5F_AZELF);
 
     Sound_PlayPokemonCry(SPECIES_AZELF, 0);
 
-    *param2 = 1;
-    return 0;
+    *cmdState = EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_ASCEND;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250B30(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowAzelfBoulderTuto_Ascend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250AFC *v0;
-    fx32 v1 = (FX32_ONE * 2);
+    CmdRunDataShowAzelfBoulderTuto *runData;
+    fx32 ascendYDelta = AZELF_BOULDER_TUTO_ASCEND_Y_DELTA;
 
-    v0 = GetLoadedEventDataBuffer(param0);
+    runData = GetLoadedEventDataBuffer(system);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) < 12) {
-        v1 <<= 1;
+    if ((runData->azelfSpritePosOffset.y >> 4) / FX32_ONE < AZELF_BOULDER_TUTO_ASCEND_Y_TARGET - 1) {
+        ascendYDelta <<= 1;
     }
 
-    v0->unk_04.y += v1;
-    MapObject_SetSpritePosOffset(v0->unk_14, &v0->unk_04);
+    runData->azelfSpritePosOffset.y += ascendYDelta;
+    MapObject_SetSpritePosOffset(runData->azelfMapObj, &runData->azelfSpritePosOffset);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) >= 13) {
-        v0->unk_10 = MapObject_StartAnimation(
-            v0->unk_14, Unk_ov9_02251E74);
-        *param2 = 2;
+    if ((runData->azelfSpritePosOffset.y >> 4) / FX32_ONE >= AZELF_BOULDER_TUTO_ASCEND_Y_TARGET) {
+        runData->azelfAnimTask = MapObject_StartAnimation(runData->azelfMapObj, sAzelfBoulderTutoAnimation);
+        *cmdState = EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250B84(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowAzelfBoulderTuto_WaitForAnimation(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250AFC *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataShowAzelfBoulderTuto *runData = GetLoadedEventDataBuffer(system);
 
-    if (MapObject_HasAnimationEnded(v0->unk_10) == 1) {
-        MapObject_FinishAnimation(v0->unk_10);
-        *param2 = 3;
-        return 1;
+    if (MapObject_HasAnimationEnded(runData->azelfAnimTask) == TRUE) {
+        MapObject_FinishAnimation(runData->azelfAnimTask);
+
+        *cmdState = EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_DESCEND;
+        return EVENT_CMD_HANDLER_RES_LOOP;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250BAC(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowAzelfBoulderTuto_Descend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250AFC *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataShowAzelfBoulderTuto *runData = GetLoadedEventDataBuffer(system);
 
-    if (v0->unk_00 < (FX32_ONE * 2)) {
-        v0->unk_00 += 0x200;
+    if (runData->descendYDelta < AZELF_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET) {
+        runData->descendYDelta += AZELF_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT;
     }
 
-    v0->unk_04.y -= v0->unk_00;
-    MapObject_SetSpritePosOffset(v0->unk_14, &v0->unk_04);
+    runData->azelfSpritePosOffset.y -= runData->descendYDelta;
+    MapObject_SetSpritePosOffset(runData->azelfMapObj, &runData->azelfSpritePosOffset);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) <= 0) {
-        DeleteMapObject(param0, v0->unk_14);
-        ov9_02249DC8(param0, 11);
-        ov9_02249DC8(param0, 14);
-        v0->unk_14 = AddMapObjectWithLocalID(param0, 580, MAP_OBJECT_B6F_AZELF);
-        return 2;
+    if ((runData->azelfSpritePosOffset.y >> 4) / FX32_ONE <= 0) {
+        DeleteMapObject(system, runData->azelfMapObj);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_AZELF_TUTO_SEEN);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_AZELF_IN_B6F);
+        runData->azelfMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B6F, MAP_OBJECT_B6F_AZELF);
+
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251408[4] = {
-    ov9_02250AFC,
-    ov9_02250B30,
-    ov9_02250B84,
-    ov9_02250BAC
+static const DistWorldEventCmdHandler sShowAzelfBoulderTutoHandlers[] = {
+    [EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_INIT] = EventCmdShowAzelfBoulderTuto_Init,
+    [EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_ASCEND] = EventCmdShowAzelfBoulderTuto_Ascend,
+    [EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION] = EventCmdShowAzelfBoulderTuto_WaitForAnimation,
+    [EVENT_CMD_SHOW_AZELF_BOULDER_TUTO_STATE_DESCEND] = EventCmdShowAzelfBoulderTuto_Descend
 };
 
-static const MapObjectAnimCmd Unk_ov9_02252D80[] = {
-    { 0x42, 0x1 },
-    { 0xf, 0x2 },
-    { 0x10, 0x2 },
-    { 0x13, 0x2 },
-    { 0x11, 0x2 },
-    { 0x12, 0x2 },
-    { 0x10, 0x2 },
-    { 0x13, 0x2 },
-    { 0x11, 0x2 },
-    { 0x12, 0x2 },
-    { 0x12, 0x2 },
-    { 0xE, 0x1 },
-    { 0xA, 0x1 },
-    { 0x42, 0x1 },
-    { 0xB, 0x2 },
-    { 0x7, 0x1 },
-    { 0x41, 0x1 },
-    { 0xfe, 0x0 }
+static const MapObjectAnimCmd sMespritBoulderTutoAnimationPokemonTop[] = {
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_NORMAL_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_NORTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_SOUTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_NORTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_SOUTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_NORMAL_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOW_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOW_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOWER_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_16, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_END, .count = 0 }
 };
 
-static const MapObjectAnimCmd Unk_ov9_02252DC8[] = {
-    { 0x42, 0x1 },
-    { 0xf, 0x2 },
-    { 0x10, 0x1 },
-    { 0x13, 0x2 },
-    { 0x11, 0x2 },
-    { 0x12, 0x2 },
-    { 0x10, 0x2 },
-    { 0x13, 0x2 },
-    { 0x11, 0x2 },
-    { 0x12, 0x2 },
-    { 0x10, 0x1 },
-    { 0x12, 0x2 },
-    { 0xE, 0x1 },
-    { 0xA, 0x1 },
-    { 0x42, 0x1 },
-    { 0xB, 0x2 },
-    { 0x7, 0x1 },
-    { 0x41, 0x1 },
-    { 0xfe, 0x0 }
+static const MapObjectAnimCmd sMespritBoulderTutoAnimationPokemonBottom[] = {
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_NORMAL_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_SOUTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_NORTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_SOUTH, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_FAST_WEST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_NORMAL_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOW_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOW_EAST, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_WALK_SLOWER_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_16, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_END, .count = 0 }
 };
 
-static const MapObjectAnimCmd Unk_ov9_02252E14[] = {
-    { 0x42, 0x1 },
-    { 0x3f, 0x2 },
-    { 0x2, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x0, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x3, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x1, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x2, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x0, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x3, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x1, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x2, 0x1 },
-    { 0xfe, 0x0 }
+static const MapObjectAnimCmd sMespritBoulderTutoAnimationPlayerTop[] = {
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_8, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_SOUTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_SOUTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_END, .count = 0 }
 };
 
-static const MapObjectAnimCmd Unk_ov9_02252E64[] = {
-    { 0x42, 0x1 },
-    { 0x3f, 0x2 },
-    { 0x2, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x0, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x3, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x1, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x2, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x0, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x3, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x1, 0x1 },
-    { 0x3C, 0x3 },
-    { 0x2, 0x1 },
-    { 0xfe, 0x0 }
+static const MapObjectAnimCmd sMespritBoulderTutoAnimationPlayerBottom[] = {
+    { .movementAction = MOVEMENT_ACTION_DELAY_32, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_8, .count = 2 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_SOUTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_NORTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_EAST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_SOUTH, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_DELAY_1, .count = 3 },
+    { .movementAction = MOVEMENT_ACTION_FACE_WEST, .count = 1 },
+    { .movementAction = MOVEMENT_ACTION_END, .count = 0 }
 };
 
-static int ov9_02250C14(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowMespritBoulderTuto_Init(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250C14 *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_02250AFC));
-    v0->unk_18 = AddMapObjectWithLocalID(param0, 579, MAP_OBJECT_B5F_MESPRIT);
+    CmdRunDataShowMespritBoulderTuto *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataShowAzelfBoulderTuto));
+    runData->mespritMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B5F, MAP_OBJECT_B5F_MESPRIT);
 
     Sound_PlayPokemonCry(SPECIES_MESPRIT, 0);
-    *param2 = 1;
-    return 0;
+
+    *cmdState = EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_ASCEND;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250C48(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowMespritBoulderTuto_Ascend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250C14 *v0;
-    fx32 v1 = (FX32_ONE * 2);
+    CmdRunDataShowMespritBoulderTuto *runData;
+    fx32 ascendYDelta = MESPRIT_BOULDER_TUTO_ASCEND_Y_DELTA;
 
-    v0 = GetLoadedEventDataBuffer(param0);
+    runData = GetLoadedEventDataBuffer(system);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) < 8) {
-        v1 <<= 1;
+    if ((runData->mespritSpritePosOffset.y >> 4) / FX32_ONE < MESPRIT_BOULDER_TUTO_ASCEND_Y_TARGET - 1) {
+        ascendYDelta <<= 1;
     }
 
-    v0->unk_04.y += v1;
-    MapObject_SetSpritePosOffset(v0->unk_18, &v0->unk_04);
+    runData->mespritSpritePosOffset.y += ascendYDelta;
+    MapObject_SetSpritePosOffset(runData->mespritMapObj, &runData->mespritSpritePosOffset);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) >= 9) {
-        int v2, v3, v4;
-        const MapObjectAnimCmd *v5, *v6;
+    if ((runData->mespritSpritePosOffset.y >> 4) / FX32_ONE >= MESPRIT_BOULDER_TUTO_ASCEND_Y_TARGET) {
+        int playerX, playerY, playerZ;
+        const MapObjectAnimCmd *playerAnimCmds, *mespritAnimCmds;
 
-        GetPlayerPos(param0, &v2, &v3, &v4);
+        GetPlayerPos(system, &playerX, &playerY, &playerZ);
 
-        if (v4 == 67) {
-            v5 = Unk_ov9_02252E14;
-            v6 = Unk_ov9_02252D80;
+        if (playerZ == 67) {
+            playerAnimCmds = sMespritBoulderTutoAnimationPlayerTop;
+            mespritAnimCmds = sMespritBoulderTutoAnimationPokemonTop;
         } else {
-            v5 = Unk_ov9_02252E64;
-            v6 = Unk_ov9_02252DC8;
+            playerAnimCmds = sMespritBoulderTutoAnimationPlayerBottom;
+            mespritAnimCmds = sMespritBoulderTutoAnimationPokemonBottom;
         }
 
-        v0->unk_10 = MapObject_StartAnimation(v0->unk_18, v6);
-        v0->unk_14 = MapObject_StartAnimation(Player_MapObject(param0->fieldSystem->playerAvatar), v5);
-        *param2 = 2;
+        runData->mespritAnimTask = MapObject_StartAnimation(runData->mespritMapObj, mespritAnimCmds);
+        runData->playerAnimTask = MapObject_StartAnimation(Player_MapObject(system->fieldSystem->playerAvatar), playerAnimCmds);
+
+        *cmdState = EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250CD8(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowMespritBoulderTuto_WaitForAnimation(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250C14 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataShowMespritBoulderTuto *runData = GetLoadedEventDataBuffer(system);
 
-    if ((MapObject_HasAnimationEnded(v0->unk_10) == 1) && (MapObject_HasAnimationEnded(v0->unk_14) == 1)) {
-        MapObject_FinishAnimation(v0->unk_10);
-        MapObject_FinishAnimation(v0->unk_14);
-        *param2 = 3;
-        return 1;
+    if (MapObject_HasAnimationEnded(runData->mespritAnimTask) == TRUE && MapObject_HasAnimationEnded(runData->playerAnimTask) == TRUE) {
+        MapObject_FinishAnimation(runData->mespritAnimTask);
+        MapObject_FinishAnimation(runData->playerAnimTask);
+
+        *cmdState = EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_DESCEND;
+        return EVENT_CMD_HANDLER_RES_LOOP;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250D10(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowMespritBoulderTuto_Descend(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250C14 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataShowMespritBoulderTuto *runData = GetLoadedEventDataBuffer(system);
 
-    if (v0->unk_00 < (FX32_ONE * 2)) {
-        v0->unk_00 += 0x200;
+    if (runData->descendYDelta < MESPRIT_BOULDER_TUTO_DESCEND_Y_DELTA_TARGET) {
+        runData->descendYDelta += MESPRIT_BOULDER_TUTO_DESCEND_Y_DELTA_INCREMENT;
     }
 
-    v0->unk_04.y -= v0->unk_00;
-    MapObject_SetSpritePosOffset(v0->unk_18, &v0->unk_04);
+    runData->mespritSpritePosOffset.y -= runData->descendYDelta;
+    MapObject_SetSpritePosOffset(runData->mespritMapObj, &runData->mespritSpritePosOffset);
 
-    if ((((v0->unk_04.y) >> 4) / FX32_ONE) <= 0) {
-        DeleteMapObject(param0, v0->unk_18);
-        ov9_02249DC8(param0, 12);
-        ov9_02249DC8(param0, 15);
-        v0->unk_18 = AddMapObjectWithLocalID(
-            param0, 580, MAP_OBJECT_B6F_MESPRIT);
-        return 2;
+    if ((runData->mespritSpritePosOffset.y >> 4) / FX32_ONE <= 0) {
+        DeleteMapObject(system, runData->mespritMapObj);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_MESPRIT_TUTO_SEEN);
+        SetPersistedBoulderPuzzleFlag(system, DIST_WORLD_PUZZLE_FLAG_MESPRIT_IN_B6F);
+        runData->mespritMapObj = AddMapObjectWithLocalID(system, MAP_HEADER_DISTORTION_WORLD_B6F, MAP_OBJECT_B6F_MESPRIT);
+
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251448[4] = {
-    ov9_02250C14,
-    ov9_02250C48,
-    ov9_02250CD8,
-    ov9_02250D10
+static const DistWorldEventCmdHandler sShowMespritBoulderTutoHandlers[] = {
+    [EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_INIT] = EventCmdShowMespritBoulderTuto_Init,
+    [EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_ASCEND] = EventCmdShowMespritBoulderTuto_Ascend,
+    [EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_WAIT_FOR_ANIMATION] = EventCmdShowMespritBoulderTuto_WaitForAnimation,
+    [EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO_STATE_DESCEND] = EventCmdShowMespritBoulderTuto_Descend
 };
 
-const DistWorldCameraAngleTemplate Unk_ov9_02251D68 = {
-    { 0x0, 0x0, 0x0, 0x0 },
-    0x10,
-    0x0,
-    0x0,
-    0x0,
-    0x14
+const DistWorldCameraAngleTemplate sGiratinaRoomPlatformsShownCameraAngle = {
+    .bounds = {
+        .startTileX = 0x0,
+        .startTileY = 0x0,
+        .startTileZ = 0x0,
+        .sizeX = 0x0,
+        .sizeY = 0x0,
+        .sizeZ = 0x0,
+    },
+    .angleX = 0x10,
+    .angleY = 0x0,
+    .angleZ = 0x0,
+    .playerDir = FACE_UP,
+    .transitionSteps = 0x14
 };
 
-static int ov9_02250D78(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowGiratinaRoomPlatforms_DoCameraTransition(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250D78 *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_02250D78));
+    CmdRunDataGiratinaRoomPlatforms *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataGiratinaRoomPlatforms));
 
-    DoCameraTransition(param0, &Unk_ov9_02251D68);
+    DoCameraTransition(system, &sGiratinaRoomPlatformsShownCameraAngle);
 
-    v0->unk_02 = 20 + 16;
-    v0->unk_00 = 1;
-    *param2 = 1;
+    runData->delay = GIRATINA_ROOM_SHOW_PLATFORMS_INITIAL_DELAY;
+    runData->ghostPropGroup = GIRATINA_ROOM_PLATFORMS_FIRST_GHOST_PROP_GROUP;
+    *cmdState = EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS_STATE_SHOW_PLATFORMS;
 
-    return 1;
+    return EVENT_CMD_HANDLER_RES_LOOP;
 }
 
-static int ov9_02250DA0(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdShowGiratinaRoomPlatforms_ShowPlatforms(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250D78 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataGiratinaRoomPlatforms *runData = GetLoadedEventDataBuffer(system);
 
-    v0->unk_02--;
+    runData->delay--;
 
-    if (v0->unk_02 <= 0) {
-        v0->unk_02 = 48;
-        Sound_StopEffect(1484, 0);
-        ShowGhostPropGroup(param0, v0->unk_00);
-        v0->unk_00++;
+    if (runData->delay <= 0) {
+        runData->delay = GIRATINA_ROOM_SHOW_PLATFORMS_DELAY;
+        Sound_StopEffect(SEQ_SE_PL_SYUWA3, 0);
+        ShowGhostPropGroup(system, runData->ghostPropGroup);
+        runData->ghostPropGroup++;
 
-        if (v0->unk_00 >= 4) {
-            return 2;
+        if (runData->ghostPropGroup >= GIRATINA_ROOM_PLATFORMS_LAST_GHOST_PROP_GROUP + 1) {
+            return EVENT_CMD_HANDLER_RES_FINISH;
         }
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_02251340[2] = {
-    ov9_02250D78,
-    ov9_02250DA0
+static const DistWorldEventCmdHandler sShowGiratinaRoomPlatformsHandlers[] = {
+    [EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS_STATE_DO_CAMERA_TRANSITION] = EventCmdShowGiratinaRoomPlatforms_DoCameraTransition,
+    [EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS_STATE_SHOW_PLATFORMS] = EventCmdShowGiratinaRoomPlatforms_ShowPlatforms
 };
 
-static int ov9_02250DE8(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdHideGiratinaRoomPlatforms_Init(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250DE8 *v0 = ResetLoadedEventDataBuffer(param0, sizeof(UnkStruct_ov9_02250DE8));
-    v0->unk_02 = 16;
-    v0->unk_00 = 3;
+    CmdRunDataGiratinaRoomPlatforms *runData = ResetLoadedEventDataBuffer(system, sizeof(CmdRunDataGiratinaRoomPlatforms));
+    runData->delay = GIRATINA_ROOM_HIDE_PLATFORMS_INITIAL_DELAY;
+    runData->ghostPropGroup = GIRATINA_ROOM_PLATFORMS_LAST_GHOST_PROP_GROUP;
 
-    *param2 = 1;
-    return 1;
+    *cmdState = EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_HIDE_PLATFORMS;
+    return EVENT_CMD_HANDLER_RES_LOOP;
 }
 
-static int ov9_02250E00(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdHideGiratinaRoomPlatforms_HidePlatforms(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250DE8 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataGiratinaRoomPlatforms *runData = GetLoadedEventDataBuffer(system);
 
-    v0->unk_02--;
+    runData->delay--;
 
-    if (v0->unk_02 <= 0) {
-        if (v0->unk_00 >= 1) {
-            v0->unk_02 = 48;
-            Sound_StopEffect(1484, 0);
-            HideGhostPropGroup(param0, v0->unk_00);
-            v0->unk_00--;
+    if (runData->delay <= 0) {
+        if (runData->ghostPropGroup >= GIRATINA_ROOM_PLATFORMS_FIRST_GHOST_PROP_GROUP) {
+            runData->delay = GIRATINA_ROOM_HIDE_PLATFORMS_DELAY;
+            Sound_StopEffect(SEQ_SE_PL_SYUWA3, 0);
+            HideGhostPropGroup(system, runData->ghostPropGroup);
+            runData->ghostPropGroup--;
         } else {
-            v0->unk_02 = 8;
-            *param2 = 2;
+            runData->delay = GIRATINA_ROOM_HIDE_PLATFORMS_WAIT_DELAY;
+            *cmdState = EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_WAIT;
         }
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static int ov9_02250E50(DistWorldSystem *param0, FieldTask *param1, u16 *param2, const void *param3)
+static int EventCmdHideGiratinaRoomPlatforms_Wait(DistWorldSystem *system, FieldTask *task, u16 *cmdState, const void *params)
 {
-    UnkStruct_ov9_02250DE8 *v0 = GetLoadedEventDataBuffer(param0);
+    CmdRunDataGiratinaRoomPlatforms *runData = GetLoadedEventDataBuffer(system);
 
-    v0->unk_02--;
+    runData->delay--;
 
-    if (v0->unk_02 <= 0) {
-        return 2;
+    if (runData->delay <= 0) {
+        return EVENT_CMD_HANDLER_RES_FINISH;
     }
 
-    return 0;
+    return EVENT_CMD_HANDLER_RES_CONTINUE;
 }
 
-static const DistWorldEventCmdHandler Unk_ov9_0225139C[3] = {
-    ov9_02250DE8,
-    ov9_02250E00,
-    ov9_02250E50
+static const DistWorldEventCmdHandler sHideGiratinaRoomPlatformsHandlers[] = {
+    [EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_INIT] = EventCmdHideGiratinaRoomPlatforms_Init,
+    [EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_HIDE_PLATFORMS] = EventCmdHideGiratinaRoomPlatforms_HidePlatforms,
+    [EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS_STATE_WAIT] = EventCmdHideGiratinaRoomPlatforms_Wait
 };
 
 static BOOL DistWorldBounds_AreCoordinatesInBounds(int tileX, int tileY, int tileZ, const DistWorldBounds *bounds)
@@ -9525,15 +9640,15 @@ static BOOL CheckFlagCondition(DistWorldSystem *system, enum FlagCondition flagC
     case FLAG_COND_NONE:
         return TRUE;
 
-    case FLAG_COND_1:
-        if (ov9_02249E00(system, val) != TRUE) {
+    case FLAG_COND_BOULDER_PUZZLE_FALSE:
+        if (CheckPersistedBoulderPuzzleFlag(system, val) != TRUE) {
             return TRUE;
         }
 
         break;
 
-    case FLAG_COND_2:
-        if (ov9_02249E00(system, val) == TRUE) {
+    case FLAG_COND_BOULDER_PUZZLE_TRUE:
+        if (CheckPersistedBoulderPuzzleFlag(system, val) == TRUE) {
             return TRUE;
         }
 
@@ -10109,7 +10224,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplate1F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplates1F[] = {
@@ -10126,7 +10241,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB1F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B1F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B1F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB1F_2 = {
@@ -10138,7 +10253,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB1F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB1F[] = {
@@ -10156,7 +10271,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B2F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B2F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_2 = {
@@ -10168,7 +10283,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_3 = {
@@ -10180,7 +10295,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_3 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_4 = {
@@ -10192,7 +10307,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_4 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_5 = {
@@ -10204,7 +10319,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_5 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_6 = {
@@ -10216,7 +10331,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_6 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_7 = {
@@ -10228,7 +10343,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_7 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_8 = {
@@ -10240,7 +10355,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_8 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_SW,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_9 = {
@@ -10252,7 +10367,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_9 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_10 = {
@@ -10264,7 +10379,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_10 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_11 = {
@@ -10276,7 +10391,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_11 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_12 = {
@@ -10288,7 +10403,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_12 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_13 = {
@@ -10300,7 +10415,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_13 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_14 = {
@@ -10312,7 +10427,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_14 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_15 = {
@@ -10324,7 +10439,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_15 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_16 = {
@@ -10336,7 +10451,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_16 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_17 = {
@@ -10348,7 +10463,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_17 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_18 = {
@@ -10360,7 +10475,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB2F_18 = 
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_NONE,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_MOVING_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB2F[] = {
@@ -10394,7 +10509,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x7,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_SW,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B3F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_2 = {
@@ -10406,7 +10521,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_2
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B3F_2
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_3 = {
@@ -10418,7 +10533,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_3 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_4 = {
@@ -10430,7 +10545,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB3F_4 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x2,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB3F[] = {
@@ -10450,7 +10565,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB4F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B4F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB4F_2 = {
@@ -10462,7 +10577,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB4F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x2,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_2
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B4F_2
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB4F_3 = {
@@ -10474,7 +10589,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB4F_3 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_3
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B4F_3
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB4F[] = {
@@ -10493,7 +10608,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB5F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x2,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_2,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B5F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB5F_2 = {
@@ -10505,7 +10620,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB5F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB5F_3 = {
@@ -10517,7 +10632,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB5F_3 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x3,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_1,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_3
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B5F_3
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB5F[] = {
@@ -10536,7 +10651,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB6F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x1,
     .propKind = PROP_KIND_LARGE_ELEVATOR_PLATFORM_4,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B6F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B6F_1
 };
 
 static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB6F_2 = {
@@ -10548,7 +10663,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB6F_2 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_DOWN,
     .destIndex = 0x0,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_5,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_INVALID
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB6F[] = {
@@ -10566,7 +10681,7 @@ static const DistWorldMovingPlatformTemplate sMovingPlatformMapTemplateB7F_1 = {
     .elevatorDir = MOVING_PLATFORM_ELEVATOR_DIR_UP,
     .destIndex = 0x1,
     .propKind = PROP_KIND_MEDIUM_ELEVATOR_PLATFORM_5,
-    .persistedFlag = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B7F_1
+    .persistedFlag = DIST_WORLD_PLATFORM_FLAG_B7F_1
 };
 
 static const DistWorldMovingPlatformTemplate *sMovingPlatformsMapTemplatesB7F[] = {
@@ -10596,8 +10711,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0x10,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B1F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B1F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x1,
@@ -10609,8 +10724,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B1F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B1F_1,
     },
     {
         .index = 0x2,
@@ -10622,8 +10737,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0x1C,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B2F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B2F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x3,
@@ -10635,8 +10750,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B2F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B2F_1,
     },
     {
         .index = 0x4,
@@ -10648,8 +10763,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xE,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B3F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x5,
@@ -10661,8 +10776,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B3F_1,
     },
     {
         .index = 0x6,
@@ -10674,8 +10789,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_2,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B4F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B3F_2,
     },
     {
         .index = 0x7,
@@ -10687,8 +10802,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xE,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_2,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B4F_2,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x8,
@@ -10700,8 +10815,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_3,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B5F_3,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x9,
@@ -10713,8 +10828,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xE,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0xA,
@@ -10726,8 +10841,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B3F_2,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B3F_2,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B4F_1,
     },
     {
         .index = 0xB,
@@ -10739,8 +10854,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_2,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B4F_2,
     },
     {
         .index = 0xC,
@@ -10752,8 +10867,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xE,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_3,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B5F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B4F_3,
     },
     {
         .index = 0xD,
@@ -10765,8 +10880,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B4F_3,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B4F_3,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B5F_1,
     },
     {
         .index = 0xE,
@@ -10778,8 +10893,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xC,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B6F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B6F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0xF,
@@ -10791,8 +10906,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B5F_3,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B5F_3,
     },
     {
         .index = 0x10,
@@ -10804,8 +10919,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0xA,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x11,
@@ -10817,8 +10932,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x1,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B6F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B6F_1,
     },
     {
         .index = 0x12,
@@ -10830,8 +10945,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0x11,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * -4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B7F_1,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_B7F_1,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x13,
@@ -10843,8 +10958,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_B7F_1,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_B7F_1,
     },
     {
         .index = 0x14,
@@ -10856,8 +10971,8 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = 0x12,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
     {
         .index = 0x15,
@@ -10869,30 +10984,30 @@ static const DistWorldElevatorPlatformPath sElevatorPlatformPaths[ELEVATOR_PLATF
         .changeMapsTileYOffset = -0xE,
         .changeMapsTileZOffset = 0x0,
         .posDelta = { 0x0, FX32_ONE * 4, 0x0 },
-        .persistedFlagToSet = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
-        .persistedFlagToClear = DIST_WORLD_PERSISTED_MOVING_PLATFORM_FLAG_INVALID,
+        .persistedFlagToSet = DIST_WORLD_PLATFORM_FLAG_INVALID,
+        .persistedFlagToClear = DIST_WORLD_PLATFORM_FLAG_INVALID,
     },
 };
 
 static const DistWorldEventCmdHandler *sEventCmdHandlers[EVENT_CMD_KIND_COUNT] = {
-    [EVENT_CMD_KIND_00] = Unk_ov9_02251360,
-    [EVENT_CMD_KIND_01] = Unk_ov9_022513E8,
+    [EVENT_CMD_SET_MAP_OBJECT_ANIMATION] = sSetMapObjectAnimationHandlers,
+    [EVENT_CMD_MOVE_PLATFORM] = sMovePlatformHandlers,
     [EVENT_CMD_ADD_MAP_OBJECT_WITH_LOCAL_ID] = sAddMapObjWithLocalIDHandlers,
     [EVENT_CMD_DELETE_MAP_OBJECT_WITH_LOCAL_ID] = sDeleteMapObjWithLocalIDHandlers,
     [EVENT_CMD_KIND_04] = Unk_ov9_0225151C,
     [EVENT_CMD_START_SCRIPT] = sStartScriptHandlers,
     [EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS] = sSetDistortionWorldProgressHandlers,
-    [EVENT_CMD_KIND_07] = Unk_ov9_02251328,
-    [EVENT_CMD_KIND_08] = Unk_ov9_0225121C,
-    [EVENT_CMD_KIND_09] = Unk_ov9_02251270,
+    [EVENT_CMD_SHOW_GIRATINA_SHADOW] = sEventCmdShowGiratinaShadow,
+    [EVENT_CMD_SET_GIRATINA_ANIMATION_FLAG] = sSetGiratinaAnimationFlagHandlers,
+    [EVENT_CMD_SET_PUZZLE_FLAG] = sSetPuzzleFlagHandlers,
     [EVENT_CMD_KIND_0A] = Unk_ov9_02251544,
-    [EVENT_CMD_KIND_0B] = Unk_ov9_02251490,
-    [EVENT_CMD_KIND_0C] = Unk_ov9_02251CC0,
-    [EVENT_CMD_KIND_0D] = Unk_ov9_02251408,
-    [EVENT_CMD_KIND_0E] = Unk_ov9_02251448,
-    [EVENT_CMD_KIND_0F] = Unk_ov9_02251340,
-    [EVENT_CMD_KIND_10] = Unk_ov9_0225139C,
-    [EVENT_CMD_KIND_11] = Unk_ov9_02251254
+    [EVENT_CMD_PLAY_GIRATINA_ARRIVAL] = sPlayGiratinaArrivalHandlers,
+    [EVENT_CMD_SHOW_UXIE_BOULDER_TUTO] = sShowUxieBoulderTutoHandlers,
+    [EVENT_CMD_SHOW_AZELF_BOULDER_TUTO] = sShowAzelfBoulderTutoHandlers,
+    [EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO] = sShowMespritBoulderTutoHandlers,
+    [EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS] = sShowGiratinaRoomPlatformsHandlers,
+    [EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS] = sHideGiratinaRoomPlatformsHandlers,
+    [EVENT_CMD_CLEAR_PUZZLE_FLAG] = sClearPuzzleFlagHandlers
 };
 
 static const CmdParamsStartScript sMapEventCmdParams1F_CynthiaElevatorText_1 = {
@@ -10968,990 +11083,1002 @@ static const DistWorldEvent sMapEventsB1F[] = {
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_1_1 = {
-    0x1,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    -8,
-    { 0x0, 0x0, (FX32_ONE * -4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P2N_1 = {
+    .platformIndex = 0x1,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x1,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_1_2 = {
-    0xff,
-    0x75
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P2N_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_NORTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_1_3 = {
-    0x1,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    0x8,
-    { 0x0, 0x0, (FX32_ONE * 4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P2N_3 = {
+    .platformIndex = 0x1,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x0,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_1[] = {
+static const DistWorldEventCmd sMapEventB2F_P2N[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_1_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P2N_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_1_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P2N_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_1_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_2_1 = {
-    0x1,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    -8,
-    { 0x0, 0x0, (FX32_ONE * -4) }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_2_2 = {
-    0xff,
-    0x76
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_2_3 = {
-    0x1,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    0x8,
-    { 0x0, 0x0, (FX32_ONE * 4) }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_2[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_2_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_2_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_2_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P2N_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_3_1 = {
-    0x2,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    -8,
-    { 0x0, 0x0, (FX32_ONE * -4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P3S_1 = {
+    .platformIndex = 0x1,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x0,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_3_2 = {
-    0xff,
-    0x75
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P3S_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_SOUTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_3_3 = {
-    0x2,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    0x8,
-    { 0x0, 0x0, (FX32_ONE * 4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P3S_3 = {
+    .platformIndex = 0x1,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x1,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_3[] = {
+static const DistWorldEventCmd sMapEventB2F_P3S[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_3_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P3S_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_3_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P3S_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_3_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_4_1 = {
-    0x2,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    -8,
-    { 0x0, 0x0, (FX32_ONE * -4) }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_4_2 = {
-    0xff,
-    0x76
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_4_3 = {
-    0x2,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    0x8,
-    { 0x0, 0x0, (FX32_ONE * 4) }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_4[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_4_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_4_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_4_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P3S_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_5_1 = {
-    0x3,
-    0x1,
-    0x1,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P3N_1 = {
+    .platformIndex = 0x2,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x1,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_5_2 = {
-    0xff,
-    0x78
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P3N_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_NORTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_5_3 = {
-    0x3,
-    0x0,
-    0x0,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P3N_3 = {
+    .platformIndex = 0x2,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x0,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_5[] = {
+static const DistWorldEventCmd sMapEventB2F_P3N[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_5_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P3N_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_5_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P3N_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_5_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_6_1 = {
-    0x3,
-    0x0,
-    0x0,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_6_2 = {
-    0xff,
-    0x77
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_6_3 = {
-    0x3,
-    0x1,
-    0x1,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_6[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_6_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_6_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_6_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P3N_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_7_1 = {
-    0x5,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    0x25,
-    { 0x0, 0x0, (FX32_ONE * 4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P4S_1 = {
+    .platformIndex = 0x2,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x0,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_7_2 = {
-    0xff,
-    0x76
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P4S_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_SOUTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_7_3 = {
-    0x5,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    -37,
-    { 0x0, 0x0, (FX32_ONE * -4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P4S_3 = {
+    .platformIndex = 0x2,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x8,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x1,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_7[] = {
+static const DistWorldEventCmd sMapEventB2F_P4S[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_7_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P4S_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_7_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P4S_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_7_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_8_1 = {
-    0x5,
-    0x0,
-    0x0,
-    0x0,
-    0x0,
-    0x25,
-    { 0x0, 0x0, (FX32_ONE * 4) }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_8_2 = {
-    0xff,
-    0x75
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_8_3 = {
-    0x5,
-    0x1,
-    0x1,
-    0x0,
-    0x0,
-    -37,
-    { 0x0, 0x0, (FX32_ONE * -4) }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_8[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_8_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_8_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_8_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P4S_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_9_1 = {
-    0x6,
-    0x1,
-    0x1,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P4E_1 = {
+    .platformIndex = 0x3,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x1,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_9_2 = {
-    0xff,
-    0x78
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P4E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_9_3 = {
-    0x6,
-    0x0,
-    0x0,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P4E_3 = {
+    .platformIndex = 0x3,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x0,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_9[] = {
+static const DistWorldEventCmd sMapEventB2F_P4E[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_9_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P4E_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_9_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P4E_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_9_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_10_1 = {
-    0x6,
-    0x0,
-    0x0,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_10_2 = {
-    0xff,
-    0x77
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_10_3 = {
-    0x6,
-    0x1,
-    0x1,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_10[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_10_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_10_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_10_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P4E_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_11_1 = {
-    0x9,
-    0x1,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P5W_1 = {
+    .platformIndex = 0x3,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x0,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_11_2 = {
-    0xff,
-    0x78
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P5W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_11_3 = {
-    0x9,
-    0x0,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P5W_3 = {
+    .platformIndex = 0x3,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x1,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_11[] = {
+static const DistWorldEventCmd sMapEventB2F_P5W[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_11_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P5W_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_11_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P5W_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_11_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_12_1 = {
-    0x9,
-    0x0,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_12_2 = {
-    0xff,
-    0x77
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_12_3 = {
-    0x9,
-    0x1,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_12[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_12_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_12_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_12_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P5W_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_13_1 = {
-    0xA,
-    0x1,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P6S_1 = {
+    .platformIndex = 0x5,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x25,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x1,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_13_2 = {
-    0xff,
-    0x78
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P6S_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_SOUTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_13_3 = {
-    0xA,
-    0x0,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P6S_3 = {
+    .platformIndex = 0x5,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x25,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x0,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_13[] = {
+static const DistWorldEventCmd sMapEventB2F_P6S[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_13_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P6S_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_13_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P6S_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_13_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_14_1 = {
-    0xA,
-    0x0,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_14_2 = {
-    0xff,
-    0x77
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_14_3 = {
-    0xA,
-    0x1,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_14[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_14_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_14_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_14_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P6S_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_15_1 = {
-    0xB,
-    0x1,
-    0x2,
-    0x0,
-    0x0,
-    0x17,
-    { 0x0, 0x0, (FX32_ONE * 4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P9N_1 = {
+    .platformIndex = 0x5,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x25,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x0,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_15_2 = {
-    0xff,
-    0x76
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P9N_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_NORTH
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_15_3 = {
-    0xB,
-    0x0,
-    0x2,
-    0x0,
-    0x0,
-    -23,
-    { 0x0, 0x0, (FX32_ONE * -4) }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P9N_3 = {
+    .platformIndex = 0x5,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x25,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x1,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_15[] = {
+static const DistWorldEventCmd sMapEventB2F_P9N[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_15_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P9N_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_15_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P9N_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_15_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_16_1 = {
-    0xB,
-    0x0,
-    0x2,
-    0x0,
-    0x0,
-    0x17,
-    { 0x0, 0x0, (FX32_ONE * 4) }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_16_2 = {
-    0xff,
-    0x75
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_16_3 = {
-    0xB,
-    0x1,
-    0x2,
-    0x0,
-    0x0,
-    -23,
-    { 0x0, 0x0, (FX32_ONE * -4) }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_16[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_16_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_16_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_16_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P9N_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_17_1 = {
-    0xC,
-    0x1,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P7E_1 = {
+    .platformIndex = 0x6,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x1,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_17_2 = {
-    0xff,
-    0x77
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P7E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_17_3 = {
-    0xC,
-    0x0,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P7E_3 = {
+    .platformIndex = 0x6,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x0,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_17[] = {
+static const DistWorldEventCmd sMapEventB2F_P7E[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_17_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P7E_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_17_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P7E_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_17_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_18_1 = {
-    0xC,
-    0x0,
-    0x2,
-    -9,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_18_2 = {
-    0xff,
-    0x78
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_18_3 = {
-    0xC,
-    0x1,
-    0x2,
-    0x9,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_18[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_18_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_18_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_18_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P7E_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_19_1 = {
-    0xD,
-    0x1,
-    0x2,
-    -17,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P8W_1 = {
+    .platformIndex = 0x6,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x0,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_19_2 = {
-    0xff,
-    0x77
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P8W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_19_3 = {
-    0xD,
-    0x0,
-    0x2,
-    0x11,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P8W_3 = {
+    .platformIndex = 0x6,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x1,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_19[] = {
+static const DistWorldEventCmd sMapEventB2F_P8W[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_19_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P8W_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_19_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P8W_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_19_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_20_1 = {
-    0xD,
-    0x0,
-    0x2,
-    -17,
-    0x0,
-    0x0,
-    { (FX32_ONE * -4), 0x0, 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_20_2 = {
-    0xff,
-    0x78
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_20_3 = {
-    0xD,
-    0x1,
-    0x2,
-    0x11,
-    0x0,
-    0x0,
-    { (FX32_ONE * 4), 0x0, 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_20[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_20_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_20_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_20_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P8W_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_21_1 = {
-    0x11,
-    0x1,
-    0x1,
-    0x0,
-    -8,
-    0x0,
-    { 0x0, (FX32_ONE * -2), 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P10E_1 = {
+    .platformIndex = 0x9,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_21_2 = {
-    0xff,
-    0x75
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P10E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_21_3 = {
-    0x11,
-    0x0,
-    0x1,
-    0x0,
-    0x8,
-    0x0,
-    { 0x0, (FX32_ONE * 2), 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P10E_3 = {
+    .platformIndex = 0x9,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_21[] = {
+static const DistWorldEventCmd sMapEventB2F_P10E[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_21_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P10E_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_21_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P10E_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_21_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_22_1 = {
-    0x11,
-    0x0,
-    0x1,
-    0x0,
-    -8,
-    0x0,
-    { 0x0, (FX32_ONE * -2), 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_22_2 = {
-    0xff,
-    0x76
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_22_3 = {
-    0x11,
-    0x1,
-    0x1,
-    0x0,
-    0x8,
-    0x0,
-    { 0x0, (FX32_ONE * 2), 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_22[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_22_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_22_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_22_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P10E_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_23_1 = {
-    0x10,
-    0x1,
-    0x1,
-    0x0,
-    -8,
-    0x0,
-    { 0x0, (FX32_ONE * -2), 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P11W_1 = {
+    .platformIndex = 0x9,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
 };
 
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_23_2 = {
-    0xff,
-    0x78
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P11W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
 };
 
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_23_3 = {
-    0x10,
-    0x0,
-    0x1,
-    0x0,
-    0x8,
-    0x0,
-    { 0x0, (FX32_ONE * 2), 0x0 }
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P11W_3 = {
+    .platformIndex = 0x9,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
 };
 
-static const DistWorldEventCmd sUnkMapEventB2F_23[] = {
+static const DistWorldEventCmd sMapEventB2F_P11W[] = {
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_23_1,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P11W_1,
     },
     {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_23_2,
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P11W_2,
     },
     {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_23_3,
-    },
-    { EVENT_CMD_END, NULL }
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_24_1 = {
-    0x10,
-    0x0,
-    0x1,
-    0x0,
-    -8,
-    0x0,
-    { 0x0, (FX32_ONE * -2), 0x0 }
-};
-
-static const UnkStruct_ov9_0224E4E8 sUnkMapEventCmdParamsB2F_24_2 = {
-    0xff,
-    0x77
-};
-
-static const UnkStruct_ov9_0224E550 sUnkMapEventCmdParamsB2F_24_3 = {
-    0x10,
-    0x1,
-    0x1,
-    0x0,
-    0x8,
-    0x0,
-    { 0x0, (FX32_ONE * 2), 0x0 }
-};
-
-static const DistWorldEventCmd sUnkMapEventB2F_24[] = {
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_24_1,
-    },
-    {
-        .kind = EVENT_CMD_KIND_00,
-        .params = &sUnkMapEventCmdParamsB2F_24_2,
-    },
-    {
-        .kind = EVENT_CMD_KIND_01,
-        .params = &sUnkMapEventCmdParamsB2F_24_3,
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P11W_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P11E_1 = {
+    .platformIndex = 0xA,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P11E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P11E_3 = {
+    .platformIndex = 0xA,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P11E[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P11E_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P11E_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P11E_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P12W_1 = {
+    .platformIndex = 0xA,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P12W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P12W_3 = {
+    .platformIndex = 0xA,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P12W[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P12W_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P12W_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P12W_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P12S_1 = {
+    .platformIndex = 0xB,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x17,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P12S_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_SOUTH
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P12S_3 = {
+    .platformIndex = 0xB,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x17,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P12S[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P12S_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P12S_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P12S_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P13N_1 = {
+    .platformIndex = 0xB,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x17,
+    .posDelta = { 0x0, 0x0, FX32_ONE * 4 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P13N_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_NORTH
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P13N_3 = {
+    .platformIndex = 0xB,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = -0x17,
+    .posDelta = { 0x0, 0x0, FX32_ONE * -4 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P13N[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P13N_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P13N_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P13N_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P13W_1 = {
+    .platformIndex = 0xC,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P13W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P13W_3 = {
+    .platformIndex = 0xC,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P13W[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P13W_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P13W_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P13W_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P16E_1 = {
+    .platformIndex = 0xC,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P16E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P16E_3 = {
+    .platformIndex = 0xC,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x9,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P16E[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P16E_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P16E_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P16E_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P14W_1 = {
+    .platformIndex = 0xD,
+    .movePlayer = TRUE,
+    .finalTileXOffset = -0x11,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P14W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P14W_3 = {
+    .platformIndex = 0xD,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x11,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P14W[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P14W_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P14W_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P14W_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P15E_1 = {
+    .platformIndex = 0xD,
+    .movePlayer = FALSE,
+    .finalTileXOffset = -0x11,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * -4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P15E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P15E_3 = {
+    .platformIndex = 0xD,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x11,
+    .finalTileYOffset = 0x0,
+    .finalTileZOffset = 0x0,
+    .posDelta = { FX32_ONE * 4, 0x0, 0x0 },
+    .dummy04 = 0x2,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P15E[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P15E_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P15E_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P15E_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P18N_1 = {
+    .platformIndex = 0x11,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = -0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * -2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P18N_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_NORTH
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P18N_3 = {
+    .platformIndex = 0x11,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * 2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P18N[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P18N_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P18N_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P18N_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P7S_1 = {
+    .platformIndex = 0x11,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = -0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * -2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P7S_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_SOUTH
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P7S_3 = {
+    .platformIndex = 0x11,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * 2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P7S[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P7S_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P7S_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P7S_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P17E_1 = {
+    .platformIndex = 0x10,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = -0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * -2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P17E_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_EAST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P17E_3 = {
+    .platformIndex = 0x10,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * 2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P17E[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P17E_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P17E_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P17E_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P2W_1 = {
+    .platformIndex = 0x10,
+    .movePlayer = FALSE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = -0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * -2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const CmdParamsSetMapObjectAnimation sMapEventCmdParamsB2F_P2W_2 = {
+    .mapObjLocalID = LOCALID_PLAYER,
+    .movementAction = MOVEMENT_ACTION_JUMP_DISTORTION_WORLD_WEST
+};
+
+static const CmdParamsMovePlatform sMapEventCmdParamsB2F_P2W_3 = {
+    .platformIndex = 0x10,
+    .movePlayer = TRUE,
+    .finalTileXOffset = 0x0,
+    .finalTileYOffset = 0x8,
+    .finalTileZOffset = 0x0,
+    .posDelta = { 0x0, FX32_ONE * 2, 0x0 },
+    .dummy04 = 0x1,
+};
+
+static const DistWorldEventCmd sMapEventB2F_P2W[] = {
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P2W_1,
+    },
+    {
+        .kind = EVENT_CMD_SET_MAP_OBJECT_ANIMATION,
+        .params = &sMapEventCmdParamsB2F_P2W_2,
+    },
+    {
+        .kind = EVENT_CMD_MOVE_PLATFORM,
+        .params = &sMapEventCmdParamsB2F_P2W_3,
+    },
+    { EVENT_CMD_END, NULL }
+};
+
+// All the events in B2F are triggers for the moving platforms.
+// As such, the following naming scheme has been adopted to name the event
+// structs and related command parameter structs:
+//
+// - Event structs: `sMapEventB2F_P<Platform><Cardinal>`
+// - Command parameter structs: `sMapEventCmdParamsB2F_P<Platform><Cardinal>_<Event command #>`
+//
+// Using the following variables:
+//
+// - `<Platform>`: the platform number on which the event trigger is located
+// - `<Cardinal>`: the first letter of the cardinal direction where the event
+//                 trigger is located on the platform
 static const DistWorldEvent sMapEventsB2F[] = {
     {
         .tileX = 0x21,
@@ -11959,7 +12086,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x24,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_1,
+        .cmds = sMapEventB2F_P2N,
     },
     {
         .tileX = 0x21,
@@ -11967,7 +12094,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x19,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_2,
+        .cmds = sMapEventB2F_P3S,
     },
     {
         .tileX = 0x21,
@@ -11975,7 +12102,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x15,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_3,
+        .cmds = sMapEventB2F_P3N,
     },
     {
         .tileX = 0x21,
@@ -11983,7 +12110,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xA,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_4,
+        .cmds = sMapEventB2F_P4S,
     },
     {
         .tileX = 0x23,
@@ -11991,7 +12118,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x8,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_5,
+        .cmds = sMapEventB2F_P4E,
     },
     {
         .tileX = 0x2F,
@@ -11999,7 +12126,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x8,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_6,
+        .cmds = sMapEventB2F_P5W,
     },
     {
         .tileX = 0x38,
@@ -12007,7 +12134,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xA,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_7,
+        .cmds = sMapEventB2F_P6S,
     },
     {
         .tileX = 0x38,
@@ -12015,7 +12142,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x32,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_8,
+        .cmds = sMapEventB2F_P9N,
     },
     {
         .tileX = 0x33,
@@ -12023,7 +12150,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x1F,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_9,
+        .cmds = sMapEventB2F_P7E,
     },
     {
         .tileX = 0x3F,
@@ -12031,7 +12158,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x1F,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_10,
+        .cmds = sMapEventB2F_P8W,
     },
     {
         .tileX = 0x23,
@@ -12039,7 +12166,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xF,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_11,
+        .cmds = sMapEventB2F_P10E,
     },
     {
         .tileX = 0x2F,
@@ -12047,7 +12174,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xF,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_12,
+        .cmds = sMapEventB2F_P11W,
     },
     {
         .tileX = 0x33,
@@ -12055,7 +12182,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xF,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_13,
+        .cmds = sMapEventB2F_P11E,
     },
     {
         .tileX = 0x3F,
@@ -12063,7 +12190,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0xF,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_14,
+        .cmds = sMapEventB2F_P12W,
     },
     {
         .tileX = 0x41,
@@ -12071,7 +12198,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x11,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_15,
+        .cmds = sMapEventB2F_P12S,
     },
     {
         .tileX = 0x41,
@@ -12079,7 +12206,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x2B,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_16,
+        .cmds = sMapEventB2F_P13N,
     },
     {
         .tileX = 0x3F,
@@ -12087,7 +12214,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x2D,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_17,
+        .cmds = sMapEventB2F_P13W,
     },
     {
         .tileX = 0x33,
@@ -12095,7 +12222,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x2D,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_18,
+        .cmds = sMapEventB2F_P16E,
     },
     {
         .tileX = 0x3F,
@@ -12103,7 +12230,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x34,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_19,
+        .cmds = sMapEventB2F_P14W,
     },
     {
         .tileX = 0x2B,
@@ -12111,7 +12238,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x34,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_20,
+        .cmds = sMapEventB2F_P15E,
     },
     {
         .tileX = 0x31,
@@ -12119,7 +12246,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x24,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_21,
+        .cmds = sMapEventB2F_P18N,
     },
     {
         .tileX = 0x31,
@@ -12127,7 +12254,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x21,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_22,
+        .cmds = sMapEventB2F_P7S,
     },
     {
         .tileX = 0x1C,
@@ -12135,7 +12262,7 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x26,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_23,
+        .cmds = sMapEventB2F_P17E,
     },
     {
         .tileX = 0x1F,
@@ -12143,27 +12270,27 @@ static const DistWorldEvent sMapEventsB2F[] = {
         .tileZ = 0x26,
         .flagCond = FLAG_COND_NONE,
         .flagCondVal = 0x0,
-        .cmds = sUnkMapEventB2F_24,
+        .cmds = sMapEventB2F_P2W,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
 
-static const CmdParamsStartScript sUnkMapEventCmdParamsB3F_1_1 = {
+static const CmdParamsStartScript sMapEventCmdParamsB3F_Cyrus_1 = {
     .scriptID = 0x2
 };
 
-static const CmdParamsSetDistortionWorldProgress sUnkMapEventCmdParamsB3F_1_2 = {
+static const CmdParamsSetDistortionWorldProgress sMapEventCmdParamsB3F_Cyrus_2 = {
     .progress = 0x6
 };
 
-static const DistWorldEventCmd sUnkMapEventB3F_1[] = {
+static const DistWorldEventCmd sMapEventB3F_Cyrus[] = {
     {
         .kind = EVENT_CMD_START_SCRIPT,
-        .params = &sUnkMapEventCmdParamsB3F_1_1,
+        .params = &sMapEventCmdParamsB3F_Cyrus_1,
     },
     {
         .kind = EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-        .params = &sUnkMapEventCmdParamsB3F_1_2,
+        .params = &sMapEventCmdParamsB3F_Cyrus_2,
     },
     { EVENT_CMD_END, NULL }
 };
@@ -12175,7 +12302,7 @@ static const DistWorldEvent sMapEventsB3F[] = {
         .tileZ = 0x29,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0x4,
-        .cmds = sUnkMapEventB3F_1,
+        .cmds = sMapEventB3F_Cyrus,
     },
     {
         .tileX = 0x41,
@@ -12183,7 +12310,7 @@ static const DistWorldEvent sMapEventsB3F[] = {
         .tileZ = 0x29,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0x5,
-        .cmds = sUnkMapEventB3F_1,
+        .cmds = sMapEventB3F_Cyrus,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
@@ -12213,7 +12340,7 @@ static const DistWorldEventCmd Unk_ov9_02251438[] = {
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsB4F_1_1 = {
+static const DistWorldGiratinaShadowTemplate sMapEventCmdParamsB4F_Giratina1_1 = {
     .initialTileX = 63,
     .initialTileY = 169,
     .initialTileZ = 9,
@@ -12224,23 +12351,23 @@ static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsB4F_1_1 = {
     .movementAnimSteps = 64,
 };
 
-static const UnkStruct_ov9_022506EC sUnkMapEventCmdParamsB4F_1_2 = {
-    0x0
+static const CmdParamsSetGiratinaAnimationFlag sMapEventCmdParamsB4F_Giratina1_2 = {
+    .anim = GIRATINA_SHADOW_ANIM_B4F_1
 };
 
-static const DistWorldEventCmd sUnkMapEventB4F_1[] = {
+static const DistWorldEventCmd sMapEventB4F_Giratina1[] = {
     {
-        .kind = EVENT_CMD_KIND_07,
-        .params = &sUnkMapEventCmdParamsB4F_1_1,
+        .kind = EVENT_CMD_SHOW_GIRATINA_SHADOW,
+        .params = &sMapEventCmdParamsB4F_Giratina1_1,
     },
     {
-        .kind = EVENT_CMD_KIND_08,
-        .params = &sUnkMapEventCmdParamsB4F_1_2,
+        .kind = EVENT_CMD_SET_GIRATINA_ANIMATION_FLAG,
+        .params = &sMapEventCmdParamsB4F_Giratina1_2,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsB4F_2_1 = {
+static const DistWorldGiratinaShadowTemplate sMapEventCmdParamsB4F_Giratina2_1 = {
     .initialTileX = 42,
     .initialTileY = 137,
     .initialTileZ = 32,
@@ -12251,18 +12378,18 @@ static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsB4F_2_1 = {
     .movementAnimSteps = 72
 };
 
-static const UnkStruct_ov9_022506EC sUnkMapEventCmdParamsB4F_2_2 = {
-    0x1
+static const CmdParamsSetGiratinaAnimationFlag sMapEventCmdParamsB4F_Giratina2_2 = {
+    .anim = GIRATINA_SHADOW_ANIM_B4F_2
 };
 
-static const DistWorldEventCmd sUnkMapEventB4F_2[] = {
+static const DistWorldEventCmd sMapEventB4F_Giratina2[] = {
     {
-        .kind = EVENT_CMD_KIND_07,
-        .params = &sUnkMapEventCmdParamsB4F_2_1,
+        .kind = EVENT_CMD_SHOW_GIRATINA_SHADOW,
+        .params = &sMapEventCmdParamsB4F_Giratina2_1,
     },
     {
-        .kind = EVENT_CMD_KIND_08,
-        .params = &sUnkMapEventCmdParamsB4F_2_2,
+        .kind = EVENT_CMD_SET_GIRATINA_ANIMATION_FLAG,
+        .params = &sMapEventCmdParamsB4F_Giratina2_2,
     },
     { EVENT_CMD_END, NULL }
 };
@@ -12273,24 +12400,24 @@ static const DistWorldEvent sMapEventsB4F[] = {
         .tileY = 0xA1,
         .tileZ = 0x39,
         .flagCond = FLAG_COND_GIRATINA_SHADOW,
-        .flagCondVal = GIRATINA_SHADOW_ANIM_LEFT_TO_RIGHT,
-        .cmds = sUnkMapEventB4F_1,
+        .flagCondVal = GIRATINA_SHADOW_ANIM_B4F_1,
+        .cmds = sMapEventB4F_Giratina1,
     },
     {
         .tileX = 0x62,
         .tileY = 0xA1,
         .tileZ = 0x38,
         .flagCond = FLAG_COND_GIRATINA_SHADOW,
-        .flagCondVal = GIRATINA_SHADOW_ANIM_BOTTOM_TO_TOP,
-        .cmds = sUnkMapEventB4F_2,
+        .flagCondVal = GIRATINA_SHADOW_ANIM_B4F_2,
+        .cmds = sMapEventB4F_Giratina2,
     },
     {
         .tileX = 0x62,
         .tileY = 0xA1,
         .tileZ = 0x39,
         .flagCond = FLAG_COND_GIRATINA_SHADOW,
-        .flagCondVal = GIRATINA_SHADOW_ANIM_BOTTOM_TO_TOP,
-        .cmds = sUnkMapEventB4F_2,
+        .flagCondVal = GIRATINA_SHADOW_ANIM_B4F_2,
+        .cmds = sMapEventB4F_Giratina2,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
@@ -12320,25 +12447,25 @@ static const DistWorldEventCmd Unk_ov9_022513D8[] = {
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldEventCmd sUnkMapEventB5F_1[] = {
+static const DistWorldEventCmd sMapEventB5F_UxieTuto[] = {
     {
-        .kind = EVENT_CMD_KIND_0C,
+        .kind = EVENT_CMD_SHOW_UXIE_BOULDER_TUTO,
         .params = NULL,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldEventCmd sUnkMapEventB5F_2[] = {
+static const DistWorldEventCmd sMapEventB5F_AzelfTuto[] = {
     {
-        .kind = EVENT_CMD_KIND_0D,
+        .kind = EVENT_CMD_SHOW_AZELF_BOULDER_TUTO,
         .params = NULL,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldEventCmd sUnkMapEventB5F_3[] = {
+static const DistWorldEventCmd sMapEventB5F_MespritTuto[] = {
     {
-        .kind = EVENT_CMD_KIND_0E,
+        .kind = EVENT_CMD_SHOW_MESPRIT_BOULDER_TUTO,
         .params = NULL,
     },
     { EVENT_CMD_END, NULL }
@@ -12349,69 +12476,69 @@ static const DistWorldEvent sMapEventsB5F[] = {
         .tileX = 0x56,
         .tileY = 0x81,
         .tileZ = 0x35,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xA,
-        .cmds = sUnkMapEventB5F_1,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_TUTO_SEEN,
+        .cmds = sMapEventB5F_UxieTuto,
     },
     {
         .tileX = 0x57,
         .tileY = 0x81,
         .tileZ = 0x35,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xA,
-        .cmds = sUnkMapEventB5F_1,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_TUTO_SEEN,
+        .cmds = sMapEventB5F_UxieTuto,
     },
     {
         .tileX = 0x64,
         .tileY = 0x81,
         .tileZ = 0x43,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xB,
-        .cmds = sUnkMapEventB5F_2,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_TUTO_SEEN,
+        .cmds = sMapEventB5F_AzelfTuto,
     },
     {
         .tileX = 0x64,
         .tileY = 0x81,
         .tileZ = 0x44,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xB,
-        .cmds = sUnkMapEventB5F_2,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_TUTO_SEEN,
+        .cmds = sMapEventB5F_AzelfTuto,
     },
     {
         .tileX = 0x50,
         .tileY = 0x81,
         .tileZ = 0x43,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xC,
-        .cmds = sUnkMapEventB5F_3,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_TUTO_SEEN,
+        .cmds = sMapEventB5F_MespritTuto,
     },
     {
         .tileX = 0x50,
         .tileY = 0x81,
         .tileZ = 0x44,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0xC,
-        .cmds = sUnkMapEventB5F_3,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_TUTO_SEEN,
+        .cmds = sMapEventB5F_MespritTuto,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
 
-static const CmdParamsStartScript sUnkMapEventCmdParamsB7F_1_1 = {
+static const CmdParamsStartScript sMapEventCmdParamsB7F_CynthiaCyrus_1 = {
     .scriptID = 0x4
 };
 
-static const CmdParamsSetDistortionWorldProgress sUnkMapEventCmdParamsB7F_1_2 = {
+static const CmdParamsSetDistortionWorldProgress sMapEventCmdParamsB7F_CynthiaCyrus_2 = {
     .progress = 0x9
 };
 
-static const DistWorldEventCmd sUnkMapEventB7F_1[] = {
+static const DistWorldEventCmd sMapEventB7F_CynthiaCyrus[] = {
     {
         .kind = EVENT_CMD_START_SCRIPT,
-        .params = &sUnkMapEventCmdParamsB7F_1_1,
+        .params = &sMapEventCmdParamsB7F_CynthiaCyrus_1,
     },
     {
         .kind = EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-        .params = &sUnkMapEventCmdParamsB7F_1_2,
+        .params = &sMapEventCmdParamsB7F_CynthiaCyrus_2,
     },
     { EVENT_CMD_END, NULL }
 };
@@ -12423,7 +12550,7 @@ static const DistWorldEvent sMapEventsB7F[] = {
         .tileZ = 0x4C,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0x8,
-        .cmds = sUnkMapEventB7F_1,
+        .cmds = sMapEventB7F_CynthiaCyrus,
     },
     {
         .tileX = 0x55,
@@ -12431,7 +12558,7 @@ static const DistWorldEvent sMapEventsB7F[] = {
         .tileZ = 0x4C,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0x8,
-        .cmds = sUnkMapEventB7F_1,
+        .cmds = sMapEventB7F_CynthiaCyrus,
     },
     {
         .tileX = 0x56,
@@ -12439,48 +12566,48 @@ static const DistWorldEvent sMapEventsB7F[] = {
         .tileZ = 0x4C,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0x8,
-        .cmds = sUnkMapEventB7F_1,
+        .cmds = sMapEventB7F_CynthiaCyrus,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
 
-static const UnkStruct_ov9_02250704 sUnkMapEventCmdParamsGiratinaRoom_1_1 = {
-    0x10
+static const CmdParamsPuzzleFlag sMapEventCmdParamsGiratinaRoom_ShowPlatforms_2 = {
+    .flagIndex = DIST_WORLD_PUZZLE_FLAG_GIRATINA_ROOM_PLATFORMS_VISIBLE
 };
 
-static const DistWorldEventCmd sUnkMapEventGiratinaRoom_1[] = {
+static const DistWorldEventCmd sMapEventGiratinaRoom_ShowPlatforms[] = {
     {
-        .kind = EVENT_CMD_KIND_0F,
+        .kind = EVENT_CMD_SHOW_GIRATINA_ROOM_PLATFORMS,
         .params = NULL,
     },
     {
-        .kind = EVENT_CMD_KIND_09,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_1_1,
+        .kind = EVENT_CMD_SET_PUZZLE_FLAG,
+        .params = &sMapEventCmdParamsGiratinaRoom_ShowPlatforms_2,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const UnkStruct_ov9_02250704 sUnkMapEventCmdParamsGiratinaRoom_2_1 = {
-    0x10
+static const CmdParamsPuzzleFlag sMapEventCmdParamsGiratinaRoom_HidePlatforms_2 = {
+    .flagIndex = DIST_WORLD_PUZZLE_FLAG_GIRATINA_ROOM_PLATFORMS_VISIBLE
 };
 
-static const DistWorldEventCmd sUnkMapEventGiratinaRoom_2[] = {
+static const DistWorldEventCmd sMapEventGiratinaRoom_HidePlatforms[] = {
     {
-        .kind = EVENT_CMD_KIND_10,
+        .kind = EVENT_CMD_HIDE_GIRATINA_ROOM_PLATFORMS,
         .params = NULL,
     },
     {
-        .kind = EVENT_CMD_KIND_11,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_2_1,
+        .kind = EVENT_CMD_CLEAR_PUZZLE_FLAG,
+        .params = &sMapEventCmdParamsGiratinaRoom_HidePlatforms_2,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const CmdParamsStartScript sUnkMapEventCmdParamsGiratinaRoom_3_1 = {
+static const CmdParamsStartScript sMapEventCmdParamsGiratinaRoom_FirstShadow_1 = {
     .scriptID = 0x7
 };
 
-static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsGiratinaRoom_3_2 = {
+static const DistWorldGiratinaShadowTemplate sMapEventCmdParamsGiratinaRoom_FirstShadow_2 = {
     .initialTileX = -9,
     .initialTileY = -4,
     .initialTileZ = 22,
@@ -12491,27 +12618,27 @@ static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsGiratinaRoom_3
     .movementAnimSteps = 48
 };
 
-static const CmdParamsSetDistortionWorldProgress sUnkMapEventCmdParamsGiratinaRoom_3_3 = {
+static const CmdParamsSetDistortionWorldProgress sMapEventCmdParamsGiratinaRoom_FirstShadow_3 = {
     .progress = 0xB
 };
 
-static const DistWorldEventCmd sUnkMapEventGiratinaRoom_3[] = {
+static const DistWorldEventCmd sMapEventGiratinaRoom_FirstShadow[] = {
     {
         .kind = EVENT_CMD_START_SCRIPT,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_3_1,
+        .params = &sMapEventCmdParamsGiratinaRoom_FirstShadow_1,
     },
     {
-        .kind = EVENT_CMD_KIND_07,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_3_2,
+        .kind = EVENT_CMD_SHOW_GIRATINA_SHADOW,
+        .params = &sMapEventCmdParamsGiratinaRoom_FirstShadow_2,
     },
     {
         .kind = EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_3_3,
+        .params = &sMapEventCmdParamsGiratinaRoom_FirstShadow_3,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsGiratinaRoom_4_1 = {
+static const DistWorldGiratinaShadowTemplate sMapEventCmdParamsGiratinaRoom_SecondShadow_1 = {
     .initialTileX = 15,
     .initialTileY = -34,
     .initialTileZ = 8,
@@ -12522,42 +12649,42 @@ static const DistWorldGiratinaShadowTemplate sUnkMapEventCmdParamsGiratinaRoom_4
     .movementAnimSteps = 32
 };
 
-static const CmdParamsSetDistortionWorldProgress sUnkMapEventCmdParamsGiratinaRoom_4_2 = {
+static const CmdParamsSetDistortionWorldProgress sMapEventCmdParamsGiratinaRoom_SecondShadow_2 = {
     .progress = 0xC
 };
 
-static const DistWorldEventCmd sUnkMapEventGiratinaRoom_4[] = {
+static const DistWorldEventCmd sMapEventGiratinaRoom_SecondShadow[] = {
     {
-        .kind = EVENT_CMD_KIND_07,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_4_1,
+        .kind = EVENT_CMD_SHOW_GIRATINA_SHADOW,
+        .params = &sMapEventCmdParamsGiratinaRoom_SecondShadow_1,
     },
     {
         .kind = EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_4_2,
+        .params = &sMapEventCmdParamsGiratinaRoom_SecondShadow_2,
     },
     { EVENT_CMD_END, NULL }
 };
 
-static const CmdParamsSetDistortionWorldProgress sUnkMapEventCmdParamsGiratinaRoom_5_1 = {
+static const CmdParamsSetDistortionWorldProgress sMapEventCmdParamsGiratinaRoom_Arrival_1 = {
     .progress = 0xD
 };
 
-static const CmdParamsStartScript sUnkMapEventCmdParamsGiratinaRoom_5_2 = {
+static const CmdParamsStartScript sMapEventCmdParamsGiratinaRoom_Arrival_3 = {
     .scriptID = 0x8
 };
 
-static const DistWorldEventCmd sUnkMapEventGiratinaRoom_5[] = {
+static const DistWorldEventCmd sMapEventGiratinaRoom_Arrival[] = {
     {
         .kind = EVENT_CMD_SET_DISTORTION_WORLD_PROGRESS,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_5_1,
+        .params = &sMapEventCmdParamsGiratinaRoom_Arrival_1,
     },
     {
-        .kind = EVENT_CMD_KIND_0B,
+        .kind = EVENT_CMD_PLAY_GIRATINA_ARRIVAL,
         .params = NULL,
     },
     {
         .kind = EVENT_CMD_START_SCRIPT,
-        .params = &sUnkMapEventCmdParamsGiratinaRoom_5_2,
+        .params = &sMapEventCmdParamsGiratinaRoom_Arrival_3,
     },
     { EVENT_CMD_END, NULL }
 };
@@ -12567,17 +12694,17 @@ static const DistWorldEvent sMapEventsGiratinaRoom[] = {
         .tileX = 0xF,
         .tileY = 0x1,
         .tileZ = 0x17,
-        .flagCond = FLAG_COND_1,
-        .flagCondVal = 0x10,
-        .cmds = sUnkMapEventGiratinaRoom_1,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_FALSE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_GIRATINA_ROOM_PLATFORMS_VISIBLE,
+        .cmds = sMapEventGiratinaRoom_ShowPlatforms,
     },
     {
         .tileX = 0xF,
         .tileY = 0x1,
         .tileZ = 0x18,
-        .flagCond = FLAG_COND_2,
-        .flagCondVal = 0x10,
-        .cmds = sUnkMapEventGiratinaRoom_2,
+        .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+        .flagCondVal = DIST_WORLD_PUZZLE_FLAG_GIRATINA_ROOM_PLATFORMS_VISIBLE,
+        .cmds = sMapEventGiratinaRoom_HidePlatforms,
     },
     {
         .tileX = 0xF,
@@ -12585,7 +12712,7 @@ static const DistWorldEvent sMapEventsGiratinaRoom[] = {
         .tileZ = 0x18,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0xA,
-        .cmds = sUnkMapEventGiratinaRoom_3,
+        .cmds = sMapEventGiratinaRoom_FirstShadow,
     },
     {
         .tileX = 0xF,
@@ -12593,7 +12720,7 @@ static const DistWorldEvent sMapEventsGiratinaRoom[] = {
         .tileZ = 0x11,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0xB,
-        .cmds = sUnkMapEventGiratinaRoom_4,
+        .cmds = sMapEventGiratinaRoom_SecondShadow,
     },
     {
         .tileX = 0xF,
@@ -12601,7 +12728,7 @@ static const DistWorldEvent sMapEventsGiratinaRoom[] = {
         .tileZ = 0xE,
         .flagCond = FLAG_COND_WORLD_PROGRESS_EQ,
         .flagCondVal = 0xC,
-        .cmds = sUnkMapEventGiratinaRoom_5,
+        .cmds = sMapEventGiratinaRoom_Arrival,
     },
     { 0x0, 0x0, 0x0, FLAG_COND_NONE, 0x0, NULL }
 };
@@ -12856,8 +12983,8 @@ static const DistWorldObjectEvent *sMapObjectEventsB4F[] = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB5F_MespritBoulder = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x0,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B5F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -12878,8 +13005,8 @@ static const DistWorldObjectEvent sMapObjectEventB5F_MespritBoulder = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB5F_AzelfBoulder = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x1,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B5F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -12900,8 +13027,8 @@ static const DistWorldObjectEvent sMapObjectEventB5F_AzelfBoulder = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB5F_UxieBoulder = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x2,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B5F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -12998,8 +13125,8 @@ static const DistWorldObjectEvent *sMapObjectEventsB5F[] = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_MespritBoulderOutside = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x3,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B6F_OUTSIDE,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13020,8 +13147,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_MespritBoulderOutside = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_AzelfBoulderOutside = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x4,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B6F_OUTSIDE,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13042,8 +13169,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_AzelfBoulderOutside = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_UxieBoulderOutside = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x5,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B6F_OUTSIDE,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13064,8 +13191,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_UxieBoulderOutside = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_Mesprit = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0xF,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_IN_B6F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13086,8 +13213,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_Mesprit = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_Uxie = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0xD,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_IN_B6F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13108,8 +13235,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_Uxie = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_Azelf = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0xE,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_IN_B6F,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13372,8 +13499,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_AzelfBoulderPitText3 = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_MespritBoulderInPit = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x6,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_MESPRIT_BOULDER_IN_B6F_PIT,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13394,8 +13521,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_MespritBoulderInPit = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_AzelfBoulderInPit = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x7,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_AZELF_BOULDER_IN_B6F_PIT,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {
@@ -13416,8 +13543,8 @@ static const DistWorldObjectEvent sMapObjectEventB6F_AzelfBoulderInPit = {
 };
 
 static const DistWorldObjectEvent sMapObjectEventB6F_UxieBoulderInPit = {
-    .flagCond = FLAG_COND_2,
-    .flagCondVal = 0x8,
+    .flagCond = FLAG_COND_BOULDER_PUZZLE_TRUE,
+    .flagCondVal = DIST_WORLD_PUZZLE_FLAG_UXIE_BOULDER_IN_B6F_PIT,
     .rotated = FALSE,
     .rotationAngle = 0x0,
     .objEvent = {

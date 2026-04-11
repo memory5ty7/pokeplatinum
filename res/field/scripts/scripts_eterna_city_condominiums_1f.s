@@ -110,13 +110,13 @@ EternaCityCondominiums1F_TryTrade:
     FadeScreenIn
     WaitFadeScreen
     GoToIfEq VAR_RESULT, 0xFF, EternaCityCondominiums1F_OhOKTotallyGotIt
-    StartNpcTrade NPC_TRADE_CHARAP_CHATOT
+    InitNPCTrade NPC_TRADE_CHARAP_CHATOT
     SetVar VAR_0x8004, VAR_RESULT
     GetPartyMonSpecies VAR_0x8004, VAR_0x8005
-    GetNpcTradeRequestedSpecies VAR_RESULT
+    GetNPCTradeRequestedSpecies VAR_RESULT
     GoToIfNe VAR_0x8005, VAR_RESULT, EternaCityCondominiums1F_WhatITotallyWantIsABuizel
-    ScrCmd_229 VAR_0x8004
-    FinishNpcTrade
+    StartNPCTrade VAR_0x8004
+    FinishNPCTrade
     SetFlag FLAG_TRADED_FOR_CHARAP_CHATOT
     Message EternaCityCondominiums1F_Text_YesSoAwesomeABuizel
     WaitButton
@@ -125,7 +125,7 @@ EternaCityCondominiums1F_TryTrade:
     End
 
 EternaCityCondominiums1F_WhatITotallyWantIsABuizel:
-    FinishNpcTrade
+    FinishNPCTrade
     Message EternaCityCondominiums1F_Text_WhatITotallyWantIsABuizel
     WaitButton
     CloseMessage

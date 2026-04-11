@@ -19,7 +19,6 @@
 #include "struct_defs/struct_0203DDFC.h"
 #include "struct_defs/struct_0203DE34.h"
 #include "struct_defs/struct_0203E234.h"
-#include "struct_defs/struct_0203E2FC.h"
 #include "struct_defs/struct_0203E348.h"
 #include "struct_defs/struct_0203E564.h"
 #include "struct_defs/struct_0203E608.h"
@@ -43,6 +42,7 @@
 #include "applications/pokedex/pokedex_main.h"
 #include "applications/pokemon_summary_screen/main.h"
 #include "applications/town_map/main.h"
+#include "applications/trainer_case/main.h"
 #include "battle/battle_main.h"
 #include "choose_starter/choose_starter_app.h"
 #include "cutscenes/boat_cutscene.h"
@@ -73,12 +73,12 @@
 #include "overlay101/ov101_021D0D80.h"
 #include "overlay111/ov111_021D0D80.h"
 #include "savedata/save_table.h"
-#include "trainer_card_screen/trainer_card_screen.h"
 
 #include "bag.h"
 #include "bag_context.h"
 #include "coins.h"
 #include "dexmode_checker.h"
+#include "egg_hatch.h"
 #include "evolution.h"
 #include "field_battle_data_transfer.h"
 #include "field_move_tasks.h"
@@ -112,10 +112,10 @@
 #include "system_data.h"
 #include "system_flags.h"
 #include "system_vars.h"
-#include "trainer_card.h"
-#include "trainer_card_save_data.h"
+#include "trainer_case.h"
+#include "trainer_case_save_data.h"
 #include "trainer_info.h"
-#include "tv_episode_segment.h"
+#include "tv_segment.h"
 #include "unk_02017498.h"
 #include "unk_020298BC.h"
 #include "unk_0202C858.h"
@@ -128,7 +128,6 @@
 #include "unk_0205B33C.h"
 #include "unk_0209747C.h"
 #include "unk_02097624.h"
-#include "unk_02098218.h"
 #include "vars_flags.h"
 
 #include "constdata/const_020EA328.h"
@@ -146,7 +145,7 @@ FS_EXTERN_OVERLAY(overlay58);
 FS_EXTERN_OVERLAY(overlay59);
 FS_EXTERN_OVERLAY(overlay61);
 FS_EXTERN_OVERLAY(overlay64);
-FS_EXTERN_OVERLAY(trainer_card_screen);
+FS_EXTERN_OVERLAY(trainer_case);
 FS_EXTERN_OVERLAY(overlay72);
 FS_EXTERN_OVERLAY(options_menu);
 FS_EXTERN_OVERLAY(choose_starter);
@@ -1256,18 +1255,18 @@ void sub_0203DFE8(
     FieldTask_InitCall(param0, sub_0203DE98, v2);
 }
 
-void FieldSystem_OpenTrainerCardScreen(FieldSystem *fieldSystem, TrainerCard *trainerCard)
+void FieldSystem_OpenTrainerCase(FieldSystem *fieldSystem, TrainerCase *trainerCase)
 {
-    FS_EXTERN_OVERLAY(trainer_card_screen);
+    FS_EXTERN_OVERLAY(trainer_case);
 
     static const ApplicationManagerTemplate template = {
-        .init = TrainerCardScreen_Init,
-        .main = TrainerCardScreen_Main,
-        .exit = TrainerCardScreen_Exit,
-        .overlayID = FS_OVERLAY_ID(trainer_card_screen)
+        .init = TrainerCaseApp_Init,
+        .main = TrainerCaseApp_Main,
+        .exit = TrainerCaseApp_Exit,
+        .overlayID = FS_OVERLAY_ID(trainer_case)
     };
 
-    FieldSystem_StartChildProcess(fieldSystem, &template, trainerCard);
+    FieldSystem_StartChildProcess(fieldSystem, &template, trainerCase);
 }
 
 BOOL FieldSystem_OpenPokedex(FieldSystem *fieldSystem, PokedexOverlayArgs *args)
@@ -1301,7 +1300,7 @@ void FieldSystem_LaunchChooseStarterApp(FieldSystem *fieldSystem, ChooseStarterD
 
 void sub_0203E0D0(FieldSystem *fieldSystem)
 {
-    TrainerCardSaveData *v0 = SaveData_GetTrainerCardSaveData(fieldSystem->saveData);
+    TrainerCaseSaveData *v0 = SaveData_GetTrainerCaseSaveData(fieldSystem->saveData);
 
     FS_EXTERN_OVERLAY(overlay72);
 
@@ -1484,21 +1483,21 @@ void FieldTask_PlayBoatCutscene_SnowpointShip(FieldSystem *fieldSystem, void *ta
     FieldSystem_StartChildProcess(fieldSystem, &appTemplate, taskEnv);
 }
 
-void sub_0203E2FC(FieldSystem *fieldSystem)
+void FieldSystem_HatchEgg(FieldSystem *fieldSystem)
 {
-    UnkStruct_0203E2FC v0;
-    Party *v1 = SaveData_GetParty(fieldSystem->saveData);
-    Pokemon *v2 = Party_GetFirstEgg(v1);
+    Party *party = SaveData_GetParty(fieldSystem->saveData);
+    Pokemon *eggMon = Party_GetFirstEgg(party);
 
-    GF_ASSERT(v2 != NULL);
-    FieldSystem_SaveTVEpisodeSegment_HappyHappyEggClub(fieldSystem, v2);
+    GF_ASSERT(eggMon != NULL);
+    FieldSystem_SaveTVSegment_HappyHappyEggClub(fieldSystem, eggMon);
 
-    v0.unk_00 = v2;
-    v0.options = SaveData_GetOptions(fieldSystem->saveData);
-    v0.unk_08 = SaveData_GetTrainerInfo(fieldSystem->saveData);
-    v0.unk_0C = Sound_GetOverrideBGM(fieldSystem, fieldSystem->location->mapId);
+    EggHatchArgs args;
+    args.mon = eggMon;
+    args.options = SaveData_GetOptions(fieldSystem->saveData);
+    args.trainerInfo = SaveData_GetTrainerInfo(fieldSystem->saveData);
+    args.bgmID = Sound_GetOverrideBGM(fieldSystem, fieldSystem->location->mapId);
 
-    sub_020985AC(fieldSystem->task, &v0);
+    EggHatch_HatchEgg(fieldSystem->task, &args);
 }
 
 BOOL sub_0203E348(FieldSystem *fieldSystem, UnkStruct_0203E348 *param1)
@@ -1796,7 +1795,7 @@ static const ApplicationManagerTemplate LibraryTV_template = {
     FS_OVERLAY_ID(library_tv)
 };
 
-void sub_0203E704(FieldSystem *fieldSystem)
+void FieldSystem_StartLibraryTV(FieldSystem *fieldSystem)
 {
     FieldSystem_StartChildProcess(fieldSystem, &LibraryTV_template, fieldSystem->saveData);
 }

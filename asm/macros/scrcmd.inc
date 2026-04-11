@@ -45,6 +45,9 @@
 #include "constants/init_script_types.h"
 #include "constants/items.h"
 #include "constants/map_object.h"
+#include "constants/overworld_weather.h"
+#include "constants/moves.h"
+#include "constants/pokemon.h"
 #include "constants/regi_ruins.h"
 #include "constants/roamer_states.h"
 #include "constants/savedata/vars_flags.h"
@@ -52,8 +55,7 @@
 #include "constants/tv_broadcast.h"
 #include "constants/battle.h"
 
-#define INC_AS_ASM
-#include "data/field/script_commands.h"
+#include "data/scripts/scrcmd.h"
 #include "macros/movement.inc"
 
     .set FALSE, 0
@@ -972,16 +974,16 @@
     .short \dummy3
     .endm
 
-    .macro ScrCmd_093 arg0, arg1
-    .short SCRCMD_093
-    .short \arg0
-    .short \arg1
+    .macro CountSealOccurence sealId, destVar
+    .short SCRCMD_COUNTSEALOCCURENCE
+    .short \sealId
+    .short \destVar
     .endm
 
-    .macro ScrCmd_094 arg0, arg1
-    .short SCRCMD_094
-    .short \arg0
-    .short \arg1
+    .macro GiveOrTakeSeal sealId, quantity
+    .short SCRCMD_GIVEORTAKESEAL
+    .short \sealId
+    .short \quantity
     .endm
 
     .macro GetPartyMonForm partySlot, destVar
@@ -2462,8 +2464,8 @@
     .short \valueOrVarID
     .endm
 
-    .macro ScrCmd_1AC
-    .short SCRCMD_1AC
+    .macro HatchEgg
+    .short SCRCMD_HATCHEGG
     .endm
 
     .macro Dummy1AD dummy
@@ -3010,8 +3012,8 @@
     .short \gender
     .endm
 
-    .macro ScrCmd_209
-    .short SCRCMD_209
+    .macro RemovePokemonPreview
+    .short SCRCMD_REMOVEPOKEMONPREVIEW
     .endm
 
     .macro ScrCmd_20A arg0
@@ -3086,9 +3088,9 @@
     .short \followerSpecies
     .endm
 
-    .macro ScrCmd_218 arg0
-    .short SCRCMD_218
-    .short \arg0
+    .macro GetRandomSeenSpecies destVar
+    .short SCRCMD_GETRANDOMSEENSPECIES
+    .short \destVar
     .endm
 
     .macro SetNewsPressDeadline deadlineInDays
@@ -3162,27 +3164,27 @@
     .short \destVar
     .endm
 
-    .macro StartNpcTrade npcTradeID
-    .short SCRCMD_STARTNPCTRADE
+    .macro InitNPCTrade npcTradeID
+    .short SCRCMD_INITNPCTRADE
     .byte \npcTradeID
     .endm
 
-    .macro GetNpcTradeSpecies destVar
+    .macro GetNPCTradeSpecies destVar
     .short SCRCMD_GETNPCTRADESPECIES
     .short \destVar
     .endm
 
-    .macro GetNpcTradeRequestedSpecies destVar
+    .macro GetNPCTradeRequestedSpecies destVar
     .short SCRCMD_GETNPCTRADEREQUESTEDSPECIES
     .short \destVar
     .endm
 
-    .macro ScrCmd_229 arg0
-    .short SCRCMD_229
-    .short \arg0
+    .macro StartNPCTrade partySlot
+    .short SCRCMD_STARTNPCTRADE
+    .short \partySlot
     .endm
 
-    .macro FinishNpcTrade
+    .macro FinishNPCTrade
     .short SCRCMD_FINISHNPCTRADE
     .endm
 
@@ -3190,8 +3192,8 @@
     .short SCRCMD_22B
     .endm
 
-    .macro ScrCmd_22C
-    .short SCRCMD_22C
+    .macro TurnOnPokedexFormDetection
+    .short SCRCMD_TURNONPOKEDEXFORMDETECTION
     .endm
 
     .macro GetSetNationalDexEnabled getSet, destVar
@@ -3682,20 +3684,20 @@
     .short \destVar
     .endm
 
-    .macro ScrCmd_269 arg0, arg1, arg2, arg3, arg4
-    .short SCRCMD_269
-    .short \arg0
-    .short \arg1
-    .short \arg2
-    .short \arg3
-    .short \arg4
+    .macro ShakeObject localID, times, speed, xOffset, zOffset
+    .short SCRCMD_SHAKEOBJECT
+    .short \localID
+    .short \times
+    .short \speed
+    .short \xOffset
+    .short \zOffset
     .endm
 
-    .macro ScrCmd_26A arg0, arg1, arg2
-    .short SCRCMD_26A
-    .short \arg0
-    .short \arg1
-    .short \arg2
+    .macro FlickerObject localID, times, delay
+    .short SCRCMD_FLICKEROBJECT
+    .short \localID
+    .short \times
+    .short \delay
     .endm
 
     .macro CheckHasAllLegendaryTitansInParty destVar
@@ -4146,16 +4148,16 @@
     .short SCRCMD_LOCKLASTTALKED
     .endm
 
-    .macro ScrCmd_2B5 arg0, arg1, arg2
+    .macro ScrCmd_2B5 mapId, x, z
     .short SCRCMD_2B5
-    .short \arg0
-    .short \arg1
-    .short \arg2
+    .short \mapId
+    .short \x
+    .short \z
     .endm
 
-    .macro ScrCmd_2B6 arg0, arg1
+    .macro ScrCmd_2B6 localID, arg1
     .short SCRCMD_2B6
-    .short \arg0
+    .short \localID
     .byte \arg1
     .endm
 
@@ -4565,10 +4567,10 @@
     .short \destVar
     .endm
 
-    .macro ScrCmd_2FF arg0, arg1
-    .short SCRCMD_2FF
-    .short \arg0
-    .short \arg1
+    .macro CalcHiddenPowerType partySlot, destVar
+    .short SCRCMD_CALCHIDDENPOWERTYPE
+    .short \partySlot
+    .short \destVar
     .endm
 
     .macro ScrCmd_300
@@ -4661,8 +4663,8 @@
     .short \arg1
     .endm
 
-    .macro ScrCmd_310
-    .short SCRCMD_310
+    .macro StartLibraryTV
+    .short SCRCMD_STARTLIBRARYTV
     .endm
 
     .macro AddDistortionWorldMapObject mapObjLocalID
@@ -4693,9 +4695,9 @@
     .short \destVar
     .endm
 
-    .macro ScrCmd_315 arg0
-    .short SCRCMD_315
-    .short \arg0
+    .macro GetOverworldWeather destVar
+    .short SCRCMD_GETOVERWORLDWEATHER
+    .short \destVar
     .endm
 
     .macro Dummy316

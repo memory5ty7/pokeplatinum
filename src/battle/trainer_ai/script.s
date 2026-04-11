@@ -16,38 +16,38 @@
 gTrainerAITable:
 
 FlagTable:
-    LabelDistance Basic_Main,          FlagTable // AI_FLAG_BASIC
-    LabelDistance EvalAttack_Main,     FlagTable // AI_FLAG_EVAL_ATTACK
-    LabelDistance Expert_Main,         FlagTable // AI_FLAG_EXPERT
-    LabelDistance SetupFirstTurn_Main, FlagTable // AI_FLAG_SETUP_FIRST_TURN
-    LabelDistance Risky_Main,          FlagTable // AI_FLAG_RISKY
-    LabelDistance DamagePriority_Main, FlagTable // AI_FLAG_DAMAGE_PRIORITY
-    LabelDistance BatonPass_Main,      FlagTable // AI_FLAG_BATON_PASS
-    LabelDistance TagStrategy_Main,    FlagTable // AI_FLAG_TAG_STRATEGY
-    LabelDistance CheckHP_Main,        FlagTable // AI_FLAG_CHECK_HP
-    LabelDistance Weather_Main,        FlagTable // AI_FLAG_WEATHER
-    LabelDistance Harrassment_Main,    FlagTable // AI_FLAG_HARRASSMENT
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_11
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_12
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_13
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_14
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_15
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_16
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_17
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_18
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_19
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_20
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_21
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_22
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_23
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_24
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_25
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_26
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_27
-    LabelDistance Terminate,           FlagTable // AI_FLAG_UNUSED_28
-    LabelDistance RoamingPokemon_Main, FlagTable // AI_FLAG_ROAMING_POKEMON
-    LabelDistance Safari_Main,         FlagTable // AI_FLAG_SAFARI
-    LabelDistance CatchTutorial_Main,  FlagTable // AI_FLAG_CATCH_TUTORIAL
+    LabelDistance Basic_Main,              FlagTable // AI_FLAG_BASIC
+    LabelDistance EvalAttack_Main,         FlagTable // AI_FLAG_EVAL_ATTACK
+    LabelDistance Expert_Main,             FlagTable // AI_FLAG_EXPERT
+    LabelDistance SetupFirstTurn_Main,     FlagTable // AI_FLAG_SETUP_FIRST_TURN
+    LabelDistance Risky_Main,              FlagTable // AI_FLAG_RISKY
+    LabelDistance PrioritizeExtremes_Main, FlagTable // AI_FLAG_PRIORITIZE_EXTREMES
+    LabelDistance BatonPass_Main,          FlagTable // AI_FLAG_BATON_PASS
+    LabelDistance TagStrategy_Main,        FlagTable // AI_FLAG_TAG_STRATEGY
+    LabelDistance CheckHP_Main,            FlagTable // AI_FLAG_CHECK_HP
+    LabelDistance Weather_Main,            FlagTable // AI_FLAG_WEATHER
+    LabelDistance Harrassment_Main,        FlagTable // AI_FLAG_HARRASSMENT
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_11
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_12
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_13
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_14
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_15
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_16
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_17
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_18
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_19
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_20
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_21
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_22
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_23
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_24
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_25
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_26
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_27
+    LabelDistance Terminate,               FlagTable // AI_FLAG_UNUSED_28
+    LabelDistance RoamingPokemon_Main,     FlagTable // AI_FLAG_ROAMING_POKEMON
+    LabelDistance Safari_Main,             FlagTable // AI_FLAG_SAFARI
+    LabelDistance CatchTutorial_Main,      FlagTable // AI_FLAG_CATCH_TUTORIAL
 
 Basic_Main:
     // Ignore this flag on partner battlers.
@@ -59,7 +59,7 @@ Basic_Main:
 
     // Score the move according to its damage. If the AI does not know any
     // moves which are eligible for scoring, skip ahead.
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, Basic_CheckSoundproof
 
 Basic_CheckForImmunity:
@@ -109,7 +109,7 @@ Basic_CheckWaterAbsorption2:
     GoTo Basic_NoImmunityAbility
 
 Basic_NoImmunityAbility:
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, Basic_CheckSoundproof
 
 Basic_CheckSoundproof:
@@ -6355,21 +6355,22 @@ EvalAttack_Main:
     // Never target the partner.
     IfTargetIsPartner Terminate
 
-    IfCurrentMoveKills USE_MAX_DAMAGE, EvalAttack_CheckForKill
+    // If the move's maximum non-critical damage roll kills, then we use a different score routine.
+    IfCurrentMoveKills USE_MAX_DAMAGE, EvalAttack_ApplyKillBonuses
 
     // If this move does not out-damage all other moves, score -1.
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NOT_HIGHEST_DAMAGE, ScoreMinus1
 
-    // Explosion, Focus Punch, and Sucker Punch are judged as Risky by this routine.
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, EvalAttack_RiskyAttack
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_LAST_WHIFF_IF_HIT, EvalAttack_RiskyAttack
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_FIRST_IF_TARGET_ATTACKING, EvalAttack_RiskyAttack
+    // Explosion, Focus Punch, and Sucker Punch are often deprioritized by this routine.
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, EvalAttack_MaybeDeprioritize
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_LAST_WHIFF_IF_HIT, EvalAttack_MaybeDeprioritize
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_FIRST_IF_TARGET_ATTACKING, EvalAttack_MaybeDeprioritize
 
     // Check for quad-effectiveness.
     GoTo EvalAttack_CheckQuadEffective
 
-EvalAttack_RiskyAttack:
+EvalAttack_MaybeDeprioritize:
     // ~80% chance of score -2.
     IfRandomLessThan 51, EvalAttack_CheckQuadEffective
     AddToMoveScore -2
@@ -6384,17 +6385,19 @@ EvalAttack_TryScorePlus2:
     AddToMoveScore 2
     PopOrEnd 
 
-EvalAttack_CheckForKill:
+EvalAttack_ApplyKillBonuses:
     // Do not evaluate kills with Explosion or Self-Destruct for this routine.
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_DEFENSE, EvalAttack_Terminate
 
-    // Randomly increase the score of a move that kills.
+    // Moves like Focus Punch, Sucker Punch, and Future Sight *may* get +4 score for a kill.
+    // NOTE: Focus Punch and Sucker Punch can never actually reach this state, because the AI never
+    // treats them as able to kill.
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_LAST_WHIFF_IF_HIT, EvalAttack_TryScorePlus4
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_FIRST_IF_TARGET_ATTACKING, EvalAttack_TryScorePlus4
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_IN_3_TURNS, EvalAttack_TryScorePlus4
 
-    // Priority kill is score +2. This is because priorty moves are low-power, and this routine prioritizes
-    // raw damage output.
+    // Moves with the "+1 priority" effect get an additional +2 on top of the usual +4 for a kill.
+    // NOTE: this checks the move's _effect_, not the priority score in its data.
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PRIORITY_1, EvalAttack_ScorePlus2
     GoTo EvalAttack_ScorePlus4
 
@@ -6494,26 +6497,33 @@ SetupFirstTurn_SetupEffects:
     TableEntry BATTLE_EFFECT_WHIRLPOOL
     TableEntry TABLE_END
 
-DamagePriority_Main:
+PrioritizeExtremes_Main:
     // Do not target your partner.
     IfTargetIsPartner Terminate
 
-    // If the current move is not variable power or is Risky, break.
-    FlagMoveDamageScore FALSE
-    IfLoadedNotEqualTo AI_NO_COMPARISON_MADE, DamagePriority_Terminate
+    // This routine applies to move effects which:
+    //   1. have variable power,
+    //   2. deal flat damage,
+    //   3. are associated with a high base-power, or
+    //   4. have zero power (i.e., status moves).
+    //
+    // For a full list of move effects which fit one of the first three criteria,
+    // refer to sNoDamageCalcMoveEffects and sAltPowerMoveEffects.
+    FlagMoveDamageScore USE_MAX_DAMAGE
+    IfLoadedNotEqualTo AI_NO_COMPARISON_MADE, PrioritizeExtremes_Terminate
 
     // ~61% of the time, score +2.
-    IfRandomLessThan 100, DamagePriority_Terminate
+    IfRandomLessThan 100, PrioritizeExtremes_Terminate
     AddToMoveScore 2
 
-DamagePriority_Terminate:
+PrioritizeExtremes_Terminate:
     PopOrEnd 
 
 Risky_Main:
     // Do not target your partner.
     IfTargetIsPartner Terminate
 
-    // If the current move effect is judged to not be Risky, break;
+    // Only apply this routine to certain move effects.
     LoadCurrentMoveEffect 
     IfLoadedNotInTable Risky_RiskyEffects, Risky_Terminate
 
@@ -6560,7 +6570,7 @@ BatonPass_Main:
     IfLoadedEqualTo 0, BatonPass_Terminate
 
     // If the move deals damage, ignore it for this flag.
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedNotEqualTo AI_NO_COMPARISON_MADE, BatonPass_Terminate
 
     // If the attacker does not know Baton Pass, 31.25% chance of no score changes.
@@ -6629,7 +6639,7 @@ TagStrategy_Main:
     IfTargetIsPartner TagStrategy_Partner
 
     // If the move does not deal damage, skip ahead
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, TagStrategy_CheckSpecialScoring
 
     // Flat-damage move effects have a special handler; this includes OHKO moves
@@ -7098,7 +7108,7 @@ TagStrategy_PartnerKnowsHelpingHand:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_LEVEL_DAMAGE_FLAT, TagStrategy_PartnerHelpingHand_End
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RANDOM_DAMAGE_1_TO_150_LEVEL, TagStrategy_PartnerHelpingHand_End
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_20_DAMAGE_FLAT, TagStrategy_PartnerHelpingHand_End
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedNotEqualTo AI_NO_COMPARISON_MADE, ScorePlus1
 
 TagStrategy_PartnerHelpingHand_End:
@@ -7109,7 +7119,7 @@ TagStrategy_Unused_1:
     PopOrEnd 
 
 TagStrategy_Unused_2:
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, ScoreMinus5
     AddToMoveScore 1
     IfLoadedEqualTo AI_MOVE_IS_HIGHEST_DAMAGE, ScorePlus2
@@ -7329,7 +7339,7 @@ TagStrategy_CheckFire_End:
 
 TagStrategy_Partner:
     IfBattlerFainted AI_BATTLER_ATTACKER_PARTNER, TagStrategy_PartnerScoreMinus30
-    FlagMoveDamageScore FALSE
+    FlagMoveDamageScore USE_MAX_DAMAGE
     IfLoadedEqualTo AI_NO_COMPARISON_MADE, TagStrategy_PartnerStatusMove
     LoadTypeFrom LOAD_MOVE_TYPE
     IfLoadedEqualTo TYPE_FIRE, TagStrategy_CheckPartnerFireAbsorption
