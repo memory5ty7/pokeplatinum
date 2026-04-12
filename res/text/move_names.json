@@ -1891,11 +1891,231 @@
     },
     {
       "id": "pl_msg_00000647_00472",
-      "en_US": "Disarming Voice"
+      "en_US": "Draining Kiss"
     },
     {
       "id": "pl_msg_00000647_00473",
-      "en_US": "Draining Kiss"
+      "en_US": "Disarming Voice"
+    },
+    {
+      "id": "pl_msg_00000647_00474",
+      "en_US": "Dual Wingbeat"
+    },
+    {
+      "id": "pl_msg_00000647_00475",
+      "en_US": "Hurricane"
+    },
+    {
+      "id": "pl_msg_00000647_00476",
+      "en_US": "Acrobatics"
+    },
+    {
+      "id": "pl_msg_00000647_00477",
+      "en_US": "Bulldoze"
+    },
+    {
+      "id": "pl_msg_00000647_00478",
+      "en_US": "High Horsepower"
+    },
+    {
+      "id": "pl_msg_00000647_00479",
+      "en_US": "Drill Run"
+    },
+    {
+      "id": "pl_msg_00000647_00480",
+      "en_US": "Scorching Sands"
+    },
+    {
+      "id": "pl_msg_00000647_00481",
+      "en_US": "Headlong Rush"
+    },
+    {
+      "id": "pl_msg_00000647_00482",
+      "en_US": "Flip Turn"
+    },
+    {
+      "id": "pl_msg_00000647_00483",
+      "en_US": "Razor Shell"
+    },
+    {
+      "id": "pl_msg_00000647_00484",
+      "en_US": "Scald"
+    },
+    {
+      "id": "pl_msg_00000647_00485",
+      "en_US": "Wave Crash"
+    },
+    {
+      "id": "pl_msg_00000647_00486",
+      "en_US": "Liquidation"
+    },
+    {
+      "id": "pl_msg_00000647_00487",
+      "en_US": "Chilling Water"
+    },
+    {
+      "id": "pl_msg_00000647_00488",
+      "en_US": "Volt Switch"
+    },
+    {
+      "id": "pl_msg_00000647_00489",
+      "en_US": "Wild Charge"
+    },
+    {
+      "id": "pl_msg_00000647_00490",
+      "en_US": "Supercell Slam"
+    },
+    {
+      "id": "pl_msg_00000647_00491",
+      "en_US": "Electroweb"
+    },
+    {
+      "id": "pl_msg_00000647_00492",
+      "en_US": "Mystical Fire"
+    },
+    {
+      "id": "pl_msg_00000647_00493",
+      "en_US": "Heat Crash"
+    },
+    {
+      "id": "pl_msg_00000647_00494",
+      "en_US": "Incinerate"
+    },
+    {
+      "id": "pl_msg_00000647_00495",
+      "en_US": "Freeze-Dry"
+    },
+    {
+      "id": "pl_msg_00000647_00496",
+      "en_US": "Icicle Crash"
+    },
+    {
+      "id": "pl_msg_00000647_00497",
+      "en_US": "Frost Breath"
+    },
+    {
+      "id": "pl_msg_00000647_00498",
+      "en_US": "Quiver Dance"
+    },
+    {
+      "id": "pl_msg_00000647_00499",
+      "en_US": "Struggle Bug"
+    },
+    {
+      "id": "pl_msg_00000647_00500",
+      "en_US": "Sticky Web"
+    },
+    {
+      "id": "pl_msg_00000647_00501",
+      "en_US": "Lunge"
+    },
+    {
+      "id": "pl_msg_00000647_00502",
+      "en_US": "Low Sweep"
+    },
+    {
+      "id": "pl_msg_00000647_00503",
+      "en_US": "Body Press"
+    },
+    {
+      "id": "pl_msg_00000647_00504",
+      "en_US": "Acid Spray"
+    },
+    {
+      "id": "pl_msg_00000647_00505",
+      "en_US": "Venoshock"
+    },
+    {
+      "id": "pl_msg_00000647_00506",
+      "en_US": "Sludge Wave"
+    },
+    {
+      "id": "pl_msg_00000647_00507",
+      "en_US": "Clear Smog"
+    },
+    {
+      "id": "pl_msg_00000647_00508",
+      "en_US": "Hex"
+    },
+    {
+      "id": "pl_msg_00000647_00509",
+      "en_US": "Phantom Force"
+    },
+    {
+      "id": "pl_msg_00000647_00510",
+      "en_US": "Poltergeist"
+    },
+    {
+      "id": "pl_msg_00000647_00511",
+      "en_US": "Psychic Fangs"
+    },
+    {
+      "id": "pl_msg_00000647_00512",
+      "en_US": "Psyshock"
+    },
+    {
+      "id": "pl_msg_00000647_00513",
+      "en_US": "Twin Beam"
+    },
+    {
+      "id": "pl_msg_00000647_00514",
+      "en_US": "Psyshield Bash"
+    },
+    {
+      "id": "pl_msg_00000647_00515",
+      "en_US": "Mystical Power"
+    },
+    {
+      "id": "pl_msg_00000647_00516",
+      "en_US": "Solar Blade"
+    },
+    {
+      "id": "pl_msg_00000647_00517",
+      "en_US": "Petal Blizzard"
+    },
+    {
+      "id": "pl_msg_00000647_00518",
+      "en_US": "Shell Smash"
+    },
+    {
+      "id": "pl_msg_00000647_00519",
+      "en_US": "Boomburst"
+    },
+    {
+      "id": "pl_msg_00000647_00520",
+      "en_US": "Blood Moon"
+    },
+    {
+      "id": "pl_msg_00000647_00521",
+      "en_US": "Hyper Drill"
+    },
+    {
+      "id": "pl_msg_00000647_00522",
+      "en_US": "Dual Chop"
+    },
+    {
+      "id": "pl_msg_00000647_00523",
+      "en_US": "Breaking Swipe"
+    },
+    {
+      "id": "pl_msg_00000647_00524",
+      "en_US": "Smart Strike"
+    },
+    {
+      "id": "pl_msg_00000647_00525",
+      "en_US": "Heavy Slam"
+    },
+    {
+      "id": "pl_msg_00000647_00526",
+      "en_US": "Steel Beam"
+    },
+    {
+      "id": "pl_msg_00000647_00527",
+      "en_US": "Stone Axe"
+    },
+    {
+      "id": "pl_msg_00000647_00528",
+      "en_US": "Meteor Beam"
     }
   ]
 }
