@@ -6612,6 +6612,17 @@ static const u16 sPulseMoves[] = {
     MOVE_WATER_PULSE,
 };
 
+static const u16 sBitingMoves[] = {
+    MOVE_BITE,
+    MOVE_CRUNCH,
+    MOVE_FIRE_FANG,
+    MOVE_HYPER_FANG,
+    MOVE_ICE_FANG,
+    MOVE_POISON_FANG,
+    MOVE_PSYCHIC_FANGS,
+    MOVE_THUNDER_FANG,
+}
+
 typedef struct DamageCalcParams {
     u16 species;
     s16 curHP;
@@ -6950,7 +6961,14 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
 
     for (i = 0; i < NELEMS(sPulseMoves); i++) {
-        if (sPunchingMoves[i] == move && attackerParams.ability == ABILITY_MEGA_LAUNCHER) {
+        if (sPulseMoves[i] == move && attackerParams.ability == ABILITY_MEGA_LAUNCHER) {
+            movePower = movePower * 15 / 10;
+            break;
+        }
+    }
+
+    for (i = 0; i < NELEMS(sBitingMoves); i++) {
+        if (sBitingMoves[i] == move && attackerParams.ability == ABILITY_STRONG_JAW) {
             movePower = movePower * 15 / 10;
             break;
         }
