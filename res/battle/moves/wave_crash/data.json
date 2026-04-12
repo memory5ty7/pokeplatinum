@@ -1,13 +1,13 @@
 {
-    "name": "Waterfall",
+    "name": "Wave Crash",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_WATER",
-    "power": 80,
+    "power": 120,
     "accuracy": 100,
-    "pp": 15,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_FLINCH_HIT",
-        "chance": 20
+        "type": "BATTLE_EFFECT_RECOIL_THIRD",
+        "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

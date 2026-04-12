@@ -1,13 +1,13 @@
 {
-    "name": "Zen Headbutt",
+    "name": "Psyshield Bash",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_PSYCHIC",
-    "power": 80,
+    "power": 90,
     "accuracy": 90,
-    "pp": 15,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_FLINCH_HIT",
-        "chance": 20
+        "type": "BATTLE_EFFECT_RAISE_DEF_HIT",
+        "chance": 100
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

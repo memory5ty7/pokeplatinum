@@ -1,20 +1,20 @@
 {
-    "name": "Spider Web",
-    "class": "CLASS_STATUS",
-    "type": "TYPE_BUG",
-    "power": 0,
-    "accuracy": 0,
-    "pp": 10,
+    "name": "Electroweb",
+    "class": "CLASS_SPECIAL",
+    "type": "TYPE_ELECTRIC",
+    "power": 55,
+    "accuracy": 95,
+    "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_PREVENT_ESCAPE",
-        "chance": 0
+        "type": "BATTLE_EFFECT_LOWER_SPEED_HIT",
+        "chance": 100
     },
-    "range": "RANGE_SINGLE_TARGET",
+    "range": "RANGE_ADJACENT_OPPONENTS",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MAGIC_COAT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
     ],
     "contest": {
         "effect": "CONTEST_EFFECT_SUPPRESS_VOLTAGE",

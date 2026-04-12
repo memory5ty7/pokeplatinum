@@ -1,10 +1,10 @@
 {
-    "name": "Hi Jump Kick",
+    "name": "Supercell Slam",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_FIGHTING",
+    "type": "TYPE_ELECTRIC",
     "power": 100,
-    "accuracy": 90,
-    "pp": 20,
+    "accuracy": 95,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_CRASH_ON_MISS",
         "chance": 0

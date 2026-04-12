@@ -1,12 +1,12 @@
 {
-    "name": "Giga Impact",
+    "name": "Headlong Rush",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 150,
-    "accuracy": 90,
+    "type": "TYPE_GROUND",
+    "power": 120,
+    "accuracy": 100,
     "pp": 5,
     "effect": {
-        "type": "BATTLE_EFFECT_RECHARGE_AFTER",
+        "type": "BATTLE_EFFECT_DEF_SPD_DOWN_HIT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

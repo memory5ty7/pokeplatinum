@@ -1,19 +1,20 @@
 {
-    "name": "Acid",
+    "name": "Acid Spray",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_POISON",
     "power": 40,
     "accuracy": 100,
-    "pp": 30,
+    "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
-        "chance": 10
+        "type": "BATTLE_EFFECT_LOWER_SP_DEF_2_HIT",
+        "chance": 100
     },
-    "range": "RANGE_ADJACENT_OPPONENTS",
+    "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
     ],
     "contest": {
         "effect": "CONTEST_EFFECT_BASIC",

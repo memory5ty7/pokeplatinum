@@ -1,12 +1,12 @@
 {
-    "name": "Wing Attack",
+    "name": "Dual Wingbeat",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FLYING",
-    "power": 60,
-    "accuracy": 100,
-    "pp": 35,
+    "power": 40,
+    "accuracy": 90,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_HIT",
+        "type": "BATTLE_EFFECT_HIT_TWICE",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

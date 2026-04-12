@@ -1,10 +1,10 @@
 {
-    "name": "Jump Kick",
+    "name": "Lunge",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_FIGHTING",
-    "power": 85,
-    "accuracy": 95,
-    "pp": 25,
+    "type": "TYPE_BUG",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_CRASH_ON_MISS",
         "chance": 0

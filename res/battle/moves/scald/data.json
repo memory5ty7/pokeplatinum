@@ -1,13 +1,13 @@
 {
-    "name": "Hydro Pump",
+    "name": "Scald",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_WATER",
-    "power": 120,
-    "accuracy": 80,
-    "pp": 5,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_HIT",
-        "chance": 0
+        "type": "BATTLE_EFFECT_THAW_AND_BURN_HIT",
+        "chance": 30
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

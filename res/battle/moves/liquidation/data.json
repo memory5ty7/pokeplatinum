@@ -1,13 +1,13 @@
 {
-    "name": "Crabhammer",
+    "name": "Liquidation",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_WATER",
-    "power": 90,
-    "accuracy": 85,
+    "power": 85,
+    "accuracy": 100,
     "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_HIGH_CRITICAL",
-        "chance": 0
+        "type": "BATTLE_EFFECT_LOWER_DEFENSE_HIT",
+        "chance": 20
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

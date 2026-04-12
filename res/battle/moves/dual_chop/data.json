@@ -1,12 +1,12 @@
 {
-    "name": "Dragon Claw",
+    "name": "Dual Chop",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_DRAGON",
-    "power": 80,
-    "accuracy": 100,
+    "power": 40,
+    "accuracy": 90,
     "pp": 15,
     "effect": {
-        "type": "BATTLE_EFFECT_HIT",
+        "type": "BATTLE_EFFECT_HIT_TWICE",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

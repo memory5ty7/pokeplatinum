@@ -1,16 +1,16 @@
 {
-    "name": "Aqua Jet",
+    "name": "Flip Turn",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_WATER",
-    "power": 40,
+    "power": 60,
     "accuracy": 100,
     "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_PRIORITY_1",
+        "type": "BATTLE_EFFECT_SWITCH_HIT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
-    "priority": 1,
+    "priority": 0,
     "flags": [
         "MOVE_FLAG_MAKES_CONTACT",
         "MOVE_FLAG_CAN_PROTECT",

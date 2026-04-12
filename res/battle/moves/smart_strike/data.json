@@ -1,12 +1,12 @@
 {
-    "name": "Horn Attack",
+    "name": "Smart Strike",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 65,
-    "accuracy": 100,
-    "pp": 25,
+    "type": "TYPE_STEEL",
+    "power": 70,
+    "accuracy": 0,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_HIT",
+        "type": "BATTLE_EFFECT_BYPASS_ACCURACY",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

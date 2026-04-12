@@ -1,12 +1,12 @@
 {
-    "name": "Low Kick",
+    "name": "Low Sweep",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 1,
+    "power": 65,
     "accuracy": 100,
     "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_INCREASE_POWER_WITH_WEIGHT",
+        "type": "BATTLE_EFFECT_LOWER_SPEED_HIT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

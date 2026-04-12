@@ -1,12 +1,12 @@
 {
-    "name": "Double-Edge",
+    "name": "High Horsepower",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 120,
-    "accuracy": 100,
-    "pp": 15,
+    "type": "TYPE_GROUND",
+    "power": 95,
+    "accuracy": 95,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_RECOIL_THIRD",
+        "type": "BATTLE_EFFECT_HIT",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",

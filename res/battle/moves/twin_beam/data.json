@@ -1,19 +1,20 @@
 {
-    "name": "Psybeam",
+    "name": "Twin Beam",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_PSYCHIC",
-    "power": 65,
+    "power": 40,
     "accuracy": 100,
-    "pp": 20,
+    "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_CONFUSE_HIT",
-        "chance": 10
+        "type": "BATTLE_EFFECT_HIT_TWICE",
+        "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
     "flags": [
         "MOVE_FLAG_CAN_PROTECT",
-        "MOVE_FLAG_CAN_MIRROR_MOVE"
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
     ],
     "contest": {
         "effect": "CONTEST_EFFECT_FIRST_PERFORMANCE_ADVANTAGE",

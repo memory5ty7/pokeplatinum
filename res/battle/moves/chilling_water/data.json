@@ -1,13 +1,13 @@
 {
-    "name": "Brine",
+    "name": "Chilling Water",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_WATER",
-    "power": 65,
+    "power": 55,
     "accuracy": 100,
-    "pp": 10,
+    "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_DOUBLE_POWER_WHEN_BELOW_HALF",
-        "chance": 0
+        "type": "BATTLE_EFFECT_LOWER_ATTACK_HIT",
+        "chance": 100
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,
