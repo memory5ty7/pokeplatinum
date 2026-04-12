@@ -6623,6 +6623,24 @@ static const u16 sBitingMoves[] = {
     MOVE_THUNDER_FANG,
 }
 
+static const u16 sSlicingMoves[] = {
+    MOVE_AERIAL_ACE,
+    MOVE_AIR_CUTTER,
+    MOVE_AIR_SLASH,
+    MOVE_CROSS_POISON,
+    MOVE_CUT,
+    MOVE_FURY_CUTTER,
+    MOVE_LEAF_BLADE,
+    MOVE_NIGHT_SLASH,
+    MOVE_PSYCHO_CUT,
+    MOVE_RAZOR_LEAF,
+    MOVE_RAZOR_SHELL,
+    MOVE_SLASH,
+    MOVE_SOLAR_BLADE,
+    MOVE_STONE_AXE,
+    MOVE_X_SCISSOR,
+}
+
 typedef struct DamageCalcParams {
     u16 species;
     s16 curHP;
@@ -6973,6 +6991,14 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             break;
         }
     }
+
+    for (i = 0; i < NELEMS(sSlicingMoves); i++) {
+        if (sSlicingMoves[i] == move && attackerParams.ability == ABILITY_SHARPNESS) {
+            movePower = movePower * 15 / 10;
+            break;
+        }
+    }
+
 
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
