@@ -6600,7 +6600,8 @@ static const u16 sPunchingMoves[] = {
     MOVE_SHADOW_PUNCH,
     MOVE_DRAIN_PUNCH,
     MOVE_BULLET_PUNCH,
-    MOVE_SKY_UPPERCUT
+    MOVE_SKY_UPPERCUT,
+    MOVE_HEADLONG_RUSH,
 };
 
 typedef struct DamageCalcParams {
