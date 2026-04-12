@@ -1018,6 +1018,20 @@
         "Powers up\n",
         "Electric-type moves."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00146",
+      "en_US": [
+        "Uses its moves as if\n",
+        "the sun were shining."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00147",
+      "en_US": [
+        "Normal-type moves become\n",
+        "Dragon type."
+      ]
     }
   ]
 }

@@ -584,6 +584,14 @@
     {
       "id": "pl_msg_00000610_00145",
       "en_US": "Transistor"
+    },
+    {
+      "id": "pl_msg_00000610_00146",
+      "en_US": "Mega Sol"
+    },
+    {
+      "id": "pl_msg_00000610_00147",
+      "en_US": "Dragonize"
     }
   ]
 }
