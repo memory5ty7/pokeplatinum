@@ -4458,6 +4458,8 @@ Expert_ChangeUserAbility_DesirableAbilities:
     TableEntry ABILITY_FILTER
     TableEntry ABILITY_SOLID_ROCK
     TableEntry ABILITY_RECKLESS
+    TableEntry ABILITY_SAND_RUSH
+    TableEntry ABILITY_SLUSH_RUSH
     TableEntry TABLE_END
 
 Expert_Ingrain:
