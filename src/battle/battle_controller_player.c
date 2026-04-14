@@ -802,8 +802,7 @@ static void BattleControllerPlayer_CalcTurnOrder(BattleSystem *battleSys, Battle
 
 enum PreMoveActionState {
     PRE_MOVE_ACTION_START = 0,
-    PRE_MOVE_ACTION_MEGA_EVOLUTION = PRE_MOVE_ACTION_START,
-    PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS,
+    PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS = PRE_MOVE_ACTION_START,
     PRE_MOVE_ACTION_STATE_CHECK_RAGE_FLAG,
     PRE_MOVE_ACTION_STATE_SPEED_RNG,
 
@@ -818,52 +817,6 @@ static void BattleControllerPlayer_CheckPreMoveActions(BattleSystem *battleSys, 
 
     do {
         switch (battleCtx->turnStartCheckState) {
-        case PRE_MOVE_ACTION_MEGA_EVOLUTION:
-            while (battleCtx->turnStartCheckTemp < maxBattlers) {
-                Desmume_Log("%d\n", battler);
-                battler = battleCtx->battlerActionOrder[battleCtx->turnStartCheckTemp];
-
-                if (BattleMon_CanMegaEvolve(battleCtx, battler) == TRUE) {
-
-                    if (BattleSystem_CheckMegaMessage(battleSys, battleCtx)) {
-                        LOAD_SUBSEQ(subscript_trainer_message);
-                        battleCtx->commandNext = battleCtx->command;
-                        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-                        return;
-                    }
-
-                    int formNum = GetMegaEvolutionData(battleCtx, battler);
-                    BattleFormChange(battleSys, battleCtx, battler, formNum);
-
-                    ATTACKING_MON.status &= ~VOLATILE_CONDITION_DESTINY_BOND;
-                    battleCtx->megaEvolutionUsed[battler] = TRUE;
-
-                    battleCtx->msgBattlerTemp = battler;
-                    battleCtx->msgItemTemp = battleCtx->battleMons[battler].heldItem;
-                    LOAD_SUBSEQ(subscript_mega_evolution);
-
-                    battleCtx->commandNext = battleCtx->command;
-                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-
-                    return;
-
-                }
-
-                int switchinSeq = BattleSystem_TriggerEffectOnSwitch(battleSys, battleCtx);
-                if (switchinSeq) {
-                    LOAD_SUBSEQ(switchinSeq);
-                    battleCtx->commandNext = battleCtx->command;
-                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
-                    return;
-                }
-
-                battleCtx->turnStartCheckTemp++;
-            }
-
-            battleCtx->turnStartCheckTemp = 0;
-            battleCtx->turnStartCheckState++;
-            break;
-
         case PRE_MOVE_ACTION_STATE_TIGHTEN_FOCUS:
             while (battleCtx->turnStartCheckTemp < maxBattlers) {
                 battler = battleCtx->battlerActionOrder[battleCtx->turnStartCheckTemp];
@@ -922,6 +875,7 @@ static void BattleControllerPlayer_CheckPreMoveActions(BattleSystem *battleSys, 
     } while (state == STATE_PROCESSING);
 
     if (state == STATE_DONE) {
+        battleCtx->turnStartCheckTemp = 0;
         battleCtx->command = BATTLE_CONTROL_BRANCH_ACTIONS;
     }
 }
@@ -1916,6 +1870,55 @@ static void BattleControllerPlayer_TurnEnd(BattleSystem *battleSys, BattleContex
 
 static void BattleControllerPlayer_FightCommand(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    int battler;
+    int maxBattlers = BattleSystem_GetMaxBattlers(battleSys);
+
+    while (battleCtx->turnStartCheckTemp < maxBattlers) { 
+        battler = battleCtx->battlerActionOrder[battleCtx->turnStartCheckTemp];
+        Desmume_Log("%d\n", battler);
+
+        if (BattleMon_CanMegaEvolve(battleCtx, battler) == TRUE) {
+
+            if (BattleSystem_CheckMegaMessage(battleSys, battleCtx)) {
+                LOAD_SUBSEQ(subscript_trainer_message);
+                battleCtx->commandNext = battleCtx->command;
+                battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                return;
+            }
+
+            int formNum = GetMegaEvolutionData(battleCtx, battler);
+            BattleFormChange(battleSys, battleCtx, battler, formNum);
+
+            //ATTACKING_MON.status &= ~VOLATILE_CONDITION_DESTINY_BOND;
+            battleCtx->megaEvolutionUsed[battler] = TRUE;
+
+            battleCtx->msgBattlerTemp = battler;
+            battleCtx->msgItemTemp = Battler_HeldItem(battleCtx, battler);
+
+            Desmume_Log("load subseq %d\n", subscript_mega_evolution);
+
+            LOAD_SUBSEQ(subscript_mega_evolution);
+
+            battleCtx->commandNext = battleCtx->command;
+            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+            return;
+
+        }
+
+        Desmume_Log("Trigger effect on switch\n");
+
+        int switchinSeq = BattleSystem_TriggerEffectOnSwitch(battleSys, battleCtx);
+        if (switchinSeq) {
+            LOAD_SUBSEQ(switchinSeq);
+            battleCtx->commandNext = battleCtx->command;
+            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+            return;
+        }
+
+        battleCtx->turnStartCheckTemp++;
+    }
+
     BOOL randomizeTarget = FALSE;
     battleCtx->attacker = battleCtx->battlerActionOrder[battleCtx->turnOrderCounter];
 
@@ -2892,8 +2895,30 @@ static BOOL BattleControllerPlayer_LoadQuickClawCheck(BattleSystem *battleSys, B
 
 static inline int CalcMoveType(BattleContext *battleCtx, int attacker, int move)
 {
-    if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
+    u16 attackerAbility = Battler_Ability(battleCtx, attacker);
+    if (attackerAbility == ABILITY_NORMALIZE) {
         return TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            return TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            return TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            return TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            return TYPE_DRAGON;
+        }
+        else
+        {
+            return TYPE_NORMAL;
+        }
     } else if (battleCtx->moveType) {
         return battleCtx->moveType;
     }
@@ -3669,8 +3694,30 @@ static void BattleControllerPlayer_LeftoverState29(BattleSystem *battleSys, Batt
 
 static inline int CalcCurrentMoveType(BattleContext *battleCtx)
 {
-    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
+    u16 attackerAbility = Battler_Ability(battleCtx, battleCtx->attacker);
+    if (attackerAbility == ABILITY_NORMALIZE) {
         return TYPE_NORMAL;
+    } else if (CURRENT_MOVE_DATA.type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            return TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            return TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            return TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            return TYPE_DRAGON;
+        }
+        else
+        {
+            return TYPE_NORMAL;
+        }
     } else if (battleCtx->moveType) {
         return battleCtx->moveType;
     }

@@ -217,7 +217,7 @@ void BattleFormChange(BattleSystem *battleSys, BattleContext *battleCtx, int bat
 
     Desmume_Log("New Ability : %d\n", BattleMon_Get(battleCtx, battler, BATTLEMON_ABILITY, NULL));
 
-    Heap_Free(mon);
+    //Heap_Free(mon);
 }
 
 u8 GetSpeciesMegaNumber(int species)

@@ -1750,6 +1750,31 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
     moveType = CalcMoveType(battleSys, battleCtx, attacker, move);
     if (moveType == TYPE_NORMAL) {
         moveType = MOVE_DATA(move).type;
+
+        u16 attackerAbility = Battler_Ability(battleCtx, attacker);
+
+        if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+            if (attackerAbility == ABILITY_PIXILATE)
+            {
+                moveType = TYPE_FAIRY;
+            }
+            else if (attackerAbility == ABILITY_REFRIGERATE)
+            {
+                moveType = TYPE_ICE;
+            }
+            else if (attackerAbility == ABILITY_AERILATE)
+            {
+                moveType = TYPE_FLYING;
+            }
+            else if (attackerAbility == ABILITY_DRAGONIZE)
+            {
+                moveType = TYPE_DRAGON;
+            }
+            else
+            {
+                moveType = TYPE_NORMAL;
+            }
+        }
     }
 
     int maxBattlers = BattleSystem_GetMaxBattlers(battleSys);
@@ -2576,6 +2601,20 @@ static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defe
     return result;
 }
 
+BOOL MoveIsAffectedByNormalizeVariants(u16 moveId)
+{
+    switch (moveId)
+    {
+        case MOVE_HIDDEN_POWER:
+        case MOVE_WEATHER_BALL:
+        case MOVE_NATURAL_GIFT:
+        case MOVE_JUDGMENT:
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
 int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCtx, int move, int inType, int attacker, int defender, int damage, u32 *moveStatusMask)
 {
     int chartEntry;
@@ -2586,6 +2625,7 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
     u8 defenderItemEffect;
     u8 attackerItemPower;
     u8 defenderItemPower;
+    u8 attackerAbility;
 
     totalMul = 1;
 
@@ -2598,8 +2638,31 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
     defenderItemEffect = Battler_HeldItemEffect(battleCtx, defender);
     defenderItemPower = Battler_HeldItemPower(battleCtx, defender, ITEM_POWER_CHECK_ALL);
 
-    if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
+    attackerAbility = Battler_Ability(battleCtx, attacker);
+
+    if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            moveType = TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            moveType = TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            moveType = TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            moveType = TYPE_DRAGON;
+        }
+        else
+        {
+            moveType = TYPE_NORMAL;
+        }
     } else if (inType) {
         moveType = inType;
     } else {
@@ -2708,6 +2771,27 @@ void BattleSystem_CalcEffectiveness(BattleContext *battleCtx, int move, int inTy
 
     if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            moveType = TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            moveType = TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            moveType = TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            moveType = TYPE_DRAGON;
+        }
+        else
+        {
+            moveType = TYPE_NORMAL;
+        }
     } else if (inType) {
         moveType = inType;
     } else {
@@ -3510,8 +3594,31 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 {
     int subscript = NULL, moveType;
 
-    if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
+    u16 attackerAbility = Battler_Ability(battleCtx, attacker);
+
+    if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (CURRENT_MOVE_DATA.type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            moveType = TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            moveType = TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            moveType = TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            moveType = TYPE_DRAGON;
+        }
+        else
+        {
+            moveType = TYPE_NORMAL;
+        } 
     } else if (battleCtx->moveType) {
         moveType = battleCtx->moveType;
     } else {
@@ -4252,9 +4359,30 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
 
     case ABILITY_COLOR_CHANGE:
         u8 moveType;
-
-        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
+        u16 attackerAbility = Battler_Ability(battleCtx, battleCtx->attacker);
+        if (attackerAbility == ABILITY_NORMALIZE) {
             moveType = TYPE_NORMAL;
+        } else if (CURRENT_MOVE_DATA.type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+            if (attackerAbility == ABILITY_PIXILATE)
+            {
+                moveType = TYPE_FAIRY;
+            }
+            else if (attackerAbility == ABILITY_REFRIGERATE)
+            {
+                moveType = TYPE_ICE;
+            }
+            else if (attackerAbility == ABILITY_AERILATE)
+            {
+                moveType = TYPE_FLYING;
+            }
+            else if (attackerAbility == ABILITY_DRAGONIZE)
+            {
+                moveType = TYPE_DRAGON;
+            }
+            else
+            {
+                moveType = TYPE_NORMAL;
+            }
         } else if (battleCtx->moveType) {
             moveType = battleCtx->moveType;
         } else {
@@ -6621,7 +6749,7 @@ static const u16 sBitingMoves[] = {
     MOVE_POISON_FANG,
     MOVE_PSYCHIC_FANGS,
     MOVE_THUNDER_FANG,
-}
+};
 
 static const u16 sSlicingMoves[] = {
     MOVE_AERIAL_ACE,
@@ -6639,7 +6767,7 @@ static const u16 sSlicingMoves[] = {
     MOVE_SOLAR_BLADE,
     MOVE_STONE_AXE,
     MOVE_X_SCISSOR,
-}
+};
 
 typedef struct DamageCalcParams {
     u16 species;
@@ -6738,6 +6866,27 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     if (attackerParams.ability == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        if (attackerParams.ability == ABILITY_PIXILATE)
+        {
+            moveType = TYPE_FAIRY;
+        }
+        else if (attackerParams.ability == ABILITY_REFRIGERATE)
+        {
+            moveType = TYPE_ICE;
+        }
+        else if (attackerParams.ability == ABILITY_AERILATE)
+        {
+            moveType = TYPE_FLYING;
+        }
+        else if (attackerParams.ability == ABILITY_DRAGONIZE)
+        {
+            moveType = TYPE_DRAGON;
+        }
+        else
+        {
+            moveType = TYPE_NORMAL;
+        }
     } else if (inType == TYPE_NORMAL) {
         moveType = MOVE_DATA(move).type;
     } else {

@@ -1324,8 +1324,30 @@ static BOOL BtlCmd_Wait(BattleSystem *battleSys, BattleContext *battleCtx)
 static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     int moveType;
-    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
+    u16 attackerAbility = Battler_Ability(battleCtx, battleCtx->attacker);
+    if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (CURRENT_MOVE_DATA.type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        if (attackerAbility == ABILITY_PIXILATE)
+        {
+            moveType = TYPE_FAIRY;
+        }
+        else if (attackerAbility == ABILITY_REFRIGERATE)
+        {
+            moveType = TYPE_ICE;
+        }
+        else if (attackerAbility == ABILITY_AERILATE)
+        {
+            moveType = TYPE_FLYING;
+        }
+        else if (attackerAbility == ABILITY_DRAGONIZE)
+        {
+            moveType = TYPE_DRAGON;
+        }
+        else
+        {
+            moveType = TYPE_NORMAL;
+        }
     } else if (battleCtx->moveType) {
         moveType = battleCtx->moveType;
     } else {
