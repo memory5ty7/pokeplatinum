@@ -7171,6 +7171,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower = movePower * 13 / 10;
     }
 
+    if (NO_CLOUD_NINE) {
+        if ((fieldConditions & FIELD_CONDITION_SANDSTORM) && attackerParams.ability == ABILITY_SAND_FORCE
+            && (moveType == TYPE_ROCK || moveType == TYPE_GROUND || moveType == TYPE_STEEL)) {
+            movePower = movePower * 13 / 10;
+        }
+    }
+
 
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
