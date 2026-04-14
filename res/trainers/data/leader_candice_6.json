@@ -23,7 +23,7 @@
                 "MOVE_WATER_PULSE",
                 "MOVE_ICE_SHARD"
             ],
-            "ability": "ABILITY_SNOW_WARNING",
+            "ability": "ABILITY_SAP_SIPPER",
             "ball_seal": 0
         },
         {

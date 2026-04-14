@@ -300,4 +300,5 @@ subscript_files = files(
     'subscript_giratina_form_change.s',
     'subscript_mega_evolution.s',
     'subscript_drain_three_quarters_damage_dealt.s',
+    'subscript_handle_sap_sipper.s',
 )
