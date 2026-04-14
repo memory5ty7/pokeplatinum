@@ -7056,6 +7056,15 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower = movePower * 125 / 100;
     }
 
+    if (moveType == TYPE_ELECTRIC
+        && attackerParams.ability == ABILITY_TRANSISTOR) {
+        movePower = movePower * 130 / 100;
+    }
+    if (moveType == TYPE_DRAGON
+        && attackerParams.ability == ABILITY_DRAGONS_MAW) {
+        movePower = movePower * 130 / 100;
+    }
+
     if (attackerParams.ability == ABILITY_SIMPLE) {
         attackStage *= 2;
         if (attackStage < MIN_STAT_STAGE - DEFAULT_STAT_STAGE) {
