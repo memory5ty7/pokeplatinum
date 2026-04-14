@@ -74,6 +74,7 @@ Basic_CheckForImmunity:
     IfLoadedEqualTo ABILITY_WATER_ABSORB, Basic_CheckWaterAbsorption
     IfLoadedEqualTo ABILITY_FLASH_FIRE, Basic_CheckFireAbsorption
     IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_CheckWonderGuard
+    IfLoadedEqualTo ABILITY_EARTH_EATER, Basic_CheckGroundAbsorption
     IfLoadedEqualTo ABILITY_LEVITATE, Basic_CheckGroundAbsorption
     IfLoadedEqualTo ABILITY_LEVITATE, Basic_CheckWaterAbsorption2 // BUG: This line should branch on Dry Skin rather than Levitate
     GoTo Basic_NoImmunityAbility
@@ -569,6 +570,7 @@ Basic_CheckMagnitude:
     IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_CheckNonStandardDamageOrChargeTurn
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_LEVITATE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_EARTH_EATER, ScoreMinus10
 
 Basic_CheckNonStandardDamageOrChargeTurn:
     // If the target is immune to this move by its typing or due to the target's ability being
@@ -1467,6 +1469,7 @@ Basic_CheckMagnetRise:
     // If the attacker's ability is Levitate, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_LEVITATE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_EARTH_EATER, ScoreMinus10
 
     // If either of the attacker's types are Flying, score -10.
     LoadTypeFrom LOAD_ATTACKER_TYPE_1
@@ -7138,6 +7141,8 @@ TagStrategy_Earthquake:
     // battler will score Earthquake and Magnitude an additional -3
     IfMoveEffect AI_BATTLER_ATTACKER_PARTNER, MOVE_EFFECT_MAGNET_RISE, ScorePlus2
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_LEVITATE
+    IfLoadedEqualTo AI_HAVE, ScorePlus2
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_EARTH_EATER
     IfLoadedEqualTo AI_HAVE, ScorePlus2
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_FLYING
     IfLoadedEqualTo AI_HAVE, ScorePlus2

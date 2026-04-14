@@ -3650,6 +3650,14 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         subscript = subscript_absorb_and_boost_fire_type_moves;
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_EARTH_EATER) == TRUE
+        && moveType == TYPE_GROUND
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE // do not proc on first turn of Dig
+        && CURRENT_MOVE_DATA.power) {
+        battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[defender].maxHP, 4);
+        subscript = subscript_ability_restores_hp;
+    }
+
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SOUNDPROOF) == TRUE) {
         for (int i = 0; i < NELEMS(sSoundMoves); i++) {
             if (sSoundMoves[i] == battleCtx->moveCur) {
