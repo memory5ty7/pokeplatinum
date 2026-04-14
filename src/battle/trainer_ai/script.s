@@ -456,6 +456,7 @@ Basic_CheckLowStatStage_Accuracy:
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_KEEN_EYE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MINDS_EYE, ScoreMinus10
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 

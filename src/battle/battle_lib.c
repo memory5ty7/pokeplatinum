@@ -2695,7 +2695,8 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
             if (sTypeMatchupMultipliers[chartEntry][0] == 0xFE) {
                 // The Ghost-type immunities are listed separately and ignored as a batch
                 if ((battleCtx->battleMons[defender].statusVolatile & VOLATILE_CONDITION_FORESIGHT)
-                    || Battler_Ability(battleCtx, attacker) == ABILITY_SCRAPPY) {
+                    || Battler_Ability(battleCtx, attacker) == ABILITY_SCRAPPY
+                    || Battler_Ability(battleCtx, attacker) == ABILITY_MINDS_EYE) {
                     break;
                 } else {
                     chartEntry++;
@@ -2809,7 +2810,8 @@ void BattleSystem_CalcEffectiveness(BattleContext *battleCtx, int move, int inTy
 
         while (sTypeMatchupMultipliers[chartEntry][0] != 0xFF) {
             if (sTypeMatchupMultipliers[chartEntry][0] == 0xFE) {
-                if (attackerAbility == ABILITY_SCRAPPY) {
+                if (attackerAbility == ABILITY_SCRAPPY
+                    || attackerAbility == ABILITY_MINDS_EYE) {
                     break;
                 } else {
                     chartEntry++;
