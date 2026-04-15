@@ -301,4 +301,5 @@ subscript_files = files(
     'subscript_mega_evolution.s',
     'subscript_drain_three_quarters_damage_dealt.s',
     'subscript_handle_sap_sipper.s',
+    'subscript_absorb_and_sp_atk_up_1_stage.s',
 )
