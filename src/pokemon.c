@@ -3040,11 +3040,13 @@ void BuildPokemonSpriteTemplate(PokemonSpriteTemplate *spriteTemplate, u16 speci
     case SPECIES_ABSOL:
     case SPECIES_GARCHOMP:
     case SPECIES_LUCARIO:
-        Desmume_Log("Species : %d, megaOffsets[species]: %d\n", species, megaOffsets[species]);
-        spriteTemplate->narcID = NARC_INDEX_POKETOOL__POKEGRA__PL_OTHERPOKE;
-        spriteTemplate->character = megaOffsets[species] + (face / 2) + form * 2;
-        spriteTemplate->palette = megaOffsets[species] + 330 + shiny + form * 2;
-        break;
+        if (form != 0) {
+            Desmume_Log("Species : %d, megaOffsets[species]: %d\n", species, megaOffsets[species]);
+            spriteTemplate->narcID = NARC_INDEX_POKETOOL__POKEGRA__PL_OTHERPOKE;
+            spriteTemplate->character = megaOffsets[species] + (face / 2) + form * 2;
+            spriteTemplate->palette = megaOffsets[species] + 330 + shiny + form * 2;
+            break;
+        }
 
     default:
         spriteTemplate->narcID = NARC_INDEX_POKETOOL__POKEGRA__PL_POKEGRA;
@@ -3501,9 +3503,12 @@ u8 LoadPokemonSpriteYOffset(u16 species, u8 gender, u8 face, u8 form, u32 person
     case SPECIES_FROSLASS:
     case SPECIES_HEATRAN:
     case SPECIES_DARKRAI:
-        narcID = NARC_INDEX_POKETOOL__POKEGRA__HEIGHT_O;
-        memberIndex = megaOffsets[species] + 2 + (face / 2) + form * 2;
-        break;
+        if (form != 0)
+        {
+            narcID = NARC_INDEX_POKETOOL__POKEGRA__HEIGHT_O;
+            memberIndex = megaOffsets[species] + 2 + (face / 2) + form * 2;
+            break;
+        }
 
     default:
         narcID = NARC_INDEX_POKETOOL__POKEGRA__HEIGHT;

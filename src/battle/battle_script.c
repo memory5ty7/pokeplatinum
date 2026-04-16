@@ -5993,9 +5993,9 @@ static BOOL BtlCmd_WeatherHPRecovery(BattleSystem *battleSys, BattleContext *bat
 {
     BattleScript_Iter(battleCtx, 1);
 
-    if (NO_WEATHER) {
+    if (NO_WEATHER && (ATTACKING_MON.ability != ABILITY_MEGA_SOL)) {
         battleCtx->hpCalcTemp = ATTACKING_MON.maxHP / 2;
-    } else if (WEATHER_IS_SUN) {
+    } else if (WEATHER_IS_SUN || (ATTACKING_MON.ability == ABILITY_MEGA_SOL)) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * 20, 30);
     } else {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP, 4);
@@ -6870,23 +6870,23 @@ static BOOL BtlCmd_CalcWeatherBallParams(BattleSystem *battleSys, BattleContext 
 {
     BattleScript_Iter(battleCtx, 1);
 
-    if (NO_CLOUD_NINE) {
-        if (battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER) {
+    if (NO_CLOUD_NINE || (ATTACKING_MON.ability == ABILITY_MEGA_SOL)) {
+        if (battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER || (ATTACKING_MON.ability == ABILITY_MEGA_SOL)) {
             battleCtx->movePower = CURRENT_MOVE_DATA.power * 2;
 
-            if (WEATHER_IS_RAIN) {
+            if (WEATHER_IS_RAIN && (ATTACKING_MON.ability != ABILITY_MEGA_SOL)) {
                 battleCtx->moveType = TYPE_WATER;
             }
 
-            if (WEATHER_IS_SAND) {
+            if (WEATHER_IS_SAND && (ATTACKING_MON.ability != ABILITY_MEGA_SOL)) {
                 battleCtx->moveType = TYPE_ROCK;
             }
 
-            if (WEATHER_IS_SUN) {
+            if (WEATHER_IS_SUN || (ATTACKING_MON.ability == ABILITY_MEGA_SOL)) {
                 battleCtx->moveType = TYPE_FIRE;
             }
 
-            if (WEATHER_IS_HAIL) {
+            if (WEATHER_IS_HAIL && (ATTACKING_MON.ability == ABILITY_MEGA_SOL)) {
                 battleCtx->moveType = TYPE_ICE;
             }
         } else {
@@ -9223,8 +9223,9 @@ static BOOL BtlCmd_CheckIgnoreWeather(BattleSystem *battleSys, BattleContext *ba
     BattleScript_Iter(battleCtx, 1);
     int jumpIfActive = BattleScript_Read(battleCtx);
 
-    if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_CLOUD_NINE)
-        || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_AIR_LOCK)) {
+    if ((BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_CLOUD_NINE)
+        || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_AIR_LOCK))
+        && ATTACKING_MON.ability != ABILITY_MEGA_SOL) {
         BattleScript_Iter(battleCtx, jumpIfActive);
     }
 

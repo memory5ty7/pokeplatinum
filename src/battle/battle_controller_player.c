@@ -2377,9 +2377,10 @@ static BOOL BattleControllerPlayer_HasNoTarget(BattleSystem *battleSys, BattleCo
     }
 
     // need this if-statement to match, even though it's a single assignment
-    if (NO_CLOUD_NINE
+    if (((NO_CLOUD_NINE
+        && (battleCtx->fieldConditionsMask & FIELD_CONDITION_SUNNY)) || (ATTACKING_MON.ability == ABILITY_MEGA_SOL))
         && CURRENT_MOVE_DATA.effect == BATTLE_EFFECT_SKIP_CHARGE_TURN_IN_SUN
-        && (battleCtx->fieldConditionsMask & FIELD_CONDITION_SUNNY)) {
+        ) {
         solarMove = TRUE;
     }
 
@@ -2995,7 +2996,7 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
         return 0;
     }
 
-    if (NO_CLOUD_NINE && WEATHER_IS_SUN && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
+    if (((NO_CLOUD_NINE && WEATHER_IS_SUN) || (Battler_Ability(battleCtx, attacker) == ABILITY_MEGA_SOL)) && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
         hitRate = 50;
     }
 
@@ -3104,12 +3105,12 @@ static int BattleControllerPlayer_CheckMoveHitOverrides(BattleSystem *battleSys,
         return 0;
     }
 
-    if (NO_CLOUD_NINE) {
-        if (WEATHER_IS_RAIN && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
+    if (NO_CLOUD_NINE || Battler_Ability(battleCtx, attacker) == ABILITY_MEGA_SOL) {
+        if ((WEATHER_IS_RAIN && (Battler_Ability(battleCtx, attacker) != ABILITY_MEGA_SOL)) && MOVE_DATA(move).effect == BATTLE_EFFECT_THUNDER) {
             battleCtx->moveStatusFlags &= ~MOVE_STATUS_MISSED;
         }
 
-        if (WEATHER_IS_HAIL && MOVE_DATA(move).effect == BATTLE_EFFECT_BLIZZARD) {
+        if ((WEATHER_IS_HAIL && (Battler_Ability(battleCtx, attacker) != ABILITY_MEGA_SOL)) && MOVE_DATA(move).effect == BATTLE_EFFECT_BLIZZARD) {
             battleCtx->moveStatusFlags &= ~MOVE_STATUS_MISSED;
         }
     }

@@ -7208,15 +7208,21 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
 
 
-    if (NO_CLOUD_NINE) {
+    if (NO_CLOUD_NINE || (attackerParams.ability == ABILITY_MEGA_SOL)) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
             spAttackStat = spAttackStat * 15 / 10;
         }
 
-        if ((fieldConditions & FIELD_CONDITION_SANDSTORM)
+        if ((fieldConditions & FIELD_CONDITION_SANDSTORM && (ATTACKING_MON.ability != ABILITY_MEGA_SOL))
             && (defenderParams.type1 == TYPE_ROCK || defenderParams.type2 == TYPE_ROCK)) {
             spDefenseStat = spDefenseStat * 15 / 10;
         }
+
+        if ((fieldConditions & FIELD_CONDITION_HAILING && (ATTACKING_MON.ability != ABILITY_MEGA_SOL))
+            && (defenderParams.type1 == TYPE_ICE || defenderParams.type2 == TYPE_ICE)) {
+            defenseStat = defenseStat * 15 / 10;
+        }
+
 
         if ((fieldConditions & FIELD_CONDITION_SUNNY)
             && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_FLOWER_GIFT)) {
@@ -7333,8 +7339,8 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         damage = damage * 3 / 4;
     }
 
-    if (NO_CLOUD_NINE) {
-        if (fieldConditions & FIELD_CONDITION_RAINING) {
+    if (NO_CLOUD_NINE || (ATTACKING_MON.ability != ABILITY_MEGA_SOL)) {
+        if ((fieldConditions & FIELD_CONDITION_RAINING) && (ATTACKING_MON.ability != ABILITY_MEGA_SOL)) {
             switch (moveType) {
             case TYPE_FIRE:
                 damage /= 2;
@@ -7345,11 +7351,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             }
         }
 
-        if ((fieldConditions & FIELD_CONDITION_SOLAR_DOWN) && move == MOVE_SOLAR_BEAM) {
+        if (((fieldConditions & FIELD_CONDITION_SOLAR_DOWN) && attackerParams.ability != ABILITY_MEGA_SOL) && move == MOVE_SOLAR_BEAM) {
             damage /= 2;
         }
 
-        if (fieldConditions & FIELD_CONDITION_SUNNY) {
+        if (fieldConditions & FIELD_CONDITION_SUNNY || attackerParams.ability == ABILITY_MEGA_SOL) {
             switch (moveType) {
             case TYPE_FIRE:
                 damage = damage * 15 / 10;
@@ -8189,21 +8195,21 @@ static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int i
         break;
 
     case MOVE_WEATHER_BALL:
-        if (NO_CLOUD_NINE
-            && battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER) {
-            if (WEATHER_IS_RAIN) {
+        if ((NO_CLOUD_NINE
+            && battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER) || (Battler_Ability(battleCtx, item) == ABILITY_MEGA_SOL)) {
+            if (WEATHER_IS_RAIN && (Battler_Ability(battleCtx, item) != ABILITY_MEGA_SOL)) {
                 type = TYPE_WATER;
             }
 
-            if (WEATHER_IS_SAND) {
+            if (WEATHER_IS_SAND && (Battler_Ability(battleCtx, item) != ABILITY_MEGA_SOL)) {
                 type = TYPE_ROCK;
             }
 
-            if (WEATHER_IS_SUN) {
+            if (WEATHER_IS_SUN || (Battler_Ability(battleCtx, item) == ABILITY_MEGA_SOL)) {
                 type = TYPE_FIRE;
             }
 
-            if (WEATHER_IS_HAIL) {
+            if (WEATHER_IS_HAIL && (Battler_Ability(battleCtx, item) != ABILITY_MEGA_SOL)) {
                 type = TYPE_ICE;
             }
         }
@@ -8474,21 +8480,21 @@ int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pok
         break;
 
     case MOVE_WEATHER_BALL:
-        if (NO_CLOUD_NINE) {
-            if (battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER) {
-                if (WEATHER_IS_RAIN) {
+        if (NO_CLOUD_NINE || (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_MEGA_SOL)) {
+            if (battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER || (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_MEGA_SOL)) {
+                if (WEATHER_IS_RAIN && (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) != ABILITY_MEGA_SOL)) {
                     type = TYPE_WATER;
                 }
 
-                if (WEATHER_IS_SAND) {
+                if (WEATHER_IS_SAND && (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) != ABILITY_MEGA_SOL)) {
                     type = TYPE_ROCK;
                 }
 
-                if (WEATHER_IS_SUN) {
+                if (WEATHER_IS_SUN || (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_MEGA_SOL)) {
                     type = TYPE_FIRE;
                 }
 
-                if (WEATHER_IS_HAIL) {
+                if (WEATHER_IS_HAIL && (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) != ABILITY_MEGA_SOL)) {
                     type = TYPE_ICE;
                 }
             }

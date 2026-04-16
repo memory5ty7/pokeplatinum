@@ -3228,20 +3228,20 @@ static int TrainerAI_MoveType(BattleSystem *battleSys, BattleContext *battleCtx,
         break;
 
     case MOVE_WEATHER_BALL:
-        if (NO_CLOUD_NINE && (battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER)) {
-            if (WEATHER_IS_RAIN) {
+        if ((NO_CLOUD_NINE && battleCtx->fieldConditionsMask & FIELD_CONDITION_WEATHER) || (Battler_Ability(battleCtx, battler) == ABILITY_MEGA_SOL)) {
+            if (WEATHER_IS_RAIN && (Battler_Ability(battleCtx, battler) != ABILITY_MEGA_SOL)) {
                 result = TYPE_WATER;
             }
 
-            if (WEATHER_IS_SAND) {
+            if (WEATHER_IS_SAND && (Battler_Ability(battleCtx, battler) != ABILITY_MEGA_SOL)) {
                 result = TYPE_ROCK;
             }
 
-            if (WEATHER_IS_SUN) {
+            if (WEATHER_IS_SUN || (Battler_Ability(battleCtx, battler) == ABILITY_MEGA_SOL)) {
                 result = TYPE_FIRE;
             }
 
-            if (WEATHER_IS_HAIL) {
+            if (WEATHER_IS_HAIL && (Battler_Ability(battleCtx, battler) != ABILITY_MEGA_SOL)) {
                 result = TYPE_ICE;
             }
         }
