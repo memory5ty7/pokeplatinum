@@ -1032,6 +1032,13 @@
         "Normal-type moves become\n",
         "Dragon type."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00148",
+      "en_US": [
+        "Reduces damage when\n",
+        "HP is full."
+      ]
     }
   ]
 }

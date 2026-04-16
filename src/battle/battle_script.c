@@ -1366,6 +1366,10 @@ static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *
         battleCtx->criticalMul);
     battleCtx->damage *= battleCtx->criticalMul;
 
+    if (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_MULTISCALE) == TRUE && (DEFENDING_MON.curHP == (s32)DEFENDING_MON.maxHP)) {
+        battleCtx->damage = battleCtx->damage * 50 / 100;
+    }
+
     if (Battler_HeldItemEffect(battleCtx, battleCtx->attacker) == HOLD_EFFECT_HP_DRAIN_ON_ATK) {
         battleCtx->damage = battleCtx->damage * (100 + Battler_HeldItemPower(battleCtx, battleCtx->attacker, 0)) / 100;
     }
