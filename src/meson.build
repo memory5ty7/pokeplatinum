@@ -1014,5 +1014,6 @@ pokeplatinum_c = files(
     'library_tv/library_tv.c',
     'dw_warp/dw_warp.c',
     'debug.c',
-    'desmume.c'
+    'desmume.c',
+    'NWAVPlayer.c'
 )
