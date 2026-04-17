@@ -140,6 +140,7 @@ res/prebuilt/data/wm.ncgr,/data/wm.ncgr
 res/prebuilt/data/wm.nclr,/data/wm.nclr
 res/prebuilt/data/sound/sound_data.sdat,/data/sound/sound_data.sdat
 res/prebuilt/sound/pl_sound_data.sdat,/data/sound/pl_sound_data.sdat
+res/sound/nwav_sound_data/nwav_sound_data.narc,/data/sound/nwav_sound_data.narc
 res/text/pl_msg.narc,/msgdata/pl_msg.narc
 res/prebuilt/msgdata/msg.narc,/msgdata/msg.narc
 res/prebuilt/msgdata/scenario/scr_msg.narc,/msgdata/scenario/scr_msg.narc
