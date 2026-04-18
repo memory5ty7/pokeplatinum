@@ -17,6 +17,11 @@
 #include "sys_task.h"
 #include "sys_task_manager.h"
 
+#include "NWAVPlayer.h"
+#include "vars_flags.h"
+#include "generated/vars_flags.h"
+#include "generated/sdat.h"
+
 #define WAVE_OUT_SPEED_HYPERVOICE_1 (WAVE_OUT_SPEED(1.046875))
 #define WAVE_OUT_SPEED_UPROAR_1     (WAVE_OUT_SPEED(0.8125))
 
@@ -58,25 +63,75 @@ BOOL Sound_PlayBasicBGM(u16 seqID)
     return result;
 }
 
+static BOOL streaming = FALSE;
+
+static u16 sequencedToStreamed[] = {
+    [SEQ_D_MOUNT1] = 1,
+    [SEQ_OPENING] = 1,
+    [SEQ_BA_LASTMON] = 1,
+};
+
 BOOL Sound_PlayBGM(u16 bgmID)
 {
-    BOOL result;
-    u8 player = Sound_GetPlayerForSequence(bgmID);
-    enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
+    BOOL playStreamed = FALSE;
 
-    if (player == PLAYER_BGM) {
-        result = Sound_Impl_PlayBGM(bgmID, player, handleType);
-    } else if (player == PLAYER_FIELD) {
-        result = Sound_Impl_PlayFieldBGM(bgmID, player, handleType);
-    } else {
-        GF_ASSERT(FALSE);
-        return FALSE;
+    if (/*!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && */sequencedToStreamed[bgmID] != SEQ_NONE)
+    {
+        bgmID = sequencedToStreamed[bgmID];
+        playStreamed = TRUE;
     }
+
+    BOOL result = TRUE;
+
+    u16 currentBGM = Sound_GetCurrentBGM();
 
     // Field BGM Bank may or may not have been switched, so set it to idle
     Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
 
-    Sound_Impl_HandleBGMChange(bgmID, handleType);
+    if (playStreamed)
+    {
+        if (!streaming)
+        {
+            Desmume_Log("Stopping current sequenced BGM\n");
+            Sound_StopBGM(currentBGM, 10);
+        }
+        
+        if (currentBGM != bgmID || !streaming) {
+            Desmume_Log("Playing streamed BGM %d\n", bgmID);
+            NWAVPlayer_play(START_ID + bgmID);
+            Sound_SetCurrentBGM(bgmID);
+        }
+
+        streaming = TRUE;
+        
+    } else {
+        if (streaming)
+        {
+            Desmume_Log("Stopping current streamed BGM\n");
+            NWAVPlayer_stop(10);
+        }
+
+        u8 player = Sound_GetPlayerForSequence(bgmID);
+        enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
+
+        if (player == PLAYER_BGM) {
+            result = Sound_Impl_PlayBGM(bgmID, player, handleType);
+        } else if (player == PLAYER_FIELD) {
+            result = Sound_Impl_PlayFieldBGM(bgmID, player, handleType);
+        } else {
+            GF_ASSERT(FALSE);
+            return FALSE;
+        }
+
+        if (currentBGM != bgmID || streaming) {
+            Desmume_Log("Playing sequenced BGM %d\n", bgmID);
+
+            Sound_Impl_HandleBGMChange(bgmID, handleType);
+        }
+
+        streaming = FALSE;
+    }
+
     return result;
 }
 

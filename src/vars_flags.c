@@ -87,3 +87,15 @@ u16 GetScriptVar(u16 varID)
 
     return 0;
 }
+
+BOOL CheckScriptFlag(u16 flagID)
+{
+    VarsFlags *varsFlags = SaveData_GetVarsFlags(SaveData_Ptr());
+    return VarsFlags_CheckFlag(varsFlags, flagID);
+}
+
+void SetScriptFlag(u16 flagID)
+{
+    VarsFlags *varsFlags = SaveData_GetVarsFlags(SaveData_Ptr()); 
+    return VarsFlags_SetFlag(varsFlags, flagID);
+}

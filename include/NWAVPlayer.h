@@ -26,6 +26,8 @@
 #include <nitro.h>
 #include "sound.h"
 
+#define START_ID (0x137)
+
 
 //The function type of the function that will handle the events.
 typedef void(*NWAVPlayer_EventHandler)(int); 

@@ -24,5 +24,7 @@ u8 *VarsFlags_GetFlagChunk(VarsFlags *varsFlags, u16 flagID);
 u16 *VarsFlags_GetVarAddress(VarsFlags *varsFlags, u16 varID);
 void SetScriptVar(u16 varID, u16 value);
 u16 GetScriptVar(u16 varID);
+BOOL CheckScriptFlag(u16 flagID);
+void SetScriptFlag(u16 flagID);
 
 #endif // POKEPLATINUM_VARS_FLAGS_H
