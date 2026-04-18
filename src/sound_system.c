@@ -13,6 +13,8 @@
 #include "sound_playback.h"
 #include "sys_task_manager.h"
 
+#include "NWAVPlayer.h"
+
 static void SoundSystem_InitHeapStates(SoundSystem *soundSys);
 static void SoundSystem_InitSoundHandles(SoundSystem *soundSys);
 static void SoundSystem_LoadPersistentGroup(SoundSystem *soundSys);
@@ -30,6 +32,7 @@ void SoundSystem_Init(ChatotCry *chatotCry, Options *options)
     SoundSystem *soundSys = SoundSystem_Get();
 
     NNS_SndInit();
+    NWAVPlayer_init();
 
     SoundSystem_InitMic();
     SoundSystem_InitHeapStates(soundSys);
@@ -79,6 +82,7 @@ void SoundSystem_Tick()
     }
 
     NNS_SndMain();
+    NWAVPlayer_updateFade();
 }
 
 static void SoundSystem_UpdateState()

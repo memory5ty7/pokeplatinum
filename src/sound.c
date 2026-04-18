@@ -12,6 +12,8 @@
 #include "sound_playback.h"
 #include "sound_system.h"
 
+#include "NWAVPlayer.h"
+
 #define BGM_PLAYER_NORMAL_CHANNELS 0x7FF
 #define BGM_PLAYER_EXTRA_CHANNELS  0x7FFF
 
@@ -561,6 +563,9 @@ void Sound_SetBGMPlayerPaused(u8 playerID, BOOL paused)
     }
 
     NNS_SndPlayerPause(SoundSystem_GetSoundHandle(handleType), paused);
+    if(playerID == 1 || playerID == 7){
+        NWAVPlayer_setPaused(paused);
+    } 
     *playerPaused = paused;
 }
 
@@ -1013,6 +1018,7 @@ void Sound_SetPanForHandle(enum SoundHandleType handleType, u16 tracks, int pan)
 void Sound_SetTempoRatioForHandle(enum SoundHandleType handleType, int tempoRatio)
 {
     NNS_SndPlayerSetTempoRatio(SoundSystem_GetSoundHandle(handleType), tempoRatio);
+    //NWAV_SetSpeed(tempoRatio << 12 >> 8);
 }
 
 void Sound_SetPlaybackMode(int mode)
