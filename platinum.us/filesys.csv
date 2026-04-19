@@ -342,3 +342,4 @@ res/prebuilt/dwc/utility.bin,/dwc/utility.bin
 res/sound/nwav_sound_data/SEQ_EMPTY.nwav,/data/sound/waves/0.nwav
 res/sound/nwav_sound_data/SEQ_D_MOUNT1.nwav,/data/sound/waves/1.nwav
 res/sound/nwav_sound_data/SEQ_BATTLE_CHAMPION.nwav,/data/sound/waves/2.nwav
+res/sound/nwav_sound_data/SEQ_BATTLE_WILD_POKEMON.nwav,/data/sound/waves/3.nwav

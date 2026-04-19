@@ -402,6 +402,8 @@ static void SoundSystem_InitMic()
 
 static void SoundSystem_StopBGM()
 {
+    NWAVPlayer_stop(0);
+
     NNS_SndPlayerStopSeqByPlayerNo(PLAYER_BGM, 0);
     NNS_SndHandleReleaseSeq(SoundSystem_GetSoundHandle(SOUND_HANDLE_TYPE_BGM));
 }

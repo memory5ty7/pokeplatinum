@@ -65,9 +65,13 @@ BOOL Sound_PlayBasicBGM(u16 seqID)
 
 static u16 sequencedToStreamed[] = {
     [SEQ_D_MOUNT1] = 1,
-    [SEQ_OPENING] = 1,
-    [SEQ_BA_LASTMON] = 1,
     [SEQ_BATTLE_CHAMPION] = 2,
+    [SEQ_BATTLE_WILD_POKEMON] = 3,
+
+
+
+
+    [SEQ_BA_LASTMON] = 1,
 };
 
 BOOL Sound_PlayBGM(u16 bgmID)
@@ -126,11 +130,6 @@ BOOL Sound_PlayBGM(u16 bgmID)
 
         if (currentBGM != bgmID || streaming) {
             Desmume_Log("Playing sequenced BGM %d\n", bgmID);
-            SoundSystem *soundSys = SoundSystem_Get();
-            if (soundSys) {
-                soundSys->currentFieldBGM = 0xFFFF;
-                soundSys->currentBGM = 0xFFFF; 
-            }
             Sound_Impl_HandleBGMChange(bgmID, handleType);
             currentBGM = bgmID;
         }

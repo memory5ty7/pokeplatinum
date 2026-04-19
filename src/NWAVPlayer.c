@@ -617,8 +617,8 @@ void NWAVPlayer_play(int fileID)
     sInfo.samplesPerUpdate = (STRM_BUF_PAGESIZE / sInfo.bytesPerSample);
 
     // If the converter tool stores loop points as bytes, divide them back into samples
-    hInfo.loopStart /= sInfo.bytesPerSample;
-    hInfo.loopEnd   /= sInfo.bytesPerSample;
+    //hInfo.loopStart /= sInfo.bytesPerSample;
+    //hInfo.loopEnd   /= sInfo.bytesPerSample;
 
     if (sInfo.bytesPerSample == 2) {
         hInfo.loopStart &= ~1;
@@ -627,6 +627,8 @@ void NWAVPlayer_play(int fileID)
         hInfo.loopStart &= ~3;
         hInfo.loopEnd &= ~3;
     }
+
+    Desmume_Log("loop start: %d, loop end: %d", hInfo.loopStart, hInfo.loopEnd);
 
     sInfo.loops = hInfo.loopEnd != 0;
     //debug_printf("LoopEnd: %d.\n", hInfo.loopEnd);

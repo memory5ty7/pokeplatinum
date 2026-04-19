@@ -2,6 +2,7 @@ nwav_sound_files = [
     'SEQ_EMPTY.nwav',
     'SEQ_D_MOUNT1.nwav',
     'SEQ_BATTLE_CHAMPION.nwav',
+    'SEQ_BATTLE_WILD_POKEMON.nwav',
 ]
 
 foreach f : nwav_sound_files
