@@ -63,12 +63,11 @@ BOOL Sound_PlayBasicBGM(u16 seqID)
     return result;
 }
 
-static BOOL streaming = FALSE;
-
 static u16 sequencedToStreamed[] = {
     [SEQ_D_MOUNT1] = 1,
     [SEQ_OPENING] = 1,
     [SEQ_BA_LASTMON] = 1,
+    [SEQ_BATTLE_CHAMPION] = 2,
 };
 
 BOOL Sound_PlayBGM(u16 bgmID)
@@ -83,7 +82,11 @@ BOOL Sound_PlayBGM(u16 bgmID)
 
     BOOL result = TRUE;
 
-    u16 currentBGM = Sound_GetCurrentBGM();
+    static BOOL streaming = FALSE;
+    static u16 currentBGM = SEQ_NONE;
+    
+    u8 player = Sound_GetPlayerForSequence(bgmID);
+    enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
 
     // Field BGM Bank may or may not have been switched, so set it to idle
     Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
@@ -96,10 +99,11 @@ BOOL Sound_PlayBGM(u16 bgmID)
             Sound_StopBGM(currentBGM, 10);
         }
         
+        Desmume_Log("currentBGM: %d, bgmID: %d\n", currentBGM, bgmID);
         if (currentBGM != bgmID || !streaming) {
             Desmume_Log("Playing streamed BGM %d\n", bgmID);
             NWAVPlayer_play(START_ID + bgmID);
-            Sound_SetCurrentBGM(bgmID);
+            currentBGM = bgmID;
         }
 
         streaming = TRUE;
@@ -110,9 +114,6 @@ BOOL Sound_PlayBGM(u16 bgmID)
             Desmume_Log("Stopping current streamed BGM\n");
             NWAVPlayer_stop(10);
         }
-
-        u8 player = Sound_GetPlayerForSequence(bgmID);
-        enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
 
         if (player == PLAYER_BGM) {
             result = Sound_Impl_PlayBGM(bgmID, player, handleType);
@@ -125,8 +126,13 @@ BOOL Sound_PlayBGM(u16 bgmID)
 
         if (currentBGM != bgmID || streaming) {
             Desmume_Log("Playing sequenced BGM %d\n", bgmID);
-
+            SoundSystem *soundSys = SoundSystem_Get();
+            if (soundSys) {
+                soundSys->currentFieldBGM = 0xFFFF;
+                soundSys->currentBGM = 0xFFFF; 
+            }
             Sound_Impl_HandleBGMChange(bgmID, handleType);
+            currentBGM = bgmID;
         }
 
         streaming = FALSE;
