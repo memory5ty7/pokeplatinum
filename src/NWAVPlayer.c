@@ -628,7 +628,7 @@ void NWAVPlayer_play(int fileID)
         hInfo.loopEnd &= ~3;
     }
 
-    Desmume_Log("loop start: %d, loop end: %d", hInfo.loopStart, hInfo.loopEnd);
+    //Desmume_Log("loop start: %d, loop end: %d\n", hInfo.loopStart, hInfo.loopEnd);
 
     sInfo.loops = hInfo.loopEnd != 0;
     //debug_printf("LoopEnd: %d.\n", hInfo.loopEnd);
@@ -657,7 +657,7 @@ void NWAVPlayer_play(int fileID)
     // Align the pointer to the next 32-byte boundary
     //pStrmBuf = (pStrmBufT)(((u32)rawMem + 31) & ~31);
 
-    u8* rawMemL = (u8*)Heap_Alloc(3, STRM_BUF_SIZE + 32);
+    u8* rawMemL = (u8*)Heap_Alloc(0, STRM_BUF_SIZE + 32);
     pStrmBufL = (u8*)(((u32)rawMemL + 31) & ~31);
 
     /*

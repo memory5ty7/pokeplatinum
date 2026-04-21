@@ -67,46 +67,62 @@ static u16 sequencedToStreamed[] = {
     [SEQ_D_MOUNT1] = 1,
     [SEQ_BATTLE_CHAMPION] = 2,
     [SEQ_BATTLE_WILD_POKEMON] = 3,
-
-
-
-
-    [SEQ_BA_LASTMON] = 1,
+    [SEQ_BA_LASTMON] = 4,
+    [SEQ_VICTORY_GYM_LEADER] = 5,
+    [SEQ_BATTLE_GYM_LEADER] = 6, 
 };
 
 BOOL Sound_PlayBGM(u16 bgmID)
 {
-    BOOL playStreamed = FALSE;
-
-    if (/*!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && */sequencedToStreamed[bgmID] != SEQ_NONE)
-    {
-        bgmID = sequencedToStreamed[bgmID];
-        playStreamed = TRUE;
-    }
-
-    BOOL result = TRUE;
-
+    Desmume_Log("Sound_PlayBGM\n");
     static BOOL streaming = FALSE;
     static u16 currentBGM = SEQ_NONE;
+
+    BOOL playStreamed = FALSE;
+    u16 streamed_bgmID;
+
+    if (!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE)
+    {
+        streamed_bgmID = START_ID + sequencedToStreamed[bgmID];
+        playStreamed = TRUE;
+    }
     
+    BOOL result;
     u8 player = Sound_GetPlayerForSequence(bgmID);
     enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
+    u16 *newFieldBGM;
+
+    if (player == PLAYER_BGM) {
+        SoundSystem_LoadHeapState(Sound_GetHeapState(SOUND_HEAP_STATE_SFX));
+        SoundSystem_LoadSequence(bgmID);
+        SoundSystem_SaveHeapState(SoundSystem_GetParam(SOUND_SYSTEM_PARAM_HEAP_STATE_BGM));
+    } else if (player == PLAYER_FIELD) {
+        UNUSED(SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FIELD_BGM_BANK_STATE));
+        newFieldBGM = SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FIELD_BGM);
+
+        int currentSeqID = Sound_GetSequenceIDFromSoundHandle(SoundSystem_GetSoundHandle(SOUND_HANDLE_TYPE_FIELD_BGM));
+        Sound_LoadSoundDataForFieldBGM(bgmID, Sound_GetBankIDFromSequenceID(currentSeqID));
+    } else {
+        GF_ASSERT(FALSE);
+        return FALSE;
+    }
 
     // Field BGM Bank may or may not have been switched, so set it to idle
-    Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
+    Desmume_Log("streaming : %d, currentBGM : %d, bgmID : %d\n", streaming, currentBGM, bgmID);
 
     if (playStreamed)
     {
-        if (!streaming)
+        if (streaming)
         {
+            NWAVPlayer_stop(0);
+        } else {
             Desmume_Log("Stopping current sequenced BGM\n");
             Sound_StopBGM(currentBGM, 10);
         }
         
-        Desmume_Log("currentBGM: %d, bgmID: %d\n", currentBGM, bgmID);
         if (currentBGM != bgmID || !streaming) {
-            Desmume_Log("Playing streamed BGM %d\n", bgmID);
-            NWAVPlayer_play(START_ID + bgmID);
+            Desmume_Log("Playing streamed BGM %d\n", streamed_bgmID);
+            NWAVPlayer_play(streamed_bgmID);
             currentBGM = bgmID;
         }
 
@@ -116,26 +132,29 @@ BOOL Sound_PlayBGM(u16 bgmID)
         if (streaming)
         {
             Desmume_Log("Stopping current streamed BGM\n");
-            NWAVPlayer_stop(10);
-        }
-
-        if (player == PLAYER_BGM) {
-            result = Sound_Impl_PlayBGM(bgmID, player, handleType);
-        } else if (player == PLAYER_FIELD) {
-            result = Sound_Impl_PlayFieldBGM(bgmID, player, handleType);
-        } else {
-            GF_ASSERT(FALSE);
-            return FALSE;
+            NWAVPlayer_stop(0);
         }
 
         if (currentBGM != bgmID || streaming) {
             Desmume_Log("Playing sequenced BGM %d\n", bgmID);
-            Sound_Impl_HandleBGMChange(bgmID, handleType);
+            if (player == PLAYER_BGM) {
+                result = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(handleType), bgmID);
+            } else {
+                result = NNS_SndArcPlayerStartSeqEx(
+                                                    SoundSystem_GetSoundHandle(handleType),
+                                                    -1,
+                                                    Sound_GetBankIDFromSequenceID(*newFieldBGM),
+                                                    -1,
+                                                    bgmID);
+            }
             currentBGM = bgmID;
         }
 
         streaming = FALSE;
     }
+
+    Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
+    Sound_Impl_HandleBGMChange(bgmID, handleType);
 
     return result;
 }
@@ -195,8 +214,6 @@ BOOL Sound_SetBGM(u8 scene, u16 seqID)
 
 void Sound_StopBGM(u16 bgmID, int fadeOutFrames)
 {
-    NNS_SndPlayerStopSeqBySeqNo(bgmID, fadeOutFrames);
-
     u8 playerID = Sound_GetPlayerForSequence(bgmID);
 
     if (playerID != SOUND_PLAYER_INVALID) {
