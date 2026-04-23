@@ -43,7 +43,7 @@
 
 // Route these to hg-engine's internal memory allocators
 // Adjust "0" if you need to allocate to a specific heap ID (like the SOUND heap)
-#define NWAV_ALLOC(size) Heap_Alloc(3, size) 
+#define NWAV_ALLOC(size) Heap_Alloc(0, size) 
 #define NWAV_FREE(ptr)   Heap_Free(ptr)
 
 #define OS_MESSAGE_NOBLOCK 0

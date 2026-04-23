@@ -70,21 +70,44 @@ static u16 sequencedToStreamed[] = {
     [SEQ_BA_LASTMON] = 4,
     [SEQ_VICTORY_GYM_LEADER] = 5,
     [SEQ_BATTLE_GYM_LEADER] = 6, 
-    //[SEQ_TITLE00] = 7,
+    [SEQ_TITLE00] = 7,
     [SEQ_TITLE01] = 8,
 };
 
 static BOOL streaming = FALSE;
+static u16 currentBGM = 0xFFFF;
+
+
+static BOOL Sound_PlayBGM_Original(u16 bgmID)
+{
+    BOOL result;
+    u8 player = Sound_GetPlayerForSequence(bgmID);
+    enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(player);
+
+    if (player == PLAYER_BGM) {
+        result = Sound_Impl_PlayBGM(bgmID, player, handleType);
+    } else if (player == PLAYER_FIELD) {
+        result = Sound_Impl_PlayFieldBGM(bgmID, player, handleType);
+    } else {
+        GF_ASSERT(FALSE);
+        return FALSE;
+    }
+
+    // Field BGM Bank may or may not have been switched, so set it to idle
+    Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
+
+    Sound_Impl_HandleBGMChange(bgmID, handleType);
+    return result;
+};
 
 BOOL Sound_PlayBGM(u16 bgmID)
 {
     Desmume_Log("Sound_PlayBGM\n");
 
-    static u16 currentBGM = SEQ_NONE;
-
-    BOOL playStreamed = FALSE;
     u16 streamed_bgmID;
+    BOOL playStreamed = FALSE;
 
+    /*
     if (!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE)
     {
         streamed_bgmID = START_ID + sequencedToStreamed[bgmID];
@@ -110,15 +133,66 @@ BOOL Sound_PlayBGM(u16 bgmID)
         GF_ASSERT(FALSE);
         return FALSE;
     }
+    */
+
+    if (currentBGM == bgmID) {
+        return;
+    }
+
+    if (bgmID == 0xFFFF) {
+        if (streaming) {
+            NWAVPlayer_stop(30);
+            streaming = FALSE;
+        } else {
+            Sound_PlayBGM_Original(0xFFFF);
+        }
+        currentBGM = 0xFFFF;
+        return;
+    }
+
+    if (!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE)
+    {
+        streamed_bgmID = START_ID + sequencedToStreamed[bgmID];
+        playStreamed = TRUE;
+    }
 
     // Field BGM Bank may or may not have been switched, so set it to idle
     Desmume_Log("streaming : %d, currentBGM : %d, bgmID : %d\n", streaming, currentBGM, bgmID);
 
+    if (streaming)
+    {
+        NWAVPlayer_stop(30);
+        if (playStreamed) {
+            NWAVPlayer_play(streamed_bgmID);
+            NWAVPlayer_setVolume(127, 0);
+            NWAVPlayer_setSpeed(0x1000);
+            streaming = TRUE;
+        } else {
+            NNS_SndPlayerStopSeqByPlayerNo(0, 0);
+            Sound_PlayBGM_Original(bgmID);
+            streaming = FALSE;
+        }
+    } else {
+        if (playStreamed) {
+            NNS_SndPlayerStopSeqByPlayerNo(0, 0);
+            NWAVPlayer_play(streamed_bgmID);
+            NWAVPlayer_setVolume(127, 0);
+            NWAVPlayer_setSpeed(0x1000);
+            streaming = TRUE;
+        } else {
+            Sound_PlayBGM_Original(bgmID);
+            streaming = FALSE;
+        }
+        currentBGM = bgmID;
+    }
+
+
+    /*
     if (playStreamed)
     {
         if (streaming)
         {
-            NWAVPlayer_stop(0);
+            NWAVPlayer_stop(30);
         } else {
             Desmume_Log("Stopping current sequenced BGM\n");
             Sound_StopBGM(currentBGM, 10);
@@ -135,13 +209,17 @@ BOOL Sound_PlayBGM(u16 bgmID)
     } else {
         if (streaming)
         {
+
             Desmume_Log("Stopping current streamed BGM\n");
-            NWAVPlayer_stop(0);
+            NWAVPlayer_stop(30);
+            NNS_SndPlayerStopSeqByPlayerNo(0, 0);
         }
 
         if (currentBGM != bgmID || streaming) {
             Desmume_Log("Playing sequenced BGM %d\n", bgmID);
+            NNS_SndPlayerStopSeqByPlayerNo(0, 0);
             if (player == PLAYER_BGM) {
+
                 result = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(handleType), bgmID);
             } else {
                 result = NNS_SndArcPlayerStartSeqEx(
@@ -161,6 +239,8 @@ BOOL Sound_PlayBGM(u16 bgmID)
     Sound_Impl_HandleBGMChange(bgmID, handleType);
 
     return result;
+
+    */
 }
 
 static void Sound_Impl_HandleBGMChange(u16 seqID, enum SoundHandleType handleType)
