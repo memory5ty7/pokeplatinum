@@ -70,12 +70,16 @@ static u16 sequencedToStreamed[] = {
     [SEQ_BA_LASTMON] = 4,
     [SEQ_VICTORY_GYM_LEADER] = 5,
     [SEQ_BATTLE_GYM_LEADER] = 6, 
+    //[SEQ_TITLE00] = 7,
+    [SEQ_TITLE01] = 8,
 };
+
+static BOOL streaming = FALSE;
 
 BOOL Sound_PlayBGM(u16 bgmID)
 {
     Desmume_Log("Sound_PlayBGM\n");
-    static BOOL streaming = FALSE;
+
     static u16 currentBGM = SEQ_NONE;
 
     BOOL playStreamed = FALSE;
@@ -120,7 +124,7 @@ BOOL Sound_PlayBGM(u16 bgmID)
             Sound_StopBGM(currentBGM, 10);
         }
         
-        if (currentBGM != bgmID || !streaming) {
+        if (currentBGM != bgmID || !streaming || bgmID == SEQ_TITLE01) {
             Desmume_Log("Playing streamed BGM %d\n", streamed_bgmID);
             NWAVPlayer_play(streamed_bgmID);
             currentBGM = bgmID;
@@ -215,6 +219,11 @@ BOOL Sound_SetBGM(u8 scene, u16 seqID)
 void Sound_StopBGM(u16 bgmID, int fadeOutFrames)
 {
     u8 playerID = Sound_GetPlayerForSequence(bgmID);
+
+    if (streaming)
+    {
+        NWAVPlayer_stop(0);
+    }
 
     if (playerID != SOUND_PLAYER_INVALID) {
         enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(playerID);

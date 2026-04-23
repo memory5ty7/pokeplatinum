@@ -346,3 +346,5 @@ res/sound/nwav_sound_data/SEQ_BATTLE_WILD_POKEMON.nwav,/data/sound/waves/003.nwa
 res/sound/nwav_sound_data/SEQ_BA_LASTMON.nwav,/data/sound/waves/004.nwav
 res/sound/nwav_sound_data/SEQ_VICTORY_GYM_LEADER.nwav,/data/sound/waves/005.nwav
 res/sound/nwav_sound_data/SEQ_BATTLE_GYM_LEADER.nwav,/data/sound/waves/006.nwav
+res/sound/nwav_sound_data/SEQ_TITLE00.nwav,/data/sound/waves/007.nwav
+res/sound/nwav_sound_data/SEQ_TITLE01.nwav,/data/sound/waves/008.nwav

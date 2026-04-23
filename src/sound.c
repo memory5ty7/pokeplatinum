@@ -580,12 +580,12 @@ void Sound_ClearBGMPauseFlags(void)
 
 void Sound_FadeVolumeForHandle(enum SoundHandleType handleType, int targetVolume, int frames)
 {
-    if (handleType == 0)
-    {
-        NWAVPlayer_setVolume(targetVolume, frames);
+    //if (handleType == 0)
+    //{
+    //    NWAVPlayer_setVolume(targetVolume, frames);
         //debug_printf("Player is BGM (GF wrapper).\n");
 
-    }
+    //}
 
     NNS_SndPlayerMoveVolume(SoundSystem_GetSoundHandle(handleType), targetVolume, frames);
 }
