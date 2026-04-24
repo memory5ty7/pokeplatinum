@@ -102,8 +102,6 @@ static BOOL Sound_PlayBGM_Original(u16 bgmID)
 
 BOOL Sound_PlayBGM(u16 bgmID)
 {
-    Desmume_Log("Sound_PlayBGM\n");
-
     u16 streamed_bgmID;
     BOOL playStreamed = FALSE;
 
@@ -141,6 +139,7 @@ BOOL Sound_PlayBGM(u16 bgmID)
 
     if (bgmID == 0xFFFF) {
         if (streaming) {
+            Desmume_Log("Stopping BGM 0xFFFF\n");
             NWAVPlayer_stop(30);
             streaming = FALSE;
         } else {
@@ -156,9 +155,6 @@ BOOL Sound_PlayBGM(u16 bgmID)
         playStreamed = TRUE;
     }
 
-    // Field BGM Bank may or may not have been switched, so set it to idle
-    Desmume_Log("streaming : %d, currentBGM : %d, bgmID : %d\n", streaming, currentBGM, bgmID);
-
     if (streaming)
     {
         NWAVPlayer_stop(30);
@@ -167,10 +163,12 @@ BOOL Sound_PlayBGM(u16 bgmID)
             NWAVPlayer_setVolume(127, 0);
             NWAVPlayer_setSpeed(0x1000);
             streaming = TRUE;
+            Desmume_Log("Playing Streamed BGM: %d\n", streamed_bgmID);
         } else {
             NNS_SndPlayerStopSeqByPlayerNo(0, 0);
             Sound_PlayBGM_Original(bgmID);
             streaming = FALSE;
+            Desmume_Log("Playing Sequenced BGM: %d\n", bgmID);
         }
     } else {
         if (playStreamed) {
@@ -179,9 +177,11 @@ BOOL Sound_PlayBGM(u16 bgmID)
             NWAVPlayer_setVolume(127, 0);
             NWAVPlayer_setSpeed(0x1000);
             streaming = TRUE;
+            Desmume_Log("Playing Streamed BGM: %d\n", streamed_bgmID);
         } else {
             Sound_PlayBGM_Original(bgmID);
             streaming = FALSE;
+            Desmume_Log("Playing Sequenced BGM: %d\n", bgmID);
         }
         currentBGM = bgmID;
     }
@@ -277,6 +277,7 @@ static BOOL Sound_Impl_PlayFieldBGM(u16 seqID, u8 playerID, enum SoundHandleType
 
 BOOL Sound_SetBGM(u8 scene, u16 seqID)
 {
+    Desmume_Log("Sound_SetBGM: %d\n", seqID);
     if (scene != SOUND_SCENE_FIELD) {
         GF_ASSERT(FALSE);
         return FALSE;
@@ -298,11 +299,12 @@ BOOL Sound_SetBGM(u8 scene, u16 seqID)
 
 void Sound_StopBGM(u16 bgmID, int fadeOutFrames)
 {
+    Desmume_Log("Sound_StopBGM: %d, Streaming: %d\n", bgmID, streaming);
     u8 playerID = Sound_GetPlayerForSequence(bgmID);
 
     if (streaming)
     {
-        NWAVPlayer_stop(0);
+        NWAVPlayer_stop(fadeOutFrames);
     }
 
     if (playerID != SOUND_PLAYER_INVALID) {
@@ -322,6 +324,13 @@ static void Sound_Impl_ResetBGM(void)
 
 void Sound_FadeInBGM(int targetVolume, int frames, enum BGMFadeInType fadeInType)
 {
+    Desmume_Log("Sound_FadeInBGM, Streaming: %d\n", streaming);
+    
+    if (streaming)
+    {
+        NWAVPlayer_setVolume(targetVolume, frames);
+    }
+    
     u16 currentBGM = Sound_GetCurrentBGM();
     u8 playerID = Sound_GetPlayerForSequence(currentBGM);
     if (playerID == SOUND_PLAYER_INVALID) {
@@ -341,6 +350,14 @@ void Sound_FadeInBGM(int targetVolume, int frames, enum BGMFadeInType fadeInType
 
 void Sound_FadeOutBGM(int targetVolume, int frames)
 {
+    Desmume_Log("Sound_FadeOutBGM, Streaming: %d\n", streaming);
+
+    if (streaming)
+    {
+        NWAVPlayer_stop(frames);
+        NNS_SndPlayerStopSeqByPlayerNo(0, 0);
+    }
+
     u16 currentBGM = Sound_GetCurrentBGM();
     u8 playerID = Sound_GetPlayerForSequence(currentBGM);
     if (playerID == SOUND_PLAYER_INVALID) {
