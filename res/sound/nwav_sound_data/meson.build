@@ -22,7 +22,14 @@ nwav_sound_files = [
     'SEQ_D_04.nwav',
     'SEQ_BA_TRAIN.nwav',
     'SEQ_GYM.nwav',
-    'SEQ_CITY03_D.nwav'
+    'SEQ_CITY03_D.nwav',
+    'SEQ_PC_01.nwav',
+    'SEQ_D_05.nwav',
+    'SEQ_BLD_TV.nwav',
+    'SEQ_PL_HANDSOME.nwav',
+    'SEQ_TSURETEKE.nwav',
+    'SEQ_BLD_DENDO.nwav',
+    'SEQ_THE_GIRL.nwav',
 ]
 
 foreach f : nwav_sound_files
