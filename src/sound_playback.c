@@ -51,18 +51,6 @@ static void Sound_Impl_StopFanfare(int param0);
 BOOL Sound_IsBGMPausedByFanfare(void);
 static void Sound_Impl_SetFanfareDelay(u16 param0);
 
-// "Basic" BGM refers to BGM stored in BANK_BASIC
-BOOL Sound_PlayBasicBGM(u16 seqID)
-{
-    u8 playerID = Sound_GetPlayerForSequence(seqID);
-    enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(playerID);
-
-    BOOL result = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(handleType), seqID);
-
-    Sound_Impl_HandleBGMChange(seqID, handleType);
-    return result;
-}
-
 static u16 sequencedToStreamed[] = {
     [SEQ_D_MOUNT1] = 1,
     [SEQ_BATTLE_CHAMPION] = 2,
@@ -72,10 +60,63 @@ static u16 sequencedToStreamed[] = {
     [SEQ_BATTLE_GYM_LEADER] = 6, 
     [SEQ_TITLE00] = 7,
     [SEQ_TITLE01] = 8,
+    [SEQ_THE_RIV] = 9,
+    [SEQ_BATTLE_RIVAL] = 10,
+    [SEQ_D_LAKE] = 11,
+    [SEQ_ROAD_A_D] = 12,
+    [SEQ_ROAD_A_N] = 12,
+    [SEQ_TV_HOUSOU] = 13,
+    [SEQ_TOWN01_D] = 14,
+    [SEQ_TOWN01_N] = 14,
+    [SEQ_OPENING] = 15,
+    [SEQ_TOWN02_D] = 16,
+    [SEQ_TOWN02_N] = 16,
+    [SEQ_CITY01_D] = 17,
+    [SEQ_CITY01_N] = 17,
+    [SEQ_FS] = 18,
+    [SEQ_ROAD_B_D] = 19,
+    [SEQ_ROAD_B_N] = 19,
+    [SEQ_D_04] = 20,
+    [SEQ_BATTLE_TRAINER] = 21,
+    [SEQ_GYM] = 22,
+    [SEQ_CITY03_D] = 23,
+    [SEQ_CITY03_N] = 23,
+    [SEQ_PC_01] = 24,
+    [SEQ_PC_02] = 24,
+    [SEQ_D_05] = 25,
+    [SEQ_D_05] = 25,
+    [SEQ_BLD_TV] = 26,
+    [SEQ_PL_HANDSOME] = 27,
+    [SEQ_TSURETEKE] = 28,
+    [SEQ_BLD_DENDO] = 29,
+    [SEQ_OPENING2] = 29,
+    [SEQ_THE_GIRL] = 30,
+    [SEQ_THE_BOY] = 31,
+
 };
 
 static BOOL streaming = FALSE;
 static u16 currentBGM = 0xFFFF;
+
+// "Basic" BGM refers to BGM stored in BANK_BASIC
+BOOL Sound_PlayBasicBGM(u16 seqID)
+{
+    Desmume_Log("Sound_PlayBasicBGM: %d\n", seqID);
+    u8 playerID = Sound_GetPlayerForSequence(seqID);
+    enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(playerID);
+
+    BOOL result;
+    if (streaming) {
+        NWAVPlayer_play(START_ID + sequencedToStreamed[seqID]);
+        result = TRUE;
+    } else {
+        result = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(handleType), seqID);
+    }
+
+
+    Sound_Impl_HandleBGMChange(seqID, handleType);
+    return result;
+}
 
 
 static BOOL Sound_PlayBGM_Original(u16 bgmID)
@@ -100,12 +141,17 @@ static BOOL Sound_PlayBGM_Original(u16 bgmID)
     return result;
 };
 
+static BOOL ShouldPlayStreamed(u16 bgmID)
+{
+    return !CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE;
+}
+
 BOOL Sound_PlayBGM(u16 bgmID)
 {
+    Desmume_Log("Sound_PlayBGM: %d\n", bgmID);
     u16 streamed_bgmID;
     BOOL playStreamed = FALSE;
 
-    /*
     if (!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE)
     {
         streamed_bgmID = START_ID + sequencedToStreamed[bgmID];
@@ -131,12 +177,12 @@ BOOL Sound_PlayBGM(u16 bgmID)
         GF_ASSERT(FALSE);
         return FALSE;
     }
-    */
 
     if (currentBGM == bgmID) {
         return;
     }
 
+    /*
     if (bgmID == 0xFFFF) {
         if (streaming) {
             Desmume_Log("Stopping BGM 0xFFFF\n");
@@ -148,6 +194,7 @@ BOOL Sound_PlayBGM(u16 bgmID)
         currentBGM = 0xFFFF;
         return;
     }
+
 
     if (!CheckScriptFlag(FLAG_DS_SOUNDS_ON) && sequencedToStreamed[bgmID] != SEQ_NONE)
     {
@@ -185,9 +232,10 @@ BOOL Sound_PlayBGM(u16 bgmID)
         }
         currentBGM = bgmID;
     }
+    */
 
 
-    /*
+    
     if (playStreamed)
     {
         if (streaming)
@@ -238,9 +286,7 @@ BOOL Sound_PlayBGM(u16 bgmID)
     Sound_SetFieldBGMBankState(FIELD_BGM_BANK_STATE_IDLE);
     Sound_Impl_HandleBGMChange(bgmID, handleType);
 
-    return result;
-
-    */
+    return result;   
 }
 
 static void Sound_Impl_HandleBGMChange(u16 seqID, enum SoundHandleType handleType)
@@ -289,10 +335,20 @@ BOOL Sound_SetBGM(u8 scene, u16 seqID)
     }
 
     BOOL success = SoundSystem_LoadSequenceEx(seqID, NNS_SND_ARC_LOAD_SEQ);
-    success = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(SOUND_HANDLE_TYPE_BGM), seqID);
+
+    if (ShouldPlayStreamed(seqID))
+    {
+        NWAVPlayer_play(START_ID + sequencedToStreamed[seqID]);
+        success = TRUE;
+    } else {
+        success = NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(SOUND_HANDLE_TYPE_BGM), seqID);
+    }
+    
 
     Sound_SetCurrentBGM(seqID);
     SoundSystem_SetState(SOUND_SYSTEM_STATE_PLAY);
+
+    currentBGM = seqID;
 
     return success;
 }
@@ -312,6 +368,7 @@ void Sound_StopBGM(u16 bgmID, int fadeOutFrames)
         NNS_SndHandleReleaseSeq(SoundSystem_GetSoundHandle(handleType));
     }
 
+    currentBGM = 0xFFFF;
     Sound_Impl_ResetBGM();
 }
 
@@ -326,10 +383,10 @@ void Sound_FadeInBGM(int targetVolume, int frames, enum BGMFadeInType fadeInType
 {
     Desmume_Log("Sound_FadeInBGM, Streaming: %d\n", streaming);
     
-    if (streaming)
+    /*if (streaming)
     {
         NWAVPlayer_setVolume(targetVolume, frames);
-    }
+    }*/
     
     u16 currentBGM = Sound_GetCurrentBGM();
     u8 playerID = Sound_GetPlayerForSequence(currentBGM);
@@ -352,11 +409,10 @@ void Sound_FadeOutBGM(int targetVolume, int frames)
 {
     Desmume_Log("Sound_FadeOutBGM, Streaming: %d\n", streaming);
 
-    if (streaming)
+    /*if (streaming)
     {
-        NWAVPlayer_stop(frames);
-        NNS_SndPlayerStopSeqByPlayerNo(0, 0);
-    }
+        NWAVPlayer_setVolume(targetVolume, frames);
+    } */
 
     u16 currentBGM = Sound_GetCurrentBGM();
     u8 playerID = Sound_GetPlayerForSequence(currentBGM);
