@@ -13,8 +13,16 @@ nwav_sound_files = [
     'SEQ_D_LAKE.nwav',
     'SEQ_D_ROAD_A.nwav',
     'SEQ_TV_HOUSOU.nwav',
-    'SEQ_D_TOWN01_D.nwav',
-    'SEQ_OPENING.nwav'
+    'SEQ_TOWN01_D.nwav',
+    'SEQ_OPENING.nwav',
+    'SEQ_TOWN02_D.nwav',
+    'SEQ_CITY01_D.nwav',
+    'SEQ_FS.nwav',
+    'SEQ_ROAD_B_D.nwav',
+    'SEQ_D_04.nwav',
+    'SEQ_BA_TRAIN.nwav',
+    'SEQ_GYM.nwav',
+    'SEQ_CITY03_D.nwav'
 ]
 
 foreach f : nwav_sound_files
