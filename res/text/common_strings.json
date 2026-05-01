@@ -873,6 +873,20 @@
         "It will be fixed if you enter the\n",
         "Hall of Fame again.\r"
       ]
+    },
+    {
+      "id": "CommonStrings_Text_TurnDsSoundsOn",
+      "en_US": [
+        "You turned the DS sounds on.\n",
+        "A nostalgic song starts playing..."
+      ]
+    },
+    {
+      "id": "CommonStrings_Text_TurnDsSoundsOff",
+      "en_US": [
+        "You turned the DS sounds off.\n",
+        "A modern song starts playing..."
+      ]
     }
   ]
 }

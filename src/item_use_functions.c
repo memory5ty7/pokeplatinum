@@ -95,6 +95,7 @@ static void UseEscapeRopeFromMenu(ItemMenuUseContext *usageContext, const ItemUs
 static void UseAzureFluteFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UseVsRecorderFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UseGracideaFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
+static void UseDsSoundsFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static BOOL UseBicycleInField(ItemFieldUseContext *usageContext);
 static BOOL UseJournalInField(ItemFieldUseContext *usageContext);
 static BOOL UseOldRodInField(ItemFieldUseContext *usageContext);
@@ -111,6 +112,7 @@ static BOOL UseVsSeekerInField(ItemFieldUseContext *usageContext);
 static BOOL UseAzureFluteInField(ItemFieldUseContext *usageContext);
 static BOOL UseVsRecorderInField(ItemFieldUseContext *usageContext);
 static BOOL UseGracideaInField(ItemFieldUseContext *usageContext);
+static BOOL UseDsSoundsInField(ItemFieldUseContext *usageContext);
 static void *sub_02068BEC(void *some_param);
 static void *sub_02068B9C(void *some_param);
 static void *sub_02068708(void *some_param);
@@ -162,6 +164,7 @@ static const ItemUseFuncDat sItemUseFuncs[] = {
     [ITEM_USE_FUNC_AZURE_FLUTE]  = { UseAzureFluteFromMenu,  UseAzureFluteInField,  CanUseAzureFlute  },
     [ITEM_USE_FUNC_VS_RECORDER]  = { UseVsRecorderFromMenu,  UseVsRecorderInField,  NULL              },
     [ITEM_USE_FUNC_GRACIDEA]     = { UseGracideaFromMenu,    UseGracideaInField,    NULL              },
+    [ITEM_USE_FUNC_DS_SOUNDS]    = { UseDsSoundsFromMenu,    UseDsSoundsInField,    NULL              },
 };
 // clang-format on
 
@@ -1035,6 +1038,19 @@ static BOOL UseGracideaInField(ItemFieldUseContext *usageContext)
 static void *OpenPartyMenuForGracidea(void *fieldSystem)
 {
     return FieldSystem_OpenPartyMenu_SelectForItemUsage(fieldSystem, HEAP_ID_FIELD2, ITEM_GRACIDEA);
+}
+
+static void UseDsSoundsFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext)
+{
+    Desmume_Log("UseDsSoundsFromMenu\n");
+    sub_02068540(usageContext, additionalContext, 2058);
+}
+
+static BOOL UseDsSoundsInField(ItemFieldUseContext *usageContext)
+{
+    Desmume_Log("UseDsSoundsInField\n");
+    sub_02068584(usageContext, 2058);
+    return FALSE;
 }
 
 BOOL sub_02069238(FieldSystem *fieldSystem)

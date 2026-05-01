@@ -65,6 +65,7 @@
     ScriptEntry CommonScript_SetLookerBGM @ 0x807
     ScriptEntry CommonScript_FadeToDefaultMusic @ 0x808
     ScriptEntry CommonScript_GriseousOrbCouldNotBeRemoved @ 0x809
+    ScriptEntry CommonScript_UseDsSounds
     ScriptEntryEnd
 
 CommonScript_EmptyScript1:
@@ -1669,6 +1670,26 @@ CommonScript_Frontier_End:
 
 CommonScript_GriseousOrbCouldNotBeRemoved:
     Message CommonStrings_Text_GriseousOrbCouldNotBeRemoved
+    WaitButton
+    CloseMessage
+    ReleaseAll
+    ReturnCommonScript
+    End
+
+CommonScript_UseDsSounds:
+    GoToIfSet FLAG_DS_SOUNDS_ON, CommonScript_TurnDsSoundsOff
+    SetFlag FLAG_DS_SOUNDS_ON
+    Message CommonStrings_Text_TurnDsSoundsOn
+    GoTo CommonScript_DsSoundsEnd
+
+CommonScript_TurnDsSoundsOff:
+    ClearFlag FLAG_DS_SOUNDS_ON
+    Message CommonStrings_Text_TurnDsSoundsOff
+    GoTo CommonScript_DsSoundsEnd
+
+CommonScript_DsSoundsEnd:
+    StopMusic 0
+    PlayDefaultMusic
     WaitButton
     CloseMessage
     ReleaseAll

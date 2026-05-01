@@ -3241,6 +3241,12 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = roseli_berry_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
+    [ITEM_DS_SOUNDS] = {
+        .dataID = 0x202,
+        .iconID = ds_sounds_NCGR,
+        .paletteID = ds_sounds_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {
