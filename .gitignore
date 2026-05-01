@@ -129,3 +129,4 @@ compile_commands.json
 *.xlsx
 *.py
 *.txt
+res/sound/nwav_sound_data
