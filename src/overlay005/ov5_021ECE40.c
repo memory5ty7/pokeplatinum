@@ -570,12 +570,12 @@ static UnkEnum_ov5_021ED334 ov5_021ED334(UnkStruct_ov5_021ED0A4 *param0, int par
 
 static UnkEnum_ov5_021ED334 ov5_021ED390(UnkStruct_ov5_021ED0A4 *param0, int param1)
 {
-    return ov5_021ED334(param0, 0, param1, Unk_ov5_021FC9B4);
+    return ov5_021ED334(param0, 0, param1, OWEntryToSpriteID);
 }
 
 static UnkEnum_ov5_021ED334 ov5_021ED3A4(UnkStruct_ov5_021ED0A4 *param0, int param1)
 {
-    return ov5_021ED334(param0, 1, param1, Unk_ov5_021FC9B4);
+    return ov5_021ED334(param0, 1, param1, OWEntryToSpriteID);
 }
 
 static void ov5_021ED3B8(UnkStruct_ov5_021ED0A4 *param0, const int *param1)
@@ -1922,7 +1922,7 @@ static Billboard *ov5_021EE454(MapObject *param0, int param1, UnkFuncPtr_ov5_021
     {
         v1 = 0;
         v3 = v2;
-        v7 = Unk_ov5_021FC9B4;
+        v7 = OWEntryToSpriteID;
 
         do {
             if (v7->unk_00 == v3) {
