@@ -65,6 +65,7 @@
     ScriptEntry CommonScript_SetLookerBGM @ 0x807
     ScriptEntry CommonScript_FadeToDefaultMusic @ 0x808
     ScriptEntry CommonScript_GriseousOrbCouldNotBeRemoved @ 0x809
+    ScriptEntry CommonScript_StdFollowingMon
     ScriptEntryEnd
 
 CommonScript_EmptyScript1:
@@ -1673,6 +1674,18 @@ CommonScript_GriseousOrbCouldNotBeRemoved:
     CloseMessage
     ReleaseAll
     ReturnCommonScript
+    End
+
+CommonScript_StdFollowingMon:
+    PlaySE SEQ_SE_CONFIRM
+    LockAll
+    FacePlayer
+    FollowMon_Cry
+    FollowMon_Message
+    WaitCry
+    WaitButton
+    CloseMessage
+    ReleaseAll
     End
 
     .balign 4, 0

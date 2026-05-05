@@ -4994,6 +4994,14 @@
     .byte \battleBackground
     .endm
 
+    .macro FollowMon_Message
+    .short SCRCMD_FOLLOWMONMESSAGE
+    .endm
+
+    .macro FollowMon_Cry
+    .short SCRCMD_FOLLOWMONCRY
+    .endm
+
 
     .macro GoToIfLt varID, valueOrVarID, offset
     CompareVar \varID, \valueOrVarID
@@ -5351,6 +5359,10 @@
 
     .macro Common_GriseousOrbCouldNotBeRemoved
     CallCommonScript 0x809
+    .endm
+
+    .macro Common_StdFollowingMon
+    CallCommonScript 0x80A
     .endm
 
     .text

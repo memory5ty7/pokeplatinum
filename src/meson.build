@@ -1015,5 +1015,6 @@ pokeplatinum_c = files(
     'dw_warp/dw_warp.c',
     'debug.c',
     'desmume.c',
-    'following_mon.c'
+    'following_mon.c',
+    'save_following_mon.c'
 )

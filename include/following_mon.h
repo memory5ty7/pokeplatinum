@@ -38,7 +38,7 @@ void sub_02069DC8(MapObject *mapObject, BOOL enableBit);
 void sub_02069DEC(MapObject *mapObject, BOOL enableBit);
 u8 sub_02069E14(MapObject *mapObject);
 void sub_02069E28(MapObject *mapObject, u32 a1);
-void sub_02069E50(MapObject *mapObject, u8 a1);
+void sub_02069E50_hg(MapObject *mapObject, u8 a1);
 void sub_02069E84(MapObject *mapObject, u8 a1);
 u8 sub_02069EAC(MapObject *mapObject);
 u8 sub_02069EC0(MapObject *mapObject);
@@ -63,5 +63,9 @@ void FieldSystem_UnkSub108_MoveMoodTowardsNeutral(FieldSystemUnk108 *a0);
 int SpeciesToOverworldModelIndexOffset(int species);
 int OverworldModelLookupFormCount(int species);
 BOOL OverworldModelLookupHasFemaleForm(int species);
+
+FollowMon *FollowMon_Init(const MapObjectManager *mapObjMan, int x, int z, int dir);
+void FollowMon_SetMapObject(FollowMon *FollowMon, MapObject *mapObject);
+void FollowMon_Delete(FollowMon *followMon);
 
 #endif // POKEPLATINUM_FOLLOW_MON_H

@@ -1,0 +1,125 @@
+{
+  "key": 0,
+  "messages": [
+    {
+      "id": "FollowMonMessage_None",
+      "en_US": [
+        "I am Turtwig and I love pokeplatinum!\r",
+        "Imagine using binary hacking!\n",
+        "Couldn’t be me."
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Happy",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looks really happy!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Playful",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} wants to play!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Curious",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is paying close attention\n",
+        "to its surroundings!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Sleepy",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} yawned widely!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Affectionate",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly hugged you!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_LowHP",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems about to cry!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Pumped",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is feeling pumped!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Poisoned",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is feeling sick."
+      ]
+    },
+    {
+      "id": "FollowMonMessage_SleepTalk",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is talking in its sleep!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Snore",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is snoring loudly!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Asleep",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is fast asleep!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Paralyzed",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is struggling to catch up\n",
+        "with you!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Frozen",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is shivering with cold!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_Burned",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s burn looks painful!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_RowansLabStarter",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is so happy, it started\n",
+        "rolling around"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_HomeStarter",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very satisfied!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_TremblingExcited",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is trembling with excitement!"
+      ]
+    },
+    {
+      "id": "FollowMonMessage_ReadyToBattle",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly let out a battle\n",
+        "cry!"
+      ]
+    }
+  ]
+}

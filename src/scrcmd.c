@@ -225,6 +225,11 @@
 #include "constdata/const_020F8BE0.h"
 #include "res/text/bank/mystery_gift_phrase.h"
 
+#include "sound_playback.h"
+
+#include "res/text/bank/followmon_messages.h"
+#include "unk_02054884.h"
+
 typedef struct {
     SysTask *unk_00;
     SysTask *unk_04;
@@ -738,6 +743,8 @@ static BOOL ScrCmd_323(ScriptContext *ctx);
 static BOOL ScrCmd_SetPartyGiratinaForm(ScriptContext *ctx);
 static BOOL ScrCmd_CheckPartyHasFatefulEncounterRegigigas(ScriptContext *ctx);
 static BOOL ScrCmd_ChangeBattleBackground(ScriptContext *ctx);
+static BOOL ScrCmd_FollowMonMessage(ScriptContext *ctx);
+static BOOL ScrCmd_FollowMonCry(ScriptContext *ctx);
 static BOOL ScriptContext_WaitForMovement(ScriptContext *ctx);
 static void sub_02040F28(FieldSystem *fieldSystem, SysTask *param1, MapObjectAnimCmd *param2);
 static void sub_02040F5C(SysTask *param0, void *param1);
@@ -7148,5 +7155,177 @@ static BOOL ScrCmd_ChangeBattleBackground(ScriptContext *ctx)
     u8 backgroundID = ScriptContext_ReadByte(ctx);
 
     SetScriptVar(VAR_BATTLE_BACKGROUND, backgroundID);
+    return FALSE;
+}
+
+static BOOL MonHasMove(Pokemon *mon, u16 move)
+{
+    for (int i = 0; i < 4; i++) {
+        if (Pokemon_GetValue(mon, MON_DATA_MOVE1 + i, NULL) == move) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+static BOOL IsStarter(Pokemon *mon)
+{
+    u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+
+    return species == SPECIES_TURTWIG
+        || species == SPECIES_CHIMCHAR
+        || species == SPECIES_PIPLUP
+        || species == SPECIES_GROTLE
+        || species == SPECIES_MONFERNO
+        || species == SPECIES_PRINPLUP
+        || species == SPECIES_TORTERRA
+        || species == SPECIES_INFERNAPE
+        || species == SPECIES_EMPOLEON;
+}
+
+static u16 GetFollowMonMessageID(FieldSystem *fieldSystem, Pokemon *mon)
+{
+    u16 messageID;
+    u16 rand;
+    u16 curHP = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
+    u16 status = Pokemon_GetValue(mon, MON_DATA_STATUS, NULL);
+    u16 monAbility = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+    u16 mapID = fieldSystem->location->mapId;
+
+    // Low HP Messages
+    if (curHP * 100 / Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL) <= 10
+        && LCRNG_Next() % 3 < 2) {
+        return FollowMonMessage_LowHP;
+    }
+
+    // Status message
+    if (status && LCRNG_Next() % 3 < 2) {
+        if (status & MON_CONDITION_ANY_POISON)
+        {
+            if (monAbility == ABILITY_POISON_HEAL
+             || monAbility == ABILITY_TOXIC_BOOST
+             || monAbility == ABILITY_GUTS
+             || monAbility == ABILITY_MARVEL_SCALE
+             || monAbility == ABILITY_QUICK_FEET) {
+                return FollowMonMessage_Pumped;
+            }
+
+            return FollowMonMessage_Poisoned;
+
+        } else if (status & MON_CONDITION_SLEEP) {
+            if (MonHasMove(mon, MOVE_SLEEP_TALK)) {
+                return FollowMonMessage_SleepTalk;
+            }
+            if (MonHasMove(mon, MOVE_SNORE)) {
+                return FollowMonMessage_Snore;
+            }
+
+            return FollowMonMessage_Asleep;
+        } else if (status & MON_CONDITION_FREEZE) {
+            return FollowMonMessage_Frozen;
+        } else if (status & MON_CONDITION_BURN) {
+            if (monAbility == ABILITY_FLARE_BOOST
+             || monAbility == ABILITY_GUTS
+             || monAbility == ABILITY_MARVEL_SCALE
+             || monAbility == ABILITY_QUICK_FEET) {
+                return FollowMonMessage_Pumped;
+            }
+
+            return FollowMonMessage_Burned;
+        } else if (status & MON_CONDITION_PARALYSIS) {
+            if (monAbility == ABILITY_FLARE_BOOST
+             || monAbility == ABILITY_GUTS
+             || monAbility == ABILITY_MARVEL_SCALE) {
+                return FollowMonMessage_Pumped;
+            }
+
+            return FollowMonMessage_Paralyzed;
+        }
+    }
+
+    // Niche messages
+
+
+    // Specific area messages
+
+    if ((IsStarter(mon) && mapID == MAP_HEADER_SANDGEM_TOWN_POKEMON_RESEARCH_LAB)
+        && LCRNG_Next() % 2 < 1) {
+        return FollowMonMessage_RowansLabStarter;
+    }
+    if ((IsStarter(mon) && (mapID == MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_1F || mapID == MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_2F))
+        && LCRNG_Next() % 2 < 1) {
+        return FollowMonMessage_HomeStarter;
+    }
+
+
+    // Common area messages
+
+    if (mapID == MAP_HEADER_POKEMON_LEAGUE_ELEVATOR_TO_CHAMPION_ROOM
+        && LCRNG_Next() % 2 < 1) {
+        return FollowMonMessage_TremblingExcited;
+    }
+
+    if ((mapID == MAP_HEADER_OREBURGH_CITY_GYM
+        || mapID == MAP_HEADER_ETERNA_CITY_GYM
+        || mapID == MAP_HEADER_HEARTHOME_CITY_GYM_ENTRANCE_ROOM
+        || mapID == MAP_HEADER_HEARTHOME_CITY_GYM_TRAINER_ROOM_1
+        || mapID == MAP_HEADER_HEARTHOME_CITY_GYM_TRAINER_ROOM_2
+        || mapID == MAP_HEADER_HEARTHOME_CITY_GYM_LEADER_ROOM
+        || mapID == MAP_HEADER_CANALAVE_CITY_GYM
+        || mapID == MAP_HEADER_SNOWPOINT_CITY_GYM
+        || mapID == MAP_HEADER_SUNYSHORE_CITY_GYM_ROOM_1
+        || mapID == MAP_HEADER_SUNYSHORE_CITY_GYM_ROOM_2
+        || mapID == MAP_HEADER_SUNYSHORE_CITY_GYM_ROOM_3)
+        && LCRNG_Next() % 2 < 1) {
+        return FollowMonMessage_ReadyToBattle;
+    }
+
+
+    // Mood messages
+    rand = LCRNG_Next() % 100;
+    if (rand < 20) {
+        messageID = FollowMonMessage_Happy;
+    } else if (rand < 40) {
+        messageID = FollowMonMessage_Playful;
+    } else if (rand < 60) {
+        messageID = FollowMonMessage_Curious;
+    } else if (rand < 80) {
+        messageID = FollowMonMessage_Sleepy;
+    } else {
+        messageID = FollowMonMessage_Affectionate;
+    }
+
+    return messageID;
+}
+
+static BOOL ScrCmd_FollowMonMessage(ScriptContext *ctx)
+{
+    u8 messageID;
+
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    Party *party = SaveData_GetParty(ctx->fieldSystem->saveData);
+    Pokemon *mon = Party_FindFirstEligibleBattler(party);
+    StringTemplate **strTemplate = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
+    u8 templateArg = 0;
+    StringTemplate_SetNickname(*strTemplate, templateArg, (BoxPokemon *)mon);
+
+    messageID = GetFollowMonMessageID(fieldSystem, mon);
+
+    MessageLoader *msgLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_FOLLOWMON_MESSAGES, HEAP_ID_FIELD3);
+
+    ScriptMessage_Show(ctx, msgLoader, messageID, TRUE, NULL);
+    ScriptContext_Pause(ctx, ScriptContext_WaitForFinishedPrinting);
+    MessageLoader_Free(msgLoader);
+
+    return TRUE;
+}
+
+static BOOL ScrCmd_FollowMonCry(ScriptContext *ctx)
+{
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 species = fieldSystem->followMon->species;
+
+    Sound_PlayPokemonCry(species, 0);
+
     return FALSE;
 }

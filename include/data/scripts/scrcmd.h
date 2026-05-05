@@ -846,6 +846,8 @@ ScriptCommand(SCRCMD_BUFFERBALLSEALNAMEPLURAL,                             ScrCm
 ScriptCommand(SCRCMD_CAPITALIZEFIRSTLETTER,                                ScrCmd_CapitalizeFirstLetter)
 ScriptCommand(SCRCMD_BUFFERFLOORNUMBER,                                    ScrCmd_BufferFloorNumber)
 ScriptCommand(SCRCMD_CHANGEBATTLEBACKGROUND,                               ScrCmd_ChangeBattleBackground)
+ScriptCommand(SCRCMD_FOLLOWMONMESSAGE,                                     ScrCmd_FollowMonMessage)
+ScriptCommand(SCRCMD_FOLLOWMONCRY,                                         ScrCmd_FollowMonCry)
 
 // clang-format on
 

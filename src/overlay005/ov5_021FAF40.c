@@ -3031,7 +3031,7 @@ const UnkStruct_ov5_021EDD04 Unk_ov5_021FD77C[] = {
     { OBJ_EVENT_GFX_FOLLOWER_MON_SURSKIT, 0x0, 0x0, FollowingMonAnim },
     { OBJ_EVENT_GFX_FOLLOWER_MON_MASQUERAIN, 0x0, 0x0, FollowingMonAnim },
     { OBJ_EVENT_GFX_FOLLOWER_MON_SHROOMISH, 0x0, 0x0, FollowingMonAnim },
-    { OBJ_EVENT_GFX_FOLLOWER_MON_BRELOOM, 0x0, 0x0, FollowingMonAnim },
+    { OBJ_EVENT_GFX_FOLLOWER_MON_BRELOOM, 0x0, 0x0, Unk_ov5_021FB2C0 },
     { OBJ_EVENT_GFX_FOLLOWER_MON_SLAKOTH, 0x0, 0x0, FollowingMonAnim },
     { OBJ_EVENT_GFX_FOLLOWER_MON_VIGOROTH, 0x0, 0x0, FollowingMonAnim },
     { OBJ_EVENT_GFX_FOLLOWER_MON_SLAKING, 0x0, 0x0, FollowingMonAnim },

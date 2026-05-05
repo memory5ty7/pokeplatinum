@@ -74,6 +74,8 @@
 
 #include "res/text/bank/pokemon_center_2f_attendants.h"
 
+#include "following_mon.h"
+
 FS_EXTERN_OVERLAY(underground);
 
 typedef struct MapChangeData {
@@ -353,6 +355,7 @@ static void FieldMapChange_CreateObjects(FieldSystem *fieldSystem)
     playerData = FieldOverworldState_GetPlayerData(fieldState);
 
     fieldSystem->playerAvatar = PlayerAvatar_Init(fieldSystem->mapObjMan, fieldSystem->location->x, fieldSystem->location->z, fieldSystem->location->faceDirection, playerData->form, gender, 0, playerData);
+    fieldSystem->followMon = FollowMon_Init(fieldSystem->mapObjMan, fieldSystem->location->x, fieldSystem->location->z, fieldSystem->location->faceDirection);
 
     sub_0203A418(fieldSystem);
     MapObjectMan_StopAllMovement(fieldSystem->mapObjMan);
@@ -360,6 +363,7 @@ static void FieldMapChange_CreateObjects(FieldSystem *fieldSystem)
 
 static void FieldMapChange_DeleteObjects(FieldSystem *fieldSystem)
 {
+    FollowMon_Delete(fieldSystem->followMon);
     Player_Delete(fieldSystem->playerAvatar);
     MapObjectMan_DeleteAll(fieldSystem->mapObjMan);
     MapObjectMan_Delete(fieldSystem->mapObjMan);
@@ -375,7 +379,6 @@ static void FieldMapChange_LoadObjects(FieldSystem *fieldSystem)
     int gender = TrainerInfo_Gender(SaveData_GetTrainerInfo(fieldSystem->saveData));
 
     fieldSystem->playerAvatar = sub_0205E820(fieldSystem->mapObjMan, playerData, gender);
-
     MapObjectMan_StopAllMovement(fieldSystem->mapObjMan);
 }
 

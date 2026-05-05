@@ -370,6 +370,7 @@ Static main
 	Object main.nef.p/src_unk_0209C390.c.o
 	Object main.nef.p/src_desmume.c.o
 	Object main.nef.p/src_following_mon.c.o
+	Object main.nef.p/src_save_following_mon.c.o
 	Library libspl.a
 	Library libwvr.a
 	Library libdwcbm.a
