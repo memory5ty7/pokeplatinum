@@ -525,11 +525,21 @@ __attribute__((aligned(4))) static const u8 palParkMenuButtonLayout[2][1] = {
 };
 
 static const TouchScreenRect Unk_ov16_0227038C[] = {
-    { 0x98, 0xC0, 0x8, 0xF8 },
-    { 0x18, 0x50, 0x0, 0x80 },
-    { 0x18, 0x50, 0x80, 0xFF },
-    { 0x58, 0x90, 0x0, 0x80 },
-    { 0x58, 0x90, 0x80, 0xFF },
+    { 0x98, 0xC0, 0x8, 0xF8 },  // Cancel
+    { 0x18, 0x50, 0x0, 0x80 },  // Move 1
+    { 0x18, 0x50, 0x80, 0xFF }, // Move 2
+    { 0x58, 0x90, 0x0, 0x80 },  // Move 3
+    { 0x58, 0x90, 0x80, 0xFF }, // Move 4
+    { 0xFF, 0x0, 0x0, 0x0 }
+};
+
+static const TouchScreenRect Unk_ov16_0227038C_mega[] = {
+    { 0x98, 0xC0, 0x8, 0x80 },  // Cancel
+    { 0x18, 0x50, 0x0, 0x80 },  // Move 1
+    { 0x18, 0x50, 0x80, 0xFF }, // Move 2
+    { 0x58, 0x90, 0x0, 0x80 },  // Move 3
+    { 0x58, 0x90, 0x80, 0xFF }, // Move 4
+    { 0x98, 0xC0, 0x80, 0xFF }, // Mega
     { 0xFF, 0x0, 0x0, 0x0 }
 };
 
@@ -541,6 +551,15 @@ static const int Unk_ov16_02270364[NELEMS(Unk_ov16_0227038C) - 1] = {
     0x4
 };
 
+static const int Unk_ov16_02270364_mega[NELEMS(Unk_ov16_0227038C_mega) - 1] = {
+    0xFF,
+    0x1,
+    0x2,
+    0x3,
+    0x4,
+    0x5,
+};
+
 __attribute__((aligned(4))) static const u8 Unk_ov16_02270A14[NELEMS(Unk_ov16_0227038C) - 1] = {
     0x4,
     0x8,
@@ -549,10 +568,25 @@ __attribute__((aligned(4))) static const u8 Unk_ov16_02270A14[NELEMS(Unk_ov16_02
     0xB
 };
 
+__attribute__((aligned(4))) static const u8 Unk_ov16_02270A14_mega[NELEMS(Unk_ov16_0227038C_mega) - 1] = {
+    0x4,
+    0x8,
+    0x9,
+    0xA,
+    0xB,
+    0xC,
+};
+
 __attribute__((aligned(4))) static const u8 sMoveMenuButtonLayout[3][2] = {
     { 0x1, 0x2 },
     { 0x3, 0x4 },
     { 0x0, 0x0 }
+};
+
+__attribute__((aligned(4))) static const u8 sMoveMenuButtonLayout_mega[3][2] = {
+    { 0x1, 0x2 },
+    { 0x3, 0x4 },
+    { 0x0, 0x5 }
 };
 
 static const TouchScreenRect Unk_ov16_0227024C[] = {
@@ -770,9 +804,9 @@ static const UnkStruct_ov16_02270670 Unk_ov16_02270670[] = {
         0xF2,
         { 0x3, 0xFFFF, 0x0, 0xFFFF },
         { 0x2, 0x1, 0x3, 0x0 },
-        Unk_ov16_0227038C,
-        Unk_ov16_02270364,
-        Unk_ov16_02270A14,
+        Unk_ov16_0227038C_mega,
+        Unk_ov16_02270364_mega,
+        Unk_ov16_02270A14_mega,
         BattleSystem_Cursor_Moves,
         ov16_0226C378,
         ov16_022699AC,
@@ -1942,6 +1976,7 @@ static void ov16_022699AC(UnkStruct_ov16_02268A14 *param0, int param1, int param
         String *v5;
 
         v5 = MessageLoader_GetNewString(messageLoader, 929);
+        // Cancel Button (Text?)
         ov16_0226A98C(param0, &param0->unk_4CC[4], v5, FONT_SUBSCREEN, TEXT_COLOR(10, 11, 12), 2, 20023, 128, 178, 1, NULL);
         String_Free(v5);
     }
@@ -2626,6 +2661,7 @@ static void ov16_0226A95C(const String *param0, int param1, int *param2, int *pa
 
 static void ov16_0226A98C(UnkStruct_ov16_02268A14 *param0, UnkStruct_ov16_0226A98C *param1, const String *param2, enum Font param3, TextColor param4, int param5, int param6, int param7, int param8, int param9, UnkStruct_ov16_0226AEA0 *param10)
 {
+    // Printing cancel button (Text?)
     UnkStruct_020127E8 v0;
     Window v1;
     CharTransferAllocation v2;
@@ -3996,21 +4032,21 @@ static int BattleSystem_Cursor_Moves(UnkStruct_ov16_02268A14 *param0, BOOL curso
     if (cursorHidden == TRUE) {
         cursor->x = v7->unk_02;
         cursor->y = v7->unk_03;
-        v3 = sMoveMenuButtonLayout[cursor->y][cursor->x];
+        v3 = sMoveMenuButtonLayout_mega[cursor->y][cursor->x];
 
         if ((v3 != 0) && (v6->moveIDs[v3 - 1] == 0)) {
             v7->unk_02 = 0;
             v7->unk_03 = 0;
             cursor->x = 0;
             cursor->y = 0;
-            v3 = sMoveMenuButtonLayout[cursor->y][cursor->x];
+            v3 = sMoveMenuButtonLayout_mega[cursor->y][cursor->x];
         }
 
         BattleSystem_DrawCursor(param0->unk_6B8, v2->unk_14[v3].rect.left + 8, v2->unk_14[v3].rect.right - 8, v2->unk_14[v3].rect.top + 8, v2->unk_14[v3].rect.bottom - 8, (192 + 80) << FX32_SHIFT);
         return 0xffffffff;
     }
 
-    MI_CpuCopy8(sMoveMenuButtonLayout, v5, 3 * 2);
+    MI_CpuCopy8(sMoveMenuButtonLayout_mega, v5, 3 * 2);
     v1 = BattleSystem_MoveCursor(cursor, 2, 3, v5[0]);
 
     switch (v1) {
@@ -4018,11 +4054,11 @@ static int BattleSystem_Cursor_Moves(UnkStruct_ov16_02268A14 *param0, BOOL curso
     case PAD_KEY_DOWN:
     case PAD_KEY_LEFT:
     case PAD_KEY_RIGHT:
-        v3 = sMoveMenuButtonLayout[cursor->y][cursor->x];
+        v3 = sMoveMenuButtonLayout_mega[cursor->y][cursor->x];
         BattleSystem_DrawCursor(param0->unk_6B8, v2->unk_14[v3].rect.left + 8, v2->unk_14[v3].rect.right - 8, v2->unk_14[v3].rect.top + 8, v2->unk_14[v3].rect.bottom - 8, (192 + 80) << FX32_SHIFT);
         break;
     case PAD_BUTTON_A:
-        return sMoveMenuButtonLayout[cursor->y][cursor->x];
+        return sMoveMenuButtonLayout_mega[cursor->y][cursor->x];
     case PAD_BUTTON_B:
         for (i = 0; i < v2->unk_14[i].rect.top != 0xff; i++) {
             if (0xff == v2->unk_18[i]) {
@@ -4050,7 +4086,7 @@ static void ov16_0226C378(UnkStruct_ov16_02268A14 *param0, int param1)
 
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 2; j++) {
-            if (param1 == sMoveMenuButtonLayout[i][j]) {
+            if (param1 == sMoveMenuButtonLayout_mega[i][j]) {
                 v0->unk_02 = j;
                 v0->unk_03 = i;
                 return;
