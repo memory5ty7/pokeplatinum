@@ -8529,6 +8529,12 @@
         "The foe’s {STRVAR_1 1, 0, 0}\n",
         "mega evolved!\n"
       ]
+    },
+    {
+      "id": "pl_msg_00000368_01275",
+      "en_US": [
+        "MEGA"
+      ]
     }
   ]
 }

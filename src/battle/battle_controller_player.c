@@ -516,7 +516,11 @@ static void BattleControllerPlayer_CommandSelectionInput(BattleSystem *battleSys
             if (BattleContext_IOBufferVal(battleCtx, i) == PLAYER_INPUT_CANCEL) {
                 battleCtx->curCommandState[i] = COMMAND_SELECTION_INIT;
             } else if (BattleContext_IOBufferVal(battleCtx, i)) {
-                if ((battleCtx->ioBuffer[i][0] - 1) == 4) {
+                if ((battleCtx->ioBuffer[i][0] - 1) == 5) {
+                    Sound_PlayEffect(SEQ_SE_DP_W172B);
+                    Desmume_Log("Mega Evolution triggered\n");
+                    battleCtx->curCommandState[i] = COMMAND_SELECTION_MOVE_SELECT_INIT;
+                } else if ((battleCtx->ioBuffer[i][0] - 1) == 4) {
                     battleCtx->battlerActions[i][BATTLE_ACTION_PICK_COMMAND] = BATTLE_CONTROL_RUN;
                     battleCtx->curCommandState[i] = COMMAND_SELECTION_RUN_SELECT_INIT;
                     break;

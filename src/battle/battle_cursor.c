@@ -539,7 +539,7 @@ static const TouchScreenRect Unk_ov16_0227038C_mega[] = {
     { 0x18, 0x50, 0x80, 0xFF }, // Move 2
     { 0x58, 0x90, 0x0, 0x80 },  // Move 3
     { 0x58, 0x90, 0x80, 0xFF }, // Move 4
-    { 0x98, 0xC0, 0x80, 0xFF }, // Mega
+    { 0x98, 0xC0, 0x80, 0xF8 }, // Mega
     { 0xFF, 0x0, 0x0, 0x0 }
 };
 
@@ -1410,6 +1410,7 @@ void ov16_02268C04(NARC *param0, NARC *param1, UnkStruct_ov16_02268A14 *param2, 
 
 void ov16_02268D40(NARC *param0, UnkStruct_ov16_02268A14 *param1)
 {
+    // Move selection sprite
     int i;
     SpriteSystem *v1;
     SpriteManager *v2;
@@ -1976,8 +1977,17 @@ static void ov16_022699AC(UnkStruct_ov16_02268A14 *param0, int param1, int param
         String *v5;
 
         v5 = MessageLoader_GetNewString(messageLoader, 929);
-        // Cancel Button (Text?)
-        ov16_0226A98C(param0, &param0->unk_4CC[4], v5, FONT_SUBSCREEN, TEXT_COLOR(10, 11, 12), 2, 20023, 128, 178, 1, NULL);
+        // Cancel Button (Text)
+        ov16_0226A98C(param0, &param0->unk_4CC[4], v5, FONT_SUBSCREEN, TEXT_COLOR(10, 11, 12), 2, 20023, 64, 178, 1, NULL);
+        String_Free(v5);
+    }
+
+    {
+        String *v5;
+
+        v5 = MessageLoader_GetNewString(messageLoader, 1275);
+        // Mega Button (Text)
+        //ov16_0226A98C(param0, &param0->unk_4CC[12], v5, FONT_SUBSCREEN, TEXT_COLOR(10, 11, 12), 2, 20023, 192, 178, 1, NULL);
         String_Free(v5);
     }
 
@@ -2326,6 +2336,10 @@ static int ov16_0226A3F4(UnkStruct_ov16_02268A14 *param0, int param1, int param2
     }
 
     v0 = &param0->unk_1A.val2;
+
+    if (param1 == 5) {
+        return 6;
+    }
 
     if ((param1 >= 1) && (param1 <= 4)) {
         if (v0->moveIDs[param1 - 1] == 0) {
