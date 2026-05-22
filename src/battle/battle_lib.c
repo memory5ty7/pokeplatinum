@@ -7608,6 +7608,7 @@ static const enum BattleSubAnimation sEffectsAlwaysShown[] = {
     BATTLE_ANIMATION_WEATHER_SUN,
     BATTLE_ANIMATION_SUBSTITUTE_IN,
     BATTLE_ANIMATION_SUBSTITUTE_OUT,
+    BATTLE_ANIMATION_MEGA_EVOLUTION,
 };
 
 BOOL BattleSystem_ShouldShowStatusEffect(BattleContext *battleCtx, int battler, int status)
